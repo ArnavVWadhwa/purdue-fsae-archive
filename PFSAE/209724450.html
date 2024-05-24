@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : BR2/GPS Software Implementation | MoTeC</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="280562450.html">Software | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : BR2/GPS Software Implementation | MoTeC
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Skrzyszowski, Mateusz</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jun 01, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="BR2/GPSSoftwareImplementation|MoTeC-BR2TimingSystem">BR2 Timing System</h1><p>For implementing the BR2 Timing System to the car, all that was added to the software was an M1 tune change.</p><p>The module &quot;Lap&quot; in build contains a few different ways to track lap times. This module needs to be enabled in tune.</p><p>After the module is enabled in tune, you will have different options for selecting what system is being used for lap time measurement. Under the group &quot;BR2&quot;, change the value of &quot;CAN Bus&quot; from &quot;Not In use&quot; to &quot;CAN Bus 1&quot;. If you have multiple CAN busses being run in your harness, you must select the appropriate bus value. This will enable the BR2 Timing system and begin tracking lap times once the beacon is crossed.</p><p>The &quot;Lap&quot; module should look like so:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/209724450/209724462.png" data-image-src="attachments/209724450/209724462.png" data-unresolved-comment-count="0" data-linked-resource-id="209724462" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-3-14_1-27-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="209724450" data-linked-resource-container-version="3" alt=""></span></p><h1 id="BR2/GPSSoftwareImplementation|MoTeC-GPS">GPS</h1><p>Implementing the GPS is a multi-step process that involves both the Dash (C125 in our case) and the ECU/Tune.</p><p>The MoTeC GPS runs using RS232 as its communication device. The C125 has pins that are specifically used for RS232 communication, therefore the GPS is wired to the dash. The dash then will take the RS232 values, decode them, and send them to the ECU over CAN.</p><p>First, ensure that your GPS RS232 signal is being received by the dash. Go to the toolbar and navigate to &quot;Connections&quot;, then select &quot;Communications...&quot;. In this window select the &quot;RS232-2 RX&quot; tab. Ensure that the section &quot;GPS - Standard RMC GGA&quot; is being received. Your page should look like this:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/209724450/209724454.jpg" data-image-src="attachments/209724450/209724454.jpg" data-unresolved-comment-count="0" data-linked-resource-id="209724454" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="GPS Implementation 1.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="209724450" data-linked-resource-container-version="3" alt=""></span></p><p>If your page is missing the correct section, you will have to add this using the template MoTeC provides. Click &quot;New&quot; &gt; &quot;Load&quot; &gt; &quot;GPS - Standard RMC GGA&quot;. This should add the section based off of the template MoTeC provides.</p><p>Once you have the dash receiving the RS232 signal from the GPS, you have to send the received channels over CAN. Switch to the &quot;CAN 1&quot; tab inside the &quot;Communications Setup&quot; window. If you do not see the following sections, you will have to add them using the MoTeC provided template.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="150" src="attachments/209724450/209724455.png" data-image-src="attachments/209724450/209724455.png" data-unresolved-comment-count="0" data-linked-resource-id="209724455" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-3-14_1-6-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="209724450" data-linked-resource-container-version="3" alt=""></span></p><p>In order to add them using the MoTeC provided template, click &quot;New&quot; &gt; &quot;Load&quot;. In here you will see a long list of different templates appear. Navigate to the names listed in the image above and add all three of these. This will require clicking &quot;New&quot; &gt; &quot;Load&quot; multiple times (once for each template loaded). Once the templates are loaded you will need to make a small adjustment to one of the sections due to that specific value not existing with our GPS setup. Highlight the section &quot;GPS_to_M1_0x682_Version 2&quot; and click &quot;Edit&quot;. Then navigate to the &quot;Transmitted Channels&quot; tab and remove the channel &quot;GPS Valid&quot;. This will fix the error that the dash would have when compiling the configuration without editing this section. After that, we are finished with the dash portion of GPS implementation. Your finished &quot;CAN 1&quot; tab should look like the following image (ignore any other section that hasn't been mentioned on this confluence page).</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/209724450/209724456.png" data-image-src="attachments/209724450/209724456.png" data-unresolved-comment-count="0" data-linked-resource-id="209724456" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-3-14_1-17-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="209724450" data-linked-resource-container-version="3" alt=""></span></p><p>Next, open up M1 Tune and find the &quot;GPS&quot; module. For the channel &quot;Interface&quot; select the option &quot;CAN Bus 1 Decode&quot;. For the channel &quot;CAN ID Base&quot; type in 680 (This CAN ID is the default ID of the template implemented in the dash communications. If you change the default CAN ID on dash you will need to change the value here as well. Refer to CAN Tracking Sheet to make sure that you are not sending another message over CAN with the same ID as this message). Your module should look like the following:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/209724450/209724457.png" data-image-src="attachments/209724450/209724457.png" data-unresolved-comment-count="0" data-linked-resource-id="209724457" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-3-14_1-23-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="209724450" data-linked-resource-container-version="3" alt=""></span></p><p>After this step, GPS implementation is complete. <strong>REMEMBER: </strong>You must set up logging for these channels. These are not logged by default.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724453.jpg">BR2 Implementation.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724454.jpg">GPS Implementation 1.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724455.png">image2022-3-14_1-6-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724456.png">image2022-3-14_1-17-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724457.png">image2022-3-14_1-23-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209724450/209724462.png">image2022-3-14_1-27-10.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

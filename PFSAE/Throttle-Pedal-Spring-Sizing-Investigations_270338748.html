@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Throttle Pedal Spring Sizing Investigations</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832176.html">Design PF24 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836059.html">Pedal Box PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-Research-PF24_265095829.html">Pedal Box Research PF24</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Throttle Pedal Spring Sizing Investigations
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Sep 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p class="page-title"><span class="base">Engineering POC: <a class="confluence-userlink user-mention" data-username="eaaltone" href="https://wiki.itap.purdue.edu/display/~eaaltone" data-linked-resource-id="116528109" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Aaltonen, Emil Johan</a> <a class="toolbar-trigger aui-dd-trigger aui-button aui-button-subtle" href="https://wiki.itap.purdue.edu/pages/resumedraft.action?draftId=270338760&amp;draftShareId=8a62cd3d-4caa-4663-a589-02001cd1b0e7&amp;" rel="nofollow"> </a></span></p><p class="page-title"><br/></p><p class="page-title"><span class="base">Calcs done with the new Spring calculator. Meant as an exploratory excercize</span></p><p class="page-title"><span class="base"><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/270338748/Throttle_Spring_Calculator_v2%20%282%29.m?version=1&amp;modificationDate=1694061861000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/270338748/Throttle_Spring_Calculator_v2%20%282%29.m?version=1&amp;modificationDate=1694061861000&amp;api=v2" data-linked-resource-id="270343274" data-linked-resource-type="attachment" data-linked-resource-container-id="270338748" data-linked-resource-default-alias="Throttle_Spring_Calculator_v2 (2).m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="Throttle_Spring_Calculator_v2 (2).m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">Throttle_Spring_Calculator_v2 (2).m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="270338748" data-linked-resource-id="270343274" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></span></p><p class="page-title"><br/></p><p class="page-title"><span class="base">The most important factors are Spring rate, and angle travel, with leg length helping a little bit as well.</span></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Spring Name</th><th scope="col" class="confluenceTh">Final Return Force vs. Spring Location</th><th scope="col" class="confluenceTh">Spring Stats Photo</th><th scope="col" class="confluenceTh">Spring Rate (in-lbf/deg)</th><th scope="col" class="confluenceTh">Angle Travel (deg)</th><th scope="col" class="confluenceTh">Leg Length (in)</th><th scope="col" class="confluenceTh">Outer Diameter (in)</th><th scope="col" class="confluenceTh">Body Length (in)</th><th scope="col" class="confluenceTh">Price ($ each)</th><th scope="col" class="confluenceTh">Highest Return Force (lbf)</th></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT135-640-6500-SST-RH-1000-N-IN"><span class="base">PT135-640-6500-SST-RH-1000-N-IN </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-(Lastyear&#39;sspring)"><span class="base">(Last year's spring)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/catalog/product/view/id/124267/s/pt135-640-6500-sst-rh-1000-n-in/category/2/" rel="nofollow">https://www.thespringstore.com/catalog/product/view/id/124267/s/pt135-640-6500-sst-rh-1000-n-in/category/2/</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343259.png" data-image-src="attachments/270338748/270343259.png" data-unresolved-comment-count="0" data-linked-resource-id="270343259" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-35-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270338750.png" data-image-src="attachments/270338748/270338750.png" data-unresolved-comment-count="0" data-linked-resource-id="270338750" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-28_23-29-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd">0.6655</td><td class="confluenceTd">49.54</td><td class="confluenceTd">1</td><td class="confluenceTd">.64</td><td class="confluenceTd">1.012</td><td class="confluenceTd">33.15</td><td class="confluenceTd">~16</td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT105-550-8000-SST-RH-3500-N-IN"><span class="base">PT105-550-8000-SST-RH-3500-N-IN </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-(Moreflexible,lessTorque,longerlegs)"><span class="base">(More flexible, less Torque, longer legs)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/pt105-550-8000-sst-rh-3500-n-in.html" rel="nofollow">https://www.thespringstore.com/pt105-550-8000-sst-rh-3500-n-in.html</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="base"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343260.png" data-image-src="attachments/270338748/270343260.png" data-unresolved-comment-count="0" data-linked-resource-id="270343260" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-38-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></span></p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="base"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270338752.png" data-image-src="attachments/270338748/270338752.png" data-unresolved-comment-count="0" data-linked-resource-id="270338752" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-28_23-29-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></span></p></div></td><td class="confluenceTd">0.225</td><td class="confluenceTd">74.226</td><td class="confluenceTd">3.5</td><td class="confluenceTd">.55</td><td class="confluenceTd">.945</td><td class="confluenceTd">32.02</td><td class="confluenceTd">~12</td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT105-772-8000-SST-LH-3500-N-IN"><span class="base">PT105-772-8000-SST-LH-3500-N-IN </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-(Flexiblecheaperlargerspring)"><span class="base">(Flexible cheaper larger spring)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/pt105-772-8000-sst-lh-3500-n-in.html" rel="nofollow">https://www.thespringstore.com/pt105-772-8000-sst-lh-3500-n-in.html</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343261.png" data-image-src="attachments/270338748/270343261.png" data-unresolved-comment-count="0" data-linked-resource-id="270343261" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-42-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="base"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270338754.png" data-image-src="attachments/270338748/270338754.png" data-unresolved-comment-count="0" data-linked-resource-id="270338754" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-28_23-34-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></span></p></div></td><td class="confluenceTd">0.150</td><td class="confluenceTd">113.781</td><td class="confluenceTd">3.5</td><td class="confluenceTd">.772</td><td class="confluenceTd">.945</td><td class="confluenceTd">7.8</td><td class="confluenceTd">~13</td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT095-871-4250-MW-LH-3000-N-IN"><span class="base">PT095-871-4250-MW-LH-3000-N-IN </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-(Verythin,easilypackageablespring)"><span class="base">(Very thin, easily packageable spring)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/pt095-871-4250-mw-lh-3000-n-in.html" rel="nofollow">https://www.thespringstore.com/pt095-871-4250-mw-lh-3000-n-in.html</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343262.png" data-image-src="attachments/270338748/270343262.png" data-unresolved-comment-count="0" data-linked-resource-id="270343262" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-44-13.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270339159.png" data-image-src="attachments/270338748/270339159.png" data-unresolved-comment-count="0" data-linked-resource-id="270339159" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-29_12-39-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd">0.188</td><td class="confluenceTd">81.564</td><td class="confluenceTd">3</td><td class="confluenceTd">.871</td><td class="confluenceTd">.499</td><td class="confluenceTd">24.21</td><td class="confluenceTd">~11</td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT135-1102-5250-SST-LH-4000-N-IN"><span class="base">PT135-1102-5250-SST-LH-4000-N-IN </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-(Thinner,moretravel,longerlegs,"><span class="base">(Thinner, more travel, longer legs, </span></h1><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-OtherwisesimilartoPF23springs)"><span class="base">Otherwise similar to PF23 springs)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/pt135-1102-5250-sst-lh-4000-n-in.html" rel="nofollow">https://www.thespringstore.com/pt135-1102-5250-sst-lh-4000-n-in.html</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343263.png" data-image-src="attachments/270338748/270343263.png" data-unresolved-comment-count="0" data-linked-resource-id="270343263" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-46-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p><p>L = 2</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343264.png" data-image-src="attachments/270338748/270343264.png" data-unresolved-comment-count="0" data-linked-resource-id="270343264" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-47-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p><p>L = 1</p><p><span class="base"><br/></span></p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270338757.png" data-image-src="attachments/270338748/270338757.png" data-unresolved-comment-count="0" data-linked-resource-id="270338757" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-28_23-55-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd">0.430</td><td class="confluenceTd">79.408</td><td class="confluenceTd">4</td><td class="confluenceTd">1.102</td><td class="confluenceTd">.844</td><td class="confluenceTd">48.86</td><td class="confluenceTd"><p>~26 for L = 2</p><p><br/></p><p>~6 for L = 1</p></td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT085-926-5125-MW-LH-2500-N-IN(Smaller,weakerspring)"><span class="base">PT085-926-5125-MW-LH-2500-N-IN (Smaller, weaker spring)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/catalog/product/view/id/124622/s/pt085-926-5125-mw-lh-2500-n-in/category/2/" rel="nofollow">https://www.thespringstore.com/catalog/product/view/id/124622/s/pt085-926-5125-mw-lh-2500-n-in/category/2/</a></span></p></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343265.png" data-image-src="attachments/270338748/270343265.png" data-unresolved-comment-count="0" data-linked-resource-id="270343265" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-55-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p><p>L = 1</p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270343266.png" data-image-src="attachments/270338748/270343266.png" data-unresolved-comment-count="0" data-linked-resource-id="270343266" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-6_23-56-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd">.092</td><td class="confluenceTd">123.941</td><td class="confluenceTd">2.5</td><td class="confluenceTd">.926</td><td class="confluenceTd">.521</td><td class="confluenceTd">21.3</td><td class="confluenceTd">~8</td></tr><tr><td class="confluenceTd"><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-PT081-761-6125-MW-LH-2500-N-IN(Shorterspring)"><span class="base">PT081-761-6125-MW-LH-2500-N-IN (Shorter spring)</span></h1><p><span class="base"><a class="external-link" href="https://www.thespringstore.com/catalog/product/view/id/124522/s/pt081-761-6125-mw-lh-2500-n-in/category/2/" rel="nofollow">https://www.thespringstore.com/catalog/product/view/id/124522/s/pt081-761-6125-mw-lh-2500-n-in/category/2/</a></span></p><h1 class="page-title" id="ThrottlePedalSpringSizingInvestigations-"><span class="base"><br/></span></h1></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/270338748/270343267.png" data-image-src="attachments/270338748/270343267.png" data-unresolved-comment-count="0" data-linked-resource-id="270343267" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_0-8-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p><p>L = 1</p></div></td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/270338748/270343268.png" data-image-src="attachments/270338748/270343268.png" data-unresolved-comment-count="0" data-linked-resource-id="270343268" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_0-9-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270338748" data-linked-resource-container-version="8" alt=""></span></p></div></td><td class="confluenceTd">.079</td><td class="confluenceTd">124.574</td><td class="confluenceTd">2.5</td><td class="confluenceTd">.761</td><td class="confluenceTd">.577</td><td class="confluenceTd">22.26</td><td class="confluenceTd">~8</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338749.png">image-2023-8-28_23-18-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338750.png">image-2023-8-28_23-29-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338751.png">image-2023-8-28_23-28-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338752.png">image-2023-8-28_23-29-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338753.png">image-2023-8-28_23-34-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338754.png">image-2023-8-28_23-34-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338755.png">image-2023-8-28_23-39-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338756.png">image-2023-8-28_23-53-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338757.png">image-2023-8-28_23-55-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270338758.png">image-2023-8-28_23-55-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270339076.m">Throttle_Spring_Calculator_v2.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270339159.png">image-2023-8-29_12-39-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270341798.png">image-2023-9-3_16-27-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270341799.png">image-2023-9-3_16-28-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270341802.png">image-2023-9-3_16-33-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270341817.png">image-2023-9-3_16-51-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343259.png">image-2023-9-6_23-35-38.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343260.png">image-2023-9-6_23-38-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343261.png">image-2023-9-6_23-42-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343262.png">image-2023-9-6_23-44-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343263.png">image-2023-9-6_23-46-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343264.png">image-2023-9-6_23-47-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343265.png">image-2023-9-6_23-55-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343266.png">image-2023-9-6_23-56-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343267.png">image-2023-9-7_0-8-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343268.png">image-2023-9-7_0-9-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270338748/270343274.m">Throttle_Spring_Calculator_v2 (2).m</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-270339078"></a>
+                                    <font class="smallfont"><p>Maybe put these spring specs and graphs side to side in a table so we can compare them more easily?</p><p><a class="confluence-userlink user-mention" data-username="eaaltone" href="https://wiki.itap.purdue.edu/display/~eaaltone" data-linked-resource-id="116528109" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Aaltonen, Emil Johan</a> </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by nguye841 at Aug 29, 2023 11:27
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-270339162"></a>
+                                    <font class="smallfont"><p>Great suggestion! Update made</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by eaaltone at Aug 29, 2023 12:51
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Tire Data Graphing Program</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Tire Data Graphing Program
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Mar 07, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This program comes from my less than spectacular freshman year Matlab skills, but it's still all we've got. It can be used to look at tire data directly.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/139462239/find_best_FY_v2.m?version=2&amp;modificationDate=1579917288000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/139462239/find_best_FY_v2.m?version=2&amp;modificationDate=1579917288000&amp;api=v2" data-linked-resource-id="139462240" data-linked-resource-type="attachment" data-linked-resource-container-id="139462239" data-linked-resource-default-alias="find_best_FY_v2.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="2" data-can-edit="true" aria-label="find_best_FY_v2.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">find_best_FY_v2.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="139462239" data-linked-resource-id="139462240" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h2 id="TireDataGraphingProgram-Instructions:">Instructions:</h2><ul><li>Go to this folder to find tire data: Z:\Knowledge_Base\01-Suspension\03-Tire_Data\TTC_DATA</li><li>Data for our current tire options (LC0 18-6-10 and R25b 18-6-10) is in the ROUND_5 folder.</li><li>Look at the Contents_Round5 pdf to understand what data is available</li><li>Look at the RunGuide_round5 pdf</li><li>Select a cornering run for a tire and pressure of interest</li><li>Go to the RawData_Cornering_Matlab_SI and double click the .mat file of the run chosen</li><li>Matlab will open a window providing import options, just select &quot;Finsh&quot;</li><li>With the data loaded, run the matlab program attached here</li><li>Inputs:<ul><li>Enter a pressure in psi. The data will include anything within +/- 0.5 psi of the entered pressure (can change code to change range)</li><li>Enter an inclination angle. Remember that the sign convention of inclination angle is opposite to that of camber. The data will include anything within =/-.1 degrees of the value input (can change code to change range)<ul><li>To include all inclination angles, just enter a stupid big number. Anything larger than 180 degrees will trigger the program to include all data</li></ul></li><li>Enter a normal force. The data will include anything within + / - 10 lbs of this. (can change code to change range)<ul><li>To select a normal force where data is available, read about the tests in the Contents_Round5 pdf</li><li>Note: temperature sweep was performed at 12 psi. So use that data file and pressure for temperature data.</li></ul></li></ul></li><li>The program will then create the Fy vs SA plot as well as a friction coeffecient (mu) vs temperature plot.</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139462239/139462282.m">find_best_FY_v2.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139462239/139462240.m">find_best_FY_v2.m</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

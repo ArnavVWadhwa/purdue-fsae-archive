@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : MoTeC Data Plotting Tool in Matlab (Shockpots)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Data-Analysis-Tools_130155818.html">Data Analysis Tools</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : MoTeC Data Plotting Tool in Matlab (Shockpots)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Sep 05, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="MoTeCDataPlottingToolinMatlab(Shockpots)-Overview">Overview</h1><p>MoTeC i2 Standard does not provide the capability to take derivatives of data. Accordingly, we cannot use it to create plots of damper speed. This is an essential step in damper analysis because we need to see where on our fancy, calibrated damper curves we actually operate. So this tool was born. It currently creates histograms of the shock speeds, time plots of the speed, and time plots of the displacement. This code would also be a fine starting point to plot anything else from our data where additional maths or formatting is required.</p><p><br/></p><p>This got a bit fancier. It now calculates load in coilover by including spring and damper effect via interpolating along damper curve. Use of the program is the same, except that some damper values are required. Even if these are incorrect, other calculations will still function.</p><p><br/></p><p>It got even fancier. Now it calculates the corner radius from velocity and lateral acceleration so that a similar track can be developed in the lap sim.</p><p><br/></p><p>Telemetry post processor is main program described here. Damper Curve is a function that makes the damper curve from a few inputs that are easiest to read from a dyno plot. Damper curve caller is an extra program to test the Damper Curve function independantly.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/143756054/telemetry_postProcessor_v4.m?version=1&amp;modificationDate=1599280761000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/143756054/telemetry_postProcessor_v4.m?version=1&amp;modificationDate=1599280761000&amp;api=v2" data-linked-resource-id="156600709" data-linked-resource-type="attachment" data-linked-resource-container-id="143756054" data-linked-resource-default-alias="telemetry_postProcessor_v4.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="telemetry_postProcessor_v4.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">telemetry_postProcessor_v4.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="143756054" data-linked-resource-id="156600709" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/143756054/DAMPER_CURVE.m?version=1&amp;modificationDate=1585805114000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/143756054/DAMPER_CURVE.m?version=1&amp;modificationDate=1585805114000&amp;api=v2" data-linked-resource-id="143756148" data-linked-resource-type="attachment" data-linked-resource-container-id="143756054" data-linked-resource-default-alias="DAMPER_CURVE.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="DAMPER_CURVE.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">DAMPER_CURVE.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="143756054" data-linked-resource-id="143756148" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/143756054/damper_curve_caller_v1.m?version=1&amp;modificationDate=1598503785000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/143756054/damper_curve_caller_v1.m?version=1&amp;modificationDate=1598503785000&amp;api=v2" data-linked-resource-id="156599327" data-linked-resource-type="attachment" data-linked-resource-container-id="143756054" data-linked-resource-default-alias="damper_curve_caller_v1.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="damper_curve_caller_v1.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">damper_curve_caller_v1.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="143756054" data-linked-resource-id="156599327" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p>Most recent use of programs lives here: Z:\2021\3_Suspension\01_Design\02_LapSim\01_Track_Dev</p><h1 id="MoTeCDataPlottingToolinMatlab(Shockpots)-Anoteonresolution:">A note on resolution:</h1><p>The resolution of the position measurement is about .004 in.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143756054/143756094.png" data-image-src="attachments/143756054/143756094.png" data-unresolved-comment-count="0" data-linked-resource-id="143756094" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-45-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></p><p>This means that, logging at 200 hz, the resolution for velocity is .004 / (1/200) = .8 in./s. Looking at the data, it appears to be about .78. So for a velocity calculated from displacement, it's worth noting the displacement resolution as well as the sample rate matters. This relatively poor resolution on velocity is fine for our uses, but it will be why there are missing sections in the speed histrogram that look weird if small bins are used.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143756054/143756093.png" data-image-src="attachments/143756054/143756093.png" data-unresolved-comment-count="0" data-linked-resource-id="143756093" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-43-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></p><p><br/></p><p><br/></p><h1 id="MoTeCDataPlottingToolinMatlab(Shockpots)-Instructions">Instructions</h1><h2 id="MoTeCDataPlottingToolinMatlab(Shockpots)-Exportingfromi2Standard">Exporting from i2 Standard</h2><ul><li>First you'll need to know your way around i2 Standard. The onboarding page has helpful resources for that: <a href="141728477.html">Onboarding (Suspension)</a></li><li>Adjust the zoom to show only the range of data that you want to export. Because i2's exporting speed and Matlab's importing speed are not the fastest, keep the range under 300 seconds. If you need to look at more all at once for some reason, you'd probably have to re-write this tool in python....</li><li>Go to file → export data. Set export to visible range and csv format:<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/143756054/143756083.png" data-image-src="attachments/143756054/143756083.png" data-unresolved-comment-count="0" data-linked-resource-id="143756083" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-7-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li></ul></li></ul><p><br/></p><h2 id="MoTeCDataPlottingToolinMatlab(Shockpots)-ImportingintoMatlab">Importing into Matlab</h2><ul><li>Open the CSV with matlab. This will bring you to the data importing window</li><li>Set the import variable to column vectors and make sure that the correct range is selected for the data and that the correct row is selected for the variable names:<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143756054/143756085.png" data-image-src="attachments/143756054/143756085.png" data-unresolved-comment-count="0" data-linked-resource-id="143756085" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-20-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li></ul></li><li>Once the data has been parsed, save the workspace in matlab so that looking at that same data in the future won't require waiting for the data to parse again.<ul><li>Do this by right clicking on variables pane and selecting save</li></ul></li></ul><p><br/></p><h2 id="MoTeCDataPlottingToolinMatlab(Shockpots)-UsingtheProgram">Using the Program</h2><ul><li>Open telemetry_postProcessor_vX.m</li><li>You can set the histogram bin widths and data ranges with the variables at the top of the program. That's about it:<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143756054/143756088.png" data-image-src="attachments/143756054/143756088.png" data-unresolved-comment-count="0" data-linked-resource-id="143756088" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-33-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li></ul></li><li>Run telemetry_postProcessor_vX.m</li><li>Here's what youll get (the front right shock pot was malfunctioning, causing the badness in some data):<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/143756054/143756089.png" data-image-src="attachments/143756054/143756089.png" data-unresolved-comment-count="0" data-linked-resource-id="143756089" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-34-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/143756054/143756090.png" data-image-src="attachments/143756054/143756090.png" data-unresolved-comment-count="0" data-linked-resource-id="143756090" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-34-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/143756054/143756091.png" data-image-src="attachments/143756054/143756091.png" data-unresolved-comment-count="0" data-linked-resource-id="143756091" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_17-35-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756054" data-linked-resource-container-version="10" alt=""></span></li></ul></li></ul><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756083.png">image2020-4-1_17-7-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756085.png">image2020-4-1_17-20-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756088.png">image2020-4-1_17-33-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756089.png">image2020-4-1_17-34-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756090.png">image2020-4-1_17-34-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756091.png">image2020-4-1_17-35-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756092.png">image2020-4-1_17-39-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756093.png">image2020-4-1_17-43-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756094.png">image2020-4-1_17-45-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756096.m">motec_grapher_v1.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756147.m">motec_shock_plotter_v1.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/143756148.m">DAMPER_CURVE.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/156599321.m">telemetry_postProcessor_v3.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/156599327.m">damper_curve_caller_v1.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756054/156600709.m">telemetry_postProcessor_v4.m</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

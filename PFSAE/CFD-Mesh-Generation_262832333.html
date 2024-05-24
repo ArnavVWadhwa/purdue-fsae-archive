@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : CFD Mesh Generation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : CFD Mesh Generation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Structured and Unstructured Mesh</strong></u></p><p>CFD meshes can be split into two categories, structured and unstructured.</p><p><em>Structured meshes </em>are meshes that have their roots in rectangular uniform grids. Uniforms grids are transformed into a geometry fitting meshes through a transformations. Transformations can be as simple as stretching and as complex as transfinite interpolation and more. You can even patch smaller meshes together to form a bigger one that fits the entire geometry. Structured meshes are advantageous in three ways:</p><ol><li>They are easy to solve, since you can simply solve the partial differential equations on the uniform grid (so called computational domain).</li><li>Since they are so easy to solve, solving them can also be faster. Complex algorithms like approximate factorization have been developed to speed up convergence greatly.</li><li>They are more accurate. Higher order methods can be implemented due to, again, the ease of solving. </li></ol><p>However, structured grids have two major drawbacks that stops them being used in engineering applications:</p><ol><li>They are hard to make. How do you plan to transform a grid from uniform to geometry fitting for a FSAE car? I have no idea. And even the best people at grid generation will need months if not year to work it out.</li><li>They are hard to automate. Even if you can figure out how to generate a grid for a FSAE car, automation of the process to any degree of usefulness would be close to impossible. That means, if you change the rear wing airfoil, you need to redo everything manually.</li></ol><p>It is for these reasons that structured meshes are almost exclusively used in research. If you are running a DNS simulation that take months to solve, the difficulties of grid generation becomes a less of a concern, speeding up solution time and make them accurate are higher priorities.</p><p><em>Unstructured meshes</em> are used in real world engineering. They are less accurate, harder to solve and develop algorithm for, but they are much easier to automate and much less labor intensive. Though the loss of accuracy is a concern for the engineering industries, it's much less of concern than it is for the research industry.</p><p>There is a lot of information that needs to be stored within a mesh cell. It need to know its position, size, cell face areas, and how it connects to nearby cells or connectivity. For structured mesh, connectivity is simple, it's a rectangle in the computational domain. For unstructured meshes, connectivity becomes hard and annoying to deal with. And the more faces a cell has, the more annoying and memory intensive it is to deal with. As you can imagine, the storing of all these data to ensure fastest access is a huge concern in making CFD fast. It is for this reason that unstructured meshes is a cool and difficult computer science and data structure problem.</p><p><strong><u>Cell </u></strong><strong><u>Geometries</u></strong></p><p>Unstructured grids come in many different forms of cell geometries. The most common ones are trimmed cell (aka hex core aka cartesian cut), tetrahedral, and polyhedral.</p><p>Trimmed cell meshes are the easiest to solve and the least memory intensive. Trimmed cell meshes can be confused for structured meshes because they look similar, with both having square cells, at least outside of the geometry-fitting first layer. This is the reason they are fastest to solve and the least memory intensive. The speed of the mesh and the memory friendly nature of the trimmed cells were the reasons we ran trimmed cell prior to 2023. Trimmed cell meshes are also the most accurate out of all unstructured cell geometries if and only if flow direction lines up with the direction of mesh, since in that case, diffusion error would be massively reduced. However, for FSAE applications where flow goes in all directions, diffusion errors are very high with trimmed cell meshes. This is a part of the reason behind the switch to polyhedral in 2023. </p><p>Trimmed cell mesh is special compared to other types of unstructured mesh in its growth rate. Trimmed cell mesh always has a growth rate of 2. Meaning when you go from a smaller to a larger cell, the side length of the large cell will always be twice the side length of the small cell. To combat this problem of high growth rate, which slows down convergence, intermediate layers are introduced to reduce the effective growth rate. Instead of jump directly from small to medium to large, it can have 3 layers of small, 3 layers of medium, and then large cells.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832333/262834645.png" data-image-src="attachments/262832333/262834645.png" data-unresolved-comment-count="0" data-linked-resource-id="262834645" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-7_9-38-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832333" data-linked-resource-container-version="2" alt=""></span></p><p>Tetrahedral cells are triangles. Tetrahedral mesh was one of the first unstructured meshes ever invented. They sit in an awkward place between trimmed cell and polyhedral cells in terms of memory usage. But they have the disadvantage of being impossible to align with flow direction. But they are also not as good as polyhedral cells in dealing with flow that goes in all directions since there are few faces to flux through. It is for this reason that tetrahedrals are not widely used in CFD anymore, with most people preferring either trimmed cell or polyhedral.</p><p>Polyhedral cells have a lot of faces. Like a lot of faces. This makes it ideal in dealing with flow that goes in all directions. At the same time, this makes it incredibly memory and computationally intensive. It's memory intensive due to the number of faces it has and complicated connectivity that comes with it. Polyhedral cells are formed with tetrahedral cells as their basis by doing some computer science magic that I don't understand.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832333/262834646.png" data-image-src="attachments/262832333/262834646.png" data-unresolved-comment-count="0" data-linked-resource-id="262834646" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-7_9-39-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832333" data-linked-resource-container-version="2" alt=""></span></p><p><strong><u>Prism Layers (aka Inflation Layers)</u></strong></p><p>Prism layers are actually structured mesh that is commonly used inside of an unstructured mesh. Prism layers are formed by &quot;growing&quot; outward from the surface mesh.</p><p>Prism layers are intended as a boundary layer capturing tool. While it's not necessary to have prism layers, it's much better to have them. They take advantage of low wall-tangent gradient (relatively) nature in the prism layer to have high aspect ratio to minimize cell count, while providing an easy way achieve desired wall y+ target. Since prism layers are structured, specifying number of layers, stretching ratio, and total thickness gives you full control of how you want to capture the boundary layer.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262832333/262834647.png" data-image-src="attachments/262832333/262834647.png" data-unresolved-comment-count="0" data-linked-resource-id="262834647" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-7_9-46-25.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832333" data-linked-resource-container-version="2" alt=""></span></p><p><strong><u>How to Make a Good Mesh</u></strong></p><p>Now you know a little bit about mesh generation, you might be wondering how you can generate a good mesh that converges quickly and provide accurate solutions. Mesh generation is one of the most complicated process in performing a CFD analysis, even if you run unstructured mesh, since there are so many things you need to take into account. Making the new mesh for the FSAE environment took me a month to do. So here are a few rules and guidelines.</p><ol><li>Know your physics. Understanding the physics is the most important part of any CFD analysis not only in choosing governing equation and solution algorithm, but also in terms of mesh generation. You need to know where to put your prism layers, where to refine, and how much you need to refine. For example, if you expecting a vortex to form at a location, you better refine the hell out of it and make as the vortex travels downstream, its entire path is refined. You might be thinking you can avoid knowing the physics just by refining everything. While it's technically true, but you might end up with 100 million cells when only1 million cells are necessary (which by the way, does not solve 100 times slower, but much slower than 100 times slower).</li><li>Refine high gradient regions. If you have a region of high gradient, you better refine it. High gradient means large changes in a small amount of space. If you don't, you will lose accuracy and stability. This is why prism layers exists. There is higher wall normal gradient, so refine the wall normal direction. There is low wall tangent gradient, coarsen wall tangent direction.</li><li>Watch for high aspect ratio cells. High aspect ratio cells are bad if you have flow that is not traveling in the direction of the mesh. While high aspect ratio is fine for prism layer, it's terrible for regions of wake.</li><li>Watch for low quality cells. STAR-CCM+ has many criterion for low quality cells. Watch for them. Make sure they are actually low quality by thinking about the physics.</li><li>Coarsen where you can. There is no reason to refine everything and slow down the simulation.</li><li>A good tool to use is local residual. Residual represents imbalance or violation of conservation laws. Looking at where residual is high and take appropriate actions.</li><li>Try things. It's important to go through iterations of meshing strategy to perfect it. There is nothing wrong with iterations.</li><li>Perform mesh independence study. To make sure your mesh is good enough, run coarse and finer meshes to make sure solution does not change. If it does, it tells you your solution is mesh dependent, which is obviously bad.</li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832333/262834645.png">image-2023-6-7_9-38-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832333/262834646.png">image-2023-6-7_9-39-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832333/262834647.png">image-2023-6-7_9-46-25.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

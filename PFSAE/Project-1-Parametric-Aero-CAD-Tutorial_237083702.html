@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Project 1 Parametric Aero CAD Tutorial</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics-Onboarding_233838112.html">Aerodynamics Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Rear-Wing-Onboarding_222430818.html">Rear Wing Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Project 1 Parametric Aero CAD Tutorial
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aguirre Carballo, Antonio de Jesus</span>, last modified by <span class='editor'> Fava, Nicola Bernardo</span> on Nov 02, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Step 0: why parametric?</strong></u></p><ul><li>What is parametric CAD<ul><li>You update one thing, everything else updates accordingly</li><li>How everything else updates depends on your setup</li><li>Additionally, you can control your CAD with expressions<ul><li>Ex. Front wing rule box width depends on front track width, you known your endplate is 0.3 in thick and varying gurney width. You can setup your front wing span to be front track width - (0.3 + gurney width). So every time you can the gurney width, front wing chord automatically updates</li></ul></li></ul></li><li>Why is parametric CAD important<ul><li>If you did your initial CAD well, all you will ever need in however many year you will spend in this time is that initial CAD</li><li>Since most of aero design is iterative improvements, minor changes within the capability of parametrization will only take a few minutes at most</li><li>Over time, you will expand your CAD's capabilities, and that will save you time further down the line</li><li>Parametric CAD are inherently organized well. It makes it a lot easier for other people to use your CAD </li></ul></li><li>Important things to note<ul><li><em><strong><u><span style="color: rgb(255,0,0);">IMPORTANT</span>:</u></strong></em> This does not only apply to parametric CAD, this applies to all CAD in general:<ul><li>No assembly constraints<ul><li>You should <strong>NOT </strong>ever use assembly constraint unless you are putting things you downloaded from the internet in CAD (e.g. bolts and nuts)</li><li>Forget about assembly constraints please, no one wants to see them</li><li>Assembly constraints are bad</li><li>Yes I just said the same thing 3 times because it's soooooo important</li><li>Just make your CAD in the right place. This is where NX is powerful. You can even reference other parts in your own part to make the geometry in the right place</li></ul></li><li>Use mirror geometry whenever you can<ul><li>So you only have to CAD one side</li><li>The convention is to CAD on the <strong>left </strong>hand side in this team</li><li>Note, do not use mirror feature, use mirror geometry whenever you can. Mirror geometry mirrors the geometry, mirror feature mirrors the operation</li></ul></li></ul></li><li>It's important to <u>ALWAYS</u> have keep your CAD parametric, if you slack off, everything will crash down on you</li><li>You will not be able to achieve everything with your setup initially. Much like aero design itself, you will need to iteratively improve your CAD</li></ul></li></ul><p><u><strong>Step 1: Making Airfoil</strong></u></p><ul><li>Option A: XFLR5<ul><li>Pros<ul><li>Nice, easy user interface</li><li>Easy to quantify your airfoil with thickness and camber data being displayed</li><li>Easy to build up a library of airfoils so it makes reusing airfoils easier</li><li>Easy to view your past airfoils, again makes reusing airfoils easier</li></ul></li><li>Cons<ul><li>The process to import it into NX takes time, so you will quickly lose interest in optimizing your airfoils</li><li>It's not NX, so it's not integrated into the rest of the CAD</li></ul></li></ul></li><li>Option B: NX<ul><li>Pros<ul><li>Quick to iterate through airfoils, you can go through a dozen of airfoil quickly until you find something you are happy with</li><li>Integrated into the rest of the CAD, which makes things easier to manage</li></ul></li><li>Cons<ul><li>Reusing airfoils is hard since it's hard to maintain a library of airfoils</li><li>User interface is just NX's generic user interface, there are not grid lines or anything like that</li><li>You have to manually ensure that your airfoil makes sense (depending on your CAD setup)<ul><li>For my CAD setup, I need 1 in chord airfoil at 0 deg angle of attack, so I have to manually make sure that requirement is maintained</li><li>In XFLR5 it's a simple matter of derotating airfoil and normalize airfoil</li></ul></li></ul></li></ul></li></ul><p><u><strong>Step 1.1: XFLR5 Airfoil Tutorial</strong></u></p><ol><li>Download XFLR5: <a class="external-link" href="https://sourceforge.net/projects/xflr5/files/" rel="nofollow">https://sourceforge.net/projects/xflr5/files/</a></li><li>Open up XFLR5 and press ctrl+1 on your keyboard. This takes you to the airfoil design page</li><li>For NACA foils, go to Foil → NACA Foils<ul><li>For four digit NACA foils, the naming convection is as follows<ul><li>First digit: max camber</li><li>Second digit: max camber location</li><li>Third and fourth digit: maximum thickness</li><li>Eg. 2412 means 20% camber at 40% chord with a maximum thickness of 12%</li></ul></li><li>NACA airfoils generated will be in airplane configuration, so you will need to do addition work to flip it in NX</li></ul></li><li>For custom airfoils<ol><li>Unhide the existing spline foil</li><li>You will then be able to drag the control points around<ul><li>I suggest making your airfoils in racecar configuration</li><li>Shift click on the spline to add control points</li><li>Ctrl click on the control points to delete them</li><li>4 to 5 control points for one surface is plenty enough<ul><li>5 points gives you more control, but also introduces more problems in the future if you decide XFLR5 is where you want to keep your airfoils</li></ul></li></ul></li><li>After you are done creating your airfoil, make sure you have spline foil selected, and click on Splines → Store splines as foil</li><li>Right click on the newly created airfoil and select derotate twice. This ensures that the airfoil is at 0 degree alpha</li><li>Right click the the airfoil again and select normalize. This ensures airfoil coordinates are between 0 and 1.</li><li>If it doesn't look right, repeat d) and e) until it does</li></ol></li><li>Right click on your airfoil and click export and save it at a place where you can find it</li><li>Start Excel and open the .dat file you just saved<ul><li>Note, on the box to the right of file name where it says All Excel Files, change it to All File</li></ul></li><li>At this point, text import wizard will show up<ol><li>Make sure delimited is selected and click next</li><li>Under delimiters, select space, and click next</li><li>Under custom data format, select Do not import column (skip) for the first column, and click finish. Alternatively you can just delete it later.</li></ol></li><li>Delete the first row where airfoil name is stored</li><li>Move column B to column C</li><li>Fill in the now empty column B with 0<ul><li>The columns represent x, y, and z coordinates in NX</li><li>Since in the vehicle coordinate system, y points to right hand side of the car, we want it to be zero</li><li>This ensures that the airfoil sits in the XZ plane in the vehicle coordinate system</li></ul></li><li>Save the file</li><li>Create a new NX file and make sure the unit is in inches</li><li>If you would like to streamline the rest of the wing-making process download and import the following NX role<ul><li>Download: <a href="attachments/237083702/241632345.mtx" data-linked-resource-id="241632345" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="FSAE Aero V3.mtx" data-linked-resource-content-type="application/octet-stream" data-linked-resource-container-id="237083702" data-linked-resource-container-version="15">FSAE Aero V3.mtx</a></li><li>Go to File → Preferences → User Interface</li><li>Under roles, click load role</li><li>Now Wings, Gurneys, and CFD CAD tabs should show up at the top</li><li>Click on Wings, the rest of the process should roughly go from left to right</li></ul></li><li>Select Import Points From File tool (you can always use the search bar if you can't find it)<ol><li>Change ASCII file to the left of the file name box to All files</li><li>Import the file you just saved</li></ol></li><li>Change the selection tool to lasso like so<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="91" src="attachments/237083702/241632364.png" data-image-src="attachments/237083702/241632364.png" data-unresolved-comment-count="0" data-linked-resource-id="241632364" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-11-2_15-59-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083702" data-linked-resource-container-version="15" alt=""></span></li><li>This allows to draw out arbitrary shapes with the left click and hold bulk selection (instead of a rectangle)</li></ul></li><li>Select fit curve tool and change the settings to (you need to click the down arrow just above &lt;OK&gt;, apply, and cancel to get everything to show up)<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083702/241632349.png" data-image-src="attachments/237083702/241632349.png" data-unresolved-comment-count="0" data-linked-resource-id="241632349" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-11-2_15-5-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083702" data-linked-resource-container-version="15" alt=""></span></li><li>You should have two curves for an airfoil, one for the upper and one for the lower surface. This way, you have a point on the leading edge and a point on the trailing edge that you can use as reference for your parametric CAD. Both curves should start at the leading edge, and end at the trailing edge. Let's start with the upper surface</li><li>Start selecting the points in order. Feel free to lasso a big chunk of the points</li><li>After all the points are selected on the upper surface, play around with degrees and segments to get the curve to fit nicely without any sort of irregularities</li><li>Constraint the leading edge to tangent up like so</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="203" src="attachments/237083702/241632350.png" data-image-src="attachments/237083702/241632350.png" data-unresolved-comment-count="0" data-linked-resource-id="241632350" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-11-2_15-18-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083702" data-linked-resource-container-version="15" alt=""></span></li><li>Do the same for the lower surface, except constraint it to tangent down</li><li>If you are using a NACA airfoil, you won't have a clearly defined trailing edge. You can simply connect the points with a line. The geometric feature should be small enough to not be picked up by CFD or if it does, it should not affect your results too much</li></ol></li><li>You can composite the two curves into one with the composite curve tool. But it's optional</li></ol><p><u><strong>Step 2:  First Wing in Parametric Airfoil CAD</strong></u></p><ol><li>To make it easier for future edits, you should have the following parameters defined<ul><li>Leading edge X location</li><li>(Optional) leading edge Y location<ul><li>Only necessary for twisted wings</li></ul></li><li>Leading edge Z location</li><li>Angle of attack</li><li>Chord</li><li>(Optional) span<ul><li>Span can be defined by rule box, but in same cases it's beneficial not to</li></ul></li></ul></li><li>To define these in NX, hit ctrl+e on your keyboard to bring up the expression tool. This tool should be self-explanatory. Just remember you need to define proper units as well</li><li>Select the scale curve tool and select all the curves you just created<ol><li>Scale the curve around the leading edge</li><li>And the scaling factor is your defined chord length. To use that number, simply type chord (or whatever you decided to call your variable) into the scale factor box</li></ol></li><li>We are not going to do two pattern geometries. We use pattern geometry due to its associativity. NX does not have an associative move tool, so pattern geometry will have to do. The first pattern geometry will be used to set angle of attack<ol><li>Select the scaled curve</li><li>Next to Layout, selected Circular</li><li>Click on Specify Vector under Rotation Axis and selected the Y axis of the existing coordinate system.</li><li>Flip the vector direction by clicking on the two-way arrow button to the right of Specify Vector. This orients your vector in the right direction for angle of attack to make sense</li><li>Under Angular Direction, select Count and Pitch</li><li>Set Count to 2</li><li>Set Pitch to angle of attack (or whatever you decided to call your variable)</li></ol></li><li>Before we move on to the second pattern geometry, we need to create a point that represents where the leading edge should go. Select Point tool<ol><li>Set X to leading edge X location variable</li><li>Set Y to leading edge Y location variable to leave it at zero for untwisted wings</li><li>Set Z to leading edge Z location variable</li></ol></li><li>Going back to pattern geometry. Now we want to use it to move the scaled and angle-of-attacked wing<ol><li>Set Layout to General</li><li>Set From point to the current leading edge</li><li>Set the To point to the point you just created</li></ol></li><li>Hide everything else, because now you have an airfoil in the correct location at the correct orientation</li><li>If you wish to make an untwisted airfoil, simply extrude it to span you defined, whether that's a number of based on the rulebox</li><li>If you wish to create a twisted wing, you need to put the airfoil (or another airfoil) at another location. You then need to connect the leading edges and trailing edge so that you can use swept tool on it. Not going into details here, bug Chenkai about it</li></ol><p><u><strong>Step 3: Flaps in Parametric Airfoil CAD</strong></u></p><ol><li>You need to define additional variables<ol><li>Flap chord</li><li>Flap angle of attack addition<ol><li>Which in combination with the angle of attack of the lower wing, will give you the angle of attack of the flap</li></ol></li><li>(Optional) span of the flap</li><li>Slot gap in the x direction</li><li>Slot gap in the z direction</li></ol></li><li>Go through the process in step 2 to define chord and angle of attack</li><li>To define the leading edge location of the flap, go to the Point tool<ol><li>Select the trailing edge point of the lower wing</li><li>Next to Offset Option, select rectangular</li><li>X is slot gap x variable</li><li>Z is slot gap z variable</li><li>Now you have a parametrically defined flap location, which updates when you change the settings (angle of attack, chord, location, etc.) of the lower wing</li></ol></li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083708.png">Picture1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083706.png">Picture1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083709.png">Picture2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083710.png">Picture3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083711.png">Picture4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083712.png">Picture5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083713.png">Picture6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083714.png">Picture7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083716.png">Picture8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083717.png">Picture9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083718.png">Picture10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083719.png">Picture11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083720.png">Picture12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083721.png">Picture13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083722.png">Picture14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083723.png">Picture15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083724.png">Picture16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083725.png">Picture17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083730.png">Picture18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083731.png">Picture19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083732.png">Picture20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083733.png">Picture21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083734.png">Picture22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083735.png">Picture23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/237083736.png">Picture24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632345.mtx">FSAE Aero V3.mtx</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632346.png">image2022-11-2_14-50-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632347.png">image2022-11-2_14-53-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632349.png">image2022-11-2_15-5-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632350.png">image2022-11-2_15-18-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083702/241632364.png">image2022-11-2_15-59-26.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

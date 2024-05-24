@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Chassis Torsional Rigidity Test</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728897.html">Design PF20 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2020-Chassis-Design-Documentation_132157411.html">2020 Chassis Design Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Chassis Torsional Rigidity Test
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Jan 18, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Purpose: for validating FEA results.</p><p><br/></p><p>Lessons learned from 2020 test:</p><ul><li>Be sure to include the weight of the bar when considering factor of safety. It turns out to be the equivalent of 31 lbf in the weight bucket, which is considerable when the planned load is ~50 lbf</li><li>Run the test at least twice. This helps to get rid of any big shifts in the rig.</li><li>Clamp the moment beam to the fixtures for connecting to hubs. In the model, these are treated as rigidly connected to the beam, so it is important to make that assumption hold true. The data got waay better (in terms of hysteresis and model correlation) once we did this. Even a jank c clamp setup seems to do fine.</li><li>Take pictures of all dial indicators at each loading. This is necessary to work out what's going on when a reading doesn't make sense and for any location where deflection surpasses one full rotation of the dial indicator.</li><li>Make sure the jig plates are tightened on the table... </li><li>Grease the pivot</li><li>Make sure none of the dial indicator stands are touching the chassis anywhere</li></ul><p><br/></p><p>In general, 2020 test and model was best since at least 2016, so refer to it over others. (2020 model included beam and pivot correctly and the test includes values for loading and unloading and provided fairly clean data)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139469098/139469131.jpg" data-image-src="attachments/139469098/139469131.jpg" data-unresolved-comment-count="0" data-linked-resource-id="139469131" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_9386.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="139469098" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139469098/139469132.jpg" data-image-src="attachments/139469098/139469132.jpg" data-unresolved-comment-count="0" data-linked-resource-id="139469132" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_4389.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="139469098" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139469098/139469133.jpg" data-image-src="attachments/139469098/139469133.jpg" data-unresolved-comment-count="0" data-linked-resource-id="139469133" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_5694.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="139469098" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139469098/139469134.jpg" data-image-src="attachments/139469098/139469134.jpg" data-unresolved-comment-count="0" data-linked-resource-id="139469134" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_8213.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="139469098" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p><br/></p><p>Spreadsheet used for collecting results and doing correlation:</p><p>Z:\2020\9_Technical\1_CAD\2_Chassis\6_Simulations\Spring 2020 Torsion Test\Torsion Test 2020 Data v6.xlsx</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139469098/139469131.jpg">IMG_9386.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139469098/139469132.jpg">IMG_4389.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139469098/139469133.jpg">IMG_5694.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139469098/139469134.jpg">IMG_8213.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Anti-Roll-Bar (ARB) Combined Stiffness Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Anti-Roll-Bar (ARB) Combined Stiffness Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Aug 28, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137593441/ARB_combined_stiffness_calculator_v3.xlsx?version=1&amp;modificationDate=1598662569000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/137593441/ARB_combined_stiffness_calculator_v3.xlsx?version=1&amp;modificationDate=1598662569000&amp;api=v2" data-linked-resource-id="156599620" data-linked-resource-type="attachment" data-linked-resource-container-id="137593441" data-linked-resource-default-alias="ARB_combined_stiffness_calculator_v3.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="ARB_combined_stiffness_calculator_v3.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/156599620/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137593441" data-linked-resource-id="156599620" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>This tool can be used to determine effective ARB rates in terms of additional spring rate equivalence from combined axial torsion in the arb, bending of the arb (if cantilevered), and bending of the arb arm if being used as adjustment.</p><h1 id="AntiRollBar(ARB)CombinedStiffnessCalculator-ARBRateCalculator">ARB Rate Calculator</h1><p>This combines the stiffnesses of the tube torsion, cantilevered bending, and arm bending to come up with total stiffness of the system. It calculates an equivalent wheel rate addition. This is means the role stiffness increases by the same amount that a wheel rate increase of the calculated value would. This makes it simple to think about ARB rate changes relative the spring rate changes.</p><p>It can be used to design ARB systems of two types:</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Armlengthadjustment">Arm length adjustment</h3><p>The length of the arb arm is adjusted by changing where the drop link attaches. This is typically the simpler and thus better design.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/156599621.png" data-image-src="attachments/137593441/156599621.png" data-unresolved-comment-count="0" data-linked-resource-id="156599621" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-8-28_21-10-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Armstiffnessadjustment(bladestyle)">Arm stiffness adjustment (blade style)</h3><p>A blade is rotated and locked in place to adjust the stiffness of the arm. This is harder to analyze than above, and should be avoided unless packaging is an issue for moving the drop link. In the image below, this is the case because of how close the arb had to be to the rocker.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/156599622.png" data-image-src="attachments/137593441/156599622.png" data-unresolved-comment-count="0" data-linked-resource-id="156599622" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-8-28_21-11-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></p><p><br/></p><p><br/></p><p>The stiffness of the ARB as a whole comes from three effects:</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Tubetorsion">Tube torsion</h3><p>This is the primary effect being used. The tube is designed to twist to provide the correct stiffness that couples the wheel motions on the left and right side of the car. The length of the arms twisting the tube serves as the adjustment method, unless a blade style system is used where the arm stiffness can be adjusted. Even in this case, tube torsion still plays a role that needs to be accounted for.</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Tubebendingduetocantilever">Tube bending due to cantilever</h3><p>If the mounting points for the arb tube are far from the arms, the tube bends enough to significantly reduce the system stiffness. In this case, the effect must be accounted for by beam bending calculations. Note: this calculator assumes that the bushing used to mount the arb tube fixes it (prevents rotation at that point). With a soft, small bushing, this may not be a good assumption. Should validate system stiffness in any case.</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Armbending">Arm bending</h3><p>If a blade style arb is used as an adjustment, the arm bending is a significant modifier of system stiffness. If the length of the arm is being used, it is likely that the arm stiffness is high enough to have a negligible effect, so the arm stiffness may be set to an arbitrarily high number (say 1e10).</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-(MotionRatio)">(Motion Ratio)</h3><p>The position the drop link attaches to the rocker drives the motion ratio and can also be used as an adjustment if the stiffness range from the above tuning methods is not sufficient. This does not change the stiffness of the arb, but it changes how much the arb is moved by a given amount of wheel movement.</p><p><br/></p><h1 id="AntiRollBar(ARB)CombinedStiffnessCalculator-BladeInitialSizingSheet">Blade Initial Sizing Sheet</h1><p>The initial sizing sheet just does beam calculations for a square cross-section beam to provide a stiffness and stress results. This will give an initial estimate before going to FEA. It had less than 25% error for stiffness when used for making the design shown here. The stress results are dicier because the off axis loading is hard on the thing. So expect stresses up to 80% higher than predicted.</p><p>This is only needed if using blade style ARB.</p><p><br/></p><h1 id="AntiRollBar(ARB)CombinedStiffnessCalculator-BladeFEAPostProcessSheet">Blade FEA Post Process Sheet</h1><p>If using a blade arb, there is not going to be any way around doing some FEA. For this reason, it is best to avoid if possible. However, this tool provides the inputs and post processing to create a curve of blade stiffness vs. angle and then to interpolate on that curve to select the angular positions that will provide desired increments in stiffness.</p><p>This is only needed if using blade style ARB.</p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Theory:">Theory:</h3><p>This tool takes an angle of rotation, converts it to cartesian components of a unit load (1 lbf) and provides those to the user. Those can then be put into FEA as forces in a parametric study for a sweep of angle from 0 to 90 degrees. The tool then receives the displacements and takes the dot product with the unit vector of the direction of force. You then have a unit load (1 lbf) and a resulting displacement in the direction that the drop link is pulling, so a stiffness can be calculated. </p><p><br/></p><h3 id="AntiRollBar(ARB)CombinedStiffnessCalculator-Instructions:">Instructions:</h3><ol><li>Bring ARB design into ANSYS static structural:<ol><li>Fix where it held into bar</li><li>Apply a remote force to the bolt hole where the drop link attaches. The force should be applied at in the middle of the rod end spherical bearing.</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593448.png" data-image-src="attachments/137593441/137593448.png" data-unresolved-comment-count="0" data-linked-resource-id="137593448" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_20-53-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li><li>Make the remote force a components based force with the y and z components parametric<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593451.png" data-image-src="attachments/137593441/137593451.png" data-unresolved-comment-count="0" data-linked-resource-id="137593451" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_20-57-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Create two directional deformation results<ol><li>Select the curve around the bolt hole for each<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593452.png" data-image-src="attachments/137593441/137593452.png" data-unresolved-comment-count="0" data-linked-resource-id="137593452" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_21-0-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Set one to y and the other to z deformation</li><li>Make the maximum deformation parametric<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593453.png" data-image-src="attachments/137593441/137593453.png" data-unresolved-comment-count="0" data-linked-resource-id="137593453" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_21-1-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li></ol></li><li>Create an equivalent stress result<ol><li>Make the maximum value parametric</li><li>Most likely this will be on the blade, providing the result you want. But you may need to select particular geometry if not<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593456.png" data-image-src="attachments/137593441/137593456.png" data-unresolved-comment-count="0" data-linked-resource-id="137593456" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_21-6-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li></ol></li><li>Make sure to have at least 4 element through the thickness of the blade to avoid inaccurate stiffness results. Set the element order to be quadratic<ol><li>The below mesh ran in 1/2 min with 16 gb of ram</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593449.png" data-image-src="attachments/137593441/137593449.png" data-unresolved-comment-count="0" data-linked-resource-id="137593449" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_20-54-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li></ol></li><li>Set up the parametric study<ol><li>Copy the input force vector from excel in the BLADE FEA POST PROCESS tab<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593454.png" data-image-src="attachments/137593441/137593454.png" data-unresolved-comment-count="0" data-linked-resource-id="137593454" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_21-3-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Paste this into the y and z force component parametric study rows<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593455.png" data-image-src="attachments/137593441/137593455.png" data-unresolved-comment-count="0" data-linked-resource-id="137593455" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_21-5-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Run the study</li><li>Copy the directional deformation and stress results from the parametric results<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593458.png" data-image-src="attachments/137593441/137593458.png" data-unresolved-comment-count="0" data-linked-resource-id="137593458" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_22-41-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Paste them into the corresponding cells<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593459.png" data-image-src="attachments/137593441/137593459.png" data-unresolved-comment-count="0" data-linked-resource-id="137593459" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_22-41-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li></ol></li><li>Now desired stiffnesses and required displacements can be entered, and the sheet will interpolate from the FEA results to provide required rotation angles and resultant stresses<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593441/137593460.png" data-image-src="attachments/137593441/137593460.png" data-unresolved-comment-count="0" data-linked-resource-id="137593460" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-5_22-43-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593441" data-linked-resource-container-version="9" alt=""></span></li><li>Note: these inputs are calculated in the following sheet</li></ol></li></ol></li></ol><p>FEA used can be found here: Z:\2020\3_Suspension\01_Desigh\03_Structures\ARB</p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593448.png">image2020-1-5_20-53-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593449.png">image2020-1-5_20-54-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593450.png">image2020-1-5_20-57-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593451.png">image2020-1-5_20-57-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593452.png">image2020-1-5_21-0-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593453.png">image2020-1-5_21-1-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593454.png">image2020-1-5_21-3-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593455.png">image2020-1-5_21-5-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593456.png">image2020-1-5_21-6-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593458.png">image2020-1-5_22-41-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593459.png">image2020-1-5_22-41-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593460.png">image2020-1-5_22-43-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593464.xlsx">blade_arb_FEA_to_stiffness_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593465.xlsx">blade_arb_FEA_to_stiffness_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/137593462.xlsx">blade_arb_FEA_to_stiffness_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/156599620.xlsx">ARB_combined_stiffness_calculator_v3.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/156599621.png">image2020-8-28_21-10-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593441/156599622.png">image2020-8-28_21-11-57.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

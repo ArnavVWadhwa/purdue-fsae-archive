@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 8. Solenoid Valve Crash Course</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820490.html">Pneumatics Shifter &amp; Clutch PF23 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 8. Solenoid Valve Crash Course
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on May 03, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The purpose of this page is to give you a basic idea of the different types of solenoids, as well as how to read and create a pneumatic circuit diagram.</p><p>Each pneumatic solenoid valve will include a diagram that shows how it's intended to function, in the datasheet. There are multiple types of solenoid valves - direct, indirect and semidirect. These types have different functionalities and price points. Direct-acting valves are the most versatile, because they operate irrespective of the pressure difference between the ports. This is the type of solenoid used to control the clutch exhaust gas. An in-depth explanation and visualization of the different types of valves is provided in the video below.</p><p style="text-align: center;"><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/gWyGaqp_k1g?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p>Direct-acting valves can also typically be used in various flow orientations, as shown below. To read the diagram, think of each box as a state.</p><p>For the valve below, the two states include the following:</p><ul><li>Port 2 connected to port 3</li><li>Port 1 connected to port 2</li></ul><p>Because there are three ports and two states, this valve is referred to as a 3/2 valve.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259296321/259296323.png" data-image-src="attachments/259296321/259296323.png" data-unresolved-comment-count="0" data-linked-resource-id="259296323" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-3_11-44-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259296321" data-linked-resource-container-version="6" alt=""></span></p><p>The shifter solenoid - and SMC 4V130E-06 - is a 5/3 valve, with 5 ports and 3 states. Its datasheet, shown below, details those three states.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259296321/259296336.png" data-image-src="attachments/259296321/259296336.png" data-unresolved-comment-count="0" data-linked-resource-id="259296336" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-3_11-57-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259296321" data-linked-resource-container-version="6" alt=""></span></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="148" src="attachments/259296321/259296355.png" data-image-src="attachments/259296321/259296355.png" data-unresolved-comment-count="0" data-linked-resource-id="259296355" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-3_12-5-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259296321" data-linked-resource-container-version="6" alt=""></span></p><p>For the 4V130E-06, the three states include the following:</p><ul><li>Shift up - supply pressure from port P is connected to A. The other chamber is connected to B and exhausts through S.</li><li>Exhaust / default state - A exhausts through R, B exhausts through S.</li><li>Shift down - supply pressure from P is connected to B. The other chamber is connected to A and exhausts through R.</li></ul><p>The default state for a solenoid is noted by the box with the labeled ports. For the 4V130E-06, the default state is the middle box / exhaust state. Pneumatic systems can also be visualized using this diagram scheme similarly to an electrical system. SMC created a program that's free to download here ( <a class="external-link" href="https://www.smcworld.com/select/pcds/en-jp/index.html" rel="nofollow">https://www.smcworld.com/select/pcds/en-jp/index.html</a> ) that lets you put together pneumatic circuit diagrams. The circuit diagram below details the full PF23 pneumatics system. Triangles pointing into a line indicate an air supply, while triangles pointing downward indicate an exhaust. The two boxes that look like a general electrical load symbol indicate the flow controllers. The left half of the diagram is the shifter system while the right half is the clutch system.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/259296321/259296379.png" data-image-src="attachments/259296321/259296379.png" data-unresolved-comment-count="0" data-linked-resource-id="259296379" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-3_12-21-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259296321" data-linked-resource-container-version="6" alt=""></span></p><p style="text-align: center;">Electrical Load</p><p style="text-align: center;"><a class="CID97638742-3396-4e80-949c-9fc8bbd423ec" rel="nofollow"> </a><a class="CID7a71caff-efa2-4ebe-a52f-ca7f31d9272d" rel="nofollow"> </a><a class="CID97638742-3396-4e80-949c-9fc8bbd423ec" rel="nofollow"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/259296321/259296348.png" data-image-src="attachments/259296321/259296348.png" data-unresolved-comment-count="0" data-linked-resource-id="259296348" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-3_12-2-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259296321" data-linked-resource-container-version="6" alt=""></span></a></p><p style="text-align: center;">PF23 Pneumatics Circuit Diagram</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259296321/259296323.png">image-2023-5-3_11-44-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259296321/259296336.png">image-2023-5-3_11-57-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259296321/259296348.png">image-2023-5-3_12-2-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259296321/259296355.png">image-2023-5-3_12-5-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259296321/259296379.png">image-2023-5-3_12-21-58.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

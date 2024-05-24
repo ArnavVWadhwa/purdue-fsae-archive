@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Vehicle Parameter Sensitivity Study</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="179281177.html">Design PF22 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Vehicle Parameter Sensitivity Study
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Sep 14, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Steering, cornering, roll, and freestream:</p><ul><li>These 4 parameters are coupled</li><li>5 sims defined by cornering speed (freestream velocity): 25, 35, 45, 55, 65 mph</li><li>Turning angle and cornering radii are Ben lap time sim data (<a href="attachments/190907891/190908970.xlsx" data-linked-resource-id="190908970" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Vehicle Parameter Sensitivity Study - Cornering.xlsx" data-nice-type="Excel Spreadsheet" data-linked-resource-content-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-linked-resource-container-id="190907891" data-linked-resource-container-version="6">Vehicle Parameter Sensitivity Study - Cornering.xlsx</a>)</li><li>Doesn't make sense to run yaw for cornering<ul><li>Yaw changes depends on where you are in the corner, so it becomes a whole can of worms</li><li>If we run it, there are a lot of sims to run</li></ul></li></ul><p>Ride height (at 15 yaw):</p><ul><li>Increased RH<ul><li>Mostly to cover our asses in terms of how much can we get away with bad suspension setups</li><li>Doesn't really make sense to run these aerodynamic wise because stall characteristics doesn't get worse with increase in RH</li><li>So run +0.25, +0.5, and +0.75</li></ul></li><li>Decreased RH<ul><li>Tire squash itself gets us to -0.35 in</li><li>For now assume suspension squash and tire squash gets us to -0.5</li><li>But we have a tiny number of cells under the undertray, the ability for CFD to pick up flow separation is very poor</li><li>To cover our asses we run -0.2, -0.4, -0.6, -0.8, -1.0</li></ul></li></ul><p>Pitch (at 15 yaw)</p><ul><li>Doesn't make sense to run nose up because hardcore traction zone doesn't happen at high enough speed for aero to matter anyways</li><li>Nose down makes sense for lockup and brake balance<ul><li>Run -0.8, -0.6, -0.4, -0.2 in for ass covering</li></ul></li></ul><p>Yaw</p><ul><li>Just run 5, 10, 15</li><li>If bored run negative yaw because the car is asymmetric </li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190907891/190908970.xlsx">Vehicle Parameter Sensitivity Study - Cornering.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

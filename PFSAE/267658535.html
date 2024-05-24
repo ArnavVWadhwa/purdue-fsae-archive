@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Steering DCR Feedback PF24 | Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832176.html">Design PF24 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836895.html">Steering PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="All-Design-Review-Feedback_270346862.html">All Design Review Feedback</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Steering DCR Feedback PF24 | Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span>, last modified by <span class='editor'> Dien Quang Nguyen</span> on Aug 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Zach's Feedback:</strong></p><ul><li>these forces on the scope page should come from suspension not design judges</li><li>not seeing it on other cars i wouldn't say is good justification for ruling it out, there are probably reasons that they aren't on other cars and we should know those</li><li>the table is nice to compare everything side by side</li><li>great to have a communication goal love to see that</li><li>are the quick connects we are planning on using this year and for PF23 cross compatable? <ul><li><a class="confluence-userlink user-mention" data-username="zmacnab" href="https://wiki.itap.purdue.edu/display/~zmacnab" data-linked-resource-id="185500260" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">MacNab, Zachary Robert</a> , after doing some research and testing, we should be able to use the same quick connect but with a 14pin connector installed instead of the 8 pin we currently use. The maker of the quick connect does the same thing too but for ~$70 more than the 8 pin one.</li></ul></li><li>steering stiffness is an important metric that we can look at! a sloppy steering system is no bueno<ul><li>This issue may have been one of the root causes for slop in last years steering system. I will need to look into the analysis done on last year's supports to see what the yielding was and to determine if it was a significant contributor. </li></ul></li></ul><p><strong>Helen's Feedback:</strong></p><ul><li>do we have to make any tradeoffs in order to make it removeable? like if it results in increased weight is it worth it</li><li>what's the approach to lowering steering play? and keeping it from getting worse throughout the year?</li><li>how are you going to identify what caused past issues? you could quantify error but how will you diagnose what the cause is<ul><li><a class="confluence-userlink user-mention" data-username="hrumsey" href="https://wiki.itap.purdue.edu/display/~hrumsey" data-linked-resource-id="143757320" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Rumsey, Helen Nicole</a> There are two parts to identifying the issues. We will have to inspect the actual hardware to see if the issue stems from there. By looking at the CAD and FEA, we can determine how much the supports were yielding and if the U joints were pushed past their limits. </li></ul></li><li>maybe look into different u-joints. the ones we use aren't really meant for a car steering system so a more durable option could be out there</li><li>yoooooo that clear panel - maybe still have a back up cause idk if that follows the intent of the rules (Illinois cheats)<ul><li>This is something we will have to clear with design judges during the design process to make sure it is legal</li></ul></li><li>roll hoop height is mostly a frame thing so should be set earlier rather than later</li><li>you could always do your own study to predict driver max forces (clayton and i did this for a little bit and broke out hand held luggage)<ul><li>I have this noted as something we should do. We should quantify what the ideal endurance steering force is and how much our drivers can actually put into the system. </li></ul></li><li>look into specific u-joints</li><li>look into custom rack</li></ul><p><strong>Hunter's Feedback:</strong></p><ul><li>The drivers in general liked the grip style from last year, especially after being wrapped. I believe the survey confirms this.</li><li>We really should have spare steering wheel this year ik initial plan last year was to do that</li><li>Can the dash possibly mount to steering column supports?????????????????<ul><li><a class="confluence-userlink user-mention" data-username="hparadis" href="https://wiki.itap.purdue.edu/display/~hparadis" data-linked-resource-id="230661284" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Paradise, Hunter</a> , the dash could theoretically mount of the supports but difficulties may arise due to number of tubes and their relative placements.</li></ul></li><li>Keep in mind that a larger quick release will somewhat decrease usable space on the wheel for buttons and such</li><li>If going for a target of 1 degree of play is there a better/different way to measure it than an angleometer. It will probably be a little beyond the target and not matter but if we get that angle super small idk.</li><li>Rotary potentiometer for steering angle instead of linear one? Much less likely to be damaged in that area.</li></ul><p><strong>Keith's Feedback:</strong></p><ul style="list-style-type: square;"><li>How where to forces determined? How was 1 degree of play requirement determined and is that achievable<ul style="list-style-type: square;"><li><a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a> , the forces we referenced in our presentation were from the Design Judges Web Page. They provide a benchmark for what a driver can put into the system and not what the suspension will. These forces include the max torque on the steering column by the driver and the radial load for what they might apply during operation or when they are getting out.</li><li>I have been looking into the play of the system and it seems that 1 degrees may be impossible to hit with our current hardware due to the play in the U joints. The 1 degree of play has always been the target, but I do not know of any studies by our team to see if we have ever met our target, which is one reason I want to test all past available cars to see what we hit on those.</li></ul></li><li>What is Radial load x and y come from?</li><li>I think the reason that we know it works or did it in the past isnt good justification. There should be some decision matrix or tradeoff study done with quantitative information to make these decisions</li><li>We need someone to dive into steering not just from the mechanical design aspects but understanding the connection between driver and ground through tires (thinking ahead to design presentation</li><li>Great ideas for steering design and layout. Good to hear there are rough calcs to determine placement of buttons</li><li>How will steering reduce weight? Is there a percent target?<ul style="list-style-type: square;"><li>In our system, the only parts that can potentially lose weight are the support structures, bearing carriers and steering rack. We need to determine if the support structures were sufficient for last year's car to adequately reduce movement in the system before we can make any judgement there.  </li></ul></li><li>Custom Steering Rack!</li></ul><p><strong>Dien's Feedback:</strong></p><ul style="list-style-type: square;"><li>Just because others don't do it or haven't done it before doesn't mean it's not viable</li><li>Definitely should continue doing 3d printed grips. That was a big positive aspect from PF23</li><li>Might want to conduct study of driver capability<ul style="list-style-type: square;"><li>Make a rig/attachment to the brake dyno for the wheel to vary steering torque and have drivers turn (cycles) until fatigue (might wanna define this as well). </li><li>Use endurance/autocross track to model turns/endurance and test data to determine turns until fatigue for each driver </li></ul></li><li>I like that you have a lot of analyses planned out (especially hand calculations). A big thing to focus on alongside that would be documenting them on confluence.</li></ul><h3 id="SteeringDCRFeedbackPF24|Design-Actionitem">Action item</h3><ul class="inline-task-list" data-inline-tasks-content-id="267658535"><li class="checked" data-inline-task-id="3">Identify and compare specific options for: <strong>single u-joint</strong>, <strong>double u-joint</strong>, <strong>commercial gearbox</strong> (cost, sourcing considerations, max angle, weight, size, etc.) by <time datetime="2023-08-09" class="date-past">09 Aug 2023</time> <a class="confluence-userlink user-mention" data-username="chkniesl" href="https://wiki.itap.purdue.edu/display/~chkniesl" data-linked-resource-id="146771365" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Cole Henry Kniesly</a></li><li class="checked" data-inline-task-id="4">Present a research for custom steering rack <time datetime="2023-08-09" class="date-past">09 Aug 2023</time> <a class="confluence-userlink user-mention" data-username="singha31" href="https://wiki.itap.purdue.edu/display/~singha31" data-linked-resource-id="187081217" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Singhal, Ria</a> <a class="confluence-userlink user-mention" data-username="jiang789" href="https://wiki.itap.purdue.edu/display/~jiang789" data-linked-resource-id="187076403" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Jiang, Zhao</a> </li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V1</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V1
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on Mar 23, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p class="auto-cursor-target"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/255689403/255689404.png" data-image-src="attachments/255689403/255689404.png" data-unresolved-comment-count="0" data-linked-resource-id="255689404" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-23_22-8-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689403" data-linked-resource-container-version="1" alt=""></span></p><p class="auto-cursor-target"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/255689403/255689405.png" data-image-src="attachments/255689403/255689405.png" data-unresolved-comment-count="0" data-linked-resource-id="255689405" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-23_22-11-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689403" data-linked-resource-container-version="1" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/255689403/255689406.png" data-image-src="attachments/255689403/255689406.png" data-unresolved-comment-count="0" data-linked-resource-id="255689406" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-23_22-11-59.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689403" data-linked-resource-container-version="1" alt=""></span></p><p class="auto-cursor-target"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/255689403/255689407.png" data-image-src="attachments/255689403/255689407.png" data-unresolved-comment-count="0" data-linked-resource-id="255689407" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-23_22-14-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689403" data-linked-resource-container-version="1" alt=""></span></p><p class="auto-cursor-target"><u><strong>Major changes:</strong></u></p><ul><li class="auto-cursor-target">Polyhedral cells</li><li class="auto-cursor-target">Changed the shape of car refinement block<ul><li class="auto-cursor-target">More car shaped to save cell count</li><li class="auto-cursor-target">Cutout for back of the car to save cell count</li></ul></li><li class="auto-cursor-target">Unrefined the nosecone<ul><li class="auto-cursor-target">Removed curvature refinement</li></ul></li><li class="auto-cursor-target">Refined the nosecone<ul><li class="auto-cursor-target">Added more prism layer to get better volume change between prism layer and outer mesh</li><li class="auto-cursor-target">Probably not good for y+</li></ul></li><li class="auto-cursor-target">Refined the ground<ul><li class="auto-cursor-target">Now at 5 layers of prism layer</li><li class="auto-cursor-target">Added surface proximity refinement<ul><li class="auto-cursor-target">Properly refine regions between ground and the car</li></ul></li><li class="auto-cursor-target">Reduced minimum cell size to get better resolution under the car</li><li class="auto-cursor-target">Reduced surface growth rate to slow size growth behind the diffuser and in front of the front wing</li></ul></li><li class="auto-cursor-target">New car wake block</li></ul><p><u><strong>Results</strong></u></p><ul><li>RF tire diverge after 200 iterations</li></ul><p><u><strong>Issues</strong></u></p><ul><li>Ground prism layer to outer mesh volume change too big</li><li>Still want more refinement in side tunnels</li><li>Parts near the engine or with high curvature, prism to outer mesh volume change too big</li><li>Wake block possibly too small</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689403/255689404.png">image-2023-3-23_22-8-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689403/255689405.png">image-2023-3-23_22-11-38.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689403/255689406.png">image-2023-3-23_22-11-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689403/255689407.png">image-2023-3-23_22-14-16.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

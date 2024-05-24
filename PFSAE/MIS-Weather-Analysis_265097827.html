@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : MIS Weather Analysis</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750828.html">Architecture PF24 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : MIS Weather Analysis
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Method</strong></u></p><p>A python script using meteostat API was created to investigate historical weather at MIS in May and come up with estimations of the kind of weather we should see at comp. The python script is included in the AeroSensitivitySim GitHub repo, since that's the motivation behind this study.</p><p>Wind speed and direction from May of past 11 years (2013-2023) were obtained with the API. Although wind speed data is complete, there is a significant portion of wind direction data missing (220/341 data points are available). The complete data of wind direction was only available from 2020 onwards. I am not too concerned about the missing data though since it's the overall trend we are looking at.</p><p><u><strong>Results</strong></u></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/265097827/265097830.png" data-image-src="attachments/265097827/265097830.png" data-unresolved-comment-count="0" data-linked-resource-id="265097830" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure_2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265097827" data-linked-resource-container-version="4" alt=""></span><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/265097827/265097829.png" data-image-src="attachments/265097827/265097829.png" data-unresolved-comment-count="0" data-linked-resource-id="265097829" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure_1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265097827" data-linked-resource-container-version="4" alt=""></span></p><p>From the wind direction histogram, we can see that there is no real representative wind direction we can be designing for. It looks like there are dips in the 150-330 deg axis, but the dips are too small to be meaningful from an aero design stand point.</p><p>Wind speed data is a lot more interesting. The data has a mean of 7.14 mph and median of 7 mph. From the wind speed histogram, we can see that the most probable wind speed is between 5.5 and 7.5 mph. We can also calculate the likelihood of wind speed, the table is shown below. I would like to do a formal confidence interval calculation with this, but the data is only 83% normal (tested with Shapiro-Wilk test).</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Lower Bound (mph)</th><th scope="col" class="confluenceTh">Upper Bound (mph)</th><th scope="col" class="confluenceTh">Probability</th></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">7</td><td class="confluenceTd">28.7%</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">8</td><td class="confluenceTd">49.56%</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">9</td><td class="confluenceTd">69.50%</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">10</td><td class="confluenceTd">84.46%</td></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">11</td><td class="confluenceTd">91.79%</td></tr><tr><td class="confluenceTd">0</td><td class="confluenceTd">12</td><td class="confluenceTd"><p>95.89%</p></td></tr></tbody></table></div><p class="auto-cursor-target">I am also putting the raw PDF and CDF on here for easy access:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Bin (mph)</th><th scope="col" class="confluenceTh">PDF</th><th scope="col" class="confluenceTh">CDF</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">0.00293255</td><td class="confluenceTd">0.00293255</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">0.03225806</td><td class="confluenceTd">0.03519062</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">0.06158358</td><td class="confluenceTd">0.09677419</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">0.09970674</td><td class="confluenceTd">0.19648094</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">0.10557185</td><td class="confluenceTd">0.30205279</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">0.14956012</td><td class="confluenceTd">0.45161290</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">0.13782991</td><td class="confluenceTd">0.58944282</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">0.10263930</td><td class="confluenceTd">0.69208211</td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">0.09970674</td><td class="confluenceTd">0.79178886</td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">0.08797654</td><td class="confluenceTd">0.8797654</td></tr><tr><td class="confluenceTd">11</td><td class="confluenceTd">0.0415572</td><td class="confluenceTd">0.9208211</td></tr><tr><td class="confluenceTd">12</td><td class="confluenceTd">0.03812317</td><td class="confluenceTd">0.95894428</td></tr><tr><td class="confluenceTd">13</td><td class="confluenceTd">0.00879765</td><td class="confluenceTd">0.96774194</td></tr><tr><td class="confluenceTd">14</td><td class="confluenceTd">0.01759531</td><td class="confluenceTd">0.98533724</td></tr><tr><td class="confluenceTd">15</td><td class="confluenceTd">0.0058651</td><td class="confluenceTd">0.99120235</td></tr><tr><td class="confluenceTd">16</td><td class="confluenceTd">0.0058651</td><td class="confluenceTd">0.99706745</td></tr><tr><td class="confluenceTd">17</td><td class="confluenceTd">0</td><td class="confluenceTd">0.99706745</td></tr><tr><td class="confluenceTd">18</td><td class="confluenceTd">0.00293255</td><td class="confluenceTd">1</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265097827/265097829.png">Figure_1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265097827/265097830.png">Figure_2.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

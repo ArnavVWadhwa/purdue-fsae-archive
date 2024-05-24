@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FEA and Hand Calcs for Housing | Steering Rack PF24</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832176.html">Design PF24 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836895.html">Steering PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="276628701.html">Steering Rack PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FEA and Hand Calcs for Housing | Steering Rack PF24
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jiang, Zhao</span>, last modified by <span class='editor'> Singhal, Ria</span> on Oct 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Steering Wheel</strong></u></p><ol><li>Verifying wheel diameter (HC)</li><li>Axial loading (FEA)</li><li>Torque (FEA)</li></ol><p><u><strong>Steering Column  - Being Done on another Page</strong></u></p><ol><li>Steering column mounts under all loads (X,Y,Z) (FEA, HC)</li><li>Bearing loads (HC)</li><li>Steering column torsion (HC)</li><li>Steering column welds (HC)</li><li>Steering rack to column failure (HC/FEA)</li><li>Column buckling (HC)</li><li>Column shear (HC)</li></ol><p><u><strong>Rack and Pinion</strong></u></p><ol><li>Contact force (massive loads calculator incoming)<ol><li>Lewis bending equation</li><li>surface durability</li><li>AGMA stress and strain standards</li><li>elastic coefficient</li><li>surface condition</li><li>safety factors</li><li>load-distribution factors</li><li>hardness-ratio factors</li><li>temperature factors</li><li>stress life cycle</li></ol></li><li>Optimization of tooth profiles</li></ol><p><u><strong>Rack Housing and Supporting Structures</strong></u></p><ol><li>Axial load from column (HC/ FEA)</li><li>Clevis forces (HC/ FEA)<ol><li>Axial Compression (towards rack)<ol><li>Yield, MS</li><li>Ultimate, MS</li></ol></li><li>Axial Tension (away from rack)</li><li>Vertical (at tie rod holes)</li></ol></li><li>Rack mounts/towers forces (HC/ FEA)<ol><li>Optimization</li><li>bolts</li></ol></li><li>Rack tabs (HC/ FEA)<ol><li>bending</li><li>bolts</li></ol></li><li>friction force from interference fit (HC)</li><li>Hard stop loads (HC)</li><li>Bearing loads (HC)</li><li>Torsion on spline (FEA)</li></ol><p>2.</p><p>IFEA performed with 2 magnitude of load cases, 661.6lbf and 778.4lbf for a F.S. of 1.1F (for yield) and 1.4Flbf for (UTS)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273157909.png" data-image-src="attachments/270347813/273157909.png" data-unresolved-comment-count="0" data-linked-resource-id="273157909" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-5_6-29-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273157910.png" data-image-src="attachments/270347813/273157910.png" data-unresolved-comment-count="0" data-linked-resource-id="273157910" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-5_6-31-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></p><p>3. Rack mounts/towers forces (HC/FEA)</p><p>a. <strong>Optimization</strong></p><p><br/></p><p>b. <strong>Mount bolts</strong></p><p><strong><span style="color: rgb(255,0,0);">Hardware used:</span></strong></p><p><strong><span style="color: rgb(255,0,0);">bolt: 6604-28</span></strong></p><p><strong><span style="color: rgb(255,0,0);">Washer: NAS1149 0.032&quot;</span></strong></p><p><strong><span style="color: rgb(255,0,0);">Nut: MS21042</span></strong></p><p>bolt parameters calculated based on 0.1875&quot; diameter hole and joint length of 1.3558&quot;</p><p><br/></p><p>MMPDS for 6061 T-6 aluminum and 4130 Steel MMPDS:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273158079.png" data-image-src="attachments/270347813/273158079.png" data-unresolved-comment-count="0" data-linked-resource-id="273158079" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-5_22-24-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273158078.png" data-image-src="attachments/270347813/273158078.png" data-unresolved-comment-count="0" data-linked-resource-id="273158078" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-5_22-23-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><strong>Case 1: Flange 1 = total tower thickness. Flange 2 = thickness of tab</strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273158419.png" data-image-src="attachments/270347813/273158419.png" data-unresolved-comment-count="0" data-linked-resource-id="273158419" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-8_23-14-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273158420.png" data-image-src="attachments/270347813/273158420.png" data-unresolved-comment-count="0" data-linked-resource-id="273158420" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-8_23-14-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></p><p><br/></p><p><br/></p><p><span style="color: rgb(0,0,0);">5. Friction force from interference fit</span></p><p><span style="color: rgb(0,0,0);">Hand Calcs</span></p><p><span style="color: rgb(0,0,0);">equations used for calculations obtained from Shigley's 11th ed. pg 410-412</span></p><p><span style="color: rgb(0,0,0);">Assumptions: Homogeneous, circular</span></p><p><span style="color: rgb(0,0,0);">Radial pressure from interference fit of hole and shaft of two different materials:</span></p><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/270347813/273156411.png" data-image-src="attachments/270347813/273156411.png" data-unresolved-comment-count="0" data-linked-resource-id="273156411" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-29_14-32-51-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></span></p><p><span style="color: rgb(0,0,0);">Radial pressure from interference fit of hole and shaft of same material:</span></p><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="70" src="attachments/270347813/273156412.png" data-image-src="attachments/270347813/273156412.png" data-unresolved-comment-count="0" data-linked-resource-id="273156412" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-29_14-34-54-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></span></p><p><br/></p><p><span style="color: rgb(0,0,0);">Friction force that needs to be overcome to insert shaft/ force needed to pull out shaft:</span></p><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="44" src="attachments/270347813/273156414.png" data-image-src="attachments/270347813/273156414.png" data-unresolved-comment-count="0" data-linked-resource-id="273156414" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-29_14-35-42-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></span></p><p><br/></p><p><br/></p><p><span style="color: rgb(255,0,0);">with the F_p (PF24 rack case) and F_f (PF24 rack case) the shape of hole and shaft is not fully circular, to be conservative with our calculations, the calculated smaller area was used.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270347813/273157323.png" data-image-src="attachments/270347813/273157323.png" data-unresolved-comment-count="0" data-linked-resource-id="273157323" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-2_19-34-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270347813" data-linked-resource-container-version="18" alt=""></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154331.png">image-2023-9-21_22-23-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154354.png">image-2023-9-21_23-43-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154355.png">image-2023-9-21_23-45-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154363.png">image-2023-9-22_0-26-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154364.png">image-2023-9-22_0-26-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154365.png">image-2023-9-22_0-27-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154366.png">image-2023-9-22_0-29-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154368.png">image-2023-9-22_1-15-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154369.png">image-2023-9-22_1-15-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154370.png">image-2023-9-22_1-16-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154372.png">image-2023-9-22_1-19-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273154373.png">image-2023-9-22_1-20-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273155896.png">image-2023-9-28_2-29-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273155897.png">image-2023-9-28_2-31-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273156409.png">image-2023-9-29_14-31-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273156411.png">image-2023-9-29_14-32-51-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273156412.png">image-2023-9-29_14-34-54-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273156414.png">image-2023-9-29_14-35-42-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273157323.png">image-2023-10-2_19-34-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273157909.png">image-2023-10-5_6-29-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273157910.png">image-2023-10-5_6-31-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158078.png">image-2023-10-5_22-23-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158079.png">image-2023-10-5_22-24-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158080.png">image-2023-10-5_22-26-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158081.png">image-2023-10-5_22-27-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158419.png">image-2023-10-8_23-14-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270347813/273158420.png">image-2023-10-8_23-14-27.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

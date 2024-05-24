@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Power Modelling and Management | PF22</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259299791.html">Design PF22 | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Power Modelling and Management | PF22
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (jkrawitz)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Questions to answer:</p><ul style="list-style-type: square;"><li>how many times can we crank the car/engine before battery dies? or before battery can't run for long?</li><li>can a specific battery type last a full endurance run? how much battery left at the end?</li></ul><p><br/></p><p>description:</p><ul style="list-style-type: square;"><li>total power = battery + stator - draw by car car - draw by cranking</li><li>battery voltage and current draw limits<ul style="list-style-type: square;"><li>max voltage = 13.8 V</li><li>normal voltage = 12 V</li><li>pulse cranking amps: 346 A</li><li>18 LAH</li><li>Charging:<ul style="list-style-type: square;"><li>14 V output at 2 amp </li><li>6 AH recharge</li><li>charge at 14.4 V</li><li>Do not exceed 15.25 V</li></ul></li><li>min voltage : 8 V</li></ul></li><li>model current draw when cranking the engine(important because this is pretty high)<ul style="list-style-type: square;"><li>r6: 15 A draw while starting</li><li><span style="color: rgb(23,43,77);">The 2021 WR450F has a standard output of 14.0V, 10.0A at 5000rpm. (more than the 2019) </span></li></ul></li><li>model current draw when car is just running in idle/usual operations<ul style="list-style-type: square;"><li>check power draw page in confluence</li><li>about 2 A</li></ul></li><li>model how much power is produced by the stator at different RPMs <ul style="list-style-type: square;"><li>currently have: amperage produced at 1 specific RPM for WRF450(single) and yamaha r6 (4 cylinder) </li></ul></li></ul><p>How do we add this to lap sim? (talk to Keith)</p><p><br/></p><p>Mattcan talk to keith kurisko about lap sim. Before that <a class="confluence-userlink user-mention" data-username="jkrawitz" href="https://wiki.itap.purdue.edu/display/~jkrawitz" data-linked-resource-id="93847848" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (jkrawitz)</a> will make sure christian hammerly is in charge of lap sim</p><p>drive: <a class="external-link" href="https://drive.google.com/drive/folders/1P3aKij3PDOEghjkKCF2j-nM1tSOR2j3u?ths=true" rel="nofollow">https://drive.google.com/drive/folders/1P3aKij3PDOEghjkKCF2j-nM1tSOR2j3u?ths=true</a></p><p>Next week: jessie will know lap sim people, jessie will have stator info started, jessie will talk about how car is power and the wiring involved(routing and wire choices) </p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

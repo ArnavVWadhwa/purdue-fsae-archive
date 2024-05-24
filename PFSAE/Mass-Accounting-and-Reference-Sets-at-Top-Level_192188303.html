@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Mass Accounting and Reference Sets at Top Level</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD_130162759.html">CAD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="NX-Tips-and-Tricks_174556842.html">NX Tips and Tricks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Mass Accounting and Reference Sets at Top Level
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Oct 06, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="MassAccountingandReferenceSetsatTopLevel-Relevance"><strong>Relevance</strong></h1><p>At any given moment, we should be able to open PFXX.prt and quickly look at mass of the entire car as well as a mass breakdown of all the subsystems. Each subsystem owner should take these steps to ensure all component masses are reflected accurately at the top CAD level, and continue to update materials and reference sets even as the design changes.</p><p>(This is currently NOT the case in the assembly below)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/192188303/192188322.png" data-image-src="attachments/192188303/192188322.png" data-unresolved-comment-count="0" data-linked-resource-id="192188322" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_22-8-21.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><h1 id="MassAccountingandReferenceSetsatTopLevel-WhatisaReferenceSet?"><strong>What is a Reference Set?</strong></h1><p>In higher level assemblies (like PFXX.prt), Reference sets are saved configurations for what is displayed and what isn't. By setting this correctly, we can ensure that all the vehicle components and only the vehicle components show up in the top level assembly. This will eliminate displaying non-vehicle peripherals like Aero molds, Chassis jigs, random Coordinate systems, etc.</p><h1 id="MassAccountingandReferenceSetsatTopLevel-TomakeaReferenceSet:"><strong>To make a Reference Set:</strong></h1><ul style="list-style-type: square;"><li>Make your assembly of concern the active work part, it will be bolded in the tree to indicate that.</li></ul><ul style="list-style-type: square;"><li>Select the Reference Sets menu, use search if needed</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188304.png" data-image-src="attachments/192188303/192188304.png" data-unresolved-comment-count="0" data-linked-resource-id="192188304" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-5-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></li><li>Create one named PFXX, assuming this is the reference set you want to represent your subsystem at the top vehicle level</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188305.png" data-image-src="attachments/192188303/192188305.png" data-unresolved-comment-count="0" data-linked-resource-id="192188305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-6-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></li><li>Select the bodies as needed to add to the reference set. You can do this at a lower assembly too for fewer components, if that makes things easier.</li></ul><p><br/></p><h1 id="MassAccountingandReferenceSetsatTopLevel-UpdatingMassProperties"><strong>Updating Mass Properties</strong></h1><p><strong>1. Start by just checking what the current calculated mass is.</strong></p><p>Make sure you have your desired reference set selected and show mass properties in the tree by right clicking at the top of the tree and checking the following option:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188306.png" data-image-src="attachments/192188303/192188306.png" data-unresolved-comment-count="0" data-linked-resource-id="192188306" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-19-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><p>Update Mass Properties if needed:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188307.png" data-image-src="attachments/192188303/192188307.png" data-unresolved-comment-count="0" data-linked-resource-id="192188307" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-20-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><strong>2. Now is the fun part:</strong></p><p>Do NOT just look at an assembly assume the calculated mass does or doesn't seem right. This is useless. Go down the tree, expand to the component level and make sure that every .prt under your ownership:</p><p>         a. Doesn't have repeat bodies (this is especially important with how we use Wavelink and layout files)</p><p>         b. Doesn't have missing bodies</p><p>         c. Has correct material properties assigned to bodies</p><p>Go to steps 3 and 4 if you aren't sure how to check for these details.</p><p>This is the tedious part, but make sure you expand every assembly in the tree and make sure there is only the bodies you expect in there, and that each one has a material assigned, and therefore has a mass calculated:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188308.png" data-image-src="attachments/192188303/192188308.png" data-unresolved-comment-count="0" data-linked-resource-id="192188308" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-25-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><strong>3. If you aren't sure the right bodies are in a .prt and that there aren't duplicates, follow these steps:</strong></p><p>Go to the lowest level .prt file in your assembly and open that in a new window. You can see below that FL_UCA_FORE and FL_UCA_AFT are the lowest level .prts here. That is what we where we want to verify bodies.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188310.png" data-image-src="attachments/192188303/192188310.png" data-unresolved-comment-count="0" data-linked-resource-id="192188310" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-33-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p>With the standard by which our team follows for CAD, this .prt should ONLY have a linked body in it. This .prt SHOULD NOT have sketches, extrudes, or any intermediate modelling steps. ONLY THE FINAL BODY IS LINKED INTO HERE. Go to <em><strong><a href="Layout-file-extra-info_143756859.html">Layout file extra info</a></strong></em> if you need a refresher.</p><p>The only thing here is a linked body:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188311.png" data-image-src="attachments/192188303/192188311.png" data-unresolved-comment-count="0" data-linked-resource-id="192188311" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-37-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><br/></p><p><strong>4. If you need to assign a material to something:</strong></p><p>Search &quot;Assign Material&quot; and open that menu. Find the most appropriate material and select all applicable bodies (Hint: Density for metals is pretty much the same across all aluminums, across all steels, etc. Do make sure to select the correct materials for plastics, composites, etc.)</p><p><span class="ILfuVd NA6bn"><span class="hgKElc"><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192188303/192188309.png" data-image-src="attachments/192188303/192188309.png" data-unresolved-comment-count="0" data-linked-resource-id="192188309" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-5_21-29-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192188303" data-linked-resource-container-version="7" alt=""></span><br/></strong></span></span></p><p><br/></p><p><br/></p><p><strong>5. Rinse and repeat:</strong></p><p>Go down your assembly tree and repeat this process of checking for proper bodies and components in your .prt files. Go back to your main assembly and select Update Mass every once in a while to make sure any corrections you are making are being reflected.</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188304.png">image2021-10-5_21-5-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188305.png">image2021-10-5_21-6-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188306.png">image2021-10-5_21-19-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188307.png">image2021-10-5_21-20-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188308.png">image2021-10-5_21-25-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188309.png">image2021-10-5_21-29-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188310.png">image2021-10-5_21-33-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188311.png">image2021-10-5_21-37-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188316.png">image2021-10-5_21-51-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192188303/192188322.png">image2021-10-5_22-8-21.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

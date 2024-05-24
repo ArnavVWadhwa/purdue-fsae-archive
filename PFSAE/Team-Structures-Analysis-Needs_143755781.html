@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Team Structures Analysis Needs</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Team Structures Analysis Needs
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Dien Quang Nguyen</span> on Oct 04, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>NOTE: this page is not active. It was used for brainstorming and resulted in the more clearly laid out standards here → <a href="Team-Structures-Analysis-Standards_143759470.html">Team Structures Analysis Standards</a></p><p><br/></p><p>Looking towards 2021, we want to do a good job of implementing a team-wide standard for structures analysis and its documentation.</p><p>The goal is to manage the compromise between safety and reliability with the amount of time spent performing and documenting analysis and tests.</p><p><br/></p><h1 id="TeamStructuresAnalysisNeeds-GeneralRequirements">General Requirements</h1><p>Safety Factor Requirements:</p><p>1.4 on ultimate (analyze with linear model, only use non-linear if needed to accept part as is. New parts should be designed using linear models)</p><p>1.1 on yield (in many cases, this will be covered by 1.4 on ultimate analyzed with linear model, because UTS of aluminum is ~15% higher than YTS for most high-strength alloys. This will give 1.2 on yield if 1.4 is met for ultimate)</p><p>(NASA-STD-5001)</p><p><br/></p><p>We will report results in Margin rather than Safety Factor. Statement would be: &quot;the part holds a .07 margin on a 1.4 ultimate safety factor&quot;</p><p>Margin of Safety (MS) = [allowable / (loading * safety factor * fitting factor)] - 1</p><p>A positive margin indicates acceptable safety. We are switching to margin because some empirical calculations (combined ultimate bolt margin) are only provided in margin, and could not be correlated back to safety factor because a non-linear function is being used. Margin is also required to discuss results of any non-linear FEA analysis, which may be performed in cases where loads go up or prior analysis is found to be inadequate.</p><p><br/></p><h1 id="TeamStructuresAnalysisNeeds-SafetyCriticalDefinitionandRequirements">Safety Critical Definition and Requirements</h1><p>Definition of Safety Critical: &quot;Any component where single point of failure would cause loss of vehicle control OR that is part of crash structures is defined as <strong>Safety Critical</strong>.&quot;</p><p>Systems that are included:</p><ul><li>Suspension:<ul><li>Everything except anti-roll bar system</li><li>includes steering</li></ul></li><li>Chassis:<ul><li>Frame</li><li>Floor pan</li><li>Firewall</li></ul></li><li>Brakes:<ul><li>Everything (includes pedal box and mounting)</li></ul></li><li>Front wing mounting included in SES considerations</li></ul><p><br/></p><p>For <strong>Safety Critical </strong>components, analysis performed via:</p><ul><li>Bolt calculator (needs better documentation, threads in shear plane)</li><li>Lug calculator (needs pin calcs, cleaning up of weld calcs)</li><li>Two-Force member calculator</li><li>Classical Laminate Theory Calculator (with additional safety factor b/c not metal)</li><li>Weld (needed):<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143755781/143755785.png" data-image-src="attachments/143755781/143755785.png" data-unresolved-comment-count="0" data-linked-resource-id="143755785" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-1_1-12-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143755781" data-linked-resource-container-version="9" alt=""></span></li></ul></li><li>FEA that:<ul><li>Meets element quality criteria:<ul><li>Aspect ratio &lt; 5</li><li>Jacobian &gt; .6</li></ul></li><li>Has reasonable stress contour when looking at unaveraged stress (integration points vs centroid)</li><li>Meets standard for number of elements in certain features (through a wall = 5, in a 90 deg radius =7) - try to perform convergence studies on simplified geometry</li></ul></li><li>Other hand calculations from reliable source (Shigley's, Airframe Stress analysis and Sizing, Roark's Formulas for Stress and Strain, MMPDS)</li></ul><p><br/></p><p>For <strong>Safety Critical</strong> components, A-Basis materials from MMPDS must be used. If not possible:</p><ul><li>Additional factor must be used to account of uncertainty OR</li><li>Must be tested to prove 1.4 safety factor</li></ul><p><br/></p><p>For <strong>Safety Critical </strong>components, if analysis cannot be performed using one of the above calculators:</p><ul><li>Must be tested to prove 1.4 safety factor</li></ul><p><br/></p><p>For <strong>Safety Critical </strong>components, loads must come from reliable source OR come from a validated model. If not possible</p><ul><li>Add fitting factor</li></ul><p><br/></p><p>To save time, push for finding components that are bounding. Examples: highest shear loading of bolt size, highest loading of common lug sizes, longest tube with highest loading for one diameter of tube. This allows for indication of lower loads to indicate adequate margin. Can define types of components more specifically to do this. Example, shear bolt is any bolt where tension &lt; 10% shear force.</p><p>-document capability of standard hardware against </p><p><br/></p><p>For purchased components that are safety critical:</p><ul><li>If an operating limit is given, that means manufacturer has already included safety factor in calculations. We can hold a 1.0 factor in our use (brake calipers are example because normal operating limit is given)</li><li>If a rating is given, hold 1.4 factor on rating (bolt, rod ends, etc give value where component may actually be expected to fail. Usually uncertainty has been accounted for, but nothing else)</li></ul><p><br/></p><h1 id="TeamStructuresAnalysisNeeds-ReliabilityCriticalDefinitionandRequirements">Reliability Critical Definition and Requirements</h1><p>Definition of reliability critical components: &quot;any component where single point of failure causes the car to stop function is defined as <strong>Reliability Critical</strong>.&quot;</p><p>Analysis should be performed with the same tools and requirements, but assumptions may be made about where a system will fail and no documentation is required</p><p><br/></p><h1 id="TeamStructuresAnalysisNeeds-Tool+DocumentationTemplateConsiderations">Tool + Documentation Template Considerations</h1><ul><li>Does it seem feasible to this level of analysis across car. If not, what compromises should we make first?</li><li>How do we want to track all Safety Critical components at team level best? Single document? Confluence? - <strong>Yes, we will have a single confluence page that has all safety critical components. This will be broken down by subteam. Information included will be component, owner, location of analysis documentation, and completion status.  have same for reliability critical parts, but documentation in big spreadsheet not required.</strong></li><li>Does it make sense to separate out the tools in the big spreadsheet, so you add what you need rather than having a bunch of stuff in each spreadsheet. Leaning towards yes. <strong>YES. </strong></li><li> What level of FEA result checking is reasonable? Convergence studies?</li><li>What is reasonable expectation for documentation of:<ul><li>FEA<br/><ul><li>Material properties - screenshot of mmpds, fill out </li></ul><ul><li>Loads - source</li></ul></li></ul><ul><li style="list-style-type: none;background-image: none;"><ul><li>Environments (temperature)</li></ul></li></ul><ul><li style="list-style-type: none;background-image: none;"><ul><li>Boundary conditions</li></ul></li></ul><ul><li style="list-style-type: none;background-image: none;"><ul><li>Connections / contacts </li></ul><ul><li>Mesh and mesh quality</li></ul><ul><li>Results</li></ul><ul><li>Result accuracy checks</li></ul></li><li>Bolt calculator:<ul><li>Bolt allowables</li></ul><ul><li>Flange material properties</li></ul><ul><li>Loads</li></ul><ul><li>Joint geometry</li><li>Location of joint</li></ul></li><li>Lug calculator:<ul><li>Material properties</li></ul><ul><li>Geometry</li><li>Loads</li></ul><ul><li>Location of lug</li></ul></li></ul></li></ul><p><br/></p><h1 id="TeamStructuresAnalysisNeeds-AnalysisChecks">Analysis Checks</h1><ul><li>Noting down ideas for someone to do quick analysis checks → will eventually add to structures analysis documentation </li><li>General <ul><li>Load Paths - Do they make sense? </li><li>Correct loads used for analysis </li><li>Margins on interfacing components are assessed and positive </li></ul></li><li>Materials<ul><li>Properties agree with minimums being used stress analysis <ul><li>Consideration of thermal environments </li></ul></li><li>Specification, size, condition, or heat treat being included</li><li>Is stress relief after welding required</li></ul></li><li>Dimensions and Tolerances <ul><li>Minimum sections required by stress analysis </li><li>Alignment critical features</li><li>Tolerance stack-up been considered</li></ul></li><li>Fasteners<ul><li>Joint strength consistent with panel strength </li><li>Is sheet bearing critical rather than fastener shear</li><li>Thread engagement, hole tolerance, e/D &gt;= 2.0<ul><li>Can holes be drilled out to the next fastener size while maintaining e/D &gt;= 2.0</li></ul></li><li>Bolt torque been specified<ul><li>Are interfacing parts overstressed by resulting bolt preload</li></ul></li></ul></li><li>Geometry <ul><li>Critical sizes and thicknesses from geometry to FEM verified</li><li>Weight of the geometry and FEM verified</li><li>Critical regions been checked by hand calcs or closed for solutions to very their sizing</li></ul></li><li>Stress Raisers<ul><li>Stress raisers been kept out of areas of high stress</li><li>Ample fillet and bend radii being used</li></ul></li><li>Composites <ul><li>Ply Orientation coordinate system </li><li>Ply IDs associated for material/orientation</li><li>Reference plane and offset in the FEM (for shells) consistent with CAD</li><li>Ply and core boundaries used in FEM match the CAD</li></ul></li><li>Special Attention<ul><li>Friction Joints</li><li>Impact load generators like slop in joints </li><li>Bonded Joints </li><li>Deflection analysis been considered</li></ul></li></ul><p><br/></p><h2 id="TeamStructuresAnalysisNeeds-ThermalandFatigueKnockdowns">Thermal and Fatigue Knockdowns </h2><ul style="list-style-type: square;"><li>Need standard fatigue cycle definitions for each component on the car (where applicable (?) )</li></ul><ul style="list-style-type: square;"><li>Define fatigue cycles <a class="confluence-userlink user-mention" data-username="nguye841" href="https://wiki.itap.purdue.edu/display/~nguye841" data-linked-resource-id="230662854" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Dien Quang Nguyen</a> <a class="confluence-userlink user-mention" data-username="hparadis" href="https://wiki.itap.purdue.edu/display/~hparadis" data-linked-resource-id="230661284" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Paradise, Hunter</a> <br/><ul style="list-style-type: square;"><li>Max load vs Operating load</li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143755781/143755785.png">image2020-4-1_1-12-8.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

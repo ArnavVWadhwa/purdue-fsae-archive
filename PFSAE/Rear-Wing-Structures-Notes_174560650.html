@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Rear Wing Structures Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143756977.html">Design PF21 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2021-22-Aerodynamics-Design-Notebook_161908821.html">2021-22 Aerodynamics Design Notebook</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures-Analysis---PF22-Aerodynamics_172972318.html">Structures Analysis - PF22 Aerodynamics</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Rear Wing Structures Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (aroychow)</span>, last modified on Apr 08, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This is more of a flow-of consciousness page for the time being until the structures work is entirely complete. Afterwards, this'll (hopefully) be compiled/organized into a resource for whoever is doing future RW structures, just as a reference.</p><p><strong>Structures Loop:</strong></p><ul><li>Rough out initial design in CAD</li><li>Hand calcs to find approx loads on bolts, tierods, certain parts of ribs/swans<ul><li>Do FEA for anything you have hand calcs for</li></ul></li><li>Adjust the pass based on what you see in FEA<ul><li>Add or remove material based on what you see, change some shapes, etc.</li></ul></li><li>Most of your repetition comes from Carbon<ul><li>ex. how many plies?</li></ul></li></ul><p>Time goals:</p><p><strong>19 Mar 2021</strong>: Bolt sizes, tie rods, ribs, swan necks first pass done by the end of the weekend, maybe get some hand calcs going.</p><p><strong>3 April 2021</strong>: Have first pass of CAD done by this date. Hard deadline, get other members involved if needed. (RIP)</p><p><br/></p><p>Below are the expressions used in the LAYOUT file for RW mounting, (just for record keeping):</p><p>NOTE: This table is outdated as of 8-April-2021. If needed, can go back through and parametrize most of the CAD.</p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 97.4448%;"><colgroup><col style="width: 20.6444%;"/><col style="width: 79.3556%;"/></colgroup><tbody><tr><th class="confluenceTh">Expression</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">MP_CarbonOffset</td><td class="confluenceTd"><p>Value of carbon thickness of RW mainplane. Used to offset the airfoil curve inwards for proper rib sizing.</p><p>Current placeholder value (CPV): 0.04in ( approx 1mm)</p></td></tr><tr><td class="confluenceTd">Swan_BoltHole</td><td class="confluenceTd">Sizing for the bolt holes on the swans/ribs (Use the NAS Bolt Calculator below)</td></tr><tr><td class="confluenceTd"><p>Rib_Mounting_Thickness</p></td><td class="confluenceTd">2*Swan_Bolthole. Makes sure that the sticky-out bit of the rib that attaches to the swan is double the width of the bolt in it.</td></tr><tr><td colspan="1" class="confluenceTd">Swan_Wall_Thickness</td><td colspan="1" class="confluenceTd"><p>Width of outer perimeter of mainplane ribs (Symmetrical offset, so it gets doubled)</p><p>CPV = 0.125in</p></td></tr><tr><td colspan="1" class="confluenceTd">Swan_Truss_Thickness</td><td colspan="1" class="confluenceTd"><p>Thickness of trusses on swans (Symmetrical offset, so it gets doubled)</p><p>CPV = 0.05in</p></td></tr><tr><td colspan="1" class="confluenceTd">Swan_InnerFillet_Radius</td><td colspan="1" class="confluenceTd"><p>Radius of internal fillets in swans. Not actually fillets, they're circles tangential to the corners, which break fewer things for some reason (credit to Chase)</p><p>CPV = 0.3in (NX defaults to diameter, so this is the diameter value)</p></td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p>Miscellaneous notes/info:</p><p><span style="color: rgb(0,0,0);">Z:\2021\10_CAD-22\4_Aerodynamics\9_Structures\Rear Wing Analysis</span></p><p>Rear wing structures spreadsheet</p><p><br/></p><p><a href="NAS-Bolt-Length-Calculator_130158441.html">NAS Bolt Length Calculator</a></p><p><br/></p><ul><li>Swans<ul><li>Mount to roll hoop at &lt;insert location here&gt;</li><li>Try to take some weight out compared to last year. Probably can't go below 0.25in thickness, so see if the structure itself can be optimized.</li><li>0.25in thick, tabs are 0.09in Thick</li></ul></li><li>Tierods<ul><li>Connection points for the vertical tierods need to be relocated from the wing itself to the swans</li><li>One tierod in between the swans themselves is the main thing to look at</li></ul></li></ul><p><a href="attachments/174560650/174560652.txt" data-linked-resource-id="174560652" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="FSAE_Meeting_Notes.txt" data-nice-type="Text File" data-linked-resource-content-type="text/plain" data-linked-resource-container-id="174560650" data-linked-resource-container-version="30">FSAE_Meeting_Notes.txt</a></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/174560650/FSAE_Meeting_Notes.txt?version=1&amp;modificationDate=1616211697000&amp;api=v2" data-nice-type="Text File" data-file-src="/download/attachments/174560650/FSAE_Meeting_Notes.txt?version=1&amp;modificationDate=1616211697000&amp;api=v2" data-linked-resource-id="174560652" data-linked-resource-type="attachment" data-linked-resource-container-id="174560650" data-linked-resource-default-alias="FSAE_Meeting_Notes.txt" data-mime-type="text/plain" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="FSAE_Meeting_Notes.txt" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/174560652/1" height="150" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="174560650" data-linked-resource-id="174560652" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><strong>Random Information:</strong></p><p>651 Temper 6061 Al - MMPDS 11 from Purdue Libraries</p><p><a href="https://wiki.itap.purdue.edu/display/PFSAE/Structures+Analysis+Documentation+Main+Template" rel="nofollow">https://wiki.itap.purdue.edu/display/PFSAE/Structures+Analysis+Documentation+Main+Template</a></p><p>CL/CD Numbers:<a class="external-link" href="https://docs.google.com/spreadsheets/d/1YZxbJ0OKkB-_Q-ltSEQXt_V5_20U0mhe4E0YxfFZs6E/edit#gid=876303052" rel="nofollow"> https://docs.google.com/spreadsheets/d/1YZxbJ0OKkB-_Q-ltSEQXt_V5_20U0mhe4E0YxfFZs6E/edit#gid=876303052</a></p><p>Reference Sets:</p><p>Assemblies submenu - everything highlighted in orange shows up on the PF22 assembly. Make sure you only have the actual parts in the reference set, no planes, bounding boxes, etc.</p><p><br/></p><p><br/></p><p>Most of the aero bolts were #10 last year</p><p><a href="attachments/174560650/174560652.txt" data-linked-resource-id="174560652" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="FSAE_Meeting_Notes.txt" data-nice-type="Text File" data-linked-resource-content-type="text/plain" data-linked-resource-container-id="174560650" data-linked-resource-container-version="30">FSAE_Meeting_Notes.txt</a></p><p>Cl 3.</p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/174560650/174560652.txt">FSAE_Meeting_Notes.txt</a> (text/plain)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

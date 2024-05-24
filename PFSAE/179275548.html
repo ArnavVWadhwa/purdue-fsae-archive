@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Lessons Learned PF20 | ELE</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297179.html">Lessons Learned | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Lessons Learned PF20 | ELE
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 01, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="LessonsLearnedPF20|ELE-"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/179275548/182026912.png" data-image-src="attachments/179275548/182026912.png" data-unresolved-comment-count="0" data-linked-resource-id="182026912" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-35-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span></h3><p><br/></p><h3 id="LessonsLearnedPF20|ELE-ModulePlacement">Module Placement</h3><p>The modules (ECU and PDM) on PF20 were next to each other right at the bottom of the firewall. This meant pretty much all the wires on the car terminated in one spot without any slack. This made it impossible to wrap the harness all the way up to the connector, so individual 22 awg were not protected and could get pulled on. To address this, the modules were moved higher on the firewall and on either side of the driver. This allowed for wrapping the harness up to the connector. </p><p><br/></p><p>Here's how it looked on the old harness where the modules come together:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/179275548/182026911.png" data-image-src="attachments/179275548/182026911.png" data-unresolved-comment-count="0" data-linked-resource-id="182026911" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-34-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span></p><p><br/></p><p><br/></p><h3 id="LessonsLearnedPF20|ELE-CommonTermination">Common Termination</h3><p>The original harness used solder joints between a bunch of wires to terminate grounds, common powers, 0v references. We switched to Deutsch CTJ Series common termination connectors. These are trusted for things a lot more expensive than our car and were pretty easy to work with. </p><p><span style="color: rgb(23,43,77);text-decoration: none;"> <iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/pOTrS6-mNtA?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+ - Why solder is bad and crimping is good</span></p><h4 id="LessonsLearnedPF20|ELE-SolderBad"><span style="color: rgb(23,43,77);text-decoration: none;">Solder Bad</span></h4><p>Soldering Advantages</p><ul style="list-style-type: square;"><li>Unaffected by temperature</li><li>better for connecting a one wire to a single other wire regardless of size</li><li>works for all sizes of wires</li><li>can be redone</li><li>barely more tolerant of improper technique </li></ul><p>Crimping Advantages</p><ul style="list-style-type: square;"><li>easier to do quickly and reliably</li><li>less time to do</li><li>easier to connect a lot of wires together(above 20 gauge and up)</li></ul><p>Soldering Disadvantages</p><ul style="list-style-type: square;"><li>require attention to detail and therefore easier to do wrong</li><li>If done improperly sensitive to vibrations</li><li>If done improperly can degrade with time</li></ul><p>Crimping Disadvantages</p><ul><li>limited to connectors available, may not be available for all purposes/sizes</li><li>require specific tools</li></ul><ul><li>If done improperly sensitive to vibrations</li><li>If done improperly can degrade with time</li><li>id one improprely or old, stranded wire can (very rarely) shift in the connector</li><li>cost more money</li><li>cannot be recrimped</li><li>less effective for solid core wire</li><li>connectors have varying heat and force properties</li></ul><p><br/></p><p><br/></p><p>The thing labeled G2 is one of em:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/179275548/182026914.png" data-image-src="attachments/179275548/182026914.png" data-unresolved-comment-count="0" data-linked-resource-id="182026914" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-40-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span></p><p><br/></p><p>Catalog:</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/179275548/ENG_DS_1-1773867-9_deutsch-ctj_0219.pdf?version=1&amp;modificationDate=1621961843000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/179275548/ENG_DS_1-1773867-9_deutsch-ctj_0219.pdf?version=1&amp;modificationDate=1621961843000&amp;api=v2" data-linked-resource-id="182026895" data-linked-resource-type="attachment" data-linked-resource-container-id="179275548" data-linked-resource-default-alias="ENG_DS_1-1773867-9_deutsch-ctj_0219.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="ENG_DS_1-1773867-9_deutsch-ctj_0219.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/182026895/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="179275548" data-linked-resource-id="182026895" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>We used CTJ1 series with either one or two busses for most stuff and a CTJ7 with a stud for ground.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="148" src="attachments/179275548/182026921.png" data-image-src="attachments/179275548/182026921.png" data-unresolved-comment-count="0" data-linked-resource-id="182026921" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-49-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="114" src="attachments/179275548/182026917.png" data-image-src="attachments/179275548/182026917.png" data-unresolved-comment-count="0" data-linked-resource-id="182026917" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-48-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span> </p><p><br/></p><h3 id="LessonsLearnedPF20|ELE-HarnessWrapping">Harness Wrapping</h3><p>Use a wrap with a split in it to install it over the harness once all the wires are together. Then use adhesive heatshrink to hold the end of the wrap before a branch. Individual branches can be done in smaller wrap or with non-adhesive heat shrink.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/179275548/182026905.png" data-image-src="attachments/179275548/182026905.png" data-unresolved-comment-count="0" data-linked-resource-id="182026905" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-21-25.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/179275548/182026906.png" data-image-src="attachments/179275548/182026906.png" data-unresolved-comment-count="0" data-linked-resource-id="182026906" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-21-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/179275548/182026907.png" data-image-src="attachments/179275548/182026907.png" data-unresolved-comment-count="0" data-linked-resource-id="182026907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-22-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span></p><p>(the short heat shrink segments are adhesive heat shrink used to fix the end of the wrap and the start of the branches with their wrap / regular heat shrink.)</p><p><br/></p><p>Parts from ISR motorsports:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/179275548/182026908.png" data-image-src="attachments/179275548/182026908.png" data-unresolved-comment-count="0" data-linked-resource-id="182026908" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-5-25_13-25-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="179275548" data-linked-resource-container-version="8" alt=""></span></p><p>Wrap-around sleeving = wrap with split that can be slid over harness</p><p>Adhesive Lined Tubing 4:1 shrink = adhesive heat shrink used to hold the branch</p><p><br/></p><p>Master Switch</p><ul><li>switch every two years or so. the design is such that water can leak in through the keyway if the oring that seals it dries out or shrinks. may be able to extend life if we can figure out how to lubricate it. on the other hand, it only costs $20 from summit racing, so it's not really worth the maintenance unless you have absolutely nothing else to do.</li><li>maybe consider replacing any mechanically operated part every X years. see if datasheet has recommendations</li></ul><p><br/></p><p>Connecting to the Starter Motor:</p><ul><li>Stud on the R6 starter motor is M6 sized and threaded (use a M6 nut on it)</li><li>Use a M6 ring terminal that connects to 10AWG wire. Use at least 10AWG for the starter motor</li><li>it might not be it's first time, but be gentle anyways<span> </span><span>[when screwing on a nut onto the stud]</span></li></ul><p><span><br/></span></p><p><span>First Firings:</span></p><ul><li><span>test engine start part by part<br/></span><ul><li><span>just so that we don't waste time outside</span></li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026895.pdf">ENG_DS_1-1773867-9_deutsch-ctj_0219.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026905.png">image2021-5-25_13-21-25.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026906.png">image2021-5-25_13-21-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026907.png">image2021-5-25_13-22-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026908.png">image2021-5-25_13-25-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026911.png">image2021-5-25_13-34-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026912.png">image2021-5-25_13-35-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026914.png">image2021-5-25_13-40-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026917.png">image2021-5-25_13-48-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/179275548/182026921.png">image2021-5-25_13-49-1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

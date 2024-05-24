@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Creating DXFs from NX - Workflow</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD_130162759.html">CAD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="NX-Tips-and-Tricks_174556842.html">NX Tips and Tricks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Creating DXFs from NX - Workflow
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified by <span class='editor'> Unknown User (hammerly)</span> on Aug 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="CreatingDXFsfromNXWorkflow-DXFCreation">DXF Creation</h1><p>1. Start with the .part in NX, you can have as large of an assembly as you want, but a single waterjet part must be it's own independent body.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/184419218.png" data-image-src="attachments/184419217/184419218.png" data-unresolved-comment-count="0" data-linked-resource-id="184419218" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-23_21-51-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p>2. Enter the sheet metal application. Realistically, all tabs should be designed in the sheet metal application.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/187085876.png" data-image-src="attachments/184419217/187085876.png" data-unresolved-comment-count="0" data-linked-resource-id="187085876" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-8-10_9-32-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p><br/></p><p>3. Select convert to sheet metal, and select the base face of the tab to convert. This gets more complicated for bent brackets and is only applicable if the 3D geometry has an uneven wall thickness. <em><u><a class="external-link" href="https://www.cad-tips.com/siemens-nx/nx-11/convert-to-sheet-metal/" rel="nofollow">This article</a></u></em> goes deeper into how to convert to sheet metal.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/187085877.png" data-image-src="attachments/184419217/187085877.png" data-unresolved-comment-count="0" data-linked-resource-id="187085877" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-8-10_9-33-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p><br/></p><p>4. Click Flat Pattern and select the appropriate base face. NX then creates a new feature called a flat pattern. I think this is useful in drawings.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/187085879.png" data-image-src="attachments/184419217/187085879.png" data-unresolved-comment-count="0" data-linked-resource-id="187085879" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-8-10_9-36-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/184419217/187085880.png" data-image-src="attachments/184419217/187085880.png" data-unresolved-comment-count="0" data-linked-resource-id="187085880" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-8-10_9-37-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p>6. Click Export Flat Pattern. If you have multiple tabs in a part file, you'll have to create a flat pattern for each tab and export them individually.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/187085881.png" data-image-src="attachments/184419217/187085881.png" data-unresolved-comment-count="0" data-linked-resource-id="187085881" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-8-10_9-38-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p><br/></p><h1 id="CreatingDXFsfromNXWorkflow-DXFPreparationandRearranging">DXF Preparation and Rearranging</h1><p>(This is the best way I know of for doing this. Again, if someone has a better way, please update cause this is not ideal.)</p><p>1. Fire up AutoCAD, available on ME lab desktops (via RDC if needed), open the .dxf file you just created and hit the green checkmark on import diagnostics if it offers. It's gonna look like this:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/184419225.png" data-image-src="attachments/184419217/184419225.png" data-unresolved-comment-count="0" data-linked-resource-id="184419225" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-23_22-27-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p>2. Rearrange and organize dxfs as needed</p><p>This is also the time to think about designing in tabs, resizing holes for tolerance, etc.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/184419217/184419226.png" data-image-src="attachments/184419217/184419226.png" data-unresolved-comment-count="0" data-linked-resource-id="184419226" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-23_22-38-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="184419217" data-linked-resource-container-version="6" alt=""></span></p><p>You'll need to be able to use the basic commands in AutoCAD (move, copy, mirror, rotate, etc.). This guide won't explain those, so just google it.</p><p>Basically you can use AutoCAD to copy all your parts (of the same thickness and material) into the same DXF file for waterjetting, rearrange to be efficient with stock usage, etc.</p><p><strong>The following only applies to FlowCut/FlowPath.</strong> That would likely be waterjetting at BIDC, WJCI uses OMAX.</p><p>3. When you have all the parts rearranged and organized, you'll want to run these 3 commands to avoid issues in FLOW later:</p><ul style="list-style-type: square;"><li>Purge (Removes unused items, such as block definitions and layers)</li><li>Overkill (Removes of overlapping, repeat, lines)</li><li>Explode (Separates all lines/arcs into individual segments)</li></ul><p><br/></p><p><br/></p><p>Related page:</p><p><a href="135107396.html">ME Shop Waterjetting / Lasercutting</a></p><p><a href="https://wiki.itap.purdue.edu/display/PFSAE/WJCI+Contact+Info">WJCI Contact Info</a></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419218.png">image2021-6-23_21-51-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419219.png">image2021-6-23_21-52-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419220.png">image2021-6-23_22-0-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419221.png">image2021-6-23_22-2-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419222.png">image2021-6-23_22-3-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419223.png">image2021-6-23_22-9-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419224.png">image2021-6-23_22-10-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419225.png">image2021-6-23_22-27-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/184419226.png">image2021-6-23_22-38-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/187085876.png">image2021-8-10_9-32-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/187085877.png">image2021-8-10_9-33-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/187085879.png">image2021-8-10_9-36-7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/187085880.png">image2021-8-10_9-37-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/184419217/187085881.png">image2021-8-10_9-38-42.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

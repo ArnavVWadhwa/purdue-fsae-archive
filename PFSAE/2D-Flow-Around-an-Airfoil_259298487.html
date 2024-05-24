@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2D Flow Around an Airfoil</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Potential-Flow_259297759.html">Potential Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2D Flow Around an Airfoil
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 11, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Potential Flow Around Airfoil</strong></u></p><p>Now we have enough conceptual understanding to dive into potential flow around an airfoil. </p><p>The first question you have to answer is, how do you represent the airfoil in Laplace equation. Just like most things involving differential equations, the answer is boundary conditions. The boundary condition applied on the airfoil surface in this case is called &quot;tangential flow&quot; or &quot;no penetration&quot; or &quot;slip wall&quot; boundary condition, as in wall-normal flow velocity is 0, and wall-tangent flow velocity can be whatever.</p><p>So now you have applied this boundary condition correctly and solved Laplace equation correctly, you ended up with a weird looking solution, one that's nonphysical and generate no lift. Something that looks like this:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="112" src="attachments/259298487/259298488.png" data-image-src="attachments/259298487/259298488.png" data-unresolved-comment-count="0" data-linked-resource-id="259298488" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-9_9-53-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298487" data-linked-resource-container-version="1" alt=""></span></p><p>The thing about Laplace equation is that it has an infinite number of solutions, and you have to add in a further boundary condition to determine exactly which solution to take.</p><p>This is when you apply what's called the &quot;<em>Kutta condition</em>&quot;. Kutta came up with this boundary condition based on physical observations that flow has to leave the trailing edge smoothly, which means, in the case of the inviscid flow, there is a stagnation point at the trailing edge, just like there is one at the leading edge. He argued that, the undefined solution you get if flow does not leave the trailing edge smoothly is expressed by nature as flow separation. Since flow separation is a viscous phenomenon, it's outside of the scope of potential theory. It's precisely for this reason that Kutta condition can only be applied when you have a sharp trailing edge. You might think the Kutta condition is rather handwavy, because that was what I thought too, until I saw a paper published by Cambridge University in 2022. In which they used minimization of streamline curvature and conservation of momentum to derive Kutta condition mathematically. They also managed to generalize Kutta condition to blunt trailing edge. The paper showed that Kutta condition is indeed consistent with fundamental laws of physics. (I am putting this snippet of fact in here because I expect this is something that textbooks from on will talk about).</p><p>So how do you apply Kutta condition? You apply a circulation (aka vortex strength) to rotate rear stagnation point to the trailing edge. And now, you have a physically correct solution with a non-zero lift. You have figured out potential flow around an airfoil.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="144" src="attachments/259298487/259298489.png" data-image-src="attachments/259298487/259298489.png" data-unresolved-comment-count="0" data-linked-resource-id="259298489" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-9_10-5-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298487" data-linked-resource-container-version="1" alt=""></span></p><p><u><strong>Thin Airfoil Theory</strong></u></p><p>Doing the full Laplace equation with a complicated geometry like an airfoil is rather difficult, that's why people have came up with a lot of simplification to make it easier to solve. And that's exactly what <em>thin airfoil theory</em> is.</p><p>Thin airfoil theory first collapses the upper and lower surface of the airfoil onto the camber line (this is where the &quot;thin&quot; of the thin airfoil theory comes it), and then collapses the camber line on the chord line. Boundary condition ensuring the flow on along the chamber line is purely tangential to the camber line can be applied and circulation distribution can be solved. If you are interested in the math, here is the fundamental equation of thin airfoil theory. It's very advanced and requires knowledge of Fourier series. Don't worry if you don't understand.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="235" src="attachments/259298487/259298490.png" data-image-src="attachments/259298487/259298490.png" data-unresolved-comment-count="0" data-linked-resource-id="259298490" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-32-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298487" data-linked-resource-container-version="1" alt=""></span></p><p>The result of thin airfoil theory is that lift curve slope is always 2π, and the only thing that changes with airfoil shape is zero lift angle of attack. Obviously this is not representative of the real life, but it is a reasonable solution for thin airfoils with low camber operating in low angle of attack environment (ie not racecar), e.g. NACA 2412 as an airplane wing.</p><p><u><strong>Discrete Vortex Method</strong></u></p><p><em>Discrete vortex method</em> is another method that takes advantage of the Kutta Joukowski theorem to estimate lift produced by an airfoil. In discrete vortex method, a single vortex is applied at quarter chord rather than the continuous vortex line like in thin airfoil theory, and tangential flow boundary condition is applied that 3/4 chord. The advantage of discrete vortex method is that it allows you to think about interactions between airfoils easily. Here is an example.</p><p>Everyone's favorite thing to do on the rear wing is biplane it with an upper element (marked with the blue vortex) without thinking  how it would affect the main element performance. The discrete vortex method offers a simple way to think about it. The upper element vortex induces upwash on 3/4 chord of the lower element, meaning that the lower element vortex has to reduce in strength to keep the tangential flow boundary condition valid. According to Kutta Joukowski theorem, this reduces the lift generated by the lower element. The same argument can be made for the upper element. The net results is both elements are operating very much between the performance you would expect them to operate at in freestream.  </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/259298487/259298491.png" data-image-src="attachments/259298487/259298491.png" data-unresolved-comment-count="0" data-linked-resource-id="259298491" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_17-38-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298487" data-linked-resource-container-version="1" alt=""></span></p><p>If at this point you are asking the question &quot;how does this pressure play into this, I thought that's whole lift is generated fundamentally&quot;, you are asking a good question. Turns out, you can get to the same solution by thinking about fundamental flow variables as well. By adding an upper element, you increase the component of pressure gradient in the +z direction by adding a lower pressure region up high, inducing upwash, lowering angle of attack of the lower element, reducing lifting generated by the lower element. For the upper element, the component of pressure gradient in the +z direction is increased by the high pressure down low, reducing its lift.</p><p>So hopefully now you can see how discrete vortex method, and by extension potential flow, can offer valuable insight into design of an FSAE aero package. At this point, it's probably a good idea to take a stab at explaining ground effect and effect of trailing edge flaps using discrete vortex method. It's also a good to think through how the dynamic between two biplaned airfoils change as you move the upper element forward and backward along the x axis.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298487/259298488.png">image-2023-5-9_9-53-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298487/259298489.png">image-2023-5-9_10-5-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298487/259298490.png">image-2023-5-8_23-32-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298487/259298491.png">image-2023-5-8_17-38-51.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

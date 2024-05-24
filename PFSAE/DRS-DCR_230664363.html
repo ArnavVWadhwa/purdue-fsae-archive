@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DRS DCR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297345.html">Design PF23 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297426.html">Design Reviews PF23 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="DCRs_230664358.html">DCRs</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DRS DCR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Fava, Nicola Bernardo</span>, last modified on Aug 02, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Project Scope</strong></u></p><ul><li>Design a mechanism that can alter rear wing flap AoA in order to reduce drag coefficient and increase vehicle acceleration</li><li>Potential Worth ~22 points via lap sim, 10 for DRS 12 for shifter, most points in Endurance L1 goals: Aero CdA &lt;2.00</li><li>Rapid, reliable automated actuation ~ 90ms<ul><li>Driver Comfortability</li><li>Maximize effectiveness</li></ul></li><li>Minimize impact on rear wing performance (mounting location, pivot points)</li><li>Don't compromise the structural rigidity of the rear wing</li></ul><p><u><strong>Stakeholders</strong></u></p><ul><li style="list-style-type: none;"><ul><li>Powertrain<ul><li>Share air tank/pneumatic equipment</li></ul></li><li>Chassis<ul><li>Driver comfortability with fail safe button</li><li>Mounting (location and structure) for air tank and necessary pneumatic equipment (hoses, solenoid </li></ul></li><li>SIQ<ul><li>Fail safe button on steering wheel</li><li>Automation using vehicle characteristics (steering angle angle,  RPM, throttle input, brake input, wheel speed (slip ratio))</li><li>Limit switch? (Don't need to have a hard stop in the endplate)</li></ul></li><li>Suspension</li></ul></li></ul><p><em><strong>Actuation Methods Outlook</strong></em></p><p><strong>Electronic</strong></p><p>-Pros</p><ul><li>Potential for automation</li><li>Rapid activation ~&lt;.1s</li><li>Relatively light ~&lt;1lb</li></ul><p>-Cons</p><ul><li>Cost ~&gt;$500</li><li>Reliability</li><li>Additional mounting</li></ul><p><strong>Mechanical</strong></p><p>-Pros</p><ul><li>Simple system, reliable</li><li>Low cost ~&lt;$100</li><li>Light weight ~&lt;1lb</li></ul><p>-Cons</p><ul><li>Slow activation</li><li>Driver dependent</li><li>More responsibility on the driver</li></ul><p><strong>Pneumatic</strong></p><p>-Pros</p><ul><li>Potential for automation</li><li>Rapid activation ~&lt;.1s</li><li>Robust, reliable</li><li>Easily integrated with pneumatic shifting</li><li>Mid Cost ~&lt;$300 (automation)</li><li>Piston + hosing alone is light weight ~&lt; 1.5lbs</li></ul><p>-Cons</p><ul><li>Additional mounting</li><li>Higher degree of complexity</li></ul><p><u><strong>Design Requirements</strong></u></p><ul><li>Store extremely highly compressed air to maximize number of actuations possible</li><li>Operate at as low of a supply pressure as required to meet actuation times</li><li>Size cylinders and valves to be as small as possible while providing enough force/flow to achieve actuation speed goals at worst case loads</li><li>Limit exhausted air as much as possible</li><li>Not affect downforce generation</li><li>Not affect rigidity of the rear wing</li></ul><p><strong>Rules</strong></p><p>-Structural rigidity</p><p><strong><img src="plugins/servlet/confluence/placeholder/error" title="com.atlassian.confluence.content.render.xhtml.XhtmlException: Missing required attribute: {http://atlassian.com/resource/identifier}value" class="transform-error" data-encoded-xml="%3Cac%3Aimage+ac%3Aheight%3D%22250%22%3E%3Cri%3Aurl+%2F%3E%3C%2Fac%3Aimage%3E"/></strong></p><p>-Vehicle Constraints</p><p><img src="plugins/servlet/confluence/placeholder/error" title="com.atlassian.confluence.content.render.xhtml.XhtmlException: Missing required attribute: {http://atlassian.com/resource/identifier}value" class="transform-error" data-encoded-xml="%3Cac%3Aimage+ac%3Aheight%3D%22400%22%3E%3Cri%3Aurl+%2F%3E%3C%2Fac%3Aimage%3E"/></p><p><u><strong><img src="plugins/servlet/confluence/placeholder/error" title="com.atlassian.confluence.content.render.xhtml.XhtmlException: Missing required attribute: {http://atlassian.com/resource/identifier}value" class="transform-error" data-encoded-xml="%3Cac%3Aimage+ac%3Aheight%3D%22250%22%3E%3Cri%3Aurl+%2F%3E%3C%2Fac%3Aimage%3E"/></strong></u></p><p><u><strong><img src="plugins/servlet/confluence/placeholder/error" title="com.atlassian.confluence.content.render.xhtml.XhtmlException: Missing required attribute: {http://atlassian.com/resource/identifier}value" class="transform-error" data-encoded-xml="%3Cac%3Aimage+ac%3Aheight%3D%22400%22%3E%3Cri%3Aurl+%2F%3E%3C%2Fac%3Aimage%3E"/></strong></u></p><p><u><strong><img src="plugins/servlet/confluence/placeholder/error" title="com.atlassian.confluence.content.render.xhtml.XhtmlException: Missing required attribute: {http://atlassian.com/resource/identifier}value" class="transform-error" data-encoded-xml="%3Cac%3Aimage+ac%3Aheight%3D%22400%22%3E%3Cri%3Aurl+%2F%3E%3C%2Fac%3Aimage%3E"/></strong></u></p><p><br/></p><p><u><strong>Design Overview</strong></u></p><ul><li>Air Tank</li><li>Piston</li><li>Hosing</li><li>Solenoid valves</li><li>Manual valve for depressurization</li><li>Linkages (respective hardware)</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Image preview" height="250" src="https://attachments.office.net/owa/nbfava%40purdue.edu/service.svc/s/GetAttachmentThumbnail?id=AAMkAGE4MTNjYTE2LTNlZTgtNDc3OC1iOGM1LTMxOGNiMTJlMzJjYwBGAAAAAABCOwUn8VvkS6KQusK0VkzCBwD87Kf2Q8ADR63ble0E9b%2F6AAAAAAEJAAD87Kf2Q8ADR63ble0E9b%2F6AAJQ0QLRAAABEgAQAKPX%2BzSbapJMp4xkmDuY5m4%3D&amp;thumbnailType=2&amp;token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkZBRDY1NDI2MkM2QUYyOTYxQUExRThDQUI3OEZGMUIyNzBFNzA3RTkiLCJ0eXAiOiJKV1QiLCJ4NXQiOiItdFpVSml4cThwWWFvZWpLdDRfeHNuRG5CLWsifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiMTdhMTRlZDIxNGVhNDQ0ZGFjMTEwM2ExNzU4NGMxY2QiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEA0MTMwYmQzOS03YzUzLTQxOWMtYjFlNS04NzU4ZDZkNjNmMjEiLCJpc3NyaW5nIjoiV1ciLCJhcHBjdHgiOiJ7XCJtc2V4Y2hwcm90XCI6XCJvd2FcIixcInB1aWRcIjpcIjExNTM4MDExMTY0MjE4MTA4ODVcIixcInNjb3BlXCI6XCJPd2FEb3dubG9hZFwiLFwib2lkXCI6XCIxNTE0NGRkYi02NTFlLTQ1ODctYWQxYi0xNjQ0NWRhN2NmNTFcIixcInByaW1hcnlzaWRcIjpcIlMtMS01LTIxLTI1MDM2MTM2NTEtNTU2MjkxNjgyLTM4MTcyNzAwNC0yNjMxNjU5MlwifSIsIm5iZiI6MTY1OTQ3Nzc4NSwiZXhwIjoxNjU5NDc4Mzg1LCJpc3MiOiIwMDAwMDAwMi0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDBANDEzMGJkMzktN2M1My00MTljLWIxZTUtODc1OGQ2ZDYzZjIxIiwiYXVkIjoiMDAwMDAwMDItMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwL2F0dGFjaG1lbnRzLm9mZmljZS5uZXRANDEzMGJkMzktN2M1My00MTljLWIxZTUtODc1OGQ2ZDYzZjIxIiwiaGFwcCI6Im93YSJ9.dDgD3qDVNovks4DEEolj1m_pGybHv9OVcILnVVNmp1oJRtyM9hRqg4bdCSJHSK3hgDAd_CoU-Ru2T4SrsxA9mAWYMbvkQIyR7-BwzfHorugiagHt20VS6xRM_Hmuo7hyZ5reDdHkc54awUrA_b7I-lzk_vYzitCQgt459Zp2QsT0G2xY56MOkWAsh6qDl49GsPfZ4ZbZlpjSg6ezbM972A-u9uCm9ifn41Zh-lcTZ6FkrEHcOdebfszL_Ojmn9jYZo-SspMC9jOpXXe6-WRKRe06n82tFNIrvzatKLSjkeRB-blFRyTHYnxAoOoGTQRgqx4uzMfXicMgpuo02ZzEZg&amp;X-OWA-CANARY=050y5U3R2keyfWg2DLiw4YBTigfTdNoYu885NzNLVfwhQ3tyLLPoi6w3vv5M2SalJj07wQn9Q7I.&amp;owa=outlook.office.com&amp;scriptVer=20220721048.09&amp;animation=true" data-image-src="https://attachments.office.net/owa/nbfava%40purdue.edu/service.svc/s/GetAttachmentThumbnail?id=AAMkAGE4MTNjYTE2LTNlZTgtNDc3OC1iOGM1LTMxOGNiMTJlMzJjYwBGAAAAAABCOwUn8VvkS6KQusK0VkzCBwD87Kf2Q8ADR63ble0E9b%2F6AAAAAAEJAAD87Kf2Q8ADR63ble0E9b%2F6AAJQ0QLRAAABEgAQAKPX%2BzSbapJMp4xkmDuY5m4%3D&amp;thumbnailType=2&amp;token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkZBRDY1NDI2MkM2QUYyOTYxQUExRThDQUI3OEZGMUIyNzBFNzA3RTkiLCJ0eXAiOiJKV1QiLCJ4NXQiOiItdFpVSml4cThwWWFvZWpLdDRfeHNuRG5CLWsifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiMTdhMTRlZDIxNGVhNDQ0ZGFjMTEwM2ExNzU4NGMxY2QiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEA0MTMwYmQzOS03YzUzLTQxOWMtYjFlNS04NzU4ZDZkNjNmMjEiLCJpc3NyaW5nIjoiV1ciLCJhcHBjdHgiOiJ7XCJtc2V4Y2hwcm90XCI6XCJvd2FcIixcInB1aWRcIjpcIjExNTM4MDExMTY0MjE4MTA4ODVcIixcInNjb3BlXCI6XCJPd2FEb3dubG9hZFwiLFwib2lkXCI6XCIxNTE0NGRkYi02NTFlLTQ1ODctYWQxYi0xNjQ0NWRhN2NmNTFcIixcInByaW1hcnlzaWRcIjpcIlMtMS01LTIxLTI1MDM2MTM2NTEtNTU2MjkxNjgyLTM4MTcyNzAwNC0yNjMxNjU5MlwifSIsIm5iZiI6MTY1OTQ3Nzc4NSwiZXhwIjoxNjU5NDc4Mzg1LCJpc3MiOiIwMDAwMDAwMi0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDBANDEzMGJkMzktN2M1My00MTljLWIxZTUtODc1OGQ2ZDYzZjIxIiwiYXVkIjoiMDAwMDAwMDItMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwL2F0dGFjaG1lbnRzLm9mZmljZS5uZXRANDEzMGJkMzktN2M1My00MTljLWIxZTUtODc1OGQ2ZDYzZjIxIiwiaGFwcCI6Im93YSJ9.dDgD3qDVNovks4DEEolj1m_pGybHv9OVcILnVVNmp1oJRtyM9hRqg4bdCSJHSK3hgDAd_CoU-Ru2T4SrsxA9mAWYMbvkQIyR7-BwzfHorugiagHt20VS6xRM_Hmuo7hyZ5reDdHkc54awUrA_b7I-lzk_vYzitCQgt459Zp2QsT0G2xY56MOkWAsh6qDl49GsPfZ4ZbZlpjSg6ezbM972A-u9uCm9ifn41Zh-lcTZ6FkrEHcOdebfszL_Ojmn9jYZo-SspMC9jOpXXe6-WRKRe06n82tFNIrvzatKLSjkeRB-blFRyTHYnxAoOoGTQRgqx4uzMfXicMgpuo02ZzEZg&amp;X-OWA-CANARY=050y5U3R2keyfWg2DLiw4YBTigfTdNoYu885NzNLVfwhQ3tyLLPoi6w3vv5M2SalJj07wQn9Q7I.&amp;owa=outlook.office.com&amp;scriptVer=20220721048.09&amp;animation=true"></span></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230664363/230665675.png" data-image-src="attachments/230664363/230665675.png" data-unresolved-comment-count="0" data-linked-resource-id="230665675" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-2_18-9-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230664363" data-linked-resource-container-version="8" alt=""></span></strong></p><p><strong>Components</strong></p><p><u><strong>Analysis</strong></u></p><p><strong>ADAMS View and NX </strong></p><ul><li><strong>Locate pivot points to determine system sizing and positioning</strong></li></ul><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230664363/230665677.png" data-image-src="attachments/230664363/230665677.png" data-unresolved-comment-count="0" data-linked-resource-id="230665677" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-2_18-14-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230664363" data-linked-resource-container-version="8" alt=""></span></strong></p><p><br/></p><p><strong>CFD</strong></p><ul><li>Force generated by each flap across the actuation range</li><li>Center of pressure across actuation range</li><li>Analyze flow reattachment (2d)</li></ul><p><strong>Physical Testing</strong></p><p><strong>-</strong>Test Board</p><ul><li>Maximum actuations per endurance with pneumatic shifting</li><li>Determine average minimum number of actuations based on previous year's courses</li><li>Driver reaction time (no automation)</li></ul><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230664363/230665675.png" data-image-src="attachments/230664363/230665675.png" data-unresolved-comment-count="0" data-linked-resource-id="230665675" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-2_18-9-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230664363" data-linked-resource-container-version="8" alt=""></span></strong></p><p><u><strong>Cost</strong></u></p><ul><li><strong>Piston ~$45 </strong><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="172" src="attachments/230664363/230665681.png" data-image-src="attachments/230664363/230665681.png" data-unresolved-comment-count="0" data-linked-resource-id="230665681" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-2_18-27-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230664363" data-linked-resource-container-version="8" alt=""></span></strong></u></li><li><strong>Hosing ~$10</strong></li><li><strong>Linkage Assembly ~$25</strong></li><li><strong>Solenoid Valves ~$</strong></li></ul><p><u><strong>Schedule</strong></u></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230664363/230665675.png">image2022-8-2_18-9-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230664363/230665677.png">image2022-8-2_18-14-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230664363/230665679.png">image2022-8-2_18-25-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230664363/230665681.png">image2022-8-2_18-27-26.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

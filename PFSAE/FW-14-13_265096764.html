@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FW-14-13</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750832.html">Front Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751366.html">FW Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="FW-14-Series_265098431.html">FW-14 Series</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FW-14-13
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-042</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup><col style="width: 124.0px;"/><col style="width: 443.0px;"/><col style="width: 271.0px;"/></colgroup><thead><tr><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody><tr><td style="text-align: left;" class="confluenceTd">Complete front wing reprofile</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/265096764/265096765.png" data-image-src="attachments/265096764/265096765.png" data-unresolved-comment-count="0" data-linked-resource-id="265096765" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-4_17-33-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096764" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Taking lessons learned from FW-14-12, completely changing outwashing profile. Of course this builds on the assumption that my theory for FW-14-12 wake blowing up was correct.</p><p>What this does is that it essentially keeps expansion angle at the outboard low by having large chord. But the aggressive local outwash angle still provides a lot of outwash locally to help separation suppression.</p><p>This big planform will ensure a lot of downforce, which is why I also backed off the center section for rear wing performance.</p><p>Another thing that might happen with the aggressive local outwash angle is that vortex might be shed off the the trailing edge due to the low relative angle between flow direction and trailing edge direction. These vortices will be locally outwashing on the bottom, which is good. They should migrate outboard if it form along more than one trailing edge, which is also good. If any are formed in between slot gaps, additional local suction will be achieved, which is also good. So this should be good, if they form. If not, increasing outwash angle and increasing slot gap size will help.</p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup><col style="width: 432.156px;"/><col style="width: 208.094px;"/></colgroup><thead><tr><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/265096764/265096971.png" data-image-src="attachments/265096764/265096971.png" data-unresolved-comment-count="0" data-linked-resource-id="265096971" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-5_21-6-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096764" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Oh man giga reflex.</p><p>I think the third element needs a camber reduction since there is separation and it will make reflex less bad.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/265096764/265096973.png" data-image-src="attachments/265096764/265096973.png" data-unresolved-comment-count="0" data-linked-resource-id="265096973" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-5_21-10-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096764" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>More giga reflex.</p><p>This effect is way more powerful than I thought. The downwind suction side lost all suction since the span vector of flaps pretty much matched yaw angle.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="175" src="attachments/265096764/265096975.png" data-image-src="attachments/265096764/265096975.png" data-unresolved-comment-count="0" data-linked-resource-id="265096975" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-5_21-11-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096764" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Inner vortex much better controlled. And the separation is no more.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="198" src="attachments/265096764/265096976.png" data-image-src="attachments/265096764/265096976.png" data-unresolved-comment-count="0" data-linked-resource-id="265096976" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-5_21-13-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096764" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Not entirely sure the effect at play here. But I think what's happening is that due to delayed outwash and upwash with increased chord, the wake has more time to propagate inboard and stay down low, cause this wake to blow up....again. Positive is high wake is smaller, which is good for FW, but low wake is larger, which is bad for UT.</p></td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096764/265096765.png">image-2023-7-4_17-33-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096764/265096971.png">image-2023-7-5_21-6-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096764/265096973.png">image-2023-7-5_21-10-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096764/265096975.png">image-2023-7-5_21-11-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096764/265096976.png">image-2023-7-5_21-13-43.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

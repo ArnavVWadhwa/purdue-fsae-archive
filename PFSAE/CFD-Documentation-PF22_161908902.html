@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : CFD Documentation PF22</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143756977.html">Design PF21 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2021-22-Aerodynamics-Design-Notebook_161908821.html">2021-22 Aerodynamics Design Notebook</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : CFD Documentation PF22
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified on Nov 16, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>CFD Setup:</strong></p><p>Fully automated java/python suite for cluster and STAR-CCM+. Only user interaction necessary is importing geometry and entering a python command.</p><p>Tenfold increase in simulation capacity</p><p>Full true-to CAD model </p><ul><li>Physics Models<ul><li>Spalart Allmaras (SA) Turbulence Model<ul><li>Note: Convergence is a concern compared to K-epsilon model</li></ul></li><li>Steady State</li><li>Incompressible</li></ul></li><li>Mesh<ul><li>~50 million Trimmed cell mesh<ul><li>Trimmed cell mesh has a much lower memory requirement than polyhedral </li><li>Macro suite removes poor quality cells</li><li>True-to CAD import adds around 10 million mesh cells but saves a lot of manpower</li><li>~ 7 hours to solve</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/161908902/161908978.png" data-image-src="attachments/161908902/161908978.png" data-unresolved-comment-count="0" data-linked-resource-id="161908978" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-16_14-50-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="161908902" data-linked-resource-container-version="2" alt=""></span></li></ul></li><li><span style="letter-spacing: 0.0px;">Sub-Optimal Mesh to under predict downforce since we don't have wind tunnel data</span><br/><ul><li><span style="letter-spacing: 0.0px;">Stretch Factor could be reduced but as of now we have no correlation data so it's better to add a safety factor</span></li><li><span style="letter-spacing: 0.0px;">If stretch factor goes down, Cl would go up</span></li></ul></li><li><span style="letter-spacing: 0.0px;">Mesh dependency study (*Need to add) <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a> </span></li></ul></li><li><span style="letter-spacing: 0.0px;">Wall Y+ </span><ul><li><span style="letter-spacing: 0.0px;">Targeting low Wall Y+ for all Aero Components (*Needs fixing) <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a> </span><ul><li><span style="letter-spacing: 0.0px;">Cuts down mesh usage by almost half</span></li></ul></li></ul></li><li><span style="letter-spacing: 0.0px;">Base Size</span><ul><li><span style="letter-spacing: 0.0px;">0.22m (Provide justification from mesh dependency study <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a> </span></li></ul></li><li><span style="letter-spacing: 0.0px;">Prism Layers</span><ul><li><span style="letter-spacing: 0.0px;">Needs fixing <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a> </span></li></ul></li><li><span style="letter-spacing: 0.0px;">Prism Layer Thickness</span><ul><li><span style="letter-spacing: 0.0px;"><span>Needs fixing <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a></span></span></li></ul></li></ul><p><br/></p><p><strong><span style="letter-spacing: 0.0px;">Analysis Methodology:</span></strong></p><ul><li>Make sure parts aren't sensitive to parameters (yaw, roll, pitch, ride height)</li><li>15 degree yaw – new set-point<ul><li>10 mph average wind speed (Grissom weather reports)</li><li>40 mph average vehicle speed (magic spreadsheet)</li></ul></li></ul><p><br/></p><p><strong><span style="letter-spacing: 0.0px;">Cornering Sim:</span></strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/161908902/161908978.png">image2020-11-16_14-50-46.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

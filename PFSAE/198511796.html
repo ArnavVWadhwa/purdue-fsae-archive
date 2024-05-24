@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : CAD Setup | Harness</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832509.html">Design PF20 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="265097174.html">Harness CAD | PF20</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : CAD Setup | Harness
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (mstarobr)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Sep 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>----------------------------------------------------------------------------------------------------------------------------------------</u></strong></p><p><strong><u>Objective: this page will show you how to get from no electronics CAD to the beginning of harness CADing. Includes:</u></strong></p><ul><li><strong>Ideas of what to prep before CADing</strong></li><li><strong>How we currently organize our Electronics assembly </strong></li><li><strong>Contents and function of each of our Electronics sub-assemblies</strong></li><li><strong>Setting up the electronics sub-assemblies </strong></li></ul><p><u><strong>----------------------------------------------------------------------------------------------------------------------------------------</strong></u></p><p><strong><u>Before getting started on setting up an electronics assembly for a new season:</u></strong></p><p>Before starting, be sure to remember, electronics typically is one if not the subteam that starts latest because we require other teams to be finished or nearly finished with their CAD before we start ours. This however does mean that we have a lot of time to prepare. This includes:</p><ol><li>Make sure that you know what connectors go to what module pins</li><li>See if there are any additions or subtractions in sensors being used on the car</li><li>Source all of the sensors you will be using and download their data sheets and pinouts </li><li>Update the spreadsheet to convey all this information   </li></ol><p><strong>Start these as soon as possible, you have about 2 week to a month max to complete these to be the most efficient when harness CADing starts. Use that time wisely. </strong></p><p><br/></p><p><br/></p><p><u><strong>How we organize our Electronics Assembly:</strong></u></p><p>In the past, we have laid out the electronics assembly into several pieces each integrated into one another via a main assembly. <strong>See Figure 1.  </strong></p><p><u><strong>Why the electronics CAD is separated into parts:</strong></u></p><p>The separate files allow for ease of use:</p><ul><li>allowing only necessary pieces to be visible when working on different parts of the assembly</li><li>separating the reference geometry from the all sub-assembly and the  harness being routed, preventing obstructions </li><li>allowing for visual references to other subteam assemblies without having to open the main assembly<ul><li>allows us to work entirely independently from other subteams</li></ul></li></ul><p><br/></p><p>                   <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198511796/200378346.png" data-image-src="attachments/198511796/200378346.png" data-unresolved-comment-count="0" data-linked-resource-id="200378346" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-12_2-45-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198511796" data-linked-resource-container-version="16" alt=""></span></p><p><strong>                               Figure 1: PF22_ELE assembly list</strong></p><p><br/></p><p><u><strong>How the CAD assembly is laid out: </strong></u></p><p>In the case of our 2022 CAD, we divided the assembly by into 3 parts. </p><p><em><strong>PF22_ELE_0000_refernceGeo</strong>:</em> our reference document with assembly pieces from other subassemblies </p><ol><li style="list-style-type: none;"><ol><li>this assembly must be constantly monitored and altered based on the other subteam updates <ol><li>make notes about team updates</li><li>keep communications with the other subteams (namely chassis and power train)</li><li>add any piece that you think will alter your harness path is worth adding to this assembly </li></ol></li><li><strong>When integrating PF22_ELE with the other subteam assemblies, make sure this one isn't visible  </strong></li></ol></li></ol><p><br/></p><p><em><strong>PF22_ELE_9000_Harness</strong>: </em>This assembly is where you will mainly be working in</p><ol><li style="list-style-type: none;"><ol><li>this is the assembly you are doing all your sensor and module placement and harness routing </li><li>this includes all your connectors or placeholder sensors <br/><ol><li>any sensors outside of this assembly or placed in the ELE assembly by another subteam must them be added to this assembly </li></ol></li><li><strong>When working on any harness, make sure you select this assembly as the workpiece (or open it independently of any other assembly) BEFORE you start changing or adding anything   </strong></li></ol></li></ol><p><br/></p><p><em><strong>PF22_ELE: </strong></em>The end all be all of the electronics CAD, where all the work is laid out together.</p><ol><li style="list-style-type: none;"><ol><li>used for double checking features between <em><strong>ELE_0000</strong></em> and <em><strong>ELE_9000 </strong></em></li><li>this also holds some of the parts that will come in handy to other subteams <ol><li>examples include the battery and master switch since Power Train typically designs the tabs for both of these components</li></ol></li><li><strong>When starting an electronics assembly, add all other electronics assemblies to this one </strong>  </li></ol></li></ol><p><br/></p><p><br/></p><p><u><strong>Setting up the electronics CAD for a new season: </strong></u></p><ul><li>For this step you need a new assembly (This will be the Main ELE assembly, Ex: <em><strong>PF22_ELE, </strong>abbreviated to<strong> MEA</strong></em>) to be added to the current All Team Assembly (Ex: <em><strong>PF22, </strong>abbreviated to <strong>ATA</strong> here</em>). This will allow you to obtain any other subteam parts necessary for the harness CAD.</li><li>Add both of the other assemblies (Ex: <em><strong>PF22_ELE_0000_refernceGeo </strong>and<strong> PF22_ELE_9000_Harness, </strong>abbreviated to <strong>ERA</strong> and <strong>EHA </strong>respectively</em>) into the new electronics main CAD, so that they can be accessed within the ATA </li><li>I would recommend adding parts to the EHA first so that all of the chassis frame is already added before adding other relevant parts to ERA  </li><li>When adding parts from the ATA to EHA, make the EHA the <u>Main Work Part</u> (to do so, either right click the assembly and selecting &quot;Make Work Part&quot; or by double clicking the assembly) <strong style="letter-spacing: 0.0px;">Command is found in Figure 2. </strong></li></ul><p><br/></p><p>                             <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/198511796/200378361.png" data-image-src="attachments/198511796/200378361.png" data-unresolved-comment-count="0" data-linked-resource-id="200378361" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-12_5-2-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198511796" data-linked-resource-container-version="16" alt=""></span></p><p><strong>                                        Figure 2: Work Part Selection   </strong></p><p><br/></p><ul><li>For the parts that need to be added, you will have to use the WAVE Geometry Linker command (<strong>Figure 3</strong>), using the Body select feature within it (<strong>Figure 4</strong>)<br/><ul><li>All parts added will have the positional dimensions and their position relative to other assembly parts that it in its original assembly   <ul><li>This command adds all parts selected into whatever the <u>Current Main Work Part</u> is (so please do the previous step) </li></ul></li></ul></li></ul><p><br/></p><p>                                <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198511796/200378366.png" data-image-src="attachments/198511796/200378366.png" data-unresolved-comment-count="0" data-linked-resource-id="200378366" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-12_5-23-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198511796" data-linked-resource-container-version="16" alt=""></span>                          <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/198511796/200378367.png" data-image-src="attachments/198511796/200378367.png" data-unresolved-comment-count="0" data-linked-resource-id="200378367" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-12_5-24-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198511796" data-linked-resource-container-version="16" alt=""></span></p><p><strong>                                               Figure 3: WAVE Geometry Linker                                                   Figure 4: Body Selection Sub-Feature </strong></p><p><br/></p><ul><li>Select the designated parts for each assembly <ul><li><em><strong>PF22_ELE_9000_Harness: </strong></em><ul><li><u>all chassis tubes</u> (especially on the driver's right side, where most of our routing goes)</li><li><u>the base plate and heat shield</u> (depending on the year, either of these places are where your modules will most likely be mounted)</li><li><u>engine, intake, and dash panel</u> (these are pieces that connectors are directly connected to, can theoretically be deleted later, to prevent overlapping parts in the ATA) </li></ul></li></ul></li></ul><ul><li style="list-style-type: none;"><ul><li><em><strong>PF22_ELE_0000_refernceGeo:</strong></em><ul><li><u>any piece the harness must along and must evade</u> (ideally these are temporary additions that can be deleted later, to prevent overlapping parts in the ATA)      <ul><li><em><strong>includes but are not limited to:</strong></em><ul><li>Mounting suspension tabs</li><li>Exhaust pipes and muffler</li><li>Steering column/protective plate</li><li>Catch cans </li><li>Fans mountings  </li><li>Coolant and fuel tubes</li><li>Drive train sprockets and chains  </li></ul></li></ul></li></ul></li></ul></li></ul><ul><li>Once these assemblies are filled out make sure that each of them have what you expect before closing the ATA</li></ul><p><u><strong>If all of the steps are completed, you should be ready to start working on the electronics harness </strong></u></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198511796/200378346.png">image2021-12-12_2-45-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198511796/200378361.png">image2021-12-12_5-2-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198511796/200378364.png">image2021-12-12_5-23-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198511796/200378366.png">image2021-12-12_5-23-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198511796/200378367.png">image2021-12-12_5-24-45.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

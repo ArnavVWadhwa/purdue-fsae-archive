@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Making Large Changes to CAD Models</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD_130162759.html">CAD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="NX-Tips-and-Tricks_174556842.html">NX Tips and Tricks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Making Large Changes to CAD Models
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on May 01, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="MakingLargeChangestoCADModels-BuildingRobustCADTheFirstTime">Building Robust CAD The First Time</h1><p>In order to keep your model's dependencies simple, try to reference the oldest geometry possible when creating a model. I mention this in this page: <a href="1.-Creating-a-Wireframe_198508858.html">1. Creating a Wireframe</a> but it's relevant to anyone building a model. For example, be intentional about using reference geometry (such as suspoints) instead of created geometry in a part (such as created parts of the wireframe). This is an easy mistake for someone to make, but it may cause problems downstream when the non-reference geometry parent is changed or deleted. </p><p>With the mouse hovering over the item you'd like to reference, right-click then click &quot;Select from List...&quot;. This will open a window displaying all the possible items that this feature could reference. Be diligent and select reference geometry as parents of a feature!</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259295531/259295548.png" data-image-src="attachments/259295531/259295548.png" data-unresolved-comment-count="0" data-linked-resource-id="259295548" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-25-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259295531/259295553.png" data-image-src="attachments/259295531/259295553.png" data-unresolved-comment-count="0" data-linked-resource-id="259295553" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-29-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259295531/259295550.png" data-image-src="attachments/259295531/259295550.png" data-unresolved-comment-count="0" data-linked-resource-id="259295550" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-27-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><p><br/></p><h1 id="MakingLargeChangestoCADModels-HowtoDetermineifBigChangesAreNecessary">How to Determine if Big Changes Are Necessary</h1><p>Is your model still up to date? Because we practice top-down CAD modeling (learn more about what that is here <a class="external-link" href="https://www.3dcadworld.com/cad-basics-top-down-modeling/" rel="nofollow">https://www.3dcadworld.com/cad-basics-top-down-modeling/</a> or here <a href="NX-CAD-Practices_141728921.html">NX CAD Practices</a> ), any upstream changes to reference geometry will trickle down into your model, and it will fully update automatically. For example, if suspension points change slightly, the tubes and tabs should all update accordingly.</p><p>There have been instances of the associative links between parts breaking, rendering the top-down method useless. This is a huge problem if you need to make a fundamental change later on. Ideally, all the features in your part should show a green check mark in the Up to Date column in the part navigator.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/259295531/259295545.png" data-image-src="attachments/259295531/259295545.png" data-unresolved-comment-count="0" data-linked-resource-id="259295545" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-12-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><h1 id="MakingLargeChangestoCADModels-DependencyBrowser">Dependency Browser</h1><p>Before diving into this, it's important to understand the dependencies within a model. There's a couple ways to do this. The easiest way is to click the feature within your part tree. Once highlighted, any features which the selected one depends on will be shown with purple text. Any features which depend on the selected one will be shown with blue text.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/259295531/259295536.png" data-image-src="attachments/259295531/259295536.png" data-unresolved-comment-count="0" data-linked-resource-id="259295536" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_18-39-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span> <span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/259295531/259295538.png" data-image-src="attachments/259295531/259295538.png" data-unresolved-comment-count="0" data-linked-resource-id="259295538" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_18-40-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><p>Another way to visualize these dependencies is by using the Browser tool. In NX 1946, Menu&gt;Information&gt;Browser pulls this up. This will initially provide a blank-looking window, until a feature in the part tree is selected. From there, the Browser tool shows any immediate parents of the selected feature. This tool allows you to get a full view of the feature's history by clicking the <img class="emoticon emoticon-plus" src="images/icons/emoticons/add.svg" data-emoticon-name="plus" alt="(plus)" data-emoji-short-name=":plus:"/> next to any feature, displaying that feature's parents.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" draggable="false" src="attachments/259295531/259295532.png" data-image-src="attachments/259295531/259295532.png" data-unresolved-comment-count="0" data-linked-resource-id="259295532" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_18-32-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/259295531/259295534.png" data-image-src="attachments/259295531/259295534.png" data-unresolved-comment-count="0" data-linked-resource-id="259295534" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_18-33-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><h1 id="MakingLargeChangestoCADModels-ReplacingItems">Replacing Items</h1><p>If I want to replace Datum Plane (230) which drives the Trim Body (231) and (233) features, there's a few things that need to be done.</p><ol><li>Create the replacement geometry. In this case, I've created a Fixed Datum Plane that will replace Datum Plane (230). Place this feature <strong>above</strong> the feature you wish to replace in the part tree.</li><li>Make the feature you wish to replace the &quot;Current Feature.&quot; This will prevent any downstream features from updating.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/259295531/259295558.png" data-image-src="attachments/259295531/259295558.png" data-unresolved-comment-count="0" data-linked-resource-id="259295558" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-44-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="79" src="attachments/259295531/259295559.png" data-image-src="attachments/259295531/259295559.png" data-unresolved-comment-count="0" data-linked-resource-id="259295559" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-45-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></li><li>Replace the feature.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/259295531/259295561.png" data-image-src="attachments/259295531/259295561.png" data-unresolved-comment-count="0" data-linked-resource-id="259295561" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-45-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259295531/259295562.png" data-image-src="attachments/259295531/259295562.png" data-unresolved-comment-count="0" data-linked-resource-id="259295562" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-45-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></li><li>Check that the feature has been replaced properly by checking that the dependencies have been transferred to the new feature.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="222" src="attachments/259295531/259295563.png" data-image-src="attachments/259295531/259295563.png" data-unresolved-comment-count="0" data-linked-resource-id="259295563" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-46-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></li></ol><h1 id="MakingLargeChangestoCADModels-UpdatingIntentionally">Updating Intentionally</h1><p>Once you've replaced a feature, it's important to be very diligent when updating the rest of the model. There's a couple ways to go about this. By default, NX models update automatically, so that's why I prevented downstream features from updating by using &quot;Make Current Feature&quot; in step 2 of Replacing Items. You can step through the rest of the model with Make Current Feature, and update the rest of the model feature by feature.</p><h2 id="MakingLargeChangestoCADModels-"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259295531/259295565.png" data-image-src="attachments/259295531/259295565.png" data-unresolved-comment-count="0" data-linked-resource-id="259295565" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-47-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></h2><p>Alternatively, another way to ensure that the model only updates when you want it to is to prevent it from updating altogether temporarily. With Tools&gt;Delay Model Update, NX will stop updating automatically. You can make changes (such as replacing features) and either step through the model with Make Current Feature or update all of them at once. I prefer to step through the model when updating features because NX is less likely to throw a Memory Access Violation error (what happens if a request for NX requires too much computing power at once).</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/259295531/259295567.png" data-image-src="attachments/259295531/259295567.png" data-unresolved-comment-count="0" data-linked-resource-id="259295567" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-30_19-48-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259295531" data-linked-resource-container-version="8" alt=""></span></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295532.png">image-2023-4-30_18-32-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295534.png">image-2023-4-30_18-33-36.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295536.png">image-2023-4-30_18-39-36.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295537.png">image-2023-4-30_18-39-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295538.png">image-2023-4-30_18-40-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295545.png">image-2023-4-30_19-12-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295548.png">image-2023-4-30_19-25-7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295549.png">image-2023-4-30_19-26-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295550.png">image-2023-4-30_19-27-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295553.png">image-2023-4-30_19-29-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295555.png">image-2023-4-30_19-43-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295556.png">image-2023-4-30_19-43-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295558.png">image-2023-4-30_19-44-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295559.png">image-2023-4-30_19-45-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295561.png">image-2023-4-30_19-45-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295562.png">image-2023-4-30_19-45-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295563.png">image-2023-4-30_19-46-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295565.png">image-2023-4-30_19-47-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259295531/259295567.png">image-2023-4-30_19-48-36.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Steady State Bicycle Model</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Vehicle-Dynamics_246342245.html">Vehicle Dynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Simulation-Tools_246342277.html">Simulation Tools</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Steady State Bicycle Model
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Oct 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="SteadyStateBicycleModel-Purpose:">Purpose:</h1><p>Evaluate vehicle stability and handling characteristics when the vehicle reaches steady state (mid-corner). The outputs can be easily validated through skidpad testing '@Constant radius/speed/or steering angle</p><p>Why use a simplified bicycle model?</p><ul><li>Gives basic handling curve</li><li>Allows analysis of response to control and applied forces or moments</li><li>Idea is to evaluate small perturbations in steering and how that effects handling characteristics</li></ul><h1 id="SteadyStateBicycleModel-ModelLimitations:">Model Limitations:</h1><ul><li>Linear 2 Wheel Bicycle Model<ul><li>No lateral or longitudinal load transfer</li><li>No rolling or pitching moments</li><li>Linear Tire Range (Constant Cornering Stiffness)</li><li>Constant forward velocity</li><li>No aerodynamic effects</li><li>Position control</li><li>No compliance in chassis or suspension</li><li>Assumes small angles</li></ul></li></ul><h1 id="SteadyStateBicycleModel-Inputs:">Inputs:</h1><p>Vehicle Parameters</p><p>Steering angle (assumed small): Idea is to evaluate small perturbations in steering and how that effects handling characteristics</p><h1 id="SteadyStateBicycleModel-Outputs:">Outputs:</h1><p>Steady State Handling Characteristics</p><p>Understeer Gradient!!!</p><h1 id="SteadyStateBicycleModel-Knowledge:">Knowledge:</h1><p>What is Steady State?</p><ul><li>No <strong>change</strong> in speed or acceleration, the car is at equilibrium</li><li>As soon as lateral acceleration is inputted (steer change) the car will either understeer, oversteer, or stay in the same trajectory based on how the slip angles evolve relative to lateral acceleration (traveling along FYvsSA curve of tires)</li></ul><p>What is handling?</p><ul><li>Understeer (Under yaw moment/acceeleration): Car plows and crashes nose first<ul><li>Not enough front tire grip</li><li>Too much rear tire grip</li><li>Not ideal weight and aero distributions</li><li>Too much yaw inertia</li></ul></li><li>Oversteer (Over yaw moment/acceeleration) <strong>*NOT Power Oversteer</strong>: Car spins and crashes tail first, rotates nose into turns<ul><li>Not enough rear tire grip</li><li>Too much front tire grip</li><li>Not ideal weight and aero distributions</li><li>Too little yaw inertia</li></ul></li><li>Neutral Steer (No yaw moment/acceeleration): Car continues trajectory<ul><li>Perfectly balanced</li></ul></li></ul><p>Cornering Performance</p><ul><li>Not just about max lateral acceleration</li><li>About longitudinal and vertical accelerations too</li><li>Mainly about yaw acceleration</li><li>Lateral and Longitudinal accelerations are functions of: Tire forces and moments, suspension design and tuning to exploit them, ability of driver</li></ul><h1 id="SteadyStateBicycleModel-Resources:">Resources:</h1><p>NEED Drive Access or google to try to find the same documents</p><ul><li><a class="external-link" href="file:///Z:/Knowledge_Base/02-Books/Tyre%20And%20Vehicle%20Dynamics%202nd%20Ed%20(Hans%20B.%20Pacejka).pdf" rel="nofollow">Tyre And Vehicle Dynamics 2nd Ed (Hans B. Pacejka).pdf</a></li><li><a class="external-link" href="file:///Z:/Knowledge_Base/02-Books/Race%20Car%20Vehicle%20Dynamics%20(Milliken%20&amp;%20Milliken).pdf" rel="nofollow">Race Car Vehicle Dynamics (Milliken &amp; Milliken).pdf</a></li><li>Dynamic Vehicle Drifting With Nonlinear MPC and a Fused Kinematic-Dynamic Bicycle Model</li><li><a class="external-link" href="https://vtechworks.lib.vt.edu/bitstream/handle/10919/36615/Chapter2a.pdf" rel="nofollow">Chapter2a.pdf (vt.edu)</a></li><li><a class="external-link" href="http://code.eng.buffalo.edu/dat/sites/model/bicycle.html" rel="nofollow">Bicycle Model (buffalo.edu)</a></li></ul><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Traction and Launch Control in MoTeC M1 Tune</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728414.html">Kinematics and Vehicle Dynamics (Resources)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Traction and Launch Control in MoTeC M1 Tune
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Unknown User (xia107)</span> on Sep 23, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Figuring out how launch and traction control in M1 Tune took some work. It's pretty simple, but the M1 Tune explanations are wak (imo).</p><p><br/></p><p>Note: to be able to find these settings, go to the tuning tab, then all calibrate. Turn off the check in Normal. The check in normal only shows you channels marked as normal, which does not include relevant traction control settings.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139464493/139464523.png" data-image-src="attachments/139464493/139464523.png" data-unresolved-comment-count="0" data-linked-resource-id="139464523" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-3_20-54-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="139464493" data-linked-resource-container-version="6" alt=""></span></p><h1 id="TractionandLaunchControlinMoTeCM1Tune-TractionControl">Traction Control</h1><p>Here's how traction control works:</p><ul><li>There is a map of target slip ratio vs throttle position: (Traction → aim → main)<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/139464493/139464498.png" data-image-src="attachments/139464493/139464498.png" data-unresolved-comment-count="0" data-linked-resource-id="139464498" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-3_20-11-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="139464493" data-linked-resource-container-version="6" alt=""></span></li><li>You can use one of the rotary switches to select entire separate maps</li></ul></li><li>The target slip ratio from this map can be adjusted by:<ul><li>Lateral acceleration and / or speed (Traction → Aim → Compensation → Vehicle Acceleration Lateral):<ul><li>The slip ratio target is increased or decreased by a percentage specified as a function of speed and lateral acceleration</li></ul></li><li>Gear position (Traction → Aim → Compensation →  Gear)<ul><li>Each gear can adjust the target slip ratio. Would mostly be used to disable in certain gears, or if to make sure it is disabled if gear position is unknown)</li></ul></li></ul></li><li>This target slip ratio with modifiers becomes a target rpm.</li><li>Once the target rpm is exceeded, an ignition / fuel cut starts.<ul><li>This is controlled by traction → range table</li><li>This table is a percentage as a function of speed. If your target rpm is 10000, and this is set as 5%, ignition and fuel cut will start at 10000 rpm and then be fully cut by 105% of 10000 rpm (10500 rpm)<ul><li>The entire table gets swapped with each position on a rotary switch (if mapped)</li></ul></li><li>Fuel margin (traction → engine speed limit → fuel margin) is a value in rpm that specifies how much later fuel cut should begin than ignition cut</li></ul></li><li>There is a minimum speed for the system to turn on (Traction → activate → vehicle speed)</li></ul><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><a class="external-link" href="https://www.youtube.com/watch?v=sB8hEFPUWQg&amp;hd=1" rel="nofollow">https://www.youtube.com/watch?v=sB8hEFPUWQg&amp;hd=1</a></p><p><br/></p><h1 id="TractionandLaunchControlinMoTeCM1Tune-LaunchControl">Launch Control</h1><p>This one's less opaque. Pretty much a max rpm vs speed is set. Use it to limit rpm below where TC takes over for a faster transition. rpm is limited via ignition retard (with a PI loop). There is an rpm range that can specified that is how much above the target rpm you can go before ignition / fuel cut is used instead of just ignition retardation.</p><p>Fortunately, MoTeC has released this guide on launch control:</p><p><br/></p><h1 id="TractionandLaunchControlinMoTeCM1Tune-AccelerationEventSettingsTheory">Acceleration Event Settings Theory</h1><p><br/></p><h1 id="TractionandLaunchControlinMoTeCM1Tune-SkidpadEventSettingsTheory">Skidpad Event Settings Theory</h1><p><br/></p><h1 id="TractionandLaunchControlinMoTeCM1Tune-AutocrossandEnduranceEventSettingsTheory">Autocross and Endurance Event Settings Theory</h1><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139464493/139464498.png">image2020-2-3_20-11-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139464493/139464523.png">image2020-2-3_20-54-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/139464493/139464611.pdf">M1 Launch Control User Guide (1).pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

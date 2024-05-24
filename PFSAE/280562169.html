@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DAQ PF24 | Firmware Dev Log</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836584.html">DAQ PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="276627589.html">DAQ PF24 | Project Journal</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DAQ PF24 | Firmware Dev Log
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Min, Jihong</span>, last modified on Dec 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="DAQPF24|FirmwareDevLog-&quot;Anidiotadmirescomplexity,ageniusadmiressimplicity&quot;-TerryDavis"><strong>&quot;An idiot admires complexity, a genius admires simplicity&quot; - Terry Davis</strong></h1><h1 id="DAQPF24|FirmwareDevLog-Greathardwaremakesgreatsoftware!!!!!!!"><strong>Great hardware makes great software!!!!!!!</strong></h1><p>Rough flowchart, 11/15/2023 </p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/280562169/280562170.png" data-image-src="attachments/280562169/280562170.png" data-unresolved-comment-count="0" data-linked-resource-id="280562170" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-15_21-52-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280562169" data-linked-resource-container-version="10" alt=""></span></p><h1 id="DAQPF24|FirmwareDevLog-COREFEATURES.THESEMUSTMAKEITTOTHEFINALPRODUCTNOMATTERWHAT!!!!!!!!!!!"><strong>CORE FEATURES. THESE MUST MAKE IT TO THE FINAL PRODUCT NO MATTER WHAT!!!!!!!!!!!</strong></h1><ul><li>log strain data over CAN</li><li>500+ SPS</li><li>precise calibration + drift compensation!!!!! THIS IS VERY VERY EXTREMELY IMPORTANT!!!! NICE CONSISTENT DATA IS WHY WE ARE DOING ALL OF THIS!!!!!!!!</li></ul><h1 id="DAQPF24|FirmwareDevLog-INTERPLAYBETWEENHARDWAREANDSOFTWARE:"><strong>INTERPLAY BETWEEN HARDWARE AND SOFTWARE:</strong></h1><p>Here I'll describe what each major part on CRAM does:</p><ul><li>XT-30 connector: rugged polarized connector</li><li>TSR-12450: Step-down buck converter. Takes 6.5-32V and outputs 5V up to 1A. Very good efficiency, no heatsink required, short-circuit protection</li><li>various ICs to regulate voltages to:<ul><li>3.3V: used by STM32 and most ICs</li><li>-5V: used by INA121 amps on WHAM</li><li>1.5V: excitation voltage for wheatstone bridges on WHAM</li></ul></li><li>STM32F407VET6: crunches numbers super fast</li><li><span style="color: rgb(34,34,34);">MB85RS4MTPF-G-JNERE2</span>: FRAM. Very fast write time and stores data after power off. But kinda expensive and small storage capacity(1Mb)</li><li>SD Card slot: low-speed, long term storage. Data stored in RAM is dumped to SD when stop log signal is sent to CRAM.</li><li>AT24C512C: 64Kb of EEPROM storage. Used for storing settings, calibration data, small bits of misc. info like that</li><li>DS3231: extremely precise RTC with battery backup. Drift of ~3s over 5 months. Used to keep accurate timestamps. Set and forget kinda vibe.<ul><li>debating whether we actually need this feature.</li></ul></li><li>W25Q64: Flash memory, required by STM32 microcontroller. This chip stores our actual code and firmware</li><li>TJA1050T: CAN bus transceivers. They handle data transmission to and from ECU</li></ul><h1 id="DAQPF24|FirmwareDevLog-Morefleshed-outfeatures:">More fleshed-out features:</h1><ul><li>Multiple modes:<ul><li>log to CAN/SD/FRAM: what we'll use most of the time</li><li>diagnostic self-check modes: this will probably run every time on bootup, instead of being its own mode</li><li>Calibration mode: wipes calibration data from EEPROM and accepts new data</li></ul></li><li>Damage control:<ul><li>If sensor fails (sensor doesn't respond for more than x seconds, or whatever value we set. Or, sensor spits data outside of the expected window)<ul><li>disconnect sensor. Remove it from polling list.</li><li>log timestamp of when sensor failed.</li><li>sample rest of the sensors at higher SPS</li><li>Or, we can just keep sampling the sensor, without going through all this bs</li></ul></li><li>If CAN fails (CAN doesn't respond for more than x seconds)<ul><li>Try switching over to other CAN bus. This will probably work. If it doesn't,</li><li>Disconnect CAN bus and stop reporting to CAN bus.</li><li>Start saving to FRAM or SRAM, or SD if speed allows. Probably not.<ul><li>Ok here's the thing.<ul><li>FRAM: $10 a pop, very fast, nonvolatile</li><li>SRAM: $1.75 a pop, also very fast, volatile</li></ul></li></ul></li><li>Once logging is over (stop signal sent from ECU to CRAM), save RAM data to SD, wipe RAM</li></ul></li></ul></li><li>Twin CAN buses:<ul><li>Both the M130 and STM32 has two CAN buses. Here's my plan:<ul><li>High Speed Bus: used only for telemetry transmission<ul><li>transmits telemetry + timestamps as fast as possible</li><li>prioritizes high SPS and absolutely necessary data</li><li>any data we need continuously streamed, use this bus</li></ul></li><li>Low Speed Bus: used for low-speed telemetry and control signals<ul><li>transmits control signals, flags, misc. data</li><li>This exists to not bog down the first bus. Only used for data that won't be streamed continuously.</li><li>used as a &quot;support&quot; for the first CAN bus.</li></ul></li></ul></li></ul></li></ul><p><br/></p><h1 id="DAQPF24|FirmwareDevLog-LESSONSLEARNED!!!"><strong>LESSONS LEARNED!!!</strong></h1><ul><li>read datasheets and check that parts meet requirements before doing anything with it<ul><li>wasted approx. 2 weeks cuz we were too lazy to look thru HX711 datasheet</li></ul></li><li>Honestly, I haven;t learned anything &quot;new&quot; so far, but I feel like that will change once we get to calibration and testing</li><li>STM32Cube is a bitch</li></ul><h1 id="DAQPF24|FirmwareDevLog-MDR(ManningDesignReview)"><strong>MDR (Manning Design Review)</strong></h1><ul><li>We will need careful calibration of the system! I know we already know this but Manning pointed out calibration was going to be very important for strain gauges<ul><li>CRAM needs to run a calibration sequence upon bootup every time. Simply doing a one-time thing and storing/recalling from ROM doesn't work</li></ul></li><li>Using Arduino code is probably our safest bet. While it's not the most optimized solution, it will get us results much quicker than trying to figure out something we know nothing about</li></ul><p><br/></p><h1 id="DAQPF24|FirmwareDevLog-12/5/2023UPDATE:LASTFORTHESEMESTER!!!"><strong>12/5/2023 UPDATE: LAST FOR THE SEMESTER!!!</strong></h1><p>Got CAN comms working. Very easy with Arduino libraries. But it's pretty unoptimized and only works with the Arduino framework.</p><p>Need to incorporate it into STM32Cube IDE project!!! That way we can have the ease of use the Arduino CAN bus library provides, but still write low-level code if we want to (we want LL code most of the time save for complex stuff like CAN comms or I2C sensors)</p><p>Development frozen till end of semester!</p><p><br/></p><p>12/18/2023 6:27:23 PM</p><ul style="list-style-type: square;"><li>discovered CAN and USB don't work well together<ul style="list-style-type: square;"><li>Both can be activated in the same application but cannot be running concurrently; one must be disabled for the other to run</li><li>Not that big of a deal since serial comms are not going to be used often and will be handled by USART3</li></ul></li><li>USART3 confirmed working<ul style="list-style-type: square;"><li>Clashes a bit with other peripherals but I don't think it's that big of an issue yet</li><li>This will be used to send debug data to PC when debugging</li><li>Not used much, if at all, in actual use</li></ul></li><li>CAN bus working!<ul style="list-style-type: square;"><li>Got CAN to work using STM32 HAL (No Arduino code)</li><li>Can relay analog info over CAN</li><li>Now need to work on optimizing for speed + efficiency + redundancies</li></ul></li></ul><p>12/26/2023 10:55:35 PM</p><ul><li>Successfully able to send analog readings over CAN<ul><li>simulated IRL scenario (4 load cells measured and sent over as fast as possible with no delay + a little post processing), about 3500 CAN frames sent per second.</li><li>Values are sent as integer in 12-bit resolution (0-4095). This is to save time and performance on the STM32's end.</li><li>And this is with all four measurements in the same frame, so 3500 * 4 = 14000 samples per second. Too good to be true so I gotta re-verify that</li></ul></li><li>Now need work on:<ul><li>reading analog values from multiple channels with DMA</li><li>optimizing CAN frames for high information density while retaining sample rate</li><li>CAN receive so that ECU can control CRAM when needed</li></ul></li></ul><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562169/280562170.png">image-2023-11-15_21-52-35.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

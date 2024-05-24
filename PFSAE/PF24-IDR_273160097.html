@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF24 IDR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297383.html">Design | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-PF24_255692448.html">Powertrain PF24</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF-24-PT-Design-Notebook_262836728.html">PF 24 PT Design Notebook</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF24-POW-Design-Reviews_270339167.html">PF24 POW Design Reviews</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF24 IDR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Horton, Tyler Jason</span>, last modified by <span class='editor'> Margraf, Matthew William</span> on Oct 14, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>SEND OUT A REMINDER EMAIL</strong></p><p><strong>Attendees:</strong></p><p>1.  Adam Dewey (drivetrain)</p><p>2.  Adarsh Mattu (drivetrain)</p><p>3.  Dom Nocon (powertrain)</p><p><br/></p><p><strong>Notes:</strong></p><ul><li>Engine<ul><li>How to know flow characteristics/backpressure of muffler?<ul><li>Don't really, there is a base model in GT that we change slightly</li><li>Will adjust cam based on dyno results, to control for any differences</li></ul></li><li>Pressure sensor in exhaust?</li><li>Can't rely on what some guy told you for design (even if the guy is an expert) (this is referencing justification for decreasing exhaust/intake overlap)</li><li>Spark plug with built in pressure sensor?<ul><li>Not a good enough spark plug, also will contact piston</li></ul></li></ul></li></ul><p><br/></p><ul><li>Drivetrain<ul><li>If changing tunes per event, does that affect final drive?<ul><li>No, tunes are mostly about RPM range, not really peak values</li></ul></li><li>Plug all different torque curves into the lap sim to confirm above (and document)</li><li>Why 1.2 yield FS for sprocket?<ul><li>Don't have load certainty for 1.1</li><li>Last year's sprocket fairly worn</li></ul></li><li>Beefing up sprocket doesn't change wear on teeth? 0.1 safety factor just makes middle part heavier<ul><li>Adding more material in the middle adds more material to take loads</li></ul></li><li>Still won't change wear rate on teeth, same tooth profile</li><li>Why 1.1 yield on uprights?<ul><li>We will put strain gauges for testing to justify</li><li>Sprocket is a higher risk item</li></ul></li><li>But that means we don't have the data yet and we probably won't redesign for a different safety factor</li><li>No fatigue analysis done, probably why we are seeing issues (turnbuckle)</li><li>Need to justify beefing up a part vs. putting a new one on before comp<ul><li>team goal to reduce weight</li></ul></li><li>Team standards probably fine, but need more analysis</li><li><strong>Below is titanium convo:</strong></li><li>Good way to reduce weight, but start with parts we already make in house vs. reproducing splines which we have no info on and as a result may also require custom tripods</li><li>Ask another team what spline they use? (reddit)</li><li>Fatigue on titanium?</li><li>Moment of inertia delta?<ul><li>Higher with titanium bc different cross sectional area</li></ul></li><li>Carbon shaft?<ul><li>Steel/aluminum inserts need to be attached, will probably just shear out of the carbon</li></ul></li><li>In house manufacturing will not meet the spec of RCV, need huge markdowns bc splines won't be perfect</li><li>10% weight difference not super worth it, better areas to look at?</li><li>How much does the spline shape actually matter? (ghetto stuff has been done in the past with the sprocket spline and it was fine)</li><li><strong>Drivetrain Breakout:</strong></li><li>Test load cases with strain gauges on old car?<ul><li>Difficult to do with no drivetrain or powertrain on PF23</li><li>Also difficult to do with PF22 because its on blocks with nothing</li></ul></li><li>Engine torque or wheel grip?<ul><li>Engine torque is the higher number so going off of that</li></ul></li><li>What about impulse? (chain is loose, shock loading)<ul><li>Haven't taken shock loading into account, but we just make sure chain is tight before we launch</li></ul></li><li>Reverify with strain gauge that loads are good<ul><li>We will find out if it breaks lol</li></ul></li><li>We did a bunch of launches at Grissom and found out loads, do this again?<ul><li>Issues with tire grip, engine inertia<ul><li>Can't get impulse from something like this bc it just deforms the tire</li><li>Scope creep, pick something and do it well</li></ul></li></ul></li><li>May make sense to stick with loads we have bc they are informative even if not 100% correlated</li><li>Access to slip rings?<ul><li>No</li></ul></li><li>Can we CNC the center cutouts with a 3/8&quot; endmill?<ul><li>No, using a 5/16&quot; (only 1 tool change, John says is OK)</li></ul></li><li>Would the most efficient pattern for the sprocket be perfectly symmetrical?<ul><li>Yes, but a 6 cutout didn't have enough space and failed FEA</li></ul></li><li>Area above the smaller pockets is huge, area above large pockets is small</li><li>What temperatures is the sprocket getting to?<ul><li>We don't have data for this, its also kinda weird to model</li></ul></li><li>Temp might be accelerating wear, can we do it based on sprocket efficiency and say all the heat goes into the teeth?</li><li><strong>Take IR gun to testing session and record the temp right after use</strong></li><li>Mesh convergence and mesh error? Can go fairly coarse on 60% of it<ul><li>Running with a sphere of influence at certain areas</li></ul></li><li>How much do the upright/left deform leading to misalignment with the chain/sprocket<ul><li>Chain falls unevenly on sprocket and stuff breaks</li></ul></li><li>Modeling stiffness of the differential<ul><li>timeline creep occurred, doing after design freeze</li></ul></li><li>Upright Analysis - Structure readout last year negative margins on ultimate shear<ul><li>upleft bottom node: -17% shear ultimate</li><li>Two different things on calculator, second column</li></ul></li><li>Hex stock for turnbuckles for more accurate measurements of equal length</li><li>Try some different geometries, explore options<ul><li>symmetric </li></ul></li><li>Fatigue life of gear teeth, any fatigue analysis<ul><li>being done this weekend</li><li>Type-2 hard anodized to increase strength of teeth</li><li>Contact stresses on actual teeth</li></ul></li></ul></li></ul><p><br/></p><ul><li>Intake</li></ul><p><br/></p><ul><li>Exhaust<ul><li>Less bendy headers? (may be equal length, but flow won't be even)<ul><li>We can move them around</li></ul></li></ul></li><li>Cooling<ul><li>Overlay I2 data in MATLAB for Design Presentation</li><li>How did you decide 7% buffer<ul><li>2 inches of core thickness</li></ul></li></ul></li></ul><p><br/></p><ul><li>Oil<ul><li>Power loss due to upgraded pump (increased oil pressure)<ul><li>Nominal because the pressure increase is small</li></ul></li><li>Run the AN-10 lines and fittings in CAD</li></ul></li></ul><p><br/></p><ul><li>Fuel<ul><li>Line from top of tank to filler neck?<br/><ul><li>Discussed at CDR</li><li>Weld bung on 90 coming out of tank to connect</li><li>Make clear tube as short as possible, increasing 90 bend length</li></ul></li></ul></li></ul><p><br/></p><ul><li>Testing<ul><li>1% correlation good enough, Sim good enough to use for correlation?</li><li>Can't make design decisions within a large threshhold</li><li>Note didn't make any decision under 10% threshhold</li><li>Fuel Tank sizing include any gain in efficiency <ul><li>Based off previous years fuel usage</li><li>Once BSFC in lapsim we could iterate</li></ul></li><li>Differential Testing<ul><li>A bunch of skid pads</li><li>J-turn that are being run in simulations</li></ul></li><li>Only looking at ...<ul><li>Clutch packs thickness changes</li></ul></li><li>Drivetrain Members<ul><li>Sid - Sproket</li><li>2-3 - Towbar</li></ul></li><li>Don't go in over your head based on experience available on the team<ul><li>determine where to spend the most effort</li></ul></li><li>Differential Tuning more impactful than halfshaft weight</li><li>Diff Testing, one driver or gauging multiple <ul><li>current plan - both endurance drivers</li><li>random diff change - see if they notice </li><li>Effect of differential on driver confidence</li></ul></li></ul></li></ul><p><br/></p><p><strong>Questions:</strong></p><ul><li>What else should we include in our testing plan?<ul><li>Validating the sim and trusting it with the lapsim</li><li>Actual design report - design theory for entire car and stick with it<ul><li>every single decision based on central theory</li></ul></li></ul></li></ul><p><br/></p><ul><li>Does anyone have experience with titanium 3D printing<ul><li>No?</li></ul></li></ul><ul><li>Any way to determine max safe operating water temp for an engine without blowing it up?<ul><li>Based on tune, where making peak power</li></ul></li><li>Does anyone have experience using LMTD (log mean temp difference) (instead of e-NTU) for heat transfer calculations for a water-air heat exchanger (radiator)?<ul><li>This would require us to measure air in and out temps to correlate</li><li>Would this actually give us better data than guessing/estimating a heat transfer coefficient?<ul><li>Best bet to get heat exchanger and test it, test actual setup</li><li>water temp in/out, air temp in/out</li><li>Mass flow on a bench vs. actually on the car</li></ul></li></ul></li></ul><p><br/></p><ul><li>Does anyone have experience with/contacts for microtube radiators? (or a way to convince Mezzo Technologies to make us one?)</li></ul><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 1. Engine Speed Reference Basics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Education_165350208.html">Powertrain Education</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2_New-Engine-Development-Workflow_198509208.html">2_New Engine Development Workflow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 1. Engine Speed Reference Basics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dnocon)</span>, last modified on Dec 03, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Engine Speed Reference is one of the first sensors you need to figure out on a new engine. Engine Speed tells you more than just RPM of the crankshaft. It also allows you to know the location of the piston, TDC, BDC, and everywhere in between. </p><p>For every 2 rotations of the crankshaft on a 4-stroke engine, the camshaft will rotate once. You can not get synchronization from only the crank sensor. See <u><a href="2.-Engine-Synchronization-Basics_198509234.html">2. Engine Synchronization Basics</a></u> for an overview on sync. </p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-MagneticPickupvs.HallEffect"><strong>Magnetic Pickup vs. Hall Effect</strong></h1><p>Before we get into M1. You will need to understand the difference between types of trigger wheel sensors. </p><p>A Hall Effect sensor is<span> </span><strong>superior</strong><span> </span>to a magnetic pickup for our purposes because the output waveform is<strong> easy to use.</strong> </p><p>A magnetic pickup (or otherwise known as a M Hall) will need a moving magnet to trigger a signal.</p><p>A hall effect will only require a ferrous material (like steel) to trigger the sensor. </p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198512907.png" data-image-src="attachments/198509584/198512907.png" data-unresolved-comment-count="0" data-linked-resource-id="198512907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="MagVSHall.PNG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p>Depending on your build these are the parameters you will need to adjust to allow MoTeC to read the sensor corrrectly: FOLLOW THE HINTS GIVEN BY MOTEC IN M1 TO TUNE THE PIN VALUES!</p><p>It will require a lot of cranking and trial and error to tune these values correctly. To speed up this process and to view the actual waveform of the sensor see this page: <u><a href="3.-Capturing-Inputs-in-MoTeC_198512889.html">3. Capturing Inputs in MoTeC</a></u></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-Overview"><strong>Overview</strong></h1><p>These parameters are things you will likely need to adjust.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198509584/198512904.jpg" data-image-src="attachments/198509584/198512904.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198512904" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="EngineSpeedParameters.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p>Much of the rest of this page is explaining what MoTeC already tells you in M1.</p><h1 id="id-1.EngineSpeedReferenceBasics-Mode"><strong>Mode</strong></h1><p>When you open M1 Tune (Engine → Speed → Reference → Mode) there are several options for different trigger wheel setups. Below is a screenshot of the Enumerations relevant to FSAE and the engines we would be using.  You will likely need to open your engine up to see the triggering mechanism. This will likely be located on the flywheel, a gear on the timing chain, or on the AC Magneto. Do your research diligently and select the appropriate mode.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198509640.jpg" data-image-src="attachments/198509584/198509640.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509640" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="e1.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198509639.jpg" data-image-src="attachments/198509584/198509639.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509639" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="e2.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198509638.jpg" data-image-src="attachments/198509584/198509638.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509638" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="e3.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-ToothCount"><strong>Tooth Count</strong></h1><p>On the crank trigger wheel count the number of teeth. If there are missing teeth, pretend that they exist and include them in your counting. </p><ul style="list-style-type: square;"><li>i.e. If you have a Trigger that has 11 physical teeth showing and one location that a 12th tooth would go to make the wheel symmetrical, you should input '12' into &quot;Tooth Count&quot; in M1.<ul style="list-style-type: square;"><li>This type of trigger wheel is known as a 12 tooth 1 missing. </li></ul></li></ul><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-Offset"><strong>Offset</strong></h1><p>Attached is a screenshot of Engine Speed Reference Offset. Follow these directions to figure out what number to input. You will need to take crude measurements inside the engine of the trigger wheels location in comparison to TDC. There will likley be a marking you need to line up to determine TDC. Or you can put a dowel inside the sparkplug hole and rotate the crank until that dowel is at TDC. Don't worry about getting this perfectly correct. We will fine tune this offset number later so timing will be exactly correct. See <u><a href="5.-Manually-Verifying-Ref-and-Sync_198509588.html">5. Manually Verifying Ref and Sync</a></u></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="800" src="attachments/198509584/198509643.jpg" data-image-src="attachments/198509584/198509643.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509643" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="engspeedrefoffset.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-BlankRatio"><strong>Blank Ratio</strong></h1><p>Attached is a screenshot of Engine Speed Reference Blank Ratio. You will need to view the waveform and set this number. This number is not crucial to the performance of the engine and can be set to 20%. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198509584/198509648.jpg" data-image-src="attachments/198509584/198509648.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509648" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="blankratio.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-WidePitchThreshold"><strong>Wide Pitch Threshold</strong></h1><p>Attached is a screenshot of Engine Speed Reference Wide Pitch Threshold. Set to 150% as suggested by MoTeC.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198509649.jpg" data-image-src="attachments/198509584/198509649.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509649" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Widepitchthresh.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-NarrowPitchThreshold"><strong>Narrow Pitch Threshold</strong></h1><p>Attached is a screenshot of Narrow Pitch Threshold. The team has followed the 60% recommendation by MoTeC in the past.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/198509584/198509650.jpg" data-image-src="attachments/198509584/198509650.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509650" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Narrowpitchthresh.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-EngineSpeedPullupControl"><strong>Engine Speed Pullup Control</strong></h1><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/198509584/198513113.jpg" data-image-src="attachments/198509584/198513113.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198513113" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="enginespeedpullupcontrol.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-EngineSpeedPinActiveEdge"><strong>Engine Speed Pin Active Edge</strong></h1><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198509584/198513114.jpg" data-image-src="attachments/198509584/198513114.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198513114" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="enginespeedpinactiveedge.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-EngineSpeedPinThreshold"><strong>Engine Speed Pin Threshold</strong></h1><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198509584/198513115.jpg" data-image-src="attachments/198509584/198513115.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198513115" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="enginespeedpinthresh.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509584" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-EngineSpeedPinHysteresis"><strong>Engine Speed Pin Hysteresis</strong></h1><ul style="list-style-type: square;"><li>use images shown above along with <u><a href="3.-Capturing-Inputs-in-MoTeC_198512889.html">3. Capturing Inputs in MoTeC</a> </u>to find the values for each respective rpm.</li></ul><p><br/></p><h1 id="id-1.EngineSpeedReferenceBasics-EngineSpeedPinDebounce"><strong>Engine Speed Pin Debounce</strong></h1><ul style="list-style-type: square;"><li>this is more guess and check. Highly suggest using <u><a href="3.-Capturing-Inputs-in-MoTeC_198512889.html">3. Capturing Inputs in MoTeC</a></u> to help your guessing</li></ul><h1 id="id-1.EngineSpeedReferenceBasics-Example:"><strong>Example:</strong> </h1><ul style="list-style-type: square;"><li>see a WR450F Tune or the Yamaha R6 Tune as an example to start</li><li>reach out to other formula teams running the engine of interest. They many give you values. ALWAYS verify the values via <u><a href="5.-Manually-Verifying-Ref-and-Sync_198509588.html">5. Manually Verifying Ref and Sync</a></u> these methods to ensure the safety of your engine. </li></ul><h1 id="id-1.EngineSpeedReferenceBasics-Sources:"><strong>Sources:</strong></h1><p>(note that this many not look the same at all because of differences in the build and differences in updates from MoTeC)</p><ol><li>Dom + team, we started the WR450F for the first time and learned everything before even making this page</li><li>Motec vid on ref<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/PgURoFtEf8Q?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</li><li>Motec Video on Ref / Sync<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/mv0-9_JS8oA?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</li><li>More Motec Videos<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/87_SRTuGZu4?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509638.jpg">e3.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509639.jpg">e2.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509640.jpg">e1.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509641.png">image2021-11-25_13-57-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509643.jpg">engspeedrefoffset.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509644.jpg">EngineSpeedRefParameters.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509647.png">image2021-11-25_14-18-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509648.jpg">blankratio.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509649.jpg">Widepitchthresh.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198509650.jpg">Narrowpitchthresh.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198512904.jpg">EngineSpeedParameters.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198512907.png">MagVSHall.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198513101.url">2. Engine Synchronization Basics.url</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198513113.jpg">enginespeedpullupcontrol.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198513114.jpg">enginespeedpinactiveedge.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509584/198513115.jpg">enginespeedpinthresh.JPG</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

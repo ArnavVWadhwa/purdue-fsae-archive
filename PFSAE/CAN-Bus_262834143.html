@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : CAN Bus</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297205.html">Education | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262833443.html">Fundamentals | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : CAN Bus
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified by <span class='editor'> Kinnaman, Konnor Ronald</span> on Oct 22, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="CANBus-GeneralCANBus"><strong>General CAN Bus</strong></h2><hr/><p><strong>Videos:</strong></p><p><strong><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/YBrU_eZM110?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/z5CVljiLhvc?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</strong></p><p><br/></p><p><strong>Notes:</strong></p><ul><li>FSAE/Industry standard is yellow CAN high and green CAN low</li></ul><p><strong>          <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="150" width="267" src="https://cdn.shopify.com/s/files/1/0579/8032/1980/files/twisted-can-bus-wiring-harness-high-low-green-yellow.svg?v=1633690039" data-image-src="https://cdn.shopify.com/s/files/1/0579/8032/1980/files/twisted-can-bus-wiring-harness-high-low-green-yellow.svg?v=1633690039"></span></strong></p><ul><li><span style="color: rgb(0,51,102);">Terminated on both ends by 120Ω resistors</span></li><li><span style="color: rgb(0,51,102);">Distance from the CAN bus to any given node must be &lt;30 cm</span></li></ul><p><strong><span style="color: rgb(0,51,102);">CAN Frames:</span></strong></p><p><span style="color: rgb(0,51,102);">CAN bus communication is done through frames, which has 8 parts.</span></p><p><strong><span style="color: rgb(0,51,102);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="233" src="attachments/262834143/276627530.png" data-image-src="attachments/262834143/276627530.png" data-unresolved-comment-count="0" data-linked-resource-id="276627530" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-21_23-12-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834143" data-linked-resource-container-version="9" alt=""></span></span></strong></p><ul><li><span style="color: rgb(0,51,102);"><strong>SOF: &quot;</strong></span>Start of Frame -  &quot;dominant 0&quot;, which tells the CAN bus that a node is about to transmit data (1 bit)</li><li><strong>ID:</strong> Frame identifier - lower value = higher priority (11 bits for CAN2.0A, 29 bits for CAN2.0B)</li><li><strong>RTR:</strong> Remote Transmission Request - shows whether node is sending data or requesting data from another node (1 bit)</li><li><strong>Control: </strong>Contains 2 parts:<br/><ul><li>Identifier Extension Bit (IDE): &quot;dominant-0 for CAN2.0A (1 bit)</li><li>Data Length Code (DLC): Specifies Length of data being transmitted</li></ul></li><li><strong>Data: </strong>Data from sensors and nodes in the CAN bus</li><li><strong>CRC: </strong>Cyclic Redundancy Check - ensures data integrity</li><li><strong>ACK</strong><strong>: </strong>Acknowledgment - indicates if node has received data correctly</li><li><strong>EOF: </strong>End of Frame</li></ul><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="152" src="attachments/262834143/276627540.png" data-image-src="attachments/262834143/276627540.png" data-unresolved-comment-count="0" data-linked-resource-id="276627540" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-21_23-45-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834143" data-linked-resource-container-version="9" alt=""></span></p><p><em>Example CAN2.0B data</em></p><p><br/></p><p>Raw CAN data isn't readable, so you need to decode the CAN data into actual engineering values for it to make sense.</p><p><strong>Decoding CAN Data</strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="125" src="attachments/262834143/276627541.png" data-image-src="attachments/262834143/276627541.png" data-unresolved-comment-count="0" data-linked-resource-id="276627541" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-21_23-47-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834143" data-linked-resource-container-version="9" alt=""></span></p><p>The encoding process for CAN data is often proprietary, and you'll have to look through some databases to figure out how to decode the CAN data for your specific application.</p><p>Generally the CAN data will be <strong>scaled</strong> by some value, and then it will be <strong>offset</strong> by some value.</p><p><br/></p><p><br/></p><h2 id="CANBus-CANBitTimingRequirements"><strong>CAN Bit Timing Requirements</strong></h2><hr/><p>The various nodes of the CAN bus need to be sending data to the ECU at a rate at which it can read it.</p><p>In the CAN protocol, the bit rate, bit sample point, and number of samples per bit can all be coded into your Design Environment.</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><span style="color: rgb(0,51,102);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="248" src="attachments/262834143/267665474.png" data-image-src="attachments/262834143/267665474.png" data-unresolved-comment-count="0" data-linked-resource-id="267665474" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-15_15-22-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834143" data-linked-resource-container-version="9" alt=""></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834143/267665474.png">image-2023-8-15_15-22-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834143/276627530.png">image-2023-10-21_23-12-36.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834143/276627540.png">image-2023-10-21_23-45-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834143/276627541.png">image-2023-10-21_23-47-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834143/276627543.png">image-2023-10-22_0-19-14.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

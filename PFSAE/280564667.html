@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Harness: Wire Sizing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="246343627.html">Harness | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Harness: Wire Sizing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="Harness:WireSizing-Background:">Background:</h3><p>Wire sizing is an important step in wiring harness design to ensure the proper operation of components and driver safety. If wires get too hot a fire could start, and there is too little voltage by the time the end of the wire is reached components may not work properly. The basis of wire sizing on this team is voltage drop and current rating of the wire. Often times temperature will be the limiting factor, however there might be cases in which the voltage drop across the wire forces an increase in AWG. It is also possible that the connector itself is the limiting factor in wire sizing in either direction.</p><p><br/></p><h3 id="Harness:WireSizing-VoltageDropCalculation:">Voltage Drop Calculation:</h3><p>The voltage drop calculator is based off of a simple calculation of wire resistance based on the resistivity of different gauges of Tefzel wire.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/222/2014/12/20105943/Figure_21_03_01a.jpg" data-image-src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/222/2014/12/20105943/Figure_21_03_01a.jpg"></span></p><p><br/></p><p>It calculates the resistance of the wire based on the input <em>length </em>and then uses that resistance to calculate the voltage drop across the wire using <em>max current</em>. Max current is used to ensure that a given component will remain operational at its max load case.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/280564667/280564686.png" data-image-src="attachments/280564667/280564686.png" data-unresolved-comment-count="0" data-linked-resource-id="280564686" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-56-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564667" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>The input <em>starting voltage </em>is then used to calculate the percentage voltage drop. The team standard for this value for most components is &lt;5%. This comes from the rbracing document. To use the calculator open it in Matlab and replace the values in %Inputs% with the desired values based on the type of output and wire length taken from CAD.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="80" src="attachments/280564667/280564688.png" data-image-src="attachments/280564667/280564688.png" data-unresolved-comment-count="0" data-linked-resource-id="280564688" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-3-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564667" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>Running the calculator will give the voltage drop across the tested wire in Volts and as a percentage. Initial AWG is chosen in accordance with the 5% standard mentioned above and with the considerations below also taken into account.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="125" src="attachments/280564667/280564689.png" data-image-src="attachments/280564667/280564689.png" data-unresolved-comment-count="0" data-linked-resource-id="280564689" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-4-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564667" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><h3 id="Harness:WireSizing-WireCurrentRating:">Wire Current Rating:</h3><p>Each AWG of Tefzel wire has an allowable current rating before its temperature increases beyond 35C and 10C and each of those temperature increases corresponds to a given allowable length. The 35C columns deal with higher current draws at shorter lengths and the 10C columns are the opposite. Find the lowest possible wire AWG that will sustain the current draw for the wire length taken from CAD and if that AWG is larger than that deemed allowable using the voltage drop calculation use the new wire AWG from this current rating instead.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280564667/280564694.png" data-image-src="attachments/280564667/280564694.png" data-unresolved-comment-count="0" data-linked-resource-id="280564694" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-7-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564667" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>Example of PF24 wire sizing found here: <u><a href="273158715.html">Wire Sizing | PF24</a></u></p><h3 id="Harness:WireSizing-Considerations:">Considerations:</h3><ul><li>Coils should be as high of an AWG that the connectors will allow for the optimal spark event. More voltage means easier spark and less dwell time.</li><li>Injectors should be as high of an AWG that the connectors will allow so that they receive as close to the intended voltage as possible and open and close as quickly as possible</li><li>Current rating of the wire will often be more influential than the voltage drop</li><li>Double check the voltage drop across the reference voltage wires using the total current draw of all sensors</li><li>Connector AWG requirements may trump both voltage drop calculations and current rating</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564667/280564686.png">image-2023-12-6_15-56-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564667/280564688.png">image-2023-12-6_16-3-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564667/280564689.png">image-2023-12-6_16-4-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564667/280564694.png">image-2023-12-6_16-7-0.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

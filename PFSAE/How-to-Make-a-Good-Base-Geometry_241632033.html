@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : How to Make a Good Base Geometry</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="How-to-Do-Things_233834237.html">How to Do Things</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : How to Make a Good Base Geometry
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified by <span class='editor'> Matthew James Lamear</span> on Sep 19, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Why Do We Need a Separate CFD Geometry</strong></u></p><ul><li>Normal CAD has too many details that's unnecessary for the purpose of simulating flow over a the car. E.g. how many washer you use does not change the flow field significantly</li><li>If the geometry is too complicated, CFD will take longer to solve at best, and diverge at worst</li><li>Certain features like stagnant air with limited mass and momentum flux can lead to numerical instability</li><li>While the purpose of surface wrapper is to clean up the input geometry, manual clean up will help to make the process go quicker and the end result will usually have less geometric errors. I have seen horrible geometry errors caused by complicated base geometry</li></ul><p><u><strong>Geometry Clean Up</strong></u></p><ul><li>Get started<ul><li>Copy over the geometry from the main car assembly. You can either export everything a parasolid and reimport it into a different NX part, or use clone assembly</li></ul></li><li>Delete things that you don't need<ul><li>Small mounting hardware. Including bolts, nuts, washers, rod ends, etc. Things like tie rods should stay</li><li>Features completely inside of another feature. E.g. there might be things in the exhaust that do not see any airflow at all</li><li>Other small, and highly complex geometries. You just gotta put on your CFD goggles and weigh the benefits of removing something or not. A good example of this is the chain</li></ul></li><li>Create water tight geometries<ul><li>There is no point in simulating flows stagnant flow inside, say, chassis tubes. And it can lead to numerical instabilities</li><li>Chassis usually have open tubes, closing the ends of to create water tight geometries</li><li>Things you usually need to look out for:<ul><li>Chassis tubes</li><li>Intake</li><li>Exhaust/exhaust lines</li><li>Fuel lines</li><li>Catch cans</li><li>Drivetrain half shafts</li><li>Mounting tie rods (the openings for these are usually so small that surface wrapper can close them off, but manually doing it make it easier for surface wrapper)</li><li>Fuel tanks</li><li>Dampers (there are a million openings in the dampers)</li></ul></li><li>As long as the geometry has no opening to the outside world, surface wrapper will fill the empty space in<ul><li>It might be quicker if you close it out yourself, but due to the work required, I never really bothered to check how significant this is</li></ul></li><li>Surface wrapper will fill in the opening in 1 inch (or whatever the current setting is), but it's best to do everything yourself. Surface wrapper can have a stroke sometimes</li></ul></li><li>Hole patching<ul><li>Small holes cut for weight savings, mounting, etc. can be patched to reduce geometry complex without messing up the flow field</li><li>Again, surface wrapper should be able to take care most of it, but patching the holes manually will increase stability and speed</li></ul></li><li>STAR Leak Detection tool<ul><li>STAR has a leak detection tool built in to allow you to check whether your geometry is water tight or not. You basically set a source point and target point, and it uses a path finding algorithm to check for leak</li><li>This process can be tedious and I only use it for big parts like intake</li></ul></li><li>Leak Detection with initial condition<ul><li>If you are remaking a lot of things, like an entire chassis for example, it will be quicker if you just preproc the sim on Linux backend, and generate the initial conditions interactively</li><li>This way you can easily go through 2D slices to figure out if parts are leaking</li></ul></li></ul><p><u><strong>Geometry Cleanups in STAR</strong></u></p><ul><li>Import the parts you cleaned up in NX into STAR via parasolid, and uncheck simplify assembly as always</li><li>Open up the composite part, and combine all bodies, make sure the new body is named Body1</li><li>Open the CombineSurfaces.java class in src/random, set the name at of end of line 19 (fsaeSTAR V6.3) to the name of the composite part</li><li>Run this macro<ul><li>This macro combines all surfaces under the specified composite part into one</li><li>Because I'm lazy, I made it so that the body has to be called Body1</li><li>You can just combine the surface manually because STAR doesn't allow you to combine baffle surface manually, but you can do it through a macro for some reason</li></ul></li><li>Two reasons why you should do this<ul><li>It speeds simulations up as there are less surfaces to deal with</li><li>There is a hard limit on the number of surface you can have in STAR, we hit it before we started doing this, we don't need to hit it again</li></ul></li></ul><p><u><strong>Powertrain Special Treatment</strong></u></p><ul><li>Cooling (as of fsaeSTAR V6.3)<ul><li>Fan needs to be a separate part from radiator (so nothing can connect them). The fan shroud you see on PF23 is not compatible with the CFD environment</li><li>Go through the radiator movement tutorial for updating radiator position</li></ul></li><li>Exhaust<ul><li>In fsaeSTAR V6.3, you have the open to assign a surface to be mass flow inlet to simulate exhaust flow</li><li>This is not required</li><li>To make exhaust flow happen, name a surface &quot;Exhaust&quot;, and fsaeSTAR will take care the rest of it</li></ul></li><li>Engine<ul><li>In CAD, the engine is made off a million surfaces. It is extremely slow to export, import, and for STAR to deal with it in general</li><li>What I did was I took the hours that it required to import it into STAR, surface wrapped it, and export as STL for reference in NX (not necessary)</li><li>If the engine moved, you have two options<ul><li>Take hours out of your day to import the engine at its new location into STAR, surface wrap it, and detach it</li><li>Or you could use the oil pan as a reference, translate the engine in STAR, until it perfect matches the new oil pan position</li></ul></li><li>IMPORTANT NOTE: If you have a high-end PC - importing should not take that long. Using an AMD Ryzen 5900x with 32 GB of RAM with Star having 8 cores allocated, import time was 24 minutes.</li></ul></li></ul><p><u><strong>Geometry Tree</strong></u></p><p><u><strong><span style="color: rgb(255,0,0);">Update once fsaeSTAR V6.3 has been released</span></strong></u></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

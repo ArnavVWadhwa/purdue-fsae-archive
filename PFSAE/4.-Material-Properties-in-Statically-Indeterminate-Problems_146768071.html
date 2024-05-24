@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 4. Material Properties in Statically Indeterminate Problems</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Mechanics-of-Materials_143759776.html">Mechanics of Materials</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 4. Material Properties in Statically Indeterminate Problems
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (napolia)</span>, last modified on Apr 28, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>When a statics problem is non determinate, when there are more unknown values than there are equilibrium equations, then material properties are used to make up the difference in equations. The material properties that we can use include Poisson's Ratio, Young's Modulus, and Modulus of Rigidity (or Shear Modulus), which is analogous to the Young's Modulus, but for shear stress instead of axial..</p><h2 id="id-4.MaterialPropertiesinStaticallyIndeterminateProblems-Poisson&#39;sRatio">Poisson's Ratio</h2><p>When a material is stretched in one direction it contracts in the lateral directions. The resulting longitudinal and lateral strains occur in a fixed ratio known as Poisson's ratio. The value of Poisson's ratio for a given material may be determined from a simple tension test as:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="100" src="attachments/146768071/146768073.png" data-image-src="attachments/146768071/146768073.png" data-unresolved-comment-count="0" data-linked-resource-id="146768073" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_15-48-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p>The minus sign recognizes that the two strains always have opposite signs.  This simple definition can be used to calculate the value of Poisson’s ratio only for a uniaxial stress state with the material still in the linear region where <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="50" src="attachments/146768071/146768075.png" data-image-src="attachments/146768071/146768075.png" data-unresolved-comment-count="0" data-linked-resource-id="146768075" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_15-51-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span>. In multidimensional stress states both strains are affected by stress induced strains in the other direction.</p><h2 id="id-4.MaterialPropertiesinStaticallyIndeterminateProblems-GeneralizedHooke&#39;sLaw">Generalized Hooke's Law</h2><p>We can use a generalized form of Hooke's Law (shown below) to relate stress, strain, Young's Modulus, and Poisson's Ratio. These relations are for a three-dimensional stress state.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="150" src="attachments/146768071/146768076.png" data-image-src="attachments/146768071/146768076.png" data-unresolved-comment-count="0" data-linked-resource-id="146768076" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_15-59-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p>The same generalized form can look at shear stress, shear strain, and shear modulus, as seen below. </p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="150" src="attachments/146768071/146768078.png" data-image-src="attachments/146768071/146768078.png" data-unresolved-comment-count="0" data-linked-resource-id="146768078" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-2-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p>The relationships are valid within the linear region of the materials stress-strain curve.</p><p><br/></p><p>G, E, and Poisson's Ratio are related by:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="100" src="attachments/146768071/146768080.png" data-image-src="attachments/146768071/146768080.png" data-unresolved-comment-count="0" data-linked-resource-id="146768080" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-7-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p>In the plane state of stress (only two dimensions), these equations reduce to the ones below:</p><h2 id="id-4.MaterialPropertiesinStaticallyIndeterminateProblems-"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/146768071/146768082.png" data-image-src="attachments/146768071/146768082.png" data-unresolved-comment-count="0" data-linked-resource-id="146768082" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-10-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></h2><h2 id="id-4.MaterialPropertiesinStaticallyIndeterminateProblems-StaticallyIndeterminateMembers">Statically Indeterminate Members</h2><p>A problem is statically indeterminate when you cannot solve for the forces without knowing the material properties. To look through how a statically indeterminate problem would be solved using material properties to calculate deformations of the members to supplement the equilibrium equation and solve for forces, we will look at the two examples below. The equilibrium equation are found, followed by the deformation equations.</p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-left-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-left" draggable="false" height="250" src="attachments/146768071/146768090.png" data-image-src="attachments/146768071/146768090.png" data-unresolved-comment-count="0" data-linked-resource-id="146768090" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-23-29.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="375" src="attachments/146768071/146768091.png" data-image-src="attachments/146768071/146768091.png" data-unresolved-comment-count="0" data-linked-resource-id="146768091" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-23-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" width="350" src="attachments/146768071/146768087.png" data-image-src="attachments/146768071/146768087.png" data-unresolved-comment-count="0" data-linked-resource-id="146768087" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-18-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/146768071/146768336.png" data-image-src="attachments/146768071/146768336.png" data-unresolved-comment-count="0" data-linked-resource-id="146768336" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-28_15-12-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="450" src="attachments/146768071/146768337.png" data-image-src="attachments/146768071/146768337.png" data-unresolved-comment-count="0" data-linked-resource-id="146768337" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-28_15-12-22.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/146768071/146768094.png" data-image-src="attachments/146768071/146768094.png" data-unresolved-comment-count="0" data-linked-resource-id="146768094" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-27_16-27-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768071" data-linked-resource-container-version="3" alt=""></span></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-4.MaterialPropertiesinStaticallyIndeterminateProblems-References:">References:</h2><p>[1] <a class="external-link" href="https://web.mst.edu/~chiep/FE%20Review%20Files/MechanicsofMaterials.doc" rel="nofollow">https://web.mst.edu/~chiep/FE%20Review%20Files/MechanicsofMaterials.doc</a></p><p>[3] Napoli, Alessandra 2020</p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768073.png">image2020-4-27_15-48-38.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768075.png">image2020-4-27_15-51-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768076.png">image2020-4-27_15-59-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768078.png">image2020-4-27_16-2-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768079.png">image2020-4-27_16-5-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768080.png">image2020-4-27_16-7-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768081.png">image2020-4-27_16-9-36.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768082.png">image2020-4-27_16-10-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768087.png">image2020-4-27_16-18-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768088.png">image2020-4-27_16-23-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768090.png">image2020-4-27_16-23-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768091.png">image2020-4-27_16-23-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768094.png">image2020-4-27_16-27-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768336.png">image2020-4-28_15-12-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768071/146768337.png">image2020-4-28_15-12-22.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

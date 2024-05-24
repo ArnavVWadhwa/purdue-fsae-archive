@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Gear Sensor | Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297642.html">Parts Documentation | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297470.html">Sensors | Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Gear Sensor | Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (tam14)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jun 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Notes:</strong></p><ul><li>Very tolerant of being pinned the wrong way, but be careful.</li><li>Connector: we had to specifically ask Yamaha for it since you need to get it off of a harness otherwise. Turn the current one into an adapter and DO NOT LOSE IT. Put a GPS tracker on it if you have to.</li></ul><p><br/></p><p><strong>Connection:</strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/143754139/143754140.jpg" data-image-src="attachments/143754139/143754140.jpg" data-unresolved-comment-count="0" data-linked-resource-id="143754140" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_20200325_072745_209.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="143754139" data-linked-resource-container-version="16" alt=""></span></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Color</th><th class="confluenceTh">Connection</th></tr><tr><td class="confluenceTd"><strong>Black(!)</strong></td><td class="confluenceTd">Power</td></tr><tr><td class="confluenceTd">Pink or something</td><td class="confluenceTd">Signal</td></tr><tr><td class="confluenceTd">Blue</td><td class="confluenceTd">Ground</td></tr></tbody></table></div><p><br/></p><p><strong>Behavior:</strong></p><p>It's basically a digital potentiometer, only it outputs a linear voltage instead of a pulse width signal. It actually tracks the position of the drum, so we actually might be able to replace the encoder on the motor with this sensor (or have it work in conjunction). It would probably be more robust since the connection for the encoder is a bit iffy. Here are the average values we recorded for each gear; interpolate for the in-between position.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Gear</th><th class="confluenceTh">Voltage (V)</th></tr><tr><td class="confluenceTd">First</td><td class="confluenceTd">0.73</td></tr><tr><td class="confluenceTd">Neutral</td><td class="confluenceTd">1.08</td></tr><tr><td class="confluenceTd">Second</td><td class="confluenceTd">1.43</td></tr><tr><td class="confluenceTd">Third</td><td class="confluenceTd">2.14</td></tr><tr><td class="confluenceTd">Fourth</td><td class="confluenceTd">2.85</td></tr><tr><td class="confluenceTd">Fifth</td><td class="confluenceTd">3.55</td></tr><tr><td class="confluenceTd">Sixth</td><td class="confluenceTd">4.25</td></tr></tbody></table></div><p><strong>  </strong></p><p><strong>M1 Build:</strong></p><p class="auto-cursor-target">Because the generic Motec Gear.Ratio.Position sensor requires a &quot;tracking&quot; sensor <a class="confluence-userlink user-mention" data-username="osborn42" href="https://wiki.itap.purdue.edu/display/~osborn42" data-linked-resource-id="60960307" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (osborn42)</a> created a new group in M1 build called AbsoluteGearPos. This group includes a voltage input, seven different parameters for gear voltage, and a tolerance value parameter. The calculation function compares the voltage value from the absolute sensor to the seven-gear parameters. If the absolute value of the comparison is less than the tolerance value then we know which gear we are in. The Transmit to Dash function creates a CAN transmit message sending the int value for the Dash to receive.</p><p class="auto-cursor-target"><em> </em></p><p class="auto-cursor-target"><strong>Dash Manager:</strong></p><p>Added a receive message. Values for some reason come in as multiples of 256 so I created a table in Dash Manager that converts the multiple of 256 back to 1,2,3, etc. then that value is displayed on the dash.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143754139/143754140.jpg">IMG_20200325_072745_209.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

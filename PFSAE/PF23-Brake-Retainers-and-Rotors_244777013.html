@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 Brake Retainers and Rotors</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297361.html">Manufacturing | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="132157510.html">Manufacturing Knowledge Base (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Wheel-Assembly_141728397.html">Wheel Assembly</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Brake-Assembly_198512850.html">Brake Assembly</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 Brake Retainers and Rotors
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Nov 21, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="PF23BrakeRetainersandRotors-CADPreparation">CAD Preparation</h3><p>The easiest way to stay organized is to make a new NX assembly and bring in the 4 parts (FR and RR) Retainers and rotors and place them so their bases are all planar. Plan out which bolt holes (presumable 10-32 bolts, X4 each) to be used for each part. <strong>If parts are LH/RH asymmetric, place them such that they are symmetric about the X plane so CAM and CNC is easier.</strong> For PF23, the only asymmetric part was front retainers, so I places its 4 bolt holes at the 12, 3, 6, and 9 o'clock positions. Take care to align them relative to the CSYS like how it would be in the machine.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/244777013/244777016.png" data-image-src="attachments/244777013/244777016.png" data-unresolved-comment-count="0" data-linked-resource-id="244777016" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-21_16-49-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244777013" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p>Also create new .prt files for your manufacturing parts. The purpose of this is to -</p><ol><li>Have the parts waved linked in so that it is the correct orientation for machining and at the CSYS origin</li><li>For rotors, add thickness to represent stock thickness, pre-ground.</li></ol><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/244777013/244777017.png" data-image-src="attachments/244777013/244777017.png" data-unresolved-comment-count="0" data-linked-resource-id="244777017" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-21_16-51-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244777013" data-linked-resource-container-version="3" alt=""></span></p><h3 id="PF23BrakeRetainersandRotors-Fixturing">Fixturing</h3><p>Make a block with the bolt holes projected down for your fixture block. Also include a 1/2-13 threaded hole in the center to hold down the stock plate and to keep the center cutout in place after the CNC contours out the inside.</p><p>As part of the fixture, you'll also need a &quot;puck&quot; or &quot;cap&quot; in the center. This will have a shoulder to locate the stock in the XY plane, and keep it bolted down. I also chose to counter bore so the 1/2 in socket head is less proud, but this is optional. Just don't crash an endmill into it.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/244777013/244777020.png" data-image-src="attachments/244777013/244777020.png" data-unresolved-comment-count="0" data-linked-resource-id="244777020" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-21_16-59-29.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244777013" data-linked-resource-container-version="3" alt=""></span></p><p>Dimension a just has to be less than the thinnest stock you are working with so it actually clamps and doesn't bottom out.</p><p>The shoulder height should also be substantial enough to touch off with the Haimer indicater. This will ensure that throughout all the setups, the XY origin is the same. This way the holes drilled into the part stock will line up with the tapped holes in the fixture block. </p><p><br/></p><h3 id="PF23BrakeRetainersandRotors-StockPrep">Stock Prep</h3><p>Laser cut or waterjet discs with a 1in hole in the center for the puck. The OD should be 0.150-0.2in larger than the overall part dimensions. Just make sure to use a belt sander to knock off the edge of using laser cutter. That part gets hardened from the laser heat and destroys endmills.</p><p><br/></p><p><br/></p><h3 id="PF23BrakeRetainersandRotors-CAM">CAM</h3><p>The CAM is pretty straightforward. Just drill the holes first so you can bolt the 10-32s in during a tool change. Also make sure your cam has the tools clearing the bolt heads.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/244777013/244777031.png" data-image-src="attachments/244777013/244777031.png" data-unresolved-comment-count="0" data-linked-resource-id="244777031" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-21_18-6-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244777013" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244777013/244777016.png">image-2022-11-21_16-49-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244777013/244777017.png">image-2022-11-21_16-51-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244777013/244777020.png">image-2022-11-21_16-59-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244777013/244777031.png">image-2022-11-21_18-6-43.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

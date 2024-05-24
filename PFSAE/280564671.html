@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Harness: Heatshrink Sizing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="246343627.html">Harness | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Harness: Heatshrink Sizing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="Harness:HeatshrinkSizing-Background:">Background:</h3><p>Heatshrink sizing is a less critical part of design than something like splice points but if not done properly it will pose a major problem during manufacturing and sealing of the harness.</p><p><br/></p><h3 id="Harness:HeatshrinkSizing-Basics:">Basics:</h3><p>Heatshrink is sized based on the diameter of each bundle of wires.</p><p><br/></p><p><strong>Step 1: </strong>Add Up Wire Gauges</p><p>Before a bundle diameter can be calculated the number of each gauge of wire in said bundle must be added together. To do this right click on the bundle and select show connections within bundle.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564671/280564702.png" data-image-src="attachments/280564671/280564702.png" data-unresolved-comment-count="0" data-linked-resource-id="280564702" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-29-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p>From here each connection can be entered and the sum of each type of wire can be taken.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280564671/280564708.png" data-image-src="attachments/280564671/280564708.png" data-unresolved-comment-count="0" data-linked-resource-id="280564708" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-46-0.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><strong>Step 2: </strong>Calculate Bundle Diameter</p><p>Use the rbracing calculator found here: <a class="external-link" href="https://www.rbracing-rsr.com/22759_diameter_shielded.html" rel="nofollow">https://www.rbracing-rsr.com/22759_diameter_shielded.html</a>. Simply enter the sum of wire gauges found in the previous step and observe the output.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564671/280564710.png" data-image-src="attachments/280564671/280564710.png" data-unresolved-comment-count="0" data-linked-resource-id="280564710" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-48-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><strong>Step 3: </strong>Choose Heatshrink Size</p><p>Choose the largest size heatshrink that has an unshrunk diameter less than harness diameter calculated in the last step. This will make it easier to slide the heatshrink over the bundle and ensure that it is not overstrained and inflexble.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280564671/280564716.png" data-image-src="attachments/280564671/280564716.png" data-unresolved-comment-count="0" data-linked-resource-id="280564716" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-54-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><strong>Step 4: </strong>Add Heatshrink in RapidHarness</p><p>All Raychem DR25 heatshrink sizes have all been created in RapidHarness. All that remains should be to assign different sizes to different bundles. To do so right click again on the bundle but this time choose show bundle properties.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564671/280564718.png" data-image-src="attachments/280564671/280564718.png" data-unresolved-comment-count="0" data-linked-resource-id="280564718" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-56-25.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p>Then hit add covering and assign the sized heatshrink.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564671/280564719.png" data-image-src="attachments/280564671/280564719.png" data-unresolved-comment-count="0" data-linked-resource-id="280564719" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_16-57-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564671" data-linked-resource-container-version="7" alt=""></span></p><h3 id="Harness:HeatshrinkSizing-Considerations:">Considerations:</h3><ul><li>Order extra of the larger sizes of heatshrink to allow for covering of joints, it is difficult to account for their added size beforehand</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564701.png">image-2023-12-6_16-26-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564702.png">image-2023-12-6_16-29-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564708.png">image-2023-12-6_16-46-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564709.png">image-2023-12-6_16-46-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564710.png">image-2023-12-6_16-48-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564716.png">image-2023-12-6_16-54-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564718.png">image-2023-12-6_16-56-25.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564671/280564719.png">image-2023-12-6_16-57-30.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

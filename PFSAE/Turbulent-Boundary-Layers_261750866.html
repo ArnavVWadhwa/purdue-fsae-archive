@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Turbulent Boundary Layers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Turbulent Boundary Layers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 23, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Wall Y+</strong></u></p><p>Unlike laminar boundary layers, turbulent boundary layers are complex enough that it is worth it to dedicate an entire page for it. The most important of which is the structure of a turbulent boundary layer. </p><p>The structure of turbulent boundary layers is constructed based on distance away from the wall. To properly quantify these distances for all turbulent boundary layers regardless of freestream velocity, one need to nondimensionalize distance from the wall. The name of the quantity is <em>wall y+</em> or simply y+. The plus symbol is used to denote wall normalized quantities. Wall y+ is of the following form: </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="46" src="attachments/261750866/261750927.png" data-image-src="attachments/261750866/261750927.png" data-unresolved-comment-count="0" data-linked-resource-id="261750927" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-22_23-52-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261750866" data-linked-resource-container-version="1" alt=""></span> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="55" src="attachments/261750866/261750929.png" data-image-src="attachments/261750866/261750929.png" data-unresolved-comment-count="0" data-linked-resource-id="261750929" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-22_23-53-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261750866" data-linked-resource-container-version="1" alt=""></span></p><p>where u_* is friction velocity, ν is kinematic viscosity, ρ is density, and τ_w is wall shear stress.</p><p>Since kinematic viscosity, density, and wall shear stress are all properties of the flow, the wall y+ only depends on y or the physical distance from the wall.</p><p>Generally, we talking about the turbulent boundary layer velocity profiles, the velocity is also wall normalized (u+). But since we also care about the profile or the shape itself, there is no need to dive deep into u+.</p><p><u><strong>Turbulent Boundary Layer</strong></u></p><p><u><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://www.simscale.com/forum/uploads/default/original/3X/5/4/540225fed7313a9e30b935f056405113b9906ea0.png" data-image-src="https://www.simscale.com/forum/uploads/default/original/3X/5/4/540225fed7313a9e30b935f056405113b9906ea0.png"></span></u></p><p>A turbulent boundary layer is made up of inner layer and the outer layer. We care mostly about the inner layer, since they are the closest to the wall and play a critical role. The inner layer consists of the <em>viscous sublayer</em>, <em>buffer layer</em>, and the <em>log-law layer</em>. I will go through each in detail. Note how the x-axis of the graph above denotes y+ is in log scale. Also note that this is a generalized diagram of a turbulent boundary layer, the exact shape will changed based on things like pressure gradient and wall normal velocity.</p><p><u><strong>Viscous Sublayer</strong></u></p><p>The viscous sublayer, also known as linear sublayer or laminar sublayer (this is a horrible name since there is nothing laminar about it), is the layer closest to the surface. In general, viscous sublayer extends up to wall y+ of 5. Due to its proximity to the surface, it's also the layer that's least affected by outer flow.</p><p>Viscous sublayer got its name from the fact that turbulent viscosity (don't worry too much, will cover in CFD sections, think about it as amount of turbulence for now) is extremely low due to the fact that is physically no space for turbulent eddies to form. Therefore, inside the viscous sublayer, the overall viscosity (molecular + turbulent viscosity) is very close to that of molecular viscosity. </p><p>In the viscous sublayer, velocity increases linearly with distance to the wall, hence the name linear sublayer, which is consistent with what we know from laminar couette flow.</p><p><u><strong>Buffer Layer and Log Law Layer</strong></u></p><p>In the buffer layer and the log law layer, turbulent viscosity increases to the same order of magnitude as the molecular viscosity due to increased distance from the wall. </p><p>The log law layer got its name since the velocity profile in the region can be described by a simple function involving logrithmics. Due to its logrithmic growth, the log law layer velocity profile shows up as the a straight line on the graph above. Log lay layer usually extends from wall y+ of 30 to 300. Log law layer is far enough away from the wall that its effects are important to capture under almost all scenarios if you are doing CFD.</p><p>The buffer layer is simply a curve connection the viscous sublayer and the log law layer. It extends from a wall y+ of 5 to 30. Buffer layer is one of those things that no one particularly cares about.</p><p><u><strong>Inner Layer and Outer Layer</strong></u></p><p><u><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="236" src="attachments/261750866/261751098.png" data-image-src="attachments/261750866/261751098.png" data-unresolved-comment-count="0" data-linked-resource-id="261751098" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-23_8-42-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261750866" data-linked-resource-container-version="1" alt=""></span></u></p><p>As I have mentioned, the inner layer consists of viscous sublayer, buffer layer, andthe log law layer. Just to put into perspective how small everything is, wall y+ of 300 at the end of the inner layer is usually only 10% of the boundary layer thickness. If you look at the turbulent velocity profile above, the inner layer ends just before the sharp corner.</p><p>Beyond the inner layer is the outer layer. Outer layer interacts extensively with the outer flow. The immense shear stress combined with distance from the wall means turbulent viscosity is at least one or two magnitudes larger than molecular viscosity. This is where all the large turbulent eddies are. </p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261750927.png">image-2023-5-22_23-52-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261750928.png">image-2023-5-22_23-53-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261750929.png">image-2023-5-22_23-53-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261751096.png">image-2023-5-23_8-41-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261751097.png">image-2023-5-23_8-41-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261750866/261751098.png">image-2023-5-23_8-42-23.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

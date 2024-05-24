@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Linear Algebra Solvers as Related to CFD</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Linear Algebra Solvers as Related to CFD
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 14, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Linear Algebra and CFD</strong></u></p><p>The purpose of discretizing of domain and governing equation is so that a matrix can be formed, thereby reducing a complicated Navier-Stokes problem into a simple Ax=b problem. Especially for unstructured grid, this matrix can be insanely complicated and well beyond my understanding. However, with structured grids, the matrix formed is often <em>tridiagonal</em> or <em>block tridiagonal</em>, which are some of the most well studies matrices. Even though the matrix in question is rather simple and not directly applicable to your favorite CFD code (unless your favorite CFD code is homemade Python code that solves potential flow), it is still beneficial to understand the process behind matrix solving.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/262832338/262837102.png" data-image-src="attachments/262832338/262837102.png" data-unresolved-comment-count="0" data-linked-resource-id="262837102" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-20_12-3-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832338" data-linked-resource-container-version="3" alt=""></span></p><p><u><strong>Cramer's Rule</strong></u></p><p>You might be familiar with <em>Cramer's rule</em> if you have taken MA 265 or MA 262. Cramer's rule solves the Ax=b matrix simply by taking the inverse of A matrix and multiply it to the right hand side. In other words, Ax=b turns into x=A^(-1)b. Inverse of a matrix can be very easily found using a simple set of algorithm. Cramer's rule is the type of method known as <em>direct method</em>, meaning there is no iterations involved. The problem with Cramer's rule is that the operation count is proportional to 4th power of matrix dimension (aka n^4), assuming square matrix, which means extremely high memory requirement.</p><p><u><strong>Gaussian Elimination</strong></u></p><p>If you were familiar with Cramer's rule, you will also be familiar with G<em>aussian elimination</em>. Gaussian elimination is the process of converting the matrix A to an either upper or lower triangular matrix. In other words, the goal of Gaussian elimination is to achieve row echelon form. is to Upper or lower triangular matrix can be very easily solved, since there will be one equation with only one unknown, one equation with two, one equation with three, etc. Even if you haven't taken a linear course, you have done Gaussian elimination already not in matrix form and without realizing it, since it's the process you take when solving a system of equations. Gaussian elimination is another of direct methods. And it's more efficient than Cramer's rule. I have seen different sources quoting different operation counts, so I am not going to put one here.</p><p><u><strong>Gauss-Jordan Elimination</strong></u></p><p><em>Gauss-Jordan elimination</em> is similar to Gaussian elimination, except its goal is to achieve reduced row echelon form. This is actually less efficient than Gaussian elimination. Again, I was not able to find a concrete number for operation count.</p><p><u><strong>LU Decomposition</strong></u></p><p><em>LU decomposition </em>is pretty much as efficient as direct methods get. LU decomposition first converts A matrix to the product between an upper and lower triangular matrix, so that Ax=b converts to LUx=b. Then, let column matrix z=Ux, so that LUx=b converts to Lz=b. Lz=b can be solved first for z. Since L is a lower triangular matrix, this is easy. Then z=Ux can be solved. Again, this is easy since U is an upper triangular matrix. I know this all sounds complicated and I have skipped over details, but it's much more efficient than any other method with an operation count of n^3.</p><p><strong><u>Jacobi Method</u></strong></p><p><em>Jacobi method</em> is the first <em>iterative method </em>we will talk about here. Instead of solving the A matrix directly, we take educated guesses and check for correctness. You might think this sounds slow and inefficient. And you would be right. However, it requires much less memory. The memory requirement for direct method is the reason why no one can afford it. To solve a matrix iteratively using Jacobi method, we can kind of stop treating the matrix as a matrix, because we will form simple algebraic equations for each element in the matrix. In the context of CFD, a simple, discretized governing equation is apply for each grid cell. And what Jacobi method does is that it takes the matrix from the previous iteration, and solve the conservation equations based on its values.</p><p><u><strong>Gauss Seidel Method</strong></u></p><p>The <em>Gauss Seidel method</em> operates on the same principle as the Jacobi method. Consider a square cell. There are 4 control surfaces and 4 adjacent cells. Since each grid point is solved in sequence within an iteration, by the time you reach the grid point in question, two of its adjacent cells already have updated values. Gauss Seidel method uses those updated values instead of the old values. Reducing iteration count required for convergence. No one uses Jacobi since Gauss Seidel exists, since it has literally no downsides compared to Jacobi.</p><p><u><strong>Thomas Algorithm</strong></u></p><p>The Thomas algorithm is something entirely different than the previous two iterative methods we talked about. The Thomas algorithm is developed specifically to solve tridiagonal matrices, the type of matrices that is commonly seen in CFD problems with structured grid. The Thomas algorithm operates on the assumption that the matrix A can be converted into the product of a upper bidiagonal and a lower bidiagonal matrix. And instead of describing the algorithm by words, I will show you the following flow chart taken from AAE 512 notes, where A is the diagonal, B is the super-diagonal, and C is the sub-diagonal in the tridiagonal matrix A:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/262832338/265098780.png" data-image-src="attachments/262832338/265098780.png" data-unresolved-comment-count="0" data-linked-resource-id="265098780" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-14_19-20-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832338" data-linked-resource-container-version="3" alt=""></span></p><p>The operation count of the Thomas algorithm is only 5N-4, which is super low. Thomas algorithm is the reason why tridiagonal matrices are preferred for CFD and part of the reason that structured grid offers higher efficiency. The Thomas algorithm can also be modified to solve block tridiagonal matrices, making it applicable even to 3D problems.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832338/262837102.png">image-2023-6-20_12-3-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832338/265098780.png">image-2023-7-14_19-20-57.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

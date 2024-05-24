@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Pre-requisites</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Pre-requisites
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on May 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>There are a few fundamental skills you’re expected to have before jumping into this documentation. This document should tell you what you need, and where you can get the resources to learn those skills</span><span>. </span><span> </span></p><p><span> </span></p><p><strong><span>STAR-CCM+</span></strong><span> </span></p><p><span> </span><span>A lot of this documentation builds on the assumption that you know how to start STAR, and set up simple simulations. This is going to be more geared towards </span><span>explaining our existing simulation, automation, and development methods, and isn’t going to try to teach you how to code in Java or how to build a CFD simulation from scratch. There are plenty of better resources out there that can do that. </span><span>If you need more practice with STAR, head over to the </span><span>steve</span><span> portal, or the </span><a class="external-link" href="https://support.sw.siemens.com/en-US/" rel="nofollow"><span>support center</span></a><span> (or whatever Siemens is calling it now). </span><span> </span></p><p><span> </span></p><p><span>We (I) have always gravitated towards staying on the latest version of STAR-CCM+. I would strongly recommend continuing with this practice. </span><span>It’s a little annoying when people don’t want to update STAR, but making sure </span><span>you’re not deviating away from the latest release of the API, </span><span>and the package itself makes sure you’re not going to be forced into re-writing large chunks of code or reworking the STAR environment. Re-writes to accommodate API changes is something I’ve had to do, and reworking the STAR environment is something that’s a real possibility, considering how Siemens generally doesn’t shy away from deprecating major parts of the workflow if they don’t have faith in it (</span><span>regions based meshing). </span><span> </span></p><p><span> </span></p><p><span>Pick a single software platform to commit to (Windows vs Linux), and spend all your resources developing to that platform. Probably want to do Linux, since that’s what RCAC nodes are built on. There’s very little benefit in my experience to targeting multiple platforms, and ads a lot of additional potential for debugging headaches.</span><span> I’m going to assume you’re using a Linux platform. </span><span> </span><span> </span></p><p><span> </span></p><p><strong><span>Java</span></strong><span> </span></p><p><span> </span><span>It’s important to have a basic familiarity with Java before jumping into our CFD methods. You don’t need to be a Java god, and as of right now our codebase rarely uses any of the languages more esoteric features. A crude understanding of how object-based programming works, and how Java handles </span><span>data structures like arrays, lists, and collections should be all you need to know to understand the code. </span><span>There are plenty of guides and tutorials online that should get you up to speed. </span><span>If you’ve taken CS 159, and spent 15 minutes reading about OOP online, you should be good to go to handle anything our codebase can throw at you. </span><span> </span></p><p><span> </span></p><p><span>STAR’s Java API is very poorly documented in my opinion. The documentation is more a list of methods and functions with no additional descriptions</span><span>, than actual documentation. Thankfully STAR’s method names are somewhat self-explanatory, so be prepared to have to figure out what a particular method does or doesn’t do by yourself. </span><span> </span></p><p><span> </span></p><p><span>It’s easy to keep on the latest release of the JDK/JRE, or to jump on </span><span>JetBrain’s</span><span> latest </span><span>JBR release. STAR installs all ship with a JDK, just use that</span><span>. You can find it in STAR’s program files</span><span>. I’ve had issues with attaching Java debuggers to STAR if you’re using a JDK/JRE that doesn’t match the version that ships with STAR. You can find the JDK that ships with STAR</span><span>. </span><span> </span></p><p><span> </span></p><p><span>IntelliJ is a </span><span>solid</span><span> IDE for Java. I’d strongly recommend using it. Be sure to know how to link </span><span>I</span><span>ntelliJ’s </span><span>debugger with STAR (again, Siemens support center)</span><span> </span></p><p><br/></p><p><strong><span>Python</span></strong><span> </span></p><p><span>With the way our python scripts are currently set-up, you don’t even really need to know python to be able to work with the scripts. We’re using python for the extremely simple and straightforward aspects of our code. If you figure out the Java, you’ll have no issues with the python. </span><span> </span></p><p><br/></p><p><em><span>Learn python the hard way</span></em><span> is a fantastic book to use to learn python though. It’s not a long process, and it’s a very inviting language to learn, but it does feel a lot different from C syntax languages like C/C++/Java. </span><span> </span></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

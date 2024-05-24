@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : ADAMS Car | Developers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ADAMS-Car_277734955.html">ADAMS Car</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : ADAMS Car | Developers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Dec 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Currently looking to redesign our vehicle model within ADAMs Car using the newest 2021 template downloaded from → <strong><a class="external-link" href="https://simcompanion.hexagon.com/customers/s/article/using-the-special-fsae-database-with-adams-car--kb8020723" rel="nofollow">Using the special FSAE database with Adams Car (hexagon.com)</a></strong></p><h1 id="ADAMSCar|Developers-RemakingPF24:"><span class="placeholder-inline-tasks">Remaking PF24:</span></h1><p><span class="placeholder-inline-tasks">Notes When Developing Model:</span></p><ul><li>There are some weird things with adams to look out for. One is when saving a model make sure to go to the highest level of the assemvbly and go file save or saveas to ensure all updates are made. It seems like ctrl+s does not actually save changes.</li><li>Look out for adding or modifying tire properties/springs/damper files. You might need to go into the subassembly file → open in notepad → edit by adding the file path to correctly load and let the model use the file.</li></ul><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="113"><span class="placeholder-inline-tasks">Update Steering</span><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="114"><span class="placeholder-inline-tasks"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/277734973/280562343.png" data-image-src="attachments/277734973/280562343.png" data-unresolved-comment-count="0" data-linked-resource-id="280562343" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-24_11-48-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="277734973" data-linked-resource-container-version="10" alt=""></span></span></li></ul></li><li class="checked" data-inline-task-id="115"><span class="placeholder-inline-tasks">Update Brakes</span><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="116"><span class="placeholder-inline-tasks"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/277734973/280562348.png" data-image-src="attachments/277734973/280562348.png" data-unresolved-comment-count="0" data-linked-resource-id="280562348" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-24_11-57-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="277734973" data-linked-resource-container-version="10" alt=""></span></span></li></ul></li><li class="checked" data-inline-task-id="117"><span class="placeholder-inline-tasks">Update Front SUS</span><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="118"><span class="placeholder-inline-tasks"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/277734973/280562349.png" data-image-src="attachments/277734973/280562349.png" data-unresolved-comment-count="0" data-linked-resource-id="280562349" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-24_12-1-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="277734973" data-linked-resource-container-version="10" alt=""></span></span></li></ul></li><li class="checked" data-inline-task-id="119"><span class="placeholder-inline-tasks">Update Rear SUS</span><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="120"><span class="placeholder-inline-tasks"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/277734973/280562350.png" data-image-src="attachments/277734973/280562350.png" data-unresolved-comment-count="0" data-linked-resource-id="280562350" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-24_12-2-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="277734973" data-linked-resource-container-version="10" alt=""></span></span></li></ul></li><li class="checked" data-inline-task-id="121"><span class="placeholder-inline-tasks">Update Tires</span><ul class="inline-task-list" data-inline-tasks-content-id="277734973"><li class="checked" data-inline-task-id="122"><span class="placeholder-inline-tasks">Update Property Files To Hoosier LCO 16x7.5-10</span></li></ul></li><li class="checked" data-inline-task-id="123"><span> Chassis + Aero </span></li></ul><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/277734973/280562343.png">image-2023-11-24_11-48-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/277734973/280562348.png">image-2023-11-24_11-57-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/277734973/280562349.png">image-2023-11-24_12-1-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/277734973/280562350.png">image-2023-11-24_12-2-48.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

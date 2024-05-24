@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Dyno Controller</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297174.html">Manufacturing | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832353.html">Manufacturing PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="273157721.html">Dyno PF24 | Manufacturing</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Dyno Controller
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Quan, Ian Xin</span> on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Full Dyno Controller</strong></u></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564721/280564724.png" data-image-src="attachments/280564721/280564724.png" data-unresolved-comment-count="0" data-linked-resource-id="280564724" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_17-12-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564721" data-linked-resource-container-version="1" alt=""></span></p><p>VI of current dyno controller (yet to be tested).</p><p>Two modes of operation are controlled by a case block, explanation is below. </p><p>Currently, the PID controller directly reads engine RPM and adjusts the frequency of the input PWM signal and direction to control stepper speed, and therefore controls the flow to the brake and load to the engine. A better approach may be to determine the ramp response of the stepper-valve system from fully closed to fully open, and create a relationship between stepper position and flow rate. Then, implement a PID controller that uses the flow rate as the process variable to adjust engine RPM.</p><p><br/></p><p><strong><u>Automatic Load Control Block</u></strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564721/280564725.png" data-image-src="attachments/280564721/280564725.png" data-unresolved-comment-count="0" data-linked-resource-id="280564725" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_17-12-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564721" data-linked-resource-container-version="1" alt=""></span></p><p>Uses Automatic Tuning PID block.</p><p><br/></p><p><u><strong>Automatic Pull Block</strong></u></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564721/280564726.png" data-image-src="attachments/280564721/280564726.png" data-unresolved-comment-count="0" data-linked-resource-id="280564726" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_17-13-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564721" data-linked-resource-container-version="1" alt=""></span></p><p>Uses encoder position to fully open stepper motor, and then smoothly close stepper motor.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564721/280564722.png">image-2023-12-6_17-8-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564721/280564724.png">image-2023-12-6_17-12-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564721/280564725.png">image-2023-12-6_17-12-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564721/280564726.png">image-2023-12-6_17-13-5.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

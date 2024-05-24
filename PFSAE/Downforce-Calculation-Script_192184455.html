@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Downforce Calculation Script</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="179281177.html">Design PF22 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Downforce Calculation Script
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Sep 22, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li>I wrote this script to perform downforce calculation without having to do explicit aero testing<ul><li>The result is probably not going to be as accurate, but it allows us to do quick and dirty analysis</li></ul></li><li>Wrote in Java because I like it</li><li>Files<ul><li><a href="attachments/192184455/192184459.java" data-linked-resource-id="192184459" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="DownforcePostProcessor.java" data-nice-type="Java Source File" data-linked-resource-content-type="text/x-java-source" data-linked-resource-container-id="192184455" data-linked-resource-container-version="3">DownforcePostProcessor.java</a></li><li><a href="attachments/192184455/192184460.java" data-linked-resource-id="192184460" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Vehicle.java" data-nice-type="Java Source File" data-linked-resource-content-type="text/x-java-source" data-linked-resource-container-id="192184455" data-linked-resource-container-version="3">Vehicle.java</a></li><li><a href="attachments/192184455/192184461.java" data-linked-resource-id="192184461" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Corner.java" data-nice-type="Java Source File" data-linked-resource-content-type="text/x-java-source" data-linked-resource-container-id="192184455" data-linked-resource-container-version="3">Corner.java</a></li></ul></li><li>The main method is contained in DownforcePostProcessor.java</li></ul><p><u><strong>How it works</strong></u></p><ul><li>Export CSV file from motec. Include time stamps but not distance data.</li><li>Tell DownforcePostProcessor.java the location in CSV_LOC</li><li>DownforcePostProcessor.java automatically splits the data into four corners of the car and extracts speed data<ul><li>The speed data is extracted from wheel speed data from a specific corner as designated by the user in DownforcePostProcessor.java</li><li>By default it's RF corner</li><li>Vehicle speed data can also be used directly, but at the time of writing, that data is tied to wheel speed on the LF corner, which likes to say we are going 200+ mph</li></ul></li><li>The total suspension is then calculated to make the everything else easier</li><li>Data cleanup<ul><li>Incomplete data points<ul><li>Lines that are too short are removed</li></ul></li><li>Car's stopped<ul><li>Removes data when car speed is below a certain threshold defined in Corner.java</li></ul></li><li>Unsteady state<ul><li>Removes data where the G forces in XYZ directions are above a certain threshold as defined in Corner.java</li><li>Removes data where suspension is traveling too fast, the threshold of which is defined in Corner.java</li></ul></li></ul></li><li>Calculates total downforce from total suspension travel</li><li>Regression<ul><li>Quadratic regression is too hard</li><li>Downforce data is linearized by square root</li><li>Linear regression is performed on the linearized data</li><li>The result of linear regression is squared</li></ul></li><li>Plotting<ul><li>JFreeChart is used</li><li>Both raw data points and regression results are displayed</li><li>CL*A is also displayed in the title</li></ul></li></ul><p><u><strong>Does it work</strong></u></p><ul><li>As of now, no, because we don't have reliable speed data</li><li>Only 1 out of 4 wheel speed sensors work, and that's the RR (I don't like using rear corners for downforce calc because wheel spin)</li></ul><p><u><strong>Troubleshooting</strong></u></p><ul><li>I have a lot of data points producing lift<ul><li>Most likely it's because of unsteady vehicle state, tighten the requirement for unsteady state data removal</li></ul></li><li>I have a lot of downforce at very low speed<ul><li>Drive locked up</li></ul></li></ul><p><u><strong>To-do</strong></u></p><ul><li>One way to improve post processing is using weighted regression. If I give data points at higher speed a higher weight, then the regression is less susceptible to locking ups and wheel spins</li><li>This is hand wavy, but if I include a way to manually adjust the CL*A obtained in regression, then obviously wrong result can be corrected to a certain degree.</li><li>Taking wind into account<ul><li>Could use a wind sensor to get wind speed and heading</li><li>Give the car a initial heading</li><li>Use yaw rate to calculate heading at any given point</li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192184455/192184459.java">DownforcePostProcessor.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192184455/192184460.java">Vehicle.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192184455/192184461.java">Corner.java</a> (text/x-java-source)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

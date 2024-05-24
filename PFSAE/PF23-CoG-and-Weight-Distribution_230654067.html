@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 CoG and Weight Distribution</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297361.html">Manufacturing | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="222431600.html">2023 (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF23-Design-Notebooks_224199356.html">PF23 Design Notebooks</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228295249.html">PF23 Actuation / Kinematics</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 CoG and Weight Distribution
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span>, last modified on Jul 21, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>From Ben's Article: </strong></p><h2 id="PF23CoGandWeightDistribution-CGHeight">CG Height</h2><p><br/>Pretty straightforward with the lap time simulation. Lower CG improves skidpad, autocross, and endurance, but worsens acceleration. Non acceleration events outweigh acceleration. So this is a sensitivity that can be traded against weight, downforce, etc.</p><h2 id="PF23CoGandWeightDistribution-CGLongitudinalPosition">CG Longitudinal Position</h2><p><br/>Another fairly straightforward lap sim application, but the answer is not intuitive. The lap sim indicates that the ideal balance or maximum points is ~44% front distribution. However, the change in points from there to a 52% front distribution is less than two. What does change significantly is where the points come from. With a further forward-shifted cg position, more points come from autocross, skidpad, and endurance vs acceleration. FIXME</p><p><br/></p><p><strong>My input:</strong></p><h2 id="PF23CoGandWeightDistribution-CoGHeight">CoG Height</h2><p>We would be using PF20's CoG height for our Adam's sims. </p><h2 id="PF23CoGandWeightDistribution-CoGLongitudinalPosition">CoG Longitudinal Position</h2><p>This is interesting. The lap-sim does not include transient response, so I am weary to trust this statement. While it is very interesting to see that the lap-sim says that 52% is better for autocross, skidpad, and endurance, I would like to see this validated with ADAMS rather than the lapsim. The only problem is that ADAMS doesn't give us points, so I believe we would just be going with a much better lateral acceleration capability. </p><h2 id="PF23CoGandWeightDistribution-TotalWeight">Total Weight</h2><p>I know that we are going to be lighter for PF23, so I think we should use our target mass (~460lbs.) while keeping CoG of PF20. </p><p>Might be worth making a spreadsheet like this one found in Chapter 1 of <em>Race Car Design </em>by Derek Seward</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/230654067/230654106.png" data-image-src="attachments/230654067/230654106.png" data-unresolved-comment-count="0" data-linked-resource-id="230654106" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-7-21_15-2-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230654067" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230654067/230654106.png">image2022-7-21_15-2-20.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

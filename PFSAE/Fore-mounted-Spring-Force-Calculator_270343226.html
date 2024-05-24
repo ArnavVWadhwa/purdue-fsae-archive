@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Fore mounted Spring Force Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297370.html">Design Resources | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297372.html">Tools | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="270338486.html">Pedal Box Design Tools | CHA</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Fore mounted Spring Force Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Sep 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Calculator Download:</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/270343226/Throttle_Spring_Calculator_v2%20%282%29.m?version=1&amp;modificationDate=1694061821000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/270343226/Throttle_Spring_Calculator_v2%20%282%29.m?version=1&amp;modificationDate=1694061821000&amp;api=v2" data-linked-resource-id="270343272" data-linked-resource-type="attachment" data-linked-resource-container-id="270343226" data-linked-resource-default-alias="Throttle_Spring_Calculator_v2 (2).m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="Throttle_Spring_Calculator_v2 (2).m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">Throttle_Spring_Calculator_v2 (2).m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="270343226" data-linked-resource-id="270343272" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h1 id="ForemountedSpringForceCalculator-WhatistheCalculator">What is the Calculator</h1><p>The Fore mounted Spring Force Calculator finds the return force felt by the driver for various different spring placements, given pedal and spring parameters. This only works when the springs are torsion springs, and are mounted in front of the throttle pedal (in terms of driving direction). The calculator also outputs other plots which can be relevant for design, which will be discussed in the &quot;outputs&quot; section.</p><h1 id="ForemountedSpringForceCalculator-UsageInstructions">Usage Instructions</h1><ol><li>Download the matlab file</li><li>Press run</li><li>When prompted by a popup window, input pedal parameters. The autofilled defaults are what PF24 used.</li><li>When prompted by a popup window, input spring parameters. The autofilled defaults are what PF24 used.</li><li>Observe the output graphs<ol><li>If you don't want a ccertain plot to be made, comment out the section at the bottom for that plot. Many of the plots are just used for diagnostics so you don't need those</li><li>The spring is mounted centered at (0,0), and the points on the graph correspond to places where the pivot point of the throttle pedal could be.</li><li>To see the 3d surface for each plot (eyecandy), rotate the plot. They start facing down because that is the most useful view.</li></ol></li></ol><h1 id="ForemountedSpringForceCalculator-Whatcalculationistheprogramactuallydoing?">What calculation is the program actually doing?</h1><p><span style="color: rgb(0,0,0);">Visualisation Desmos: <a class="external-link" href="https://www.desmos.com/calculator/kjsfd5cayd" rel="nofollow" style="color: rgb(0,0,0);">https://www.desmos.com/calculator/kjsfd5cayd</a></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">I made this desmos page that lets you visualize the spring position relative to the throttle pedal. The origin is the center of the spring. The small circle is the outer diameter of the body of the spring. The large circle is the reach of the leg of the spring. The two diagonal lines that intersect at (dx,dy) represent the initial and final throttle pedal positions. The lines that are tangent to the small circle, and intersect the large circle at the same point as one of the throttle pedal positions are the spring leg position lines.</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">Below, two screenshots of the desmos are shown. The labels on the left graph indicate the name of the variable in the matlab code, and the labels on the right indicate the name of the variable in the matlab code. They are not the same because adding subscripts to a variable either doesn't work in desmos or I don't know how to do it.</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270343226/270343238.jpg" data-image-src="attachments/270343226/270343238.jpg" data-unresolved-comment-count="0" data-linked-resource-id="270343238" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Meme Workshop 2.0 (3).jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="270343226" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270343226/270343241.jpg" data-image-src="attachments/270343226/270343241.jpg" data-unresolved-comment-count="0" data-linked-resource-id="270343241" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Meme Workshop 2.0 (4).jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="270343226" data-linked-resource-container-version="5" alt=""></span>set (i,j) to what you want, and then set p,q,s,t based off that</span></span></span></p><p><br/></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">So what the calculator does is find positions (a,b) and (c,d) at the start and end of the throttle being pressed, just based off geometry (intersections between circles and lines). </span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/270343226/270343245.jpg" data-image-src="attachments/270343226/270343245.jpg" data-unresolved-comment-count="0" data-linked-resource-id="270343245" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Meme Workshop 2.0 (5).jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="270343226" data-linked-resource-container-version="5" alt=""></span></span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">Once the calculator knows those points it can find the angle of the leg with respect to the -x axis (m1,2) with some trigonometry.</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">The calculator also finds the distance between (c,d) and (dx,dy) (P1,2) using the pythagorean theorem.</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">The calculator subtracts m1,2 and n1,2 (The angle of the pedal with respect to the +x axis, known from the start) from 180 to get o1,2 which is the angle between the leg and the pedal.</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">The pedal travel angle is m2 - m1</span></span></span></p><p><span><span style="color: rgb(0,128,19);"><span style="color: rgb(0,0,0);">The initial pedal displacement is the final displacement minus the travel - We want to set up the spring to end off near its max angular travel to get more force out of it. If the initial displacement is negative, we can't mount the spring that way (this is why large travel is important to us. We can mount the spring in more extreme ways)</span></span></span></p><p><span>The Spring Force, as in the force the spring excerts on the pedal normal to the face of the pedal is the sin of 90-o1,2 times the Spring Stiffness times the Spring Displacement divided by the Leg length (This is the torque the spring produces at the given position divided by the distance at which the pedal acts on the spring)</span></p><p><span>The pedal force is found with a moment calculation using the spring force, P1,2, and the pedal length.</span></p><p>After this, the code removes impossible values, by filtering away (dx,dy) locations that</p><ul><li>have the pedal hitting the body of the spring in either position</li><li>Have negative initial angle (angle travel greater than that of the spring)</li><li>If the spring can't reach the pedal in the initial or final position</li></ul><h1 id="ForemountedSpringForceCalculator-KeyAssumptions">Key Assumptions</h1><ol><li>The Leg length and spring diameter stay the same as the spring is compressed<ol><li>A combination of wrapping and shrinking occurs where the springs diameter decreases slightly as is is compressed, and the leg is bent around the spring</li><li>This means that the calculator is assuming a longer reach for the spring when it is in the final position, which makes the calculator slightly optimistic, because a longer moment arm about the pedals pivot and a smaller angle relative to the pedal are assumed than what is really achieved. </li><li>This assumption is difficult to fix because there is little information available quantifying these geometric changes as the spring is compressed.</li></ol></li><li>The leg is completely rigid<ol><li>The calculator assumes that the leg of the spring does not deflect at all.</li><li>This isconservative because bending will decrease the moment arm on the pedal, and decrease the angle that the spring is twisted. If the leg of the spring bends instead of the coils, this takes away some of the angular travel, decreasing spring force the pedal actually feels.</li><li>This assumption is likely very minor because we are mostly considering springs with short legs(For design reasons), which won't have very much bending over their lengths. </li><li>The assumption could be remedied with a bending calculation, but assuming a bent leg would significantly complicate all calculations.</li></ol></li><li>The leg stays tangent to the body<ol><li>I am not 100% certain that the leg stays tangent to the spring as it coils around it. It might cut across the face of the spring when coiled</li><li>If this occurs it will decrease actual travel angle, decreasing the true spring force, making the calculator optimistic</li><li>I believe that if this happens, it does so very little but I can not find any evidence for or against that claim</li></ol></li><li>Friction between the spring and pedal is not considered<ol><li>The spring is sliding, and it is being held quite firmly to the pedal, this means there is friction at the contact</li><li>Not considering this friction is conservative, because the friction impedes movement, and thus makes the pedal stiffer WHEN MOVED only.</li></ol></li></ol><h1 id="ForemountedSpringForceCalculator-Weaknesses">Weaknesses</h1><ol><li>The spring must contact a point along the pedal's axis, so the pedal cannot have a thickness<ol><li>I know how to fix this, it would probably take me a few hours. I do not have the time. Perhaps a giga goon in the future can make this happen?</li></ol></li><li>The relationship between position and weight is not explored<ol><li>The position of the spring matters because of the return force it generates, and the weight of the assembly. The simulation only concerns itself with return force.</li><li>This could be added but it would take an hour or 2 and be handwavy at best</li></ol></li><li>User has to go in and comment out plots they do not want to see<ol><li>I think this is easier than having to pick every time you run the sim</li></ol></li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343227.png">image-2023-9-6_21-1-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343228.m">Throttle_Spring_Calculator_v2.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343232.jpg">Meme Workshop 2.0 (2).jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343238.jpg">Meme Workshop 2.0 (3).jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343241.jpg">Meme Workshop 2.0 (4).jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343245.jpg">Meme Workshop 2.0 (5).jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343254.m">Throttle_Spring_Calculator_v2 (1).m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343226/270343272.m">Throttle_Spring_Calculator_v2 (2).m</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 09/30/2022 - Hall Effect Wheel Speed Sensor, Gap Tolerance Test</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228295245.html">Testing (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009829.html">Testing and Validation Results (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Sub-Scale-Testing-Results_129009840.html">Sub-Scale Testing Results</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 09/30/2022 - Hall Effect Wheel Speed Sensor, Gap Tolerance Test
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Oct 01, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="id-09/30/2022HallEffectWheelSpeedSensor,GapToleranceTest-Objective"><br/>Objective</h3><p>The design goal for the PF23 brakes package is to move the trigger wheel to be a feature on the outer perimeter of the brake rotor. This would benefit in removing component count, clearing up packaging behind the hub, and give more teeth to allow for greater resolution.</p><p>The biggest concern is whether the ~0.040 in axial float in the rotor would cause triggering issues for the hall sensor. A test was executed to test this sensor's capabilities in handling this gap variation.</p><p>Should be noted that 0.030-0.060 is the specified gap from the manufacturer.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081501.png" data-image-src="attachments/237081485/237081501.png" data-unresolved-comment-count="0" data-linked-resource-id="237081501" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-1_0-5-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><br/></p><h3 id="id-09/30/2022HallEffectWheelSpeedSensor,GapToleranceTest-TestSetup">Test Setup</h3><p>A representative rotor with the outer tooth profile was laser cut out of 0.125&quot; 4130 (representing the thinner of the front and rear rotors). This was fixtured in the lathe chuck, and the hall sensor was fixtured in the tool post.</p><p>This allowed for very fine (and measurable via the lathe DRO) adjustments to the gap. Also the lathe had a readout for the spindle RPM which could be used to verify the the value in MoTeC. We tested as low as 13 RPM and up to 1400 RPM</p><p>It should be noted that testing this requires a harness, so our solution was to bring the dyno into the machine shop.</p><p>If this test is to be performed again for whatever reason, the wire routing to the tool post sensor needs to be very organized and neat.</p><p><br/></p><h3 id="id-09/30/2022HallEffectWheelSpeedSensor,GapToleranceTest-TestResults">Test Results</h3><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">RPM</th><th class="confluenceTh"><p>Gap (Z) 1/1000 in</p><p>0.00 is contact with rotor</p></th><th class="confluenceTh"><p>Radial Position (X) 1/1000 in</p><p>0.00 is design intent</p></th><th class="confluenceTh">Signal Good?</th></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">30</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">40</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">50</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">60</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">70</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">220</td><td class="confluenceTd">80</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td></tr><tr><td class="confluenceTd">1160</td><td class="confluenceTd">80</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td></tr><tr><td class="confluenceTd">1306</td><td class="confluenceTd">30</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">1306</td><td class="confluenceTd">50</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">1306</td><td class="confluenceTd">80</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">1306</td><td class="confluenceTd">100</td><td class="confluenceTd">0</td><td class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">1306</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">0</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td></tr><tr><td colspan="1" class="confluenceTd">1430</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">0</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td><td class="highlight-#f4f5f7 confluenceTd" colspan="1" data-highlight-colour="#f4f5f7" title="Background color : Light grey 100%"><br/></td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-20</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-30</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-40</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-60</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-100</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">-130</td><td colspan="1" class="confluenceTd">Noisy</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">+40</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">+70</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">800</td><td colspan="1" class="confluenceTd">120</td><td colspan="1" class="confluenceTd">+100</td><td colspan="1" class="confluenceTd">Noisy</td></tr></tbody></table></div><p><br/></p><p>We also attempted to test transient gap changes, ie not just sitting at a constant gap. This was tough to simulate as hitting the sensor head on a spinning saw would be bad. Nevertheless we tried to test this by manually rocking the Z value back and forth, amplitude of roughly 0.015-0.020 and a frequency of 2-3 Hz. This didn't appear to influence the sensor reading.</p><p><br/></p><p><strong>Takeaway: There is roughly a sweep of positions 0.180 inch in Z and 0.200 inch in radial that this sensor head could be in and still measure ok.</strong></p><p><br/></p><h3 id="id-09/30/2022HallEffectWheelSpeedSensor,GapToleranceTest-Photos">Photos</h3><p><div class="embeddedObject" >
+    <video src="/download/attachments/237081485/20220930_173313000_iOS.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081496.jpg" data-image-src="attachments/237081485/237081496.jpg" data-unresolved-comment-count="0" data-linked-resource-id="237081496" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20220930_170421137_iOS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081497.jpg" data-image-src="attachments/237081485/237081497.jpg" data-unresolved-comment-count="0" data-linked-resource-id="237081497" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20220930_170427618_iOS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081498.jpg" data-image-src="attachments/237081485/237081498.jpg" data-unresolved-comment-count="0" data-linked-resource-id="237081498" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20220930_170434661_iOS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081499.jpg" data-image-src="attachments/237081485/237081499.jpg" data-unresolved-comment-count="0" data-linked-resource-id="237081499" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20220930_170627344_iOS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237081485/237081500.jpg" data-image-src="attachments/237081485/237081500.jpg" data-unresolved-comment-count="0" data-linked-resource-id="237081500" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20220930_171853568_iOS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="237081485" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081496.jpg">20220930_170421137_iOS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081497.jpg">20220930_170427618_iOS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081498.jpg">20220930_170434661_iOS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081499.jpg">20220930_170627344_iOS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081500.jpg">20220930_171853568_iOS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081501.png">image2022-10-1_0-5-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081485/237081504.mov">20220930_173313000_iOS.MOV</a> (video/quicktime)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Hollow Wing Manufacturing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297347.html">Manufacturing | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297348.html">Manufacturing Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Composites_130158108.html">Composites</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Hollow Wing Manufacturing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (green338)</span>, last modified on May 03, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This document will cover the basics of hollow wing manufacturing.</p><p>For PF20 we are switching to upper and lower skins bonded to rib and spar assemblies. The benefits of this over foam core male molds are as follows:</p><ul style="list-style-type: square;"><li>Improved dimensional accuracy</li><li>Reduced weight by eliminating material not contributing to spanwise bending stiffness</li><li>Improved surface finish</li><li>More complex wing geometry</li><li>Fewer resources needed for producing 2+ wings</li><li>Reduced resin content<br/><br/></li></ul><p>How to bond:</p><ol><li>Trim the skins down on the leading and trailing edges. The span can wait to trim down, as having extra will allow for closer trimming to the ribs after the assembly has been bonded.</li><li>Laser cut required foam (do this on the small trotec BIDC laser cutter). The method that was settled on for PF20 was to have 1&quot; thick foam cut to the profile of the ribs, with one for each endcap and 2 for each rib on the inside of the wing, and foam &quot;jigs&quot;. The jigs should be rectangles that sit flat on the lower skin and set the correct distance between the ribs to keep all spans identical. We cut these as 0.25&quot; tall rectangles with the long dimension being the required length for spacing. There are pictures of what those should look like in the wing in this page. </li><li>Glue ribs to foam with DP460NS. For center ribs you should have foam on both sides, otherwise put foam on only one side for the outer ribs. We're going to be looking into removing the inner ribs and placing threaded inserts into the skins for PF21 to avoid having to cut holes in the skins and to make the calculation for mount failure force simpler (bolted clevis vs wack fea rib shenanigans).</li><li>After the ribs have cured bond the lower skin. The picture showing rib alignment also shows what this should look like once complete. You will want to weigh down the ribs if possible, but make sure that they are sitting normal to the lower skin. It is better to have the ribs bonded to the lower skin straight and without weight on them than to have screwed up ribs that are bonded really well. I would recommend &quot;dry fitting&quot; everything without epoxy and measuring span at 2-3 points to make sure that the span is correct along the entire chord. Then take each item, apply epoxy, and replace it back on the lower skin. Once you have everything glued measure again. The epoxy will help keep things in place so you'll be able to make fine adjustments to the placement of the ribs. Make sure that you do this whole process on the lower mold to keep the wing in the correct shape and to avoid any twisting of the skin.</li><li>After the lower skin is cured check that the dimensions are correct again in case anything shifted during curing. If ribs are crooked or the span is too large you can remove ribs. This should be done by cutting between the rib and foam with a razor and then bending the rib away from the foam until the bond on the narrow aluminum portion breaks. Then you can sand the rib back down and trim the foam with a razor until everything fits properly. Reapply the epoxy and wait for it to cure.</li><li>If there are mounts on the top surface of the wing, those should be cut out of the upper skin now. To bond the upper skin the process is much simpler. Spread epoxy on all of the bond surfaces, as well as on the trailing edge. Place the upper skin down and apply some pressure, and then lift it back off to make sure that the epoxy has a full coat on all of the contact surfaces. If there are sections that do not have full coverage add more epoxy and check again. Once all of the bonding areas are filled put weights on the upper skin and let it cure on the lower mold.</li><li>If the wing is fully cured the skins can be trimmed for spans.</li></ol><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/137595339/146769444.jpg" data-image-src="attachments/137595339/146769444.jpg" data-unresolved-comment-count="0" data-linked-resource-id="146769444" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_0863.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="137595339" data-linked-resource-container-version="3" alt=""></span></p><p>Things that are being investigated for PF21</p><ul style="list-style-type: square;"><li>Bolted lugs for mounting rather than ribs. This would allow for mounting to be in double shear (might be able to move to #8 bolts to save weight) and mean that a clevis failure would only destroy the clevis, not the entire wing. The methods I'm looking at right now are as follows<ul style="list-style-type: square;"><li>Inserts (aluminum threaded) laid up in the upper skin. Probably the easiest to manufacture, but could have problems with skin stiffness. Also if skins are infused a method to release locating pins will be needed (this is another topic of interest for PF21)</li><li>Bolted to rib via holes in the upper rib surface. This method would likely be heaviest and hardest to manufacture since a significant amount of additional material is required in the rib. The ribs would also need to placed in a mill and then have the holes drilled. Fixturing the ribs in the mill would be the toughest part of this. This method is likely the strongest being considered.</li><li>Ribs with mounting points in double shear. Same method as what we have now, but it places the mounts in double shear. This would be easier to manufacture than bolts to the ribs (only have to run a 1/4&quot; ball mill over the top of the rib) but forces a thicker rib to have sufficient wall thickness on the lugs.</li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137595339/146769444.jpg">IMG_0863.JPG</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

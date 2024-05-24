@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FW-13-05</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750832.html">Front Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751366.html">FW Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="FW-13-Series_265098429.html">FW-13 Series</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FW-13-05
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-010</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable" style="width: 45.5978%;"><colgroup class=""><col class="" style="width: 14.7971%;"/><col class="" style="width: 52.864%;"/><col class="" style="width: 32.3389%;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd">Suppressor optimization</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832544/262832546.png" data-image-src="attachments/262832544/262832546.png" data-unresolved-comment-count="0" data-linked-resource-id="262832546" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_10-45-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Reduced forward element chord to reduce lift generated.</p><p>Reduce both element angle of attack to reduce losses and reduce lift generated.</p><p>Increased slot gap size from the first to the second element to delay vortex merging and prevent the first vortex from making lift on the second element.</p><p>Increased first element leading edge radius to reduce losses and lift generated.</p><p>Overall vortex strength will get lower, but should not be too significant.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd">Strake optimization</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262832544/262832547.png" data-image-src="attachments/262832544/262832547.png" data-unresolved-comment-count="0" data-linked-resource-id="262832547" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_10-47-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Increased leading edge inwash angle to align better with incoming flow.</p><p>Removed outwash angle on the trailing edge. It is still outwashing, just by less. This is done to reduce vortex strength across the strake and reduce wake size and inwash behind it.</p><p>Added a little curl to the bottom of the strake. This gives the vortex formed a non-vertical surface to act on to produce some downforce. The curve itself combined with the upward pressure gradient and velocity should produce a suction on its own. The curl also reduces the angle through which flow has to negotiate compared to a straight strake, reduce losses in the vortex. </p><p>The other side of the curl also gives a surface for the outer vortex to act on, which will reduce net downforce, but I think it downforce is still going to increase overall.</p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 432.156px;"/><col class="" style="width: 208.094px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832544/262832621.png" data-image-src="attachments/262832544/262832621.png" data-unresolved-comment-count="0" data-linked-resource-id="262832621" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_17-43-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>No more weirdness.</p><p>Interaction between front element vortex and the rear element upper surface is reduced.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="172" src="attachments/262832544/262832622.png" data-image-src="attachments/262832544/262832622.png" data-unresolved-comment-count="0" data-linked-resource-id="262832622" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_17-44-21.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Weaker and less lossy vortices overall, but outwash really isn't affected.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262832544/262832623.png" data-image-src="attachments/262832544/262832623.png" data-unresolved-comment-count="0" data-linked-resource-id="262832623" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_17-45-29.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262832544/262832624.png" data-image-src="attachments/262832544/262832624.png" data-unresolved-comment-count="0" data-linked-resource-id="262832624" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_17-48-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832544" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>No overall change in wake size. The difference is both vortices are higher. </p><p>Inner vortex did not get less lossy due to separation across the curl.</p><p>Also, I don't understand this vorticity scene.</p></td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832545.png">image-2023-5-30_10-45-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832546.png">image-2023-5-30_10-45-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832547.png">image-2023-5-30_10-47-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832621.png">image-2023-5-30_17-43-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832622.png">image-2023-5-30_17-44-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832623.png">image-2023-5-30_17-45-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832544/262832624.png">image-2023-5-30_17-48-10.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

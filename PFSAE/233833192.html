@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Task 1 – Pick Final Drive Ratio</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain-Onboarding_141728884.html">Drivetrain Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain-Project-2022_233833186.html">Drivetrain Project 2022</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Task 1 – Pick Final Drive Ratio
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (amattu)</span>, last modified on Sep 01, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Task1–PickFinalDriveRatio-Whydoweneedtohaveafinaldrive?">Why do we need to have a final drive?</h1><p>In a traditional bike, only 1 wheel is powered at a relatively low vehicle weight. In a formula car, 2 wheels are powered and the vehicle weight is greater, meaning we can utilize a greater amount of torque before spinning the wheels. Because of this, the final drive ratio is meant to boost the torque applied to the wheels at the cost of maximum vehicle speed and more shifts, though, typical vehicle speeds are only up to 75 MPH so the max vehicle speed is not a limiting factor.</p><p><br/>The lap sim will provide a theoretical points value earned in competition for a given final drive ratio. A sweep of different final drive ratios should be done to find the final drive ratio corresponding to the max number of points. However, the number of shifts in the events should be considered as well. The lap-sim assumes perfect shifts at the ideal RPM, however, drivers in reality will not hit these exactly. In light of this, the number of shifts should be a consideration in addition to the competition points earned for a final drive.</p><p><br/>In acceleration, minimizing shifts is a crucial aspect for peak performance. In autocross and endurance, many shifts will occur, though the change in shifts required should still be a consideration.</p><h1 id="Task1–PickFinalDriveRatio-LapSimQuickHow-To">Lap Sim Quick How-To</h1><p>The info below is only enough to describe how to change the final drive ratio and run the lap sim. I'm not going to go into detail of how to use MATLAB FYI.</p><ul><li>Set current folder to Quasi-Static_lap_sim_v2 and open up pf20_12.m</li><li>Go to drivetrain section</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/233833192/233833193.png" data-image-src="attachments/233833192/233833193.png" data-unresolved-comment-count="0" data-linked-resource-id="233833193" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-19_0-10-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="233833192" data-linked-resource-container-version="2" alt=""></span></p><ul><li>The 28 ./ 11 is the ratio of the rear to the front sprocket. The rear sprocket tooth count is what you will be changing for this exercise. I would recommend starting out with 28/11 or 29/11.</li><li>Run virtual_competition_29a</li><li>Copy points results and <span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);">number of shifts</span> </span>for each event. Points are in order: Total, accel, skidpad, autocross, endurance, efficiency</li></ul><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/233833192/233833194.png" data-image-src="attachments/233833192/233833194.png" data-unresolved-comment-count="0" data-linked-resource-id="233833194" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-19_0-7-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="233833192" data-linked-resource-container-version="2" alt=""></span></p><ul><li><strong>Put into trade-offs excel sheet here:</strong> <a href="attachments/233833192/233833195.xlsx" data-linked-resource-id="233833195" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Vehicle_Architecture_Tradeoffs_v8.xlsx" data-nice-type="Excel Spreadsheet" data-linked-resource-content-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-linked-resource-container-id="233833192" data-linked-resource-container-version="2">Vehicle_Architecture_Tradeoffs_v8.xlsx</a></li><li>I would recommend repeating this starting from a rear sprocket with 28 or 29 teeth up until you've passed the maximum amount of points earned</li><li>Using the results, determine the optimal final drive ratio with your reasoning, balancing out the points gained vs the additional shifts that occurred</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833193.png">image2020-9-19_0-10-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833194.png">image2020-9-19_0-7-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833195.xlsx">Vehicle_Architecture_Tradeoffs_v8.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833196.png">worddav0f86467586a15ef3ce5609a64a285bac.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833197.png">worddav646dabec2ae88665fe9c7d76eb8fb3d6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833192/233833198.png">worddav42a1ca43353d1cf37cc7b0a6dc142d98.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

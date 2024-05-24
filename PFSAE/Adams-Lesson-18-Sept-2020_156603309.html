@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Adams Lesson 18 Sept 2020</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297360.html">Design Archive | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297939.html">Design PF22 | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145785247.html">Meetings (Suspension)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Adams Lesson 18 Sept 2020
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Sep 19, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="AdamsLesson18Sept2020-AdamsNotes"><strong>Adams Notes</strong></h1><p><em><strong>Adams files:</strong> </em>Z:\Knowledge_Base\01-Suspension\06-Adams_Car_Vehicle_Files</p><p>Open Assembly, then repeat name in database management</p><p>Select directory, where it runs sim, and saves, needs to be on C drive</p><ol><li>Run simulations at slowest speed of vehicle (14.5 mph)<ol><li>Constant velocity cornering, name vehicle and test, 1000 steps, 2nd gear</li><li>Set Gs to be a bit more than limit</li><li>it'll say that it falied because it didn't hit velocity, but it'll say the accel that it hit</li></ol></li><li>Run straight line accel<ol><li>name appropriately, 14.5mph, 1000 steps, 2nd gear</li><li>1.3 g, slightly more than limit</li></ol></li><li>Braking sim<ol><li>Same menu as forward accel, Rename appropriately</li><li>-1.9g, set decel method to braking</li></ol></li></ol><p>Now we've run the right starting files</p><p>For every run: acf file and adm file, open in Notepad++</p><p>adm: all the into about vehicle, should never have to mess with</p><p>acf file: commands that run certain simulation</p><p>open newly made acf files and match with template, compare for braking, accel and cornering</p><p>Change the template to match, save as new revision when doing so</p><ul><li>comments are lines with !, don't worry about changing that</li><li>Make sure the lines starting with control match</li><li>also the functions below that</li></ul><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/156603309/156603311.png" data-image-src="attachments/156603309/156603311.png" data-unresolved-comment-count="0" data-linked-resource-id="156603311" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-18_22-42-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156603309" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><h1 id="AdamsLesson18Sept2020-PythonNotes"><strong>Python Notes</strong></h1><p><em><strong>Python Batch Running Files:</strong> </em>Z:\2020\3_Suspension\01_Desigh\02_LapSim\batch_sim_outputs</p><p>This will batch run adams, needs to be in the same folder as acf and adm files</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/156603309/156603312.png" data-image-src="attachments/156603309/156603312.png" data-unresolved-comment-count="0" data-linked-resource-id="156603312" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-18_22-49-59.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156603309" data-linked-resource-container-version="5" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/156603309/156603313.png" data-image-src="attachments/156603309/156603313.png" data-unresolved-comment-count="0" data-linked-resource-id="156603313" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-18_22-53-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156603309" data-linked-resource-container-version="5" alt=""></span></p><p>vel_steps is number of velocities to run</p><p>combined_steps is for running multiple of scenarios (cornering and accelerating), leave at zero for now</p><p>26-31 initial guesses</p><p>32 target_increment, will increment if it is able to achieve target accel</p><p>50-52 change template name if necessary</p><p>55 change name of vehicle if necessary</p><p>58 change version of adams if necessary</p><p>242 - 244 Using cmd to run adams</p><p><br/></p><p>After done running:</p><ul style="list-style-type: square;"><li>Look at plots</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156603309/156603311.png">image2020-9-18_22-42-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156603309/156603312.png">image2020-9-18_22-49-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156603309/156603313.png">image2020-9-18_22-53-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156603309/158471951.png">image2020-10-9_21-13-30.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

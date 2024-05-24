@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Things That Break a Lot</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Things That Break a Lot
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (rkumaran)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on May 12, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This is a list of things that frequently break during CFD runs. Don't need to check these for every single simulation run, but should take a gander through the sim whenever it makes sense to do so. This should also make it easier to know <em>what</em> to look for. The hope is to make this list shorter as we become less bad at CFD, but also make it longer as we make this list more comprehensive.</p><p>Might be slightly outdated (written for final version fsaeSTAR V5.5), but the general idea is there.<br class="atl-forced-newline"/><strong>Physics</strong></p><ul><li>Tyre rotation rate<ul><li>These break very often. Check the tyre boundaries under regions, make sure they're set to rotate about front and rear cylindrical axes. Make sure these front and rear cylindrical axes are in the right location, and the rotation rate has the correct sign. Can also verify this by looking at a vector scene and looking at the velocity glyphs close to the tyres. The tyre rotation rate boundary condition enforces a rotating no-slip wall on all surfaces included in a tyre part. Also check the tyre part to make sure the part includes everything it's supposed to. It's fine if the tyre part includes certain non-rotating suspension components that are close to the tyre; that's just a consequence of how the tyres are defined in our model. Tyre rotation rate should come right out of v=ωr</li></ul></li><li>Tyre squish<ul><li>Until we have a proper tyre model with tyre squish or positive confirmation from suspension about ride heights in the vehicle's CAD model, make sure ~0.35&quot; of the tyre is underneath the bottom boundary of the domain. This makes sure there's an effective contact patch between the tyre and the ground. Helps with physical accuracy, and helps with simulation stability (no cusps). Right now, the domain is offset upwards by 0.35&quot;, and no changes are made to the vehicle geometry itself.</li></ul></li><li>Radiator bounds<ul><li>Make sure you split your radiator surfaces into an inlet and outlet. Make sure those split surfaces propagate into regions and interfaces.</li><li>Verify in a scene that these interfaces and boundaries mapped correctly (after volume meshing), and show up correctly in the right place and size when highlighted.</li></ul></li><li>Fan bounds<ul><li>Make sure fans have an inlet and outlet boundary, and make sure those propagate into regions and interfaces.</li><li>Verify in a scene that these interfaces and boundaries mapped correctly (after volume meshing), and show up correctly in the right place and size when highlighted.</li></ul></li><li>Fan curve<ul><li>Self-explanatory. Make sure you're using the right fan curve! Check the fan region and momentum source settings to see if it's pointing to the right fan curve, and has the columns configured correctly. Look at velocity scenes near the fans to confirm the fan is behaving as it should.</li></ul></li><li>Radiator properties<ul><li>There's a way to get viscous and inertial resistance tensors from wind tunnel data from the radiator supplier. I can't remember the equations, but make sure they check out. You only need the viscous and inertial resistances. Make sure the units match what STAR wants. This looks legit? <a class="external-link" href="https://1drv.ms/u/s!AsEJu25ycwIEiOQ6SWvlB-cpxsHX_A?e=kd6b2q" rel="nofollow">https://1drv.ms/u/s!AsEJu25ycwIEiOQ6SWvlB-cpxsHX_A?e=kd6b2q</a>. Straight up do not understand why Cal Poly did this.</li></ul></li><li>Inlet conditions<ul><li>Need to make sure the inlet of the domain has a velocity magnitude equal to V_inf / cos(yaw). The reference velocity is the vehicle velocity, but the domain inlet velocity needs to have a magnitude that incorporates the crosswind component.</li></ul></li><li>Symmetry conditions<ul><li>Interface the left and right boundaries as in-place periodic interfaces. The crosswind component leaving from one end needs to come back from the other end so the whole thing doesn't act as a gigantic flow straightening device. These boundaries should be far away from the car, so any boundary condition effects do not substantially affect the vehicle flow field.</li></ul></li><li>Cornering radius<ul><li>You're asking for divide by zero errors if you set this to zero. This can happen even if you're running a straightline sim, since the cornering logic still exists even if it isn't being used to alter any of the flow physics.</li></ul></li><li>Ground velocity<ul><li>Your ground needs to be moving at the same velocity as the vehicle reference speed. Make sure this is happening! Make sure there's a no-slip wall condition on the ground.</li></ul></li><li>Initial conditions<ul><li>Set these to anything that isn't dumb or zero. You don't want to shock the system by having a non-zero boundary (an inlet), but a zero initial condition in the domain, and risk having discontinuities as the inlet condition propagates through the domain.<span class="confluence-anchor-link" id="ThingsThatBreakaLot-_GoBack"></span></li></ul></li><li>Interfaces<ul><li>As a sanity check, see what happens if you reverse an interface direction. It should cause the simulation to explode or give you garbage results, this is the easiest way to check if interfaces are oriented correctly.</li></ul></li><li>Coordinate systems<ul><li>Tyres, fans, radiators. Make sure they're in the right place. Make sure tyre, fan, radiator boundaries are all set to the correct coordinate systems.</li></ul></li><li>Stopping Criteria<ul><li>There's a lot of redundant stopping criteria still in the sim environment that I haven't had a reason to remove. Make sure you don't play with these stopping criteria, if you do, things might quit early.</li></ul></li></ul><p><strong>Mesh</strong></p><ul><li>Mesh leaks<ul><li>Surfaces that do not interact with the external air domain should not ever be meshed. If you're meshing the inside of a chassis tube, or inside of a wing, fix it. Use the leak detection tool to find where it's leaking from.</li></ul></li><li>Surface fidelity<ul><li>Have a close look at leading edges, make sure they're not discretized to the point where they're sharp and no longer rounded. Increase the #pts/circle for curvature refinement to resolve.</li></ul></li><li>Gap closures<ul><li>Some gap closures are necessary, like blocking off the gap between body panels and the chassis. Make sure this is happening. Can do these manually but relying on surface wrapper gap closures is generally okay.</li><li>Some gap closures are bad. Check slot gaps, make sure they're not sealing. If they are, change your gap closure settings, or use a contact prevention group to stop them from sealing to each other.</li></ul></li><li>Surface and volume refinements<ul><li>Check custom surface and volume controls to make sure the correct surfaces and block parts are being added. If they're not, it's generally an issue with how SimComponents is grouping surfaces and parts together.</li></ul></li><li>Max Velocity<ul><li>Really high max velocities, or very spiky max velocity plots are indicative of issues with your mesh, somewhere. Have a look at where the cells are being deleted and decide if it matters or not that those cells were deleted.</li></ul></li><li>Prism layers<ul><li>Sometimes you'll have issues with prism layer extrusion if two surfaces are very close to each other. You may not have a fully formed prism layer at slot gaps, which is fine, but make sure that this is localized and not a global problem.</li></ul></li></ul><p><br class="atl-forced-newline"/><strong>Reports</strong></p><ul><li>Surface assignments<ul><li>Most frequent report issue is the wrong surfaces are assigned to the wrong reports. This usually stems from a SimComponents issue with surface sorting. Check the surface inputs to verify the report you're seeing is the report you want.</li></ul></li><li>Divide by zero<ul><li>%front can give you a divide by zero error and crash if your lift coefficient is zero.</li><li>Make sure the pitch moment coefficient is relative to the contact point of the tyre.</li></ul></li></ul><p><br class="atl-forced-newline"/><strong>Scenes</strong></p><ul><li>Empty scenes<ul><li>Check the representation if the displayer, make sure it's set to volume mesh.</li><li>Check the input parts to the plane section derived part. It needs to be the full volume of the subtract region.</li></ul></li></ul><p><br/></p><p>Raunaq's will to live</p><p><br class="atl-forced-newline"/><br class="atl-forced-newline"/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

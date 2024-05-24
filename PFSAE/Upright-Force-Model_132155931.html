@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Upright Force Model</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Uprights_132155913.html">Uprights</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Upright Force Model
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified on Nov 02, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The upright forces are calculated in the matlab code (drivetrain_exec.m). The forces on each tooth are summed to create the net force in the sprocket coordinate system. A coordinate system shift is done using the angle between the sprockets to the horizontal axis to get the forces in terms of the vehicle coordinate system. From this, equilibrium equations can be used to determine the forces on each of the uprights in the vertical and horizontal directions.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/132155931/132157472.png" data-image-src="attachments/132155931/132157472.png" data-unresolved-comment-count="0" data-linked-resource-id="132157472" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-11-2_0-15-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155931" data-linked-resource-container-version="3" alt=""></span></p><p>The angle is small but should be factored into the calculations, as it does shift the components a noticeable amount due to the high magnitude of these forces.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/132155931/132157473.png" data-image-src="attachments/132155931/132157473.png" data-unresolved-comment-count="0" data-linked-resource-id="132157473" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-11-2_0-18-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155931" data-linked-resource-container-version="3" alt=""></span></p><p>These are the net reaction forces across the uprights and sprocket using equilibrium equations. The forces on the uprights are in the opposite direction than shown above (since these are reaction forces on the differential axis). These forces are then used to calculate the forces on the turnbuckle and the lower bolt. These numbers are fed into the structures spreadsheet (Z:\2020\6_Drivetrain\Drivetrain_structures_2020.xlsx) to determine the thicknesses and sizes of the tabs used on the uprights and connecting the uprights to the chassis. A second load case was considered where the uprights were rotated 5 degrees about their vertical axis. This would be a good worst case test for what would happen if the upright mounting was too flexible since turnbuckles are being used on the upper mounts. This involved a coordinate shift from the upright force components and was put into the ANSYS model for evaluation.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155931/132157472.png">image2019-11-2_0-15-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155931/132157473.png">image2019-11-2_0-18-4.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

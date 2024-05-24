@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF21-22 Chassis (Christian Hammerly)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728900.html">Design PF21 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis-2021-22-Design-Notebooks_158469581.html">Chassis 2021-22 Design Notebooks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF21-22 Chassis (Christian Hammerly)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Oct 22, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="PF2122Chassis(ChristianHammerly)-Requirements:">Requirements: </h2><ul class="inline-task-list" data-inline-tasks-content-id="158472093"><li data-inline-task-id="4">text</li></ul><h2 id="PF2122Chassis(ChristianHammerly)-Benchmarks:">Benchmarks:</h2><p>Looked through top finishers in Michigan 2019 for smaller engine packages</p><p>Carleton University - Ravens Racing (2017 car - they use a KTM 450)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/158472093/158472303.png" data-image-src="attachments/158472093/158472303.png" data-unresolved-comment-count="0" data-linked-resource-id="158472303" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-12_0-25-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p>UA FSAE - 115 on design, 10th in Michigan 2019</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/158472093/158472106.png" data-image-src="attachments/158472093/158472106.png" data-unresolved-comment-count="0" data-linked-resource-id="158472106" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-10_14-1-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/158472093/158472305.png" data-image-src="attachments/158472093/158472305.png" data-unresolved-comment-count="0" data-linked-resource-id="158472305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-12_0-32-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><p>Need to figure out mounting locations/dimensions for KTM 450 vs Yamaha R6 (known).</p><p>-possibly find model of KTM 450</p><h1 id="PF2122Chassis(ChristianHammerly)-Okayhowtodesignachassis">Okay how to design a chassis</h1><p>Step 1: Import Suspension Points</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="102" src="attachments/158472093/160662097.png" data-image-src="attachments/158472093/160662097.png" data-unresolved-comment-count="0" data-linked-resource-id="160662097" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-22_22-15-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><ul style="list-style-type: square;"><li>Edit NX Open script to have appropriate file mapping</li><li>Run NX Open script within PFXX_CHA_0001_SusPoints<ul style="list-style-type: square;"><li>Right-click on the main ribbon (where assemblies and curve are) and enable the Developer tab. Press Edit and select the SusPoints_Import.vb file to run. </li><li>Evan created a confluence page about it here → <a href="https://wiki.itap.purdue.edu/x/SSDCBw" rel="nofollow">https://wiki.itap.purdue.edu/x/SSDCBw</a></li></ul></li><li>Boom! Now a lot of suspension points are in your NX Model as shown below.</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/158472093/160662099.png" data-image-src="attachments/158472093/160662099.png" data-unresolved-comment-count="0" data-linked-resource-id="160662099" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-22_22-20-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><p>Step 2: Group all chassis-related points under one Reference Set</p><p>We need to know which points we should use to develop the chassis, so distilling the suspoints into recognizable components is helpful.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/158472093/160662101.png" data-image-src="attachments/158472093/160662101.png" data-unresolved-comment-count="0" data-linked-resource-id="160662101" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-22_22-30-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><p>Click Add New Reference Set while in the SusPoints file and select the following:</p><ul style="list-style-type: square;"><li>Outboard upper control arm (uca) and outer lower control arm (lca) points</li><li>Inboard uca/lca points</li><li>Inboard damper points</li><li>Inboard/outboard tierod points</li></ul><p>Step 3: Create Skeleton Model (PFXX_CHA_0002_SkelModel)</p><ul style="list-style-type: square;"><li>Use the WAVE Geometry linker to bring the applicable suspension points into the skeleton model prt. <strong>might want to ask evan how to do this</strong> </li><li>Create reference geometry for the main roll hoop, front roll hoop, bulkhead, and engine placement. Use expressions to define this stuff so it's less confusing.</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/158472093/160662105.png" data-image-src="attachments/158472093/160662105.png" data-unresolved-comment-count="0" data-linked-resource-id="160662105" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-22_22-36-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158472093" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><h2 id="PF2122Chassis(ChristianHammerly)-Concepts:">Concepts: </h2><p>Version 1: </p><h2 id="PF2122Chassis(ChristianHammerly)-FinalDesign:">Final Design: </h2><p>description</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/158472106.png">image2020-10-10_14-1-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/158472303.png">image2020-10-12_0-25-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/158472304.png">image2020-10-12_0-32-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/158472305.png">image2020-10-12_0-32-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/160662097.png">image2020-10-22_22-15-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/160662099.png">image2020-10-22_22-20-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/160662101.png">image2020-10-22_22-30-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/160662102.png">image2020-10-22_22-32-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158472093/160662105.png">image2020-10-22_22-36-54.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

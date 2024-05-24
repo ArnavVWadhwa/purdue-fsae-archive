@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Estimating Honeycomb Bonded Area with MATLAB</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190068.html">PF22 CHA Rules &amp; SES &amp; Tests</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Estimating Honeycomb Bonded Area with MATLAB
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Oct 14, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 style="text-align: left;" id="EstimatingHoneycombBondedAreawithMATLAB-ThistoolisusefulforestimatingthehoneycombbondedareaforSES.">This tool is useful for estimating the honeycomb bonded area for SES.</h3><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="91" src="attachments/192185467/192190106.png" data-image-src="attachments/192185467/192190106.png" data-unresolved-comment-count="0" data-linked-resource-id="192190106" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-10-14_14-19-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192185467" data-linked-resource-container-version="5" alt=""></span></p><h3 style="text-align: left;" id="EstimatingHoneycombBondedAreawithMATLAB-Scanthepre-crushedsideoftheimpactattenuator">Scan the pre-crushed side of the impact attenuator</h3><p style="text-align: left;">Any scanning application (e.g. <a class="external-link" href="https://apps.apple.com/us/app/genius-scan-pdf-scanner/id377672876" rel="nofollow">Genius Scan</a> or <a class="external-link" href="https://play.google.com/store/apps/details?id=com.microsoft.office.officelens&amp;hl=en_US&amp;gl=US" rel="nofollow">Microsoft Lens</a>) should work. Scan the pre-crushed side of the IA as shown below.</p><p style="text-align: left;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/192185467/192185478.png" data-image-src="attachments/192185467/192185478.png" data-unresolved-comment-count="0" data-linked-resource-id="192185478" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-9-25_16-5-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192185467" data-linked-resource-container-version="5" alt=""></span></p><p style="text-align: center;">Figure (1) Using Genius Scan to scan the precrushed honeycomb</p><p>Export the scan as a .jpeg or .png. Name it something meaningful <img class="emoticon emoticon-heart" src="images/icons/emoticons/heart.svg" data-emoticon-name="heart" alt="(heart)" data-emoji-short-name=":heart:"/> and create a folder in the drive for this.</p><p style="text-align: left;">Open the Matlab file below. Save it to the aforementioned folder.</p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/192185467/honeycombReader.m?version=2&amp;modificationDate=1632599103000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/192185467/honeycombReader.m?version=2&amp;modificationDate=1632599103000&amp;api=v2" data-linked-resource-id="192185469" data-linked-resource-type="attachment" data-linked-resource-container-id="192185467" data-linked-resource-default-alias="honeycombReader.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="2" data-can-edit="true" aria-label="honeycombReader.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">honeycombReader.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="192185467" data-linked-resource-id="192185469" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p style="text-align: left;">Open the .m file and edit the inputs so the script can read your image.</p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="147" src="attachments/192185467/192185470.png" data-image-src="attachments/192185467/192185470.png" data-unresolved-comment-count="0" data-linked-resource-id="192185470" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-9-25_15-45-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192185467" data-linked-resource-container-version="5" alt=""></span></p><p style="text-align: center;">Figure (2): Inputs for the script</p><p style="text-align: left;">This script automatically locally brightens darker areas so the cutoff needs to be adjusted. The script displays the final 'crunchy' image so you can adjust the cutoff variable and see how it changes which pixels turn white/black.</p><p style="text-align: left;"><br/></p><p style="text-align: left;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/192185467/192185472.png" data-image-src="attachments/192185467/192185472.png" data-unresolved-comment-count="0" data-linked-resource-id="192185472" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-9-25_15-52-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192185467" data-linked-resource-container-version="5" alt=""></span></p><p style="text-align: center;">Figure (4): Command window Matlab output</p><p style="text-align: left;">This script outputs a few values to the command window. bondedAreaCount is the number of white pixels in the image, nonbondedAreaCount is the number of black pixels in the image, and bondedArea is 32in^2 * white pixels / total pixels.</p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/192185467/192185473.png" data-image-src="attachments/192185467/192185473.png" data-unresolved-comment-count="0" data-linked-resource-id="192185473" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-9-25_15-53-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192185467" data-linked-resource-container-version="5" alt=""></span></p><p style="text-align: center;">Figure (5): Fully processed 'crunchy' image</p><p style="text-align: left;"><br/></p><p style="text-align: left;"><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185471.m">honeycombReader.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185470.png">image2021-9-25_15-45-38.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185469.m">honeycombReader.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185472.png">image2021-9-25_15-52-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185473.png">image2021-9-25_15-53-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192185478.png">image2021-9-25_16-5-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192190103.png">image2021-10-14_14-19-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192185467/192190106.png">image2021-10-14_14-19-33.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Intro to CFD</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Intro to CFD
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>What is CFD</strong></u></p><p>Computational fluid dynamics, or CFD, is a computational tool to solve fluid mechanics problems numerically. I am sure you are all aware that one problem that CFD can solve: external aerodynamics. This is also the type of problem we solve the most here in the FSAE teams. But the application of CFD is much much wider than that. As a team, we also use CFD for engine intake design, and have used it for slosh analysis in the oil pan as well as exhaust design. Out in the real world, CFD is also used to simulate chemical reactions, cooling systems, turbomachinary, etc. High fidelity CFD using direct numerical simulation can even be used to study inner working of fluid mechanics itself.</p><p><u><strong>Finite Differencing vs. Finite Volume</strong></u></p><p>CFD is cool and all, but how exactly does CFD solve the problem you give it? There are two ways: <em>finite difference method (FDM)</em> and <em>finite volume method (FVM).</em></p><p>In both FDM and FVM, the problem of interest is subdivided into a range of smaller volumes. This process is called <em>discretization</em> or <em>mesh generation </em>or <em>grid generation</em>. Take a simple 1D heat conduction and convection problem with fixed temperatures on both sides as an example, the 1D rod is subdivided into multiple smaller rod. So kind of like taking derivative, except in CFD finitely small rod instead of infinitely small rods are used. For each of the small rods, only the value at the center is tracked.</p><p>In FDM, <em>finite difference equations (FDE)</em> are derived and values at the small rods are calculated using numerical derivatives with methods such as 2nd order central differencing. Numerical derivative itself is derived by truncating Taylor series. This is what order of accuracy means. A 2nd order method mean the first truncated term is the third powered term. Below is an example of what a finite difference solution implies (note this is not an actual solution, just something I made up):</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/262832302/262832419.png" data-image-src="attachments/262832302/262832419.png" data-unresolved-comment-count="0" data-linked-resource-id="262832419" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-29_19-3-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832302" data-linked-resource-container-version="5" alt=""></span></p><p>In FVM, <em>finite volume</em><em> equations (FVE)</em> are derived by assuming each small rod is a small control volume. In essence, FVM assumes the inside of each small rods, the temperature is constant. And temperature at control surfaces (two ends of the rod) are interpolated. Below is an example of the same solution using FVM:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/262832302/262832420.png" data-image-src="attachments/262832302/262832420.png" data-unresolved-comment-count="0" data-linked-resource-id="262832420" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-29_19-5-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832302" data-linked-resource-container-version="5" alt=""></span></p><p>Note that if you solve problems using these methods, you don't obtain the lines or the step function, I put those up to help you distinguish FDM and FVM.</p><p>Interesting enough, FVEs and FDEs look identical to each other in most problems, even though the process you used to arrive at each equation is different. However, there is more physics built into FVEs, since it use control volume analysis. And that is the reason that these days, FVM is preferred. FVM is indeed the method used by all the popular, non-research CFD codes.   </p><p><u><strong>Solving the CFD Problem</strong></u></p><p>So you know how CFD is solved, and now you need to know what information you need to solve the CFD problem.</p><p>The most obvious thing you need to know is what problem you are solving and what physics is behind it. Are you solving external aerodynamics? If yes, then what flow regime are you operating in? Can you assume incompressible flow? Do you need to solve the energy equation? You need to know the problem and the physics well even to be able to make these choices.</p><p>The next thing you need is boundary condition. You can't just tell me to solve this 1D conduction convection problem without telling me anything about the boundary condition. I can only solve if you tell me here are the temperature at two ends, or here is the temperature at one end and heat flux at the other. What you can't tell me is that here is heat flux at both ends. So you also need to know the problem well enough to know what boundary conditions you can apply and what you cannot.</p><p>You also need to define what you are trying to get out of the solution. Are you trying to get lift and drag numbers for correlation, or are you just trying to see how the fluid moves and precise numbers don't matter. If latter is the case, then I can probably make additional compromises to speed up the solution .</p><p><strong><u>Boundary Conditions</u></strong></p><p>Let's talk more about boundary condition specially for incompressible external aerodynamics cases for the FSAE car.</p><p>There are four fundamental variables we need to solve: u velocity, v velocity, w velocity, and pressure. The rest, e.g. wall shear stress, can all be derived using these.</p><p>It follow, then, you need boundary conditions for all four. The most popular boundary conditions is a velocity inlet and pressure outlet. So you specify all velocity components are the inlet, and pressure at outlet. This way, all four are well defined. CFD can change pressure at the inlet to match your velocity needs and change velocity to match your pressure needs.</p><p>Alternative to velocity inlet and pressure outlet would be mass flow inlet and pressure outlet, and stagnation inlet and pressure outlet. However, both of these are less defined and will take longer to converge.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832302/262832419.png">image-2023-5-29_19-3-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832302/262832420.png">image-2023-5-29_19-5-31.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

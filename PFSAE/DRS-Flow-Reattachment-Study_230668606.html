@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DRS Flow Reattachment Study</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="One-Off-CFD-Analysis_259297493.html">One-Off CFD Analysis</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DRS Flow Reattachment Study
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Aug 18, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simplifications and Assumptions:</strong></u></p><ul><li>2D<br/><ul><li>3D with a full car would take a long time to solve</li><li>Using 2D also means we have to use unsteady Reynolds averaged Navier-Stokes (URANS) instead of more accurate methods like DES or LES</li><li>2D should results in slightly slower flow reattachment time due to the lack of spanwise flow to aid in reattachment</li><li>Due to the way that the rear wing is optimized, flow never fully reattaches when flaps are closed</li></ul></li><li>0.1s DRS closure time</li><li>DRS opens to 0 degree geometric angle of attach<ul><li>Flap 1 moves through a 46-degree angle</li><li>Flap 2 moves through a 71-degree angle</li></ul></li><li>Pivot points are at the tailing edge</li></ul><p><u><strong>Simulation Setup</strong></u></p><ul><li>Physics model<br/><ul><li>URANS</li><li>Spalart Allaramas</li><li>Remesher<br/><ul><li>As flaps move, cells will be stretched. This lowers cell quality and eventually will result in negative volume cells</li><li>Remesher makes sure when cell quality drops too lower, a new mesh will be made with flaps in the right position</li></ul></li></ul></li><li>Mesh strategy<ul><li>18 layers of prism layers</li><li>0.0015 m thickness</li><li>Polygonal mesher<ul><li>Flow direction will change drastically throughout the sim, polygonal mesher should be better at dealing with it</li></ul></li><li>Wall Y+ of less than 1 without flow separation</li></ul></li><li>Motion<ul><li>Mesh morpher with 0 displacement and rigid body rotation motion<br/><ul><li>Rigid prism layer because flap geometry themselves don't change</li></ul></li><li>Flaps rotation:<ul><li>Constant rotation rate throughout the motion</li><li>0.1 second closure time</li></ul></li></ul></li><li>Stopping criteria<ul><li>1e-4 continuity residual</li><li>20 minimum steps per time step<ul><li>So when remeshing happens, it doesn't run 1 iteration and move on due to low residual</li></ul></li></ul></li><li>Time step size: 0.001 s</li><li>Simulation time: 2 second</li><li>1 second of pre closure time to allow flow to reach steady state</li></ul><p><u><strong>Results:</strong></u></p><p>Real time (0 - 2s):</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230668606/CpT%20Real%20Time.mp4?version=1&amp;modificationDate=1660869446000&amp;api=v2" data-nice-type="Multimedia" data-file-src="/download/attachments/230668606/CpT%20Real%20Time.mp4?version=1&amp;modificationDate=1660869446000&amp;api=v2" data-linked-resource-id="230668625" data-linked-resource-type="attachment" data-linked-resource-container-id="230668606" data-linked-resource-default-alias="CpT Real Time.mp4" data-mime-type="video/mp4" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="CpT Real Time.mp4" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-multimedia.png" height="250" alt="" draggable="false"/><span class="title">CpT Real Time.mp4</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230668606" data-linked-resource-id="230668625" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230668606/Cp%20Real%20Time.mp4?version=1&amp;modificationDate=1660875893000&amp;api=v2" data-nice-type="Multimedia" data-file-src="/download/attachments/230668606/Cp%20Real%20Time.mp4?version=1&amp;modificationDate=1660875893000&amp;api=v2" data-linked-resource-id="230668653" data-linked-resource-type="attachment" data-linked-resource-container-id="230668606" data-linked-resource-default-alias="Cp Real Time.mp4" data-mime-type="video/mp4" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="Cp Real Time.mp4" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-multimedia.png" height="250" alt="" draggable="false"/><span class="title">Cp Real Time.mp4</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230668606" data-linked-resource-id="230668653" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>20x slower (0.9 - 2s):</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230668606/CpT%2020x%20slower.mp4?version=1&amp;modificationDate=1660875927000&amp;api=v2" data-nice-type="Multimedia" data-file-src="/download/attachments/230668606/CpT%2020x%20slower.mp4?version=1&amp;modificationDate=1660875927000&amp;api=v2" data-linked-resource-id="230668654" data-linked-resource-type="attachment" data-linked-resource-container-id="230668606" data-linked-resource-default-alias="CpT 20x slower.mp4" data-mime-type="video/mp4" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="CpT 20x slower.mp4" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-multimedia.png" height="250" alt="" draggable="false"/><span class="title">CpT 20x slower.mp4</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230668606" data-linked-resource-id="230668654" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230668606/Cp%2020x%20slower.mp4?version=1&amp;modificationDate=1660875939000&amp;api=v2" data-nice-type="Multimedia" data-file-src="/download/attachments/230668606/Cp%2020x%20slower.mp4?version=1&amp;modificationDate=1660875939000&amp;api=v2" data-linked-resource-id="230668655" data-linked-resource-type="attachment" data-linked-resource-container-id="230668606" data-linked-resource-default-alias="Cp 20x slower.mp4" data-mime-type="video/mp4" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="Cp 20x slower.mp4" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-multimedia.png" height="250" alt="" draggable="false"/><span class="title">Cp 20x slower.mp4</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230668606" data-linked-resource-id="230668655" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>Wall Y+ histogram 10x slower (0-2s):</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230668606/Wall%20Y%2B%2010x%20slower.mp4?version=1&amp;modificationDate=1660875978000&amp;api=v2" data-nice-type="Multimedia" data-file-src="/download/attachments/230668606/Wall%20Y%2B%2010x%20slower.mp4?version=1&amp;modificationDate=1660875978000&amp;api=v2" data-linked-resource-id="230668656" data-linked-resource-type="attachment" data-linked-resource-container-id="230668606" data-linked-resource-default-alias="Wall Y+ 10x slower.mp4" data-mime-type="video/mp4" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="Wall Y+ 10x slower.mp4" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-multimedia.png" height="250" alt="" draggable="false"/><span class="title">Wall Y+ 10x slower.mp4</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230668606" data-linked-resource-id="230668656" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>ClA and CdA plots vs. time:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/230668606/230668657.png" data-image-src="attachments/230668606/230668657.png" data-unresolved-comment-count="0" data-linked-resource-id="230668657" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="ClA Monitor Plot.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230668606" data-linked-resource-container-version="3" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/230668606/230668658.png" data-image-src="attachments/230668606/230668658.png" data-unresolved-comment-count="0" data-linked-resource-id="230668658" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="CdA Monitor Plot.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230668606" data-linked-resource-container-version="3" alt=""></span></p><p><strong><u>Analysis:</u></strong></p><ul><li>As soon as rear wing flaps starts to close, there is a spike in downforce loss due to the acceleration of the flaps. This spike is most likely less severe in real life because due to the lack of sudden acceleration with the constant rotation rate model</li><li>Rear wing gains downforce steadily as DRS closes<ul><li>Flow separation on the upper flap is observed during the closure process</li><li>No flow separation on the lower flap</li></ul></li><li>As soon as rear wing closes, there is a spike in downforce due to the acceleration of the flaps as well as extremely high total pressure caused by flap motion</li><li>At this point, the upper flap is still separated. Therefore, as soon as the the downforce spike passes, downforce level reduces to a point comparable to the steady state level</li><li>As the upper flap reattaches, downforce level increases to the local maximum</li><li>After the downforce level hits the local maximum, the effect of wake formation becomes dominant. The decrease to total pressure below and behind the flaps causes downforce loss</li><li>When the wake reaches its maximum size, local minimum of downforce is reached. Downforce at this point is only slightly less than the steady state level</li><li>Wake size then reduces slightly and the downforce level hits steady state</li></ul><p><u><strong>Conclusion:</strong></u></p><ul><li>Full downforce and more is achieved immediately after the flaps are closed</li><li>There will be some aero balance variations due to varying levels of downforce within the first 0.8 seconds of DRS closure</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668625.mp4">CpT Real Time.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668653.mp4">Cp Real Time.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668654.mp4">CpT 20x slower.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668655.mp4">Cp 20x slower.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668656.mp4">Wall Y+ 10x slower.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668657.png">ClA Monitor Plot.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668606/230668658.png">CdA Monitor Plot.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Half Bridge Output</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="246343627.html">Harness | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="280562290.html">Harness: I/O Types</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Half Bridge Output
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Nov 24, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Parasitic power feed is possible via this output. Ensure that permanently powered loads (such as relays,<br/>solenoids, etc.) are not connected to these outputs.</p></div></div><ul><li>The Mnemonic within Build and Tune is OUT_HB.</li><li>12 Amp low side driver and 9 Amp high side driver.</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="161" src="attachments/280562398/280562407.png" data-image-src="attachments/280562398/280562407.png" data-unresolved-comment-count="0" data-linked-resource-id="280562407" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-24_17-12-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280562398" data-linked-resource-container-version="3" alt=""></span></p><ul><li>Recirculation via internal high-side FET. Cam solenoids may be wired without an external recirculation diode.</li><li style="font-weight: bold;"><strong>Both high and low-side drivers can be PWM.</strong></li><li>Pin voltage is monitored by a 12-bit A/D converter (per output).</li><li>24bit timers 0.25usec resolution.</li><li>Suitable for servo throttle (Drive by Wire) (2 outputs required).</li><li>Suitable for general-purpose DC servo drive.</li><li>Max current LS 12 Amps minimum.</li><li>Max current HS 9 Amps minimum.</li><li>RMS current 4 Amps.</li><li>Maximum output frequency in PWM modes: low side drive 20KHz, high side drive 1KHz.</li><li>6 Half Bridge Outputs on the M130.</li><li>Loads must be connected to either ECU BAT_POS or ECU BAT_NEG in a full bridge configuration.</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562398/280562399.png">image-2023-11-24_17-5-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562398/280562407.png">image-2023-11-24_17-12-16.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

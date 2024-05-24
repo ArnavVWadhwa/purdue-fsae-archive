@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Frame | Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297370.html">Design Resources | CHA</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Frame | Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Dien Quang Nguyen</span>, last modified on Dec 08, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This is a guide on how to design the frame. This guide roughly follows the design cycle format, which the team (should) follow.</p><h3 id="Frame|Design-Step1:RulesandRequirements">Step 1: Rules and Requirements</h3><p><strong style="text-align: left;">Review FSAE Rules:</strong><span style="color: rgb(55,65,81);"> Familiarize yourself with the current FSAE rules and regulations. These rules outline specific design constraints and requirements that your spaceframe must adhere to. Pay attention to safety, dimensions, material restrictions, etc.</span></p><p><br/></p><p><strong>Step 2: Define Design Objectives and Constraints</strong></p><p><strong>Set Objectives:</strong> Clearly define the objectives of your design, such as performance goals, weight targets, and manufacturability considerations. Be detailed and think about how you will measure the achievement of these objectives</p><p>Example objectives:</p><ul style="list-style-type: square;"><li>Frame weight (including tubes, tabs, welds) below <strong>X </strong>lbs</li><li>Vehicle Weight Distribution of <strong>Y%</strong> Front and <strong>Z%</strong> Left</li><li>Stiffness &gt; ???</li></ul><p><strong>Consider Constraints:</strong> Identify any specific constraints or limitations imposed by factors like budget, available materials, and manufacturing capabilities.</p><p><br/></p><h3 id="Frame|Design-Step3:Research">Step 3: Research</h3><p><strong>Study Existing Designs:</strong> Analyze successful FSAE cars and their spaceframe designs. Understand the design principles that contribute to their performance.</p><p>There are many ways to do this. I would recommend a table or some similar structure that helps keep things organized. Look at this page as an example → <u><strong><a href="Frame-Research-PF24_265097911.html">Frame Research PF24</a></strong></u></p><p>Things you should be looking for when researching other designs:</p><ul style="list-style-type: square;"><li>Engine Packaging</li><li>Load paths (i.e. How are loads from suspension and powertrain transferred through the chassis?)</li><li>Driver ergonomics</li><li>Rules compliance (Yes, just because a team is competing at a weekend race doesn't mean their chassis is compliant with all the current FSAE rules. Keep this in mind)</li></ul><p><br/></p><h3 id="Frame|Design-Step4:High-levelArchitecture"><strong>Step 4: High-level Architecture</strong></h3><p>Vehicle Architecture and a version of suspension points should have already been established by the team at this point.</p><p>This more or less defines your constraints for designing the frame. Ultimately, the frame must be designed in a way such that suspension components can be efficiently mounted. </p><p>What you can control:</p><ul style="list-style-type: square;"><li>Engine Placement</li><li>Driver Ergonomics</li><li>Load paths</li></ul><p>Initially, it might seem kind of trivial to think about where the engine goes or how the driver is positioned. However, these parameters are all dependent on each other and changing any of the above would likely have an effect on everything else. More details on that in this page → </p><p>I recommend starting the high-level architecture in NX (or whatever CAD package the team decides to use) with 2D sketches as shown in example below.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="image-2023-12-8_8-48-20.png" src="attachments/280565313/280565320.png" data-image-src="https://wiki.itap.purdue.edu/download/attachments/280565313/image-2023-12-8_8-48-20.png?version=1&amp;modificationDate=1702043300000&amp;api=v2"></span></p><p>(Suspension points in the background, with 2D sketch of driver position and major frame members like Roll Hoops, Front Bulkhead, etc.)</p><p><br/></p><h3 id="Frame|Design-Step5:Wireframe">Step 5: Wireframe</h3><p>Based on the architecture sketches, create a wireframe of the entire frame. This is arguably more important than the actual solid body CAD. </p><p>Make sure to follow good CAD practices and parametrize your model so that updates are seamless and version control can be easily enforced.</p><p>Refer to this page for CAD setups and tutorial →</p><p>Though not mentioned, it is expected that you frequently refer to the rules book as you make the frame.</p><p>Things you should consider when making the frame:</p><ul style="list-style-type: square;"><li>Weight</li><li>Component mounting</li><li>Clearance and Access to critical components</li><li>Driver ergonomics<ul style="list-style-type: square;"><li>Vision</li><li>Cockpit room</li><li>Seat angle</li><li>Steering wheel interface, etc. </li></ul></li></ul><p>There are more to this list. I'll probably compile all the ones I can think of into a page called design considerations.</p><p><br/></p><h3 id="Frame|Design-Step6:StructuralAnalysis">Step 6: Structural Analysis</h3><p>Because the chassis is made up of tubes, we can model them as beam elements that only undergo compression, tension and bending. This means only the wireframe model is necessary to start doing FEA (Finite Element Analysis).</p><p>Import the frame wireframe, suspension wireframe and engine wireframe into Ansys. Apply relevant boundary conditions and constraints. </p><p>Analysis load cases for the frame should follow suspension load case. Apply loads from the control arms, pushrods and tierods into the chassis. Refer to this page for examples of suspension loads and load cases → <u><strong><a href="PF24-TCP-Loads_270338638.html">PF24 TCP Loads</a></strong></u><u><strong> </strong></u></p><p>Make sure to document the result from your analysis and follow the team's structural analysis standards. </p><p>The results from structural analysis should tell you:</p><ul style="list-style-type: square;"><li>Which point in the Chassis is the weakest link</li><li>How to size non-structural/required tubes</li></ul><p>Basically, if you see less stress in the chassis than expected, you either:</p><ul style="list-style-type: square;"><li>Messed up when setting up the model so your results are not accurate</li><li>Over-designed the chassis and can probably optimize it to reduce weight or increase stiffness</li></ul><p>At this point, also model the torsion test in Ansys and determine what your theoretical torsional stiffness is.</p><h3 id="Frame|Design-Step7:ManufacturingConsiderations">Step 7: Manufacturing Considerations</h3><p>Once you have thoroughly analyzed a wireframe model, proceed to create a 3D model. That is, sketch cross-sections of frame members for each tube and extrude that sketch to create a solid body.</p><p>Once all the tubes are extruded, use the trim tool to notch/cope tubes to each other so that they can be manufactured and assembled. Make sure to take into account manufacturing constraints and limitations for tube bending, coping and welding. </p><p>Consult your welder on the order of operations and coping approaches for complex joints. Don't create joints that are more difficult to weld than necessary.</p><p><br/></p><h3 id="Frame|Design-Step8:Furtheranalysis">Step 8: Further analysis</h3><p>Aside from rules and structures, there are multiple other factors that affect and are affected by the frame design. Some of these include:</p><ul style="list-style-type: square;"><li>Weight distribution</li><li>Vehicle CG</li><li>Aerodynamics</li><li>Component packaging and routing</li></ul><p>This means that just making a frame in CAD and doing FEA on it is not enough. A good frame design must be analyzed in context with other systems. This means you should communicate with the Aerodynamics Subteam to run CFD with the frame design, consult other subteams and subsystems on their interaction with the frame and how the frame affects the interaction of those subsystems with each other. Consult drivers on ergonomics, Perform calculations to determine how the frame would affect major vehicle architectures. Running the lapsim to quantify all these things will go a long way.</p><p><br/></p><h3 id="Frame|Design-Step9:IterateandRefine">Step 9: Iterate and Refine</h3><p>Based on all the studies and analysis I've mentioned in step 8, re-evaluate your design and look for points of improvement. This is an iterative process involving interdependent systems, so always be ready to react and adapt to changes from other subsystems. Also don't be afraid to request changes from other subsystems if they help improve the frame design.</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

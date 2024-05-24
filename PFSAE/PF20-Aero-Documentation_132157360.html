@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF20 Aero Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="156599403.html">Design PF20 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF20 Aero Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (green338)</span>, last modified on Apr 04, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This page will contain &quot;confluence level&quot; documentation for the 2020 aero package. Eventually we'll make a subpage of this one with the design report that will be sent to judges.</p><p><strong>2020 Aero Goals</strong></p><p>This year we had 2 main goals for the aero package</p><ol><li>Reduce differences between the CAD model of the package and real life</li><li>Reduce weight</li></ol><p>These goals were accomplished by taking the following steps</p><ol><li>Reduce complexity of the aero package in order to simplify manufacturing</li><li>Switch to hollow core wings to reduce error from CAD and reduce weight</li><li>Use carbon internal structures to reduce weight and improve stiffness</li></ol><p>These steps are evident in the design of each component and were the driving factor behind the majority of our design decisions.</p><p>The rest of this page will first explain overall aero design decisions, and then go into detail on specific component decisions.</p><p><strong>High-Level Aero Design Choices</strong></p><p><u>Mini vs Mega tray</u></p><p>The biggest change to the aero package this year was significantly reducing the undertray size. The two main designs were a large undertray (approx 3'x8' footprint) which used a large diffuser and long inlet to generate significant downforce, and small undertray (2'x6' footprint) which traded downforce for reduced weight. Using the laptime tradeoffs spreadsheet, we determined that the large undertray will score more points. However, we settled on the small undertray design due to reduced mounting complexity, lower weight, and simpler manufacturing. </p><p>The mounting complexity of the large undertray would have both added mass and likely deflection. The small undertray can mount to the chassis at 4 points from small tabs, with less than 1&quot; distance from the tube to the undertray. This allows for both lower mounting weight and lower undertray weight, as the undertray stiffness requirement is reduced significantly. The large undertray would have required a mounting structure that extended beyond the end of the chassis, as well as a separate tow bar from the drivetrain subteam, further increasing weight. While the lapsim shows that the downforce benefit from the larger undertray outweighs the expected mass increase, it does not account for any downforce lost by deformation of the undertray.</p><p>The biggest barrier to running the large undertray was manufacturing complexity. On campus we do not have access to a machine that can cut a single mold large enough for the large undertray. In the past we have divided the mold into multiple sections, but this option is not ideal, as a significant amount of time must be spend to bring the seams to workable level, let alone one that is acceptable. There are several sponsors that are able to machine a large enough mold, but due to our switch to hollow core wings the majority of our sponsored molds were being used on wing and sidewing molds. In following our goal to reduce error from CAD, we decided that making the undertray small enough to be machined in one mold was necessary. The BIDC has a 3 axis gantry router with a 48&quot;x96&quot;x6&quot; machining area, making an undertray with a max height of ~5&quot; (accounting for tool depth and base material) feasible.</p><p><u>Bulkhead Height</u></p><p>In previous years, the bottom tube of our bulkhead has been coplanar with the footwell and steering rack tubes. A sweep of bulkhead heights from 0 to 4 inches in 1/2&quot; increments was done do determine if a downforce benefit could be realized from raising the bulkhead. Below a plots showing downforce and drag vs bulkhead height.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/132157360/132157407.png" data-image-src="attachments/132157360/132157407.png" data-unresolved-comment-count="0" data-linked-resource-id="132157407" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132157360" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/132157360/132157408.png" data-image-src="attachments/132157360/132157408.png" data-unresolved-comment-count="0" data-linked-resource-id="132157408" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (1).png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132157360" data-linked-resource-container-version="3" alt=""></span></p><p>As seen in the plots, downforce and drag both increase with bulkhead height to a maximum at approximately 2.5&quot;. When comparing the results in the lap sim, we saw no points benefit to raising the bulkhead, as the drag increase offset the downforce increase.</p><p><u>Dual Radiators</u></p><p>In the past the car had used a single, side mounted radiator to cool the engine, with the exhaust mounted on the opposite side of the car. For the 2020 season, an analysis was performed to determine if a downforce benefit could be gained by using 2 radiators, 1 on each side of the car with a rear facing exhaust. With 1 radiator, each side of the front wing must deliver the mass flow requirement, while with 2 this requirement is halved. By switching to 2 radiators, downforce can be increased by reducing the amount of air that is not being used to improve the Cl.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/132157360/132157416.jpg" data-image-src="attachments/132157360/132157416.jpg" data-unresolved-comment-count="0" data-linked-resource-id="132157416" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Annotation 2019-11-01 192126.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="132157360" data-linked-resource-container-version="3" alt=""></span></p><p>3.6 points could be gained from this choice, as downforce could increase substantially. </p><p><u>Engine Cover</u></p><p>For the past 2 years, the car has had an engine cover to reduce drag and satisfy engine to driver line of sight rules. It was determined that a flat plate covering the top of the engine would be sufficient for rules while reducing weight. The drag increase from this change is not large enough to justify a full engine cover. This also has the added effect of reducing the number of molds that must be machined, especially considering that the engine cover molds are very large and time consuming to machine.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/132157360/132157417.jpg" data-image-src="attachments/132157360/132157417.jpg" data-unresolved-comment-count="0" data-linked-resource-id="132157417" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Annotation 2019-11-01 192125.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="132157360" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p> </p><p><strong>Component Design Choices</strong></p><p><u>Front Wing</u></p><p>The overall concept for the front wing remained relatively unchanged from 2019, with large inner flaps to take advantage of the wing area allowed by rules. The inner channel span has been increased due to a reduction in the radiator mass flow target. </p><p><u>Side Wing/Undertray</u></p><p>The sidewings and undertray saw the biggest changes in 2020, with the undertray being narrowed by 12&quot; compared to 2019, the side wing main elements being replaced with tunnels, and sidepods being reduced in size to both increase sidewing flap span and improve pressure on the radiator faces.</p><p>The reasons for narrowing the undertray are outlined above in the high-level aero design choices.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132157360/132157407.png">image.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132157360/132157408.png">image (1).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132157360/132157416.jpg">Annotation 2019-11-01 192126.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132157360/132157417.jpg">Annotation 2019-11-01 192125.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

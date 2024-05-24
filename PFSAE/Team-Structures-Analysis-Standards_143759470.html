@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Team Structures Analysis Standards</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Team Structures Analysis Standards
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Dien Quang Nguyen</span> on Sep 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="TeamStructuresAnalysisStandards-Definitions:">Definitions:</h3><ul><li>Factor of safety (FS): a factor used to account for uncertainty and load exceedances that are not known or predicted.</li><li>Fitting factor: a factor used to account for known uncertainty in a given type of analysis or manufacturing. For example, it is known that a weld has more uncertainty than a machined part. Rather than using multiple factors of safety, a fitting factor is applied for welds.</li><li>Margin of safety  / Safety Margin (MS): calculation below. Shows that design meets criteria if greater or equal than 0.</li><li>Limit load: the maximum expected load for the car.</li><li>Ultimate load /design ultimate load: limit load times the ultimate safety factor. For an ultimate MS of 0, failure is expected at this loading.</li><li>Yield load /design yield load: limit load times the yield safety factory. For a yield MS of 0, yield is expected at this loading.</li><li>Allowable: the part strength. Can be material property or loading. Examples:<ul><li>bearing ultimate allowable</li><li>pressure allowable</li></ul></li></ul><p><span style="color: rgb(0,0,0);font-size: 24.0px;letter-spacing: -0.01em;">Component Classifications</span></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Classification</th><th class="confluenceTh">Definition</th></tr><tr><td class="confluenceTd"><p>Safety Critical</p></td><td class="confluenceTd">Any assembly where single point of failure would cause loss of vehicle control OR that is part of crash structures</td></tr><tr><td class="confluenceTd">Reliability Critical</td><td class="confluenceTd">Any assembly where single point of failure causes the car to stop function</td></tr><tr><td class="confluenceTd">Non Critical</td><td class="confluenceTd">Any other assembly. Failure may cause performance loss, but not total vehicle function loss.</td></tr></tbody></table></div><h1 id="TeamStructuresAnalysisStandards-SafetyFactors">Safety Factors</h1><p>Safety factors are used exclusively to address uncertainty that is unknown. For calculations that are known to be suspect, highly sensitive, or dependent on inputs with high variance, an additional fitting factor should be applied. These values hold regardless of component classification.</p><div class="table-wrap"><table class="wrapped relative-table confluenceTable" style="width: 29.073%;"><colgroup><col style="width: 39.3195%;"/><col style="width: 21.3611%;"/><col style="width: 39.3195%;"/></colgroup><tbody><tr><th class="confluenceTh">Failure Type</th><th class="confluenceTh">Safety Factor</th><th colspan="1" class="confluenceTh">Source</th></tr><tr><td class="confluenceTd">Ultimate</td><td class="confluenceTd">1.4</td><td colspan="1" class="confluenceTd"><em>NASA STD 5001</em></td></tr><tr><td class="confluenceTd">Yield</td><td class="confluenceTd">1.1</td><td colspan="1" class="confluenceTd"><em>Typical with 1.4 (1)</em></td></tr><tr><td class="confluenceTd">Bolted Joint Separation</td><td class="confluenceTd">1.1</td><td colspan="1" class="confluenceTd"><em>NASA STD 5020</em></td></tr><tr><td colspan="1" class="confluenceTd">Yield of surfaces that experience impact (bearing yield or compressive yield)</td><td colspan="1" class="confluenceTd">2.0</td><td colspan="1" class="confluenceTd"><em>NASA STD 5017 (Mechanical Stops)</em></td></tr><tr><td colspan="1" class="confluenceTd">Composite Uniform Area</td><td colspan="1" class="confluenceTd">1.5</td><td colspan="1" class="confluenceTd"><em>NASA STD 5001</em></td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(23,43,77);">Composite discontinuity Area (i.e bonds, bolted joints, etc.)</span></td><td colspan="1" class="confluenceTd">2.0</td><td colspan="1" class="confluenceTd"><em>NASA STD 5001 </em></td></tr></tbody></table></div><h1 id="TeamStructuresAnalysisStandards-FittingFactors">Fitting Factors</h1><p>Fitting factors are for addressing known additional uncertainty. These are usually based on experience with a given type of calculations. For certain tools that are used team-wide, these are specified below. They may also be created for more analysis done on a subteam.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Analysis Type</th><th class="confluenceTh">Fitting Factor</th><th colspan="1" class="confluenceTh">Sources</th></tr><tr><td class="confluenceTd">Bolted Joints</td><td class="confluenceTd">1.15</td><td colspan="1" class="confluenceTd">NASA-STD-5020</td></tr><tr><td class="confluenceTd">Lug calculations (not including weld)</td><td class="confluenceTd">1.15</td><td colspan="1" class="confluenceTd"><em>Airframe Stress Analysis and Sizing</em></td></tr><tr><td class="confluenceTd">Lug weld calculations</td><td class="confluenceTd">N/A</td><td colspan="1" class="confluenceTd">60% Nominal knockdown on weld strength capability to account for process control uncertainties</td></tr></tbody></table></div><h1 id="TeamStructuresAnalysisStandards-MaterialPropertiesBasis">Material Properties Basis</h1><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Component Classification</th><th class="confluenceTh">Material Properties Basis</th></tr><tr><td class="confluenceTd">Safety Critical</td><td class="confluenceTd">A</td></tr><tr><td class="confluenceTd">Reliability Critical</td><td class="confluenceTd">A</td></tr><tr><td class="confluenceTd"><span>Non Critical</span></td><td class="confluenceTd">B</td></tr></tbody></table></div><ul><li>In materials that have different allowable as a function of material direction (L, LT, ST for metals), the worst direction should be assumed for all analysis. This is to avoid needing to trace material orientation during manufacturing</li><li>Things fail typically 10-15% higher than basis</li><li>For modulus, average compression/tension </li><li>Account for thermal by 10% more margin or proper material properties driven from thermal environment</li></ul><h1 id="TeamStructuresAnalysisStandards-AnalysisScope">Analysis Scope</h1><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Classification</th><th class="confluenceTh">Minimum Required Analysis</th><th colspan="1" class="confluenceTh">Minimum Required Documentation</th></tr><tr><td class="confluenceTd"><p>Safety Critical</p></td><td class="confluenceTd">All types of failures for all components</td><td colspan="1" class="confluenceTd">Lowest margin of safety, type, and location for each component</td></tr><tr><td class="confluenceTd">Reliability Critical</td><td class="confluenceTd">Expected first failure for all components</td><td colspan="1" class="confluenceTd">Expected first failure margin of safety, type, and location for component where first failure is predicted</td></tr><tr><td class="confluenceTd"><span>Non Critical</span></td><td class="confluenceTd">Expected first failure for component of expected first failure</td><td colspan="1" class="confluenceTd">None</td></tr></tbody></table></div><p><br/></p><h1 id="TeamStructuresAnalysisStandards-AnalysisReporting">Analysis Reporting</h1><p>We will use margin of safety to report are structures analysis results. This is calculated by:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="86" src="attachments/143759470/145785406.png" data-image-src="attachments/143759470/145785406.png" data-unresolved-comment-count="0" data-linked-resource-id="145785406" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-23_15-9-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759470" data-linked-resource-container-version="30" alt=""></span></p><h3 id="TeamStructuresAnalysisStandards-MarginTableColumns:">Margin Table Columns:</h3><ul><li>Part Description</li><li>Driving Loads</li><li>Peak FEM Stress</li><li>Material Allowables</li><li>Safety Factors</li><li>Margins</li><li>Failure Mode</li></ul><h3 id="TeamStructuresAnalysisStandards-Notes:">Notes:</h3><ul><li>Margins are being used because they work for all kinds of analyses while safety factors only work for linear analyses. Also some textbooks provide calculations for margin of safety. And it is easier to convert a factor of safety to a margin of safety than it is to do the reverse.</li><li>Stress could be replaced by any other kind off allowable. For example, allowable pressure and predicted pressure for fluids line.</li><li>FS is factor of safety. Any fitting factors are also multiplied in the denominator</li><li>Example: for an analysis of shear failure of a bolt, which is an ultimate failure:<ul><li>&quot;It holds a 0.08 margin with a 1.4 safety factor and 1.15 fitting factor on shear ultimate failure&quot;</li></ul></li><li>Margins can be expressed as decimal numbers or percentages. Above could be an 0.08 margin of safety or an 8% margin of safety.</li><li>For our purposes a positive margin of safety will always indicate that the part is of acceptable strength; however, in some textbooks, fitting factors are not used and there are instead requirements for margin of safety greater than 0.</li><li>Margin of safety may be abbreviated MS.</li></ul><p><br/></p><h1 id="TeamStructuresAnalysisStandards-References:">References:</h1><p>(1) <span>The 1.5 &amp; 1.4 Ultimate Factors of Safety for Aircraft &amp; Spacecraft - History, Definition and Applications, <a class="external-link" href="https://ntrs.nasa.gov/citations/20140011147" rel="nofollow">NASA Technical Reports Server (NTRS)</a></span></p><p><span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143759470/273154114.png" data-image-src="attachments/143759470/273154114.png" data-unresolved-comment-count="0" data-linked-resource-id="273154114" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-21_10-29-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759470" data-linked-resource-container-version="30" alt=""></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759470/145785406.png">image2020-4-23_15-9-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759470/273154114.png">image-2023-9-21_10-29-54.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

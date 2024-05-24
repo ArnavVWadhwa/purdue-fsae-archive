@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Step 3: Shutdown Circuit Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics-Onboarding_230668154.html">Electronics Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Step 3: Shutdown Circuit Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Sep 19, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>In this step, you will design a circuit to shut down the lighting of your LED based on a certain length button press and implement it into your harness design.</p><p><br/></p><blockquote><code><span style="color: rgb(0,0,0);"><strong>Reading</strong></span></code><ul><li>Altium Tutorial: <a class="external-link" href="https://www.altium.com/documentation/altium-designer/tutorial-complete-design-walkthrough" rel="nofollow">https://www.altium.com/documentation/altium-designer/tutorial-complete-design-walkthrough</a><br/><ul><li>Altium tutorial for creating a schematic and PCB layout</li></ul></li><li>Altium SPICE Simulation Tutorial: <a class="external-link" href="https://www.altium.com/documentation/altium-designer/spice-simulation-guide?version=22" rel="nofollow">https://www.altium.com/documentation/altium-designer/spice-simulation-guide?version=22</a><ul><li>How to simulate circuits within Altium using SPICE</li></ul></li></ul><p><br/></p><p><u>Information about general analog circuitry (you may not have to use everything)</u></p><ul><li>MOSFET Information: <a class="external-link" href="https://www.electronicshub.org/mosfet/" rel="nofollow">https://www.electronicshub.org/mosfet/</a><ul><li>General information about Mosfets</li></ul></li><li>Discharging RC Circuits: <a class="external-link" href="https://www.electronics-tutorials.ws/rc/rc_2.html" rel="nofollow">https://www.electronics-tutorials.ws/rc/rc_2.html</a><ul><li>General information about RC circuits and charging/discharging equations</li></ul></li><li>Comparators: <a class="external-link" href="https://www.tutorialspoint.com/linear_integrated_circuits_applications/linear_integrated_circuits_applications_comparators.htm#:~:text=A%20comparator%20is%20an%20electronic,non%2Dlinear%20applications%20of%20ICs" rel="nofollow">https://www.tutorialspoint.com/linear_integrated_circuits_applications/linear_integrated_circuits_applications_comparators.htm#:~:text=A%20comparator%20is%20an%20electronic,non%2Dlinear%20applications%20of%20ICs</a>.<ul><li>General information about Comparators</li></ul></li><li>Flip Flops: <a class="external-link" href="https://www.electronicsforu.com/technology-trends/learn-electronics/flip-flop-rs-jk-t-d" rel="nofollow">https://www.electronicsforu.com/technology-trends/learn-electronics/flip-flop-rs-jk-t-d</a></li></ul></blockquote><p><br/></p><blockquote><p><code><span style="color: rgb(0,0,0);"><strong>Required Software</strong></span></code></p><ul><li><span style="color: rgb(51,51,51);"><span style="color: rgb(0,51,102);">Altium Student Download: <a class="external-link" href="https://www.altium.com/education/student-licenses" rel="nofollow">https://www.altium.com/education/student-licenses</a></span></span><ul><li>This software will allow both schematic and PCB creation</li></ul></li></ul></blockquote><p><br/></p><hr/><h2 id="Step3:ShutdownCircuitDesign-DesigningtheCircuit"><span style="color: rgb(0,0,128);"><em>Designing the Circuit</em></span></h2><p>Utilizing the LED that you programmed in previous steps, create a circuit that will cut off power to the LED if a button is held for longer than one second.</p><ul><li>LED is normally on</li><li>LED turns off after the button is held for approximately one second</li><li>LED stays off even if the button is released</li></ul><p><br/></p><ol><li>Plan out what the general circuit schematic will look like. Sketching a rough outline on paper and using Altium to lay out components could be a good way to brainstorm and visualize potential solutions.</li><li>See if you can get the circuit to &quot;latch&quot; open, meaning that once the LED has turned off, the entire circuit needs power to be reset in order to function again. You can use either mechanical (relays) or solid state components (FET based IC) to achieve this.<ol><li>(Information on flip flops may be useful: <a class="external-link" href="https://www.electronicsforu.com/technology-trends/learn-electronics/flip-flop-rs-jk-t-d" rel="nofollow">https://www.electronicsforu.com/technology-trends/learn-electronics/flip-flop-rs-jk-t-d</a>)</li></ol></li><li>At this point, you can also use the SPICE simulator to test your circuit and see if the behavior is as expected.</li></ol><p><br/></p><hr/><h2 id="Step3:ShutdownCircuitDesign-DesigningthePCB"><span style="color: rgb(0,0,128);"><em>Designing the PCB</em></span></h2><ol><li>With the schematic in Altium, follow the Altium tutorial to convert the schematic into a physical PCB</li></ol><p><br/></p><hr/><h2 id="Step3:ShutdownCircuitDesign-PrototypingtheCircuit"><span style="color: rgb(0,0,128);"><em>Prototyping the Circuit</em></span></h2><ol><li>After designing the schematic, source components and prototype the schematic physically<ol><li>Components can be sourced from the ECE shop, located in POTR 054</li></ol></li><li>Is it functioning as expected?</li></ol><p><br/></p><hr/><h2 id="Step3:ShutdownCircuitDesign-ImplementCircuitIntoHarnessDesign"><span style="color: rgb(0,0,128);"><em>Implement Circuit Into Harness Design</em></span></h2><ol><li>Determine where you need to place this circuit in your harness for it to be effective and find a way to implement this board into your design (think connectors for serviceability). </li></ol><p><br/></p><p><u>HINTS</u></p><ul><li>Determine what circuitry will be used to cut off the LED (comparator with voltage reference? op-amp?).</li><li>Determine how to implement the time delay using the cutoff circuitry. (easiest way is most likely an RC circuit, but feel free to experiment)</li><li>Make sure to consult datasheets to ensure no current/voltage/power limits are being exceeded for all components in your circuit.</li><li>A good rule of thumb is to include either pull-up or pull-down resistors so if there is a fault, your circuitry can evaluate the fault and take appropriate action.</li></ul><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

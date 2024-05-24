@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : IDR Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="All-Team-Design-Reviews_130162427.html">All Team Design Reviews</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Design-Season-Archive_265095408.html">Design Season Archive</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2023-Design_237085063.html">2023 Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2023-Design-Review_237085693.html">2023 Design Review</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : IDR Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Oct 15, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="IDRNotes-Overview/Architecture">Overview/Architecture</h3><ul style="list-style-type: square;"><li>For the actual design presentation - Make sure to display only most relevant plots (AC)<ul style="list-style-type: square;"><li>Example - Aero FR/RR aero distribution, actually determined using driver feedback/track data</li></ul></li><li>Lower volume production, can run with lower margins with respect to A and B basis from MMPDS (Arun)</li><li>Add points justification for entire aero justification (BR)</li><li>Not strong enough justification for switching engine architectures (David Dode)</li><li>Todd <ul style="list-style-type: square;"><li>Slide 5 – remove the 2020 data point and add “trend line” (hand drawn will probably look best) for 2018-2022</li><li>Slide 15 – I think the label of the graph should be “Dynamic Event points vs. Wheel Base” instead of “Competition Points…”</li><li>Slide 18 – clarify aero distribution trade-offs between low-speed and high-speed corners, particularly on driver confidence or ability of driver to drive at GG limit.</li><li>Slide 19 – if 450 engine would produce more points than R6, be transparent by stating point differential then say supply chain risks outweigh points benefit</li><li>I agree with Adam’s point that you need to substantiate theoretical calcs with actual validation testing and driver feedback.  This is something to ensure is in place across the entire presentation.  When it comes to the Design Event, I think the analogy “a picture is worth a thousand words” translates to “actual validation testing is worth a thousand simulations/analyses”</li></ul></li></ul><h3 id="IDRNotes-Suspension">Suspension</h3><ul><li>Component Design <ul><li>Make sure to have Hall effect sensor nuts to ensure design works (Dom)<ul><li>Get the nuts in CAD, Frank!</li></ul></li><li>Are you within Hall effect offset range (Dom)<ul><li>Frank showed testing we performed on lathe </li></ul></li><li>Careful if fiber isn't fabric wrapped carbon on unidirectional carbon as it's best practice for protection against collision (Arun)</li><li>Asking about contact stress between rotor and retainer face (BR)<ul><li>Frank explained using ANSYS to get force probe and then hand calcing bearing stress action on area</li></ul></li><li>check angular clearances for spherical bearing on rear arb drop link</li><li>What is suspension deflection under max loading to ensure ARB doesn't contact (BR)</li></ul></li></ul><h3 id="IDRNotes-Chassis"> Chassis</h3><ul style="list-style-type: square;"><li>Chassis compliance as a result of reduced torsional rigidity (Arun)</li></ul><h3 id="IDRNotes-Cockpit/Controls">Cockpit/Controls</h3><ul><li>Pneumatics tank too hot? (Arun)</li><li>Can we integrate brake pressure into control system for clutch (JP)</li><li>Should really look at hardlines for brake system (JP)</li><li>LS1 Cam bracket for throttle cable actuation in relation to pedal actuation (Dom)</li><li>Be prepared to talk about how system supports others on the car (Adam)<ul><li>Add to system overview of chassis supporting vehicle packaging (Arun)</li></ul></li></ul><h3 id="IDRNotes-Aerodynamics">Aerodynamics</h3><ul><li>Look at 2D DRS attachment study again (Raunaq)</li><li>Make sure to add full-car images to show how geometry is represented (Adam)</li><li>Wall Y+ plots (Adam)<ul><li>Make sure to look at what the Wall Y+ is specifically</li></ul></li><li>What domain are you actually using to iterate on designs and validate CFD environment (Adam)</li><li>Make sure you're not at risk of becoming insensitive by just designing at a specific yaw angle (Raunaq)</li><li>Try to get back pressure even lower on diffuser (Raunaq)</li><li>Interesting to see how FW performs on yaw curve (Raunaq)</li><li>Make sure you have a plan for making all these unique components to stick to schedule (Nick)<ul><li>Have backup plan if things can't be made</li></ul></li><li>How did you determine strain targets and what is the plan to validate it (Tyler)<ul><li>Different stiffness simple aero wings to see deflection targets </li></ul></li><li>Undertray manufacturing, hard to have a rigid well mounted undertray if it is composed of multiple pieces<ul><li>Easier mounting, less compliance with single piece undertray</li></ul></li><li>Concerns of compliance with extended endplates past the rear chassis<ul><li>Look into additional mounting if needed to minimize compliance</li></ul></li><li>DRS Choice<ul><li>Have numbers/quantitative reasoning presented to justify decision to not do DRS</li></ul></li><li>Ribs<ul><li>Bond last inch of the trailing end with the carbon rather than having rib</li></ul></li><li>Sandwich panel structures<ul><li>Look into failure modes?</li></ul></li><li>Aero validation<ul><li>Flow-vis paint DIY</li><li>Looking into deformation of parts during vehicle runtime</li><li>Material testing of components to validate strengths</li><li>Designing around fatigue of carbon materials</li></ul></li><li>Clearance between undertray and rear tires</li><li>Missing information that would be good to present, improvements<ul><li>Tying back to overall goals, packaging, vehicle performance</li><li>Front wing<ul><li>L/D increase, what does it mean in overall car L/D, overall benefit considering chassis bulkhead change</li><li>Don't mention that we attempted twists explicitly on the slides, just have a response ready if it comes up</li></ul></li><li>Qualitative reasons for why design decision were made too, can't entirely rely on numbers from Star<ul><li>In tandem with the quantitative stuff</li></ul></li><li>Less words, don't need to explain exactly what the results are and why from simulations</li><li>Make presentation easier to digest to ultimately understand that the aero package improves vehicle performance<ul><li>While still including more in depth slides for discussion with aero-specific people</li></ul></li></ul></li><li>Validation/testing<ul><li>Data from previous seasons, try CFD setup from previous cars and see if it matches with the data</li><li>Ride height testing</li><li>Correct for ambient conditions, can impact Cd</li><li>Waviness, roughness can impact where separation happens</li></ul></li></ul><h3 id="IDRNotes-Powertrain">Powertrain</h3><ul style="list-style-type: square;"><li>Size for drivability past known rev range and how that factors at say 14k RPM (Dom)</li><li>You've only verbally mentioned RPM drops once, but how does that factor in with shift count and are you willing to accept those smaller peaks (Skitter)<ul><li>Need to put numbers to all this </li><li>71 mph seems to be very low so may need to tune high speed values in lapsim<ul><li>Double check high end speed values</li></ul></li></ul></li><li>Knock Sensor? (Dom) </li><li>Intake<ul style="list-style-type: square;"><li>Diffuser <ul style="list-style-type: square;"><li>Risk of stalling at 7 degrees (JF)</li><li>Impact of increasing angle on volumetric efficiency</li></ul></li><li>Plastic to handle fuel contact (JF)</li><li>Validation of boundary conditions on wave model (JF)<ul style="list-style-type: square;"><li>Do your peaks correlate with what you're seeing in reality</li></ul></li><li>How did you balance the tradeoff with plenum volume (JF)<ul style="list-style-type: square;"><li>Affect on throttle response</li><li>It's much more interesting to see a map of throttle position vs manifold pressure</li></ul></li><li>Spray pattern with injectors (Dom)</li><li>Ignitor coil issue (JP)<ul style="list-style-type: square;"><li>IGN4 module</li></ul></li></ul></li><li>Exhaust<ul style="list-style-type: square;"><li>How did you decide on exhaust runner length (Dom)</li><li>Are you guys gonna use EFTs for individual fuel trims (Dom) </li></ul></li><li>Fuel<ul style="list-style-type: square;"><li>Lots of radii on fuel lines are impossible (Dom)</li></ul></li><li>Cooling<ul style="list-style-type: square;"><li>How are you validating model (JF)</li><li>How are you determining split of heat (JF)</li><li>Sketchy mounting of radiator (Dom) </li><li>How did you calculate BSFC of 0.45 (Dom) <br/><ul style="list-style-type: square;"><li>That number will change at a specific load and across RPM </li></ul></li><li>Why make the radiator exit to the right to the left (Dom) </li><li>Is Aero looking at mass flow target (Arun)<ul style="list-style-type: square;"><li>Should add to aerodynamic testing to reduce that error (Arun)</li></ul></li></ul></li><li>Oil<ul style="list-style-type: square;"><li>Why is the pump 20x flow rate (JF)<ul><li>20X is only at highest RPM (Dom)</li></ul></li><li>Plans for air separation (Skitter)<ul><li>Gonna foam quickly if it's so overpowered </li><li>Definitely look at modeling filter for air separation </li></ul></li><li>Lots of radii on oil lines are also impossible (Dom) <ul style="list-style-type: square;"><li>Specifically the U-Joint - Need to add 180 in CAD</li></ul></li><li>Should be an overflow line that goes back into transmission (Dom) </li><li>Oil fittings welding, upper mating surface should be milled down after they're welded to prevent leaks (JP)</li></ul></li><li>Drivetrain<ul style="list-style-type: square;"><li>Appreciate we're still using Upleft (JF)<ul style="list-style-type: square;"><li>Ensure we're doing buckling calculations for Upleft (JF)</li></ul></li><li>How are determining boundary conditions on FEA model (JF)<ul style="list-style-type: square;"><li>What are peak torques and how are those determined (JF)</li><li>Had a model for inertia back in the day (JF)<ul style="list-style-type: square;"><li>Look at launches in a competition and measure clutch engagement time vs vehicle speed to calculate how much torque is coming from inertial loading (JF)</li></ul></li></ul></li></ul></li></ul><h3 id="IDRNotes-SIQ">SIQ</h3><p><br/></p><p><br/></p><p><br/></p><h3 id="IDRNotes-ClosingRemarks">Closing Remarks</h3>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

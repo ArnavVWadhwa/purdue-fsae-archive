@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Braking Dynamics and Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Brake-System-Design_137592900.html">Brake System Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Braking Dynamics and Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Jul 20, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The most important thing to understand in designing a brake system is to understand the dynamics. This will allow the designer to get the most out of the vehicle.</p><p>While reading through this keep in mind the following:</p><ul><li>The primary goal is to provide a means for the driver to <strong>effectively, confidently, and reliably</strong> use ALL of the grip in each tire to slow the vehicle to rotate into corner entry</li><li>The biggest limitation in getting the most of the brakes is the drivers skill (some may be on too heavy and lock up, some may not use enough grip, etc.)</li><li>Hydraulic braking system is linear but tire behavior during braking is non-linear</li></ul><p><br/></p><p>The Tire:</p><p>4 tires are the only thing connecting a driver to the track. It is important to have a basic understanding of how tires behave and generate forces in order to grasp how we can design a system that will get the most performance out of the vehicle. A basic understanding will be provided here on tires. If you want to learn more on tires I would recommend reading the tire sections in both Tune to Win and RCVD (Race Car Vehicle Dynamics)</p><p><br/></p><p>I do not claim to be an expert on tires nor will the terminology that l use be the true technical explanation, but this is how I understand the tire from a high level approach. The tire generates forces through adhesion of the contact patch with the surface. It is the suspensions job to ensure this contact patch is being optimized in every case and environment. Obviously it is impossible to get it perfect, however, I will assume that suspension is maintaining the biggest contact patch footprint as I describe the tire.</p><p><br/></p><p>The tire exhibits a normal force under which friction allows for longitudinal and lateral forces to develop. In a perfect world the coefficient of friction would be one constant value for the tire compound and road surface, however, this is not the case with tires as they exhibit load sensitivity. As a tire builds more and more normal load the coefficient of friction will slowly decrease (Seen below).<span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/226821970/228301318.png" data-image-src="attachments/226821970/228301318.png" data-unresolved-comment-count="0" data-linked-resource-id="228301318" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-7-20_20-57-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821970" data-linked-resource-container-version="6" alt=""></span></p><p>When looking at the whole vehicle it is a balancing process of trying to get the most out of each tire and thus ensuring there isn’t too much or too little normal load. The effects of this are significant when we look at load transfer of the vehicle because certain tires will lose grip while others gain grip, but those that gain grip do it less than those that lose it causing a net decrease in vehicle grip. (<strong>INSERT SKETCH</strong>). It is important to be aware of how load sensitivity affects the overall grip. In braking, there is heavy longitudinal load transfer from the rear to the front. This causes the front tires to load up and have more grip than the rear. If less load transfer was to occur the rear tires would maintain more grip and since the rear loses grip faster than the front will gain due to load sensitivity, the overall grip will be increased. Getting the vehicle to dynamically behave to maximize grip under accel, braking, and cornering comes down to suspension, but again it is important to understand what is going on at the tire to optimize a brake system.</p><p><br/></p><p>Slip Ratio is important as small amounts of slip allow the tires to develop more grip than under nonslip rolling conditions. At the time I am writing this I do not have a clear understanding as to why this occurs and if you are interested in figuring it out I would recommend looking it up. All we need to know is longitudinal force varies with slip ratio similarly to how lateral force varies with slip angle. When braking we can get the most grip and performance when we ride the peak of the slip ratio curve, but too much braking torque can cause the wheels to have too much slip ratio and lock.</p><p><br/></p><p><br/></p><p><strong>Dynamics:</strong></p><p>Working our way from a single tire to a bicycle model we can analyze vehicle response to longitudinal force. For pure longitudinal braking this model will be accurate, however, transient behavior on corner entry (trail braking) will not be captured by this model.</p><p><br/></p><p>To start, a vehicle will transfer load longitudinally due to a longitudinal acceleration. During braking the contact tractive forces will create a moment about the CG (other forces adding to this moment equation can be derived easily) which causes a transfer of load from rear to front axle. Picture driving down a road an slamming on the brakes. The car will “nose dive” when the brakes are applied and then returns to level when at rest. This pitching response demonstrates the load transfer across the axles. As mentioned in the tire section, load sensitivity plays an important role in the tractive forces of the front and rear. For a given deceleration rate the transfer of load will vary.</p><ul><li>Load Transfer</li><li>Oversteer Understeer</li><li>Variables that impact (aero)</li><li>Traction circle</li><li>GG Diagram</li></ul><p><br/></p><p><br/></p><p>Hydraulics:</p><p>The hydraulic system takes driver input and converts it to a torque at the tires. This system is crucial for keeping the driver safe while also promoting driver confidence. The flow of forces/pressure through the system follows:</p><p>Driver force at Brake Pedal → Mechanical Advantage multiplies force at balance bar → balance bar biases force to front or rear master cylinder → based on master cylinder bore area, pressure will build in front and rear lines (**Brakes are assumed in-compressible) → pressure is converted into a normal force on the brake rotors through calipers → brake pads create friction and turn kinetic energy into heat slowing the vehicle down → force at rotor creates torque based on rotor size → torque can be converted to force at tire contact patch slowing vehicle down</p><p><br/></p><p><br/></p><p><br/></p><p>Torque vs Tractate Bias:</p><p><br/></p><p>Ergonomics:</p><p><br/></p><p>Goals:</p><ul><li>Be able to lock all 4 wheels under heavy braking</li><li>Lock the front just before the rear</li><li>Have enough adjustability in balance bar to get the rears to lock first too (gives a good range of adjustments)</li><li>Keep max braking force with in drivers capabilities</li><li>Keep modulation force under typical speed and deceleration at ~116 based on driver feedback and historic data (non fatiguing)</li></ul><p><br/></p><p><br/></p><p>IDEAS:</p><p>Build from tire to bike model to four wheel ( rotating the car by generating yaw moments for corner entry)</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821970/228301318.png">image2022-7-20_20-57-14.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Layout Files, Part Files, and Assembly Files</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD_130162759.html">CAD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="NX-CAD-Practices_141728921.html">NX CAD Practices</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Layout Files, Part Files, and Assembly Files
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span> on Aug 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Here are the differences between layout files, part files, and assembly files. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>All files referenced on this page are .prt files in NX! These files are team standards, not NX standards. The only thing <em>technically</em> distinguishing them from each other is only our naming convention </p></div></div><p><br/></p><h2 id="LayoutFiles,PartFiles,andAssemblyFiles-Layout">Layout</h2><p><strong>This file is where you start when making a part. </strong>Layout files are meant to be where all of the &quot;messy&quot; CAD work gets done. In actuality this work should be very neat and parameterized, but when even when you do CAD right, for a complex model these files can just <em>look</em> messy.</p><p>In your layout file, you should have things like your sketches, datum planes, hole features, extrudes, revolves, etc. in this file. </p><h2 id="LayoutFiles,PartFiles,andAssemblyFiles-Part">Part</h2><p>Once you have your part made from your layout, we want the solid body that the part makes, but we don't want all the messy sketches and extrude features. If we kept these features in there, not only would the whole car look really messy with everyones reference features, but we would also be waiting ages for the car to load because the computer has to go through and perform each extrude, revolve, hole operation, etc. when we reopen the car.</p><p><strong>Ideally, we would have a tool that takes the solid body from our layout file, and stores exclusively the body. That is exactly what WAVE Geometry Linker does. </strong>What's nice about this feature is that it doesn't slow all our computers down and only loads what we need in order to see what we care about, the geometry of each part of the car. Note that you can't edit the part from this file! You can only edit the geometry of your part from your layout file</p><h2 id="LayoutFiles,PartFiles,andAssemblyFiles-Assembly">Assembly</h2><p>An assembly is just a collection of part files! Its super useful for organizing our CAD and keeping everything very streamlined. </p><h2 id="LayoutFiles,PartFiles,andAssemblyFiles-ReferenceGeometry">Reference Geometry</h2><p>Need a file to store your chassis templates? How about aero keepout zones? Reference Geometry files are there for that reason. These are kind of like Part files, but are not meant to be actually made or produced.</p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

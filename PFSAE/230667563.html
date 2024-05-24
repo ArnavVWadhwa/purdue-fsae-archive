@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Spool/Diff Development Meeting 08.12.22</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="217483312.html">Spool/Diff Development Notes - Aarnav</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Spool/Diff Development Meeting 08.12.22
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Panchal, Aarnav Nilesh</span>, last modified by <span class='editor'> Unknown User (amattu)</span> on Aug 13, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li>Differential Options:<ul><li>Salisbury LSD (Drexler): Clutch Pack type differential</li><li>Quaife LSD (Taylor Race): Gear type differential</li><li>Spool (Custom): Locked axle, equivalent wheel speeds</li></ul></li><li>Creating a Simulation for the Differential Effects in cornering<br/><ul><li>Understeer Gradient Test - Constant Speed, Constant Radius Cornering</li><li>Use of Matlab or Excel</li></ul></li></ul><p>Diff write-ups -</p><p><a class="external-link" href="https://www.designjudges.com/articles/differential-effects" rel="nofollow">https://www.designjudges.com/articles/differential-effects</a></p><p><a class="external-link" href="https://www.taylor-race.com/sites/default/files/understanding_differentials.pdf" rel="nofollow">https://www.taylor-race.com/sites/default/files/understanding_differentials.pdf</a></p><p><br/></p><h3 id="Spool/DiffDevelopmentMeeting08.12.22-Salisbury/Drexler">Salisbury/Drexler</h3><p>To model a Salisbury/Drexler diff, the following parameters affect how lockup is applied:</p><ul><li>Differential tuning<ul><li>Preload</li><li>Ramp Angles - factory setting is 40/50</li><li>Number of clutch plates</li></ul></li><li>Vehicle tuning<ul><li>Driving torque on carrier</li><li>Negative braking torque on carrier</li></ul></li></ul><p>Typical diff setups</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Vehicle</th><th class="confluenceTh">Power Output (hp)</th><th colspan="1" class="confluenceTh">Weight (with driver) (lbs)</th><th colspan="1" class="confluenceTh">Power-to-weight Ratio (hp/lb)</th><th class="confluenceTh">Ramp Angle (accel)</th><th colspan="1" class="confluenceTh">Preload (lb-ft)</th><th colspan="1" class="confluenceTh">Num Clutch Plates (per side)</th><th colspan="1" class="confluenceTh">Suspension Setup</th></tr><tr><td class="confluenceTd">PF20</td><td class="confluenceTd">82.8</td><td colspan="1" class="confluenceTd">590</td><td colspan="1" class="confluenceTd">0.14</td><td class="confluenceTd">40</td><td colspan="1" class="confluenceTd">18.4 - 22.1</td><td colspan="1" class="confluenceTd">2?</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">PF22</td><td colspan="1" class="confluenceTd">49.4</td><td colspan="1" class="confluenceTd">535</td><td colspan="1" class="confluenceTd">0.092</td><td colspan="1" class="confluenceTd">40</td><td colspan="1" class="confluenceTd">18.4 - 22.1</td><td colspan="1" class="confluenceTd">2?</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Formula Atlantic</td><td colspan="1" class="confluenceTd">300</td><td colspan="1" class="confluenceTd">1418</td><td colspan="1" class="confluenceTd">0.21</td><td colspan="1" class="confluenceTd">80</td><td colspan="1" class="confluenceTd">10-15</td><td colspan="1" class="confluenceTd">2</td><td colspan="1" class="confluenceTd">Stiffer springs, lighter rear swaybar (open diff setup)</td></tr><tr><td colspan="1" class="confluenceTd">Formula Ford</td><td colspan="1" class="confluenceTd">140</td><td colspan="1" class="confluenceTd">900</td><td colspan="1" class="confluenceTd">0.15</td><td colspan="1" class="confluenceTd">Open diff preferred</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Stiffer springs, lighter rear swaybar (open diff setup)</td></tr><tr><td colspan="1" class="confluenceTd">Can Am</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">40-50</td><td colspan="1" class="confluenceTd">45</td><td colspan="1" class="confluenceTd">140 - 160</td><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Softer springs, larger rear swaybar (cam &amp; pawl diff setup)</td></tr></tbody></table></div><p>It seems that steeper ramp angles to mimic an open diff is largely used in professional motorsport. Simulations and testing should lean towards less aggressive lockup and reduced caster (3 - 5 degrees) with preference to plant the inner rear tire with appropriate suspension tuning. Note that the steepest available ramp angle on the Drexler is 60 degrees. </p><p>Start with simulations of open diff and then work Drexler into it? </p><h3 id="Spool/DiffDevelopmentMeeting08.12.22-Quaife">Quaife</h3><p>Suspension requirements - Same open diff requirement - stiff springs, light rear sway bar, reduced caster. At least 20% of rear weight must be on the inside rear tire at all times. </p><p>How do we model a Quaife vs 50-60 Drexler if both have same suspension requirements?</p><p><br/></p><p>Action Items:</p><ul><li>Model a spool and a LSD to validate both<ul><li><a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a> <a class="confluence-userlink user-mention" data-username="anpancha" href="https://wiki.itap.purdue.edu/display/~anpancha" data-linked-resource-id="146778558" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Panchal, Aarnav Nilesh</a> </li><li>Need targets for things like understeer gradient test<ul><li>Pull from PF20 skidpad test data? - No SAS</li><li>Model PF22 and compare to baseline → adapt to PF20/23</li></ul></li></ul></li></ul><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Owner</th><th class="confluenceTh">Item</th><th class="confluenceTh">Deadline</th></tr><tr><td class="confluenceTd"><div class="content-wrapper"><p><a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a> </p></div></td><td class="confluenceTd"><p>Develop rudimentary constant radius and constant speed model</p><ul><li>Give max lateral acceleration</li><li>Plot understeer gradient</li></ul></td><td class="confluenceTd"><div class="content-wrapper"><p><time datetime="2022-08-26" class="date-past">26 Aug 2022</time> </p></div></td></tr><tr><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><a class="confluence-userlink user-mention" data-username="anpancha" href="https://wiki.itap.purdue.edu/display/~anpancha" data-linked-resource-id="146778558" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Panchal, Aarnav Nilesh</a> </p></div></td><td colspan="1" class="confluenceTd">Determine spool inputs and parameters. How is it different from Salisbury? Any changes to suspension/chassis geometry?</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><time datetime="2022-08-19" class="date-past">19 Aug 2022</time> </p></div></td></tr><tr><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><a class="confluence-userlink user-mention" data-username="amattu" href="https://wiki.itap.purdue.edu/display/~amattu" data-linked-resource-id="120720066" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (amattu)</a> <a class="confluence-userlink user-mention" data-username="dewey2" href="https://wiki.itap.purdue.edu/display/~dewey2" data-linked-resource-id="72680803" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (dewey2)</a> </p></div></td><td colspan="1" class="confluenceTd">Determine Quaife inputs and parameters. See above for req's</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><time datetime="2022-08-19" class="date-past">19 Aug 2022</time> </p></div></td></tr><tr><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><a class="confluence-userlink user-mention" data-username="amattu" href="https://wiki.itap.purdue.edu/display/~amattu" data-linked-resource-id="120720066" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (amattu)</a> <a class="confluence-userlink user-mention" data-username="anpancha" href="https://wiki.itap.purdue.edu/display/~anpancha" data-linked-resource-id="146778558" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Panchal, Aarnav Nilesh</a> </p></div></td><td colspan="1" class="confluenceTd">Find PF22 understeer gradient test data and parse required data</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><time datetime="2022-08-26" class="date-past">26 Aug 2022</time> </p></div></td></tr></tbody></table></div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

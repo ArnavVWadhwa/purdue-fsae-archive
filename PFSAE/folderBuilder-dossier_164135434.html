@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : folderBuilder dossier</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : folderBuilder dossier
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Unknown User (rkumaran)</span> on Dec 03, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>folderBuilder.py is the perfect example of what python is good for. A quick and dirty scri</span><span>pt</span><span> doing</span><span> something not particularly advanced</span><span>. folderBulder.py essentially parses </span><span>everything in linuxConfig into system environment variables in a bash script, then submits the bash script to the SLURM scheduler. </span></p><p><br/></p><p><span>There are a few flags linuxConfig HAS to have, otherwise folderBuilder.py will crash. These flags define </span><span>things you need for every simulation run, </span><span>so if you don’t have these flags, why are you using folderBuilder in the first place? folderBuilder.py doesn’t care what the value of these flags are set to, just that they exist. This is largely because folderBulder.py makes no attempt to verify the validity of your flag inputs. Preferably, don't set these flag values to anything that could be interpreted as None (note, Python will never treat 0 as None, like some other lanugages may treat 0 as null).</span></p><p><span> </span></p><p><span>CLUSTER – this defines the cluster you’re planning on using. </span><span>“LOCAL” is a valid option, and then folderBuilder.py will skip all the </span><span>additional logic checks it needs for a cluster run. </span><span> </span></p><p><span> </span></p><p><span>STARLOC – where you STAR installation is. </span><span> </span></p><p><span> </span></p><p><span>LICPATH – where your license is. </span><span> </span></p><p><span> </span></p><p><span>CP – Class path for the macros. </span><span> </span></p><p><span> </span></p><p><span>Syntax for folderBuilder.py</span><span> </span></p><p><span> </span></p><p><span>folderBuilder.py</span><span> &lt;job1 job2 job3 …...&gt; where the additional job numbers are dependencies. New jobs will not begin until the dependencies are complete. This is a great way to queue up a bunch of sims, without having to wait for one simulation to finish, before submitting the next. </span></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

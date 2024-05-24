@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Bearing Calculations PF24</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751191.html">Design PF24 | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="265095173.html">Hub PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Bearing Calculations PF24
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Stallings, Simon Tibor</span>, last modified on Oct 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Machine Design Class has a book with a whole chapter about bearings important notes will be posted bellow.</strong></u></p><p><u><strong>2D Calculations </strong></u></p><p>Assumptions </p><ul><li>All forces are occurring at the center of the tire, not the contact patch</li><li>Cornering Stiffness is a set case of 570 ft/lb</li><li>Bearing Distance is the same as PF23</li><li>Weight Distribution is 50 front 50 rear </li><li>Weight is provided from PF23 with 68 </li></ul><p>Videos</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/R3zqXCm1ayQ?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p>Simon Scribble Paper </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267659957/267659963.jpg" data-image-src="attachments/267659957/267659963.jpg" data-unresolved-comment-count="0" data-linked-resource-id="267659963" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2062.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="267659957" data-linked-resource-container-version="11" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267659957/267659964.jpg" data-image-src="attachments/267659957/267659964.jpg" data-unresolved-comment-count="0" data-linked-resource-id="267659964" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2063.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="267659957" data-linked-resource-container-version="11" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267659957/267659966.jpg" data-image-src="attachments/267659957/267659966.jpg" data-unresolved-comment-count="0" data-linked-resource-id="267659966" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2065.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="267659957" data-linked-resource-container-version="11" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267659957/267659965.jpg" data-image-src="attachments/267659957/267659965.jpg" data-unresolved-comment-count="0" data-linked-resource-id="267659965" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2064.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="267659957" data-linked-resource-container-version="11" alt=""></span></p><p><u><strong>Calculator </strong></u><br/><br/></p><p>The 2D calculator was the first step into solving for bearing loads that act on our wheel bearings. Using the assumption that the forces happen at the center of the tire we can use simple equations as seen above to solve for the different forces. It is important to note that this calculator will get you close but it is much more valuable as a practice tool before moving onto the 3D calculator which is a lot more complex. I recommend that anyone trying to validate this calculator goes through the 2D model first. </p><p>The 3D calculator, which as of this update is not yet complete, uses simple equations and our tire model off of MATLAB to solve for the forces. This is a much more complex way compared to the 2D calculator as it takes into account all the different loads that will be acting on the tire. For example, drag, downforce, static weight, Lat and Long load transfer. Currently, we have only solved for braking instances as this is where we expect to see the highest loads on the bearings. In the future, this calculator will include all the loads on the bearings for different scenarios that the car might find itself in. </p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/267659957/Bearing%20Calculator%20%282%29%20%282%29%20%281%29.xlsx?version=1&amp;modificationDate=1698694126000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/267659957/Bearing%20Calculator%20%282%29%20%282%29%20%281%29.xlsx?version=1&amp;modificationDate=1698694126000&amp;api=v2" data-linked-resource-id="277709257" data-linked-resource-type="attachment" data-linked-resource-container-id="267659957" data-linked-resource-default-alias="Bearing Calculator (2) (2) (1).xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Bearing Calculator (2) (2) (1).xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/277709257/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="267659957" data-linked-resource-id="277709257" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p> <img class="emoticon emoticon-information" src="images/icons/emoticons/information.svg" data-emoticon-name="information" alt="(info)" data-emoji-short-name=":information:"/>  - Bearing Calculator is still in a rough draft. Will provide necessary information but also looking to continue to revise. </p><p><u><strong>Important Notes</strong></u></p><p>It is important to realize that the hub is more likely to be the weak point rather than the bearings. The actual size of the bearing will be determined based on what loads the hub needs to withstand rather than what loads the bearing needs to withstand. Calculating bearing load is still very important as you can cross reference once the size of the hub is determined to make sure that the bearing will withstand based on the size of the hub.</p><p><br/></p><p><u><strong>Final Decisions</strong></u></p><ul><li>For PF24 we are going to stick to deep grooved ball bearings as these will handle adequately handle the thrust loads seen by our calculations. It is important to note that we did look at using thrust bearings, however, these are rated for extremally high thrust loads (6000lbs) which is no where close to the thrust loads that PF24 could produce. </li><li>We have also decided to go with a different front and rear hub as the front hub does not see nearly as much drive force as the rear hub does. Therefore, it does not require as large of a bearing in the front. </li><li><strong>NTN deep grooved ball bearings also operate up to 120 C which is at least 10 C less than the temperatures that we saw on PF23. (Going to verify at PITT 2023)</strong></li><li><strong>Correct bearings are in CAD and links and pricing will be updated in BOM</strong></li></ul><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/267659963.jpg">IMG_2062.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/267659964.jpg">IMG_2063.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/267659965.jpg">IMG_2064.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/267659966.jpg">IMG_2065.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/267665265.xlsx">Bearing Calculator.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/273157955.xlsx">Bearing Calculator (2).xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/276628686.xlsx">Bearing Calculator (2) (2).xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267659957/277709257.xlsx">Bearing Calculator (2) (2) (1).xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 7-18-20 Design Review Notes (Aero)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143756977.html">Design PF21 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 7-18-20 Design Review Notes (Aero)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified on Aug 27, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="id-71820DesignReviewNotes(Aero)-LapTimeSimulation-Noquestions">Lap Time Simulation - No questions</h3><h3 id="id-71820DesignReviewNotes(Aero)-CFDenvironment">CFD environment </h3><p>Ujjwal -</p><ul><li>symmetric in yaw?</li><li><span style="letter-spacing: 0.0px;">y+, don't want to be in region of 5-30</span></li></ul><h3 id="id-71820DesignReviewNotes(Aero)-2021AeroDesign"><span style="letter-spacing: 0.0px;">2021 Aero Design</span></h3><h3 id="id-71820DesignReviewNotes(Aero)-Sidewings"><span style="letter-spacing: 0.0px;">Side wings</span></h3><p><span style="letter-spacing: 0.0px;">Arun- any concerns with the car overheating while not moving?</span></p><h3 id="id-71820DesignReviewNotes(Aero)-Composites"><span style="letter-spacing: 0.0px;">Composites</span></h3><p><span style="letter-spacing: 0.0px;">Arun - how are the wings bonded? seam questions</span></p><p><br/></p><p><br/></p><p>Feedback From:</p><p>Arun</p><ul><li>where does yaw sweep value come from?</li><li>Put focus on floor design to achieve CLA 4<ul><li>to address tire wake, use barge boards</li><li>in motorsport floor does most of the work</li></ul></li><li>how is front wing going to be mounted?<ul><li>tubes could be removed if you change mounting</li><li>one way to increase span wise stiffness, mount inner carbon tubes</li></ul></li><li>trailing edge deflection<ul><li>if you can get uni, use partial plys on the trailing edge to prevent deflection</li></ul></li><li>when analyzing are you using aero or aero and inertial loads?<ul><li>end plates made a lot of span wise deflection on the wings</li><li>if you do use aluminum you could away with less aluminum if using carbon spars</li><li>anything to add more bond area? -ben<ul><li>could fold over front edge<ul><li>ribs could do less</li></ul></li></ul></li></ul></li><li>have you looked at carbon mounting structures?</li><li>endplates  - are you sealing your edges?<ul><li>you should seal your edges, easy way to is to use epoxy </li></ul></li></ul><p>Adam</p><ul><li>mesh<ul><li>what does your boundary layer look like in terms of mesh refinement?</li><li>how does that transition to the background mesh?</li><li>are you aware of the potential downsides of using the trim cell mesh in terms of cad accuracy</li><li>flow doesn't have to be perfectly longitudinal, just be aware, could be a reasonable downside, could try polyhedral cells</li><li>where are the poor quality cells?</li><li>make sure your mesh size is such that with small geometry features isn't doing something weird, could have surprising effect on performance</li></ul></li><li>y+<ul><li>for a presentation show different snapshots of wall y+, less than 3, show 5-30 that nothing is there, image is kinda misleading</li></ul></li><li>convergence<ul><li>k-ep vs Spalart <ul><li>hit the reasons why correctly</li></ul></li></ul></li><li>Mesh independence<ul><li>don't vary anything between runs, just cell count, that is a lot of work</li></ul></li><li>Wind tunnel<ul><li>try to validate yaw </li><li>try to find actual car yaw</li></ul></li><li>Coast down<ul><li>don't want mechanical drag, need pretty high speed</li></ul></li><li>Goals<ul><li>if put in writing use less than for negative number, not really important, could say better</li><li>asked about how balance target was determined</li><li>4 seems a little big, how are you gonna achieve that</li></ul></li><li>are you planning at looking at roll and pitch sensitivities?</li><li>Why do you want in wash?</li><li>what's your minimum ground clearance?</li></ul><p>Brian- SNC guy</p><ul><li>What's you factor of safety at ultimate or yield?</li><li>Ben talking about loads stuff<ul><li>&quot;very cool&quot;</li></ul></li><li>have you thought about oversizing leading edge?</li><li>FEA Jacobean and aspect ratio?<ul><li>ben talking about standards &quot;That's perfect&quot;</li><li>have you done modal?</li></ul></li><li>Do trade off of gurney vs longer span</li></ul><p>Ujjwal</p><p>Jake Marthaler - powertrain guy</p><ul><li>intake movement to the side<ul><li>success in indy car</li></ul></li></ul><p>Jimmy</p><ul><li>lap sim<ul><li>what is track based on</li><li>make sure balance fast and slow corners, corse length</li></ul></li><li>Aero goals<ul><li>show points</li><li>show expected point increase from 2020 to 2021 based on goal and show where you actually are</li></ul></li><li>CLA, CDA<ul><li>include units</li></ul></li></ul><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

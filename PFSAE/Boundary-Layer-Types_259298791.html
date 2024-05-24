@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Boundary Layer Types</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Boundary Layer Types
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 22, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Two Types of Flows</strong></u></p><p>Air flow can be divided into two categories, <em>laminar </em>and <em>turbulent</em>. Laminar flow is smooth with little mixing. All the streamlines in the laminar flow are parallel to each other. Turbulent flow is the opposite, streamlines curve in a chaotic fashion, resulting in a lot molecular collision in a lot of different place, increasing the rate of flow variable transport through molecular diffusion.</p><p>For racecars (and airplanes, and anything else that moves through the atmosphere), we deal with what's called flow from stagnate source, which are flow that is initially not moving. In this type of flow, flow start out laminar. As flow travels downstream, it is disturbed by everything from vibration on the surface to random molecular motions to sound waves. As the disturbances build up, it eventually reach a point of instability, where the disturbance can no longer be damped out. This is when the flow started to <em>transition</em> from laminar to turbulent. Transition happens relatively quickly but it's not instantaneous (in fact there are different modes of transition). After transition, the flow is now turbulent.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259298791/259298792.png" data-image-src="attachments/259298791/259298792.png" data-unresolved-comment-count="0" data-linked-resource-id="259298792" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-13_10-58-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298791" data-linked-resource-container-version="3" alt=""></span></p><p><em>Laminar boundary layers</em>, just as the name suggests, are boundary layers made up of laminar flow (shown in the left velocity profile in the picture above). And <em>turbulent boundary layers</em> are made of turbulent flow (shown in the right velocity profile above). Laminar and turbulent boundary layer have very different characteristics.</p><p><u><strong>Boundary Layer Thickness</strong></u></p><p>Taking a better look at the picture above, the first thing you will notice is that laminar boundary layers are thinner. As boundary layer goes through transition, there is a drastic increase in boundary layer thickness, which affects all of the turbulent boundary layers downstream. However, boundary layers grow just by traveling downstream. A transition does not have to happen for boundary layer to grow. Therefore, it is conceivable to have laminar boundary layers thicker than turbulent ones. For example, the boundary layer on the ground of Stellantis wind tunnel is 25 mm thick and most likely laminar, but boundary turbulent boundary layer on the section side rear wing is less than that across most of the chord.</p><p><u><strong>Wall Shear Stress</strong></u> </p><p>Another thing you will notice is that turbulent boundary layers have a higher wall-normal velocity gradient at the wall. Since wall shear stress is calculated as viscosity times wall-normal velocity gradient, turbulent boundary layers have much higher shear stress. This happens because the chaotic motion of fluid particles inside turbulent boundary layers bring in energy from outer flow better than fluid particles inside the smooth laminar boundary layers can. Since boundary layer thickness increases as flow travels downstream, wall normal velocity gradient reduces, reducing wall shear stress. Therefore, it is also conceivable to have a turbulent boundary layer with lower wall shear stress than laminar boundary layer. A plot below shows skin friction coefficient (wall shear stress normalized by dynamic pressure) of laminar and turbulent flow. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="SHIP FRICTIONAL RESISTANCE" height="400" src="https://www.mermaid-consultants.com/uploads/1/4/1/3/14130265/skin-friction-lines-turbulent-and-laminar-flow_orig.png" data-image-src="https://www.mermaid-consultants.com/uploads/1/4/1/3/14130265/skin-friction-lines-turbulent-and-laminar-flow_orig.png"></span></p><p><u><strong>Effect of Streamwise Pressure Gradient</strong></u></p><p>Streamwise pressure gradient is an important variable in the development of a boundary layer. To help you understand its effects, we will use the total pressure plot from a 2D simulation of the PF23 rear wing in freestream. For simplicity sake, we will only look at the main element.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/259298791/261750867.png" data-image-src="attachments/259298791/261750867.png" data-unresolved-comment-count="0" data-linked-resource-id="261750867" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-22_9-22-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298791" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/259298791/261750925.png" data-image-src="attachments/259298791/261750925.png" data-unresolved-comment-count="0" data-linked-resource-id="261750925" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-22_23-32-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298791" data-linked-resource-container-version="3" alt=""></span></p><p>What you can immediately notice is that the boundary layer is a lot thicker on the suction side than pressure side, and that is due to the effects of streamwise pressure gradient. Due to the fact that this wing is not designed for use in freestream, stagnation point lies above the leading edge. Below the stagnation point, flow first goes through an favorable pressure gradient, combined with the effect of wall normal velocity component,  as it rounds the leading edge led to minimal boundary layer growth despite strong streamline curvature. After the flow rounded the leading edge, it goes through a brief period of adverse pressure gradient as streamline curvature reduced. This brief stint of adverse pressure gradient is too short to do anything significant, and is easily suppressed by oncoming flow. Flow then goes through another stint of favorable pressure gradient, leading to small boundary layer growth. At this point we are at the suction peak. From suction peak to the trailing edge, pressure recovers quickly by a large magnitude, resulting in significant boundary layer growth.</p><p>Looking at flow above the stagnation point, pressure gradient is favorable, leading to negligible boundary layer growth.</p><p>For high cambered airfoils like the ones we use on racecars, where pressure side usually has pressure coefficient of greater than 0, you see minimal boundary layer growth on the pressure side and significant boundary layer growth on the suction side. This is the reason why slot gaps from the first element to the second is always arranged so that the second element is on top - to avoid boundary layer flow being fed to the second element.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298791/259298792.png">image-2023-5-13_10-58-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298791/261750867.png">image-2023-5-22_9-22-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298791/261750925.png">image-2023-5-22_23-32-49.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

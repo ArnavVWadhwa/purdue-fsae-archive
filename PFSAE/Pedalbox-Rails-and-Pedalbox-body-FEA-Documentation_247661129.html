@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Pedalbox Rails and Pedalbox body FEA Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820810.html">Pedal Box PF23 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-2023-Documentation-List_237084473.html">Pedal Box 2023 Documentation List</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Pedalbox Rails and Pedalbox body FEA Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Jan 04, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>To analyze the pedalpox rails, we imported the model for the pedalbox rails, pedalbox body, and relevant loaded/support tabs into Spaceclaim. In Spaceclaim we Combined the pedalbox body with the tabs into one body, meaning we had 3 bodies, the two rails and the pedalbox body. The rails are aluminium and the body and tabs are steel. We chose these materials partially based off this analysis, but once the materials are chosen, the FEA must be solved with correct material assignments. Because localised yielding is permissible in the most extreme load case, a bi-linear material model was used for both steel and aluminium, which allowed us to account for strain-hardening in the material due to localised yielding. We made sure to keep plastic strain below 1% to prevent significant warping.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661131.png" data-image-src="attachments/247661129/247661131.png" data-unresolved-comment-count="0" data-linked-resource-id="247661131" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-5-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>We used 3 contacts. One for the side of the left rail, and for the bottom of both rails where they touch the pedal box body.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661133.png" data-image-src="attachments/247661129/247661133.png" data-unresolved-comment-count="0" data-linked-resource-id="247661133" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-9-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>To model the pins going through the holes in the rails and the pedal box body, we used 2 general joints per pin. The joint connecting the top of the rail to the pedal box body on both sides had fixed translation and rotation in the X and Y directions, but free translation and rotation in the Z direction. The reference scope was a circle projected onto the top of the rail, and the mobile scope was the inside of both pedal box body holes.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661134.png" data-image-src="attachments/247661129/247661134.png" data-unresolved-comment-count="0" data-linked-resource-id="247661134" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-18-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p>The bottom joint on botth sides had all translational movement fixed, but free rotation in the Z direction. The reference scope was a circle projected onto the bottom of the rail, and the mobile scope was the inside of both pedal box body holes.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661135.png" data-image-src="attachments/247661129/247661135.png" data-unresolved-comment-count="0" data-linked-resource-id="247661135" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-18-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>The entire assembly is attatched to tabs at the front and back ends of the rails. These attatchment points are modeled as fixed supports placed on the inside of the hole that the bolt attatching the rail to the tab passes through.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661136.png" data-image-src="attachments/247661129/247661136.png" data-unresolved-comment-count="0" data-linked-resource-id="247661136" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-23-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>We applied loads on surfaces of the loaded tabs based on free body diagrams made earlier for tab calculations. The image below shows the loading of the break pedal tabs.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661137.png" data-image-src="attachments/247661129/247661137.png" data-unresolved-comment-count="0" data-linked-resource-id="247661137" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_14-24-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>For the mesh we set the mesh size to 0.2&quot; on the rails and 0.07&quot; on the pedal box body because stresses were much more critical and the geometry is much more intricate on the pedal box body. For initial runs, the largest mesh that solves should be used because this simulation takes a few minutes to run.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661129/247661151.png" data-image-src="attachments/247661129/247661151.png" data-unresolved-comment-count="0" data-linked-resource-id="247661151" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-3_17-40-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661129" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>We engineered the structure to only have localised surface yielding, and no stress concentrations above the max tensile stress of the material.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661131.png">image-2023-1-3_14-5-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661133.png">image-2023-1-3_14-9-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661134.png">image-2023-1-3_14-18-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661135.png">image-2023-1-3_14-18-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661136.png">image-2023-1-3_14-23-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661137.png">image-2023-1-3_14-24-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661129/247661151.png">image-2023-1-3_17-40-55.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

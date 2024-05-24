@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 Differential Preload Test Plan</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297383.html">Design | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-PF23_224199443.html">Powertrain PF23</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Plans_233832949.html">Testing Plans</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 Differential Preload Test Plan
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (amattu)</span>, last modified on Feb 23, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Goal:</strong> Understand differential tuning settings and feed results into simulation tool.</p><p>Tunable variables:</p><ul><li>Preload</li><li>Ramp Angles</li><li>Number of active clutch interfaces</li></ul><p>This test will focus purely on ramp angles. Preload analysis and deceleration angles will be run at a later date to streamline the choice of acceleration ramp angles.</p><p><br/></p><p>Too low preload will result in inside tire wheelspin.</p><p>Try reducing shim thickness until inside tire wheelspin is noticeable.</p><p>Thicker shim = higher preload.</p><p>Stiffer spring = higher breakaway torque = smoother locking = more understeer off throttle </p><p><br/></p><p><strong>Procedure:</strong></p><p>Test types:</p><p>Launch (lockup analysis): Perform three launches using launch control. End each launch once at 30mph.</p><p><br/></p><p>Understeer gradient test (objective data): Drive in a constant radius and slowly increase speed at a constant rate. Once understeer overpowers and the car veers off the constant radius, end the test. Perform test twice.</p><p>Perform UG testing after tire temps and pressures are at racing spec.</p><p><strong>Required signals</strong>:</p><ul><li>Inputs<ul><li>Steering Angle</li></ul></li><li>Outputs<ul><li>Wheel speeds</li><li>Yaw rate</li><li>Lateral acceleration</li></ul></li></ul><p><strong>Test Data Location: </strong>Z:\2023\5_Powertrain\7_Drivetrain\Testing\Differential Tuning\9.11.2022</p><div class="table-wrap"><table class="wrapped relative-table confluenceTable" style="width: 11.4901%;"><colgroup><col style="width: 34.0426%;"/><col style="width: 30.1418%;"/><col style="width: 35.8156%;"/></colgroup><tbody><tr><th class="confluenceTh">Session</th><th class="confluenceTh">Test</th><th class="confluenceTh">Ramp Angle</th></tr><tr><td colspan="1" class="confluenceTd">1 (baseline)</td><td colspan="1" class="confluenceTd">Launch</td><td colspan="1" class="confluenceTd">40/50</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">UG</td><td colspan="1" class="confluenceTd">40/50</td></tr><tr><td colspan="1" class="confluenceTd">2 (open diff)</td><td colspan="1" class="confluenceTd">Launch</td><td colspan="1" class="confluenceTd">60/45</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">UG</td><td colspan="1" class="confluenceTd">60/45</td></tr><tr><td colspan="1" class="confluenceTd">3 (spool)</td><td colspan="1" class="confluenceTd">Launch</td><td colspan="1" class="confluenceTd">30/45</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">UG</td><td colspan="1" class="confluenceTd">30/45</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Post Processing</strong>:</p><p class="auto-cursor-target">Launch</p><ul><li>Average V_0 as the front wheel linear velocities.</li><li>SR = (V / V_0) - 1</li><li>Isolate slip ratio for each wheel </li><li>Calculate lockup from slip ratio differences</li></ul><p>UG</p><ul><li class="auto-cursor-target">Plot steering angle vs. lateral acceleration and linearize.</li><li class="auto-cursor-target">Slope of the linear approximation is understeer gradient.</li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

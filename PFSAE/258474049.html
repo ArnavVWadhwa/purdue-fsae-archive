@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V6-3 Viscosity Limiter a1=0.35</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V6-3 Viscosity Limiter a1=0.35
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Apr 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Background</strong></u></p><p>Viscosity limiter what makes SST SST. It's a term applied to eddy viscosity as calculated by the blending of K-e and K-w turbulence model. As the name suggests, it limits the magnitude of eddy viscosity so that separation characteristics can be better predicted. This term is relatively easy and safe to play around with because it is not associated with any PDEs solved by the turbulence model. a1 is the coefficient in the viscosity limiter that determines the activation point and magnitude of activation. The higher the value, the less activation, and the higher the viscosity in activated zones.</p><p><strong><u>Results</u></strong></p><p>Front wing (as shown below) has a slight reduction in separation. The reduction in separation is occurs despite the increase in wall shear stress, and that is due to the assumptions made in the SST model.</p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/258474049/258474051.png" data-image-src="attachments/258474049/258474051.png" data-unresolved-comment-count="0" data-linked-resource-id="258474051" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-21_11-37-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="258474049" data-linked-resource-container-version="2" alt=""></span></strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/258474049/258474061.png" data-image-src="attachments/258474049/258474061.png" data-unresolved-comment-count="0" data-linked-resource-id="258474061" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-21_11-59-21.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="258474049" data-linked-resource-container-version="2" alt=""></span></strong></u></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/258474049/258474066.png" data-image-src="attachments/258474049/258474066.png" data-unresolved-comment-count="0" data-linked-resource-id="258474066" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-21_12-9-34.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="258474049" data-linked-resource-container-version="2" alt=""></span></p><p>Rear wing is where the magic really happened. Both flaps correlate much better with wind tunnel. Lower flap separation is completely eliminated compared apart from regions near the endplate. If anything, endplate induced separation is too small now. Upper flap still doesn't correlate like lower flap does, but there is an improvement where flow separation decreased. </p><p>There is an error in this in terms of wind tunnel vs. on track boundary condition. However, for rear wing, this error should be negligible. Another error would be freestream, I mistakenly ran these at 40 mph instead of 60 mph. While 60 mph does tend to provide better flow attachment, the difference is small.</p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/258474049/258474053.png" data-image-src="attachments/258474049/258474053.png" data-unresolved-comment-count="0" data-linked-resource-id="258474053" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-21_11-38-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="258474049" data-linked-resource-container-version="2" alt=""></span></strong></u></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/258474049/258474069.jpg" data-image-src="attachments/258474049/258474069.jpg" data-unresolved-comment-count="0" data-linked-resource-id="258474069" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="SRH_Y00_RW5 2.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="258474049" data-linked-resource-container-version="2" alt=""></span></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 345.0px;"><thead><tr><th style="text-align: left;" class="confluenceTh">Parameter</th><th style="text-align: left;" class="confluenceTh">a1=0.31</th><th style="text-align: left;" class="confluenceTh">a1=0.35</th></tr></thead><colgroup><col style="width: 108.0px;"/><col style="width: 113.0px;"/><col style="width: 123.0px;"/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Avg CL</td><td style="text-align: left;" class="confluenceTd"><p>-3.677</p></td><td style="text-align: left;" class="confluenceTd">-3.798</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CD</td><td style="text-align: left;" class="confluenceTd">1.560</td><td style="text-align: left;" class="confluenceTd">1.647</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg FW CL</td><td style="text-align: left;" class="confluenceTd">-1.491</td><td style="text-align: left;" class="confluenceTd">-1.517</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg RW CL</td><td style="text-align: left;" class="confluenceTd">-1.013</td><td style="text-align: left;" class="confluenceTd">-1.079</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg UT CL</td><td style="text-align: left;" class="confluenceTd">-1.264</td><td style="text-align: left;" class="confluenceTd">-1.283</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/258474049/258474051.png">image-2023-4-21_11-37-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/258474049/258474053.png">image-2023-4-21_11-38-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/258474049/258474061.png">image-2023-4-21_11-59-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/258474049/258474066.png">image-2023-4-21_12-9-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/258474049/258474069.jpg">SRH_Y00_RW5 2.JPG</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

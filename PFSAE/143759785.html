@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Composites SES - Comments &amp; Advice</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Composites SES - Comments &amp; Advice
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (mkotur)</span>, last modified by <span class='editor'> Unknown User (napolia)</span> on Apr 19, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This document will be organized in order of the rule number. This is meant to help with any clarifications or advice on understanding or passing each rule. This list is based on what sections of SES are listed under each rule, so they are often not as exact to the rule as the rules document is. </p><p><br/></p><h1 id="CompositesSESComments&amp;Advice-F.4COMPOSITEMATERIALS"><strong>F.4 COMPOSITE MATERIALS</strong></h1><h2 id="CompositesSESComments&amp;Advice-F.4.3LaminateTesting">F.4.3 Laminate Testing</h2><h3 style="margin-left: 30.0px;" id="CompositesSESComments&amp;Advice-F.4.3.5AdditionalTesting">F.4.3.5 Additional Testing</h3><p><br/></p><p style="margin-left: 60.0px;"><strong><span><span style="color: rgb(0,0,0);"><span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="382" width="624" src="https://lh4.googleusercontent.com/a5XFXDxJH1kN3wyqfCTWgcSv4CHQIMyeBJIB_RaDXybaeEcIpHCg7oDJkzjeHoiqzA3eO3Y_DTW_YtvjwY448v3NHJwlg3DdV_aauf_OSyvTz9s3qLNzsynL2uFTPsHORcOb26g" data-image-src="https://lh4.googleusercontent.com/a5XFXDxJH1kN3wyqfCTWgcSv4CHQIMyeBJIB_RaDXybaeEcIpHCg7oDJkzjeHoiqzA3eO3Y_DTW_YtvjwY448v3NHJwlg3DdV_aauf_OSyvTz9s3qLNzsynL2uFTPsHORcOb26g"></span></span></span></span><br/></strong></p><h1 id="CompositesSESComments&amp;Advice-"><strong><br/></strong></h1><h1 id="CompositesSESComments&amp;Advice-F.7MONOCOQUE"><strong>F.7 MONOCOQUE</strong></h1><h2 id="CompositesSESComments&amp;Advice-F.7.3FrontBulkhead">F.7.3 Front Bulkhead</h2><ul><li>For ‘Composite Panel Height’, we used the height of the monocoque. We would recommend submitting a rules clarification request.</li><li>The optional section of ‘Second Moment, Surpassing Flat Panel’ was used. We found that we could not pass SES without it.<br/><ul><li>To get the composite cross section, we found the perimeter of half the cross-section and multiplied it by the thickness of the carbon fiber.</li><li>To get the ‘composite second moment about car centerline (Izz)’, I split the monocoque into a series of triangles and rectangles and made a MATLAB script to do the math. In order for this script to work, various distances and lengths from the CAD model must be input. The image below shows which lengths and points correspond to which in the code. Please note that this code is set up for a configuration like the one depicted below. If a new design is different than this, the functions of the MATLAB code can easily be used, but the set up will need to vary.</li><li><span><span style="color: rgb(0,0,0);"><span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="562" width="492" src="https://lh3.googleusercontent.com/AI6auwietnfabxQsXiWIUfAL6nn1RbU6Rjyqrtzy7Nc87n2bJQJY-2LNH7dRpreIOwSNCNnMS15wOavwRfZOvTBjk-juUMyOYAxEFhVooO2tM7Y0a7ADYzx-cLTF2Q" data-image-src="https://lh3.googleusercontent.com/AI6auwietnfabxQsXiWIUfAL6nn1RbU6Rjyqrtzy7Nc87n2bJQJY-2LNH7dRpreIOwSNCNnMS15wOavwRfZOvTBjk-juUMyOYAxEFhVooO2tM7Y0a7ADYzx-cLTF2Q"></span></span></span></span></li></ul></li></ul><p><br/></p><h2 id="CompositesSESComments&amp;Advice-F.7.4FrontBulkheadSupport">F.7.4 Front Bulkhead Support</h2><h2 id="CompositesSESComments&amp;Advice-F.7.6SideImpactStructure">F.7.6 Side Impact Structure</h2><h3 style="margin-left: 30.0px;" id="CompositesSESComments&amp;Advice-F.7.6.3SideImpactVerticalConstruction">F.7.6.3 Side Impact Vertical Construction</h3><ul><li style="list-style-type: none;background-image: none;"><ul><li><span><span style="color: rgb(0,0,0);">For ‘Composite Panel Height’, 320 mm should be used. This section is often higher than that but, 320 mm with the panel properties must be sufficient to pass.</span></span><span><span style="color: rgb(0,0,0);"><br/></span></span></li></ul></li></ul><h3 style="margin-left: 30.0px;" id="CompositesSESComments&amp;Advice-F.7.6.4SideImpactFloorConstruction">F.7.6.4 Side Impact Floor Construction</h3><ul><li style="list-style-type: none;background-image: none;"><ul><li>For ‘Composite Panel Height’, the width of the floor is used.</li></ul></li></ul><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FW-13-09</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750832.html">Front Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751366.html">FW Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="FW-13-Series_265098429.html">FW-13 Series</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FW-13-09
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 01, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-014</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 124.0px;"/><col class="" style="width: 443.0px;"/><col class="" style="width: 271.0px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd">Reverted strake to FW-13-07</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="206" src="attachments/262833195/262833196.png" data-image-src="attachments/262833195/262833196.png" data-unresolved-comment-count="0" data-linked-resource-id="262833196" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_22-14-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833195" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">It better</td></tr><tr><td style="text-align: left;" class="confluenceTd">Reverted outwashing winglet to FW-13-07 but with the FW-13-08 twist</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833195/262833197.png" data-image-src="attachments/262833195/262833197.png" data-unresolved-comment-count="0" data-linked-resource-id="262833197" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_22-15-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833195" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">FW-13-07 winglet worked better but FW-13-08 is less costly in terms of downforce, best of both worlds.</td></tr><tr><td style="text-align: left;" class="confluenceTd">Simplified endplate geometry</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833195/262833198.png" data-image-src="attachments/262833195/262833198.png" data-unresolved-comment-count="0" data-linked-resource-id="262833198" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_22-16-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833195" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Removed mass flow injector since I don't think it does too much. Removal of mass flow injector gave 1 in more to half span of the front wing, which should equate to more downforce and a wake that's placed more to the outside.</p><p>Simplified endplate to a straight endplate since there is too much inwash for the outwash to be useful, as we have demostrated by the strake. A solution that involve gurney flap does not involve flow being able to attach to the endplate, therefore should be more effective. This does leave the diveplane with higher adverse pressure gradient though, but I don't think the diveplane is too lossy at the moment and diveplane can always be moved forward.</p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 432.156px;"/><col class="" style="width: 208.094px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="239" src="attachments/262833195/262833322.png" data-image-src="attachments/262833195/262833322.png" data-unresolved-comment-count="0" data-linked-resource-id="262833322" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-1_12-26-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833195" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Forgot to move the strake...oops</p><p>More outboard strake would increase pressurization and reduce endplate vortex formation and higher load overall.</p></td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833195/262833196.png">image-2023-5-31_22-14-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833195/262833197.png">image-2023-5-31_22-15-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833195/262833198.png">image-2023-5-31_22-16-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833195/262833322.png">image-2023-6-1_12-26-49.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

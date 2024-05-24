@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Basics of CNC</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759489.html">Manufacturing | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Machining_135103563.html">Machining</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CNC_200376377.html">CNC</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Mastercam-for-CNC-Mill_154796303.html">Mastercam for CNC Mill</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Basics of CNC
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified on Dec 05, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>FYI: CNC  = Computer Numeric Control</p><p>Going from manual machining to CNC machining is a tad different. Unlike what most of the internet says, it is not just as simple as throwing your .stp file into a computer, clamping your stock into the vise and hitting &quot;Cycle Start&quot;.</p><p>There are a lot of details in prepping for any CNC work, this in not intended to be a thorough guide on how to use CAM and CNC machines, rather it is just a high level overview of the work flow and how the machine &quot;thinks&quot;.</p><p><br/></p><h3 id="BasicsofCNC-IntheComputer:">In the Computer:</h3><p>CAD:</p><p>This is the environment in which you design the part. Although it is possible without any CAD, within the scope of this team, you pretty much always need digital geometry (usually in the form of a .stp file) to get started with CAM and CNC. Any changes you make to a part should happen within CAD. Once you leave CAD and have the part in a CAM software, there really shouldn't be any geometry changes.</p><p>CAM:</p><p>On our team, we use MasterCAM. Other CAM packages Fusion360, SolidworksHSM works, the built-in NX one, etc. Think of CAM is a software that helps you interpret your geometry and write toolpaths based on it. By setting very specific parameters, the computer can then write the gcode file. This is essentially a long list of step by step instructions for the machine to follow. It is just a list of instructions saying &quot;move this tool to this depth, then start spinning the spindle at this RPM and move the tool in the XY direction at this feed rate, etc&quot;. The purpose of CAM is to turn all of the patterns and lines and shapes that make up your part into machine instructions to maneuver cutting tools around in very specific motions to create those shapes.</p><p><br/></p><h3 id="BasicsofCNC-AttheMachine:">At the Machine:</h3><p>Tool Offsets:</p><p>When your using a manual mill, its trivial to look at the part and drill bit and know &quot;I need to move the drill down this far before I hit the material and actually start drilling&quot;. CNC machines have no concept of this. This is why for every single tool you put in the machine, you need to tell it exactly how to compensate and account for the tools shape and size. Most often, this is with a electro-mechanical tool probe that the tool literally touches off on to tell the machine where it is in space.For a mill, most likely the machine will need to know the tool's diameter and its length. For a lathe, this could be its X and Z positions.</p><p>It is very important to get this right. Forgetting to set a tool offset or setting the incorrect one is a very easy way to crash a CNC machine. If you're lucky this will just break an endmill and scrap a part. In the worst case, this could severely damage a machine and require repair.</p><p><br/></p><p>Workpiece Offset:</p><p>The machine also has no idea where your part is in space. By setting your workpiece offset or origin, you are telling the machine where in space the datum of your part is (whether that is the center of a circular feature or the corner of a square).</p><p><br/></p><p>The only thing a CNC machine really has a concept for is it's &quot;Machine Home&quot; position. Usually this is the position where X, Y and Z are at the end of travel in one specific direction. By applying a work piece offset, you are telling the machine: You need to translate all positions by this amount to actually be working in the region with the stock. Then by telling the machine the tool details, it knows how much to offset to compensate for the tool.</p><p><br/></p><p>This video describes all of these concept at a high level. I think it is a very well made video.</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/YBGqknN3gGs?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

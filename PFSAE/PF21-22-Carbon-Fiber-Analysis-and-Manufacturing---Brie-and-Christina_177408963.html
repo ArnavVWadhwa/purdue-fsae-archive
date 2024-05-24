@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF21-22 Carbon Fiber Analysis and Manufacturing - Brie and Christina</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728900.html">Design PF21 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis-2021-22-Design-Notebooks_158469581.html">Chassis 2021-22 Design Notebooks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF21-22 Carbon Fiber Analysis and Manufacturing - Brie and Christina
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (yu780)</span>, last modified by <span class='editor'> Unknown User (green338)</span> on Sep 14, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span style="color: rgb(255,0,0);">**look at top of set to firewall, bottom of seat to floor plan (attach points) → top tore out a couple times</span></p><p>Carbon fiber analysis for the floor pan, front floor pan under pedal box, and firewall using Tyler's CLT (classical laminate theory woah!) calculator. </p><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-Requirements:">Requirements: </h2><ul><li>Factor of safety = 1.4</li><li>Less than 10 mm of deflection</li><li>No ply failures</li><li>Quasi-isotropic </li><li>Use woven at 45 and 0 degrees</li><li>Want uni-directional along the 0 (0 is along the x)</li></ul><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-Assumptions:">Assumptions:</h2><ul><li>Weight (using 95th percentile male) = 102 kg</li><li>Bump acceleration = 3</li><li>Modeled as 3 point bend test</li></ul><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-FloorPan:">Floor Pan:</h2><p><strong>Variables</strong> </p><p>F_max = <strong>102</strong> kg * 9.8 m/s^2 * <strong>3</strong> * 1.4 → (95percentile_male_weight * gravity * bump_acceleration * factor_of_safety)</p><p>base = 0.45466 m</p><p>length = 0.7366 m </p><p><br/></p><p><strong>Ply schedule based on best combination (~10mm of deflection and no failures in any ply)</strong></p><p>Number of plies: 5</p><p>Ply schedule: 0 90 0 90 0</p><p>Ply order: [2 1 2 1 2] - where 2 is unidirectional type plies and 1 is woven type plies</p><p>Core material/thickness: 3.0pcf HRH-10 0.500in</p><p><u>Data of combination</u></p><p>EI =4.3668e+03</p><p>D = 8.7175e+03</p><p><em>Max deflection (mm): 10.69</em><br/>Max strain (percent): 0.11<br/>Ply 1 max stress (MPa): 148.6 in ply x-direction<br/>Ply 2 max stress (MPa): 65.7 in ply y-direction<br/>Ply 3 max stress (MPa): 148.6 in ply x-direction<br/>Ply 4 max stress (MPa): 65.7 in ply y-direction<br/>Ply 5 max stress (MPa): 148.6 in ply x-direction<br/>Panel Stiffness (N/mm): 393</p><p><br/></p><p><strong>Explanation of how we came up with this ply schedule:</strong> Used Tyler's CLT calculator on a vector combination generator with 0 90 45 (code will be in the Formula drive). The lowest deflection was obtained when combining ply types - and making sure there were 0's when using ply type 2 (woven). Then, we used the combination generator on the CLT calculator, increasing the number of plies until we obtained a combination that had a deflection lower than 10mm.  </p><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-PedalBoxFloorPan:">Pedal Box Floor Pan:</h2><p><strong>Variables</strong></p><p>F_max = 0.2 * <strong>102 kg</strong> * 9.8 m/s^2 * <strong>3</strong> * 1.4 → (foot force 20% *95percentile_male_weight * gravity * bump_acceleration * factor_of_safety)</p><p>width = 10.13in = 0.257302m</p><p>length = 15.96in = 0.405384m</p><p><br/></p><p><strong>Ply schedule based on best combination (~10mm of deflection and no failures in any ply)</strong></p><p>Number of plies: 2</p><p>Ply schedule: 0 45</p><p>Ply order: [2 1] - where 2 is unidirectional type plies and 1 is woven type plies</p><p>Core material/thickness: 3.0pcf HRH-10 0.500in</p><p><span style="color: rgb(0,51,102);"><u>Data of combination</u></span></p><p>EI = 640.4352</p><p>D = 1.2804e+03</p><p><em>Max deflection (mm): 2.39</em><br/>Max strain (percent): 0.19<br/>Ply 1 max stress (MPa): 252.6 in ply x-direction<br/>Ply 2 max stress (MPa): 16.8 in ply y-direction<br/>Panel Stiffness (N/mm): 352</p><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-Firewall:">Firewall:</h2><p>F_max = <strong>102</strong> * 9.8 m/s^2 * <strong>1.65</strong> * 1.4 → ( 0.5 * 95percentile_male_weight <strong>* </strong> gravity * launch_acceleration* factor_of_safety) </p><p><em>With this force, only one ply is necessary, but engine problems need to be taken into account. </em></p><p>base_upper = 20.59in = 0.522986m</p><p>base_lower = 25.55in = 0.64897m ← used this one as base</p><p>height = 8.26in = 0.209804m ← used this one as length</p><p><br/></p><p><u>Data of combination</u></p><p>Number of plies: 3</p><p>Ply schedule: 0 45 0</p><p>Ply order: [2 1 2] - where 2 is unidirectional type plies and 1 is woven type plies</p><p>Core material/thickness: 3.0pcf HRH-10 0.500in</p><p>EI = 3.1666e+03</p><p>D = 6.3288e+03</p><p><em>Max deflection (mm): 0.45</em><br/>Max strain (percent): 0.02<br/>Ply 1 max stress (MPa): 31.8 in ply x-direction<br/>Ply 2 max stress (MPa): 3.8 in ply y-direction<br/>Ply 3 max stress (MPa): 31.8 in ply x-direction<br/>Panel Stiffness (N/mm): 5107</p><h1 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-Headrest:"><strong>Headrest:</strong></h1><p><br/></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/177408963/190907510.png" data-image-src="attachments/177408963/190907510.png" data-unresolved-comment-count="0" data-linked-resource-id="190907510" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-9-7_18-8-34.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177408963" data-linked-resource-container-version="12" alt=""></span></p><p><br/></p><p><u>Data of combination</u></p><p>Number of plies: 2</p><p>Ply schedule: 0 45</p><p>Ply order: [1 1] - where 2 is unidirectional type plies and 1 is woven type plies</p><p>Core material/thickness: 3.0pcf HRH-10 0.125in</p><p><br/></p><h2 id="PF2122CarbonFiberAnalysisandManufacturingBrieandChristina-FinalDesign:">Final Design: </h2><p>description</p><p>:)</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177408963/177408964.png">image2020-10-10_14-33-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177408963/177408965.png">image2020-10-10_14-32-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177408963/177408966.png">image2020-10-10_14-32-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177408963/190907510.png">image2021-9-7_18-8-34.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2. Engine Synchronization Basics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Education_165350208.html">Powertrain Education</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2_New-Engine-Development-Workflow_198509208.html">2_New Engine Development Workflow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2. Engine Synchronization Basics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dnocon)</span>, last modified on Dec 09, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Now that you understand <a href="1.-Engine-Speed-Reference-Basics_198509584.html">1. Engine Speed Reference Basics</a>, this page will teach you about how to setup and troubleshoot sync.</p><p>Full Engine Synchronization is required unless you want to run the engine in a wasted spark configuration. When running MoTeC in full sync mode, full synchronization will be required for the engine to start.</p><p>If you only have a crankshaft position sensor, you only know what the crank is doing. This means you are unable to distinguish intake stroke vs power stroke, and exhaust and compression stroke.</p><p>A camshaft position is required for full synchronization. </p><p><br/></p><h1 id="id-2.EngineSynchronizationBasics-Semi-Sequential(WastedSpark)4-Stroke(Otto)Engine"><strong>Semi-Sequential (Wasted Spark) 4-Stroke (Otto) Engine</strong></h1><ol><li>Intake (TDC-&gt;BDC)</li><li>Compression (BDC-&gt;TDC) SPARK!</li><li>Expansion (TDC-&gt;BDC)</li><li>Exhaust (BDC-&gt;TDC) SPARK!</li></ol><p>Wasted spark means both the spark and fuel injector fire every single time the engine is at TDC. Fueling wise, half of the fuel is injected each time the piston reaches TDC so you still intake the correct amount of fuel when the intake valves open. There is no downsides to running wasted spark besides the chance of combustion through the intake when you are first attempting to calibrate the engine. In addition fuel film adjustments must be made to ensure that the first shot of fuel (the shot that hits the closed valves&quot; is fully atomized by the time the intake valves open during the intake stroke.  </p><p>The main benefit of running wasted spark is that you do not need a cam position sensor. </p><p>Wasted spark is commonly used in Harley-Davidson bikes and Mitsubishi EVOs. </p><p><br/></p><h1 id="id-2.EngineSynchronizationBasics-Conventional(FullEngineSynchronization)4-Stroke(Otto)Engine"><strong>Conventional (Full Engine Synchronization) 4-Stroke (Otto) Engine</strong></h1><ol><li>Intake (TDC-&gt;BDC)</li><li>Compression (BDC-&gt;TDC) SPARK!</li><li>Expansion (TDC-&gt;BDC)</li><li>Exhaust (BDC-&gt;TDC)</li></ol><p>This is how almost all non-variable valve timing 4-stroke engines operate. You will need a method to trigger a cam position sensor. </p><ul style="list-style-type: square;"><li>Not for FSAE: Variable Valve Timing (VVT) can not just be a trigger, it will need to know the cam position much more precisely. </li></ul><p>Common Methods to measure cam position (non-VVT)</p><ol><li>Trigger wheel on the cam</li><li>Pressure sensor measuring intake pressures (you know there is a vacuum when the intake is sucking)</li></ol><p>The team prefers a trigger wheel on the cam because it is more reliable. Temperature, pressure, altitude, and intake changes will not affect it. </p><p>Once the engine gains synchronization it will no longer need the sensor. The sensor will only be used again if the crank position is lost.  </p><p><br/></p><h1 id="id-2.EngineSynchronizationBasics-WhenshouldtheSyncTrigger??"><strong>When should the Sync Trigger??</strong></h1><p>Unfortunately in MoTeC, the point at which the sync triggers can not be adjusted manually. This means in order to get proper synchronization, there is a window in the 4-stroke cycle in which the sensor must trigger. </p><p><strong>THE SYNC SHOULD TRIGGER AFTER THE PISTON STARTS TO COME DOWN DURING THE INTAKE STROKE BUT BEFORE THE TDC COMPRESSION STROKE.</strong></p><p>AKA SOMEWHERE BETWEEN <strong>THE MIDDLE OF THE INTAKE STROKE</strong> AND THE <strong>END OF THE COMPRESSION STROKE</strong></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198509234/198509578.jpg" data-image-src="attachments/198509234/198509578.jpg" data-unresolved-comment-count="0" data-linked-resource-id="198509578" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="triggerwindow.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509234" data-linked-resource-container-version="17" alt=""></span></strong></p><p><br/></p><p><br/></p><h1 id="id-2.EngineSynchronizationBasics-SettingUpMoTeCParameters"><strong>Setting Up MoTeC Parameters</strong></h1><ul style="list-style-type: square;"><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198509234/200376478.jpg" data-image-src="attachments/198509234/200376478.jpg" data-unresolved-comment-count="0" data-linked-resource-id="200376478" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="enginesyncparameters.JPG" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="198509234" data-linked-resource-container-version="17" alt=""></span>Follow the descriptions in MoTeC to setup the Ref and Sync for the crank and cam respectively.<ul style="list-style-type: square;"><li>Videos to help explain the information on </li><li>Introduction to Ref Sync Trigger</li></ul></li><li>See an old R6 Tune or a WR450F tune to gain insight.</li><li>Dig through these confluence notes for extra insights on how we started up the 450 in Fall of 2021</li></ul><ul><li style="list-style-type: none;"><ul style="list-style-type: square;"><li>Examples from the WR450F in 2021: <u><a href="WR450F-Tuning-Notebook_176130613.html">WR450F Tuning Notebook</a></u></li></ul></li></ul><p><br/></p><h1 id="id-2.EngineSynchronizationBasics-Sources:"><strong>Sources:</strong></h1><ol><li>Dom + team, we started the WR450F for the first time and learned everything before even making this page</li><li>Motec Video on Ref / Sync<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/mv0-9_JS8oA?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</li><li>More Motec Videos<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/87_SRTuGZu4?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</li><li><a class="external-link" href="https://gtc.ca/blog/what-are-wasted-sparks/" rel="nofollow">https://gtc.ca/blog/what-are-wasted-sparks/</a></li><li><a class="external-link" href="https://www.motortrend.com/uploads/sites/21/1998/12/ccrp-9812-02-o-secrets-of-camshaft-power-valve-openings.jpg" rel="nofollow">https://www.motortrend.com/uploads/sites/21/1998/12/ccrp-9812-02-o-secrets-of-camshaft-power-valve-openings.jpg</a></li></ol><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509234/198509577.png">image2021-11-25_0-0-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509234/198509578.jpg">triggerwindow.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509234/198509656.jpg">motec1.JPG</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509234/200376477.png">image2021-12-5_16-47-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509234/200376478.jpg">enginesyncparameters.JPG</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

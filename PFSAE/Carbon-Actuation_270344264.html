@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Carbon Actuation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751191.html">Design PF24 | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751197.html">Actuation PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Carbon Actuation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Sep 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="CarbonActuation-TubeSizingHandCalculations:">Tube Sizing Hand Calculations:</h2><p>Used <strong><a href="PF24-TCP-Loads_270338638.html">PF24 TCP Loads</a></strong> along with data provided by RockWestComposites on their 45550-UHM Carbon Tubes courtesy of <a class="confluence-userlink user-mention" data-username="dvasilev" href="https://wiki.itap.purdue.edu/display/~dvasilev" data-linked-resource-id="230662986" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Vasilev, Dimitar Kirilov</a> for emailing about the specs. </p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/270344264/RockWest_Carbon_Laminate_Data.pdf?version=1&amp;modificationDate=1694360214000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/270344264/RockWest_Carbon_Laminate_Data.pdf?version=1&amp;modificationDate=1694360214000&amp;api=v2" data-linked-resource-id="270344265" data-linked-resource-type="attachment" data-linked-resource-container-id="270344264" data-linked-resource-default-alias="RockWest_Carbon_Laminate_Data.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="RockWest_Carbon_Laminate_Data.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/270344265/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="270344264" data-linked-resource-id="270344265" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>It appears that the 45550-UHM Carbon Tubes come only in the size of 0.375&quot; x 0.503&quot;. This will work for all the tubes suspension needs except for the LCA due to the higher loads. Calcs for this size tube hold near negative or negative margins only for the bonded insert. As of today <time datetime="2023-09-10" class="date-past">10 Sep 2023</time> I have no clue where our &quot;strength&quot; information for bonded inserts comes from and needs more research. Ideally, our own testing will give us a better idea of the loads to expect. To be safe sizing up the LCA will be a good idea. Another note is that we have yet to validate our TCP loads calculations and need strain gauge testing to do so. Comparing loads to PF23 show less loads because a more conservative tire model was used in PF23 designing leading to potentially overbuilding actuation. A more representative tire model LMUY and LMUX was used (0.625) in determining performance and loads.</p><p><br/></p><p><em><u>LOADS CALCULATIONS → Z:\2024\3_Suspension\3_Structures\Actuation</u></em></p><p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p><p><strong>Current Tube Size:</strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Tube</th><th scope="col" class="confluenceTh">Size (ID&quot; x OD&quot;)</th><th scope="col" class="confluenceTh">*Length in</th><th scope="col" class="confluenceTh"><p>**Weight lb</p></th></tr><tr><td class="confluenceTd"><strong>FLCA</strong></td><td class="confluenceTd">0.500&quot; x 0.624&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.632</td></tr><tr><td class="confluenceTd"><strong>FUCA</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd"><p>0.505</p></td></tr><tr><td class="confluenceTd"><strong>FTIEROD</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.273</td></tr><tr><td class="confluenceTd"><strong>FPROD</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.247</td></tr><tr><td class="confluenceTd"><strong>RLCA</strong></td><td class="confluenceTd">0.625&quot; x 0.750&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.778</td></tr><tr><td class="confluenceTd"><strong>RUCA</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd"><p>0.505</p></td></tr><tr><td class="confluenceTd"><strong>RTIEROD</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.273</td></tr><tr><td class="confluenceTd"><strong>RPROD</strong></td><td class="confluenceTd">0.375&quot; x 0.503&quot;</td><td class="confluenceTd">TBD</td><td class="confluenceTd">0.248</td></tr></tbody></table></div><p>T<strong>OTAL TUBE WEIGHT (Full Car) = 4.093 lb</strong></p><p>*Actual carbon tube length not eye to eye length</p><p>**Weight is estimated with density and only includes tubes, not inserts or rod ends</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270344264/270344265.pdf">RockWest_Carbon_Laminate_Data.pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

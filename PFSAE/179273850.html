@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Test List PF20 | ELE</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832509.html">Design PF20 | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Test List PF20 | ELE
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (jkrawitz)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li>Downforce and drag measurement (Aerodynamics, slide 60)</li><li>Aero package lap sim correlation (Aerodynamics, slide 61)</li><li>Suspension loads model correlation (Suspension, slide 39)</li><li>Tire compound comparison testing (Suspension, slide 32)</li><li>Launch and traction control development and tuning (Electronics, slide 123)</li><li><span style="color: rgb(255,0,0);">Throttle response with new engine tune</span></li><li><span style="color: rgb(255,0,0);">Fuel efficiency with new engine tune</span></li><li><span style="color: rgb(255,0,0);">Cooling sim correlation</span></li><li><span style="color: rgb(255,0,0);">Suspension setup</span></li><li><span style="color: rgb(255,0,0);">Wet weather setup: launch control and suspension settings</span></li></ul><p><br/></p><p><br/></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 82.9048%;"><colgroup><col style="width: 43.6913%;"/><col style="width: 21.9463%;"/><col style="width: 31.745%;"/><col/></colgroup><tbody><tr><th class="confluenceTh">Test</th><th colspan="1" class="confluenceTh">Purpose</th><th colspan="1" class="confluenceTh">Sensors used</th><th colspan="1" class="confluenceTh">Postprocessing tool</th></tr><tr><td class="confluenceTd">Downforce and drag measurement</td><td colspan="1" class="confluenceTd">Measure downforce and drag of as built car with steady high-speed runs and coast downs</td><td colspan="1" class="confluenceTd"><p>Wheel speed: measure velocity for CL CD calculation</p><p>Shock pots: measure spring loads for downforce calculation</p></td><td colspan="1" class="confluenceTd">I2 Standard</td></tr><tr><td class="confluenceTd">Suspension loads model correlation</td><td colspan="1" class="confluenceTd">Measure loads in control arms to correlate suspension force predictions</td><td colspan="1" class="confluenceTd"><p>Strain gauges (add on): measure control arm loads</p><p>Accelerometer: measure vehicle acceleration to run correlation simulations at</p></td><td colspan="1" class="confluenceTd">I2 Standard</td></tr><tr><td class="confluenceTd">Launch and traction control development and tuning</td><td colspan="1" class="confluenceTd">Achieve near best acceleration time consistently</td><td colspan="1" class="confluenceTd">Wheel speeds: operates the system and provides acceleration times to choose best setting</td><td colspan="1" class="confluenceTd">I2 Standard</td></tr><tr><td class="confluenceTd">Throttle response with new engine tune</td><td colspan="1" class="confluenceTd">Determine whether new tune yielded improved throttle response</td><td colspan="1" class="confluenceTd">Engine speed: see vehicle acceleration after throttle tip in</td><td colspan="1" class="confluenceTd">I2 Standard</td></tr><tr><td class="confluenceTd">Cooling sim correlation</td><td colspan="1" class="confluenceTd">Measure engine heat rejection and correlate engine cooling simulation model</td><td colspan="1" class="confluenceTd"><p>Wheel speeds: use vehicle velocity for radiator mass flow prediction</p><p>Coolant temperature after engine</p><p>Coolant temperature before engine (add on): get engine heat rejection value</p></td><td colspan="1" class="confluenceTd">Powertrain Cooling Simulation MATLAB Script</td></tr><tr><td class="confluenceTd">Suspension vehicle dynamics correlation</td><td colspan="1" class="confluenceTd">Measure wheel loads, load transfer, and chassis gradients and frequencies</td><td colspan="1" class="confluenceTd"><p>Accelerometer: measure vehicle acceleration for gradient calculations</p><p>Shock pots: use shock displacement and velocity for calculating chassis roll and pitch and wheel loads</p></td><td colspan="1" class="confluenceTd">Suspension Vehicle Dynamics Postprocessing  MATLAB Script</td></tr></tbody></table></div><p><br/></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col style="width: 69.0px;"/><col style="width: 246.0px;"/><col style="width: 135.0px;"/><col style="width: 247.0px;"/></colgroup><tbody><tr><th class="confluenceTh">Test Name</th><th class="confluenceTh">Sensors Used</th><th class="confluenceTh">Purpose</th><th class="confluenceTh">Conclusions</th></tr><tr><td colspan="1" class="confluenceTd">General Car Runs</td><td colspan="1" class="confluenceTd">Engine RPM, IMU, Wheel Speed, oil pressure and temperature, fuel pressure, crank and cam position,</td><td colspan="1" class="confluenceTd">Look for high level system failures and driver practice.</td><td colspan="1" class="confluenceTd">Have found issues with a broken coil, dying battery, the front-right tie-rod, and other system failures.</td></tr><tr><td class="confluenceTd">Regular Skid Pad</td><td class="confluenceTd">Wheel Speeds, Timing, </td><td class="confluenceTd">Tune ARB and optimize camber. Done with and without aero.</td><td class="confluenceTd">Validates increase in speed and maneuverability due to aero on the car and helps achieve best suspension possible.</td></tr><tr><td class="confluenceTd">Large Skid Pad</td><td class="confluenceTd"><br/></td><td class="confluenceTd">Tune aero balance</td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Launch testing</td><td class="confluenceTd">Engine RPM, Wheel Speed, Launch Potentiometer, IMU, timing system</td><td class="confluenceTd">Test how different launch modes work compared to each other and no launch control.</td><td class="confluenceTd">Launch control setting 3 is the best for general purpose and all launch controls are more reliable than manual driver launches.</td></tr><tr><td class="confluenceTd"><span style="color: rgb(0,0,0);">High Speed Coast Down Testing</span></td><td class="confluenceTd"><br/></td><td class="confluenceTd">Done with and without aero to validate the aero package.</td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><span style="color: rgb(0,0,0);">Low Speed Coast Down</span></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><span style="color: rgb(0,0,0);">Low speed engine coast down to quantify rolling resistance</span></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><span style="color: rgb(23,43,77);">High Speed Steady State</span></td><td class="confluenceTd"><br/></td><td class="confluenceTd">High speed steady state run with pit speed limiter at the top of 2nd gear to get downforce measurements</td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><span style="color: rgb(23,43,77);">Small/Medium/High slalom</span></td><td class="confluenceTd"><br/></td><td class="confluenceTd">Change ARB to get the feel for how changes affect car and tune.</td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Throttle Response</td><td class="confluenceTd">Throttle Position, Wheel Speed</td><td class="confluenceTd">Run different tunes to compare throttle response.</td><td class="confluenceTd"><span style="color: rgb(23,43,77);">Driver feeling is no difference at high rpm but faster response at low rpm w/ new tune</span></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

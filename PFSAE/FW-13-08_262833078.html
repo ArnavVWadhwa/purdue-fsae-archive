@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FW-13-08</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750832.html">Front Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751366.html">FW Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="FW-13-Series_265098429.html">FW-13 Series</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FW-13-08
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-013</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 124.0px;"/><col class="" style="width: 443.0px;"/><col class="" style="width: 271.0px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd">Cutout geometry change</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262833078/262833079.png" data-image-src="attachments/262833078/262833079.png" data-unresolved-comment-count="0" data-linked-resource-id="262833079" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-50-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Made the cutout into a slot. Technically, this will shed three vortices instead of two, but that's good. The second vortex is going to be quite weak and probably negligible. The main reason for this change is so that there is still material present to block inwash of outer vortex wake.</td></tr><tr><td style="text-align: left;" class="confluenceTd">Twisted and flapped outwashing winglet</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262833078/262833080.png" data-image-src="attachments/262833078/262833080.png" data-unresolved-comment-count="0" data-linked-resource-id="262833080" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-52-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Changed bottom airfoil shape to a symmetric airfoil to reduce downforce loss due to mounting of the winglet.</p><p>Reduce bottom chord to further reduce downforce loss.</p><p>Added a flap to increase vortex strength from this device to suppress tire wake and reduce rear wing upwash more.</p><p>Move the whole setup inboard to place the vortex closer to the chassis of the car so it's more effective in downwashing rear wing flow. Although the additional outwash produced by the flap is probably going to offset the physical distance moved.</p><p>The vortex interaction between the bottom and the top co rotating ortex pairs is going to be quite complicated so I am not exactly sure what is going to happen. The guess is they are converge in vertical distance due to the difference in upwash caused by different distance to front wing flaps. The two pairs should then outwash each other. The bottom vortex pair should get closer to the tires, so who knows what's going to happen if it gets too close. </p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 432.156px;"/><col class="" style="width: 208.094px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833078/262833158.png" data-image-src="attachments/262833078/262833158.png" data-unresolved-comment-count="0" data-linked-resource-id="262833158" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_21-18-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Vortex generated did not get stronger. The flap itself did very little.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833078/262833171.png" data-image-src="attachments/262833078/262833171.png" data-unresolved-comment-count="0" data-linked-resource-id="262833171" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_21-27-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">More front wing downforce with the twist. </td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/262833078/262833161.png" data-image-src="attachments/262833078/262833161.png" data-unresolved-comment-count="0" data-linked-resource-id="262833161" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_21-20-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833078/262833162.png" data-image-src="attachments/262833078/262833162.png" data-unresolved-comment-count="0" data-linked-resource-id="262833162" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_21-20-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">The lower vortex migrated to next to the top vortex downstream, which made them upwash each other, resulting in increased height at rear wing.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833078/262833172.png" data-image-src="attachments/262833078/262833172.png" data-unresolved-comment-count="0" data-linked-resource-id="262833172" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_21-29-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833078" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">The inner vortex ended with more loss since the cutout itself increased inwash, this inwash is then met with a wall, creating a big chunk of loss and immediate breakup of the vortex.</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833079.png">image-2023-5-31_15-50-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833080.png">image-2023-5-31_15-52-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833158.png">image-2023-5-31_21-18-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833161.png">image-2023-5-31_21-20-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833162.png">image-2023-5-31_21-20-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833171.png">image-2023-5-31_21-27-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833172.png">image-2023-5-31_21-29-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833078/262833173.png">image-2023-5-31_21-30-11.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Bechtel Waterjetting</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759489.html">Manufacturing | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Waterjetting-and-Lasercutting_179279304.html">Waterjetting and Lasercutting</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Bechtel Waterjetting
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (kinsellj)</span>, last modified by <span class='editor'> Crooks, Troy A</span> on Sep 19, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Preparing parts:</strong></p><ul><li> in the BIDC no longer supports using flowPath for pathing (will not be approved), thus use Fusion 360<ul><li>Join BIDC channel in Fusion (have to have a TA set it up) so that you always get the most recent tool updates</li></ul></li><li>Fusion can be a pain for importing parts, either lay parts out (not DXFs) in NX where they can be constrained to a plane and then open that assembly (Fusion can open .prt files) in Fusion. If parts need to be moved or added this can be done in NX and then re-opened in Fusion. Fusion has a terrible constraint system (so don't even try it it's just a waste of time)<ul><li>OR export dxfs and layout parts in dxf editor and then import that dxf into Fusion as a sketch and extrude<ul><li>Sketches are usually broken so this method is not recommended</li></ul></li><li>Fusion is a pain at first but it works much better for generating pathing than flowPath</li></ul></li><li>This webpage is very helpful for creating pathing: <a class="external-link" href="https://www.purdue.edu/bidc/resources/waterjet-cutting/steps-to-a-waterjet-project/" rel="nofollow">https://www.purdue.edu/bidc/resources/waterjet-cutting/steps-to-a-waterjet-project/</a><ul><li>If you have a layout of parts, do each part one after another<ul><li>Start with interior elements like holes or cuts, and then move to path the outside. This will prevent the part from moving during cutting of small elements (the part can break loose if the outside is cut first) and will make sure all elements are made properly. </li><li>Waterjet will cut in order of geometry/corner selection so start by clicking inside features, then clicking on outside, then moving to the next part<ul><li>if this does not work just split each part into a separate process</li></ul></li><li>For tabs include 2+ when using thin sheet metal (1/16th or less), this will keep the part from breaking off, bending, or hitting the cutter (or all the above) during cutting<ul><li>If any bigger only one is needed (if you have more part will be impossible to break off)</li></ul></li><li>If cutting small features, lead-in radius will need to be small (less than 0.05 inches) to prevent feature from becoming distorted<ul><li>if need be this can also be adjusted in flowPath on the computer after .ord file is created.</li></ul></li></ul></li></ul></li></ul><p><strong>Waterjetting:</strong></p><ul><li>If cutting thicker steel, no clamping is needed due to its weight</li><li>If cutting thin sheet metal use clamps and weights to secure stock to the table. Stock should not be able to move if jostled. Make sure that weights don't get in way of cutting head</li><li>Open part in flowCut on the computer, select metal, and thickness</li><li>Create work origin based on where you want to cut (TA will help with this), also set head height using shim that they have there.</li><li>Make sure to move head manually, tracing out the cutting area to make sure there's no interference with clamps and weights if installed.</li><li>Always check that work origin was set by moving head up and away (up so that it doesn't potentially crash into the table) and clicking 'move to work origin' on computer</li></ul><p><br/></p><p><strong>Waterjet Fusion 360 setup videos </strong></p><p><br/></p><p><strong><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/DoQLTUdifxY?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</strong></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

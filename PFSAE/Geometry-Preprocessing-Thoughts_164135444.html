@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Geometry Preprocessing Thoughts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Geometry Preprocessing Thoughts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span> on Nov 25, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>There are a few ways you can pre-process your geometry for CFD. Over the past few years, we have mainly used two distinct methods. One is to re-build your CAD specifically for CFD, the other option is to get good with your surface wrapping </span><span>pipeline, and</span><span> let </span><span>the surface wrappers handle a direct import of the team’s full car CAD assembly. </span><span> </span></p><p><span> </span></p><p><span>I’m also assuming by the time you’re reading this that you’re familiar with basic CFD preprocessing requirements (no mesh leaks, </span><span>no odd un-</span><span>meshable</span><span> geometries). </span><span> </span></p><p><br/></p><h4 id="GeometryPreprocessingThoughts-RemodelingforCFD"><strong><span class="TextRun SCXW231112075 BCX0" style="color: rgb(47,84,150);"><span class="NormalTextRun SCXW231112075 BCX0">Remodeling for CFD</span></span><span class="EOP SCXW231112075 BCX0" style="color: rgb(47,84,150);"> </span></strong></h4><p><br/></p><p><span>Remodeling the car for CFD involves </span><span>building a brand new CFD CAD model based off the full assembly, but with substantially simplified geometry so you’re not asking too much from STAR’s surface wrappers and </span><span>meshers</span><span>. This is a good way to do things if you’re good with CAD, and not very good with CFD. </span><span> </span></p><p><span> </span></p><p><span>This is the approach the team took up until 2020. </span><span>This is a pretty robust way to do things, since there’s limited scope for STAR to crash when using this kind of preprocessing method. It’s also very unlikely you’ll get mesh leaks, since it’s pretty easy to take a chassis wireframe or an intake CAD and remodel it so it’s solid and manifold, with no cavities or scope for a mesh leak. </span><span>On the other hand, if you’re in a design cycle like 2019’s where the chassis is changing almost every week, you’re going to have a difficult time keeping your CFD assembly up-to-date. It can take a very long time to re-mode</span><span>l a chassis into a solid body. </span><span>You don’t want to be spending 10 hours every week re-modeling the whole car because suspension points moved. </span><span> </span></p><p><span> </span></p><p><span>Another issue is you want your aero components to be designed to mate with the full chassis model in the full-car assembly, not your re-modeled CFD chassis. But it’s very unlikely your CFD chassis is actually going to perfectly reflect the</span><span> full-car assembly chassis + body panels. This has obvious implications for the validity of your CFD simulations, since now you’re either going to have aero components that do not perfectly mate with your CFD chassis, or you’re going to have two distinct sets of aero components (therefore two distinct aero assemblies to maintain) to maintain compatibility. </span><span> </span></p><p><span> </span></p><p><span>Surface wrapping settings for this kind of assembly is also pretty simple. </span><span>There isn’t really anything specific I want to touch upon, it’s all pretty straightforward. </span><span>This approach generally will give you more stable meshes as well, since your geometry isn’t very intricate. There are very few opportunities for STAR to give you odd mesh cells.</span><span> </span></p><p><br/></p><h4 id="GeometryPreprocessingThoughts-SurfacewrappingtheNXassembly"><strong><span class="TextRun SCXW202803110 BCX0" style="color: rgb(47,84,150);"><span class="NormalTextRun SCXW202803110 BCX0">Surface wrapping the NX assembly</span></span><span class="EOP SCXW202803110 BCX0" style="color: rgb(47,84,150);"> </span></strong></h4><p><br/></p><p><span>This is the direction I expect the team to go in in the future. </span><span>Surface wrapping a complex vehicle assembly can be tricky, and </span><span>there is a high likelihood that your final volume mesh will have a few cells that are either straight up invalid, or very quickly become invalid with ridiculous cell velocities or unwanted turbulence residuals. </span><span> </span></p><p><span> </span></p><p><span>Nonetheless, the fact that you don’t have to deal with remodeling the car every time something changes</span><span> is very valuable. You also have the assurance that the geometry in your simulation is as true to your full-car assembly as it possibly can b</span><span>e, including all mounting, fasteners, and all sorts of subtle suspension components. Likely the only thing that needs to be sealed is the powertrain, but this can be done pretty quickly by patching any open orifices in the intake model, and exhaust model. </span><span> </span></p><p><span> </span></p><p><span>Now the important part here is getting your surface wrapper set-up properly. The ideal set of surface wrapper properties are going to vary depending on your input geometry, but there are a few knobs that are very powerful. </span><span> </span></p><p><span> </span></p><p><span>When </span><span>you’re</span><span> surface wrapping a complex assembly, there is a certain amount of sense behind wrapping each part individually, and then wrapping the whole assembly together. The first process can be done very quickly, since per-part wrapping can be done in parallel and it does not take much time to mesh a few hundred parts when you’ve got 40-100 cores to do it. </span><span>This ensures each individual part is </span><span>manifold, but</span><span> does not do anything about gaps forming </span><em><span>between</span></em><span> parts (like a gap between the underbody and the chassis, or a leak between two distinct chassis tubes). The second step is a serial </span><span>process, and</span><span> ensures the assembly as a whole is manifold. </span><span> </span></p><p><span> </span></p><p><span>It’s generally a good idea to have a separate set of wrapper controls for non-aero and aero parts. You’re generally not too concerned about the fidelity of wrapping for a suspension arm, but you’re incredibly concerned about wrapping fidelity of a front wing leading edge. </span><span>You’re also very concerned about </span><strong><span>gap closure</span></strong><span>. </span><span>1 inch</span><span> gap between </span><span>your </span><span>body panel and a chassis tube is something you’re going to want sealed</span><span>. On the other hand, you absolutely do not want a </span><span>0.25 inch</span><span> gap between wing elements to be sealed.</span><span> One thing to note is that I am not a big fan of the gap closure tool itself. Ideally, the right way to handle gaps is to close them yourself. Not with the gap closure tool. This was the philosophy at Daimler, but </span><span>closing gaps yourself takes time, and isn’t always an appealing option. </span><span>There’s also the occasional instance where the wrapper starts closing gaps that </span><em><span>larger</span></em><span> than your gap closure setting. In my experience, this usually happens if your target or minimum surface size settings are too coarse, and result in small gaps being closed because </span><span>the wrapper doesn’t try meshing to that small of a length scale. </span><span> </span></p><p><span> </span></p><p><span>Another powerful </span><span>knob</span><span> is </span><strong><span>surface curvature</span></strong><span>. This isn’t something that’s been of great interest in recent years, since our surface wrapper sizing has been fine enough that it’s rarely an issue, but in past years using surface curvature parameters was a very effective way to run a relatively coarse</span><span> surface wrapper, but ramp up the fidelity significantly in areas of high curvature (like leading edges).</span><span> </span><span> </span></p><p><span> </span></p><p><span>You should also get familiar with the surface repair tools. This tool will let you patch </span><span>small gaps, clean up bad geometry (pierced faces, unzipped edges) from the original part file or the import process, and locate leaks. The leak detection tool is very useful for finding leaks, since it only takes a few seconds to build a template leak and test for leaks, rather than having to generate an entire volume mesh and check. The leak detection tool doesn’t do a great job telling how to fix leaks, but it’ll at least show you that there is a leak, what the leak path is, and you can investigate further to solve the leak.</span><span> </span></p><p><span> </span></p><p><span>Finally, odds are if you’re wrapping the full assembly, you will get localized pockets of bad meshes, and you will need to actively massage your simulation otherwise the odds of divergence are pretty high. </span><span>This can be mitigated by building better meshes than I have been able to over the past couple years, but I’m not sure if this issue can be solved entirely. </span><span> </span></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

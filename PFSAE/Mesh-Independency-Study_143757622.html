@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Mesh Independency Study</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="156599403.html">Design PF20 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Mesh Independency Study
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Unknown User (green338)</span> on May 04, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Link to the data: <a class="external-link" href="https://docs.google.com/spreadsheets/d/1ZZX7cJnSHsjN4NO8Qh9gABbtRSzr6qKJDXd16YFDbSg/edit?usp=sharing" rel="nofollow">https://docs.google.com/spreadsheets/d/1ZZX7cJnSHsjN4NO8Qh9gABbtRSzr6qKJDXd16YFDbSg/edit?usp=sharing</a></p><p><br/></p><h3 id="MeshIndependencyStudy-Process:">Process:</h3><p><span style="color: rgb(0,0,0);">We ran a mesh independence study on our 2020-2021 CFD environment to ensure that the we are within an envelope of volume mesh count where our solution is independent of the mesh size. As of now for the study we only varied our volume mesh base size which changes the cell count for the volume mesh and didn't vary anything with our surface control. Alongside varying the volume mesh count we also compared two different mesh geometries; polyhedral and trimmed.  </span></p><p><br/></p><h3 id="MeshIndependencyStudy-Decision:">Decision: </h3><p><span style="color: rgb(0,0,0);">Theoretically the poly mesher should be better for our use case and it would yield a lower volume mesh count for the same base size compared to trimmed mesher alongside us having better control over the surface mesh. However, the Poly sims are not mesh independent in the slightest based off the mesh sizes we chose and it would take a lot more effort that could be well spent towards actual Aero design to fix it. So, we are sticking with the a trimmed mesher and the same base size.  We have all the data to show that the volume mesh is mesh independent at least. The only thing is that the 0.2 Cl loss is more surface induced than the Volume mesh so it will take time to actually figure out where we are sensitive in terms of surface controls which I'll be doing the next couple of weeks</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/143757622/146769904.png" data-image-src="attachments/143757622/146769904.png" data-unresolved-comment-count="0" data-linked-resource-id="146769904" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Cell Count vs Cl_A.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143757622" data-linked-resource-container-version="7" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143757622/146769905.png">Cell Count vs Cl_A.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143757622/146769904.png">Cell Count vs Cl_A.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

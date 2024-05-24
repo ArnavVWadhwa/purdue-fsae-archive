@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Archive - Task 4 – ANSYS Analysis</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain-Onboarding_141728884.html">Drivetrain Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Archive---Drivetrain-Project-2020_156601057.html">Archive - Drivetrain Project 2020</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Archive - Task 4 – ANSYS Analysis
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified by <span class='editor'> Unknown User (amattu)</span> on Sep 01, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="ArchiveTask4–ANSYSAnalysis-ForceModelCalculations">Force Model Calculations</h1><p>See sprocket force model: <a href="https://wiki.itap.purdue.edu/display/PFSAE/Sprocket+Force+Model" rel="nofollow">https://wiki.itap.purdue.edu/display/PFSAE/Sprocket+Force+Model</a><br/>Make your own calculator (excel) to understand how the calculations work and how to translate them into two components rather than the single resultant force. <strong>When completed, message me to verify that the calculations are correct</strong>.</p><h1 id="ArchiveTask4–ANSYSAnalysis-ANSYSAnalysisSetup">ANSYS Analysis Setup</h1><p>If you aren't familiar with ANSYS, read up on this as a quick basics of the primary tools: <a href="https://wiki.itap.purdue.edu/display/PFSAE/ANSYS+Structural+FEA+Basics" rel="nofollow">https://wiki.itap.purdue.edu/display/PFSAE/ANSYS+Structural+FEA+Basics</a><br/>I expect that those going through this project will be messaging me regarding questions and that is OK. I don't expect anyone following this to be an ANSYS whiz and I am more than happy to answer questions. I aim for this to be a project outline rather than a &quot;How to use ANSYS&quot;, so I'm not going into super deep detail of how to do things.<br/>Next, configure ANSYS to read NX 12 CAD files. Open ANSYS Cad Configuration Manager and follow the screenshots below:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="281" width="559" src="attachments/156601076/156601075.png" data-image-src="attachments/156601076/156601075.png" data-unresolved-comment-count="0" data-linked-resource-id="156601075" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddav9969961d4c8bdb9d3f63490b12832a75.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="283" width="559" src="attachments/156601076/156601077.png" data-image-src="attachments/156601076/156601077.png" data-unresolved-comment-count="0" data-linked-resource-id="156601077" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddavafdf190f86eb9501546fb26f8c2ae887.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>Next, remote into a lab computer and open ANSYS Workbench (doesn't matter what version the computer has). Be sure to have NX open with the sprocket model. Set up the workbench to look like this the following picture. The engineering data will contain the material properties, the geometry is where we will import our NX CAD data, and the static structural is where the analysis will take place.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="371" width="519" src="attachments/156601076/156601078.png" data-image-src="attachments/156601076/156601078.png" data-unresolved-comment-count="0" data-linked-resource-id="156601078" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddav0ffbe9b85b62845114aa443643f706ee.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>Double click the engineering data and enter in your material properties. Pick an aluminum alloy available in MMPDS-11 (this document can be viewed on the Purdue library website). You can change this down the line if you feel one aluminum alloy would be better than another. Be sure to justify your decision not only in terms of strength properties but in terms of cost and availability as well. MMPDS-11 will contain the necessary material properties need in the picture below:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="567" width="489" src="attachments/156601076/156601079.png" data-image-src="attachments/156601076/156601079.png" data-unresolved-comment-count="0" data-linked-resource-id="156601079" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddav5adcad4c6634b86fb778c38cab106399.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>Next, import the NX sprocket model geometry into ANSYS by right clicking the geometry box and following the picture below:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="227" width="257" src="attachments/156601076/156601080.png" data-image-src="attachments/156601076/156601080.png" data-unresolved-comment-count="0" data-linked-resource-id="156601080" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddave0cb4850910a63e91c04a73e7c42a2e7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>For the final setup step, link the engineering data and geometry to the static structural by clicking and drawing from each respective box to the relevant static structural fields.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="233" width="335" src="attachments/156601076/156601081.png" data-image-src="attachments/156601076/156601081.png" data-unresolved-comment-count="0" data-linked-resource-id="156601081" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddav21baad3ebe32a612c9c5076376162d1a.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span></p><h1 id="ArchiveTask4–ANSYSAnalysis-SettingUpandRunningtheAnalysis">Setting Up and Running the Analysis</h1><p>Now that the workbench is set up, double click the model button and ANSYS Mechanical will open up so that the boundary conditions can be applied to the sprocket for analysis. Apply the respective forces on each tooth as calculated earlier in the Excel sheet. Apply frictionless constraints onto one side of each spline teeth (make sure it is the correct side based on the direction of forces). Next apply the respective force on each tooth corresponding to the forces calculated in the Excel sheet. Should look something like this:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="417" width="377" src="attachments/156601076/156601082.png" data-image-src="attachments/156601076/156601082.png" data-unresolved-comment-count="0" data-linked-resource-id="156601082" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddav16e7edfecf9726c30e64d975131da0cb.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>For meshing, do NOT try to mesh the splines to a very fine degree, the results here are not important and will be highly inaccurate due to the sharp geometry and it being right next to the boundary conditions. Try to get a mesh with a jacobian of 0.66 around the parts of the sprocket with the greatest loading. Mesh quality on the side of the sprocket with no forces is not particularly important. Maybe start with something like this for mesh quality, assuming the top tooth is the first (highest) load:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="351" width="423" src="attachments/156601076/156601083.png" data-image-src="attachments/156601076/156601083.png" data-unresolved-comment-count="0" data-linked-resource-id="156601083" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddavf201c5d25514564638134288ae04dc16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>Again, reach out if you want to check your mesh.<br/>To verify the mesh, you will perform a mesh convergence. This involved halving the element size a few times to ensure that the size of the mesh does not affect the maximum stress in an area of interest. Anomalies in the results will make it more difficult to know if it has converged, so you may have to probe certain regions.<br/>In the solution, add total deformation, equivalent stress (von-Mises), and safety factor stress tool.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="120" width="204" src="attachments/156601076/156601084.png" data-image-src="attachments/156601076/156601084.png" data-unresolved-comment-count="0" data-linked-resource-id="156601084" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="worddavb4bb3f1b458a7912a837971cb8aaa20f.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="156601076" data-linked-resource-container-version="3" alt=""></span><br/>Solve the solution to ensure that it works, and then work towards getting a mesh convergence plot by halving (or at least reducing) the element size 4-5 times until the max stress at an area of interest remains unchanged (&lt; 5%).<br/><strong>With a converged solution, run it by me so I can verify that everything was set up properly and that the convergence was done properly.</strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601075.png">worddav9969961d4c8bdb9d3f63490b12832a75.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601077.png">worddavafdf190f86eb9501546fb26f8c2ae887.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601078.png">worddav0ffbe9b85b62845114aa443643f706ee.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601079.png">worddav5adcad4c6634b86fb778c38cab106399.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601080.png">worddave0cb4850910a63e91c04a73e7c42a2e7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601081.png">worddav21baad3ebe32a612c9c5076376162d1a.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601082.png">worddav16e7edfecf9726c30e64d975131da0cb.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601083.png">worddavf201c5d25514564638134288ae04dc16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/156601076/156601084.png">worddavb4bb3f1b458a7912a837971cb8aaa20f.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

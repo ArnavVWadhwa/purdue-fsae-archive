@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Wall Treatments</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CFD-Governing-Equations_262832320.html">CFD Governing Equations</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Wall Treatments
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>What and Why</strong></u></p><p>In the page on turbulence modeling and simulation, I mentioned that k-ε is cheap since if uses high wall treatment. What I mean by that is k-ε is designed so that the first cell height can be relatively high. In fact, it does not work if the first cell height is too low. This point is particularly of note because if you run a low wall mesh with high wall turbulence model, the simulation is going to produce the wrong result at best, and diverge at worst. This means, unlike FEA or other types of numerical solution where computational domain needs to be discretized, the smaller the cell size does not necessarily mean better results.</p><p><u><strong>Far Wall Approach (Wall Function)</strong></u></p><p>In far wall approach, the first cell height needs to be behind wall y+ of 30 and 300. In other words, the first cell needs to entirely capture viscous sublayer and buffer layer, and the top of the first cell needs to sit in the log law region. This is because a <em>wall</em><em> function</em> is used. You can think of wall function as a subgrid model, in which all of the physics of viscous sublayer and buffer layer is captured by this one function that is applied in the first cell.</p><p>So why is it bad if all the physics is captured by the function? The thing is, viscous sublayer does not always end at wall y+ of 5. The number 5 comes from a general case in the absence of pressure gradient. In favorable pressure gradient, the number is going to be smaller; and in adverse pressure gradient, the number is going to be larger. What's more, viscous sublayer is not always linear. As you have seen in the aerodynamics pages, concavity change happens in the viscous sublayer upon the onset of adverse pressure gradient. Even worse than that, the entire structure of turbulent boundary layers break down after separation. Nothing I mentioned above is captured by the wall function. This is why k-ε is so bad predicting separation and adverse pressure gradient in general.</p><p><u><strong>Near Wall Approach</strong></u></p><p>In comparison to the far wall approach, the near wall approach captures the entirety of the turbulent boundary layer, including viscous sublayers and buffer layer. Technically, the near wall approach only needs to resolve to wall y+ of 5, since below which the velocity distribution is constant. However, as I have mentioned above, this is not always adequate due to adverse pressure gradients. A general rule of thumb is to aim for wall y+ of 1 or lower (but not too low, since too small of vertical height can induce numerical instability). Another, more rigorous and more correct rule is 3 layers below wall y+ of 5 with ideally no stretching applied (anything below 1.1 should be fine). This rule comes from the fact that commercial CFD codes usually truncates Taylor series too early to capture the effective of stretching in the viscous sublayer. </p><p>As you can imagine, the near wall approach is much more expansive, having to place the first cell 30 times closer to the wall than far wall approach.</p><p><u><strong>All Wall Approach</strong></u></p><p>I just talked a lot about far wall and near wall approach, but the truth is, they are not the approaches you would use in modern commercial CFD codes, since all wall approach is an option with little to no drawback. All wall approach applies the near wall treatment for regions with wall y+ lower than 5, high wall treatment for regions with wall y+ higher than 30. In between, a blend between low and high wall approaches are used. As you can imagine, the blend is only an approximation. Therefore, it is advisable to avoid wall y+ between 5 and 30 as much as possible.</p><p><a class="CID2afcbd2c-5ed8-4801-878d-3e2ac28b1f5d" rel="nofollow" style=""> </a><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/262832323/262834187.png" data-image-src="attachments/262832323/262834187.png" data-unresolved-comment-count="0" data-linked-resource-id="262834187" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-5_11-7-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832323" data-linked-resource-container-version="3" alt=""></span></p><p>For our CFD environment, we fully take advantage of all wall treatment and mesh the downforce generating parts (front wing, rear wing, undertray, side wing) with low wall treatment to ensure accuracy, and mesh the non-downforce generating parts (chassis, body panels, powertrain, suspension, tires, etc.) with high wall treatment (though this doesn't really work out too well, so a lot of cells end up in the blending region).</p><p><a class="CIDfe1afca2-d4c9-437d-aece-3b1673ec26f6" rel="nofollow" style=""> </a><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832323/262834189.png" data-image-src="attachments/262832323/262834189.png" data-unresolved-comment-count="0" data-linked-resource-id="262834189" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-5_11-12-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832323" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262832323/262834190.png" data-image-src="attachments/262832323/262834190.png" data-unresolved-comment-count="0" data-linked-resource-id="262834190" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-5_11-12-10-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832323" data-linked-resource-container-version="3" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832323/262834187.png">image-2023-6-5_11-7-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832323/262834189.png">image-2023-6-5_11-12-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832323/262834190.png">image-2023-6-5_11-12-10-1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

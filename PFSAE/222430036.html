@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : (Optional) CFD 2D Airfoil</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics-Onboarding_233838112.html">Aerodynamics Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : (Optional) CFD 2D Airfoil
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Aug 17, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li><span style="color: rgb(23,43,77);"><strong>Purpose</strong></span><ul><li><span style="color: rgb(23,43,77);">To teach members how to setup a basic CFD simulation without the aid of the automation suite alongside correlating values with NACA data </span></li></ul></li><li><strong>Read and <u><em>UNDERSTAND</em></u> all pages under &quot;Fundamentals | CFD&quot; first</strong></li><li><strong>Do this quiz to make sure you know what you are doing </strong><ul><li><a class="external-link" href="https://forms.office.com/r/mn9eZzwcpX" rel="nofollow">https://forms.office.com/r/mn9eZzwcpX</a></li><li>This quiz will be difficult but try to understand as much as possible</li><li>This quiz is open <u><em>everything</em></u>. Use internet, ask questions, etc.</li></ul></li><li><strong>Installer</strong><ul><li><span>Download STAR-CCM+ CAD Clients not Linux (Unless you have a linux OS). This is the one for personal windows computers</span></li><li><a class="external-link" href="https://purdue0-my.sharepoint.com/:u:/g/personal/zhan3907_purdue_edu/EfrivjWH4xVNoe7pZiy8mWUBUeYTGezRx_CTfbbhAlE66A" rel="nofollow">https://purdue0-my.sharepoint.com/:u:/g/personal/zhan3907_purdue_edu/EfrivjWH4xVNoe7pZiy8mWUBUeYTGezRx_CTfbbhAlE66A</a></li><li>If you already downloaded STAR from previous project then you should be fine</li></ul></li><li><strong>Licensing </strong><ul><li><span>Ping Chenkai (zhan3907) for PoD key if it hasn't been created for you already</span></li></ul></li></ul><ul><li><strong>Tutorials and workflow</strong><ul><li>For tutorials, YouTube is best friend.</li><li>Note that learning how to set up a simulation in itself is not enough, you will have to go through the resources above to figure out what you are doing.</li></ul></li><li><strong>Exercise </strong><ul><li>The most effective way to get comfortable with CFD is to start running your own CFD, without any automation assistance, and without a pre-existing simulation environment to throw things into. Both the tutorials above were for 3D geometry, with access to reasonably high compute. You're going to be running a 2D simulation for a single aerofoil with a mesh density low enough to run on a laptop. The idea is to generate a lift polar (lift coefficient vs angle of attack in this case) that can be compared against <a class="external-link" href="https://media.cheggcdn.com/media/77a/77ad6d65-99a5-4fbb-ad6e-34de90dd6e93/php8lctOY" rel="nofollow">experimental data</a> (which is why we're going to use the NACA 2412 airfoil). </li><li><span>Requirements (some of these exist to guide you in the right direction)</span><ul><li><span>Use the NACA 2412 airfoil at 0,3,7,12 degrees of angle of attack. i.e you'll be running 4 simulations </span></li><li><span>To make it a bit more interesting, all 4 simulations must use the same exact mesh. You cannot rotate the airfoil. Need to find a different way to induce an angle of attack. </span></li><li><span>Physics </span><ul><li><span>Steady state </span></li><li><span>2D</span></li><li><span>Turbulent</span><ul><li><span>Justify your own selection of turbulence model</span></li></ul></li></ul></li><li><span>Reynolds number must be 3.1e6 for all 4 cases. </span></li><li><span>Find a way to change the angle of attack through physics/boundary conditions, rather than through geometry. </span></li></ul></li><li><span>Mesh</span><br/><ul><li><span>Must use a prism layer mesh with reasonable wall y+ values</span></li><li><span>Cannot have a prism layer around the domain walls.</span></li><li><span>Performance mesh independence study to ensure your result doesn't vary </span></li></ul></li><li><span>Reports</span><ul><li><span>Cl and Cd reports</span></li><li><span>Surface wall y+ distribution plot</span></li></ul></li><li><span>Visualization</span><ul><li><span>Must have a velocity scene with LIC</span></li><li><span>Must have a pressure coefficient scene</span><ul><li><span>Pressure coefficient must be correctly normalized</span></li></ul></li><li><span>Both scenes must have sensible scaling. </span></li></ul></li><li>Notes <ul><li><span>Cell count can be found under representations &gt; volume mesh on the tree</span></li><li><span>Prism layer is an option when you create your automated mesh, it needs to be manually configured. </span></li><li><span>Wing and reports must be set up in an ‘airplane’ configuration. You want to be making positive lift. Not negative lift. </span></li></ul></li><li>If you actually get through this, hit all the requirements on and off the list for accurate CFD simulations, and are able to justify your decision, you'll be in an incredibly good place to make the jump to running and setting up your own full vehicle 3D simulations. </li></ul></li><li><strong>Experimental Results</strong><ul><li><strong style="letter-spacing: 0.0px;"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/222430036/244778796.png" data-image-src="attachments/222430036/244778796.png" data-unresolved-comment-count="0" data-linked-resource-id="244778796" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-1_18-41-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="222430036" data-linked-resource-container-version="11" alt=""></span></strong></li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/222430036/244778796.png">image-2022-12-1_18-41-23.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

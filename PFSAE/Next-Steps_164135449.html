@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Next Steps</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Next Steps
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on Aug 22, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>If you ever what something CFD related to do. Or you are scared that once you learn CFD, you will be the monkey who only submits jobs. Take a look here. Here are enough things to do to fill the next couple of year (if not more) of flat out CFD development.</p><p><u><strong>Correlation</strong></u></p><p><span>The biggest </span><span>open question for the CFD environment is purely correlation. By this point </span><span>we know pretty well which knobs we can turn, and what those knobs do to our simulation, but we don’t know which direction to turn those knobs in. There are “best practices” that can be applied, but practices are guidelines and not requirements, and the distinction between a “guideline” and a “requirement” is a subtle</span><span>, but an important one. It’s crucial to actually have real-world data to help give insight into which directions these knobs need to be turned in. </span><span> </span></p><p><span>We also have large, open questions about the validity of our fan model, or if our radiator modeling strategy is valid. </span><span> </span></p><p><u><strong>Optimization of Current Methods for Speed</strong></u></p><p>While the speed really isn't an issue normally, it becomes an easy in the design cycle as everything is changing around you every day and structures people are taking scholar to run FEA. During the crucial period of a few week in September and October, we are incredibly speed limited. So any way to speed the simulations up would be welcomed provided it doesn't reduce solution accuracy.</p><p>I have tried cutting mesh. Cutting mesh increases oscillations in solution, which leads to uncertainties and wasted time. </p><p>You could fine tune the relaxations, but it is a lot of effort for very little rewards.</p><p><u><strong>Post Proc</strong></u></p><p>As far as speed goes, if every one is willing to commit, getting rid of pngs and using third party post processing tools would essentially cut out all of the time spent in post proc. The issue is getting everyone onboard with it, which is difficult due to large file sizes and the need for a decent PC.</p><p>To improve the effienicy and accuracy of our design process, you should look into way to do delta images. We have a tool called SimComparisonTool that does this, but it's slow and sometimes inaccurate, not to mention that it doesn't work with the new color maps.</p><p><u><strong>Local </strong></u><strong><u>Remeshing</u></strong></p><p>Local remeshing is something to try. It basically takes an existing mesh and only remeshes the locations where things have changed. Siemens showed an example of it by adding a spoiler to a road car, and that seemed to work very well. I have no idea how it works with larger geometry changes around much more complex geometries and that is why I haven't tested it out.</p><p><u><strong>Overset Mesh</strong></u></p><p>Overset mesh for our application would kind of be like local remeshing. The idea is you can have a background mesh and multiple overset meshes that encompass different parts. So that if you change the front wing, only the front wing mesh needs to be regenerated. What's more, the background mesh and other overset can retain their existing solution, essentially allowing to start with a close to solved initial condition.</p><p>I have tried overset mesh, couldn't get it to work. It has been a while so I don't remember the exactly what went wrong, but I think it had something to do volumes inside the geometry getting meshed. I had no such problem when I tested it with a simpler geometry, so it could just be an geometry issue.</p><p><u><strong>Adaptive Mesh Refinement</strong></u></p><p>Adaptive mesh refinement is another avenue to save time. This would essentially allow you to start with a coarse mesh, and only refine where refinement is absolutely necessary, increasing solution speeds and potentially increasing accuracy. The issue is you need a good enough criterion for adaptive refinement (a simple velocity gradient or total pressure gradient isn't going to do it due the coarse nature of the initial mesh), you also need to ensure you end up with a good mesh each time after refinement. Bad cells created by refinement could easily turn into numerical instabilities.</p><p><strong><u>Initial Conditions</u></strong></p><p>The best initial condition for a sim to start with is an initial condition that is closet to the actual solution. So if you can import initial conditions from a solved simulation and start from there, you can cut out a lot of solution time. I have tried to do this but I don't think it's possible in STAR-CCM+. And unfortunately I think internet also agrees with me.</p><p>You might be tempted to divide the domain into blocks for improved initial condition. For example, have freestream initialize to freestream velocity and pressure, and wake initialized to 0 velocity. I have been tempted too. The result was that absolutely nothing changed. The reason is that relatively large errors get damped out very quickly. So damping out blocked initial condition errors vs. uniform initial condition error might only take a few iterations.</p><p><u><strong>GPGPU</strong></u></p><p>Figuring out GPGPU would also be good. However, from what I have heard, the benefits of GPGPU is very vehicle dependent, so there is no guarantee it will work for us. The issues I faced when I messed around with it is that it requires both CPU and GPU, and, at least on the front end, I could not get the CPU node to talk to the GPU node, and that the simulation would not use memory for the GPU node (although this is a non-issue if get the two nodes to talk). GPGPU is using GPU to accelerate the solution, not produce the solution itself, so the process is still very CPU dependent. </p><p><u><strong>Coupled Solver</strong></u></p><p>Coupled solver is something that we should seriously test out. Coupled solver can be a lot faster than segregated solver we are running. I briefly tested it out back in 2021 with a very different (far worse) mesh. While the speed improved, the stability was so bad that I had to to use first order upwind.</p><p>I briefed tried coupled solver again when making fsaeSTAR V6.4, but turns out it is just too memory intensive to run with polyhedral mesh. It worked for half car but not full car at ~58 mil cells. Since then, due to an increase in aerodynamic surface area, the cell count ballooned to 70+ mil, so it's doubly not going to work.</p><p>So maybe trimmed cell is making a come back if you can successfully and reliably implement coupled solver?</p><p><u><strong>Adjoint</strong></u></p><p>Adjoint is one of those words have has floated around for a long time but never implement, and that was because I was trying to implement it in the wrong way.</p><p>Adjoint has this seemingly amazing capability to design aero surface for you but changing surface according to sensitivity to a cost function (usually cl or cd in our case). But that's so far out there that it's not worth pursuing. What is worth pursing, however, are the sensitivity values themselves.</p><p>If you can have adjoint working and solve for sensitivities, you can use it to inform you the aero intents you want to pursue. If adjoint says less inwash helps undertray Cl, you then know you should focus on that. Of course this is a trivial example, but adjoint can you in more nuanced areas. But you should also be careful about adjoint as well. UIUC designed their rear wing with adjoint, but they couldn't physically explain so of their design features. Don't be UIUC.</p><p>It's also worth noting that adjoint in STAR-CCM+ requires coupled solver, for whatever reason. And that adjoint is extremely memory intensive. This is definitely not something you can run on a regular mesh even if works for the primal solution.</p><p><strong><u>Geometry Accuracy vs. Stability</u></strong></p><p>Before the fall of 2021, the team has always been on the side of stability in the geometry accuracy vs. stability debate. Then, Raunaq decided to go with increased accuracy. Sure, geometries like bolts and nuts were defeatured, but the engine was still an engine. The idea is that this gives us the best geometric accuracy. But I am not sure this is the best way to go about it.</p><p>Sure you can introducing maybe a point of error by defeaturing the engine or simply replace it with a block, but you probably get more than a point in stability, essentially reducing absolute errors in that sense. But more importantly, defeaturing the engine should not cause trends to change, so you are not really losing anything in terms of correlation. And you will probably reduce cell count and improve solution speed with that. Definitely worth look into and find out what's the optimal.</p><p><u><strong>DES</strong></u></p><p>We haven't ran DES since 2019, and I think it is time to revive it. DES is a completely different model to RANS so it will provide valuable correlation information (more about this in correlation thought). Plus it provides pretty videos.</p><p><u><strong>Cornering Environment</strong></u></p><p>This can be easiest thing to do on the list or the hardest. Post proc for cornering environment has always been terrible. It doesn't produce usable CpT plots and velocity plot due to the variable speed from the inside of the car to outside. This is the biggest reason I personally have not used cornering environment for design at all. Fixing it could be as simple as a reference frame change, or much much more. You will have to look into it.</p><p>Also, cornering environment doesn't currently support crosswind, so that might be worth looking into. We used to have this capability then we lost it in fall 2021. Because it's just a nightmare to deal with the non-inertial reference frames and boundary conditions. But if you can fix post proc, and add crosswind support, cornering environment might be worth running more often.</p><p><u><strong>Chassis Slip Angle</strong></u></p><p>Here is a cool thing you and the VD nerds can do together. There are 13 things affecting yaw moment, 12 of which you don't care about, but the last one is aero. If you implement chassis side slip into cornering environment, VD nerds can come up with a more accurate MMM.</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

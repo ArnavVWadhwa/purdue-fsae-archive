@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Chassis Torsional Rigidity and Lateral Load Transfer Distribution Analysis (Beam and Truss FEA)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728897.html">Design PF20 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2020-Chassis-Design-Documentation_132157411.html">2020 Chassis Design Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Chassis Torsional Rigidity and Lateral Load Transfer Distribution Analysis (Beam and Truss FEA)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Jan 18, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>model location: Z:\2020\3_Suspension\01_Desigh\03_Structures\CHASSIS</p><p>post processing to determine LLTD (lateral load transfer distribution) effect: Z:\2020\9_Technical\1_CAD\2_Chassis\6_Simulations\Stephen's Spring FEA\LLTD_ANALYSIS_V1.xlsx</p><h1 id="ChassisTorsionalRigidityandLateralLoadTransferDistributionAnalysis(BeamandTrussFEA)-Geometry">Geometry</h1><ul><li>Use wireframe. This should be curves in NX. Generally already exists for chassis. But may want to add:<ul><li>Something to act as tabs for the steering rack</li><li>Points for things that are mounted to a node that does not already have a dedicated point (only place I ran into this in 2020 was the rear shocks mounting to the big tube back there)</li></ul></li><li>Make it for suspension. Should include:<ul><li>Control arms, tierods, pushrods</li><li>A set of links representing upright. Connect UCA, LCA, tierod point, and wheel center</li><li>A set of links representing rockers. Connect pivot, shock point, and pushrod point. Include a line going from the rocker pivot to the rocker axis point (see I knew there was a reason I always included this in sus points file). This line makes defining the axis of rotation go much better.</li><li>A link representing the steering rack Could break it up at mounting points for additional fanciness. This would allow connecting rack to chassis at proper points</li></ul></li><li>Export as step file being sure to include curves in the .step export window</li></ul><p><br/></p><h1 id="ChassisTorsionalRigidityandLateralLoadTransferDistributionAnalysis(BeamandTrussFEA)-GeometryImportintoAnsysWorkbench">Geometry Import into Ansys Workbench</h1><ul><li>Make a new static structural dealio in workbench. Right click on the geometry bar and select properties<ul><li>In properties, turn on &quot;line bodies&quot;</li></ul></li><li>Right click geometry bar again and import the geometry</li><li>Right click geometry bar one last time and select &quot;edit in design modeler&quot;</li><li>Once in design modeler, generate the part</li><li>Click concepts on the top bar. Go to cross sections and make as many tube cross sections as you need.</li><li>Now you need to assign each tube cross section to the correct line bodies. Have fun</li><li>I reccomend bringing in the chassis, suspension, and torsion test rig as separate items, then merging models.</li></ul><p><br/></p><h1 id="ChassisTorsionalRigidityandLateralLoadTransferDistributionAnalysis(BeamandTrussFEA)-Modelpreparation(foreachmodel)">Model preparation (for each model)</h1><ul><li>All line bodies will be assigned to be beams from the start. For anything that needs to be a two-force member, change it to link.</li><li>For all links, do local mesh sizing and set divisions to 1. This avoids making a floppy chain of two-force members.</li><li>Add a mesh edit &quot;node merge group&quot;. Bring down the tolerance until the number of nodes merged stops being reduced. Goal is to assure no nodes that are not supposed to merged get merged. If this happens, element length is 0 and the solver gets sad</li><li>For the chassis itself, performing a model analysis to make sure that all elements are connected properly. Fix rear suspension nodes for modal analysis (or really any three nodes that aren't in a line)</li></ul><p><br/></p><h1 id="ChassisTorsionalRigidityandLateralLoadTransferDistributionAnalysis(BeamandTrussFEA)-ModelCombining">Model Combining</h1><ul><li>Make a new static structural and link each submodel model line to the combined model model line</li><li>Connect suspension link elements to chassis nodes with body to body fixed connections</li><li>Use revolute joints for rockers. by clicking both vertices on the rocker axis line, ansys will figure out to place the z axis (revolute axis) in line. Move coordinate system to one of the rocker axis vertices.</li><li>Use body to ground revolute joint for torsion test rig thing.</li><li>Run modal analysis to find any bad connections, floppy links, etc.</li></ul><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Harness: Requirements</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="246343627.html">Harness | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Harness: Requirements
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Nov 23, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="Harness:Requirements-Background:">Background:</h3><p>Before any progress can be made on a pinout one must first determine what the requirements are for a given wiring harness. These will vary slightly from year to year as different innovations and vehicle architecture decisions guide the hand of harness development, but many will carry over and are fundamental to the successful operation of any internal combustion Formula SAE vehicle. </p><h3 id="Harness:Requirements-Rules:">Rules:</h3><p>In addition to vehicular requirements, the rules play a major role in determining the required components, function, and implementation of a wiring harness. These will change every year so it is important to familiarize one's self with them frequently as there are a lot of rules pertaining to vehicle electronics. The majority of these focus on shutdown systems which should not be neglected early on. One in particular that the team has neglected in the past, sees to it that shutdown systems are enacted through an analog circuit and not using any software.</p><p><br/>A copy of the 2024 electronics rules can be found here<span style="color: rgb(0,0,128);"> <span style="color: rgb(153,51,102);"><em>(keep this file up to date with changes that happen throughout the years)</em></span></span>:</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/280562245/PF24_ELE_Rules.xlsx?version=1&amp;modificationDate=1700786869000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/280562245/PF24_ELE_Rules.xlsx?version=1&amp;modificationDate=1700786869000&amp;api=v2" data-linked-resource-id="280562251" data-linked-resource-type="attachment" data-linked-resource-container-id="280562245" data-linked-resource-default-alias="PF24_ELE_Rules.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF24_ELE_Rules.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/280562251/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="280562245" data-linked-resource-id="280562251" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h3 id="Harness:Requirements-Carry-OverComponents:">Carry-Over Components:</h3><p>Here is a list of all the components that are highly likely to carry over from year to year:</p><ul><li>Powertrain:<ul><li>Crankshaft Position Sensor</li><li>Camshaft Position Sensor</li><li>Fuel Pump</li><li>Fuel Pressure Sensor</li><li>Fuel Temperature Sensor</li><li>Ignition Coil(s)</li><li>Fuel Injector(s)</li><li>Ignition Control Module</li><li>Manifold Pressure Sensor</li><li>Inlet Air Temperature Sensor</li><li>Throttle Position Sensor</li><li>Gear Position Sensor</li><li>Lambda Sensor</li><li>Lambda to CAN Module (LTC)</li><li>Coolant Temperature Sensor(s)</li><li>Radiator Fan(s)</li><li>Water Pump</li><li>Oil Pressure Sensor</li><li>Oil Temperature Sensor</li></ul></li><li>Suspension:<ul><li>Damper Position Sensors (Shock Pots)</li><li>Wheel Speed Sensors</li></ul></li><li>Chassis:<ul><li>Brake Pressure Sensors</li><li>Steering Position Sensor</li></ul></li><li>Vehicle:<ul><li>Electronic Control Unit (ECU)</li><li>Power Distribution Module (PDM)</li><li>Color Dash</li><li>Inertial Measurement Unit (IMU)</li><li>Global Position Sensor (GPS)</li><li>Transponder</li><li>Brake Light</li><li>Cockpit Main Switch (ESTOP)</li><li>Brake Overtravel Switch (BOTS)</li><li>Master Switch</li><li>Starter Button</li><li>Starter Relay</li><li>Starter Motor</li><li>Rectifier</li><li>Battery</li><li>Terminating Resistor x 2</li><li>Ethernet Output</li><li>Timing Beacon Reciever (BR2)</li><li>USB to CAN Output (UTC)</li></ul></li></ul><h3 id="Harness:Requirements-NewComponents:">New Components:</h3><p>New components must be addressed &quot;relentlessly&quot; so that communication errors are not made. Their process of implementation should be tracked in a central location and there should be a frequent line of communication between the harness designer and the designers of the system which requires additional/changed electrical functionality. The easiest way to go about this is likely to have system designers fill out a component request form early in the design cycle. Unfortunately, most people will not fill this out as they either do not know enough about their system yet or do not care enough over the summer to complete this task. Most significant changes, however, will be occurring this early in the design cycle so this is still a good way to detect major design changes that may alter harness architecture decisions. </p><p><br/></p><p>Here is an example of an implementation of a component request form from PF24:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280562245/280562254.png" data-image-src="attachments/280562245/280562254.png" data-unresolved-comment-count="0" data-linked-resource-id="280562254" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-23_20-8-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280562245" data-linked-resource-container-version="9" alt=""></span></p><p><strong>Lessons Learned: </strong>Try to make this process as easy as possible for people. Asking them to go into the drive over the summer when they would need the VPN and care very little was surely a mistake. A <strong>quick </strong>Microsoft form would have been much more appropriate here.</p><h3 id="Harness:Requirements-StayingOrganized:">Staying Organized:</h3><p>It is recommended that a list of all components be kept in a central location accompanied by, at a minimum, their datasheets and links, but ideally, this list is used to keep track of much more than this including which components have been implemented, notes, and anything else pertinent to the organization of components within the design of the harness. This will take a little bit of time upfront to set up but will save tremendous amounts of time in the long run and help ensure that no items are forgotten upon arrival to testing season which has been a historically common occurrence within Purdue FSAE harness design.</p><p><br/></p><p>Here is an example of an implementation of a component master list from PF24:</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/280562245/Component_Masterlist_PF24.xlsx?version=1&amp;modificationDate=1700788792000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/280562245/Component_Masterlist_PF24.xlsx?version=1&amp;modificationDate=1700788792000&amp;api=v2" data-linked-resource-id="280562257" data-linked-resource-type="attachment" data-linked-resource-container-id="280562245" data-linked-resource-default-alias="Component_Masterlist_PF24.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Component_Masterlist_PF24.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/280562257/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="280562245" data-linked-resource-id="280562257" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h3 id="Harness:Requirements-Timeline:">Timeline:</h3><ul><li>Throughout Summer → Begin to formulate a list of all required components for that year's vehicle</li><li>Start of School → &quot;Finalize&quot; as many components as possible to reduce pinout changes down the line</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562245/280562251.xlsx">PF24_ELE_Rules.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562245/280562254.png">image-2023-11-23_20-8-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280562245/280562257.xlsx">Component_Masterlist_PF24.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : ETC PF24 | DCR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836072.html">ETC PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : ETC PF24 | DCR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Jul 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/265097234/PF24%20ETC%20DCR.pptx?version=1&amp;modificationDate=1690817825000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/265097234/PF24%20ETC%20DCR.pptx?version=1&amp;modificationDate=1690817825000&amp;api=v2" data-linked-resource-id="267659785" data-linked-resource-type="attachment" data-linked-resource-container-id="265097234" data-linked-resource-default-alias="PF24 ETC DCR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF24 ETC DCR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/267659785/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="265097234" data-linked-resource-id="267659785" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></strong></p><p><strong>Project Scope (<span style="color: rgb(23,43,77);">Present problem statement and stakeholders)</span>:</strong></p><p><span style="color: rgb(23,43,77);">The team would like to implement a robust electronic throttle control system that meets all redundancy and emergency shutdown rules.</span></p><p><br/></p><p><span style="color: rgb(23,43,77);">Stakeholders</span></p><ul><li><span style="color: rgb(23,43,77);">Powertrain</span><ul><li><span style="color: rgb(23,43,77);">Throttle maps for engine tune</span></li><li><span style="color: rgb(23,43,77);">Implementation of the electronic throttle body on engine (intake)</span></li><li><span style="color: rgb(23,43,77);">New tune for throttle body</span></li></ul></li><li><span style="color: rgb(23,43,77);">Chassis</span><ul><li>Accelerator pedal position sensor</li><li>Brake pressure sensors</li><li>Location of BSPD PCB</li></ul></li></ul><p><strong>Design Requirements (<span style="color: rgb(23,43,77);">Present known requirements, ie. Vehicle Performance, rules, and define unknown requirements)</span>:</strong></p><p>Rules - On the drive</p><ul><li>Notice of intent and detailed FMEA</li><li>Redundancy on all sensors used for ETC<ul><li>Cut power if sensors differ by more than 10%</li></ul></li><li>BSPD circuit<ul><li>Triggers shutdown circuit and doesn't reset until the master switch is cycled</li></ul></li><li>Individually disconnectable sensors</li><li>Implementation of pulldown resistors for open circuit detection</li></ul><p><br/></p><p>Known Requirements</p><ul><li><span style="color: rgb(23,43,77);">Maximize Competition Points</span><ul><li>Include necessary testing points for inspection (to run)</li><li>Perform adequate analysis for submission (to run)</li><li>Select components that meet rules requirements (to run)</li></ul></li><li><span style="color: rgb(23,43,77);">Driver Safety</span><ul><li>Adequate redundancy with both throttle position and pedal position sensors</li><li>Reliable BSPD system</li><li>Reliable throttle plausibility programming</li><li>Ensure that power remains off until a full reset of vehicle power</li><li>Inclusion of pulldown/pullup resistors on all critical sensors</li></ul></li><li><span style="color: rgb(23,43,77);">System Reliability</span><ul><li>Manufactured PCB for final BSPD circuit</li><li>Dustproof enclosure for sensitive electronic components</li><li>Accurate sensor calibration for brake pressure, throttle position, and accelerator pedal position sensors</li><li>Quick response from the throttle according to the accelerator pedal</li><li>Accurate throttle vs braking table to prevent accidental ETC shutdown</li></ul></li><li><span style="color: rgb(23,43,77);">System Serviceability</span><ul><li>Clear component layout on the PCB to allow for the replacement of faulty components</li><li>Independently disconnectable sensors</li><li>ETC control circuits do not affect the placement of other critical vehicle components</li></ul></li><li><span style="color: rgb(23,43,77);">Driver Confidence</span><ul><li>Customizable pedal maps for each driver's preference</li><li>Quick response time from pedal to throttle</li><li>Clear indication of when system shutdown will occur</li></ul></li></ul><p><br/></p><p><span style="color: rgb(23,43,77);">Unknown Requirements</span></p><ul><li><span style="color: rgb(23,43,77);">Voltage specifications of position sensors</span></li><li><span style="color: rgb(23,43,77);">Wire sizing for sensors to BSPD</span></li></ul><p><br/></p><p><strong>Design Overview (Rough concepts for solution + Trade study with a recommended path forward):</strong></p><p>BSPD</p><ul><li>Comparator circuit using <u><a class="external-link" href="https://www.instructables.com/BSPD-for-Formula-Student/" rel="nofollow">this</a></u> as a guide</li><li>Utilize logic gates and <u><a class="external-link" href="https://electronics.stackexchange.com/questions/379296/latching-relay-with-kill-switch" rel="nofollow">this</a></u> for a possible one-time shutdown</li></ul><p>Throttle Body</p><ul><li><a class="external-link" href="https://www.summitracing.com/parts/bch-0280750148#overview" rel="nofollow">https://www.summitracing.com/parts/bch-0280750148#overview</a></li><li>Needs to be integrated with intake</li></ul><p>Accelerator Pedal Sensor</p><ul><li><a class="external-link" href="https://johnreedracing.com/products/penny-and-giles-tps280dp-position-sensor" rel="nofollow">https://johnreedracing.com/products/penny-and-giles-tps280dp-position-sensor</a></li><li>Two separate potentiometers (cheaper option)<ul><li><a class="external-link" href="https://www.california-diesel.com/products/g32-wabash-371-rps-contancting-rotary-position-generic-sensor?pr_prod_strat=use_description&amp;pr_rec_id=015f394c6&amp;pr_rec_pid=6009312739496&amp;pr_ref_pid=6009312936104&amp;pr_seq=uniform" rel="nofollow">https://www.california-diesel.com/products/g32-wabash-371-rps-contancting-rotary-position-generic-sensor?pr_prod_strat=use_description&amp;pr_rec_id=015f394c6&amp;pr_rec_pid=6009312739496&amp;pr_ref_pid=6009312936104&amp;pr_seq=uniform</a></li></ul></li><li>Needs to be integrated with the accelerator pedal</li></ul><p><s>Pedal Linkage</s></p><ul><li><s><a class="external-link" href="https://www.summitracing.com/parts/til-72-792" rel="nofollow">https://www.summitracing.com/parts/til-72-792</a></s></li></ul><p><strong>Cost (<span style="color: rgb(23,43,77);">Discuss rough budget)</span>:</strong></p><p>Throttle Body - $97.99</p><p>Pedal Sensor - $230</p><p>Pedal Linkage - $123.25</p><p>Misc Comp. (PCB, IC components, Enclosures) - $250</p><p><br/></p><p>Rough Total Cost - $701.24</p><p><strong>Schedule (<span style="color: rgb(23,43,77);">Discuss schedule, constraints, etc.)</span>:</strong></p><p>DCR Presentation done by end of July</p><p><br/></p><p>BSPD Development</p><ul><li>Full LTSPICE simulation of BSPD with delay</li><li>Integration with latching shutdown circuit and other components in the shutdown circuit</li><li>Oscilloscope testing for BSPD circuit to ensure accurate time delays</li></ul><p>Engine Integration</p><ul><li>Work with powertrain to mount new throttle body onto intake and engine</li><li>Will most likely need custom couplers and brackets</li></ul><p>Pedalbox Integration</p><ul><li>Work with chassis to attach accelerator pedal sensors to accelerator pedal</li><li>Design will depend on type of sensor chosen<ul><li>linear pots will take up more space than rotary pots</li><li>Needs to be mounted in a way to ensure two separate transfer functions</li></ul></li></ul><p>Harness integration</p><ul><li>Integrate new sensors to BSPD and to ECU</li></ul><p>Test with ECU and PDM </p><ul><li>Mount accelerator pedal sensors on something and test system integration with M1 Build<ul><li>Use a potentiometer for brake pressure simulating</li></ul></li></ul><p>Deployment on Dyno for final test and integration on the car - FOR NEXT YEAR</p><p><br/></p><p><strong>Analysis (Mathematical models that will be used):</strong></p><p>LTSPICE for circuit simulation and planning</p><p>General RC circuit and op amp equations for time delay calculations</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265097234/267659785.pptx">PF24 ETC DCR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
