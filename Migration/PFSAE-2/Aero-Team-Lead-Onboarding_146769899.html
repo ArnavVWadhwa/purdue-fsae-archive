@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Aero Team Lead Onboarding</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Leads_132156740.html">Team Leads</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Lead-Onboarding_146773493.html">Team Lead Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Aero Team Lead Onboarding
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (green338)</span>, last modified by <span class='editor'> Unknown User (agarw162)</span> on Apr 19, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>ongratulations, you are aero team lead. Here is what should be done before any further aero development takes place. I would recommend doing all of these tasks yourself, previous data should really just be used as a sanity check or reference. Doing these tasks will help build the skills that are important later in the design process. These tasks should roughly be done in the order shown here</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Task</th><th colspan="1" class="confluenceTh">How to</th><th class="confluenceTh">Significance</th><th class="confluenceTh">Location of previous data (update this each year - currently data from PF20/PF21)</th></tr><tr><td class="confluenceTd">CFD Mesh Independence Study (do before any CFD)</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>Take the previous year's CFD geometry and set up a full car, 0 yaw simulation. Select a range of base sizes to run and record important parameters (Cl, Cd, mass flow) and plot these to determine when the results are independent of mesh size (generally 2-3 increases in cell count without a significant change in results). Example below is PF21 mesh independence study. Chosen cell count was approx. 35mn cells (0.22 base size). Of course, make sure that your absolute values are ballpark with tested values (which you hopefully have from spring testing prior to you becoming team lead).</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/146769899/146769907.png" data-image-src="attachments/146769899/146769907.png" data-unresolved-comment-count="0" data-linked-resource-id="146769907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Cell Count vs Cl_A.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146769899" data-linked-resource-container-version="5" alt=""></span></p></div></td><td class="confluenceTd"><p>Mesh independence makes sure of a couple things:</p><ol><li>You are seeing results that are a function of geometry, not what shape the mesh happens to take on. This will be critical when making design decisions as you can be confident that a part that makes more downforce is actually faster and does not just happen to mesh a specific way.</li><li>You are running your sims as quickly as possible. If you are mesh independent using the lowest number of cells possible, then you are running your sims as fast as possible while staying mesh independent.</li><li>You are taking care of the above topic before you start designing to specific features and way before design. Trying to work backwards to justify a cell count is always going to end up with you either lying about the data or having to really bend the results to make it look like you are mesh independent. Design judges can see through gaps in the process very easily and most importantly <strong>your parts will be slower if you are not mesh independent!!!</strong></li></ol></td><td class="confluenceTd"><a class="external-link" href="https://docs.google.com/spreadsheets/d/1ZZX7cJnSHsjN4NO8Qh9gABbtRSzr6qKJDXd16YFDbSg/edit#gid=1764709983" rel="nofollow">https://docs.google.com/spreadsheets/d/1ZZX7cJnSHsjN4NO8Qh9gABbtRSzr6qKJDXd16YFDbSg/edit#gid=1764709983</a></td></tr><tr><td class="confluenceTd">Inter Subteam Collaboration</td><td colspan="1" class="confluenceTd">Any items that require work between aero and other subteams (examples are bulkhead position/size, rad placement, engine height, intake position) should all be performed early in the design process. Run comparisons of the different options, ideally for each proposed aero design, and make a decision with your fellow team leads.</td><td class="confluenceTd"><p>After deciding on the highest level items (engine type, frame type), the mid level decisions will come next. You want to take care of these early because</p><ol><li>Determining what items are where saves you redesigning parts because of late design changes.</li><li>Cross subteam collaboration looks great in design and makes the car faster. You will notice a common theme in here that things that look good in design win you a small amount of points in that event, but (more importantly) make the car faster as well.</li></ol></td><td class="confluenceTd">Z:\2020\3_Suspension\01_Desigh\02_LapSim\Vehicle_Architecture_Tradeoffs_v8.xlsx - Aero trades tab</td></tr><tr><td class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146769899/146769907.png">Cell Count vs Cl_A.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Apr 24, 2024 09:22</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
