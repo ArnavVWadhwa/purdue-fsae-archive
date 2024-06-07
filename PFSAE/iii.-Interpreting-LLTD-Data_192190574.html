@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : iii. Interpreting LLTD Data</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF22-Frame-Design_192190053.html">PF22 Frame Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="198508862.html">2. LLTD / Torsion Test Design Decisions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : iii. Interpreting LLTD Data
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Dec 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="iii.InterpretingLLTDData-ExportingTableData">Exporting Table Data</h1><p>By entering the Parameters section, we can find this table to add design points (DPs) in addition to the current DP 0. This is useful for taking the frame from extremely springy to fully rigid by varying the Young's Modulus of the tube material. Export the table data by right-clicking the table, then clicking &quot;Export Table Data as CSV&quot;.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192190574/200378088.png" data-image-src="attachments/192190574/200378088.png" data-unresolved-comment-count="0" data-linked-resource-id="200378088" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-10_19-12-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192190574" data-linked-resource-container-version="7" alt=""></span></p><h1 id="iii.InterpretingLLTDData-InterpretingTTData">Interpreting TT Data</h1><p>With the displacement probe on the front suspension nodes, we can calculate a torsional stiffness value used to compare chassis iterations. Parameterize the X and Y displacements of these nodes, then in excel use some vector math to find the angular displacement of these nodes. This is shown by angle alpha in the image below. Divide the moment applied by the weight on the torsion bar by this angle alpha and we now have a torsional rigidity value. This is useful for the x value of a design point when comparing different frame concepts.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/192190574/200378101.png" data-image-src="attachments/192190574/200378101.png" data-unresolved-comment-count="0" data-linked-resource-id="200378101" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="MicrosoftTeams-image.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192190574" data-linked-resource-container-version="7" alt=""></span></p><h1 id="iii.InterpretingLLTDData-InterpretingLLTDData">Interpreting LLTD Data</h1><p>From the <a href="198508862.html">2. LLTD / Torsion Test Design Decisions</a> page, we know how to compute LLTD as a proportion of vehicle weight. To find LLTD sensitivity, subtract the LLTD of the case with 350 lb/in springs from the LLTD of the case with stiffer 400 lb/in springs in the front. This yields a % change in LLTD. Now, for each design point plot this % change against the torsional stiffness. Use this tool to compare designs, but don't lose perspective of how these designs compare to a fully rigid frame and the mass cost associated with adding tubes.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192190574/200378088.png">image2021-12-10_19-12-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192190574/200378101.png">MicrosoftTeams-image.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

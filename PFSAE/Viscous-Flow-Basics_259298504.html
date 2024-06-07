@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Viscous Flow Basics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Viscous Flow Basics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 23, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Limitations of Inviscid Flow</strong></u></p><p>While inviscid flow is a convenient tool for analyzing simple, well attached flows, it doesn't tell the true story when the geometry is more complicate. Due to the lack of entropy generation in inviscid flow, it can not predict phenomena like flow separation and boundary layer growth. In the context of a racecar, or any flow that's more complex than NACA 2412 in low angles of attack, it is extremely important to take phenomena into account.</p><p><u><strong>Role of Viscosity</strong></u></p><p><em>Viscosity</em> is a property of a fluid just like density. Institutively, viscosity is the how easy a fluid moves. Water flows easier than honey, meaning it's less viscous. Viscosity does depend on temperature, which you will notice if you heat up oil. But since we don't take temperature into account, viscosity can be treated as a constant in the case of a FSAE car. In certain fluid, viscosity changes with strain rate, they are called non-Newtonian fluids, and we don't really care about them since air isn't one of those fluids. </p><p>There are two quantities of viscosity you will see out there, one is dynamic viscosity and the other is kinematic viscosity. Kinematic viscosity is simply dynamic viscosity divided by fluid density. Dynamic viscosity is the more the one that's more commonly referred to when people talk about viscosity, and I, too, will refer dynamic viscosity as viscosity in the education articles. </p><p>Mathematically speaking, viscosity a scaling factor between velocity gradient and shear stress. </p><p>The diagram below shows an example of what's known as <em>couette flow</em>, where the lower wall is fixed and the upper wall moves at a constant speed. Couette flows shows the role of viscosity extremely well.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259298504/259298505.png" data-image-src="attachments/259298504/259298505.png" data-unresolved-comment-count="0" data-linked-resource-id="259298505" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-11_23-40-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298504" data-linked-resource-container-version="2" alt=""></span></p><p>Note, you might also see something called eddy or turbulent viscosity. It is a concept I will explain in a later article on CFD. For now, just know that turbulent viscosity is not a property of a fluid (it's not even physical) and it does not relate to the molecular viscosity we are talking about here.</p><p><u><strong>Viscous Wall Boundary Condition</strong></u></p><p>In inviscid flow, wall boundary condition we used was a tangential flow boundary condition, where flow can't pass into or out of the wall. Now that we added viscosity into the equation, we have friction to think about. The wall boundary condition used in viscous flow is called <em>no-slip</em> condition. No-slip condition means that relative velocity at the surface is 0, in other words, velocity of fluid at wall is the same as the velocity of the wall itself. Meaning, if you try to display speed on the surface of the car in CFD, you get 0 everywhere.</p><p>It is not common knowledge, but no-slip condition is not actually 100% accurate. In the real world, the flow is not is at 0 velocity relative to the wall, but extremely close to 0. But the error is so small that you can treat it as correct, just like you can treat Newtonian mechanics (as opposed to relativistic physics) as correct.</p><p><u><strong>Reynolds Number</strong></u></p><p><em>Reynolds number</em> is non-dimensional number that has a huge impact on aerodynamics. Physically, Reynolds number is the ratio of inertial forces and viscous force. The higher the Reynolds number, the more the inertial forces dominates, which you can think of as having higher inertia, or less &quot;willingness&quot; of fluid to change direction. While this might look like a simple relationship, it has huge implications which I will explain as you read through the viscous flow section.</p><p>Reynolds number is calculated as follows:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="76" src="attachments/259298504/259298506.png" data-image-src="attachments/259298504/259298506.png" data-unresolved-comment-count="0" data-linked-resource-id="259298506" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-11_23-48-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298504" data-linked-resource-container-version="2" alt=""></span></p><p>L in this case is the characteristic length. Since length is part of the equal, Reynolds numbers changes depend on where on the geometry you are talking about. Therefore, people usually talk about Reynolds number in terms of the maximum Reynolds number a geometry sees, without specifying it most of the times. For an airfoil, that occurs at the trailing edge, and you would substitute chord length in for L. </p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298504/259298505.png">image-2023-5-11_23-40-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298504/259298506.png">image-2023-5-11_23-48-3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

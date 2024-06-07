@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Simulation of Epoxied Joint (Suspension)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297361.html">Manufacturing | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="222431600.html">2023 (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="233832912.html">PF23 Testing (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="247662731.html">Carbon Tube Testing (Suspension)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Simulation of Epoxied Joint (Suspension)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span> on Mar 04, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/253168436/Introduction%20to%20Modeling%20Structural%20Adhesives%20White%20Paper.pdf?version=1&amp;modificationDate=1677969852000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/253168436/Introduction%20to%20Modeling%20Structural%20Adhesives%20White%20Paper.pdf?version=1&amp;modificationDate=1677969852000&amp;api=v2" data-linked-resource-id="253168437" data-linked-resource-type="attachment" data-linked-resource-container-id="253168436" data-linked-resource-default-alias="Introduction to Modeling Structural Adhesives White Paper.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Introduction to Modeling Structural Adhesives White Paper.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/253168437/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="253168436" data-linked-resource-id="253168437" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>&quot;Introduction to Modeling Structural Adhesives&quot; was used as in initial baseline for modelling the joints and getting a rough idea of what parameters we need to obtain from testing. </p><h1 id="SimulationofEpoxiedJoint(Suspension)-ModellingMethods">Modelling Methods</h1><h2 id="SimulationofEpoxiedJoint(Suspension)-LinearElastic">Linear Elastic</h2><p>3M says these are &quot;typically used for initial evaluations&quot;. They only require Hook's law and only require two material properties. This model is limited to small strains and to epoxies that exhibit linear behavior at small strains. </p><h2 id="SimulationofEpoxiedJoint(Suspension)-Hyperelastic">Hyperelastic</h2><p>For flexible structural adhesives, (typically polyurethanes) </p><p><strong><span style="color: rgb(255,0,0);">Strain energy density function, not sure what this means</span></strong></p><p>Differences between linear elastic and hyperelastic</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/253168436/253168442.png" data-image-src="attachments/253168436/253168442.png" data-unresolved-comment-count="0" data-linked-resource-id="253168442" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-4_18-21-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="253168436" data-linked-resource-container-version="1" alt=""></span></p><p>&quot;Uniaxial, biaxial, and planar tension&quot;, describing stress states that material models can be derived from physical testing</p><h3 id="SimulationofEpoxiedJoint(Suspension)-Mooney-Rivlinmodel:">Mooney-Rivlin model: </h3><p>Experimentally determined coefficients and &quot;<strong><span style="color: rgb(255,0,0);">first and second deviatoric strain invariants... elastic volume ratio</span></strong>&quot;</p><h2 id="SimulationofEpoxiedJoint(Suspension)-Viscoelastic">Viscoelastic</h2><p>All in all, structural adhesives are viscoelastic materials, just like tires. </p><p>Temperature and strain dependent</p><p><strong>Higher stiffness at faster strain rates and lower temperatures</strong></p><p>&quot;Viscoelastic material models are of interest to simulate creep, stress relaxation, and impact events.&quot;</p><p>possibly large simulation &quot;time penalty&quot; (it takes long to run)</p><h3 id="SimulationofEpoxiedJoint(Suspension)-Smallstrains">Small strains</h3><p>can be modeled as linear viscoelastic materials</p><p>&quot;<span style="color: rgb(255,0,0);"><strong>Strain history</strong></span>&quot; </p><p>relaxation modulus, which is approximated with a prony series</p><p>more information in &quot;Constitutive models for 3M Pressure sensitive adhesives&quot; - couldn't find it <img class="emoticon emoticon-sad" src="images/icons/emoticons/sad.svg" data-emoticon-name="sad" alt="(sad)" data-emoji-short-name=":sad:"/></p><h2 id="SimulationofEpoxiedJoint(Suspension)-LinearElasticPlastic">Linear Elastic Plastic</h2><p><br/></p><h2 id="SimulationofEpoxiedJoint(Suspension)-Viscoelastic.1">Viscoelastic </h2>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/253168436/253168437.pdf">Introduction to Modeling Structural Adhesives White Paper.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/253168436/253168442.png">image-2023-3-4_18-21-3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

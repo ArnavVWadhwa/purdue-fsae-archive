@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Boundary Layers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Boundary Layers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 13, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>What is a Boundary Layer</strong></u></p><p><em>Boundary layer</em> is a layer of slow moving flow near the wall. Boundary layer forms due to friction between the wall and fluid particles. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259298621/259298623.png" data-image-src="attachments/259298621/259298623.png" data-unresolved-comment-count="0" data-linked-resource-id="259298623" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-12_9-22-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298621" data-linked-resource-container-version="1" alt=""></span></p><p>Due to the friction, there is significant total pressure loss in the boundary layer. The size of boundary layer varies greatly on different geometries. On the front wing of a FSAE car, the boundary layer is usually a few millimeters thick (where thickness is defined as the height above the surface where the flow reach 99% freestream velocity) on the front wing, but 10+ mm thick on the rear wing and diffuser; at Stellantis wind tunnel without moving ground, the boundary layer at the start of the test section is 25 mm despite their best effort to reduce its size. Boundary layer growth is complicated, but some of the most prominent factors affecting boundary layer growth are:</p><ol><li>Boundary layer grows as flow travels downstream, since the longer it moves, the more energy gets taken out by friction, corresponding to higher drag.</li><li>The rate of boundary layer growth is also affect by pressure gradient affect the flow. If you are in a favorable pressure gradient, boundary layer grows much slower, because the pressure gradient is exerting a force is the direction of motion of the fluid particle, reducing the rate at which boundary layer grows.</li><li>Another factor affecting rate of boundary layer growth is the amount of turbulence. I will not go into too much details here as we will have a section on turbulent boundary layers. And I will lay out the precise definition of turbulence in an article on CFD, as it is often misunderstood.</li></ol><p>It is common to approximate wall normal pressure gradient as 0, as in, pressure does not change from the surface to the top of the boundary layer. This approximation is made to simply the Navier Stokes equation to derive a few quantities we will talk about later in this article and in later articles. A point that textbooks tend to miss out is explaining the reason that this approximation is validate? Since this is significant total pressure loss inside the boundary layer, the boundary layer does not have too much capacity to generate a pressure change.</p><p>In 3D flows, where pressure gradient does not necessarily have to exist in the streamwise direction (e.g. 3D finite wing), boundary layer is also more affected by crossflow pressure gradient than <em>outer flow</em> (flow outside of boundary layer). Since the flow inside the boundary layer is slowed down, the direction of velocity vector is much more easily changed with a small crossflow force. Therefore, if you plot line integral convolution of wall shear stress in CFD or if you use flow viz in real life, the direction shown is not necessarily representative of the outer flow direction.</p><p><u><strong>Boundary Layer Momentum Thickness</strong></u></p><p>As I have mentioned previously, drag is a viscous effect that has its root in total pressure drop. And boundary layer is a layer of total pressure drop. A connection can be made here to easily quantify drag produce by a boundary layer. This connection is called the <em>momentum thickness</em> of the boundary layer. Formally, momentum thickness is defined as the distance you need to offset the surface by to make up for the momentum loss in viscous flow. In other words, if you are running inviscid flow, you need to offset the surface by momentum thickness to match the total momentum loss in viscous flow. </p><p><u><strong>Boundary Layer Displacement Effect (Displacement Thickness)</strong></u></p><p>In the old days, before we had enough computation power to run modern CFD with viscous effect, inviscid solution using various forms of panel method was the only solution that could be achieved. But people wanted to take viscous effects into account as well. How could they do that? Turns out, you can approximate boundary layer as changes to surface geometry. And that's where <em>displacement thickness</em> comes in. Displacement thickness is defined as the distance you need to offset the surface by to make up for the mass flow loss in the boundary layer. People back in the day would offset the airfoil surface by displacement thickness in order to capture some (albeit little) effects introduced by viscous effect without viscous CFD. </p><p>However, there is a trap here that many have stepped into if you take boundary layer displacement effect too far. Say you have a closed jet wind tunnel (wind tunnel with side walls), and you want to collect data on a wing in freestream. To avoid disturbances to the flow field you want to avoid having mounting that directly go to the wing itself. So you decided you are going to mount the wing to the side wall of the wind tunnel. To achieve freestream at the root of the wing where it is mounted, you calculated the displacement thickness of the wall using exact solution for laminar boundary layer on a flat plate, and offset the wing by displacement thickness. What's wrong with your approach? </p><p>The approach is problematic because you used exact solution for laminar boundary layer to calculate the displacement thickness. But displacement thickness does not remain constant when you added another geometry on the flat plate - the wing. Therefore, the amount by which you displaced the wing is not the actual displacement thickness. This is a good but simple lesson on always thinking about how new geometries affect the flow field in unexpected ways, as it is a critical skill you need as an aerodynamist.  </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298621/259298622.png">image-2023-5-12_9-17-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298621/259298623.png">image-2023-5-12_9-22-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298621/259298789.png">image-2023-5-13_10-19-59.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

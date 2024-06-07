@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : FW-13-07</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750832.html">Front Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751366.html">FW Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="FW-13-Series_265098429.html">FW-13 Series</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : FW-13-07
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-012</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width confluenceTable"><colgroup class=""><col class="" style="width: 124.0px;"/><col class="" style="width: 443.0px;"/><col class="" style="width: 271.0px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd">Strake cut</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262833008/262833009.png" data-image-src="attachments/262833008/262833009.png" data-unresolved-comment-count="0" data-linked-resource-id="262833009" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_8-51-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Added a step to the strake to discretize the vortex. Given a vortex and two vortices with the same combined strength, two vortices with the same combined strength will usually be less lossy. </p><p>The worry is how well the vortex will be discretized, since the physical size of the vortex that form on the first edge will be big, big enough that the second vortex will form straight into it. Since they are co-rotating, they might just merge and still be a single vortex.</p><p>Another worry is the cut increases the total inwash produced by the outer vortex, which will be bad for undertray performance.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd">Front wing outwash vane</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833008/262833010.png" data-image-src="attachments/262833008/262833010.png" data-unresolved-comment-count="0" data-linked-resource-id="262833010" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_8-55-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>The idea is shed a vortex and place the vortex core right above the inner edge of the tire. The downwash and outwashing sides will suppress tire wake and front wing wake, the upwashing side will depower whatever is happening behind the tire (although the physical presence of the flow field is questionable), and the inwashing side will inwash high CpT flow from the side of the car to improve rear wing performance.</p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width confluenceTable"><colgroup class=""><col class="" style="width: 432.156px;"/><col class="" style="width: 208.094px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="153" src="attachments/262833008/262833067.png" data-image-src="attachments/262833008/262833067.png" data-unresolved-comment-count="0" data-linked-resource-id="262833067" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-1-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/262833008/262833068.png" data-image-src="attachments/262833008/262833068.png" data-unresolved-comment-count="0" data-linked-resource-id="262833068" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-2-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Hard to see but two discrete vortices are formed</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="235" src="attachments/262833008/262833069.png" data-image-src="attachments/262833008/262833069.png" data-unresolved-comment-count="0" data-linked-resource-id="262833069" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-2-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">The raised ride height also resulted in outer vortex wake being inwashed a lot quicker</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="246" src="attachments/262833008/262833070.png" data-image-src="attachments/262833008/262833070.png" data-unresolved-comment-count="0" data-linked-resource-id="262833070" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-3-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">The net result is no meaningful change in wake geometry.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833008/262833071.png" data-image-src="attachments/262833008/262833071.png" data-unresolved-comment-count="0" data-linked-resource-id="262833071" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-4-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Front wing lost quite a bit of downforce with this element</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833008/262833073.png" data-image-src="attachments/262833008/262833073.png" data-unresolved-comment-count="0" data-linked-resource-id="262833073" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-4-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Outwashing winglet vortex is higher than I liked. And combined with its relatively weak strength, no meaning impact was made on tire wake.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262833008/262833074.png" data-image-src="attachments/262833008/262833074.png" data-unresolved-comment-count="0" data-linked-resource-id="262833074" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-31_15-5-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262833008" data-linked-resource-container-version="2" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">FC vortex and OW vortex merge almost immediately downstream of the tires despite their physical distance. As it travels downstream, the merged vortex gets outwash by the tire wake vortex, but still produce meaningful downwash on the rear wing. </td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833009.png">image-2023-5-31_8-51-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833010.png">image-2023-5-31_8-55-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833067.png">image-2023-5-31_15-1-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833068.png">image-2023-5-31_15-2-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833069.png">image-2023-5-31_15-2-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833070.png">image-2023-5-31_15-3-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833071.png">image-2023-5-31_15-4-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833073.png">image-2023-5-31_15-4-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262833008/262833074.png">image-2023-5-31_15-5-19.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

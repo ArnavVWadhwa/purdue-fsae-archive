@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Camber and Toe Compliance Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Camber and Toe Compliance Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Jan 21, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This tool sums camber and toe compliance from the chassis, through the control arms, through the upright, and finally the hub and wheel. It generally assumes everything to be in 2d planes.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137596327/Copy%20of%20compliance_summer_v2.xlsx?version=1&amp;modificationDate=1579575029000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/137596327/Copy%20of%20compliance_summer_v2.xlsx?version=1&amp;modificationDate=1579575029000&amp;api=v2" data-linked-resource-id="137596328" data-linked-resource-type="attachment" data-linked-resource-container-id="137596327" data-linked-resource-default-alias="Copy of compliance_summer_v2.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Copy of compliance_summer_v2.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/137596328/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137596327" data-linked-resource-id="137596328" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><br/></p><h3 id="CamberandToeComplianceCalculator-ChassisNodeDisplacement">Chassis Node Displacement</h3><p>For chassis node displacement, loads from <a href="Control-Arm-Loads-Calculator_130164438.html">Control Arm Loads Calculator</a> are applied to a FEM of the chassis. Displacements of three of CA nodes at one corner are compared against one of the nodes as a reference. This is done because the all nodes moving together does not create camber change.</p><p>The lesser of the displacements of the chassis nodes for a single control arm is used because this will dictate the y direction movement at the upright. (The fact that the other node may have moved more will just cause rotation of the control arm the primarily moves the node in the x axis. While actually just solving the x and y displacement would not be difficult, this spreadsheet provides a quick estimate at compliance, which is likely all that is necessary.</p><p><br/></p><h3 id="CamberandToeComplianceCalculator-ControlArmExtension">Control Arm Extension</h3><p>Again, loads from  <a href="Control-Arm-Loads-Calculator_130164438.html">Control Arm Loads Calculator</a> are used. The two-force member calculator in <a href="129009926.html">Structures Analysis Documentation Main Template (and MMPDS instructions)</a> can be used to determine extension. Like chassis node displacement, the lesser extension of the two tubes that make up a control arm is used.</p><p><br/></p><h3 id="CamberandToeComplianceCalculator-UprightNodeDeflection">Upright Node Deflection</h3><p>WIP</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137596327/137596328.xlsx">Copy of compliance_summer_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

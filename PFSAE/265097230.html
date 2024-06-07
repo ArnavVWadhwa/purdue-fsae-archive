@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Dash PF24 | DCR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836068.html">Dash PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Dash PF24 | DCR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Jul 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/265097230/PF24%20Dash%20DCR.pptx?version=1&amp;modificationDate=1690817454000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/265097230/PF24%20Dash%20DCR.pptx?version=1&amp;modificationDate=1690817454000&amp;api=v2" data-linked-resource-id="267659772" data-linked-resource-type="attachment" data-linked-resource-container-id="265097230" data-linked-resource-default-alias="PF24 Dash DCR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF24 Dash DCR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/267659772/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="265097230" data-linked-resource-id="267659772" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></strong></p><p><strong>Project Scope (<span style="color: rgb(23,43,77);">Present problem statement and stakeholders)</span>:</strong></p><p>Problem Statement</p><ul style="list-style-type: square;"><li>A reliable dash that provides safe and easy access to controls and data needed by the driver while also allowing engineers to access the harness easily.</li></ul><p><br/></p><p>Stakeholders</p><ul><li>Chassis<ul><li>Mounting - tabs, depended on FRH</li><li>c125 data</li></ul></li><li>Aerodynamics<ul><li>Carbon plate</li></ul></li><li>Suspension<ul><li>Data logging through c125</li></ul></li><li>Powertrain<ul><li>Start button</li><li>launch control</li></ul></li></ul><p><strong>Design Requirements (<span style="color: rgb(23,43,77);">Present known requirements, ie. Vehicle Performance, rules, and define unknown requirements)</span>:</strong></p><p><strong>Dash</strong></p><p>On front</p><ul><li>C125</li><li><span style="color: rgb(255,0,0);">Estop - cockpit main switch - Rule</span></li><li><span style="color: rgb(255,0,0);">starter button - Rule</span></li><li>launch control rotary</li><li>auto shifting switch</li><li>log button</li><li>fan switch</li><li>Plate</li></ul><p>On back</p><ul><li>USB to CAN</li><li>Bulkhead type connector</li><li>Back cover</li></ul><p>Other requirements</p><ul><li>Low number of connections inside dash</li><li>Water resistant</li><li>Labels for controls</li><li><span style="color: rgb(255,0,0);">Must be within front hoop - Rule</span></li><li>room for brake bias adjuster - Not responsible</li></ul><p>Maximize Competition Points:</p><ul style="text-align: left;"><li>Start Button</li><li>Estop</li><li>Inexpensive</li><li>All controls must be contained within the cockpit<ul style="text-align: left;"><li>Display can be outside but preferred to be inside</li></ul></li></ul><p><span style="color: rgb(23,43,77);">Driver Safety</span></p><ul style="text-align: left;"><li>Estop</li><li>All data/controls are easily visible<ul><li>Accessed easily</li></ul></li><li>Driver does not need to reach outside cockpit at any time</li></ul><p><span style="color: rgb(23,43,77);">System Reliability</span></p><ul style="text-align: left;"><li>Start and kill switches work without fail</li><li>Displayed data is current and accurate</li><li>Dash components are securely mounted</li><li>Display Data is stored and can be accessed at later times</li></ul><p><span style="color: rgb(23,43,77);">System Serviceability</span></p><ul style="text-align: left;"><li>All switches/controls must be easily accessible from within the cockpit</li><li>Conrols must be labeled well</li></ul><p><span style="color: rgb(23,43,77);">Driver Confidence</span></p><ul style="text-align: left;"><li>MoTeC c125<ul style="text-align: left;"><li>Can Only display limited amount of Data</li><li>Decide what data driver needs</li></ul></li></ul><p><strong>Design Overview (Rough concepts for solution + Trade study with a recommended path forward):</strong></p><p>MoTeC c125</p><ul style="list-style-type: square;"><li>CAN buses/RS232</li><li>Inputs<ul style="list-style-type: square;"><li>6 x analogue voltage inputs</li><li>2 x analogue temperature inputs</li><li>2 x digital inputs</li><li>3 x speed inputs</li><li>How many to display?</li></ul></li><li>Find out what is possible to display within budget</li></ul><p>Kill Switch</p><ul style="list-style-type: square;"><li>Connected to shutdown circuit</li><li>Minimum 24 mm diameter</li></ul><p>Master Switch</p><ul style="list-style-type: square;"><li>Grounded Low Voltage Master Switch</li><li>Tractive Master Switch<ul style="list-style-type: square;"><li>Included in Dash?</li></ul></li></ul><p><strong>Cost (<span style="color: rgb(23,43,77);">Discuss rough budget)</span>:</strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Item</th><th scope="col" class="confluenceTh">Do we have it</th><th scope="col" class="confluenceTh">Cost</th></tr><tr><td class="confluenceTd">Motec C125</td><td class="confluenceTd">Yes</td><td class="confluenceTd">2280</td></tr><tr><td class="confluenceTd">Estop Button</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Starter Button</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Launch Control Rotary</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Auto Shifting switch</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Log button</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Fan switch</td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">Carbon Plate</td><td class="confluenceTd"><br/></td><td class="confluenceTd">30</td></tr><tr><td class="confluenceTd">UBS to Can converter</td><td class="confluenceTd"><br/></td><td class="confluenceTd">30</td></tr><tr><td class="confluenceTd">Bulkhead type connector</td><td class="confluenceTd"><br/></td><td class="confluenceTd">150</td></tr><tr><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong>Schedule (<span style="color: rgb(23,43,77);">Discuss schedule, constraints, etc.)</span>:</strong></p><p><br/></p><p><strong>Analysis (Mathematical models that will be used):</strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265097230/267659772.pptx">PF24 Dash DCR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

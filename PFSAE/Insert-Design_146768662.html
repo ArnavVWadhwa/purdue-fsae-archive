@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Insert Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Insert Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (napolia)</span>, last modified by <span class='editor'> Unknown User (mkotur)</span> on May 01, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><br/></p><p style="text-align: left;">There are approximately 45 tabs that will be attached to monocoque (based on estimates from 2020 car). Many of the tabs used by electronics can be replaced with zip-tie mounts adhered to the chassis with epoxy, save any mounts necessary for the dashboard. In addition, some chassis mounts required for a space-frame chassis would no longer be needed, such as those to connect the floor pan to the chassis, as a floor pan would not be needed.</p><h2 style="text-align: left;" id="InsertDesign-GeneralDesignNotes">General Design Notes</h2><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/146768662/146768663.png" data-image-src="attachments/146768662/146768663.png" data-unresolved-comment-count="0" data-linked-resource-id="146768663" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_16-11-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;">Figure 1. Simple Insert Design</p><p>The insert design shown above is for connecting the monocoque to tubes (roll hoops). The same idea of using plate and bolts through the inserts, however, is what is recommended when designing inserts for other tabs. One option for this, as shown above, is having two smaller diameter inserts spaced so that they are on either side of the connection that will be made with the tab. Any current connection that requires two tabs is recommended to use this setup. </p><p>The other option, for connections that only require one tab, is to have that tab on any edge of the front plate with a gusset for added strength or to have the tab between the two bolts, which may also have gussets added if required.</p><p>It is important to have two inserts and two bolts per tab plate to ensure that the plate does not rotate. </p><p>Another possibility for inserts that need to be very close together would be to have material connecting between the two circles, as shown below.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/146768662/146768713.png" data-image-src="attachments/146768662/146768713.png" data-unresolved-comment-count="0" data-linked-resource-id="146768713" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-45-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;">Figure 2. The Dog Bone Insert Design</p><p>The specific design and specification of each tab will be dependent on what it attaches to. A starting point for determining insert size is to use the MATLAB code outlined below. In addition, an ANSYS model was created to evaluate insert performance. Because of lack of minimal testing in Fall 2019 and COVID in Spring 2020, only one data point was gathered. These models should be seen as preliminary models that should be improved with more testing data. </p><h2 id="InsertDesign-MATLABCodeforPredictingInsertDiameterSize">MATLAB Code for Predicting Insert Diameter Size</h2><p>The Matlab code generated for predicting the diameter of an insert works for simple cylindrical inserts. It requires the input of certain insert material properties, the panel properties, whether the insert is for a structural tab, and the load the insert needs to carry. Lines 7 to 52 in the Matlab code represents the inputs required to determine the diameter of the insert. Furthermore, bolt sizing principles from ME352 are used in lines 48 to 125 to determine the bolt factors of safety.</p><p>The code checks for multiple failure modes. Lap shear failure, where the plies of the carbon laminate would slide longitudinally over the insert. Compressive yielding, a case where the insert is crushed. Shearing of the insert material due to the bolted area, a scenario where the insert shears through the washers and nut of the bolt. Interlaminar failure, where the plies in the laminate experience a large normal force along the height of the panel such that each ply disconnects from the laminate. Lines 126 to 150 determine the failure mode of the insert and lines 152 to 159 determine the diameter for the two inserts.</p><p>Finally, a method used to determine whether an insert requires grooves to reduce its stiffness was written between lines 160 to 194 of the code. The method takes a flat panel and determines the stiffness jump between the composite structure without an insert to the composite structure with an insert by calculating the deflection of the flat panel using ME323 principles. If the difference in deflection is greater than 1 mm, than the insert requires grooves. The groove dimensions are determined by finding the required second moment of inertia of the insert such that the deflection is less than 1 mm. </p><p>After having gone through the entire script, the outputted result, shown in Figure 3 below, will let you know the diameter of the insert, the bolt factors of safety, and the need for grooves in the insert. The case study shown in Figure 3 was for a structural insert inside a half inch core panel. The loading conditions were that of the front roll hoop or main roll hoop tabs, and G10 Plastic was used as the material for the insert.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" draggable="false" src="attachments/146768662/146769115.png" data-image-src="attachments/146768662/146769115.png" data-unresolved-comment-count="0" data-linked-resource-id="146769115" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-1_15-9-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="146" src="attachments/146768662/146769117.png" data-image-src="attachments/146768662/146769117.png" data-unresolved-comment-count="0" data-linked-resource-id="146769117" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-1_15-10-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;">Figure 3. The Insert Sizing Matlab code Output</p><h2 id="InsertDesign-ANSYSModelforInserts">ANSYS Model for Inserts</h2><p>The ANSYS preliminary Insert model is similar to the way the 3-Point Bending and Perimeter Shear models operate. The only difference lies with the insert material being placed at the center of both panels and the fixture applies a load directly onto the insert using the surface area of the washers on the insert. Regarding the boundary condition setup for a 3-Point Bending insert panel and a Perimeter Shear insert panel, refer to the documents that explain how to setup boundary conditions for such tests using ANSYS. </p><p>The ANSYS models for inserts will require testing to be done on the insert material itself to gather important data regarding the Young's Modulus of the insert and the tensile and shear strength of the insert. This data can be gather by assuming that the insert is an isotropic material and conduct tensile and compressive tests on the material to obtain force vs displacement curves. The previously mentioned material properties can be derived from those curves.</p><p>The following figure represents a cross sectional cut of a 3-Point Bending insert panel. For the insert test carried out at the beginning of the Spring semester, the 3-Point Bending model had an error of +42%. For an initial model with a single data point, this error is not drastically bad because there were a lot of unknowns regarding the material properties for the G10 Plastic, that was used, and the surface finish of the insert material was poor.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/146768662/146769122.png" data-image-src="attachments/146768662/146769122.png" data-unresolved-comment-count="0" data-linked-resource-id="146769122" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-1_15-25-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;">Figure 4. Preliminary 3-Point Bending Insert Model</p><p style="text-align: left;">The following figure represents the Perimeter Shear insert panel. For the same test carried out at the beginning of the Spring semester, the Perimeter Shear model had an error of -27%. During testing, the insert fixture started buckling towards high loads resulting in a higher failure force than what the panel should have experienced. As a result, the model undershooting the experimental result seems logical. </p><p style="text-align: left;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/146768662/146769124.png" data-image-src="attachments/146768662/146769124.png" data-unresolved-comment-count="0" data-linked-resource-id="146769124" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-1_15-29-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768662" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;">Figure 5. Preliminary Perimeter Shear Insert Model</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146768663.png">image2020-4-29_16-11-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146768713.png">image2020-4-29_17-45-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146769113.png">image2020-5-1_15-0-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146769115.png">image2020-5-1_15-9-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146769117.png">image2020-5-1_15-10-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146769122.png">image2020-5-1_15-25-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768662/146769124.png">image2020-5-1_15-29-14.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

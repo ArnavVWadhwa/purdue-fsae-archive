@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Pressure Based Navier Stokes Solvers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Pressure Based Navier Stokes Solvers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 15, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Density Based vs. Pressure Based</strong></u></p><p>Broadly speaking, Navier Stokes solver algorithm can be divided into two types, <em>density based</em> and <em>pressure based</em>. Density based solvers were the first, and it makes sense since density is an important part of Navier Stokes equation. What sets density based algorithms apart from pressured based algorithm is the fact that the coupling between the 5 conservation equations is done through density. Also, you should not be surprised to hear that density based algorithms are primary used to solve compressible flows.</p><p>Pressure based algorithm was originally developed to cover off the short coming of density based solvers - the fact that time dependent density term in the continuity equation drops out in incompressible flow. At the limit of incompressibility, density based solvers simply can't converge. While there are modification you can do to density based solvers to fix the issue, another, incompressible flow oriented algorithm was clearly needed. As it turns out, pressure based solvers are not easy to implement, and we will talk about why. One of the first pressure based solvers is called the SIMPLE (semi-implicit method for pressure linked equations) algorithm, and it's still used to this day, with and without improvements introduced later.</p><p><u><strong>Staggered Grid vs. Collocating Grid</strong></u></p><p>Pressure based solvers suffer from an issue called <em>odd-even decoupling</em>. When you integrate the pressure coefficient over one cell discretely, you end up with an discretized equation that is not a function of your grid point, rather the two grid points immediately next to the point of interest. What this means is that you will end up with a checkerboard pattern of coupling. This causes crazy numerical instabilities and oscillations. The way to overcome this is by using <em>staggered grid</em>, in which velocity and pressure are not stored in the same cell, rather you have some cells storing just velocity, some just pressure, and they form a checkerboard pattern.</p><p>However, you never see a staggered grid in practice. That is not because it's not used, it's because modern CFD codes have apply interpolation algorithms to transform the staggered grid into <em>collocating grid</em>. I am not going to go into interpolation too much, since I have not studied the subject myself. But the big picture is that there are two types of interpolation methods, momentum-weighted and pressure-weighted. Rhie-Chow interpolation, which is the default in STAR-CCM+, is a pressure weighted method we use, for no better reason than we don't know the difference between the two types of interpolation.</p><p><u><strong>Segregated vs. Coupled</strong></u></p><p>Navier stokes solvers can also be subdivided into categories of segregated solver and coupled solver. What segregated solver is segregating is velocity in different directions. SIMPLE is a type of segregated solver. In STAR-CCM+, segregated solver implies pressure based solver, and coupled solver implies density based solver. Therefore, in STAR-CCM+, segregated solver should be used to incompressible to mildly compressible flow, while coupled solver should be used for highly compressible flow.</p><p><u><strong>SIMPLE Algorithm</strong></u></p><p>As we have already talked about, the SIMPLE algorithm is a pressure based Navier-Stokes solver. SIMPLE algorithm is also a predictor-corrector type method, meaning that it makes a guess first using the predictor part of the algorithm, then improves on the guess using the corrector part of algorithm. The predictor in the case of simple are the momentum equations; they are solved first. Then the <em>pressure correction</em> equations are solved. Pressure correction equation is the continuity equation, which couples the momentum equations. Using pressure predictor and correction, both pressure and velocity can be corrected. Afterward, other transport equations can be solved, which may include the energy equation and turbulence equations.</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

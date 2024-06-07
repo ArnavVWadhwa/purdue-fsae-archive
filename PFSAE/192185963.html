@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Dyno Rebuild | PF22</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297174.html">Manufacturing | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297198.html">Manufacturing Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262833427.html">Manufacturing PF22 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="177407824.html">Dyno | PF22</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Dyno Rebuild | PF22
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (jkrawitz)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>To Complete as we go on</strong></p><ul style="list-style-type: square;"><li>need to decide how to use gear position output</li><li>potentially switch start switch to PDM (means we can remove dash from circuit and run car but change in CAN bus and adds a load to PDM. Also adds a longer wire which can be seen as additional failure points</li></ul><p><br/></p><p><strong>Completed Wiring</strong></p><ul style="list-style-type: square;"><li>wires from PDM and ECU to terminal blocks</li><li>Map sensor</li><li>Cam position</li><li>crank position</li><li>rectifier</li><li>starter</li><li>fans</li><li>MAPT</li><li>ENGT</li><li>Power wires</li><li>stepper motor</li><li>CAN lines</li><li>lambda</li><li>started solenoid</li><li>Estop</li><li>terminal blocks to Dash</li><li>wiring to master switch</li><li>pump wires</li><li>engine ground</li><li>throttle</li><li>injector</li><li>coil?</li><li>USB to CAN</li><li><em>fuel pressure</em></li><li><em>oil temperature</em></li><li><em>EGT</em></li><li><em>Oil pressure</em></li></ul><p><br/></p><p><strong>Un-completed Wiring and Blockers:</strong></p><p><em>Dash:</em></p><ul style="list-style-type: square;"><li>ethernet connector - switch colors? - </li><li>potentiometer for engine rpm goal - </li><li>display lambda value on dash in place of gps - </li><li>button to reset stepper motor error</li><li>try to get load cell to display pounds</li><li>pounds and torque on load cell would be nice</li></ul><p><em>Blockers:</em></p><ul style="list-style-type: square;"><li>time</li></ul><p><br/></p><p><em>Gear position</em></p><p><em>Blocker: </em>Need to decide how to read from sensor</p><p>pink wire: 1st or 2nd gear (both about 1.6 ohms)</p><p>sky blue: neutral</p><p>yellow/white: 3rd, 4th, 5th gear </p><p>so will need to know gear group and then speed to calculate gear?</p><p>so can do 2.5 options</p><ol><li>1 input with resistor selected output (voltage across resistors based on which gear is connected to ground and then the voltage read by the ecu would be different) - 1 input and some complexity in circuit</li><li>1 digital input for each of 3 wires - 3 inputs, potential difficulty in code</li></ol><p>       2.5) 1 input for neutral switch and then a selector between 1/2 and 3/4/5 - uses 2 inputs and some complexity in code and some potential complexity in circuit</p><p>want to limit # of inputs used because limited amount on car, want to limit free circuitry in car as needs to be mounted and soldered properly, want to limit code complexity because... code(no real reason)</p><p><br/></p><p><em>EGT</em></p><p>need to add to build, currently in AT3 in place of oil temp analog temp</p><p><em>Blockers: </em> </p><p><br/></p><p><em>oil temp</em></p><p>update build so not analog temp input</p><p><br/></p><p><em>Fuel flow in and out</em></p><p><em>Blockers: </em> Where do they go</p><p> {Not an issue for upcoming weekend}</p><p><br/></p><p><em>coolant sensor</em></p><ul><li>bosch coolant sensor<ul><li>connector issues cont.</li></ul></li><li>delphi coolant sensor or swap it <ul><li>alternative get the engine sensor working with solder / glue stufff</li><li>potting</li></ul></li></ul><p><br/></p><p><strong>List of components on car(in no particular order): <span style="color: rgb(255,0,255);"><em><u>THIS IS DYNO RIGHT?</u></em></span></strong></p><ol><li>Gear switch (3 wires)</li><li>crank position (2 wires)</li><li>Cam position(4 wires- hall)</li><li>EGT (2 wires)</li><li>Fuel flow in(3 wires)</li><li>Fuel flow out(3 wires)</li><li>3x fans (2 wires each)</li><li>fuel pump (2 wires)</li><li>stepper motor (4 wires)</li><li>lambda (4 wires)</li><li>MAPT (4 wires)</li><li>coolant/engine temp (2 wires)</li><li>smart coil (4 wires)</li><li>throttle position (3 wires)</li><li>oil pressure <strong><span style="color: rgb(255,0,255);"><em><u>YES</u></em></span></strong></li><li>oil temp <strong><span style="color: rgb(255,0,255);"><em><u>YES</u></em></span></strong></li><li>injector( 2 wires)</li><li>fuel pressure? <strong><span style="color: rgb(255,0,255);"><em><u>YES</u></em></span></strong></li><li>load cell (4 wires)</li><li>start switch (2 wires)</li><li>estop (2 wires)</li><li>master switch (3 wires)</li><li>2x ethernet ports (4 wires ea)</li><li>1x CAN to USB port (3 wires)</li><li>potentiometer to set engine rpm target (3 wires)</li><li>change page button (2 wires)</li><li>data marker button(2 wires)</li><li>recitifer (4 wires)</li><li>solenoid(4 wires)</li></ol><p><br/></p><p><strong>Other People want us to do/add to the list:</strong></p><p><em>A section for people to put stuff they want on the dyno, please message Electronics TL if you out something here and @them </em></p><p><em><a class="confluence-userlink user-mention" data-username="jkrawitz" href="https://wiki.itap.purdue.edu/display/~jkrawitz" data-linked-resource-id="93847848" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (jkrawitz)</a>buy knock sensor x2 <a class="external-link" href="https://www.milspecwiring.com/Bosch-Knock-Sensor_p_804.html" rel="nofollow">https://www.milspecwiring.com/Bosch-Knock-Sensor_p_804.html</a> this will only go on the dyno - not yet in</em></p><p><em><a class="confluence-userlink user-mention" data-username="jkrawitz" href="https://wiki.itap.purdue.edu/display/~jkrawitz" data-linked-resource-id="93847848" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (jkrawitz)</a> buy pressure sensor x3 <a class="external-link" href="https://www.milspecwiring.com/75PSI-A-MOTEC-PRO-SENSOR_p_375.html" rel="nofollow">https://www.milspecwiring.com/75PSI-A-MOTEC-PRO-SENSOR_p_375.html</a> - not yet in</em></p><p><em>calibration of load cell</em></p><p><em>dash buttons - almost/functionally done</em></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

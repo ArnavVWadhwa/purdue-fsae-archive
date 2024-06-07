@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Control Arm Loads Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130164436.html">Loads (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Control Arm Loads Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span> on Oct 20, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/130164438/CA_Loads_from_GG_v6.xlsx?version=1&amp;modificationDate=1571558877000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/130164438/CA_Loads_from_GG_v6.xlsx?version=1&amp;modificationDate=1571558877000&amp;api=v2" data-linked-resource-id="130164446" data-linked-resource-type="attachment" data-linked-resource-container-id="130164438" data-linked-resource-default-alias="CA_Loads_from_GG_v6.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="CA_Loads_from_GG_v6.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/130164446/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="130164438" data-linked-resource-id="130164446" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><br/></p><p>This is a spreadsheet for going from ADAMS Car outputs to two-force member forces in tubes. Math is below. It's a 2d statics problem.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/130164438/130164439.jpg" data-image-src="attachments/130164438/130164439.jpg" data-unresolved-comment-count="0" data-linked-resource-id="130164439" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="CA CALCS.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p>Input points for right side of suspension (front and rear upper and lower control arms). Names come directly from Adams model</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="73" src="attachments/130164438/130164440.png" data-image-src="attachments/130164438/130164440.png" data-unresolved-comment-count="0" data-linked-resource-id="130164440" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-20_3-53-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p>Input loads directly from Adams result file. <strong>It is very important to use the values under jorrev_lca and jorrev_uca. </strong>The sign convention is based on this and this removes the vertical force of push rod on lower control arms (this is reacted through the upright, not the tubes). These terms can be searched in the Filter section of the Adams car post processing window.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="154" src="attachments/130164438/130164441.png" data-image-src="attachments/130164438/130164441.png" data-unresolved-comment-count="0" data-linked-resource-id="130164441" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-20_3-59-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p>Tierod loads come from jorsph_tierod_outer in the y direction (technically should take RSS, but negligible difference). <strong>You must reverse the sign of the y component to match the standard tube convention of &quot;+&quot; is tension and &quot;-&quot; is compression.</strong></p><p><strong><br/></strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="212" src="attachments/130164438/130164442.png" data-image-src="attachments/130164438/130164442.png" data-unresolved-comment-count="0" data-linked-resource-id="130164442" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-20_4-1-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p><br/></p><p>Pushrod loads come from jorsph_prod_to_lca. Take the RSS. These loads will always be compressive, so assign &quot;-&quot; to result.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="196" src="attachments/130164438/130164443.png" data-image-src="attachments/130164438/130164443.png" data-unresolved-comment-count="0" data-linked-resource-id="130164443" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-20_4-3-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p><br/></p><p>There is a dynamic load added to the static loads (from steady state simulations). This dynamic component is estimated using strain gauge data found here: <a href="129009856.html">9/14/2019 Grissom - Control Arm and Tierod Strain Gauge Loads Testing</a>. The dynamic component is then added to increase the load magnitude. This accounts for changes in surface that may cause a wheel to momentarily load up above predicted static load, yielding a larger peak force.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/130164438/130164444.png" data-image-src="attachments/130164438/130164444.png" data-unresolved-comment-count="0" data-linked-resource-id="130164444" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-20_4-4-59.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="130164438" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p><br/></p><p>Documenting which simulation was used in the &quot;SIM&quot; column is likely to be very helpful should there by doubt about a given load in the future.</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164439.jpg">CA CALCS.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164440.png">image2019-10-20_3-53-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164441.png">image2019-10-20_3-59-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164442.png">image2019-10-20_4-1-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164443.png">image2019-10-20_4-3-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164444.png">image2019-10-20_4-4-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/130164438/130164446.xlsx">CA_Loads_from_GG_v6.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

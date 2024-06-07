@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Sprocket Force Model</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Sprocket_132155915.html">Sprocket</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Sprocket Force Model
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified by <span class='editor'> Unknown User (sinha54)</span> on Mar 17, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The force model on the sprocket is a function of the chain tension, pressure angle of the chain links, and articulation angle of the chain around each tooth. This equation comes from R.C Binder's book <u>The Mechanics of the Roller Chain Drive</u> based on mathematical studies by R.C. Binder. His model calculates the force on each tooth through the following equation:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/132155923/132155955.png" data-image-src="attachments/132155923/132155955.png" data-unresolved-comment-count="0" data-linked-resource-id="132155955" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="CodeCogsEqn (42).png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155923" data-linked-resource-container-version="7" alt=""></span></p><p>This formula can likely be found in other chain drive books as well. This model does not account for any chain snapping due to elongation of the chain, friction angle, or deformation of the teeth due to fatigue. The chain tension is calculated by dividing the peak torque at the front sprocket by the pitch radius of the front sprocket. This formula above is used in the Matlab code used to calculate the forces on the sprocket and the uprights. The code can be found in Z:\2020\6_Drivetrain\Matlab. Below is a sample calculation of determining the sprocket tooth forces (sorry for bad formatting, no native latex support so I have to screenshot):</p><h1 id="SprocketForceModel-SampleCalculation:">Sample Calculation:</h1><p>Peak Engine Torque: 40.37 ft-lbs</p><p>Primary Gear: 2.073</p><p>First Gear: 2.583</p><p>Front Sprocket Teeth (n_front): 11</p><p>Rear Sprocket Teeth (n_rear): 35</p><p>Chain Pitch (P): 0.625</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/132155923/132155964.png" data-image-src="attachments/132155923/132155964.png" data-unresolved-comment-count="0" data-linked-resource-id="132155964" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-29_22-38-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155923" data-linked-resource-container-version="7" alt=""></span></p><p>For n = 1 to 20</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><td class="confluenceTd"><p>n</p></td><td class="confluenceTd"><p>Force on tooth (lbf)</p></td></tr><tr><td class="confluenceTd"><p>1</p></td><td class="confluenceTd"><p>625.78</p></td></tr><tr><td class="confluenceTd"><p>2</p></td><td class="confluenceTd"><p>491</p></td></tr><tr><td class="confluenceTd"><p>3</p></td><td class="confluenceTd"><p>385.25</p></td></tr><tr><td class="confluenceTd"><p>4</p></td><td class="confluenceTd"><p>302.28</p></td></tr><tr><td class="confluenceTd"><p>5</p></td><td class="confluenceTd"><p>237.18</p></td></tr><tr><td class="confluenceTd"><p>6</p></td><td class="confluenceTd"><p>186.09</p></td></tr><tr><td class="confluenceTd"><p>7</p></td><td class="confluenceTd"><p>146.01</p></td></tr><tr><td class="confluenceTd"><p>8</p></td><td class="confluenceTd"><p>114.57</p></td></tr><tr><td class="confluenceTd"><p>9</p></td><td class="confluenceTd"><p>89.892</p></td></tr><tr><td class="confluenceTd"><p>10</p></td><td class="confluenceTd"><p>70.531</p></td></tr><tr><td class="confluenceTd"><p>11</p></td><td class="confluenceTd"><p>55.34</p></td></tr><tr><td class="confluenceTd"><p>12</p></td><td class="confluenceTd"><p>43.422</p></td></tr><tr><td class="confluenceTd"><p>13</p></td><td class="confluenceTd"><p>34.07</p></td></tr><tr><td class="confluenceTd"><p>14</p></td><td class="confluenceTd"><p>26.732</p></td></tr><tr><td class="confluenceTd"><p>15</p></td><td class="confluenceTd"><p>20.974</p></td></tr><tr><td class="confluenceTd"><p>16</p></td><td class="confluenceTd"><p>16.457</p></td></tr><tr><td class="confluenceTd"><p>17</p></td><td class="confluenceTd"><p>12.913</p></td></tr><tr><td class="confluenceTd"><p>18</p></td><td class="confluenceTd"><p>10.132</p></td></tr><tr><td class="confluenceTd"><p>19</p></td><td class="confluenceTd"><p>7.9495</p></td></tr><tr><td class="confluenceTd"><p>20</p></td><td class="confluenceTd"><p>6.2374</p></td></tr></tbody></table></div><p><br/></p><p><br/></p><h1 id="SprocketForceModel-Splittingmagnitudeinto2componentsforANSYSFEA">Splitting magnitude into 2 components for ANSYS FEA</h1><p>This may be a bit tricky to visualize. To start out with some definitions, the <strong>pressure angle (phi)</strong> is the angle in which the force acts on the tooth (relative to the tooth, not the overall coordinate system). The<strong> articulation angle (gamma)</strong> is how much the force vector will rotate for each tooth.</p><p>So, as the forces get wrapped around the sprocket, the forces will be multiplied by an angle containing the pressure angle + the articulation angle times the number of teeth minus 1 (n -1) that have been wrapped. Additionally, the angle should start off negative, since the initial tooth forces at the top of the sprocket will be directed downwards (see picture below). <strong>This brings the angle to -1*phi + gamma * (n-1), where n is the number of teeth</strong>.</p><p>This angle can be used to split the magnitude of the force by utilizing the sin and cos functions. I've drawn a coordinate system that you can reference from or you can use the coordinate systems that aligns with what plane you drew the sprocket on.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/132155923/156603329.png" data-image-src="attachments/132155923/156603329.png" data-unresolved-comment-count="0" data-linked-resource-id="156603329" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-9-19_0-26-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155923" data-linked-resource-container-version="7" alt=""></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/132155952.png">image2019-10-29_20-45-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/132155954.png">CodeCogsEqn (41).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/132155953.png">CodeCogsEqn (41).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/132155955.png">CodeCogsEqn (42).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/132155964.png">image2019-10-29_22-38-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/156603328.png">image2020-9-19_0-25-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155923/156603329.png">image2020-9-19_0-26-50.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

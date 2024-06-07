@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Scholar Terminal Commands</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="How-to-Do-Things_233834237.html">How to Do Things</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Scholar Terminal Commands
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><a class="aui-skip-link" href="https://wiki.itap.purdue.edu/display/PFSAE/Scholar+Terminal+Commands#nav-sidebar" rel="nofollow">Skip to sidebar</a><a class="aui-skip-link" href="https://wiki.itap.purdue.edu/display/PFSAE/Scholar+Terminal+Commands#main" rel="nofollow">Skip to main content</a></p><h3 id="ScholarTerminalCommands-LinuxandSlurmarebothverypopular,iftheinformationyouareseekingforisn&#39;there,useyourabilitytolookthingsuponline."><u>Linux and Slurm are both very popular, if the information you are seeking for isn't here, use your ability to look things up online.</u></h3><h3 id="ScholarTerminalCommands-General:">General:</h3><p><span style="color: rgb(29,28,29);"><strong>Purdue RCAC Scholar User Guide: </strong><a class="external-link" href="https://www.rcac.purdue.edu/knowledge/scholar" rel="nofollow">https://www.rcac.purdue.edu/knowledge/scholar</a></span></p><p><span style="color: rgb(29,28,29);"><strong>PBS to SLURM Commands Reference: </strong><a class="external-link" href="https://www.rcac.purdue.edu/knowledge/scholar/run/rosetta/stone" rel="nofollow">https://www.rcac.purdue.edu/knowledge/scholar/run/rosetta/stone</a></span></p><p><br/></p><h3 id="ScholarTerminalCommands-SettingUpGit"><span style="color: rgb(29,28,29);">Setting Up Git</span></h3><p><span style="color: rgb(29,28,29);">First make sure you have a GitHub account and are on the repository </span></p><p><span style="color: rgb(29,28,29);">Open up scholar on Remote Desktop and then open GitHub on a web browser</span></p><p><span style="color: rgb(29,28,29);">Go into the fsaeSTAR repository on the browser and copy the URL </span></p><p><span style="color: rgb(29,28,29);">Open up a terminal command, change directory into where you want the git folder to be and then use <strong>git clone &lt;paste url&gt;</strong></span></p><p><span style="color: rgb(29,28,29);"><strong>Basic Git Commands for Linux:<span> </span></strong><a class="external-link" href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html" rel="nofollow">https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html</a></span></p><p><span style="color: rgb(29,28,29);">You are required to setup a personal access token (PAT). Google how to do that. Note you can't view your PAT after creating it, so find a way to preserve it.</span></p><p><span style="color: rgb(29,28,29);">If you don't have to type in PAT every time, you can store the PAT in scholar. There are plenty of tutorial on StackOverflow.</span></p><h3 id="ScholarTerminalCommands-RunningSims"><span style="color: rgb(29,28,29);">Running Sims </span></h3><p><span style="color: rgb(29,28,29);">Make sure linuxConfig file is setup in the Python folder of the repository</span></p><p><span style="color: rgb(29,28,29);">Change directory into fsaeSTAR/Python </span></p><p><span style="color: rgb(29,28,29);">Run <strong>python3 folderBuilder.py</strong></span></p><p><span style="color: rgb(29,28,29);"><strong>Queueing Multiple Jobs with Dependencies:<span> </span></strong>python3 folderBuilder.py &lt;list of job ids separated by spaces&gt; </span></p><p><span style="color: rgb(29,28,29);">Use <strong>squeue </strong>to ensure that the jobs have been queued</span></p><ul><li><span style="color: rgb(29,28,29);">Add <strong>-u</strong> <strong>userID</strong> to view only your job</span></li><li><span style="color: rgb(29,28,29);">Do <strong>watch -n 1 squeue</strong> to have automatically updating queue list </span></li></ul><p><span style="color: rgb(29,28,29);">If you need to cancel a job then use<span> </span><strong>scancel &lt;job id&gt; </strong></span></p><ul><li>Add <strong>-u userID </strong>to cancel all your jobs</li></ul><h3 id="ScholarTerminalCommands-UsingSTAR-CCMonRemoteDesktopw/Nodes"><span style="color: rgb(29,28,29);">Using STAR-CCM on Remote Desktop w/ Nodes</span></h3><p><strong><span style="color: rgb(29,28,29);">Allocating GPU Nodes:</span></strong><span style="color: rgb(29,28,29);"><span> </span>salloc --exclusive -A gpu -t 240 -N 1 --constraint=G</span></p><ul><li>constraint can either be G or H</li><li>H nodes are much larger, no need to get it if you can get G nodes</li></ul><p><strong><span style="color: rgb(29,28,29);">Allocating Scholar Nodes:</span></strong><span style="color: rgb(29,28,29);"><span> </span>salloc -A scholar -N 1 -t 240 --exclusive --constraint=B</span></p><ul><li>constraint can either be A or B</li><li>A contains 128 core and B contains 64 cores</li><li>Get B nodes whenever you can</li><li>People likes to get A node only use a few core, don't be that guy<ul><li>A nodes are also much more in demand. Don't use it when you don't have to</li></ul></li></ul><p><span style="color: rgb(29,28,29);"><strong>Enabling GPU Rendering in STAR-CCM :</strong> </span></p><p><span style="color: rgb(29,28,29);">Load File</span></p><p><span style="color: rgb(29,28,29);">Change Processing Options to Parallel on Named Hosts</span></p><p><span style="color: rgb(29,28,29);">Host Name is scholar-a### / scholar-b### / scholar-g### / scholar-h###</span></p><p><span style="color: rgb(29,28,29);">Change Rendering Options to Server</span></p><p><span style="color: rgb(29,28,29);">Browse File</span></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

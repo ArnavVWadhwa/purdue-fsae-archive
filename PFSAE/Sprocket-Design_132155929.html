@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Sprocket Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Sprocket_132155915.html">Sprocket</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Sprocket Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified on Nov 01, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="300" src="attachments/132155929/132155980.png" data-image-src="attachments/132155929/132155980.png" data-unresolved-comment-count="0" data-linked-resource-id="132155980" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-29_23-11-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155929" data-linked-resource-container-version="3" alt=""></span></p><p>Screenshot of 2019 sprocket design</p><h1 id="SprocketDesign-DeterminingFinalDriveRatio">Determining Final Drive Ratio</h1><p>The final drive ratio (typically just referred as final drive) is defined as the number of teeth on the rear sprocket divided by the number of teeth on the front sprocket. A higher final drive will produce a larger torque at the rear axle at the cost of decreasing the maximum vehicle speed and possibly requiring more shifts to reach a given speed. The effects of a lower final drive will produce the opposite effects: lower torque at the rear axle, higher max vehicle speed, and potentially less shift points to reach a given speed. There are several factors that play into what is the &quot;best&quot; final drive ratio: maximum wheel grip, number of shifts, packaging constraints, as well as the competition dynamic events including (mainly) acceleration, autocross, endurance, and efficiency. Skidpad can be neglected here because it's limited by lateral grip rather than a torque deficit. The final drive was chosen this year using the lap time simulation, where different final drive ratios were tested to see where the maximum number of points was attained across all events. Below are the plots gained by sweeping through the final drives. It can be seen that, with an 11 tooth front sprocket, the 35 tooth sprocket produced the max points. Packaging constrains were not an issue, so the 35 tooth was locked in for the 2020 car.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="1200" src="attachments/132155929/132157439.png" data-image-src="attachments/132155929/132157439.png" data-unresolved-comment-count="0" data-linked-resource-id="132157439" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-11-1_21-42-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155929" data-linked-resource-container-version="3" alt=""></span></p><h1 id="SprocketDesign-ModelingtheSprocketinCAD">Modeling the Sprocket in CAD</h1><p>The tooth profile is a standard ANSI tooth profile. This can be modeled using the following tutorial: <a class="external-link" href="http://www.gearseds.com/files/design_draw_sprocket_5.pdf" rel="nofollow">http://www.gearseds.com/files/design_draw_sprocket_5.pdf</a></p><p>When following the tutorial, all of the parameters (P, N, Dr, Ds, ......) should be made as expressions in NX to make the sprocket parametric. This allows for the sprocket to be easily modified for when sprocket size changes are necessary. I would recommend using construction geometry for all of the drawing through step 15. Do not follow the tutorial past this point, as they trim the lines and break all relations in the geometry. Instead, lay the solid lines (non-construction geometry) over the highlighted tooth profile shown in step 15. These can be mirrored to the other half of the tooth profile and a line can be drawn from the outer edges of the tooth profile back to the center of the sprocket. The result should look like the image below. Note that I have some weak dimensions shown, those are construction geometry lines whose lengths don't matter.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/132155929/132155978.png" data-image-src="attachments/132155929/132155978.png" data-unresolved-comment-count="0" data-linked-resource-id="132155978" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-29_23-4-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155929" data-linked-resource-container-version="3" alt=""></span></p><p>This tooth profile can be extruded and revolved to create the sprocket. Generally, you want around 90% of the chain width as the sprocket width. A 520 chain has a width of 0.25 inches, so the tooth width was made to be 0.227 inches, or 90.8% of the chain width. This ensures that the chain won't bind under any slight misalignment and will reduce any friction due to the sliding action between the sprocket and the chain.</p><p><br/></p><p>The center spline is obtained by projecting the spline of the differential onto the sprocket and extruding the cutout. I used the intersection curve in the sketching tools to accomplish this. Finally, the cutouts are designed to be bi-directional, meaning that the sprocket can be used in two orientations. This is simpler to model and based on experience with making a uni-directional sprocket last year, the uni-directional design does not net you any meaningful weight savings. The cutout geometry is iterated upon in ANSYS until the structural design criteria is met.</p><p><br/></p><p>The sprocket has a lip on either end to produce a larger area for the splines. This increases the effective shear area and reduces the stress on each spline.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155929/132155978.png">image2019-10-29_23-4-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155929/132155980.png">image2019-10-29_23-11-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155929/132157437.png">final_drive_pics.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155929/132157439.png">image2019-11-1_21-42-45.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

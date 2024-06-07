@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DAQ PF24 | Good rules of thumb</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836584.html">DAQ PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DAQ PF24 | Good rules of thumb
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Min, Jihong</span>, last modified on Dec 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="DAQPF24|Goodrulesofthumb-&quot;Anidiotadmirescomplexity,ageniusadmiressimplicity&quot;-TerryDavis"><strong>&quot;An idiot admires complexity, a genius admires simplicity&quot; - Terry Davis</strong></h1><h1 id="DAQPF24|Goodrulesofthumb-&quot;Luckiswhenpreparationmeetsopportunity&quot;-Seneca"><strong>&quot;Luck is when preparation meets opportunity&quot; - Seneca</strong></h1><p><br/></p><h1 id="DAQPF24|Goodrulesofthumb-Taskathand:precisionanalogmeasurementswithminimalnoise&amp;drift"><strong>Task at hand: precision analog measurements with minimal noise &amp; drift</strong></h1><p><strong>Design rules: basically whatever you can get for the cheapest spec the fabhouse has to offer</strong></p><ul><li><strong>Trace width: 6mil</strong></li><li><strong>Via drill: 0.3mm</strong></li><li><strong>Tented vias</strong></li><li><strong>Four layers when possible</strong></li></ul><p><br/></p><p><strong>GOOD HARDWARE DESIGN GUIDELINES:</strong></p><ol><li>add redundancies.<ol><li>Expose pins for comms lines in case on-board components fail</li><li>Just make sure stubs aren't too long and EMI is low. Solder pads work as well.  <ol><li>Ex) if onboard CAN transceivers fail, we can hook up external off-the-shelf modules to exposed CAN pins as backup</li></ol></li></ol></li><li>Add test points!!! Kinda goes in hand with first rule</li><li>Separate pin headers should match with 2.54mm grid so that the whole board can just plug into a giant protoboard if necessary</li><li>more to come</li></ol><p><br/></p><p><br/></p><p><strong>GOOD PCB DESIGN GUIDELINES:</strong></p><p><strong><a class="external-link" href="https://www.reddit.com/r/PrintedCircuitBoard/comments/1844gg9/4_layer_stm32f407_board_i_designed_its_for_high/?utm_source=share&amp;utm_medium=web2x&amp;context=3" rel="nofollow">https://www.reddit.com/r/PrintedCircuitBoard/comments/1844gg9/4_layer_stm32f407_board_i_designed_its_for_high/?utm_source=share&amp;utm_medium=web2x&amp;context=3</a></strong></p><ul><li>Separate Analog and Ground planes</li><li>Use external precision reference voltages</li><li>Group analog and Digital domains together, don't mix them up</li><li>Routing should be neat. Do not ever use autorouter<ul><li>&quot;The shortest distance between any two points is a straight line&quot; - Archimedes</li></ul></li><li>Length match traces for all comms lines if possible.<ul><li>For USB this is pretty much a requirement. Also for high-speed SPI</li></ul></li><li>No routing under sensitive regions<ul><li>Analog, RF, Crystals/clocks</li></ul></li><li>Add plenty of decoupling caps and stitching vias</li></ul><p><br/></p><h1 id="DAQPF24|Goodrulesofthumb-Qualityliterature:"><strong>Quality literature:</strong></h1><p><strong>TI's guide to low EMI design: <a class="external-link" href="https://www.ti.com/lit/an/szza009/szza009.pdf" rel="nofollow">https://www.ti.com/lit/an/szza009/szza009.pdf</a></strong></p><p><strong>STM32 low-noise design App Note: <a class="external-link" href="https://www.st.com/resource/en/application_note/an2834-how-to-optimize-the-adc-accuracy-in-the-stm32-mcus-stmicroelectronics.pdf" rel="nofollow">https://www.st.com/resource/en/application_note/an2834-how-to-optimize-the-adc-accuracy-in-the-stm32-mcus-stmicroelectronics.pdf</a></strong></p><p><strong>STM32F4XX general hardware design reference: <a class="external-link" href="https://www.st.com/resource/en/application_note/an4488-getting-started-with-stm32f4xxxx-mcu-hardware-development-stmicroelectronics.pdf" rel="nofollow">https://www.st.com/resource/en/application_note/an4488-getting-started-with-stm32f4xxxx-mcu-hardware-development-stmicroelectronics.pdf</a></strong></p><p><strong>US Army General Guidelines for Electronics Equipment <a class="external-link" href="https://apps.dtic.mil/sti/pdfs/ADA345304.pdf" rel="nofollow">https://apps.dtic.mil/sti/pdfs/ADA345304.pdf</a></strong></p><p><strong>Michigan FSAE chassis torsional rigidity research (very good): <a class="external-link" href="https://deptapps.engin.umich.edu/open/rise/getreport?pid=104&amp;fv=2&amp;file=Chassis+Torsional+Rigidity+Analysis+for+a+Formula+SAE+Racecar.pdf" rel="nofollow">https://deptapps.engin.umich.edu/open/rise/getreport?pid=104&amp;fv=2&amp;file=Chassis+Torsional+Rigidity+Analysis+for+a+Formula+SAE+Racecar.pdf</a></strong></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

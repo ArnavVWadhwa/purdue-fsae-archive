@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Brake Rotor Thermal Analysis</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Brake-System-Design_137592900.html">Brake System Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Brake Rotor Thermal Analysis
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Jun 15, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Home: Model lives in Purdue-FSAE Github, ask <a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a>  or <a class="confluence-userlink user-mention" data-username="agarw162" href="https://wiki.itap.purdue.edu/display/~agarw162" data-linked-resource-id="92406407" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (agarw162)</a> for access</p><p><br/></p><p>Model:</p><ul><li>The only source of heat input into the system is heat flux generated from pressing the pads against the rotor surface<ul><li>Calculated with basic energy considerations and assumptions<ul><li>Vehicle of mass M (kg)</li><li>Initial Velocity of Vi (m/s) before brakes applied</li><li>constant deceleration of a (m/s^2) until final velocity</li><li>Final velocity of Vf (m/s)</li><li>Del t (s) time under braking</li><li>ASSUME: All Kinetic energy of vehicle is converted to heat<ul><li>Rotational and Translational</li></ul></li><li>Front Rotors take ~65% of braking capacity due to longitudinal load transfer (Approximate value)</li><li>Added Effects that will reduce kinetic energy that the brakes must dissipate are:<ul><li>Aerodynamic Drag</li></ul></li></ul></li></ul></li><li>The main source of heat output or loss is through convection<ul><li>Brake disc and vehicle travel with such high speed and rotational velocity, most of the heat transfer is through convection and the remaining is radiation<ul><li>ASSUME: 90% convection</li></ul></li></ul></li></ul><p><br/></p><p><strong>Control Volume:</strong></p><p>1-rotor:</p><p>in: energy from deceleration</p><p>out: energy removed from system via radiation and convection</p><p><strong>Assumptions:</strong></p><p>Radiation: </p><p>Convection: rotor spinning in place, calculate Reynold's number from this → get nusselt number → get heat convection coefficient *Note: Included in cycle model but not in validation model</p><p>Free Convection (used in validation model as vehicle was stopped)</p><p>During braking, drag from aero takes energy away from rotors</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/222429405/222429640.png" data-image-src="attachments/222429405/222429640.png" data-unresolved-comment-count="0" data-linked-resource-id="222429640" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-5-24_14-29-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="222429405" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/222429405/222429654.png" data-image-src="attachments/222429405/222429654.png" data-unresolved-comment-count="0" data-linked-resource-id="222429654" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-5-24_15-29-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="222429405" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/222429405/222429640.png">image2022-5-24_14-29-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/222429405/222429654.png">image2022-5-24_15-29-26.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-222429445"></a>
+                                    <font class="smallfont"><p><a href="Brake-Temp-Model-Resources_161909535.html">Brake Temp Model Resources</a> see this page made by ben / frank from 2021</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by dnocon at May 23, 2022 21:21
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

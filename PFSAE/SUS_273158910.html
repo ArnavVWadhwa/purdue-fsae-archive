@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : SUS</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension-Onboarding_224199360.html">Suspension Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : SUS
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Crooks, Troy A</span>, last modified on Oct 12, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><br/></p><p>Old onboarding </p><h2 id="SUS-Overview:"><strong>Overview:</strong></h2><p>For this project, you will have to design an anti-roll bar (ARB). An ARB is a mechanical mechanism used to change the vehicles characteristics only when in roll. There are various methods to do this, but we will be focusing on 1: a tube in torsion. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="150" src="https://i.redd.it/95ng03qzaes41.jpg" data-image-src="https://i.redd.it/95ng03qzaes41.jpg"></span></p><ul><li>Fancy ARB w/ 3rd Spring :O</li></ul><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Development of Vehicle Dynamics Model using Adams Car for Formula Student  Race Car - NI Community" height="250" src="http://forums.ni.com/legacyfs/online/199646_Rear%20Suspension.jpg" data-image-src="http://forums.ni.com/legacyfs/online/199646_Rear%20Suspension.jpg"></span></span></p><ul><li>Full suspension system featuring a torsion style ARB (this is the one you'll be designing!!)</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="250" src="https://racer.wp.alley.ws/wp-content/uploads/sites/114/2018/03/IndyCarPhoenix_2018_MarshallPruett_Fri29__072RED.jpg" data-image-src="https://racer.wp.alley.ws/wp-content/uploads/sites/114/2018/03/IndyCarPhoenix_2018_MarshallPruett_Fri29__072RED.jpg"></span></p><ul><li>IndyCar ARB (Twisting blade style) (highlighted in red w/ droplinks in green)</li></ul><p><br/></p><h2 id="SUS-Pre-requisites:"><strong>Pre-requisites:</strong></h2><ol><li>Complete general onboarding</li><li>Read Chapter 17 of Race<em><span> </span>Car Vehicle Dynamics, Milliken and Milliken</em>, Chapter 17, Page 607-661<br/><ul><li>This section seems to do a good job of giving basic understanding of the components of a suspension, terminology, etc. Focus on content regarding SLA suspension.</li><li><u><a class="external-link" href="https://drive.google.com/file/d/1beXnd3ZTY7-RCddXpm_gndgWSs6IfhwV/view?usp=sharing" rel="nofollow">https://drive.google.com/file/d/1beXnd3ZTY7-RCddXpm_gndgWSs6IfhwV/view?usp=sharing</a></u></li></ul></li><li>Read through this powerpoint on how ARBs work in the context of our car -<span> </span><u><a href="https://wiki.itap.purdue.edu/display/PFSAE/Basics+of+ARB" rel="nofollow">Basics of ARB</a></u></li><li>Watch youtube videos to supplement your knowledge on vehicle cornering behavior and ARBs (in tools below)</li></ol><h2 id="SUS-Steps/Process:"><strong>Steps / Process:</strong></h2><h3 id="SUS-Step1:SizeyourARBTorsionTube"><span style="color: rgb(0,0,0);">Step 1: Size your ARB Torsion Tube<br/></span></h3><ul><li>For the most part, the general aspects of the design are determined for you: It will be a tube in torsion that reacts through an arm on each end. The point of this is to select parameters to hit a design target (50lb/in as per the powerpoint)</li><li><span style="color: rgb(0,0,0);">Reference Material Selection Guide to determine what properties you want</span></li><li><span style="color: rgb(0,0,0);">Keep in mind you cannot select whatever diameter and wall thickness you want, there are only specific discrete options available, check out this supplier</span><span style="color: rgb(0,0,0);"> </span><u><a class="external-link" href="https://www.aedmotorsport.com/" rel="nofollow">https://www.aedmotorsport.com/</a>, </u><span style="color: rgb(0,0,0);">McMaster-Carr , as well as any other tube manufacturer.</span></li></ul><p><span style="color: rgb(0,0,0);">Your goal is design an ARB with 5 stiffness settings (10, 20, 30, 40, 50 lb/in - Wheel rate equivalent)</span></p><h3 id="SUS-Step2:SizeandDesignDroplinks"><span style="color: rgb(0,0,0);">Step 2: Size and Design Droplinks</span></h3><ul><li><span style="color: rgb(0,0,0);">Typical Suspension droplinks (not the actual torsion bar its-self) will use a tube (steel or composite) with an insert on each end. The insert fits into the tube (either welded or bonded) and has inserts that accept a rod end. The point of a rod end is to convey forces (ideally in the direction of the axis of the tube) but it allows for free rotation at either end</span></li><li><span style="color: rgb(0,0,0);">You can see the ARB Drop Link pictured above in the middle picture: this isn't what our suspension looks like exactly, but it's very close. </span></li></ul><h3 id="SUS-Step3:CAD"><span style="color: rgb(0,0,0);">Step 3: CAD</span></h3><ol><li><span style="color: rgb(0,0,0);">After setting all the parameters of your ARB design, its time to model the components in CAD. Hopefully at this point you have finished your team-wide CAD training and practice. In case you need to reference that again, it is linked below in tools</span><br/><ol><li><span style="color: rgb(0,0,0);">Take this opportunity to use and follow all of the team CAD practices and habits including</span><ol><li><span style="color: rgb(0,0,0);">Using a layout file for initial modelling, in the downloaded .zip, look for<span> </span><em>PF20_Sus_FrontARB_Layout.prt</em><br/></span></li><li><span style="color: rgb(0,0,0);">Saving (using<span> </span><em>Wavelink</em>) all components to their separate .prt files with appropriate name convention</span></li><li><span style="color: rgb(0,0,0);">You will have to model the ARB, ARB arm, Mounting for ARB to chassis, and Droplinks</span><ol><li><span style="color: rgb(0,0,0);">As you're modelling these components, keep manufacturability in mind. How will you use the basic processes (Mill, Lathe, Waterjet, etc) to manufacture each component?</span></li></ol></li><li><span style="color: rgb(0,0,0);">The necessary hardware for the assembly should be in the .zip file with the environment file</span></li><li><span style="color: rgb(0,0,0);">Assemble those saved components into a subsystem .prt file, use proper assembly constraints</span></li><li><span style="color: rgb(0,0,0);">If you're confused about these CAD details, be sure to reference some of the NX tutorial pages. Those guides explain how this team uses the software.</span></li></ol></li><li><span style="color: rgb(0,0,0);">The necessary environment file for your assignment can be downloaded here. You should be able to take this package and work on the CAD independently on your computer</span><ol><li><u><span style="color: rgb(255,0,0);"><a class="external-link" href="https://drive.google.com/drive/folders/1LWHvGbizu1iZiLt3O3_8-9MrglLQ169L?usp=sharing" rel="nofollow">https://drive.google.com/drive/folders/1LWHvGbizu1iZiLt3O3_8-9MrglLQ169L?usp=sharing</a></span></u></li></ol></li></ol></li></ol><p>     4. Another detail to think about is how you will manufacture the components you design. As an example of this practice, the final step is to make a drawing of the ARB arm as if you were going to machine it in the shop. Using NX create a multiple-view drawing. See drawing resources below for reference and an example.</p><h2 id="SUS-Tools"><strong>Tools</strong></h2><ul><li>Material Selection Guide - This article will help you make decisions for material usage when designing components-<span> </span><u><em><a href="https://wiki.itap.purdue.edu/display/PFSAE/Material+Selection" rel="nofollow">Material Selection</a></em></u><br/><ul><li>Strength (Yield Strength)</li><li>Stiffness (Young's modulus)</li><li>Environment Temperature</li><li>Ability to Manufacture</li><li>Chemical Reaction (Corrosion, response to surrounding components)</li></ul></li><li>ARB Stiffness Calculator -<u><span> </span><span style="color: rgb(255,102,0);"><em><a href="https://wiki.itap.purdue.edu/display/PFSAE/Anti-Roll-Bar+%28ARB%29+Combined+Stiffness+Calculator" rel="nofollow">Anti-Roll-Bar (ARB) Combined Stiffness Calculator</a></em></span></u><br/><ul><li>This spreadsheet will complete the stiffness calculations based on geometry information that you enter.</li><li>It will look intimidating at first, but there are &lt;8 parameters needed from you before it will start giving you useful information. The reason there are so many columns is so you can change a single parameter in increments.</li></ul></li><li>CAD Resources -<span> </span><u><a href="https://wiki.itap.purdue.edu/display/PFSAE/CAD" rel="nofollow">CAD</a></u><ul><li><u><a href="https://wiki.itap.purdue.edu/display/PFSAE/NX+CAD+Practices" rel="nofollow">NX CAD Practices</a></u></li><li><u><a href="https://wiki.itap.purdue.edu/display/PFSAE/CAD+Tutorials" rel="nofollow">CAD Tutorials</a></u></li><li><u><a href="https://wiki.itap.purdue.edu/display/PFSAE/NX+Tips+and+Tricks" rel="nofollow">NX Tips and Tricks</a><span> </span>(Miscellaneous)</u></li></ul></li><li>Supplementary Youtube videos that help explain concepts:<br/><ul><li><u><a class="external-link" href="https://www.youtube.com/watch?v=CsVg2DE0ef8&amp;t=86s" rel="nofollow">Cornering Behavior</a></u></li><li><u><a class="external-link" href="https://www.youtube.com/watch?v=_liGnV3PTiQ" rel="nofollow">Function of ARB</a></u></li><li><u><a class="external-link" href="https://www.youtube.com/watch?v=JxOBw78DXBQ" rel="nofollow">Another video on ARBs</a></u></li></ul></li><li>Making Drawings<br/><ul><li><a href="https://wiki.itap.purdue.edu/display/PFSAE/Drawing+Standards" rel="nofollow">Drawing Standards</a></li></ul></li></ul><h2 id="SUS-Questions"><strong>Questions</strong></h2><p>If you guys have any questions, even if you feel they are stupid or think you're the only person who doesn't know it, PLEASE feel free to reach out to me!!!</p><p>Zach MacNab on teams</p><p>Cell: (708) 770 - 2032 </p><p>I'll try and answer as soon as I can</p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

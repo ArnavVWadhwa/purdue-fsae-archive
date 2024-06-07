@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Load Calculation Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820810.html">Pedal Box PF23 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-2023-Documentation-List_237084473.html">Pedal Box 2023 Documentation List</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Load Calculation Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified by <span class='editor'> Cole Henry Kniesly</span> on Jan 04, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="LoadCalculationDocumentation-BrakePedal:">Brake Pedal: </h3><p>Load Case: 450lbf (2000N) applied at the ball of the foot</p><p>For max load on tabs, the hydraulic bias was maxed out towards the front with a bias of 65%</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="166" src="attachments/247661127/247661435.png" data-image-src="attachments/247661127/247661435.png" data-unresolved-comment-count="0" data-linked-resource-id="247661435" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-4_19-2-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661127" data-linked-resource-container-version="5" alt=""></span></p><p>Calculations:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Force</th><th scope="col" class="confluenceTh">X</th><th scope="col" class="confluenceTh">Y</th></tr><tr><td class="confluenceTd">Pedal Force (lbf)</td><td class="confluenceTd">=-Force*cos(angle)</td><td class="confluenceTd">=-Force*sin(angle)</td></tr><tr><td class="confluenceTd">MC Force (lbf)</td><td class="confluenceTd"><br/></td><td class="confluenceTd">=MA*Force</td></tr><tr><td class="confluenceTd">Reaction Pedal (lbf)</td><td class="confluenceTd">=-Pedal Force</td><td class="confluenceTd">=-PFy-MCF</td></tr><tr><td class="confluenceTd">Brake Tabs</td><td class="confluenceTd">=-^</td><td class="confluenceTd">=-^</td></tr><tr><td class="confluenceTd">MC Tab Front</td><td class="confluenceTd">=0</td><td class="confluenceTd">=bias*MC Force</td></tr><tr><td class="confluenceTd">MC Tab Rear</td><td class="confluenceTd">=0</td><td class="confluenceTd">=(1-bias)*MC Force</td></tr></tbody></table></div><p><br/></p><p>The Mechanical Advantage was calculated in: </p><p><a class="confluence-userlink user-mention" data-username="chkniesl" href="https://wiki.itap.purdue.edu/display/~chkniesl" data-linked-resource-id="146771365" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Cole Henry Kniesly</a> </p><p><br/></p><h3 id="LoadCalculationDocumentation-ThrottlePedal:">Throttle Pedal: </h3><p>Load Case: 150lbf applied at the top of the pedal. </p><p>There is no regulation regarding the force the throttle pedal needs to withstand, but we imagine 150 lbf to be above any force the throttle pedal is expected to see.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661127/247661435.png">image-2023-1-4_19-2-5.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

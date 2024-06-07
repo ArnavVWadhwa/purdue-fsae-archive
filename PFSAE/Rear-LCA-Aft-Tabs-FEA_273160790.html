@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Rear LCA Aft Tabs FEA</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751191.html">Design PF24 | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751197.html">Actuation PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Actuation-Tabs_273155560.html">Actuation Tabs</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Rear LCA Aft Tabs FEA
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Liang, David C</span>, last modified on Oct 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>POC: <a class="confluence-userlink user-mention" data-username="liang411" href="https://wiki.itap.purdue.edu/display/~liang411" data-linked-resource-id="230661299" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Liang, David C</a> </p><p><br/></p><p><a class="CID88d38eb2-790e-4a70-9be1-2eb6be5ab4e3" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/273160790/273160794.png" data-image-src="attachments/273160790/273160794.png" data-unresolved-comment-count="0" data-linked-resource-id="273160794" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-16_14-42-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273160790" data-linked-resource-container-version="5" alt=""></span></p><p>Reason: lug calculator doesn't work for this tab</p><p><br/></p><p><strong><u><a href="Mapping-Formula-Network-Drive_156601302.html">Mapping Formula Network Drive</a></u></strong></p><p>CAD: Drive → 2024 → 3_Suspension → 3_Structures → Actuation → PF24 Actuation Tabs Layout FEA</p><ul style="list-style-type: square;"><li>Import the solidworks files into workbench</li><li>Used PF24_SUS_ActuationTabsLayout_A_5  as of:<time datetime="2023-10-16" class="date-past">16 Oct 2023</time></li></ul><p>FEA:  Drive → 2024 → 3_Suspension → 3_Structures → FEA → ActuationTabs </p><ul><li style="list-style-type: none;"><ul style="list-style-type: square;"><li>Used Rear LCA Aft Tabs v2 as of<time datetime="2023-10-16" class="date-past">16 Oct 2023</time> (i think v3 is bugged atm)</li></ul></li></ul><p>Excel sheet with calcs for forces and springs: Drive → 2024 → 3_Suspension → 3_Structures → Actuation → Actuation Tabs Calcs </p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/273160790/273160792.png" data-image-src="attachments/273160790/273160792.png" data-unresolved-comment-count="0" data-linked-resource-id="273160792" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-16_14-42-21.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273160790" data-linked-resource-container-version="5" alt=""></span><a class="CID8777dbb0-3806-4568-9bac-989964c1a45a" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/273160790/273160793.png" data-image-src="attachments/273160790/273160793.png" data-unresolved-comment-count="0" data-linked-resource-id="273160793" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-16_14-42-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273160790" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p>Steps</p><p>1) Export as STEP → data to export → selected parts → select tabs and near chassis tubes </p><p>2) Import into NX and cut away extra tube length (idk how to do it in spaceclaim)</p><p>3) Unite all objects and fillet to stimulate welds (do not do between tabs cuz they don't want to weld that)</p><p>4) Export back into STEP</p><p>5) i messed up, so have to import into ANSYS 2023 through appsanywhere</p><p>6) added loads from<u> <strong><a href="PF24-TCP-Loads_270338638.html">PF24 TCP Loads</a></strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273160790/273160809.png" data-image-src="attachments/273160790/273160809.png" data-unresolved-comment-count="0" data-linked-resource-id="273160809" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-16_15-45-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273160790" data-linked-resource-container-version="5" alt=""></span></strong></u></p><p>7) Fix <strong>ends</strong> of each chassis tube</p><p>8) force and spring 1 are the tire rod (rear) and force and spring 2 are the LCA</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273160790/273160792.png">image-2023-10-16_14-42-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273160790/273160793.png">image-2023-10-16_14-42-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273160790/273160794.png">image-2023-10-16_14-42-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273160790/273160808.png">image-2023-10-16_15-44-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273160790/273160809.png">image-2023-10-16_15-45-15.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

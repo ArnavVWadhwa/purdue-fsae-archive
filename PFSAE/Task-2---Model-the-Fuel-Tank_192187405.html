@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Task 2 - Model the Fuel Tank</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Onboarding_141728914.html">Powertrain Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Subteam-Onboarding-Project_192187328.html">Powertrain Subteam Onboarding Project</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Task 2 - Model the Fuel Tank
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Skrzyszowski, Mateusz</span>, last modified by <span class='editor'> Horton, Tyler Jason</span> on Oct 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Now that you have chosen the size of your fuel tank, it is time to model it using NX.</p><p>First thing you want to do is define your design constraints. Staying within the Formula SAE competition rules is the most important thing to consider when designing your component. You can reference the <strong><a class="external-link" href="https://fsaeonline.com/cdsweb/gen/DocumentResources.aspx" rel="nofollow">Formula SAE 2022 Rulebook</a></strong> in your design. You will find the rules under the &quot;2022 Ruleset and Resources&quot; tab. Familiarize yourself with all the requirements that have to do with the fuel tank. I recommend writing down all your constraints and constantly referencing them as you continue to design.</p><p>Download this .zip file that will contain multiple files to aid in this onboarding design. Build your fuel tank as a sub-assembly inside the assembly file named &quot;2020_POW_Onboarding_Main.prt&quot;.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/192187405/2020_POW_OnboardingResources.zip?version=1&amp;modificationDate=1634855586000&amp;api=v2" data-nice-type="Zip Archive" data-file-src="/download/attachments/192187405/2020_POW_OnboardingResources.zip?version=1&amp;modificationDate=1634855586000&amp;api=v2" data-linked-resource-id="194183560" data-linked-resource-type="attachment" data-linked-resource-container-id="192187405" data-linked-resource-default-alias="2020_POW_OnboardingResources.zip" data-mime-type="application/zip" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="2020_POW_OnboardingResources.zip" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-zip.png" height="250" alt="" draggable="false"/><span class="title">2020_POW_OnboardingResources.zip</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="192187405" data-linked-resource-id="194183560" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>Now you can begin your modeling. <span style="color: rgb(23,43,77);">Organization of the parts within assemblies will be up to you. Potential Parts that you might have include but are not limited to: Fuel tank body(s), baffles, fuel pump brackets, fuel pump, filler neck, fuel cap, fuel lines, HydraMat, connectors, chassis mounted tabs, rubber mounts, sticky foam, etc. Purchased parts, like the HydraMat and fuel pump CAD will be provided to you in the file provided. Additional connectors or caps you may need can be designed by either you, or downloaded from an online source such as McMaster-Carr. Don't forget to assign proper mass properties to each component. We don't want a small fitting to weigh 60,000 pounds! Treat your CAD tree with care. You are going to be spending lots of time with it, and when we check it you will want it to look nice. It is significantly easier to work with well organized, properly named parts and assemblies compared to a mess where everything is named part 1,2,3,4 in one single assembly. </span><span style="color: rgb(23,43,77);">The overall geometry of the fuel tank is up to you. Keep space constraints in mind while you start designing your model. The firewall is also a part of your space constraint!</span></p><p>Other things to keep in mind include:</p><ul><li>What is the best material to use? You might consider weight, corrosion, and complexity to manufacture (Sheet metal bending complex? Welding difficulty?)<ul><li>Different alloys have differences in bending capability. </li></ul></li><li>Slosh. How can you design the fuel tank to eliminate harsh slosh of fuel while the car is turning?<ul><li>Baffles? What shape should they be? How will the baffles be installed.</li></ul></li><li>Installation of the Hydramat. The Hydramat will need a opening of about 10&quot; x 4&quot; on the top of the fuel tank in order to be inserted in. The Hydramat should sit near the bottom of the fuel tank, in order to be able to pick up fuel from the lowest point in the tank. (The dimension between top and bottom of the inside of the tank should be 3.5in for the Hydramat to fit correctly.)</li><li><span style="color: rgb(23,43,77);">Routing the Fuel Lines</span><ul style="text-align: left;"><li>You may need to download CAD files from McMaster for individual connectors you may need. </li><li>In the Main CAD file there is already a connector to the fuel rail (where you will connect the output of the fuel pump), and the fuel pressure regulator, (which you will connect to a return on the fuel tank.)</li><li>Hint: Fuel Lines are routed by creating a coordinate system datum at each end at the fitting, and then drawing a 3d spline between the two fittings. </li><li>Use at least two points at each fitting to start, to force the spline to start colinear to the fitting. </li><li>Add points on the spline to adjust curvature, move points only one axis at a time to make it easier. Keep in mind line material and flexibility, braided steel cannot bend a sharp 90 degrees. When the spline is created, use the &quot;tube&quot; command to create a hollow tube with the same OD and ID as the line, don't forget to assign proper mass properties.</li><li>If you need more information on how AN Fittings work, <strong><a class="external-link" href="https://www.youtube.com/watch?v=ySp_mUxR7xY&amp;feature=emb_title" rel="nofollow">watch this video</a></strong>.</li></ul></li></ul><p><span style="color: rgb(23,43,77);">Have fun and work with other new members on calculations and designs. Teamwork is essential in creating a successful Formula Team. Hop on the discord if you need help and a Team Lead or returning member may be able to assist you. In order to successfully complete the project, your fuel tank must pass all rules stated in the FSAE rulebook. Once you have met all of the requirements, move on to the next step.</span></p><p><br/></p><p><span style="color: rgb(23,43,77);">Here is an image of PF23 in side view IRL. This should give you an idea of how some things are generally mounted from an outside perspective (mainly the engine and other powertrain components)</span></p><p><strong><span style="color: rgb(23,43,77);">HINT:</span></strong><span style="color: rgb(23,43,77);"> The fuel tank is typically mounted in front of the main roll hoop and under the firewall</span></p><p><span style="color: rgb(23,43,77);"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/192187405/273159106.png" data-image-src="attachments/192187405/273159106.png" data-unresolved-comment-count="0" data-linked-resource-id="273159106" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-11_20-17-22.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="192187405" data-linked-resource-container-version="6" alt=""></span></span></p><p><br/></p><p>HINT: Here is an image of our 2020 fuel tank. This should give you an idea of how your package should put together. Try to come up with your own geometry before you study this image.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/192187405/192188610.jpg" data-image-src="attachments/192187405/192188610.jpg" data-unresolved-comment-count="0" data-linked-resource-id="192188610" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="fueeeeel.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="192187405" data-linked-resource-container-version="6" alt=""></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192187405/192188610.jpg">fueeeeel.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192187405/194183560.zip">2020_POW_OnboardingResources.zip</a> (application/zip)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/192187405/273159106.png">image-2023-10-11_20-17-22.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : M1 Build for Water Valve Stepper Motor | PF20</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832509.html">Design PF20 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143754572.html">Projects PF20 | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : M1 Build for Water Valve Stepper Motor | PF20
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (osborn42)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="M1BuildforWaterValveStepperMotor|PF20-SimpleControl">Simple Control</h3><p>I created this based off the Idle.Actuator.Stepper group and associated calculation code.</p><p>The main thing that I changed was Aim and the state case loop.</p><p><em>Aim = Convert.ToInteger(Maximum Step * Percent Closed);</em></p><p>I added a new parameter called percent closed, which takes a 0 to 100 percent value</p><p>The Maximum step parameter is meant to restrict the stepper from going beyond the physical limits of the valve</p><p><strong>This does mean that you will have to reset the motor and valve to fully open before running. </strong></p><p>I changed the state loop to not include the &quot;Home&quot; state.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="182" src="attachments/158473995/158473997.png" data-image-src="attachments/158473995/158473997.png" data-unresolved-comment-count="0" data-linked-resource-id="158473997" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-18_16-2-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158473995" data-linked-resource-container-version="6" alt=""></span></p><p><br/></p><h3 id="M1BuildforWaterValveStepperMotor|PF20-SimpleAutomatedLoadControl"><s>Simple Automated Load Control</s></h3><p><s><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="184" src="attachments/158473995/158474004.png" data-image-src="attachments/158473995/158474004.png" data-unresolved-comment-count="0" data-linked-resource-id="158474004" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-10-18_18-59-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="158473995" data-linked-resource-container-version="6" alt=""></span></s></p><p><s>The goal here was to re-purpose the Aim variable as to not re-write the whole function.</s></p><p><s>If the engine speed is above the target then we want the stepper to open to allow more water there by adding more load and conversely if the engine speed is below the target RPM then we need to close the valve to have less water for less load.</s></p><p><s><strong>This has not been tested (10/18/2020)</strong></s></p><p><strong>(12/1/2020) Refer <a href="https://wiki.itap.purdue.edu/display/PFSAE/Stepper+Motor+Load+Control" rel="nofollow">here </a>for updated info</strong></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158473995/158473996.png">image2020-10-18_16-1-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158473995/158473997.png">image2020-10-18_16-2-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158473995/158474003.png">image2020-10-18_18-54-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/158473995/158474004.png">image2020-10-18_18-59-45.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

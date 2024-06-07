@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DAQ PF24 | DCR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836584.html">DAQ PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DAQ PF24 | DCR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Jul 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/265097232/PF24%20DAQ%20DCR.pptx?version=1&amp;modificationDate=1690817808000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/265097232/PF24%20DAQ%20DCR.pptx?version=1&amp;modificationDate=1690817808000&amp;api=v2" data-linked-resource-id="267659783" data-linked-resource-type="attachment" data-linked-resource-container-id="265097232" data-linked-resource-default-alias="PF24 DAQ DCR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF24 DAQ DCR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/267659783/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="265097232" data-linked-resource-id="267659783" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></strong></p><p><strong>Project Scope (<span style="color: rgb(23,43,77);">Present problem statement and stakeholders)</span>:</strong></p><p>Problem <strong>Statement</strong>:</p><ul style="list-style-type: square;"><li>Manual pulling of data takes time away from the testing season.</li></ul><p><strong>Stakeholders</strong>:</p><ul style="list-style-type: square;"><li>Powertrain<ul style="list-style-type: square;"><li>Engine sensors/injectors/coils and engine control systems</li><li>Fuel/Coolant/Oil temperature sensors</li><li>Manifold/Fuel/Oil pressure sensors</li><li>Lambda sensor</li></ul></li><li>Suspension<ul style="list-style-type: square;"><li>Wheel speed sensors</li><li>Tire pressure sensors</li></ul></li><li>Chassis<ul style="list-style-type: square;"><li>Air tank pressure sensor</li><li>Steering position sensor</li><li>Mounting + Space</li></ul></li><li>Aero<ul style="list-style-type: square;"><li>Ride height sensors</li><li>Pitot sensor</li></ul></li><li>Electrical<ul style="list-style-type: square;"><li>Global position sensor</li><li>Button for logging</li><li>Dash for ^</li></ul></li></ul><p><br/></p><p><strong>Design Requirements (<span style="color: rgb(23,43,77);">Present known requirements, ie. Vehicle Performance, rules, and define unknown requirements)</span>:</strong></p><ul style="list-style-type: square;"><li>Goals<ul style="list-style-type: square;"><li>Could have switch/button on the dash to pull data<ul style="list-style-type: square;"><li>And/or indicator on the dash</li></ul></li><li>Mounting should be low</li></ul></li></ul><ul style="list-style-type: square;"><li>Requirements</li></ul><ul><li style="list-style-type: none;"><ul style="list-style-type: square;"><li>Must be securely placed on the car<ul style="list-style-type: square;"><li>Case should be around  5 x 5 x 2 inches, snug fit for the Mini PC while allowing room for the backup power source and ethernet splitter</li><li>Device shouldn't shake</li></ul></li></ul></li></ul><ul><li style="list-style-type: none;"><ul style="list-style-type: square;"><li>Maximize testing time<ul style="list-style-type: square;"><li>Should be less than 60 seconds to pull data</li><li>Less than 2 minutes to access data at the end of the day</li></ul></li><li>Minimize weight (minimal effect on performance when removed)<ul style="list-style-type: square;"><li>Less than 2 lbs</li></ul></li><li>Must be inexpensive compared to MoTeC alternative<ul style="list-style-type: square;"><li>Less than $200</li></ul></li><li>Must give an indication that data has been logged<ul style="list-style-type: square;"><li>Light on button will serve as the indicator</li></ul></li><li>Must option of manual data pull<ul><li>Switching back and forth between wireless and manual</li><li>Takes less than 60 seconds to switch between pulling methods</li></ul></li><li>Does not require an external power source</li><li>Should be completely removable</li></ul></li></ul><ul><li style="list-style-type: none;"><ul style="list-style-type: square;"><li>Must be easily accessible</li></ul></li></ul><p><br/></p><p><strong>Design Overview (Rough concepts for solution + Trade study with a recommended path forward):</strong></p><ul style="list-style-type: square;"><li>Option 1:<ul style="list-style-type: square;"><li>A button with built-in LED will be installed on the dash<ul style="list-style-type: square;"><li>The button will be connected to the external GPIO board that is connected to the Mini PC</li></ul></li><li>Using Python<ul style="list-style-type: square;"><li>Read the button input and pull data from the ECU</li></ul></li><li>The ECU will be connected to the Mini PC using ethernet</li><li>Extra hole in the case of the Mini PC for the other end of the ethernet splitter, to keep the option of a direct ECU to laptop data pull available</li><li>Mini PC will have a backup power source - 1 12V battery or 8x AA batteries<ul style="list-style-type: square;"><li>The primary power source is the car as the PC only draws 6W and needs 12V to power</li></ul></li></ul></li><li>Option 2:<ul style="list-style-type: square;"><li>Make macros for normal laptop pulling</li></ul></li><li>Option 3:<ul style="list-style-type: square;"><li>Wireless router on car</li></ul></li></ul><p><br/></p><p><strong>Cost (<span style="color: rgb(23,43,77);">Discuss rough budget)</span>:</strong></p><ul style="list-style-type: square;"><li>Mini PC ~ $84.99 (currently on sale, $119.00 full price)</li><li>Case<ul style="list-style-type: square;"><li>If 3D print ~ $2</li><li>If buy ~ $15</li></ul></li><li>Button with LED ~ $14</li><li>Ethernet splitter ~ $12</li><li>GPIO Board ~ $14</li><li>Batteries<ul style="list-style-type: square;"><li>12V ~ $6 for a pack</li><li>AA ~ $5-18 for a pack</li></ul></li></ul><p><br/></p><p><strong>Schedule (<span style="color: rgb(23,43,77);">Discuss schedule, constraints, etc.)</span>:</strong></p><p><br/></p><p><strong>Analysis (Mathematical models that will be used):</strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265097232/267659783.pptx">PF24 DAQ DCR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

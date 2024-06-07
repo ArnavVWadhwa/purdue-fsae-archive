@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 - ADAMS File</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Adams-Car-Vehicle-Kinematics-and-Dynamics_198513195.html">Adams Car Vehicle Kinematics and Dynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ADAMS-File-Log_217484402.html">ADAMS File Log</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 - ADAMS File
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on May 15, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="PF23ADAMSFile-ASSEMBLY:">ASSEMBLY:</h3><p><br/></p><h3 id="PF23ADAMSFile-SUBASSEMBLYDevelopment:">SUBASSEMBLY Development: </h3><p>Implementing Tires: (Based on PF22, LC0 is chosen tire however sims are performed with R25B as it didn't have a sharp peak allowing for less convergence issues)</p><p><strong>5-14-2022:</strong> Current considerations are running Hoosier LC0 compound for size **x6x10 </p><ul style="list-style-type: square;"><li>New 16&quot; OD tire that will save weight<ul style="list-style-type: square;"><li>Pros:<ul style="list-style-type: square;"><li>Lighter weight</li><li>Potential to learn a lot more as more work is required</li><li>Able to validate everything</li></ul></li><li>Cons:<ul style="list-style-type: square;"><li>Need to implement .tir model into ADAMS<ul style="list-style-type: square;"><li>ISSUES: No coeff related to longitudinal forces, Lateral Model performs strange at first glance due to no major peak which is seen from the 18&quot; model</li></ul></li><li>Re construct chassis hardpoints</li><li>Potential packaging issues</li></ul></li></ul></li><li>Previously used 18&quot; OD tire that weighs more<ul style="list-style-type: square;"><li>Pros:<ul style="list-style-type: square;"><li>Full tire model</li><li>.tir implemented in ADAMS</li><li>Used before</li><li>No packaging issues</li><li>Potentially minor changes in suspension geometry</li></ul></li><li>Cons:<ul style="list-style-type: square;"><li>Weight</li></ul></li></ul></li></ul><p><br/></p><ul style="list-style-type: square;"><li>R25B_18_6_10_7in_10psi  <ul style="list-style-type: square;"><li>Mass: 15.4 lbm (8.909 is tire, CAD shows Wheel assembly is 13.1442lb)</li><li>Ixx: 59.85</li><li>Iyy: 59.85</li><li>Izz: 11.9</li></ul></li></ul><p><br/></p><ul style="list-style-type: square;"><li>R25B_16_10_7in_10psi<ul style="list-style-type: square;"><li>KNOWN: tire is 7lbs</li><li>Mass: 13.5 lbm (7 is tire, adjusted the difference as wheel center should stay relatively the same)</li><li>Ixx: </li><li>Iyy: </li><li>Izz: </li></ul></li></ul><h3 id="PF23ADAMSFile-CONCERNSANDSANITYCHECKS:">CONCERNS AND SANITY CHECKS:</h3><ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="21">After messing with ADAMS the PF22 tire files for 18&quot;OD, it appears that the weight used is 15.4lbs and my guess is this includes tire + rims<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="22">How is camber turned off??</li><li data-inline-task-id="23">Why is mu scaled to 0.625 is this to simulate a wet environment or worn tires</li><li data-inline-task-id="24">Where does moment of inertias come from as the Nx doesnt match adas</li><li data-inline-task-id="25">How does this change when comparing rear change of inboard brakes at the diff rather than outboard</li><li data-inline-task-id="26"><span>&nbsp;</span></li></ul></li><li data-inline-task-id="27">Custom Tire Modeling<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="28">Coeff for Fx missing in new SES</li><li data-inline-task-id="29">Coeff for Fy LC0 don;t match what was done in the past</li><li data-inline-task-id="30">There are like 20 different tire files that were used in adams, which are for what and why</li></ul></li><li data-inline-task-id="31">Vehicle Design Process<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="32">1st choose tire<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="33">Simulate the choices we have</li><li data-inline-task-id="34">How is this done? Is a previous car used? New suspension points are required for the smaller diameter tire change how does this play in? </li><li data-inline-task-id="35">What simulations are needed for full vehicle</li></ul></li><li data-inline-task-id="36">2nd not sure whats next lol<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="37">Maybe kinematics and initial suspension points</li><li data-inline-task-id="38">Goal would be to maintain same kinematic parameters as they are &quot;optomized&quot;<ul class="inline-task-list" data-inline-tasks-content-id="217490066"><li data-inline-task-id="39">Want to make sure they are optimized and understand where they come from and how they are selected</li></ul></li></ul></li><li data-inline-task-id="40">3rd Run lap sim for vehicle architecture</li></ul></li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

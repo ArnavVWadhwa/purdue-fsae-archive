@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF20 Frame Sensitivity Testing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="200378423.html">Frame PF23 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF20 Frame Sensitivity Testing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Rumsey, Helen Nicole</span>, last modified on Nov 25, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Goal:</strong> To connect drivability and frame geometry. </p><p><strong>Procedure: </strong>(Spring configuration 1: 300 F, 400 R &amp; Spring configuration 2: 450 F, 400 R)</p><p>Slaloms in baseline configuration and final configuration.</p><p>Per Configuration:</p><ol><li>On-track torsion test of configuration</li><li><p>Spring Configuration 1: skidpad, understeer gradient, slaloms until driver feels consistent</p></li><li><p>Spring Configuration 2: skidpad, understeer gradient, slaloms until driver feels consistent</p></li><li><p>Post process data using on-track Motec channels</p></li><li><p>Check times for consistency &amp; ask drivers for drivability feedback. If the car feels “undrivable” make ARB changes until drivable again. If ARB changes don’t fix “undrivability” problem, minimum tuneability has been reached.</p></li><li><p>Remove chassis tubes and repeat.</p></li></ol><p>Final configuration egress (when the nSIS tubes are removed). </p><p><strong>On-track Torsion Test: </strong>With the driver in the car, at the same tire pressure and spring for each test, put a 2x4 under the front left tire and record the shock displacement.</p><p><strong>Analysis Location:</strong> mefsae\2023\4_Chassis\3_Simulation\PF20_Frame - located in this folder is the ANSYS files used to analyze the frame before the test and determine removal order, I2 data from testing, and calculators used to post process the data</p><p><strong>Analysis:</strong></p><ul style="list-style-type: square;"><li>Compare shock values to ANSYS model for each frame configuration (likely use skidpad and determine how many Gs were pulled)</li><li>Use shock data to determine sensitivity value (and compare to expected sensitivity value)</li><li>Compare braking and acceleration to ANSYS model (is there a large enough effect on LLTD for this to matter?) </li><li>Use driver feedback to determine an appropriate sensitivity range (how low can we go before the car gets hard to drive/ is it still drivable at rules minimum?)</li></ul><p><strong>Open Concerns/ Questions:</strong></p><ul style="list-style-type: square;"><li>To remove a tube do we need to cut the whole tube out or just slice it to negate it's effect?</li><li>What's mounted to the tubes we want to remove that would cause issues?</li></ul><p><strong>Frame Configurations:</strong></p><p>Baseline configuration - current PF20 frame geometry</p><p>Configuration #2 (PF20 w/o nLower Front) -</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230666055/233834500.png" data-image-src="attachments/230666055/233834500.png" data-unresolved-comment-count="0" data-linked-resource-id="233834500" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-27_17-25-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230666055" data-linked-resource-container-version="16" alt=""></span></p><p>Configuration #3 (PF20 w/o nLower Front &amp; nUpper Front) -</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230666055/233834501.png" data-image-src="attachments/230666055/233834501.png" data-unresolved-comment-count="0" data-linked-resource-id="233834501" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-27_17-25-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230666055" data-linked-resource-container-version="16" alt=""></span></p><p>Configuration #4 (PF20 w/o nLower Front &amp; nUpper Front &amp; nMiddle Front) -</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230666055/233834503.png" data-image-src="attachments/230666055/233834503.png" data-unresolved-comment-count="0" data-linked-resource-id="233834503" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-27_17-26-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230666055" data-linked-resource-container-version="16" alt=""></span></p><p>Configuration #5 (PF20 w/o nLower Front &amp; nUpper Front &amp; nMiddle Front &amp; nSIS) - </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230666055/233834505.png" data-image-src="attachments/230666055/233834505.png" data-unresolved-comment-count="0" data-linked-resource-id="233834505" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-8-27_17-27-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230666055" data-linked-resource-container-version="16" alt=""></span></p><p><br/></p><p><br/></p><p><strong>Suspension Configurations:</strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">SUS Configuration</th><th class="confluenceTh">Front Spring (lbf/in)</th><th class="confluenceTh">Rear Spring (lbf/in)</th><th class="confluenceTh">ARB Position *</th></tr><tr><td class="confluenceTd">A</td><td class="confluenceTd">300</td><td class="confluenceTd">400</td><td class="confluenceTd">3</td></tr><tr><td class="confluenceTd">B</td><td class="confluenceTd">450</td><td class="confluenceTd">400</td><td class="confluenceTd">3</td></tr><tr><td class="confluenceTd">C</td><td class="confluenceTd">300</td><td class="confluenceTd">450</td><td class="confluenceTd">None</td></tr><tr><td colspan="1" class="confluenceTd">D</td><td colspan="1" class="confluenceTd">450</td><td colspan="1" class="confluenceTd">300</td><td colspan="1" class="confluenceTd">3</td></tr><tr><td colspan="1" class="confluenceTd">E</td><td colspan="1" class="confluenceTd">450</td><td colspan="1" class="confluenceTd">300</td><td colspan="1" class="confluenceTd">5</td></tr></tbody></table></div><p>*1 is stiffest setting, use PF20 design book to determine actual stiffness of the position</p><p><strong>Summary of Driver Feedback:</strong></p><div class="table-wrap"><table class="wrapped relative-table confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 17.2459%;"/><col style="width: 15.8136%;"/><col style="width: 23.4555%;"/><col style="width: 13.5185%;"/><col style="width: 14.407%;"/><col style="width: 15.5004%;"/></colgroup><tbody><tr><th class="confluenceTh">CHA Configuration</th><th class="confluenceTh">SUS A</th><th class="confluenceTh">SUS B</th><th class="confluenceTh">SUS C</th><th class="confluenceTh">SUS D</th><th colspan="1" class="confluenceTh">SUS E</th></tr><tr><td style="text-align: center;" class="confluenceTd"><strong>1</strong></td><td class="confluenceTd"><p>Carson: &quot;MINTY&quot;, the setup did not fight and it was easy to sit and hold in the skidpad, only issues occurred from oscillations by front wing scrap</p><p>Matt: balance was better than SUS B and had more oversteer</p><p>Overall: Slight understeer (close to neutral)</p></td><td class="confluenceTd"><p>Carson: right hand turn did not feel good and understeery</p><p>Matt: felt like it could be more oversteery as it was more understeer than he would like</p><p>Overall: Understeery</p></td><td class="confluenceTd">-</td><td class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-</td></tr><tr><td style="text-align: center;" class="confluenceTd"><strong>2</strong></td><td class="confluenceTd"><p>Carson: Not that much understeer</p><p>Matt: did not feel much of a difference with the change in springs, felt there was more understeer than the first time on this SUS setup</p><p>Overall: N/A</p></td><td class="confluenceTd"><p>Carson: Hard to rotate the vehicle (understeering), needed alot of power oversteer to correct, Bucking starts to occur</p><p>Matt: Understeery and right hand turn was hard</p><p>Overall: N/A</p><p><br/></p></td><td class="confluenceTd">-</td><td class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-</td></tr><tr><td style="text-align: center;" class="confluenceTd"><strong>3</strong></td><td class="confluenceTd"><p>Carson: Left inside rear lifted and caused the vehicle to want to be forced out of the circle when it landed, bucking on right hand corners, more understeery</p><p>Matt: Felt the best and fastest, response was nice</p><p>Overall: Inside wheel lift started for Carson</p></td><td class="confluenceTd"><p>Carson: Worst thing to drive, could hear the wheel lift as revs would increase, car would step out</p><p>Matt: Understeery and lost confidence because of sparatic controls</p><p>Overall: Tires were very hot at this point of the day and over heating at 140-150F</p></td><td class="confluenceTd">-</td><td class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-</td></tr><tr><td style="text-align: center;" class="confluenceTd"><strong>4</strong></td><td class="confluenceTd"><p>Carson: Felt like the car was doing a burnout because of the tire slip in the rear, not bucking as hard but couldn't push it faster, inside lifts</p><p>Matt: Same as previous CHA (3) but spring setup was better</p><p>Overall: Tire overheating</p></td><td class="confluenceTd"><p>Carson: Same as other springs but more bucking</p><p>Matt: Understeery and responsive to small inputs</p><p>Overall:</p></td><td class="confluenceTd">-</td><td class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-</td></tr><tr><td style="text-align: center;" class="confluenceTd"><strong>5</strong></td><td class="confluenceTd"><p>Carson: Unbearable to drive because of bucking and tire lift</p><p>Matt: Hard to drive , not much confidence and difficult to control throttle oversteer</p><p>Overall: Rear right shock pot disconnected and noticed when Matt came in.</p></td><td class="confluenceTd"><p>Carson: Terrible to drive, throttle control was poor, was not able to characterize understeer/oversteer, only thing was tire lift issue</p><p>Matt: Felt unstable and jumpy in right hand turn, did not think it was too understeery</p><p>Overall: Tires were able to cool during this driver change because of cloud coverage and were at 120F upper end of the ideal temperature</p></td><td class="confluenceTd">Carson: Worst thing to drive, inside wheel lift the whole time. Supposed to be the most oversteery.</td><td class="confluenceTd"><p>Carson: Very understeery and inside tire did not lift or to the same extreme.</p><p>Intended to understeer alot</p></td><td colspan="1" class="confluenceTd">Carson: Understeer but not as bad, rare for tire lift</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Results &amp; Concluding Thoughts:</strong></p><p class="auto-cursor-target"><strong><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/230666055/PF20_Cha_Stiffness_Study_Summary_20220916.pdf?version=1&amp;modificationDate=1669403987000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/230666055/PF20_Cha_Stiffness_Study_Summary_20220916.pdf?version=1&amp;modificationDate=1669403987000&amp;api=v2" data-linked-resource-id="244777342" data-linked-resource-type="attachment" data-linked-resource-container-id="230666055" data-linked-resource-default-alias="PF20_Cha_Stiffness_Study_Summary_20220916.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF20_Cha_Stiffness_Study_Summary_20220916.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/244777342/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="230666055" data-linked-resource-id="244777342" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></strong></p><p class="auto-cursor-target">The frame in its final configuration is still tunable to reach the same LLTD desired ranges (but at the cost of spring configurations that might not be as desirable for other suspension characteristics).  Drivers still achieved the same skidpad times, but less comfortable (which could be due to tube removal or a lot of other factors were changing as the day went on like tire temperature, track temperature, engine temperature, ect.). </p><p class="auto-cursor-target">As seen by the initial analysis (but not confirmed by the data since some of the data was lost), the first 3 tubes to be removed had little impact of sensitivity to LLTD. We didn't try to tie the on track data back to FEA analysis on sensitivity since the margins on track are smaller than I would feel comfortable saying the model could predict. </p><p class="auto-cursor-target">The last tube removed (upper nonstructural SIS) had the largest impact on sensitivity to LLTD in FEA and I would deem as the big tube to consider if it should be removed or not. We didn't have data to compare apples to apples suspension configurations between CHA1 and CHA5 but we were able to achieve the same range of LLTD values. Note that later on in the design process we added this tube back to the frame design in order to help with a front impact (refer to PF23 frame analysis for more information.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666060.png">image2022-8-4_13-19-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666062.png">image2022-8-4_13-24-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666065.png">image2022-8-4_13-26-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666067.png">image2022-8-4_13-33-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666068.png">image2022-8-4_13-34-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666074.png">image2022-8-4_13-46-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666401.png">image2022-8-6_11-8-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/230666402.png">image2022-8-6_11-9-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/233834500.png">image2022-8-27_17-25-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/233834501.png">image2022-8-27_17-25-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/233834503.png">image2022-8-27_17-26-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/233834505.png">image2022-8-27_17-27-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230666055/244777342.pdf">PF20_Cha_Stiffness_Study_Summary_20220916.pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

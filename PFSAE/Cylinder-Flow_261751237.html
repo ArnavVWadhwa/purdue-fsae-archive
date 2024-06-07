@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Cylinder Flow</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Cylinder Flow
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 24, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Cylinder Flow</strong></u></p><p>You might ask why am I writing a page on cylinder flow when nothing on a racecar aero package should look like a cylinder. And my answer is cylinder flow is cool and it contains many nuances that you need to be away of when design aero package for a racecar.</p><p>The premise behind cylinder flow is Reynolds dependency, as in how the flow patterns change based on Reynolds number.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/261751237/261751353.png" data-image-src="attachments/261751237/261751353.png" data-unresolved-comment-count="0" data-linked-resource-id="261751353" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-24_21-46-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751237" data-linked-resource-container-version="1" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="400" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Drag_Coefficient_%28Cd%29_vs_Reynolds_number_%28Re%29_in_various_objects.png" data-image-src="https://upload.wikimedia.org/wikipedia/commons/6/67/Drag_Coefficient_%28Cd%29_vs_Reynolds_number_%28Re%29_in_various_objects.png"></span></p><p>At Reynolds number of less than 5 (which only really happens if you have a cylinder is honey at extremely low speeds), there is no flow separation. This is because this is enough pressure force on the fluid particles to keep flow attached all the way through the cylinder. At this point, drag coefficient decreases with increase in velocity since drag is pressure dominated, and as Reynolds number increase, pressure drag drops and viscous drag increases.</p><p>As Reynolds number increases to in between 5 and 40, flow separation starts to appear. Flow separation is now in the form of a stable vortex pair. Again, due to pressure dominated in this region due to the nature of low Reynolds number flow.</p><p>Between Reynolds number of 40 and 150 (slow speed flow in water), pressure instability start to develop and those once stable vortices get shed. This is the famous von Karman vortex shedding, as shown in the gif below. At this region, drag coefficient is still dropping with increase in velocity.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Kármán vortex street - Wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Vortex-street-animation.gif" data-image-src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Vortex-street-animation.gif"></span></p><p>At Reynolds number between 150 and 300, the vortices transition from laminar to turbulent. Past that all the way to Re of 30,000, the vortices shed are fully turbulent. </p><p>From this point on I will not mention the exact Reynolds number anymore, since different sources vary and it is the actual value isn't important.</p><p>As Reynolds number increases past 30,000, the nice vortex shedding pattern breaks down into what we should call wake. At this point, flow separates laminarly from the surface. The separation point would be barely past the highest and lowest points of the cylinder, let's call it 100 degrees (totally made up number to show trends).</p><p>As Reynolds number continue to increase, the separated laminar flow start to transition to turbulent early enough for turbulent reattachment to occur, forming laminar separation bubbles. The initial laminar separation point would be close to but slightly more than 100 degrees, let's call it 101 degrees. The flow then reattaches at 110 degrees turbulently. And flow again separates at 120 degrees turbulently. The laminar separation bubble corresponds to the dip in Cd vs. Re graph.</p><p>As Reynolds number increases, flow transitions to turbulent before it has a chance to separate, laminar separation bubble breaks down. At this point, flow only separates turbulently. Due to the flow separation resistant nature of turbulent flows, this separation point is significantly later than original laminar separation point at maybe 110 degrees. Since the separation is earlier than the case with laminar separation bubbles, drag increases again. </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751237/261751353.png">image-2023-5-24_21-46-58.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

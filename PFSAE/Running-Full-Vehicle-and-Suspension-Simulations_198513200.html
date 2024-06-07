@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Running Full Vehicle and Suspension Simulations</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Adams-Car-Vehicle-Kinematics-and-Dynamics_198513195.html">Adams Car Vehicle Kinematics and Dynamics</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Running Full Vehicle and Suspension Simulations
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Klaveano, Alexander Ryan</span> on Dec 04, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This page will give a brief overview of common simulations in ADAMS Car and how to configure and run them.</p><p><br/></p><p>Before running any simulations, make sure to follow the instructions on Page: &quot;Adams File Setup&quot; to configure the software with all of the right file paths to the vehicle files. Select an appropriate directory for where you want your simulation files to go. (Each simulation will produce six different files, so this tends to clutter up directories, it's generally a good idea to make a new folder in whichever location you're working, in which all of your simulation files will go.</p><p><strong>Assembly Selection</strong></p><p>The first step is obviously to open your assembly to be tested. Right clicking on the &quot;Assembly Name&quot; field in the Open Assembly dialog box from File → Open → Assembly allows you to browse for an assembly file. Full Vehicle Assemblies located in Z:\Knowledge_Base\01-Suspension\06-Adams_Car_Vehicle_Files\private2</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198513200/198513216.png" data-image-src="attachments/198513200/198513216.png" data-unresolved-comment-count="0" data-linked-resource-id="198513216" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-4_17-56-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198513200" data-linked-resource-container-version="1" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="162" src="attachments/198513200/198513218.png" data-image-src="attachments/198513200/198513218.png" data-unresolved-comment-count="0" data-linked-resource-id="198513218" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-4_17-57-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198513200" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p>Make sure your units are proper for your application. If getting sims for the Lap Sim, use MMKS, otherwise, IPS is the way to go. These can be changed from Settings → Units</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/198513200/198513219.png" data-image-src="attachments/198513200/198513219.png" data-unresolved-comment-count="0" data-linked-resource-id="198513219" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-4_17-58-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198513200" data-linked-resource-container-version="1" alt=""></span></p><p><strong>File Name Convention</strong></p><p>To keep simulation output files organized, we use a file naming convention to differentiate outputs from different simulation runs. When running a simulation in ADAMS, the dialog box for configuring simulation parameters has a field &quot;Output Prefix&quot;. In this field you should enter the following [Assembly or Subsystem Name]_[Simulation Type (this can be an acronym)]_[Simulation number]. For example, the first run of a Static Vehicle Characteristics (svc) simulation on the assembly &quot;PF21B_13_wa_r&quot;, would have the output prefix &quot;PF21B_13_wa_r_svc_1&quot; as shown below. This isn't too critical to keep consistent, but it's good to be able to differentiate between sims that are in the same directory, and this is the easiest way to do that.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198513200/198513207.png" data-image-src="attachments/198513200/198513207.png" data-unresolved-comment-count="0" data-linked-resource-id="198513207" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-4_16-58-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198513200" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p><strong>Lap Sim Simulations</strong></p><p>See <a href="Matlab-Lap-Time-Simulation-Tutorial_135103771.html">Matlab Lap Time Simulation Tutorial</a> for detailed instructions on taking the three base simulations for the Lap Time Simulation.</p><p><strong>Full Vehicle Analyses</strong></p><p>Static Vehicle Characteristics (For overall vehicle characteristics)</p><p>****Update with More****</p><p><strong>Suspension Analyses</strong></p><p>Parallel Wheel Travel (For getting data for camber/toe curves, etc.</p><p>****Update with More****</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198513200/198513207.png">image2021-12-4_16-58-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198513200/198513216.png">image2021-12-4_17-56-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198513200/198513218.png">image2021-12-4_17-57-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198513200/198513219.png">image2021-12-4_17-58-58.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

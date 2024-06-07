@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Fuel Film Tuning How To</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297393.html">Lessons Learned | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Archives_198512866.html">Powertrain Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF20---Yamaha-R6_164135089.html">PF20 - Yamaha R6</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Tuning_132156894.html">Tuning</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Fuel Film Tuning How To
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Williams, Carson Kenneth</span>, last modified on Jan 17, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ol><li>Set all trims to zero</li><li>default values in main, scale, offset, and time constants<ol><li>Main </li><li>Offset </li><li>Time Constants</li><li>Trim Engine Speed</li></ol></li><li>Closed loop off</li><li>activate film compensation</li><li>use default values for film increase / decrease time constants for fast and slow</li><li>choose fixed engine speed and fixed fuel mixture aim<ol><li>6000 rpm</li></ol></li><li>Put those numbers into reference engine speed and reference mixture<ol><li>engine speed should be in the lower range as films have bigger impacts</li></ol></li><li>Scale the main table by performing steps in the engine load and checking if the lambda trace in acceleration / deceleration seem stable<ol><li>If trace in acceleration is too lean then increase scale or the table values by a certain factor and vice versa</li><li>usually the slope of the table will be quite similar so scaling the whole table will give satisfactory results</li><li><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://cdn.discordapp.com/attachments/752355898495598703/799876302290026506/unknown.png" data-image-src="https://cdn.discordapp.com/attachments/752355898495598703/799876302290026506/unknown.png"></span></li><li>see more detailed thing if not satisfied</li></ol></li><li>Adjust time constants <ol><li>smaller = increase in film volume will be processed in a shorter time</li><li>determine the offset by resuming combustion i.e overrun<ol><li>Overrun = turn limiter down to 6000 and bang off limiter (Carson's 1am thought)</li><li>look at overrun and maybe make a custom script to accelerate to 6000 and shut fuel off for a split second</li></ol></li><li>if the lambda trace is too lean then increase offset and vice versa</li></ol></li><li>Repeat tests at different engine speeds to calibrate trim engine speed table<ol><li>if lambda trace when increasing engine load is too rich then go to negative values and vice versa<ol><li>trim engine speed should be pretty linear</li></ol></li></ol></li><li>Spot check lambda traces in engine load changes at different coolant temperatures<ol><li>if lambda trace in acceleration is too lean, increase trim temperature</li></ol></li></ol><p><br/></p><p>Note:</p><p>When you stomp on throttle: fuel film calculator reset tolerance</p><p><br/></p><p><br/></p><h1 id="FuelFilmTuningHowTo-FuelFilmTuningHowTo(MoreDetailedTake#2)">Fuel Film Tuning How To (More Detailed Take #2)</h1><p>Set the reference RPM for something like 2000. It needs to be low. And set the correlating mixture aim at that rpm</p><p>Set the Primary fast time constants to .4 seconds</p><p>Set Primary slow time constants to 1.25 seconds</p><p>Set the main map to:</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><th class="confluenceTh">30</th><th class="confluenceTh">40</th><th class="confluenceTh">50</th><th class="confluenceTh">60</th><th class="confluenceTh">70</th><th class="confluenceTh">80</th><th class="confluenceTh">90</th><th class="confluenceTh">100</th></tr><tr><td class="confluenceTd">0</td><td class="confluenceTd">10</td><td class="confluenceTd">25</td><td class="confluenceTd">45</td><td class="confluenceTd">70</td><td class="confluenceTd">100</td><td class="confluenceTd">130</td><td class="confluenceTd">155</td></tr></tbody></table></div><p>Scale to 100%</p><p>Set to offset to 30</p><p><br/></p><p>When trimming engine speed – Higher Rpms means lower %trim and goes negative after the reference value</p><p>Here is what an example table could be:</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><td class="confluenceTd">1k</td><td class="confluenceTd">2k (reference)</td><td class="confluenceTd">3k</td><td class="confluenceTd">4k</td><td class="confluenceTd">5k</td><td class="confluenceTd">6k</td><td class="confluenceTd">7k</td><td class="confluenceTd">8k</td><td class="confluenceTd">9k</td><td class="confluenceTd">10k</td><td class="confluenceTd">11k</td><td class="confluenceTd">12k</td></tr><tr><td class="confluenceTd">+5</td><td class="confluenceTd">0</td><td class="confluenceTd">-10</td><td class="confluenceTd">-20</td><td class="confluenceTd">-30</td><td class="confluenceTd">-40</td><td class="confluenceTd">-50</td><td class="confluenceTd">-60</td><td class="confluenceTd">-65</td><td class="confluenceTd">-68</td><td class="confluenceTd">-72</td><td class="confluenceTd">-75</td></tr></tbody></table></div><p><br/></p><p>When trimming temp table – Higher temps than normal operating temps (80-90) </p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><td class="confluenceTd">0</td><td class="confluenceTd">20</td><td class="confluenceTd">40</td><td class="confluenceTd">60</td><td class="confluenceTd">80</td><td class="confluenceTd">90</td><td class="confluenceTd">120</td></tr><tr><td class="confluenceTd">+200</td><td class="confluenceTd">+100</td><td class="confluenceTd">+50</td><td class="confluenceTd">+20</td><td class="confluenceTd">0</td><td class="confluenceTd">0</td><td class="confluenceTd">-25</td></tr></tbody></table></div><p><br/></p><p><strong>(note to self)</strong> Don't mess with injector trims you're just going to screw things up </p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

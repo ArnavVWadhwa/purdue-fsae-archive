@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Pneumatics DCR Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832176.html">Design PF24 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836446.html">Pneumatics PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Pneumatics DCR Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified by <span class='editor'> Rumsey, Helen Nicole</span> on Aug 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>DCRv1</strong></p><p><strong>Hunter's Notes:</strong></p><ul><li>Electronics also picking sensors</li><li>Battery has to be charged to complete 2 endurances otherwise it is gonna be giga heavy</li><li>I thought Christian found that the shifter required more force after the fact idk where it is documented</li><li>How to improve clutch control without reverting to mechanical?</li><li>Big big battery could be justified weight wise by weight decrease from electronic shifting → Bigger battery would be good if we could justify cost</li><li>I like kaz for wiring → gonna need even bigger quick release for fanatec and homemade has huge reliability concerns</li><li>I don't think that other teams using something necessarily confirms that it is the right thing</li></ul><p><strong>Zach's Notes:</strong></p><ul><li>these force requirements changed with what gear you were in if i remember correctly</li><li>i think another valid point on this table is that you are in a way taking chemical energy from fuel and converting it to electrical energy at the stator so that could result in a reduced efficiency score. with pneumatics you are going out on track with essentially more potential energy that isn't counted in your efficiency score. I know we could also upgrade the battery, so that's something to consider, but yeah just a thought I had</li><li>do we just want a clutch cylinder so that we can clutch and downshift? if we can get rid of that, then we should be able to go just manual which would be great</li><li>I don't think we need the contigency plan if we have spares for pneumatics. I would rather pour more engineering resources to a better and more refined pneumatics / electronic package than waste time building a manual system. </li><li>side note: eating peanut butter rn</li><li>i mean i agree i dont see a reason to really change actual pneumatics components, but lets just keep an open mind and be open to an architecture change if we really think that it gives us a performance benefit</li></ul><p><br/></p><h3 id="PneumaticsDCRNotes-ActionItems:">Action Items:</h3><ul class="inline-task-list" data-inline-tasks-content-id="267658756"><li class="checked" data-inline-task-id="3">Identify and analyze potential areas of improvement for pneumatic shifter <time datetime="2023-08-09" class="date-past">09 Aug 2023</time> <a class="confluence-userlink user-mention" data-username="hrumsey" href="https://wiki.itap.purdue.edu/display/~hrumsey" data-linked-resource-id="143757320" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Rumsey, Helen Nicole</a> <a class="confluence-userlink user-mention" data-username="kalbanes" href="https://wiki.itap.purdue.edu/display/~kalbanes" data-linked-resource-id="230659762" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Albanese, Katherine</a> </li><li class="checked" data-inline-task-id="4">Trade study of additional manual clutch vs continuing pneumatic clutch <time datetime="2023-08-09" class="date-past">09 Aug 2023</time> <a class="confluence-userlink user-mention" data-username="hrumsey" href="https://wiki.itap.purdue.edu/display/~hrumsey" data-linked-resource-id="143757320" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Rumsey, Helen Nicole</a> <a class="confluence-userlink user-mention" data-username="kalbanes" href="https://wiki.itap.purdue.edu/display/~kalbanes" data-linked-resource-id="230659762" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Albanese, Katherine</a> </li></ul><p><br/></p><p><strong>DCRv2</strong></p><p><strong>Hunter's Feedback:</strong></p><ul><li>Doing solenoid for clutch control?<br/><ul><li>Lacking analog voltage inputs for slow clutch paddle → Buttons preferred otherwise very dependent on Matt's CAN expander</li><li>Also lacking outputs for electronically adjustable valve → Same dependence on CAN expander</li></ul></li><li>24V not easy would prefer 12V unless 24V is actually better</li></ul><p><br/></p><p><strong>Keith's Feedback:</strong></p><ul><li>Very nice diagram</li><li>How is sizing for Air tank determined this year (since we had issues with this last year)</li><li>Reach out to Empire for more specs such as weight</li><li>Any thoughts on addressing the delay with the air being sent from the solenoid to fill lines before pistons? I know dyno testing on this showed some differences but we were limited by packaging</li></ul><h3 id="PneumaticsDCRNotes-Dien&#39;sFeedback:"><strong>Dien's Feedback:</strong></h3><ul><li>I think you should def try to reach out to Norgren and Misumi for more detailed specs and ratings on their cylinders, and weight/price, etc. </li><li>The bigger air tank is made from a different material (i recall the 68in tank might have been reinforced carbon fiber) </li><li>Tubing that is in proximity with the engine def need to be properly insulated </li><li>Electrically adjustable release valve depends on current draw potential and pin </li><li>Definitely need to spec out more regulator options (check pf23 lessons learned page and pf23 documentation for notes on how sketchy pf23 reg was) </li><li>Self-resetting safety valve on regulator is good for safety but very annoying to set up </li><li>Pressure regulating set srew developed play and became less reliable over the course of testing + leading up to comp → Might wanna look into detailed components for speced regs to check set screw specs</li><li>Remember to get spare burst discs / make plans for servicing regulator to prevent disc rupture</li><li>I know for sure that </li></ul><h3 id="PneumaticsDCRNotes-GeneralNotes:">General Notes:</h3><ul><li>Manual clutch that replaces entire pneumatic clutch requires a slipper clutch ($850) → not really viable</li><li>Need to redo DFMEA with greater detail</li><li>Electronic flow control valve + slow clutch pedal seems like a good risk to take and a challenging enough goal for this season</li><li>More details on tubing is required → make the switch to better insluated tubing (without requiring </li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

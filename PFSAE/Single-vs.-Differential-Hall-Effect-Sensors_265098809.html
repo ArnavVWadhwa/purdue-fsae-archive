@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Single vs. Differential Hall Effect Sensors</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297205.html">Education | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262833910.html">Car Knowledge | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Sensors_265098801.html">Sensors</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="265098804.html">Speed | Sensors</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="265098806.html">Hall Effect | Sensors</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Single vs. Differential Hall Effect Sensors
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Jul 20, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="Singlevs.DifferentialHallEffectSensors-Singlevs.DifferentialHallEffectSensors"><strong>Single vs. Differential Hall Effect Sensors</strong></h3><p>Single Hall effect sensors produce signals that follow the shape of a target tooth/valley, where peak field levels are best over large target features. The signal baseline is dependent on target pitch and magnet design and inherently exhibits a shift or drift over air gap and tooth size changes. The result is a reduction in edge accuracy (Figure 1), which is important for proper engine timing control. To mitigate these effects, a complex magnet system is needed to provide a near-zero baseline field. Another approach is to add sophisticated circuits in the sensor design to minimize and correct for shift or drift.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098810.png" data-image-src="attachments/265098809/265098810.png" data-unresolved-comment-count="0" data-linked-resource-id="265098810" data-linked-resource-version="3" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><em><strong>Figure 1. Single Hall Effect Sensor</strong></em><br/><em>Single Hall effect sensors detect large target features. Notice the offset shift over the narrow target features.</em></p><p style="text-align: center;"><br/></p><p>In some basic two- and three-wheeled vehicles, these sensors are successfully used in rudimentary engine or transmission control systems, but the growing trend is toward models with increased vehicle electrification, including engine timing and transmission control. In these applications, single Hall effect sensors often lack stray field immunity and noise rejection to meet newer model requirements.</p><p>Differential Hall effect sensors provide signals that are edge sensing over a target tooth/valley. The signal shape is roughly sinusoidal with up to two times the peak-to-peak magnetic field (Figure 2).</p><p><br/></p><p><strong><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098827.png" data-image-src="attachments/265098809/265098827.png" data-unresolved-comment-count="0" data-linked-resource-id="265098827" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></strong></p><p style="text-align: center;"><em><strong>Figure 2. Differential Hall Effect Sensor</strong></em><br/><em>Differential Hall effect sensors detect target edges. No offset shift over the target features.</em></p><p style="text-align: center;"><br/></p><p>The differential signal is symmetric about zero Gauss since any baseline shift is eliminated through subtraction. As a result, the differential magnet system can be a simple magnet with a high common field. This aids in improving overall air gap performance compared to single Hall effect sensors.</p><p>Differential Hall effect sensors and their associated signal processing circuits provide excellent immunity and common mode rejection of noise and stray fields. Baseline drift due to installation tolerance or air gap is reduced by subtraction and offset-reducing circuits. Combined, these deliver the performance and reliability needed in vehicles with increased electrification and complex engine timing and transmission controls. Additionally, the edge detection capability of these sensors makes them usable over a wide range of target geometries, particularly fine-pitch targets found in most two-wheeled vehicle applications.</p><p><br/></p><hr/><h3 id="Singlevs.DifferentialHallEffectSensors-ImmunitytoStrayFields"><strong>Immunity to Stray Fields</strong></h3><p>AC and DC-generated stray magnetic fields that exist in the vehicle power train and control systems are a challenge for speed or direction sensing applications. Single Hall effect sensors are not able to compensate or reject DC and AC stray fields. In Figure 3, the horizontal dash lines show the device switch point levels (625 G and 635 G, for instance) with output switching under a no stray field condition. When a DC stray field is applied, the associated drift causes the magnetic level to shift outside of the switch point thresholds, resulting in no switching and an output flat line. Likewise, if an AC stray field is applied, the noise cannot be adequately rejected and causes the device to “chatter” around the frequency of the applied noise, which is present in the output switching waveform(Figure 3). This added noise can cause system control and timing errors, which can impact vehicle reliability and performance.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098828.png" data-image-src="attachments/265098809/265098828.png" data-unresolved-comment-count="0" data-linked-resource-id="265098828" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 3.</strong> <strong>Influence of Stray Field Interference on Single Hall-Effect Device<br/></strong>Single Hall-effect sensors cannot adequately subtract or reject stray field interference.</p><p style="text-align: center;"><br/></p><p>The solution to mitigate the impact of stray magnetic fields and to reduce or eliminate AC and DC interference signals is a differential Hall effect sensor. The differential configuration and circuits cancel common fields applied to the sensor’s Hall effect plates. Allegro’s specific differential architectures further improve sensor performance and stability to external interference.</p><p>Figure 4 shows a normal operating condition with comparison to AC and DC stray field disturbance. In the DC stray field example, the top two traces show a DC field applied to each Hall effect element and the subsequent differential output in the lower trace. This shows the effects of subtraction and maintaining the baseline near zero Gauss. In the AC stray field example, AC common mode noise is applied to each Hall effect element. The clean differential output (lower trace) is a result of the sensor’s differential input and common mode noise cancellation (rejection). In both stray field cases, the signal integrity and correct output switching is maintained. Additionally, differential Hall effect sensors can also handle the combination of DC and AC at the same time.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098824.png" data-image-src="attachments/265098809/265098824.png" data-unresolved-comment-count="0" data-linked-resource-id="265098824" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 4.</strong> <strong>Influence of Stray Field Interference on Differential Hall Effect Device<br/></strong>Differential Hall effect sensors subtract and reject stray field interference.</p><p style="text-align: center;"><br/></p><hr/><h3 id="Singlevs.DifferentialHallEffectSensors-ImmunitytoInstallationTolerances"><strong>Immunity to Installation Tolerances</strong></h3><p>While the operation of a single Hall effect sensor is independent of installation orientation, a change in position can occur after installation. This change in position can result in an offset shift and reduced signal amplitude. Figure 5 shows possible sensor displacement scenarios. These position changes cause an offset from the absolute (installed) value, resulting in a DC shift. Figure 6 shows an example of offset leading to a signal level drop below switch thresholds (dashed lines), resulting in no switching and an output flat line.</p><p>Using a differential element sensor, any offset due to a change in installation position is subtracted and maintains the baseline near zero gauss. This ensures the signal remains within the device switching thresholds so that normal switching is maintained regardless of the shift in position (Figure 7).</p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098835.png" data-image-src="attachments/265098809/265098835.png" data-unresolved-comment-count="0" data-linked-resource-id="265098835" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-5.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><br/></p><p style="text-align: center;"><strong>Figure 5. Hall Effect Sensor Orientation to Target</strong><br/>Possible position change scenarios after installation</p><p style="text-align: center;"><br/></p><p style="text-align: center;"><br/></p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/265098809/265098834.png" data-image-src="attachments/265098809/265098834.png" data-unresolved-comment-count="0" data-linked-resource-id="265098834" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 6</strong>.<strong> Impact of installation-induced offset shift on a single Hall effect sensor<br/></strong>Single Hall effect sensors are susceptible to an output flatline, no switching</p><p style="text-align: center;"><br/></p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/265098809/265098833.png" data-image-src="attachments/265098809/265098833.png" data-unresolved-comment-count="0" data-linked-resource-id="265098833" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 7.</strong> <strong>Impact of installation-induced offset shift on a differential Hall effect sensor</strong><br/>Differential Hall effect sensors maintain normal output switching</p><p style="text-align: center;"><br/></p><hr/><h3 id="Singlevs.DifferentialHallEffectSensors-ImmunitytoSuddenAirGapChange"><strong>Immunity to Sudden Air Gap Change</strong></h3><p>“Sudden” refers to an air gap change from one target feature (tooth and valley) to the next that is not part of the normal features in a given target. For example, sudden air gap changes can be caused by damage from a bent or missing tooth or the introduction of ferrous objects and debris to the target surface. Figure 8 shows an example of a bent tooth target and the associated magnetic field signal generated by single and differential element sensors due to the air gap reduction.</p><p>The change in air gap with a single-element sensor causes an offset shift and amplitude change outside of the switching thresholds (dashed lines). Once the signal reaches this point, the sensor stops switching and provides an output flat line.</p><p>The differential Hall effect sensor subtracts the offset shift and measures the signal amplitude change. The resulting signal maintains the baseline near zero gauss. This ensures the signal remains within the device switching thresholds and the device continues to provide output switching, regardless of the offset shift and air gap reduction.</p><p><br/></p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098832.png" data-image-src="attachments/265098809/265098832.png" data-unresolved-comment-count="0" data-linked-resource-id="265098832" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 8. Impact of sudden air gap-induced shift on Hall effect sensors</strong><br/>Single Hall effect sensors are very sensitive to air gap change. Differential Hall effect sensors are less sensitive.</p><p style="text-align: center;"><br/></p><hr/><h3 id="Singlevs.DifferentialHallEffectSensors-ImmunitytoDynamicAirGapChange"><strong>Immunity to Dynamic Air Gap Change</strong></h3><p>Dynamic air gap change can occur in applications as a gradual or abrupt change in air gap over target rotation. These discontinuities are usually consistent with every target rotation.The net result is a change in signal amplitude that can occur over multiple target features. Such a condition requires a sensor to properly adapt to the changing signal so that it can continue to switch.</p><p>One form of dynamic change in targets for two- and three-wheeled vehicles is target runout or wobble. Runout is a change in air gap that is consistent with every revolution of the target and occurs gradually (over many teeth) as shown in Figure 9. Some common causes are off-center shaft position, target eccentricities, damaged/warped targets, or mechanical loading on shafts/bearings.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/265098809/265098831.png" data-image-src="attachments/265098809/265098831.png" data-unresolved-comment-count="0" data-linked-resource-id="265098831" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 9. Run out/wobble impact on Total Effective Air Gap (TEAG)<br/></strong>When a runout or wobble event occurs using a single Hall effect sensor, an offset and amplitude change is measured, and the signal can drop below the switch point thresholds and be lost. This leads to missing speed pulses (Figure 10), which can cause system errors or faults.</p><p style="text-align: center;"><br/></p><p style="text-align: center;"><br/></p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/265098809/265098830.png" data-image-src="attachments/265098809/265098830.png" data-unresolved-comment-count="0" data-linked-resource-id="265098830" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><br/></p><p style="text-align: center;"><strong>Figure 10.</strong> <strong>Run Out / Wobble impact on single Hall effect sensor<br/></strong>Single Hall effect sensors are very sensitive to air gap change.</p><p><br/></p><p>Differential Hall effect sensors subtract the offset, preventing a baseline shift(Figure 11). This keeps the signal centered within the device switch point thresholds, allowing proper switching to continue despite the signal variation.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/265098809/265098829.png" data-image-src="attachments/265098809/265098829.png" data-unresolved-comment-count="0" data-linked-resource-id="265098829" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Figure-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265098809" data-linked-resource-container-version="4" alt=""></span></p><p style="text-align: center;"><strong>Figure 11. </strong><strong>Run out/wobble impact on differential Hall effect sensor</strong><br/>Differential Hall effect sensors are less sensitive to air gap change.</p><p style="text-align: center;"><br/></p><hr/><h3 id="Singlevs.DifferentialHallEffectSensors-Conclusion"><strong>Conclusion</strong></h3><p>For the safest and most reliable performance of electronic controls for engine, transmission and wheel speed, differential Hall-effect sensors are the superior solution to single Hall-effect sensors.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098825.png">Figure-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098811.png">Figure-1-300x187.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098812.png">Figure-3-600x180.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098813.png">Figure-4-300x98.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098821.png">Figure-7-300x133.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098815.png">Figure-6-300x133.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098816.png">Figure-5-300x253.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098819.png">Figure-9-300x109.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098817.png">Figure-11-300x256.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098818.png">Figure-10-300x237.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098820.png">Figure-8-300x213.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098814.png">Figure-7-300x133.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098824.png">Figure-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098826.png">Figure-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098810.png">Figure-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098827.png">Figure-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098828.png">Figure-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098836.png">Figure-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098831.png">Figure-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098830.png">Figure-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098833.png">Figure-7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098832.png">Figure-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098834.png">Figure-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098835.png">Figure-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265098809/265098829.png">Figure-11.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

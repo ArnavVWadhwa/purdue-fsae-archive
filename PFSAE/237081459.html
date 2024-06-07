@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Jim Shaw Questions 10/1/2022</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Knowledge-Database_233836261.html">Knowledge Database</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Jim Shaw Questions 10/1/2022
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified by <span class='editor'> Unknown User (xia107)</span> on Oct 01, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="JimShawQuestions10/1/2022-GeneralAnalysisSetupQuestions">General Analysis Setup Questions</h1><ul><li>Frictional Contacts<ul><li>Formulation: Best practices<ul><li>Leave as program controlled? Some materials have suggested some formulations are better for certain tasks (i.e. Normal Lagrange for interference)</li><li>Augmented Lagrange is generally the default</li></ul></li><li>Allowable penetration and Normal Stiffness<ul><li>What is a way to determine an appropriate allowable penetration? Less penetration would probably lead to more difficult convergence</li><li>Is this tied to the normal stiffness factor? Higher factor = less penetration, more difficult convergence, more accurate results?</li><li>Is a higher normal stiffness always better for solution accuracy at the cost of convergence time?</li></ul></li><li>Pinball region<ul><li>As long as the two contact surfaces remain in the pinball region throughout solving/substeps is it sufficient?<ul><li>Frictional contact → Does pinball look for the nodes attached to the target/contact surfaces?</li><li>Bonded/no separation → Does pinball take all nodes in the pinball?</li></ul></li><li>Is there a downside to have too large of a pinball region? Does it assume all elements within pinball are relevant to the contact?</li></ul></li></ul></li><li>Mesh<ul><li>For contacts, is quad - tri / hex-tet contacts ok or should contacts generally have same element type and order?</li></ul></li></ul><p><br/></p><h1 id="JimShawQuestions10/1/2022-MoreSpecificAnalysisQuestions">More Specific Analysis Questions</h1><ul><li>Brake Rotor<ul><li>Stabilization damping factor <ul><li>Initial model has a 0.003&quot; gap between two contact surfaces that are set to a frictional contact</li><li>A stabilization damping factor of 0.1 was used to obtain a solution to compensate for rigid body motion</li><li>Reducing this value to 0.05 didn't seem to impact the results</li><li>Does this factor affect the results, or is it ignored once rigid body motion is gone? Would you need a damping factor convergence?</li></ul></li><li>Normal Stiffness Factor<ul><li>Changed from 1 to 3 in several increments</li><li>Solution changed slightly, maybe appeared to have less penetration (visually inspected, not measured)</li><li>Solve time did increase as expected, when do you say it's fine or should we just leave it to program controlled?</li></ul></li></ul></li><li>Diff Uprights<ul><li>Trying to model a bearing press fit</li><li>Frictional contact</li><li>Interference of 0.0006&quot; via contact status tool</li><li>Pinball set to 0.0007&quot;</li><li>I get a solution and it shows the area is stressed due to the interference, but doesn't quite seem correct in terms of stress and displacement contours</li></ul></li></ul><p><br/></p><p>screenshots of our hub/rotor setup to review with JS</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/237081459/hub_rotor_screenshots.pptx?version=1&amp;modificationDate=1664598566000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/237081459/hub_rotor_screenshots.pptx?version=1&amp;modificationDate=1664598566000&amp;api=v2" data-linked-resource-id="237081508" data-linked-resource-type="attachment" data-linked-resource-container-id="237081459" data-linked-resource-default-alias="hub_rotor_screenshots.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="hub_rotor_screenshots.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/237081508/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="237081459" data-linked-resource-id="237081508" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237081459/237081508.pptx">hub_rotor_screenshots.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

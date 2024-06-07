@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Strain Gauges | PF23</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836065.html">Harness PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="280562267.html">Harness Research | PF24</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Strain Gauges | PF23
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified by <span class='editor'> Kurisko, Keith Gregory</span> on Sep 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Strain gauges were used on PF23 during fall testing for the PF24 design cycle</p></div></div><ul class="inline-task-list" data-inline-tasks-content-id="267663572"><li class="checked" data-inline-task-id="10"><span class="placeholder-inline-tasks"><a class="confluence-userlink user-mention" data-username="vvaidya" href="https://wiki.itap.purdue.edu/display/~vvaidya" data-linked-resource-id="230660459" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Varun Sundaram Vaidyanathan</a> Update sd card code sections of TRR <time datetime="2023-08-21" class="date-past">21 Aug 2023</time> </span></li><li class="checked" data-inline-task-id="6"><span class="placeholder-inline-tasks"><a class="confluence-userlink user-mention" data-username="kumar556" href="https://wiki.itap.purdue.edu/display/~kumar556" data-linked-resource-id="230655470" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kumar, Akash Krishna</a> Update strain gauge operation/calibration code of TRR <time datetime="2023-08-21" class="date-past">21 Aug 2023</time> </span></li><li class="checked" data-inline-task-id="4"><span class="placeholder-inline-tasks"><a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a> Update testing plan for GP and Pitt on TRR, model assumptions, and test goals <time datetime="2023-08-21" class="date-past">21 Aug 2023</time> </span></li></ul><p><br/></p><p><strong>Notes:</strong></p><ul><li>CAN is the only way to sync M130 and Arduino data</li><li>Sparkfun amplifiers much harder to work with than standard analogue voltage ones</li><li>Adhesive must be purchased soon to arrive in time</li><li>All corners would require an ungodly number of amplifiers at approximately $15 each</li><li>Probably should use HX711 for Arduino → Will add additional development time</li><li>500Hz ish</li><li>7 column output to csv (1 for time 6 for force)</li></ul><p><br/></p><p><strong>Strain Gauge Info:</strong></p><ul><li>120 ohm</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="250" src="https://cdn.discordapp.com/attachments/742816848319610891/1139732689222643882/IMG_0769.JPG" data-image-src="https://cdn.discordapp.com/attachments/742816848319610891/1139732689222643882/IMG_0769.JPG"></span></p><p><br/></p><p><strong>Requirements:</strong></p><ul><li>6 strain gauges per corner</li></ul><p><br/></p><p>Sparkfun Guide: <a class="external-link" href="https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all" rel="nofollow">https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all</a></p><p><br/></p><p>How Strain Gauges Work: <a class="external-link" href="https://www.ni.com/en-us/shop/data-acquisition/sensor-fundamentals/measuring-strain-with-strain-gages.html" rel="nofollow">https://www.ni.com/en-us/shop/data-acquisition/sensor-fundamentals/measuring-strain-with-strain-gages.html</a></p><p><br/></p><p>Example Project:</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/LRd3W_p8PJ4?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>Setup Idea:</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="S type load cell reading incorrectly - Science and Measurement - Arduino  Forum" src="https://europe1.discourse-cdn.com/arduino/optimized/4X/b/a/a/baabef95272ed993080a1146d5e9bd31c16128a7_2_1024x473.png" data-image-src="https://europe1.discourse-cdn.com/arduino/optimized/4X/b/a/a/baabef95272ed993080a1146d5e9bd31c16128a7_2_1024x473.png"></span></p><p><br/></p><p>Color Convention:</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Load cell wiring, wheatstone bridge formation" src="https://cdn.sparkfun.com/assets/learn_tutorials/3/8/3/Wheatstone-Bridge-02.jpg" data-image-src="https://cdn.sparkfun.com/assets/learn_tutorials/3/8/3/Wheatstone-Bridge-02.jpg"></span></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

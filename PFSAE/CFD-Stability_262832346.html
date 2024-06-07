@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : CFD Stability</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : CFD Stability
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 20, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Stability in Steady State Simulations</strong></u></p><p>Stability in steady state simulation is rather straight forward, there are only two things you can change as a CFD user to affect it: discretization scheme and relaxation factors.</p><p>As we have already explored, first order upwind scheme is incredibly stable, so switch to that can fix most of your explosion issues at the severe cost of accuracy.</p><p>Another way to affect stability and rate of convergence are <em>relaxation factors</em>. Relaxation factor controls the size of step you take. A relaxation factor of 1 means you are taking 1 full step as calculated by the solution algorithm. A relaxation factor of greater than 1, also known as <em>overrelaxation,</em> means you are taking a step greater than what's calculated by the solution algorithm. 1.1 is 10% bigger, and 1.2 is 20% bigger, etc. If you are running a relaxation factor of less than 1, also known as <em>underrelaxation</em>, means you are taking a step less than calculated. The bigger the step, the less stable the simulation is and vise versa. In terms of solution speed, a larger or a smaller number is not necessarily better or worse. If you take too large of steps, instability can increase convergence time or even diverge the simulation. If you take too small of steps, convergence time can be increased due to additional steps required. There is a sweet spot in which a relaxation factor is perfect, but it's mostly a product of trial and error.</p><p><span style="color: rgb(255,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="300" src="attachments/262832346/262834682.png" data-image-src="attachments/262832346/262834682.png" data-unresolved-comment-count="0" data-linked-resource-id="262834682" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-7_18-9-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832346" data-linked-resource-container-version="6" alt=""></span></span></p><p>For simple CFDs like potential flow, overrelaxation can be used. In fact, for the potential flow converging-diverging duct CFD that I wrote, a relaxation factor of 1.8-1.9 turned out to be optimal, and reduced solution time from 30 minutes to 3 minutes compared to when no relaxation factor was implement.</p><p>For incompressible Navier-Stokes solution using the SIMPLE algorithm. Underrelaxation for both pressure and velocity should be used, since the algorithm is inherently unstable. STAR-CCM+ manual suggests the sum of velocity and pressure to equal 1 under normal circumstances. To increase stability, reduce velocity relaxation and increase pressure relaxation. If further stability is required, reduce the sum to less than 1. To reduce stability and possibly achieve faster convergence, increase velocity relaxation and decrease pressure relaxation. Don't ask me why these are rules of thumb, I have no idea, but they work.</p><p><u><strong>Stability in Unsteady/Quasi-Steady Simulations</strong></u></p><p>This is where the bulk of CFD stability is, unsteady simulations. The time dependent nature means there is another variable to promote instability, and it's a tricky one. Your choice of time step size determines how much flow variable transport per one step. This value is represented by the nondimensional <em>CFL number</em> (aka Courant number aka Courant-Friedrichs-Lewy number), and it's formulated as <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="60" src="attachments/262832346/262837095.png" data-image-src="attachments/262832346/262837095.png" data-unresolved-comment-count="0" data-linked-resource-id="262837095" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-20_10-18-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832346" data-linked-resource-container-version="6" alt=""></span>. An observation here is CFL number is grid dependent. There is no one CFL you can use to represent the entire simulation, rather each cell has their own CFL number, and that presents difficulties in terms of accuracy and stability. At CFL number of 1, flow variable get transported by one cell over one time step. CFL number of 1 is what you should ideally be aiming for. If CFL number is less than 1, error starts to increase, as flow variable only get transported through a portion of the cell. At CFL number of greater than 1, instability can occur and error also starts to increase, as flow variable gets transport by more than one cell, meaning cells can be entirely ignored. Note that stability criterion and error behavior at different CFL number is both spatial scheme and temporal scheme dependent. The big take away here is that smaller time step does not always mean more accurate solution, just like the behavior of wall y+.</p><p>Let's talk more about temporal schemes as you already had an insight into spatial schemes from a previous page. Temporal schemes can roughly be divided into two categories, <em>implicit </em>and <em>explicit</em>.</p><p><em>Explicit</em> schemes are the easier out of the two. In explicit scheme, the solution at the current time step depends entirely upon the solution of the previous time steps. Solution at the cells of interest are obtained through simple algebraic manipulations of values from neighboring cells from the previous time step are. Exactly which neighboring cells depends on the spatial scheme.</p><p><em>Implicit</em> schemes are much more complicated. Implicit scheme not only depends on the solution of the previous time step, but the current time step, meaning there are more than one unknowns (precisely how many unknowns you have depends, again, on the spatial scheme used). This requires root finding algorithm since a system of algebraic equations need to be solved. Numerical root finding is an iterative process and could take some time (this process is often referred to as <em>inner iterations</em>) Therefore, implicit schemes are usually slower than explicit schemes per time step. However, due to the fact that information propagates to a larger number of cells from one time step to the next, implicit schemes are much more stable than explicit scheme. In fact, some implicit schemes (e.g. Euler implicit coupled with first order upwind) are <em>unconditionally stable</em>, meaning they do not explode with any time steps. </p><p>Compare explicit schemes to implicit schemes, explicit scheme are:</p><ol><li>Much easier to program since no root finding algorithm is required</li><li>Faster per time step since no inner iteration is required</li><li>Less stable, almost never unconditionally stable, often <em>conditionally stable</em>, sometime <em>unconditionally unstable</em> due to limited range for information propagation</li></ol><p>From these, we can conclude that implicit schemes are preferred when time step required for accuracy is much greater than time step required for stability, since larger time steps can be taken. Exactly how much greater depends on how long inner iterations take. On the contrary, if time step required for accuracy is a little greater or less than time step required for stability, explicit schemes are desired since it's faster per step.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832346/262834682.png">image-2023-6-7_18-9-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832346/262837095.png">image-2023-6-20_10-18-7.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

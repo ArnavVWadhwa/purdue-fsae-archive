@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : fsaeSTAR V6.4</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : fsaeSTAR V6.4
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Geometry</u></strong></p><ul><li>Nosecone no longer considered part of aero (removed as a prefix)<ul><li>Nosecone has been treated as a high wall object, no reason to keep it as an aero object</li><li>Nosecone has minimal impact on aero performance, just like everything else that is considered a non-aero</li></ul></li><li>Mesh operation parts now have to match the names of the mesh operations, making it easier to understand</li><li>Removed surface wrapper PPM as it is not used and extremely likely won't be used</li><li>Add following mesh operations to dynamically generate ground refinement block<ul><li>Ground refinement intersect</li><li>Ground refinement subtract</li><li>Ground refinement imprint</li><li>Ground refinement offset</li><li>RFN_Ground</li></ul></li><li>Added domain extension to deal with wind tunnel flag<ul><li>When wind tunnel flag is enabled, actual domain reduces it size to only -4 m in the x direction</li><li>Domain extension takes it to -30 m just like regular sims</li></ul></li><li>Increased flow domain size in all dimensions</li><li>Added half/full car domain size setting based on fullCarFlag</li></ul><p><strong><u>Physics</u></strong></p><ul><li>Turbulence model now switched SST</li><li>Removed AER_NS boundary</li><li>Added WT Domain Extension region with symmetry, inlet, and outlet boundaries<br/><ul><li>Domain ground is still wall boundary whereas domain extension symmetry boundary contains its ground</li><li>Domain extension outlet is a wall boundary mapped to domain inlet using internal interface</li><li>Domain inlet is a wall when wind tunnel flag is enabled</li></ul></li><li>Removed the ability to run yaw with wind tunnel, because obviously</li><li>Fixed outlet reference frame not being set to region reference frame</li><li>Fixed left freestream boundary is never symmetry boundary issue (should be symmetry when running full car and not wind tunnel)</li><li>Fixed right freestream boundary BC not responding to wind tunnel flag change</li></ul><p><strong><u>Meshing Strategy</u></strong></p><ul><li>Changed to polyhedral cells</li><li>Prism layer meshing strategy change<ul><li>Now prism layer total thickness for each aero part is tuned to boundary layer thickness expected to see</li><li>Refined prism layers to achieve better wall y+</li><li>Now 3 prism layers are inside the viscous sublayer on most aero surfaces</li><li>Reduced prism layer stretching ratio down to 1.2</li><li>Tires now have their own prism layer treatment to ensure high wall treatment is used</li><li>Now ground under the car has 5 prism layers, ground in the wake has 3, and the rest has 1 to ensure good volume change</li><li>Added near core aspect ratio of 1 for prism layers - as long as minimum size allows, near core prism layer will have the same volume as near prism core cells</li></ul></li><li>Refinements<ul><li>Unrefined freestream boundaries except for good</li><li>Car refinement now car shaped</li><li>Wake refinement now wake shaped and extends only a few car length downstream</li><li>Added wake-shaped far wake refinement, extends much further downstream than wake refinement</li><li>Added tire wake, which is less refined than car refinement but more refined than car wake</li><li>Cooling surfaces now more refined to reduce instabilities inside cooling parts</li><li>Added surface proximity refinement to ground to add cells between UT and the ground</li><li>Added dynamically generated ground refinement block to deal with ground prism layer refinement</li><li>Added transition refinement to smooth transition from fine near car mesh to coarse outer mesh<ul><li>Also extends further downstream than far wake refinement, acting as super far wake refinement</li></ul></li><li>Removed bodywork refinement</li></ul></li><li>Reduced volume growth rate to 1.1</li><li>Changed maximum velocity stopping and removal criterion to deal with exploding cells better since the explosive behavior has changed quite a lot with the new mesh</li><li>Fixed issue with cooling surface refinement not have parts set</li><li>Fully integrated wind tunnel mesh changes into macro<ul><li>If wind tunnel flag is enabled, ground surface refinement, ground volume refinement, transition volume refinement will all have 25 mm of prism layer with 20 layers</li><li>If wind tunnel flag is disabled, revert to default</li></ul></li></ul><p><u><strong>Solver</strong></u></p><ul><li>Added first order upwind initialization to accelerate convergence (see <a href="Poly-V6-1-First-Order-Upwind-Initialization_255694173.html">here</a>)<ul><li>Simulation is first solved with first order upwind scheme in 200 iterations</li><li>Segregated solver<ul><li>Convection: first order </li><li>Pressure relaxation: 0.85</li><li>Velocity relaxation: 0.25</li></ul></li><li>K-Omega<br/><ul><li>Convection: first order</li><li>Relaxation: 0.85</li></ul></li></ul></li><li>Second order upwind mode<ul><li>The regular thing we always do</li><li>Segregated solver<ul><li>Convection: second order</li><li>Pressure relaxation: 0.75</li><li>Velocity Relaxation: 0.25</li></ul></li><li>K-Omega<ul><li>Convection: second order</li><li>Relaxation: 0.7</li></ul></li></ul></li><li>Added final convergence mode to accelerate convergence (see <a href="Poly-V6-2-Final-Convergence-Mode_255695282.html">h</a><a href="Poly-V6-2-Final-Convergence-Mode_255695282.html">ere</a>)<ul><li>Using lower relaxation to reduce final oscillations</li><li>Segregated solver<ul><li>Convection: second order</li><li>Pressure relaxation: 0.6</li><li>Velocity Relaxation: 0.4</li></ul></li><li>K-Omega<ul><li>Convection: second order</li><li>Relaxation: 0.6</li></ul></li></ul></li><li>Note: relaxation factors can be better tuned to yield even faster convergence</li><li>Disabled relaxation ramp when fan is on. No need with the new execution modes.</li></ul><p><strong><u>Post Processing</u></strong></p><ul><li>Now residuals are not normalized</li><li>Radiator mass flow no longer printed during processing</li><li>Removed x-momentum residual printing and replaced it with z-momentum residual<ul><li>We care more about z-momentum than x-momentum since that's where downforce is coming from</li></ul></li><li>Now the contours are using smoothed options because they look nice</li><li>Wall Y+ scenes are now exported regardless of post proc mesh boolean setting</li><li>Increased colormap to 200 for everything. Now we truly have pretty pictures</li><li>Updated Pitch Moment Coefficient report reference radius to 60.5 in (PF23 wheelbase)</li><li>Updated Pitch Moment Coefficient report axis origin to PF23 rear wheel axis origin</li><li>Changed Pitch Moment Coefficient report name to Lift Coefficient Front, because that is what the report is calculating</li></ul><p><strong><u>Automation Logic</u></strong></p><ul><li>Removed AER_NS filter</li><li>Added ground refinement java class in pre-proc to deal with generation of ground refinement block</li><li>Convergence checker fixes and upgrades<ul><li>Added comment to ConvergenceChecker.java</li><li>Code style of ConvergenceChecker.java now matches the rest of the codebase</li><li>Now a final convergence decision is reached<ul><li>Previously convergence decision was made by Run.java, which makes little sense</li><li>Convergence decision is based on plots of interest</li><li>Overall simulation convergence is reached only if all plots of interest have converged</li></ul></li><li>Added plots of interest, now a part of convergence checker constructor</li><li>Added the ability to change convergence cutoff during a simulation run to support the newly added final convergence mode</li><li>Removed Residuals monitor plot as part of convergence checking</li><li>Constructor simplified, now constructor only does constructor things, and the rest is handled by checkConvergence() method</li></ul></li><li>Increased max time for scholar to 3.75 hr</li><li>Added DomainExtensionRegion Java class to deal with wind tunnel extension</li><li>Changed fullCar flag from being detected to user input</li><li>Added macro to clear generated mesh at the start of each pre proc, since meshing fails at solution interpolation if the solution is null</li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

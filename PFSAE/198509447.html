@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Suspoint VB Script (NX 1926)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297370.html">Design Resources | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297372.html">Tools | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="273154933.html">Suspoints Script Home | CHA</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Suspoint VB Script (NX 1926)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Nov 24, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Topic</u></strong>: review the generation and functionality of a script made to import suspension points into NX from an excel file with names as well as associative links (changing the spreadsheet updates the model). This scripts and other scripts like it can be made by recording macros using the &quot;Developer&quot; tab in NX as well as NX Open. </p><p><strong><u>Initialization of Session and Excel</u></strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: vb; gutter: true; theme: Confluence" data-theme="Confluence">Imports System
+Imports NXOpen
+
+Module NXJournal
+    Sub Main(ByVal args() As String)
+
+        &#39;Only change the filePath as needed here:
+        Dim filePath As String = &quot;C:\Users\hamme\OneDrive - purdue.edu\Fall 21\FSAE\ExampleAssembly\0_SuspensionPoints\Example.xlsx&quot;
+
+        &#39;Defining the session, workpart and displaypart to operate within
+        Dim theSession As NXOpen.Session = NXOpen.Session.GetSession()
+        Dim workPart As NXOpen.Part = theSession.Parts.Work
+        Dim displayPart As NXOpen.Part = theSession.Parts.Display
+
+        &#39;Start Excel Link
+        Dim EXCEL = CreateObject(&quot;Excel.Application&quot;)
+        EXCEL.Visible = False
+        Dim Doc = EXCEL.Workbooks.Open(filePath, ReadOnly:=True)
+        Dim Sheets = EXCEL.Sheets</pre>
+</div></div><p>•Initializes the file as well as starts NXOpen / NXJournal<br/>•Defines the work part into which the points are set<br/>•Starts the sets to Excel file to be referenced (Note “ReadOnly:=True” this only gives NX read access e.g. NX won't corrupt the .xlsx but can still update links later if the spreadsheet changes)</p><p><br/></p><p><strong><u>Variable Declarations</u></strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: vb; gutter: true; first-line: 41; theme: Confluence" data-theme="Confluence">        &#39;VARIABLE DECLARATIONS
+        Dim markId1 As NXOpen.Session.UndoMarkId = Nothing
+        Dim unit1 As NXOpen.Unit = CType(workPart.UnitCollection.FindObject(&quot;Inch&quot;), NXOpen.Unit)
+
+        &#39;String form of the expression referencing a spreadsheet&#39;s cell e.g. filepath &amp; cell
+        Dim newPntX As String
+        Dim newPntY As String
+        Dim newPntZ As String
+        Dim newPntName As String
+
+        &#39;NX Object version of newPntX/Y/Z
+        Dim expX As NXOpen.Expression = Nothing
+        Dim expY As NXOpen.Expression = Nothing
+        Dim expZ As NXOpen.Expression = Nothing
+
+        Dim point1 As NXOpen.Point = Nothing
+        Dim pointFeatureBuilder1 As NXOpen.Features.PointFeatureBuilder = Nothing
+        Dim nullNXOpen_Features_Feature As NXOpen.Features.Feature = Nothing
+        Dim nXObject1 As NXOpen.NXObject = Nothing
+
+        &#39;Default expressions for x,y,z
+        expX = workPart.Expressions.CreateSystemExpressionWithUnits(&quot;0&quot;, unit1)
+        expY = workPart.Expressions.CreateSystemExpressionWithUnits(&quot;0&quot;, unit1)
+        expZ = workPart.Expressions.CreateSystemExpressionWithUnits(&quot;0&quot;, unit1)
+
+        &#39;There&#39;s only one sheet in this excel spreadsheet
+        Dim Sheet
+        Sheet = Doc.Sheets.Item(1)
+
+        Dim rowNum As Integer = Nothing
+        Dim ExpCounter As Integer = -3
+        Dim pointCounter As Integer
+
+        &#39;Used for converting the string expression of newPntX/Y/Z to 
+        Dim scalarX As NXOpen.Scalar = Nothing
+        Dim scalarY As NXOpen.Scalar = Nothing
+        Dim scalarZ As NXOpen.Scalar = Nothing
+
+        &#39;This is used to identify the expressions for each point&#39;s x,y,z
+        Dim lhsXfull As String
+        Dim lhsYfull As String
+        Dim lhsZfull As String</pre>
+</div></div><p>•Declares the required variables for point definition and looping through the excel file<br/>•Note that ALL expression declarations must NOT be contained within a loop as this will result in NX errors</p><p><br/></p><p><strong><u>For Loops and Counters</u></strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: vb; gutter: true; first-line: 68; theme: Confluence" data-theme="Confluence">        &#39;START OF ACTUAL CODE
+        For pointCounter = 1 To Sheet.UsedRange.Rows.Count - 1
+
+            &#39;Get point name from spreadsheet
+            newPntName = Sheet.Cells((pointCounter + 1), 1).Value
+
+            rowNum = pointCounter + 1
+            ExpCounter = ExpCounter + 3
+
+            &#39;Finding what the expressions should be
+            newPntX = &quot;ug_excel_read( &quot;&quot;&quot; &amp; filePath &amp; &quot;&quot;&quot;, &quot;&quot;B&quot; &amp; CStr(rowNum) &amp; &quot;&quot;&quot;)&quot;
+            newPntY = &quot;ug_excel_read( &quot;&quot;&quot; &amp; filePath &amp; &quot;&quot;&quot;, &quot;&quot;C&quot; &amp; CStr(rowNum) &amp; &quot;&quot;&quot;)&quot;
+            newPntZ = &quot;ug_excel_read( &quot;&quot;&quot; &amp; filePath &amp; &quot;&quot;&quot;, &quot;&quot;D&quot; &amp; CStr(rowNum) &amp; &quot;&quot;&quot;)&quot;</pre>
+</div></div><p>• Loop checks for rows and loops through until no more data is found<br/>•The counters are used later to define the cell from which to pull data, the name of the point, as well as the expression number (<strong><u>THIS IS CRITICAL</u></strong> if this is not done correctly then then all expressions may be the same expression). Typical expression nomenclature is p#=rhs. p# is the actual name of the expression and is the container for the associated data) </p><p><br/></p><p><strong><u>X Y Z Expression Creation</u></strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: vb; gutter: true; first-line: 89; theme: Confluence" data-theme="Confluence">            &#39;ALL EXPRESSIONS FOR POINT&#39;
+            markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, &quot;Start&quot;)
+            theSession.SetUndoMarkName(markId1, &quot;Point Dialog&quot;)
+
+            lhsXfull = &quot;p&quot; &amp; CStr(ExpCounter)
+            lhsYfull = &quot;p&quot; &amp; CStr(ExpCounter + 1)
+            lhsZfull = &quot;p&quot; &amp; CStr(ExpCounter + 2)
+
+            &#39;Create &amp; Link X to sheet
+            expX = workPart.Expressions.CreateSystemExpressionWithUnits(lhsXfull, unit1)
+            expX.RightHandSide = newPntX
+            scalarX = workPart.Scalars.CreateScalarExpression(expX, NXOpen.Scalar.DimensionalityType.None, NXOpen.SmartObject.UpdateOption.WithinModeling)
+
+            &#39;Create &amp; Link Y to sheet
+            expY = workPart.Expressions.CreateSystemExpressionWithUnits(lhsYfull, unit1)
+            expY.RightHandSide = newPntY
+            scalarY = workPart.Scalars.CreateScalarExpression(expY, NXOpen.Scalar.DimensionalityType.None, NXOpen.SmartObject.UpdateOption.WithinModeling)
+
+            &#39;Create &amp; Link Z to sheet
+            expZ = workPart.Expressions.CreateSystemExpressionWithUnits(lhsZfull, unit1)
+            expZ.RightHandSide = newPntZ
+            scalarZ = workPart.Scalars.CreateScalarExpression(expZ, NXOpen.Scalar.DimensionalityType.None, NXOpen.SmartObject.UpdateOption.WithinModeling)</pre>
+</div></div><p>•Honestly not sure what the code under ‘ALL EXPRESSIONS FOR POINT’ does though it seems to be required. It was found by recording the creation of a point in NX through the journaling functions (this is very useful when writing new code)<br/>•The following code creates the expressions with are later used to define the point. (NOTE the expression number / name “expX” changes with each loop) (also note the lack of expression declarations)<br/>•<s>The Join() function allows for easy combination of strings</s> the Join() function yields errors with namespaces in NX 1926 </p><p><br/></p><p><strong><u>Point Creation</u></strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: vb; gutter: true; first-line: 135; theme: Confluence" data-theme="Confluence">            &#39;CREATE THE POINT&#39;
+            point1 = workPart.Points.CreatePoint(scalarX, scalarY, scalarZ, NXOpen.SmartObject.UpdateOption.WithinModeling)
+            point1.SetVisibility(NXOpen.SmartObject.VisibilityOption.Visible)
+            pointFeatureBuilder1 = workPart.BaseFeatures.CreatePointFeatureBuilder(nullNXOpen_Features_Feature)
+            pointFeatureBuilder1.Point = point1
+            nXObject1 = pointFeatureBuilder1.Commit()
+            nXObject1.SetName(newPntName)
+            pointFeatureBuilder1.Destroy()</pre>
+</div></div><p>•This code generates the EDITABLE point feature as well as makes the feature visible<br/>•It also sets the name of the point feature equal to the names found in the first column of the sheet. Note the point is defined by scalars NOT by expression. For some weird reason you have to do this <br/>•This code was nearly a direct copy paste from the recorded journal (untouched from NX 12 version of script)</p><p><br/></p><p><strong><u>Using the script and updating the model</u></strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/198509447/198509451.png" data-image-src="attachments/198509447/198509451.png" data-unresolved-comment-count="0" data-linked-resource-id="198509451" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-11-24_10-44-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198509447" data-linked-resource-container-version="5" alt=""></span></p><p>•First the script has to be run. Click alt + F8 to open the journal tool and run the script (this takes a long time and only has to be done once. Attempting to run again results in an error)<br/>•To update the model first change and save the spreadsheet. Then go to Tools &gt; Expressions &gt; Update for External Change &gt; Apply. If the points to be changed are in a sketch the position may fail to update. Use the Curve tool instead to generate geometry between the points</p><p><strong><u>Script File</u></strong></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/198509447/SusPointsImportNX1926.vb?version=1&amp;modificationDate=1637768780000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/198509447/SusPointsImportNX1926.vb?version=1&amp;modificationDate=1637768780000&amp;api=v2" data-linked-resource-id="198509452" data-linked-resource-type="attachment" data-linked-resource-container-id="198509447" data-linked-resource-default-alias="SusPointsImportNX1926.vb" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="SusPointsImportNX1926.vb" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">SusPointsImportNX1926.vb</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="198509447" data-linked-resource-id="198509452" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509447/198509448.png">image2019-10-15_0-38-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509447/198509451.png">image2021-11-24_10-44-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198509447/198509452.vb">SusPointsImportNX1926.vb</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

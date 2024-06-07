@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V4</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V4
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on Mar 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Major Changes</strong></u></p><ul><li>Optimizing prism layers now</li><li>Halved front wing prism layer total thickness because front wing boundary layers tend to be very thin</li><li>Increased front wing prism layer count to 20 to reduce wall y+</li><li>Reduced rear wing prism layer total thickness because it's too thick (only 3/4'ed)</li><li>Increased rear wing prism layer count to 19 to reduce wall y+</li><li>Reduce wheel prism layer thickness and increased prism layer count to better capture the boundary layer and get better wall Y+</li><li>Captured the rest of the front wing wake with tire wake refinement block, which should also help with yaw cases</li></ul><p><u><strong>Results</strong></u></p><div class="table-wrap"><table style="" class="confluenceTable"><thead><tr><th style="text-align: left;" class="confluenceTh">Parameter</th><th style="text-align: left;" class="confluenceTh">Value</th></tr></thead><colgroup><col/><col/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Pressure relaxation</td><td style="text-align: left;" class="confluenceTd">0.3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Velocity relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">K-omega relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CL</td><td style="text-align: left;" class="confluenceTd">-3.741</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CD</td><td style="text-align: left;" class="confluenceTd">1.526</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg FW CL</td><td style="text-align: left;" class="confluenceTd">-1.491</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg RW CL</td><td style="text-align: left;" class="confluenceTd">-1.082</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg UT CL</td><td style="text-align: left;" class="confluenceTd">-1.250</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Continuity residual</td><td style="text-align: left;" class="confluenceTd">8.277e-6</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg X-momentum residual</td><td style="text-align: left;" class="confluenceTd">2.481e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Y-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.503e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Z-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.926e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg TKE residual</td><td style="text-align: left;" class="confluenceTd">1.654e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Sdr residual</td><td style="text-align: left;" class="confluenceTd">5.561e-3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Iterations to convergence</td><td style="text-align: left;" class="confluenceTd">Did not converge</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>CL Std Dev</p></td><td style="text-align: left;" class="confluenceTd">0.0174</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>Mesh count (mil)</p></td><td style="text-align: left;" class="confluenceTd">46.454</td></tr><tr><td style="text-align: left;" colspan="2" class="confluenceTd">All statistics are last 500 iterations</td></tr></tbody></table></div><p><u><strong>Issues</strong></u></p><ul><li>Front wing wall y+ too low (0.5)</li><li>Undertray wall y+ slightly too high</li><li>Undertray boundary layer thickness exceeds prism layer thickness</li><li>Tire wall y+ still a hair too low</li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

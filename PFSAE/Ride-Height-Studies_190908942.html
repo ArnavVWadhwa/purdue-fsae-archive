@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Ride Height Studies</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297346.html">Design Archive | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="179281177.html">Design PF22 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Vehicle-Parameter-Sensitivity-Study_190907891.html">Vehicle Parameter Sensitivity Study</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Ride Height Studies
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Oct 22, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Ride Height</strong></u></p><ul style="list-style-type: square;"><li>Reduction in ride height = tire squash + suspension travel</li><li>Tire squash<ul style="list-style-type: square;"><li>Hoosier data for tire spring rates: <a class="external-link" href="https://www.hoosiertire.com/contingency_rates/fsae/" rel="nofollow">https://www.hoosiertire.com/contingency_rates/fsae/</a></li><li>Downforce:<br/><ul style="list-style-type: square;"><li>Assuming 40 mph</li><li>Assuming 3.45 Cl*A</li><li>Downforce = 152 lb</li></ul></li><li>Car + person: 380 + 160 = 540 lb</li><li>Tire squash = 0.33 in</li><li>So the 0.35 already built into fsaeSTAR is good</li></ul></li><li>Suspension travel<ul style="list-style-type: square;"><li>2021 Michigan endurance data</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/190908942/190908954.png" data-image-src="attachments/190908942/190908954.png" data-unresolved-comment-count="0" data-linked-resource-id="190908954" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="RH_Histogram.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="190908942" data-linked-resource-container-version="8" alt=""></span></li><li>The pike between -0.5 and -0.25 is <strong>PROBABLY</strong> straight line</li><li>The other peak is <strong>PROBABALY</strong> cornering</li><li>The 2021 endurance track is a slow one, so I can get behind this argument</li><li>So we are looking at -0.2 in for cornering</li></ul></li><li>Conclusion: at 40 mph, we are looking at 0.55 in decrease in RH. At 70 mph, we are probably looking at around 0.9 in decrease in RH.</li></ul><p><u><strong>Pitch</strong></u></p><ul style="list-style-type: square;"><li>2021 Michigan endurance data</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/190908942/190908961.png" data-image-src="attachments/190908942/190908961.png" data-unresolved-comment-count="0" data-linked-resource-id="190908961" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Pitch_Histogram.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="190908942" data-linked-resource-container-version="8" alt=""></span></li><li>The graph above is the difference between front and rear RH in inches</li><li>We should run sims up to -0.6 nose down</li></ul><p><u><strong>Ride Height Heatmap</strong></u></p><ul><li>2021 Michigan endurance data</li><li><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/190908942/194183680.png" data-image-src="attachments/190908942/194183680.png" data-unresolved-comment-count="0" data-linked-resource-id="194183680" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="RHHeatmap.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="190908942" data-linked-resource-container-version="8" alt=""></span></li><li>Heatmap color scale is in %</li><li>This one is written in python (<a href="attachments/190908942/192191625.py" data-linked-resource-id="192191625" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="RHHeatMap.py" data-linked-resource-content-type="application/octet-stream" data-linked-resource-container-id="190908942" data-linked-resource-container-version="8">Code</a>)</li></ul><p><u><strong>The code itself</strong></u></p><ul style="list-style-type: square;"><li>Written in Java because I like Java</li><li>Need JFreeChart for graph output</li><li>Run RHStudy.java</li><li>DataCleanup formats data RHStudy can understand. It's not directly from MoTeC csv export to RHStudy data, a certain amount of manual cleaning is needed</li><li>Also has roll calc in it, but that's mainly for validation of Ben's lap time sim (which it passes)</li><li><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/190908942/DataCleanup.java?version=2&amp;modificationDate=1631542423000&amp;api=v2" data-nice-type="Java Source File" data-file-src="/download/attachments/190908942/DataCleanup.java?version=2&amp;modificationDate=1631542423000&amp;api=v2" data-linked-resource-id="190908965" data-linked-resource-type="attachment" data-linked-resource-container-id="190908942" data-linked-resource-default-alias="DataCleanup.java" data-mime-type="text/x-java-source" data-has-thumbnail="false" data-linked-resource-version="2" data-can-edit="true" aria-label="DataCleanup.java" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-code.png" height="250" alt="" draggable="false"/><span class="title">DataCleanup.java</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="190908942" data-linked-resource-id="190908965" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/190908942/RHStudy.java?version=2&amp;modificationDate=1631542424000&amp;api=v2" data-nice-type="Java Source File" data-file-src="/download/attachments/190908942/RHStudy.java?version=2&amp;modificationDate=1631542424000&amp;api=v2" data-linked-resource-id="190908966" data-linked-resource-type="attachment" data-linked-resource-container-id="190908942" data-linked-resource-default-alias="RHStudy.java" data-mime-type="text/x-java-source" data-has-thumbnail="false" data-linked-resource-version="2" data-can-edit="true" aria-label="RHStudy.java" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-code.png" height="250" alt="" draggable="false"/><span class="title">RHStudy.java</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="190908942" data-linked-resource-id="190908966" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></li><li>The rest of documentation is in the codes themselves</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190909159.png">RH_Histogram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190909160.png">Pitch_Histogram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190909161.java">DataCleanup.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190909162.java">RHStudy.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190908954.png">RH_Histogram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190908961.png">Pitch_Histogram.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190908965.java">DataCleanup.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/190908966.java">RHStudy.java</a> (text/x-java-source)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/192191624.png">RH_Heatmap.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/192191625.py">RHHeatMap.py</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/190908942/194183680.png">RHHeatmap.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

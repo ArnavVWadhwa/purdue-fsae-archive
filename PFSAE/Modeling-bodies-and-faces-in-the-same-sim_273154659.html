@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Modeling bodies and faces in the same sim</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728421.html">Analysis Resources | Structures</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Modeling bodies and faces in the same sim
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Oct 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Modelingbodiesandfacesinthesamesim-Intro">Intro</h1><p>In some situations, it is useful to have both bodies and faces in the same ANSYS simulation, for example. when a tab is welded onto a tube section. Modeling the tab as a face prevents inaccuracies because there need to be 3 elements of thickness along the shortest direction. For a tab that is .06&quot; thick, this means that the elements must have .02&quot; side lengths, which is a recipe for a tediously long simulation, for really no benefit. Generally speaking, the stress distribution within the tab is quite uniform due to the low thickness of the material, so modeling the tab as a plane doesn't lose much information, and a reasonable element size can be chosen.</p><h1 id="Modelingbodiesandfacesinthesamesim-Guide">Guide</h1><p>If your tab is not modeled as a surface in NX, when you import it into Spaceclaim it will be in the form of a body. To turn it into a face, follow the steps below.</p><ol><li>Make sure it is its own body<ol><li>If it is united with something else, use split body, selecting the body of the base and the tab, and then selecting the surface the tab is mounted on as the cutter</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154673.png" data-image-src="attachments/273154659/273154673.png" data-unresolved-comment-count="0" data-linked-resource-id="273154673" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-1-13.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li></ol></li><li>If you want to apply loads to one side of a bolt hole on the tab, partition the inside surface of the hole using the split tool before you midsurface<ol><li>To do this, select the split tool.</li><li>Then select the surface you want to split.</li><li>Then select an edge of the surface (entry of the hole), and a line perpendicular to the edge is created on the surface when you click.</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154678.png" data-image-src="attachments/273154659/273154678.png" data-unresolved-comment-count="0" data-linked-resource-id="273154678" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-18-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li></ol></li><li> Midsurface<ol><li>Go to Prepare→Midsurface</li><li>Select one side of the tab, then the other side</li><li>Hit the checkmark</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154674.png" data-image-src="attachments/273154659/273154674.png" data-unresolved-comment-count="0" data-linked-resource-id="273154674" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-3-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li></ol></li><li>Partition face around the tab<ol><li>Go into sketch mode on the surface of the base</li><li>Draw a rectangle representing the base of the tab. It should surround the midsurfaced plane</li><li>Click the checkmark. This creates a surface that should look like the image below. You can make the surface slightly larger to represent the fillet created by the weld. The idea is that this area is attached to the tab.</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154676.png" data-image-src="attachments/273154659/273154676.png" data-unresolved-comment-count="0" data-linked-resource-id="273154676" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-10-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li><li>Project the face onto the base using the project tool. Shown below</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154677.png" data-image-src="attachments/273154659/273154677.png" data-unresolved-comment-count="0" data-linked-resource-id="273154677" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-14-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li><li>Delete the surface you just projected. You only need the partition on the face of the base.</li><li>These partitions are very important because a fixed joint fixes the whole selected face to the tab. This means that the whole selected area cannot move at all relative to the thing it is fixed to. If you select the whole base plane you will make your entire base plane rigid. You do not want that.</li></ol></li><li>Import into ANSYS Workbench</li><li>Create a fixed joint between your tab and the base.<ol><li>Right click on connections, Insert→Joint</li><li>Make a body to body fixed joint (This is the default joint anyways)</li><li>Make the face of the base the reference, and the side of the tab touching the base the mobile. (It should not matter which is which but this is good practice.)</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154680.png" data-image-src="attachments/273154659/273154680.png" data-unresolved-comment-count="0" data-linked-resource-id="273154680" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-22-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li><li>For some reason this sometimes only works for auto generated contacts!<ol><li>To auto generate contacts, right click the contact group and press automatically generate contacts</li><li>Then, delete or suppress the contacts you don't want, and edit the contacts however you please.</li></ol></li></ol></li><li>Done</li></ol><h1 id="Modelingbodiesandfacesinthesamesim-Notes">Notes</h1><ol><li>For very thick tabs (More than .15) it could be worth meshing as a body as stress may be distributed weirdly inside the tab</li><li>If you want to simulate different thicknesses of tab, it can be changed in Ansys.<ol><li>Select the tab in geometry, and in the same place where you would change the material, you can also change the thickness of the tab.</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273154659/273154683.png" data-image-src="attachments/273154659/273154683.png" data-unresolved-comment-count="0" data-linked-resource-id="273154683" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-23_19-29-29.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273154659" data-linked-resource-container-version="2" alt=""></span></li></ol></li><li>As you can tell from my example pictures, tabs that have several flat faces can be simultaneously turned into a midsurface. The Two faces are separate surfaces.<ol><li>To model their welded connection, create a fixed joint between the two as you did for the base and the tab. In the picture above you can see I made a similar partition to the tab so I could just select the area close to the other interlocking tab for the joint</li></ol></li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154673.png">image-2023-9-23_19-1-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154674.png">image-2023-9-23_19-3-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154676.png">image-2023-9-23_19-10-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154677.png">image-2023-9-23_19-14-36.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154678.png">image-2023-9-23_19-18-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154679.png">image-2023-9-23_19-21-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154680.png">image-2023-9-23_19-22-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273154659/273154683.png">image-2023-9-23_19-29-29.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-273154858"></a>
+                                    <font class="smallfont"><p>Have we considered modelling tabs as shells?</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by nguye841 at Sep 24, 2023 21:13
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-273154930"></a>
+                                    <font class="smallfont"><p>No we haven't. I'll try that. It would probably allow for a bonded contact. </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by eaaltone at Sep 25, 2023 10:46
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-273154937"></a>
+                                    <font class="smallfont"><p><a href="ANSYS-Structural-FEA-Basics_130157343.html">ANSYS Structural FEA Basics</a> This page mentions shell meshing and points to some resources that might be a good reference. We should definitely make a more complete guide on how to use it though. <a class="confluence-userlink user-mention" data-username="eaaltone" href="https://wiki.itap.purdue.edu/display/~eaaltone" data-linked-resource-id="116528109" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Aaltonen, Emil Johan</a> </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by nguye841 at Sep 25, 2023 10:59
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

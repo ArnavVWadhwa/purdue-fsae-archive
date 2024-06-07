@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Step 1: MoTeC Software Development</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics-Onboarding_230668154.html">Electronics Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Step 1: MoTeC Software Development
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Skrzyszowski, Mateusz</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Nov 19, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>In this step, we will be working in M1 Build. This is where all firmware development for the M130 ECU lives.</p><p><br/></p><blockquote><code><span style="color: rgb(0,0,0);"><strong>Reading</strong></span></code><ul><li><span style="color: rgb(51,51,51);">M1 Development Manual: <u><span style="color: rgb(255,255,255);"><a href="attachments/230668191/279937094.pdf" data-linked-resource-id="279937094" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="M1 Development Manual.pdf" data-nice-type="PDF Document" data-linked-resource-content-type="application/pdf" data-linked-resource-container-id="230668191" data-linked-resource-container-version="44">M1 Development Manual.pdf</a></span></u></span><ul><li><span style="color: rgb(122,134,154);">This is all about the M1 ecosystem and how each software interacts with each other. This will be incredibly useful to know when approaching the project. However, this text is very dense when it comes to firmware programming, so skip sections as you wish, but beware of important information you may miss as a result.</span></li></ul></li></ul></blockquote><p><br/></p><blockquote><p><code><span style="color: rgb(0,0,0);"><strong>Required Software</strong></span></code></p><ul><li><span style="color: rgb(51,51,51);">M1 Build and M1 Tune: <u><span style="color: rgb(0,51,102);"><a class="external-link" href="https://moteconline.motec.com.au/ResourceLibrary/Downloads" rel="nofollow" style="color: rgb(0,51,102);">https://moteconline.motec.com.au/ResourceLibrary/Downloads</a></span></u></span><ul><li>M1 Build is for writing MoTeC firmware, and M1 Tune is for editing parameters created in M1 Build</li><li><span style="color: rgb(255,0,0);">NOTE: The version of M1 Build you will need is <strong>1.4.0.239</strong></span></li></ul></li></ul></blockquote><p><br/></p><hr/><h2 id="Step1:MoTeCSoftwareDevelopment-ProjectCreation"><span style="color: rgb(0,0,128);"><em>Project Creation</em></span></h2><ol><li><h5 id="Step1:MoTeCSoftwareDevelopment-YouwillneedtoinstalladevelopmentlicensetobeabletocompileyourcodeinBuild,soyouwilldothisfirst.Messageyourleadforthefile,andtheywillsendittoyouiftheyhaven&#39;talready.Youjustneedtodouble-clickonthisfileanditshouldinstallthelicens"><span style="color: rgb(51,51,51);">You will need to install a development license to be able to compile your code in Build, so you will do this first. Message your lead for the file, and they will send it to you if they haven't already. You just need to double-click on this file and it should install the license.</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-InM1Build,clickon&quot;CreateanewProject&quot;.Thenselect&quot;AsanEmptyProject&quot;andhitNext.Namethisfilewiththeformat&quot;purdueAccountUsername_lastName_FirstNameLEDOnboarding&quot;.InVersionNameput&quot;2023&quot;."><span style="color: rgb(51,51,51);">In M1 Build, click on &quot;<span style="color: rgb(0,0,128);">Create a new Project</span>&quot;. Then select &quot;<span style="color: rgb(0,0,128);">As an Empty Project</span>&quot; and hit Next. Name this file with the format &quot;<span style="color: rgb(0,0,128);">purdueAccountUsername_lastName_FirstName LED Onboarding</span>&quot;. In Version Name put &quot;<span style="color: rgb(0,0,128);">2023</span>&quot;.</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-Youmayseealistoferrorspopupwhenyoucreatethefile,justclickcloseonit."><span style="color: rgb(51,51,51);">You may see a list of errors pop up when you create the file, just click close on it.</span></h5></li></ol><p>           <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="MoTeC M1 Build Download - M1 Build is an Integrated Development" height="250" src="https://img.informer.com/screenshots/4754/4754343_1.jpg" data-image-src="https://img.informer.com/screenshots/4754/4754343_1.jpg"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230668191/265096300.png" data-image-src="attachments/230668191/265096300.png" data-unresolved-comment-count="0" data-linked-resource-id="265096300" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2023-06-30 at 8.27.25 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230668191" data-linked-resource-container-version="44" alt=""></span></p><hr/><h2 id="Step1:MoTeCSoftwareDevelopment-ProjectSettings"><span style="color: rgb(0,0,128);"><em>Project Settings</em></span></h2><ol><li><h5 id="Step1:MoTeCSoftwareDevelopment-Next,youwillfillouttheSettingsforyourfile."><span style="color: rgb(51,51,51);">Next, you will fill out the Settings for your file.</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-Openthedropdowninthe&quot;Hardware&quot;sectionandselect&quot;M130&quot;.ThisiswhereyouselecttheECUyouareusingifyouweretouseanythingotherthananM130."><span style="color: rgb(51,51,51);">Open the dropdown in the &quot;</span><span style="color: rgb(0,0,128);">Hardware</span><span style="color: rgb(51,51,51);">&quot; section and select &quot;</span><span style="color: rgb(0,0,128);">M130</span><span style="color: rgb(51,51,51);">&quot;. This is where you select the ECU you are using if you were to use anything other than an M130.</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-Navigatetothedevelopmentlicensedropdown,andselectthedevelopmentlicenseyouinstalledearlier."><span style="color: rgb(51,51,51);">Navigate to the development license dropdown, and select the development license you installed earlier.</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-Nowyouneedtofillouttheauthorsection.Ifyoudonotfillouteverybox,theprojectwillnotcompile.Feelfreetofillinanythingyouwanthereasidefromthenamesection,inwhichyoushouldputyourfirstandlastname."><span style="color: rgb(51,51,51);">Now you need to fill out the author section. If you do not fill out every box, the project will not compile. Feel free to fill in anything you want here aside from the name section, in which you should put your first and last name.</span></h5></li></ol><p><span style="color: rgb(51,51,51);">          <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/230668191/265096299.png" data-image-src="attachments/230668191/265096299.png" data-unresolved-comment-count="0" data-linked-resource-id="265096299" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2023-06-30 at 8.27.37 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230668191" data-linked-resource-container-version="44" alt=""></span></span></p><p><br/></p><hr/><h2 id="Step1:MoTeCSoftwareDevelopment-BuildingtheModel"><span style="color: rgb(0,0,128);"><em>Building the Model</em></span></h2><ul><li><h5 id="Step1:MoTeCSoftwareDevelopment-Thebulkofthefirmwarewillbebuiltunderthe&quot;Objects&quot;tab.YourobjectiveistocontrolanLEDwith5differentselectablemodesinM1Tune.The5differentmodesareasfollows:onatalltimes,squarewave(onforonesecond,offforonesecond,repeat),trianglewav"><span style="color: rgb(51,51,51);">The bulk of the firmware will be built under the &quot;</span><span style="color: rgb(0,0,128);">Objects</span><span style="color: rgb(51,51,51);">&quot; tab. Your objective is to control an LED with 5 different selectable modes in M1 Tune. The 5 different modes are as follows: on at all times, square wave (on for one second, off for one second, repeat), triangle wave (slowly increasing brightness then slowly decreasing), sine wave (slowly increasing brightness then decreasing nonlinearly), and sawtooth wave (slowly increasing brightness until it reaches 100%, then back to 0%).</span></h5></li><li><h5 id="Step1:MoTeCSoftwareDevelopment-Thisinformationispurposefullyvague,asthegoaloftheonboardingisforyoutolearnthesoftwareforyourselfandnothaveyourhandheldthroughtheproject.However,feelfreetoreachouttoyourleadwithanyandallquestionsregardingthisproject.Askingque"><span style="color: rgb(51,51,51);">This information is purposefully vague, as the goal of the onboarding is for you to learn the software for yourself and not have your hand held through the project. However, feel free to reach out to your lead with any and all questions regarding this project. Asking questions is <strong style="letter-spacing: 0.0px;"><em>ENCOURAGED</em> </strong><span style="letter-spacing: 0.0px;">so please send as many questions as you want. (Hint: Search Confluence)</span></span></h5></li></ul><p><span style="color: rgb(51,51,51);"><span>         <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Square wave - Wikipedia" height="400" src="https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg" data-image-src="https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg"></span></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668191/265096299.png">Screenshot 2023-06-30 at 8.27.37 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668191/265096300.png">Screenshot 2023-06-30 at 8.27.25 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668191/265096380.png">image-2023-7-1_10-25-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230668191/279937094.pdf">M1 Development Manual.pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

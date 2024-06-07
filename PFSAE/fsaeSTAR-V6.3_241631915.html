@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : fsaeSTAR V6.3</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : fsaeSTAR V6.3
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 09, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><em>Released: 02/08/2023</em></p><p><u><strong>Geometry</strong></u></p><ul><li>Wheel cover not longer supported<ul><li>It is important to take through flow into account</li><li>You can still make wheel covers work if they are built into corner assembly</li><li>Mesh count did not go up significantly and stability did not drop</li></ul></li><li>Surface wrapper gap closure 1.5 in → 1 in to not close off the gap between exhaust and exhaust cover</li><li><span style="color: rgb(0,51,102);">Tires are now named <em>CFD_WHEEL_[corner] </em>to enforce naming convention consistency</span></li><li>Added CFD_NON_AERO<ul><li>Much like CFD_AERODYNAMICS_830250079, this is a composite part where you can put stuff in</li><li>Things that we don't really care about goes in here. E.g. chassis, powertrain, driver, etc</li></ul></li><li>Added CFD_COOLING_L and CFD_COOLING_R due to radiator logic change<ul><li>These two composite part must exist in a sim, but they can be empty</li><li>Standard contents include: (MeshPart) Core, (MeshPart) Fan, (MeshPart) Shroud, and (CadPart) Misc Parts</li><li>Core, fan, and shroud must all have three surfaces named Inlet, Outlet, and Wall</li></ul></li><li>Refinement parts now start with the prefix RFN_</li></ul><p><strong><u>Physics</u></strong></p><ul><li>Added mass flow inlet for exhaust<ul><li>Mass flow rate is 0.05 kg/s based on average exhaust mass flow at 8000 RPM</li><li>Turbulent viscosity ratio at 41 based a on paper that studied exhaust flow using RSM</li></ul></li><li>Added fan shroud support</li><li>Added pressure and velocity relaxation factor ramping when fan is on to not diverge the giga fans</li><li>Replaced fan curve with the new fan curve</li><li>Fixed fan curve not loading issue</li><li>Fine tuned reference values for Cp and Cpt field functions</li><li>Replaced yaw interface with inlets, as this matches physics better (these is nothing periodic about the flow field, so using interface does not make sense)</li><li>Added skin friction coefficient vector as a vector field function</li><li>Added support for difference in track width before front and rear tires for more accurate cornering sim</li></ul><p><u><strong>Meshing Strategy</strong></u></p><ul><li>Removed far wake refinement as it wasn't doing anything anyways</li><li>Added cooling surface control, radiator core, fan, and shroud volume controls<ul><li>These still need to be fine tuned</li></ul></li></ul><p><u><strong>Solver</strong></u></p><p><u><strong>Post Processing</strong></u></p><ul><li>Removed wall shear stress separation indicator as it doesn't make any sense in terms of flow physics (direction of wall shear stress doesn't tell you separation in 3D flow)</li><li>Added line integral convolution of skin friction coefficient vector plot<ul><li>3D flow separation is defined by convergence of skin friction lines, and 3D flow attachment is defined by divergence of skin friction lines</li><li>This scene shows you exactly that</li></ul></li><li>Moved velocity x to additional scenes since it hasn't proved to be useful</li><li>Moved vorticity back into base scenes since I miss it</li></ul><p><u><strong><span style="color: rgb(0,0,0);">Automation Logic</span></strong></u></p><ul><li>Boundary-related geometry filtering is now done through built-in filters in STAR<ul><li>Cleans up SimComponents as well as null-safe<ul><li>Speaking of null-safe, there are quite a few cooling related things that are not null safe (well, they are null safe but only because I have a conditional checking for null), it would be helpful to convert them into filters as well</li></ul></li><li><span style="color: rgb(0,0,0);">Warning to anyone reading this: you have to build the filters in a way that does not break it when you are switching geometries. For example, reference to the front wing part in STAR can't be made, because when changing FW out, the original has to be deleted. This breaks the link.</span></li><li><span style="color: rgb(0,0,0);">I am also against putting a macro in the pipeline to rebuild the filters each time, because that make making temporary changes to the filters much more difficult.</span></li></ul></li><li><span style="color: rgb(0,0,0);">Regions are no longer regenerated with each simulation, there are now 7 that will always be there. These are domain and 6 cooling regions (core, shroud, fan for both sides)</span></li><li><span style="color: rgb(0,0,0);">Boundaries are no longer regenerated with each simulation, rather part surfaces are assigned to boundaries with filters</span></li><li><span style="color: rgb(0,0,0);">The Dual_<em>part</em> logic used for cooling parts has been replaced with left and right identifications</span></li><li><span style="color: rgb(0,0,0);">Coordinate systems now have names that make sense</span></li><li><span style="color: rgb(0,0,0);">Added prefixes to a lot variables to make them easier to use</span><ul><li><span style="color: rgb(0,0,0);">i.e. region objects have the prefix rgn, i</span><span style="color: rgb(0,0,0);">nterface objects have the prefix itf</span></li><li><span style="color: rgb(0,0,0);">There are more to do, but all the big ones are done</span></li></ul></li><li><span style="color: rgb(0,0,0);">Regrouped variables in SimComponents for ease of use</span></li><li><span style="color: rgb(0,0,0);">Added CoolingCompositePart class to deal with composite parts CFD_COOLING_L and CFD_COOLING_R</span></li><li><span style="color: rgb(0,0,0);">Added CoolingRegions class to deal with the six cooling regions</span></li><li><span style="color: rgb(0,0,0);">Added DomainRegions to deal with flow domain</span></li><li><span style="color: rgb(0,0,0);">Added independent coordinate systems for each wheel</span></li><li><span style="color: rgb(0,0,0);">Roll change no longer requires moving the vehicle, the domain itself moves</span></li><li><span style="color: rgb(0,0,0);">WT flag now also changes domain size to obtain the 25 mm boundary layer we will see</span></li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

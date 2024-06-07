@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : How to Macro</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="How-to-Do-Things_233834237.html">How to Do Things</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : How to Macro
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified on Nov 25, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>Here we’ll talk about how to record macros with STAR’s in-built macro recorder, and how to decipher the resulting macro file. Considering how undesirable Siemens’ Java API documentation is, I’m of the opinion that the best way to figure out which methods you need to be using for writing your macros, is to record a macro through STAR and figure out which methods the client calls when you make it do something. </span><span> </span></p><p><span> </span></p><p><strong><span>How to record a macro:</span></strong><span> </span></p><p><span> </span></p><p><span>Look for the “record” button in your toolbar.  This will give you an option to save your java macro to a location of your choosing. The generated macro will </span><span>replicate any interactions you make with STAR’s GUI between the time you press record, and the time you end the recording. </span></p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/164135417/164135424.png" data-image-src="attachments/164135417/164135424.png" data-unresolved-comment-count="0" data-linked-resource-id="164135424" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-25_19-3-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164135417" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p><p><strong><span>Comments about recorded macro</span></strong><strong><span>s</span></strong><strong><span>: </span></strong><span> </span></p><p><span> </span></p><p><span>The </span><span>code STAR’s macro recorder generates is very specific, not generalizable, and very scripted. The code will essentially be a series of method calls with parameters passed as string literals, and not much else. </span><span>This is fine if you’re doing something that’s always perfectly repeatable and never changes from sim to sim (the subtract operation, for example, is exactly the same, every single time), but falls apart when something </span><em><span>does</span></em><span> change from sim to sim. You do not want to use a generated macro for something like a surface wrapper operation, since your part and surface names will almost certainly change from sim to sim. </span><span> </span></p><p><span> </span></p><p><span>One way to get around this is to modify the code STAR generates, and hack in ways to generalize the code. This is what the first iterations of </span><span>fsaeSTAR</span><span> did (if you can find the 2019 macros, that’s what they were). It’s quick, and dirty, but they’ll work. The issue </span><span>is,</span><span> a lot of code ends up being very messy, and not easy to expand upon. You end up with a codebase where basic actions are being repeated unnecessarily </span><span>across multiple different macros, rather than being centralized in a single library/</span><span>class, and</span><span> called from that library/class. IMO, the right way to handle macro development is to do everything yourself. Use STAR’s recorder to figure out which methods you need to use, and what parameters you need to pass, but fundamentally every line of code should be written and designed by you, otherwise you will have a tough time maintaining and expanding the code. That’s also why I rewrote the entire 2019 macro suite, it just became too big of a mess to reasonably continue building upon. </span><span> </span></p><p><span> </span></p><p><span>There are a few big brain ways with how you structure the simulation tree, and use STAR’s tree filters, regex, and operations to get around some of those limitations of recorded STAR macros, essentially turning your recorded STAR macros into something generalizable, but this always seemed like a less powerful and </span><span>“cheap” solution, compared to just handling everything yourself with your code. </span><span> </span></p><p><span> </span></p><p><strong><span>Understanding a recorded macro:</span></strong><span> </span></p><p><span> </span></p><p><span>Here I’ll walk through the code structure for a macro recorded by STAR</span><span>. This macro </span><span>doesn’t do anything specifically, I just recorded myself clicking </span><span>things and </span><span>(I think) eventually </span><span>assigning a </span><span>fan table to a fan interface</span><span>. Focusing more on structure, rather than the specifics of what the code itself is doing.</span><span> The full code without any breaks is at the end of this document. </span><span> </span></p><p><span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="153" src="attachments/164135417/164135418.png" data-image-src="attachments/164135417/164135418.png" data-unresolved-comment-count="0" data-linked-resource-id="164135418" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-25_18-56-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164135417" data-linked-resource-container-version="4" alt=""></span></span></p><p><br/></p><p><span>The top chunk of your macro follows </span><span>a pretty standard java format. Nothing exciting. I have no idea why it slaps the </span><span>package macro</span><span> </span><span>to the macro. Usually you use </span><span>the package keyword when you’ve got a project that’s calling classes from multiple different folders, and packages keep that in check. That’s not really a </span><span>thing we need to worry about when the whole “codebase” is a single .java file generated by STAR….</span><span> </span></p><p><br/></p><p><span>The rest are just import statements, pulling in Java and STAR libraries into the code. Read STAR’s user manual for how to </span><span>bring STAR’s libs into your project. </span><span> </span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="172" src="attachments/164135417/164135425.png" data-image-src="attachments/164135417/164135425.png" data-unresolved-comment-count="0" data-linked-resource-id="164135425" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-25_19-4-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164135417" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p><p><span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0">Next is the class itself. Since it’s java, everything is obviously a class. Every macro you generate or write will be a class that extends the </span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SpellingErrorV2 SCXW225276902 BCX0">StarMacro</span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> class. Extending </span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SpellingErrorV2 SCXW225276902 BCX0">StarMacro</span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> is necessary, otherwise STAR won’t know your class is supposed to be a macro. S</span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0">TAR’s generated macros will always have exactly two functions, a public </span></span><span class="TextRun Highlight SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2 SCXW225276902 BCX0">execute(</span></span><span class="TextRun Highlight SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0">)</span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> function that does nothing but call a private </span></span><span class="TextRun Highlight SCXW225276902 BCX0" style="color: rgb(51,102,255);"><span class="NormalTextRun SCXW225276902 BCX0">execute0()</span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> function. The <span style="color: rgb(51,102,255);">execute0()</span> function has all the actual “code” in it. When you’re writing your own macros, you need to know that it’s the </span></span><span style="color: rgb(51,102,255);"><span class="TextRun Highlight SCXW225276902 BCX0"><span class="NormalTextRun SCXW225276902 BCX0">public void </span></span><span class="TextRun Highlight SCXW225276902 BCX0"><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2 SCXW225276902 BCX0">execute(</span></span><span class="TextRun Highlight SCXW225276902 BCX0"><span class="NormalTextRun SCXW225276902 BCX0">)</span></span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> </span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0">function that STAR is actually going to run. </span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0">If you want to throw all your code in there directly, you can do that. If you want to break down your code into different functions and call those functions inside the </span></span><span style="color: rgb(51,102,255);"><span class="TextRun Highlight SCXW225276902 BCX0"><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2 SCXW225276902 BCX0">execute(</span></span><span class="TextRun Highlight SCXW225276902 BCX0"><span class="NormalTextRun SCXW225276902 BCX0">)</span></span></span><span class="TextRun SCXW225276902 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW225276902 BCX0"> function, you can do that too. </span></span><span class="EOP SCXW225276902 BCX0" style="color: rgb(0,0,0);"> </span></span></p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/164135417/164135426.png" data-image-src="attachments/164135417/164135426.png" data-unresolved-comment-count="0" data-linked-resource-id="164135426" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-25_19-6-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164135417" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p><p><span>Now, looking at the </span><span style="color: rgb(51,102,255);">execute0()</span><span> function. </span><span> <br/></span><span style="color: rgb(51,102,255);">Simulation var = getActiveSimulation();</span><span> is a line you’re going to need for every macro. This initializes a “Simulation” type object in your </span><span>code, and</span><span> is going to be the “portal” you use to pull/push things from/to your simulation file. </span><span>The lines after that initialization are all puling specific features/objects out of the simulation file, through that simulation object. Since it’s a generated macro, all the interface names, fan curve table names, unit names are hard coded as string literals. </span><span>The general way to access something from STAR is to make</span><span> a method call that’ll generally look something like </span><span>Simulation.getSomeManager</span><span>().</span><span>getThing</span><span>() and whatever </span><em><span>thing</span></em><span> you’re pulling out of the simulation will have additional methods that let you mutate the </span><em><span>thing</span></em><span>.</span><span> </span><span> </span></p><p><span> </span></p><p><span>That’s basically it. Every macro you ever generate from STAR’s macro recorder will follow that same exact structure. Your job is to know which methods STAR is calling, and how to use them in your code. </span><span> </span><span> </span></p><p><br/></p><p><span><strong><span class="TextRun SCXW14240303 BCX0" style="color: rgb(0,0,0);"><span class="NormalTextRun SCXW14240303 BCX0">set_fan_table.java</span></span></strong><span class="EOP SCXW14240303 BCX0" style="color: rgb(0,0,0);"> </span></span></p><p><span><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/164135417/164135420.png" data-image-src="attachments/164135417/164135420.png" data-unresolved-comment-count="0" data-linked-resource-id="164135420" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-25_19-0-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164135417" data-linked-resource-container-version="4" alt=""></span></span></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135418.png">image2020-11-25_18-56-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135419.png">image2020-11-25_18-59-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135420.png">image2020-11-25_19-0-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135422.png">image2020-11-25_19-2-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135424.png">image2020-11-25_19-3-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135425.png">image2020-11-25_19-4-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164135417/164135426.png">image2020-11-25_19-6-7.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

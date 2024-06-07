@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : RW-2-02</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750834.html">Rear Wing PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262834200.html">RW Design Notebook PF24 | Matt</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : RW-2-02
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Matthew James Lamear</span>, last modified on Jul 01, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation</strong></u> ML-013</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 73.4504%;"><colgroup><col style="width: 14.1256%;"/><col style="width: 60.6876%;"/><col style="width: 25.1868%;"/></colgroup><tbody><tr><th scope="col" class="confluenceTh">Description of the Change</th><th scope="col" class="confluenceTh">Picture</th><th scope="col" class="confluenceTh">Justification</th></tr><tr><td class="confluenceTd">Reduced AoA of the main element, altered 2nd and 3rd elements to primarily produce pressure recovery.</td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/265096114/265096169.png" data-image-src="attachments/265096114/265096169.png" data-unresolved-comment-count="0" data-linked-resource-id="265096169" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-30_13-25-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096114" data-linked-resource-container-version="3" alt=""></span></p></div></td><td class="confluenceTd"><p>Reducing the AoA of the main element increases the amount of pressure being utilized towards DF instead of drag. </p><p>Chord increase for the main element since this component is the main DF generator.</p><p>Fully leaning into the pressure recovery route to power up the main element as much as possible. 2nd element diffuses substantially, which leads to the 3rd element (Lieback airfoil) that defuses even more. </p><p>Note: Expecting some flow sep in the center section due to the headrest. Also, due to the reduction of chord for the 2nd and 3rd elements there may be increased risks for flow separation along with the 3rd element being very touchy to flow sep due to the large amounts of diffusing. </p></td></tr><tr><td class="confluenceTd">Eliminated vertical endplate gurney and increased camber of dive plane.</td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/265096114/265096170.png" data-image-src="attachments/265096114/265096170.png" data-unresolved-comment-count="0" data-linked-resource-id="265096170" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-30_13-31-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096114" data-linked-resource-container-version="3" alt=""></span></p></div></td><td class="confluenceTd"><p>As discussed in the previous iteration, the dive plane can have an increased camber to produce higher DF. Additionally, the vertical endplate gurney is producing a lot of drag, so I am removing that portion for drag improvements.</p></td></tr></tbody></table></div><p><u><strong>Reports</strong></u></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 57.1037%;"><colgroup><col style="width: 8.36538%;"/><col style="width: 12.7885%;"/><col style="width: 8.65385%;"/><col style="width: 8.55769%;"/><col style="width: 7.78846%;"/><col style="width: 7.98077%;"/><col style="width: 9.23077%;"/><col style="width: 8.75%;"/><col style="width: 9.71154%;"/><col style="width: 7.88462%;"/><col style="width: 10.0962%;"/></colgroup><tbody><tr><td class="confluenceTd">Report: Lift Coefficient Avg</td><td class="confluenceTd">Report: Drag Coefficient avg</td><td class="confluenceTd">Report: L/D</td><td class="confluenceTd">Report: % Front Avg</td><td class="confluenceTd">Report: Radiator mass flow avg (kg/s)</td><td class="confluenceTd">Report: FW Lift avg</td><td class="confluenceTd">Report: FW Drag avg</td><td class="confluenceTd">Report: RW Lift Avg</td><td class="confluenceTd">Report: RW Drag Avg</td><td class="confluenceTd">Report: UT Lift Avg</td><td class="confluenceTd">Report: UT Drag Avg</td></tr><tr><td class="confluenceTd">-4.48984</td><td class="confluenceTd">1.444471</td><td class="confluenceTd">-3.10829</td><td class="confluenceTd">0.577002</td><td class="confluenceTd">0</td><td class="confluenceTd">-1.58817</td><td class="confluenceTd">0.20452</td><td class="confluenceTd">-1.26049</td><td class="confluenceTd">0.622331</td><td class="confluenceTd">-1.62487</td><td class="confluenceTd">0.170971</td></tr></tbody></table></div><p><u><strong>CFD Analysis</strong></u></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 54.0867%;"><colgroup><col style="width: 60.0041%;"/><col style="width: 39.9959%;"/></colgroup><tbody><tr><th class="confluenceTh">CFD Picture</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/265096114/265096390.png" data-image-src="attachments/265096114/265096390.png" data-unresolved-comment-count="0" data-linked-resource-id="265096390" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-1_12-51-59.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096114" data-linked-resource-container-version="3" alt=""></span></p></div></td><td class="confluenceTd">L/D is fantastic, but need to increase DF generation. The final element also separates, as speculated above. </td></tr><tr><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="244" src="attachments/265096114/265096391.png" data-image-src="attachments/265096114/265096391.png" data-unresolved-comment-count="0" data-linked-resource-id="265096391" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-1_12-52-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096114" data-linked-resource-container-version="3" alt=""></span></p></div></td><td class="confluenceTd">Diveplane looks good.</td></tr><tr><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/265096114/265096392.png" data-image-src="attachments/265096114/265096392.png" data-unresolved-comment-count="0" data-linked-resource-id="265096392" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-7-1_12-53-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="265096114" data-linked-resource-container-version="3" alt=""></span></p></div></td><td class="confluenceTd">Headrest surprisingly didn't cause separation. Need to increase AoA of main element and clean up final element to finally investigate the best approach. </td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096115.png">image-2023-6-29_22-5-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096168.png">image-2023-6-9_13-17-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096167.png">image-2023-6-10_12-31-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096166.png">image-2023-6-9_13-17-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096165.png">image-2023-6-10_16-26-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096164.png">image-2023-6-10_16-27-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096163.png">image-2023-6-11_12-33-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096162.png">image-2023-6-11_12-36-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096161.png">image-2023-6-11_12-36-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096160.png">image-2023-6-11_13-12-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096159.png">image-2023-6-11_13-13-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096158.png">image-2023-6-11_13-13-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096157.png">image-2023-6-11_13-14-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096156.png">image-2023-6-11_13-14-41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096155.png">image-2023-6-12_12-30-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096154.png">image-2023-6-12_12-31-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096153.png">image-2023-6-12_15-38-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096152.png">image-2023-6-12_15-40-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096151.png">image-2023-6-12_15-40-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096150.png">image-2023-6-13_17-15-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096149.png">image-2023-6-13_17-17-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096148.png">image-2023-6-13_17-22-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096147.png">image-2023-6-16_14-34-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096146.png">image-2023-6-16_14-34-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096145.png">image-2023-6-16_14-36-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096144.png">image-2023-6-16_14-45-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096143.png">image-2023-6-19_12-52-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096142.png">image-2023-6-19_12-56-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096141.png">image-2023-6-19_13-26-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096140.png">image-2023-6-19_13-27-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096139.png">image-2023-6-19_13-32-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096138.png">image-2023-6-22_14-27-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096137.png">image-2023-6-22_16-21-0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096136.png">image-2023-6-22_16-21-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096135.png">image-2023-6-24_12-26-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096134.png">image-2023-6-24_12-48-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096133.png">image-2023-6-24_12-52-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096132.png">image-2023-6-24_12-53-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096131.png">image-2023-6-27_15-36-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096130.png">image-2023-6-27_15-40-25.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096129.png">image-2023-6-27_15-43-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096128.png">image-2023-6-27_15-50-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096127.png">image-2023-6-28_12-43-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096126.png">image-2023-6-28_12-45-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096125.png">image-2023-6-28_12-46-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096124.png">image-2023-6-28_14-36-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096123.png">image-2023-6-29_21-47-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096122.png">image-2023-6-29_21-49-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096121.png">image-2023-6-29_21-51-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096120.png">image-2023-6-29_21-56-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096119.png">image-2023-6-29_21-56-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096118.png">image-2023-6-29_21-56-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096117.png">image-2023-6-29_21-59-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096116.png">image-2023-6-29_21-59-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096169.png">image-2023-6-30_13-25-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096170.png">image-2023-6-30_13-31-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096390.png">image-2023-7-1_12-51-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096391.png">image-2023-7-1_12-52-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096114/265096392.png">image-2023-7-1_12-53-20.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

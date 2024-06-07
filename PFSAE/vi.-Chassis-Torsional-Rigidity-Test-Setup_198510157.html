@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : vi. Chassis Torsional Rigidity Test Setup</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF22-Frame-Design_192190053.html">PF22 Frame Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="198508862.html">2. LLTD / Torsion Test Design Decisions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : vi. Chassis Torsional Rigidity Test Setup
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Klaveano, Alexander Ryan</span>, last modified on Jan 15, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>To go along with computer analyses done on the chassis rigidity, we need to develop a test setup that can be used to experimentally validate how close the behavior of the chassis is to our expected results from simulation.</p><p>The suspension is designed with the assumption that the frame is rigid, which is an okay assumption to make for design, but when fine tuning the car for characteristics like understeer/oversteer balance, the inherent torsional springiness of the chassis will affect the ability to do so using the ARBs.</p><ul><li>This test setup must be able to apply an adjustable amount of loading to the front axle.</li><li>The rear wheels will be held rigid to the table using a fixture yet to be designed. This fixture will attach directly to the rear hubs.</li><li>A similar fixture will be used to support the front wheels via the hubs, but instead of fixating them to the table, they will be attached to a long steel beam that will extend far out from below the car, upon which weights can be controllably placed to apply a twisting load to the chassis.</li><li>All suspension dampers shall be temporarily replaced with rigid rods to eliminate damper springs from the test variables.</li></ul><p>Test cases shall be compared to those from this page <a href="169481638.html">iv. PF22 Design Decisions from LLTD/TT</a></p><p>Data stored in <span style="color: rgb(23,43,77);">Z:\2021\10_CAD-22\2_Chassis\2_Chassis\5_Simulations\Christian does torsion\LLT_TT_Data</span></p><p><br/></p><h3 id="vi.ChassisTorsionalRigidityTestSetup-23Dec2021,DiscussionNotes"><span style="color: rgb(23,43,77);">23 Dec 2021, Discussion Notes</span></h3><p>Ownership:</p><p>Chassis - ANSYS model, test cases, and analysis</p><p>Susp - Test Setup and fixturing</p><p><br/></p><p>Delren spacers more cost effective than a large sheet via McMaster</p><p>Prioritize stiffness in fixtures e.g. using aluminum over Delren spacers</p><ul style="list-style-type: square;"><li>Sheet aluminum spacer still meets primary goal of protecting hub from steel fixture</li></ul><p>Use waterjet/lasercut gussets instead of jig stock for rear section</p><ul style="list-style-type: square;"><li>Try to match alloys for welding, but 4130 and 1018 is probably ok?</li></ul><p><br/></p><p><strong>Components Rundown</strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col style="width: 172.0px;"/><col style="width: 45.0px;"/><col style="width: 155.0px;"/><col style="width: 77.0px;"/><col style="width: 114.0px;"/><col style="width: 61.0px;"/><col style="width: 349.0px;"/></colgroup><tbody><tr><th class="confluenceTh">Part Name</th><th class="confluenceTh">Qty</th><th class="confluenceTh">Stock</th><th class="confluenceTh">Machine</th><th class="confluenceTh">Need to do</th><th class="confluenceTh">Status</th><th class="confluenceTh">DWG</th></tr><tr><td class="confluenceTd">Front Vertical Supports</td><td class="confluenceTd">4</td><td class="confluenceTd">1x1 Jig Stock </td><td class="confluenceTd">Mill</td><td class="confluenceTd"><p>Face Edges</p><p>Drill Holes</p></td><td class="confluenceTd">Done</td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/198510157/PF22_SUS_Torsion_FrontVerticalSup_dwg1.pdf?version=1&amp;modificationDate=1641918243000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/198510157/PF22_SUS_Torsion_FrontVerticalSup_dwg1.pdf?version=1&amp;modificationDate=1641918243000&amp;api=v2" data-linked-resource-id="202279164" data-linked-resource-type="attachment" data-linked-resource-container-id="198510157" data-linked-resource-default-alias="PF22_SUS_Torsion_FrontVerticalSup_dwg1.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF22_SUS_Torsion_FrontVerticalSup_dwg1.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202279164/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="198510157" data-linked-resource-id="202279164" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p></div></td></tr><tr><td class="confluenceTd">Rear Vertical Supports</td><td class="confluenceTd">4</td><td class="confluenceTd">1x1 Jig Stock</td><td class="confluenceTd">Mill</td><td class="confluenceTd"><p>Face Edges</p><p>Drill Holes</p></td><td class="confluenceTd">Done</td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/198510157/PF22_SUS_Torsion_RearVerticalSup_dwg1.pdf?version=1&amp;modificationDate=1641920404000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/198510157/PF22_SUS_Torsion_RearVerticalSup_dwg1.pdf?version=1&amp;modificationDate=1641920404000&amp;api=v2" data-linked-resource-id="202279206" data-linked-resource-type="attachment" data-linked-resource-container-id="198510157" data-linked-resource-default-alias="PF22_SUS_Torsion_RearVerticalSup_dwg1.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF22_SUS_Torsion_RearVerticalSup_dwg1.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202279206/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="198510157" data-linked-resource-id="202279206" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p></div></td></tr><tr><td class="confluenceTd">Horizontal Brace</td><td class="confluenceTd">2</td><td class="confluenceTd">1x1 HRC Jig Stock</td><td class="confluenceTd">Mill</td><td class="confluenceTd"><p>Prepare Stock</p><p>Face edges</p></td><td class="confluenceTd">Done</td><td class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/198510157/PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf?version=2&amp;modificationDate=1641923321000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/198510157/PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf?version=2&amp;modificationDate=1641923321000&amp;api=v2" data-linked-resource-id="202279228" data-linked-resource-type="attachment" data-linked-resource-container-id="198510157" data-linked-resource-default-alias="PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="2" data-can-edit="true" aria-label="PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202279228/2" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="198510157" data-linked-resource-id="202279228" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p></div></td></tr><tr><td class="confluenceTd">Front Hub Mnt Plate</td><td class="confluenceTd">2</td><td class="confluenceTd">0.25&quot; 4130 Plate</td><td class="confluenceTd">Lasercut</td><td class="confluenceTd"><p><br/></p></td><td class="confluenceTd">Done</td><td class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Rear Hub Mnt Plate</td><td colspan="1" class="confluenceTd">2</td><td colspan="1" class="confluenceTd">0.25&quot; 4130 Plate</td><td colspan="1" class="confluenceTd">Lasercut</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Done</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Aluminum Spacers</td><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">0.125 6xxx Alum Plate</td><td colspan="1" class="confluenceTd">Lasercut</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Done</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Rear Support Gussets</td><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">0.063&quot; 4130 Sheet</td><td colspan="1" class="confluenceTd">Lasercut</td><td colspan="1" class="confluenceTd"><p><br/></p></td><td colspan="1" class="confluenceTd">Done</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Large Rectangular Tubes</td><td colspan="1" class="confluenceTd">2</td><td colspan="1" class="confluenceTd">3x5 Rect. Tube</td><td colspan="1" class="confluenceTd">Mill?</td><td colspan="1" class="confluenceTd"><p>Cut to size</p><p>Drill+Tap holes</p></td><td colspan="1" class="confluenceTd">Waiting for stock</td><td colspan="1" class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong>Left To Do:</strong></p><ul><li>Get required hardware for all components</li><li>Drill and tap holes in big metal tubes</li><li>Bolt together front support frame </li><li>Test fit and adjust as needed</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198510157/202279164.pdf">PF22_SUS_Torsion_FrontVerticalSup_dwg1.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198510157/202279206.pdf">PF22_SUS_Torsion_RearVerticalSup_dwg1.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198510157/202279230.pdf">PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198510157/202279228.pdf">PF22_SUS_Torsion_HorizontalBrace_dwg1.pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Wire Creation | Harness</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832509.html">Design PF20 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="265097174.html">Harness CAD | PF20</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Wire Creation | Harness
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (mstarobr)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on May 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>For all of the wires we create in NX, we use the &quot;Spline Path&quot; tool.  </strong></p><p>How to set points- either through:</p><p>predetermined point (lightning bolt) which allows you to select any preexisting point including connector ports, universal routing points, and any other wire points that you have made before.</p><p>Relative points (dot on a square plane) which allows you to select any point on a plane to place a point. Though potentially useful for making routes that don’t follow the universal routing path, mistakes may occur due to where on a model you select. It doesn’t account for depth when determining where you clicked. Despite being on a close plane for you it can be on a far plane based on the CAD which can make very confusing wire routings if you don’t pay attention.</p><p><br/></p><p>Routing standards- when starting a new wire path always start from a main module (ECU, PDM, DASH, or universal wire terminal) and ends at an input or output (sensor, button, battery, etc. ). This standard comes into play when building the wire from the route. Also we typically log wires in the same way as displayed when connected in this fashion. Makes the process more standardized and efficient (and less of a headache later).</p><p><br/></p><p>Building connections/ simulating wires and the requirements for making wires- the requirements necessary for a wire to be simulated you are required to have a qualified start port, a qualified end port, and a routing path connecting the two. Though straight forward, the most common error we run into involve those three.</p><p><br/></p><p>Editing wires (if single point errors occur)<br/>Many of the edits that wires can go through are fairly simple to edit. If you are able to access the wires routing plot, you should be able to reroute each point fairly easily. The most consistent way I have found to do this is to move your mouse over the wire until you find a dashed line running the length of the frame. Double click on that dashed line. This will open up that wires plot and you can edit from there. You should know if it’s open based on a series of big yellow dots appearing on the wire route. Those symbolize the points placed to make the wire. If you click on one of the points or select one of the coordinates within the wire list, you are able to reroute that point by selecting a different point. Ir may take a while to load but the wire route should update on its own after you hit okay.</p><p><br/></p><p>Editing wires (if scuffed beyond repair)<br/>Don’t be afraid of deleting a wire and redoing it. Typically if a wire doesn’t have enough point to change a wire route or an internal error has occurred because of it. To delete, just select the wire (should be the only thing that is brown/ selected) and press the delete key (or right click and click the x near the top of the pop up menu). When you delete a wire there should be a non qualified wire that appears reprinting the broken connection that just occurred by deleting the wire. Just make sure to connect to the same points as last time and if you right click the broken qualified wire, and hit redefine, you should be able to replace the wire without creating a new wire qualification.</p><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

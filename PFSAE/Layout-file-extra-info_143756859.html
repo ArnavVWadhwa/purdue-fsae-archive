@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Layout file extra info</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD_130162759.html">CAD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CAD-Tutorials_143756698.html">CAD Tutorials</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="156599636.html">Supporting / Background info</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Layout file extra info
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Unknown User (agarw162)</span> on Jun 08, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Video overview:</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/8fOkrUGg-UY?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>A layout file structure is incredibly useful for two reasons:</p><ol><li>It allows you to design all the parts that interact in an assembly at once in the same file</li><li>It allows you to include all the reference geometry you want without ever needing to get it all hidden properly</li><li>It creates parts that are very lightweight - they do not include any reference geometry or even all the various features like sketches, extrudes, assembly constraints, and fillets that actually make up the part. This allows larger assemblies to be opened and looked at without bogging a computer</li></ol><p><br/></p><p>How to make an assembly with the layout file structure.</p><ol><li>Per the naming convention, the layout file should be 5100 for example</li><li>Make this part, </li><li>Assemble into it all the reference geometry you could ever want. No need for linked bodies, but just use add part.</li><li>Design all of your parts using the reference geometry as well as any bottom up methods (sketches, extrudes, etc.)<ol><li>To use reference geometry directly, be sure to change the selection scope FIXME</li></ol></li><li>To organize the various separate parts you made, use folders in the feature tree</li><li>Once you're done designing the parts in the layout file, for each individual part:<ol><li>Use &quot;new part&quot; to make the new file as a part in the layout file assembly</li><li>Double click the new part in the part tree. This makes that part the active part. That means that you are editing that part, but the stuff in the layout file is still kind of there.</li><li>Select wave geometry linker. Select body and then select the body in the layout file that corresponds to the part.</li><li>Double click on the layout file part name at the top of the part tree to make it the active part again</li><li>Right click on the name of the part you just made in the part tree, then select &quot;open in new window&quot;</li><li>Select reference sets. Add the body you've added to the part to the reference sets.</li><li>Set the material properties</li><li>Now repeat for each part</li></ol></li><li>Once you've made the files for each individual part, just make an assembly out of them as you usually would. You can add any hardware to this assembly as you usually would. If the parts aren't showing up in the assembly, it's probably because you didn't add the body to the reference set.</li></ol>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

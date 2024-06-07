@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Frame, Body, Aero Feedback</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="All-Team-Design-Reviews_130162427.html">All Team Design Reviews</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Design-Season-Archive_265095408.html">Design Season Archive</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Virtual-Comp-2021_169482030.html">Virtual Comp 2021</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="174556662.html">Alumni Mock Review (Virtual Comp 2021)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Frame, Body, Aero Feedback
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Unknown User (agarw162)</span> on Apr 13, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Frame,Body,AeroFeedback-Frame">Frame</h2><p>Frame Design<br/>1) How did you come up with your torsional rigidity target?<br/>a. Mine was 22,800 in-lbf/ deg. And was realized for similar/ less mass<br/>2) Any lap sim changes for chassis changes? (tube placements/ stiffness changes/ mass)<br/>3) How did you layout the tubes from the beginning? How did each tube get placed?<br/>4) Why are suspension nodes important?<br/>5) Why the square bulkhead?<br/>6) Why a bent front roll hoop? Any analysis vs a straight bar?<br/>7) No X-brace?<br/>8) Drive swap/ egress specific thoughts?</p><p><br/>Analysis<br/>9) I like the difference of on vs. off throttle load cases<br/>10) Load cases page (43) – what are your outcomes/ goals?<br/>11) Effects of engine on stiffness?<br/>12) Based on your description of the LLTD model: The chassis can be thought of as a series of<br/>torsional springs between masses which apply moments when the vehicle corners. To provide<br/>intuition before completing more complex FEA models hand calculations were performed on the<br/>model in Figure 3.7.2 which are summarized in Figure 3.7.4.” it seems based on vehicle masses<br/>to use inertia to impart loads on the chassis. What about applied suspension loads? I think that<br/>is where I get the most confused about using this model to design your structural stiffness.<br/>13) Because using LLTD were you tuning front vs. rear stiffness? If so, how?<br/>14) Torsion FEA shows deflection of suspension links and test beam. Is this deflection realistic? Does<br/>it change your results?<br/>15) Margins of safety seem very high (higher than team goals that Ben lays out in the beginning and<br/>also in a different format) and you also missed your mass target by a small amount. Seems like<br/>you should have been able to lower mass and also still meet margin of safety targets.<br/>16) Suspension link/ component design? Did their deflections impact your thinking?<br/>17) Did you analyze for deflection at suspension mounting points? (ex. Under a 70 mph turn, by how<br/>much does your outside tie-rod mounting point on the chassis deflect?) Is this enough to not<br/>affect vehicle handling?<br/>18) Swan neck mounting and compliance? Did you analyze aero loads to make sure your chassis<br/>wasn’t deflecting and potentially going to fatigue due to aero load cycling.<br/>19) If your chassis was going to fail at any location, where would it be? Where is your lowest factor<br/>of safety and under what load case does it happen? – This helps show that you know your<br/>chassis well.<br/>20) Any full vehicle test learnings? I know this is hard for chassis, but one example would be do<br/>sweep through your tuning range and show you can take the car from bad to great to bad. Don’t<br/>just focus on ARB changes because I know that is how suspension likes to make adjustments but<br/>spring and other components that impart load on the chassis and will challenge its stiffness. You<br/>could even make graphs of lap time or driver feedback on the y-axis and tuning range (soft to</p><p>stiff on the x-axis and show that somewhere in the middle of your tuning range is the best<br/>performance for each driver.</p><p><br/>Manufacturing<br/>21) Overall process?<br/>22) How did you heat treat?<br/>23) Why heat treat? (Why is it worth your time, money effort?)</p><h2 id="Frame,Body,AeroFeedback-Aero">Aero</h2><p>Judge: Adam Christopherson (Aerodynamics Team Lead 2018, Chief Engineer 2019)</p><ol><li>50% balance came from where?<ol><li>Driver preference?</li><li>Lap times?</li><li>Aero balance was a little confusing.</li><li>Flap adjustability<ol><li>We can adjust the RW, but not the FW.</li></ol></li></ol></li><li>Radiator stuff</li><ol><li>Where did that number come from?<ol><li>What air velocities?</li><li>Other conditions</li></ol></li><li>Don’t have to talk too much about it, but it would be nice.</li></ol><li>FW AoA tuning<ol><li>Maybe have finer tuning.</li><li>Make sure it does not separate if we’re going to not allow adjustability.</li></ol></li><li>Aero goals were a bit confusing.<ol><li>Talk more about the competition points tradeoffs.</li><li>Talk less about “minimize drag, maximize lift”</li></ol></li><li>Switch from K-omega to the S-A</li><ol><li>Predicting boundary layers stuff</li><li>K-omega over predicts separation.</li><li>S-A was closer to on track results, but talk more about that directly.</li><li>Qualitative vs quantitative reasoning was confusing.<ol><li>Quantitative results were similar at certain conditions, but you still switched?</li><li>Switched bc of results at critical angles.</li></ol></li></ol><li>How many sims did the automation allow compared to no automation.<ol><li>Automation suite can be a bigger part of the presentation; it’s something many other teams don’t have.</li><li>How does the mesh cell count decision relate to this new automation tool.</li><li>Why Trimmed cell?</li></ol></li><li>Justify UT not being stiff for weight.<ol><li>How much weight was saved?</li><li>Why is this better?</li><li>Used to have core in UT; it was very heavy</li></ol></li><li>Talk more about the sensitivities and what they mean for design.<ol><li>What is acceptable for each target.</li><li>There are weird pockets in the plots.</li><li>Is your sim reliable?<ol><li>They seem unreliable at certain ride heights.</li></ol></li></ol></li><li>Where did weight error come from?<ol><li>How to minimize that?</li></ol></li><li>Wind tunnel<ol><li>Some discrepancy between quantitative and qualitative data<ol><li>We say we are comparing deltas, but also are only looking for qualitative data</li><li>What are the difficulties with looking for quantitative data in the wind tunnel.</li></ol></li><li>What exactly is being measured/how?</li></ol></li></ol>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

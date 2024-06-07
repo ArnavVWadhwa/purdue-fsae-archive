@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Milliken Moment Method (YMD): Vehicle Control and Stability</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Vehicle-Dynamics_246342245.html">Vehicle Dynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Simulation-Tools_246342277.html">Simulation Tools</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Milliken Moment Method (YMD): Vehicle Control and Stability
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-ConceptOverview:">Concept Overview:</h1><p>Milliken Moment Method (MMM) also referred to as yaw moment diagram (YMD) is an approach to deriving the complete description of a vehicle's steady state handling characteristics. The MMM is where the vehicle is operating at steady state conditions, on a constant radius turn, or at a constant speed, and thus the lateral force and yaw moment (calculated for the range of possible steer and body slip angles) will rotate the vehicle about a vertical axis. This will create the means to plot a complete 'Map' of the vehicles motion where the controllability and stability of the vehicle can be analyzed. </p><p><strong>What is Control</strong>: Control (Nm/deg steering) is the ability to induce a yaw moment that will rotate the vehicle more in commanded direction.  </p><p><strong>What is Stability</strong>: Stability (Nm/deg chassis slip angle) is the vehicles ability to create a returning moment when the vehicle is pointing in a direction away from the true velocity. </p><p><strong>What is our goal in using YMD</strong>: First and foremost is to gain an understanding of what our vehicle is doing at the limit. </p><ul><li>Predict steady state lateral acceleration (trimmed N = 0).</li><li>Predict if the vehicle will under or over yaw past the limit</li><li>Use as a Performance Engineering tool while testing to study the impact a vehicle setup change will have on performance<ul><li>Performance (Stability, Control, Grip, Balance) where Grip is peak lateral acceleration and Balance is the yaw moment at the limit</li></ul></li><li>Use as a architecture decision making tool as architecture decisions can be done to see the impact on vehicle handling and performance</li></ul><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-ModelLimitations:">Model Limitations:</h1><p>As with all simulations and models, no model is accurate but some models are useful. It is important to understand the limitations of your model and assumptions being made in order to gain useful information. Our MATLAB model developed by Keith Kurisko in 2022 has the following assumptions and limitations.</p><ul><li>&quot;Steady State&quot; Analysis of the Vehicle, so as much as looking at over yaw, which is a &quot;transient event&quot;, you must understand that the model is giving general metrics on vehicle response. This means that you can't for certain say a vehicle will have this exact yaw moment or this much oversteer/understeer, but we can absolutely make comparisions to different model configurations and parameter studies to identify general trends or directions in how vehicle response will change. For example, looking at how changing front toe from 0 deg to 0.5 deg toe out would tell you a rough change in vehicle response/behavior near the tires limit.</li><li>This model should be used prior to design to study how architecture parameters affect vehicle performance and drivability in parallel to LAP SIM</li><li>This model should be used to further your understanding of vehicle dynamics and assist in tuning the car to improve performance, you will not get a 100% answer but it will give intuition and ideas of what could be altered</li><li>Assumptions:<ul><li>Tire Model is accurate and not extrapolating → This is not true, tire does extrapolate for higher Fz <ul><li>NOTE: Camber is typically extrapolated in our model and cannot be trusted in sweeps or analysis so turning off kinematic behaviors for studies is important</li></ul></li><li>4 Independent Wheel and Slip Angle</li><li>Load Transfer and Load Transfer Distribution Taken into consideration</li><li>Aero is constant CL and CD for all potential roll or yawing angles</li></ul></li></ul><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-Inputs:">Inputs:</h1><p>Vehicle Parameters List</p><p>MF5.2 Tire Model</p><p>Subject the model to a side slip angle and steering angle (not actual steering wheel but that of the tires. Can back calculate steering wheel angle using rack and suspension points)</p><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-Outputs:">Outputs:</h1><p>Lateral Acceleration and Yaw Moment based on a given slip angle and steering angle. A matrix of these are then used to construct a MMM if desired along with determining a stability/control matrix. The diagram can provide a design or performance engineer with the vehicles performance at the limit (balance and grip).</p><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-ModelingProcess:">Modeling Process:</h1><p><a class="CID94ad7224-144d-4bf2-b563-ce549683ffa5" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/255689049/280563477.png" data-image-src="attachments/255689049/280563477.png" data-unresolved-comment-count="0" data-linked-resource-id="280563477" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-30_19-38-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689049" data-linked-resource-container-version="9" alt=""></span><a class="CIDbea6d999-7997-4db2-b9a1-06316fafce28" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/255689049/280563478.png" data-image-src="attachments/255689049/280563478.png" data-unresolved-comment-count="0" data-linked-resource-id="280563478" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-30_19-39-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689049" data-linked-resource-container-version="9" alt=""></span></p><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-Instructions:">Instructions:</h1><p>Download respective GitHub Repos:</p><ol><li><a class="external-link" href="https://github.com/Purdue-FSAE/Yaw-Moment-Model" rel="nofollow">Purdue-FSAE/Yaw-Moment-Model: Yaw Moment Diagram Model (github.com)</a></li><li><a class="external-link" href="https://github.com/Purdue-FSAE/Tire-Models" rel="nofollow">Purdue-FSAE/Tire-Models: All tire models (github.com)</a></li><li><a class="external-link" href="https://github.com/Purdue-FSAE/Vehicle-Parameters" rel="nofollow">Purdue-FSAE/Vehicle-Parameters: Contains all files related to vehicle parameters needed for all VD simulations along with tire parameter files. (github.com)</a></li></ol><p>Once downloaded and environment is setup. Add all folder paths to working directory. </p><p>Run MMM_CS.m</p><p>Run MMM_USG_Main.m</p><p><a class="confluence-userlink user-mention" data-username="kkurisko" href="https://wiki.itap.purdue.edu/display/~kkurisko" data-linked-resource-id="146771192" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Kurisko, Keith Gregory</a> Need to go through and update and condense scripts to more user friendly when it comes to running</p><ul class="inline-task-list" data-inline-tasks-content-id="255689049"><li data-inline-task-id="4"><span class="placeholder-inline-tasks">Plotting function to be called</span></li><li data-inline-task-id="5"><span class="placeholder-inline-tasks">Summary Function is easy to call</span></li><li data-inline-task-id="6"><span class="placeholder-inline-tasks">Restructure code base</span></li></ul><p><br/></p><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-Results(TakenfromPF23Studies):"><span class="placeholder-inline-tasks">Results (Taken from PF23 Studies):</span></h1><h1 id="MillikenMomentMethod(YMD):VehicleControlandStability-250"><strong><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/255689049/Purdue%20FSAE%20-%20MMM%20Results.pptx?version=1&amp;modificationDate=1701903533000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/255689049/Purdue%20FSAE%20-%20MMM%20Results.pptx?version=1&amp;modificationDate=1701903533000&amp;api=v2" data-linked-resource-id="280564729" data-linked-resource-type="attachment" data-linked-resource-container-id="255689049" data-linked-resource-default-alias="Purdue FSAE - MMM Results.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Purdue FSAE - MMM Results.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/280564729/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="255689049" data-linked-resource-id="280564729" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></strong></h1><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689049/280563477.png">image-2023-11-30_19-38-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689049/280563478.png">image-2023-11-30_19-39-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689049/280564729.pptx">Purdue FSAE - MMM Results.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

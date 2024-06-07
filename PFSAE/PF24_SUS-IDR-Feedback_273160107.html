@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF24_SUS IDR Feedback</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751191.html">Design PF24 | SUS</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF24_SUS IDR Feedback
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Stallings, Simon Tibor</span>, last modified on Oct 14, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li><strong>General</strong> <ul><li>Anyone that is running on the super computer, make sure your model works with a course mesh before you move to the super computer to save pain and stress</li><li>When is yielding ok and ult is not and so on (this is a good thing to always think of when designing) </li><li>All analysis might want to look at a reverse braking case since it would cause different loading in the lugs </li></ul></li><li><strong>Kinematics / Dynamics</strong> </li><li><strong>Brakes</strong><ul><li>Retainer side inner fillet (rotor and retainer contact)<ul><li>external corner is probably a contact stress which could be taken less &quot;seriously&quot; </li><li>use bearing stress hand calc to do this instead to make it easier (could use instead of FEA if the model does not work)</li><li>use a <u>shell mesh</u> for the rotor since it is flat and then use a very fine mesh in order to run it <ul><li>the finer the mesh the better analysis especially in this case  </li></ul></li></ul></li><li>Why are we looking at deformation?<ul><li>final good or not good result should be stress, not so much deformation </li></ul></li><li>Thermal model <ul><li>heating the rotor to 900C uniformly you are not going to really get any stresses, it is when there is non uniform heat distributions</li><li>mixing up two types of analysis<ul><li>thermal analysis cares about the heat distribution </li></ul></li><li>retainer thermal analysis<ul><li>very hard to model the contact between the rotor and the retainer <ul><li>this is why Frank used steal in the front </li></ul></li></ul></li></ul></li><li>To much time is being spent on ANSYS analysis (lots of it is going to be to complex for our capabilities)  </li><li>Drill hole sizing validation <ul><li>more mass means less heat in the rotor </li><li>don't focus on taking out weight </li></ul></li><li>Might not need to constrain your z displacement artificially for the bolted joint (hub to the retainer) </li><li>Any amount of friction between the rotor and the retainer should be able to hold them together so it doesn't come flying out</li><li>Large scary inaccuracy with the fixed displacement on the back of the rotor and retainer <ul><li>Split the tab where the hub and retainer sandwiches the rotor to then fix the displacement in z rather than doing the entire rear face </li></ul></li><li>Floating rotor design <ul><li>Why do we need a floating rotor design at all?<ul><li>it is there to allow for even loading between the two different caliper pistons</li></ul></li></ul></li><li>Make sure that the rotor does not bind up (tolerance)</li></ul></li><li><strong>Actuation </strong><ul><li>Buckling case for using toe shims is concerning <br/><ul><li>joint can be more prone to bucking with a clamping load which is what we see here and if the bolt comes lose then we have a big problem </li><li>make the OD of tie rod tube and ID of control arm tube very close so that if there is deflection the tube will take and there will be less of a chance of buckling </li><li>also look into triangulating the shim area to stop the buckling </li></ul></li><li>Toe stiffness could get really bad because we are bending two plates </li></ul></li><li><strong>Setup</strong><ul><li>Is it meaningful to have the leveling tubes go from the middle of the plates or the edge of the plates?<ul><li>If the plate bends when you put the car will it throw off your leveling </li></ul></li><li>Wheel shells are not awesome datums <ul><li>spin the wheel with an indicator to make sure that there is not much runoff</li></ul></li></ul></li><li><strong>Hubs</strong><ul><li>Fatigue does not apply to yield and is a sudden ultimate failure</li><li>Point out that the structure that connects the four lugs together is a circle that was used to locate the feature for manufacturing, think about load paths (straight line would be the better structure)</li><li>Good job looking into bearings and grease</li><li>Thin section between rotor and hub </li></ul></li><li><strong>Uprights</strong><ul><li>Using springs as two force member is super solid so good job</li><li>With uprights we do not want to yield at all </li><li>Fatigue is very relevant and needs to be looked into <ul><li>Franks confluence page is good on this </li></ul></li><li>Might be worth looking into PF23 entire life cycle to get a better idea</li><li>Tie rod mounting arm <ul><li>deflection needs to be looked at</li><li>the little notch on the inboard side does not make sense <ul><li>it is asking for a stress concentration</li></ul></li></ul></li><li>Tie rod rod end could have contact to the upright so just take a look at it </li><li>Make sure we have enough space for the jam nut on the wheel speed sensor (this was a problem in years past) </li><li>Do not put the dummy bolts in to model </li></ul></li><li><strong>Wheel Centers </strong><ul><li>Outer ring concern <ul><li>bolting something super rigid to a soft shell<ul><li>the discontinuity in the outer radius could cause an issue where the portion that is not supported could sheer</li><li>might be good to analyze with the wheel shell in ANSYS</li></ul></li></ul></li><li>FEA setup in inaccurate<ul><li>not capturing the bolt loads without the wheel shell </li><li>How to make this better <ul><li>would put the hub and wheel shells in the model <ul><li>constrain hub at the bearing faces </li></ul></li><li>divide the face (slices of pizza) </li><li>want to accurately represent the bolts for the wheel shell</li><li>worth looking into fatigue for rotating parts of the car <ul><li>miners rule </li></ul></li></ul></li></ul></li></ul></li><li><strong>ARB's</strong><ul><li>Need to get to FEA <a class="confluence-userlink user-mention" data-username="mboxberg" href="https://wiki.itap.purdue.edu/display/~mboxberg" data-linked-resource-id="187074099" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Boxberger, Matthew Issac</a><span style="letter-spacing: 0.0px;"> </span></li><li><span style="letter-spacing: 0.0px;">All aluminums are the same e within 5%</span><ul><li><span style="letter-spacing: 0.0px;">The job of the bar is to be a spring </span><br/><ul><li><span style="letter-spacing: 0.0px;">7050 and 6061 differ in </span>yield<span style="letter-spacing: 0.0px;"> rather than torsional stiffness </span><ul><li><span style="letter-spacing: 0.0px;">This is the better argument to use since the e is within 5% of all aluminums</span></li></ul></li></ul></li></ul></li><li><span style="letter-spacing: 0.0px;">When you have a thin plate in bending it will naturally want to rotate to its minimum moment of area </span></li><li><span style="letter-spacing: 0.0px;">The pin will take load </span></li><li><span style="letter-spacing: 0.0px;">Also there will be slop which will cause an error in the actual stiffness </span></li><li><span style="letter-spacing: 0.0px;">Need to </span>reevaluate<span style="letter-spacing: 0.0px;"> weather a pin and two plates is the way to go</span><ul><li><span style="letter-spacing: 0.0px;">PF20 has a similar design </span></li></ul></li><li><span style="letter-spacing: 0.0px;">Bolt, clamp down to use friction, is the way to go to stop the rotation and fix the slop </span></li><li><span style="letter-spacing: 0.0px;">Two plates right up against each other and have no bending capability, get holes to be as close of a fit as possible </span><ul><li><span style="letter-spacing: 0.0px;">almost need a light hammer tap to get the pin in </span></li></ul></li><li><span style="letter-spacing: 0.0px;">Adjustability could use a step down arc</span></li></ul></li></ul><ul><li><strong>Tabs</strong> <ul><li>Rear tab (behind the chassis for tie rod)<ul><li>Looks a little uncomfy for toe compliance </li><li>Bring the top tab out a bit to make this a little less uncomfy </li></ul></li></ul></li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Next Tests to Run</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Next Tests to Run
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (mkotur)</span>, last modified by <span class='editor'> Unknown User (napolia)</span> on Apr 29, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="NextTeststoRun-Validating3-PointBending"><u><strong>Validating 3-Point Bending</strong></u></h2><p>To further validate the 3-point bending model in ANSYS, it would be recommended to remake the following layup schedules using the half inch aluminum core that was used in Spring 2020:</p><p>4 ply layup: [0UD 45UD 90UD -45UD]</p><p>6 ply layup: [0UD 45UD 0UD 0UD 90UD -45UD]</p><p>It would be important to remake these layup schedules to check whether the residue left on the carbon as well as the small pleats created during the layup process had a big impact on the stiffness, Young’s Modulus, and failure force of the panel, as mentioned in the Sandwich Panel Testing document.</p><h2 id="NextTeststoRun-NumberofPliesvsFailureForceError"><strong><u>Number of Plies vs Failure Force Error</u></strong></h2><p>Additionally, regarding 3-point bending, it would be useful to determine the failure force error as more plies are added to the layup schedule. To accurately calculate that error, it would be recommended to use just one type of carbon (e.g. T300 2x2 3k) and add two plies per layup schedule to keep the layups quasi-isotropic. The layup schedules made could possibly be the following:</p><p>2 ply layup: [0 45]x2</p><p>4 ply layup: [0 45 0 45]x2</p><p>6 ply layup: [0 45 0 45 0 45]x2</p><p>Or using the unidirectional carbon:</p><p>4 ply layup: [0UD 45UD 90UD -45UD]x2</p><p>8 ply layup: [0UD 45UD 90UD -45UD 0UD 45UD 90UD -45UD]x2</p><p>It would be worth making several samples for each layup to get multiple datapoints for each layup. Once again, the data would be inconclusive if the panels were to delaminate, so pay special attention to the debulking of the panels during the layup process. Additionally, these panels would also serve to further validate the 3-point bending model.</p><h2 id="NextTeststoRun-TheoreticalSESPanels"><u><strong>Theoretical SES Panels</strong></u></h2><p>Furthermore, it would be important to test the theoretical layup schedules used to theoretically pass the SES rules for the front bulkhead supports and side impact structure sections. Getting a carbon material that resembles a T700 2x2 12k Twill fabric, using Grafil TR 50S Unidirectional carbon, and a 1/2” thick 1/8” cell size 160 kg/m<sup>3</sup> 5052 Aluminum honeycomb to make and test the following layup schedules:</p><p>4 ply layup: [0 45 0 45]</p><p>12 ply layup: [0 45 0 45 0 0UD 0UD 45 0 45 0 45]</p><p>Special attention would need to be paid into the layups of these panels because any delamination would lead to inconclusive results.</p><h2 id="NextTeststoRun-ValidatingPerimeterShear"><strong><u>Validating Perimeter Shear</u></strong></h2><p>Moreover, regarding the Perimeter Shear model, it would be important to make panels will layup schedules that have already been tested previously to check how much the failure force will fluctuate due to manufacturing error. Additionally, it would be good to obtain more datapoints for half inch and one-inch core panels to check whether the model is more accurate for the half inch core or one-inch core. These layup schedules include:</p><p>2 ply layup: [0 45 core 45 0]</p><p>4 ply layup: [0 0UD 0UD 45 core 45 0UD 0UD 0]</p><p>6 ply layup: [0 45 0UD 0UD 45 0 core 45 0 0UD 0UD 45 0]</p><h2 id="NextTeststoRun-InitialInsertTestingModel"><u><strong>Initial Insert Testing Model</strong></u></h2><p>Finally, regarding insert testing, it would be good to conduct testing on the insert material itself to obtain material properties experimentally that could be used for FEA models. This would be necessary if the insert material has properties that are hard to find online, or if the insert is 3D printed with porous regions. Simple tensile and compressive tests could be conducted to obtain the compressive and tensile strengths of the material as well as the Young’s Modulus and poisson’s ratio for the material. After having enough information of the insert material, test panels should be made with inserts that can withstand desired loads. There are no recommended layup schedules to test first, however, it would be useful to test layup schedules that would potentially be able to go into the front bulkhead support section as that section requires less plies than the side impact structure section, while remaining very important. You may want to experiment with front roll hoop tab loads or suspension tab loads to size your inserts.</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

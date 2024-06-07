@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V5-1 Third Order MUSCL Scheme</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V5-1 Third Order MUSCL Scheme
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Apr 17, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Background</strong></u></p><ul><li>Motivation for trying out the MUSCL scheme is due to its third order accurate nature, allowing for potentially more accurate solution provided that the mesh is fine enough. However, there are caveats<ul><li>Third order schemes will give worse results than 2nd order if is mesh coarse</li><li>Third order schemes are dominated by diffusion errors since the leading order error term is 4th order, which represent dissipation error (see Fourier error analysis for more information). As opposed to a 2nd order scheme where the errors are dispersion dominated</li><li>Central differencing is used here, which is not a great idea (although what do I know) since that is not consistent with the physics of convection (convection by definition can not be traveling upstream)</li></ul></li><li>The third order MUSCL scheme is a TVD (total variation diminishing) scheme, mean that it's very stable despite its higher-ordered nature</li><li>TVD scheme<ul><li>2nd order central differencing can be made TVD with the use of flux limiters. Flux limiters adjusts the flux going into and out of a control volume to ensure stability.</li><li>What this physically means is that flux limiters adjusts the slope of the linear interpolation that happens from face to face inside a cell</li></ul></li><li>Third order<ul><li>The MUSCL scheme can be made into 3rd order accurate despite only implementing 2nd order central differencing by implementing a parabolic interpolation between cell faces rather than the standard linear interpolation</li><li>The parabolic interpolation is constructed with the 2nd order upwind scheme</li><li>So the interesting thing that is happening here is that by combining two very commonly used 2nd order schemes cleverly, you end up with a 3rd order scheme</li></ul></li></ul><p><u><strong>Results:</strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/255694087/255694090.png" data-image-src="attachments/255694087/255694090.png" data-unresolved-comment-count="0" data-linked-resource-id="255694090" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-12_21-44-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255694087" data-linked-resource-container-version="3" alt=""></span></strong></u></p><p>Biggest red flag that this scheme raised is that there are a lot more unphysical cells compared to 2nd order upwind sim. Unphysical cell solutions do exist downstream of the tires even with 2nd order schemes. However, they are usually confined to outboard of the car where it has much less impact. The 3rd order sim is predicting unphysical cells inside the side tunnels, which is bad. Total pressure coefficient is reaching 1.35 in the side tunnels.</p><p>More inwash is also observed with the MUSCL scheme, which is inconsistent with what was observed in the wind tunnel and consistent with the assumption that this scheme can be diffusive (? at least I think it's the case, could be wrong, CFD is hard and I'm dumb).</p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 276.0px;"><thead><tr><th style="text-align: left;" class="confluenceTh">Parameter</th><th style="text-align: left;" class="confluenceTh">Value</th></tr></thead><colgroup><col style="width: 186.0px;"/><col style="width: 89.0px;"/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Pressure relaxation</td><td style="text-align: left;" class="confluenceTd">0.3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Velocity relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">K-omega relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CL</td><td style="text-align: left;" class="confluenceTd">-3.699</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CD</td><td style="text-align: left;" class="confluenceTd">1.507</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg FW CL</td><td style="text-align: left;" class="confluenceTd">-1.512</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg RW CL</td><td style="text-align: left;" class="confluenceTd">-1.071</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg UT CL</td><td style="text-align: left;" class="confluenceTd">-1.197</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Continuity residual</td><td style="text-align: left;" class="confluenceTd">1.453e-5</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg X-momentum residual</td><td style="text-align: left;" class="confluenceTd">4.680e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Y-momentum residual</td><td style="text-align: left;" class="confluenceTd">2.630e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Z-momentum residual</td><td style="text-align: left;" class="confluenceTd">3.219e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg TKE residual</td><td style="text-align: left;" class="confluenceTd">3.410e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Sdr residual</td><td style="text-align: left;" class="confluenceTd">7.692e-3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Iterations to convergence</td><td style="text-align: left;" class="confluenceTd">2902</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>CL Std Dev</p></td><td style="text-align: left;" class="confluenceTd">0.00189</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>Mesh count (mil)</p></td><td style="text-align: left;" class="confluenceTd"><span style="color: rgb(23,43,77);">58.233</span></td></tr><tr><td style="text-align: left;" colspan="2" class="confluenceTd">All statistics are last 500 iterations</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255694087/255694089.png">image-2023-4-12_21-43-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255694087/255694090.png">image-2023-4-12_21-44-8.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

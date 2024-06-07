@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V3</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V3
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Mar 27, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/255689616/255689978.png" data-image-src="attachments/255689616/255689978.png" data-unresolved-comment-count="0" data-linked-resource-id="255689978" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-27_22-13-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689616" data-linked-resource-container-version="6" alt=""></span></strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="204" src="attachments/255689616/255689979.png" data-image-src="attachments/255689616/255689979.png" data-unresolved-comment-count="0" data-linked-resource-id="255689979" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-27_22-13-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689616" data-linked-resource-container-version="6" alt=""></span></strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/255689616/255689980.png" data-image-src="attachments/255689616/255689980.png" data-unresolved-comment-count="0" data-linked-resource-id="255689980" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-27_22-13-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689616" data-linked-resource-container-version="6" alt=""></span></strong></u></p><p><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/255689616/255689982.png" data-image-src="attachments/255689616/255689982.png" data-unresolved-comment-count="0" data-linked-resource-id="255689982" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-3-27_22-15-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255689616" data-linked-resource-container-version="6" alt=""></span></strong></u></p><p><u><strong>Major Changes:</strong></u></p><ul><li>Added 5 geometry operations to fix ground boundary layer issue<ul><li>Ground refinement intersect: takes intersect between freestream and car refinement block</li><li>Ground refinement subtract: subtracts the freestream out of car refinement block</li><li>Ground refinement imprint: creates a the surface where intersect and subtract intersect<ul><li>Non-conformal imprinting with intersect pre processing</li></ul></li><li>Ground refinement offset: offsetting ground refinement down 50 mm so that the surface of ground is covered regardless of ride height</li><li>RFN_Ground: surface extrude that extrudes out the imprinted surface out to the thickness of the prism layer</li><li>Now, we can have a nice and refined prism layer under the car, and a prism layer with more reasonable volume change in freestream</li></ul></li><li>Surface control ground number of prism layer to 1 and total thickness to 50 mm</li><li>Added volumetric control ground with 5 prism layer and total thickness of 12 mm (surface control ground setting Poly V2)</li><li>Surface control wake now sets prism layer total thickness to 20 mm</li><li>Added tire wake refinement: refinement at 10% base size</li><li>Reduced car refinement size<ul><li>Reduced lateral size so that tire wake refinement can be handled by tire wake refinement</li><li>Cutout for front wing low gradient areas</li><li>Cutout near the cockpit for low gradient areas</li></ul></li><li>Increased the size of wake refinement to capture more of the wake</li><li>Increased wake refinement size because it's probably unnecessarily refined</li><li>Increased domain height and length behind the car</li><li>Removed surface size constraints for freestream surfaces other than the ground to save mesh count by a little bit</li><li>Removed custom prism layer for bodywork to increase wall y+ out of the buffer layer</li><li>Increased number of prism layers and decreased prism layer thickness of the tires to get them closer</li><li>Decreased prism layer thickness and decreased number of prism layers on front wing because prism layers were oversized</li><li>Decreased prism layer thickness and decreased number of prism layers on rear wing because prism layers were oversized (not as much as front wing)</li></ul><p><u><strong>Results</strong></u></p><div class="table-wrap"><table style="" class="confluenceTable"><thead><tr><th style="text-align: left;" class="confluenceTh">Parameter</th><th style="text-align: left;" class="confluenceTh">Value</th></tr></thead><colgroup><col/><col/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Pressure relaxation</td><td style="text-align: left;" class="confluenceTd">0.3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Velocity relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">K-omega relaxation</td><td style="text-align: left;" class="confluenceTd">0.7</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CL</td><td style="text-align: left;" class="confluenceTd">-3.748</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CD</td><td style="text-align: left;" class="confluenceTd">1.516</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg FW CL</td><td style="text-align: left;" class="confluenceTd">-1.487</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg RW CL</td><td style="text-align: left;" class="confluenceTd">-1.085</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg UT CL</td><td style="text-align: left;" class="confluenceTd">-1.242</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Continuity residual</td><td style="text-align: left;" class="confluenceTd">7.324e-6</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg X-momentum residual</td><td style="text-align: left;" class="confluenceTd">2.200e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Y-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.312e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Z-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.675e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg TKE residual</td><td style="text-align: left;" class="confluenceTd">1.456e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Sdr residual</td><td style="text-align: left;" class="confluenceTd">4.293e-3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Iterations to convergence</td><td style="text-align: left;" class="confluenceTd">3289</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>CL Std Dev</p></td><td style="text-align: left;" class="confluenceTd">0.0180</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>Mesh count (mil)</p></td><td style="text-align: left;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: left;" colspan="2" class="confluenceTd">All statistics are last 500 iterations</td></tr></tbody></table></div><p><u><strong>Issues</strong></u></p><ul><li>Front wing and rear wing wall y+ way too high (close to 3)<ul><li>Prism layer stretching ratio is also at 1.3, which is very high</li></ul></li><li>A bit of front wing wake not captured by car refinement</li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689616/255689978.png">image-2023-3-27_22-13-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689616/255689979.png">image-2023-3-27_22-13-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689616/255689980.png">image-2023-3-27_22-13-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689616/255689981.png">image-2023-3-27_22-15-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255689616/255689982.png">image-2023-3-27_22-15-46.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

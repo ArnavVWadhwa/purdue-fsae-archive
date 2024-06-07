@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Chenkai&#39;s Shower Thoughts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Chenkai&#39;s Shower Thoughts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on Nov 11, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Chenkai&#39;sShowerThoughts-FW"><u><strong>FW</strong></u></h2><p><u><strong>Tire Squirt Suppressor</strong></u></p><p>The purpose of the tire squirt suppressor is to shed a blue vortex, outwashing low wake. But it's not only lifting generating, but also pressurizes the bottom of the chassis through pressure propagation. The question is how can we generate the blue vortex without generating a huge amount of lift (and drag). An idea I had is that you can put shedding edge on FW E2. You do sacrifice E3 and E4 span, but at least you are just losing downforce, instead of making lift (which you have to cancel out with downforce and that's inefficient). The reason I opted to shed with E2 is so that the vortex stays low. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/279216545/279216547.png" data-image-src="attachments/279216545/279216547.png" data-unresolved-comment-count="0" data-linked-resource-id="279216547" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-11-11_20-54-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="279216545" data-linked-resource-container-version="1" alt=""></span></p><p>Bonus: since the vortex is outwash close to the chassis, you should load up the chassis as well through both extraction and load propagation.</p><p><u><strong>FW Spanwise Load Distribution</strong></u></p><p>I am doing another 180 on this! I thought centerloaded FW was good for PF23 as that reduces induced drag by giving it a more elliptic pressure distribution. Incredibly naive, I know. Then for PF24 I though OB loaded FW is better as the pressure distribution improves outwash IB of the EPs. Now, I think centerloaded is the way to go again. OB loading comes with inherent challenge in the form of the tire, a massive, blunt, rotating rotating object that swore to bring hell into the face of all aerodynamists for all eternity. This blockage increase FW OB APG considerably, making the vortices blow up that much more. With a IB loaded setup, you clean up all that loss. You depower the vortex itself as you reduced shedding edge length, and you give the tires less to blow up. Combine it with a more sympathetic shedding edge, you might be on to a winner.</p><p><u><strong>Diveplanes</strong></u></p><p>We've been using diveplanes wrong. Well, the purpose of depowering EP shedding is valid, but there is more we can do.</p><p><u><strong>Strakes</strong></u></p><p>We've been using strakes wrong. Again, using them to discretize shedding is valid, but there is more we can do.</p><h2 id="Chenkai&#39;sShowerThoughts-UT"><u><strong>UT</strong></u></h2><p><u><strong>IB Venting</strong></u></p><p>Side tunnel suffer the exact issues that OB FW does, tires. Tires increase blockage, as we already established. How do you recover some of the venting, given the flow field direction? Vent the side tunnels IB.</p><p><u><strong>Inwashing OB SE</strong></u></p><p>We've been too hang up on the concept of area. Area is nothing if you cannot generate suction under that area. So, sacrifice a little bit of side tunnel area, making the OB SE inwashing (and sympathetic) to reduce vortex losses and improve persistence.</p><p><u><strong>Use the CpT</strong></u></p><p>We have a lot of CpT exiting the diff in the name of diff load and expansion ratio and blahblahblah. We have a set CpT budget, so use the goddamn budget. Right now a large part of budget is eaten up by rear squirt ingress anyways, so use the goddamnn budget before it gets wiped out.</p><p><u><strong>Discretize OB shedding</strong></u></p><p>Discretize OB shedding so the vortices are less lossy.</p><p><u><strong>Raised (and Round) Channels</strong></u></p><p>Allows for more persistent vortices. Good way to use up CpT margin, generating more load, and bring the UT out of ground strike range. Although it's only doable OB of the chassis.</p><p><u><strong>Double Kick</strong></u></p><p>We've been scared about reflexing our UT to avoid pressure recovery under the floor. But it's like the first thing you learn when you learn about airfoil that suction is more powerful than pressure. So, can we reflex the floor and power up the kicks? So have first kick at the suction peak in FWD floor, go up then come down force the second kick. Should power up both kicks.</p><h2 id="Chenkai&#39;sShowerThoughts-RW"><u><strong>RW</strong></u></h2><p><u><strong>Outwash</strong></u></p><p>We have pretty much maximized the upwash we can get. Another way to expand the RW more is through the use of outwash. Don't exactly have a geometry in mind, but I believe this is where the rear wing should go next.</p><h2 id="Chenkai&#39;sShowerThoughts-CFD"><u><strong>CFD</strong></u></h2><p><strong><u>Vorticity (the variable) is overrated</u></strong></p><p>...at least when you are trying to get vortex induced suction. If only there is a variable that takes loss into account as well...</p><p><u><strong>Tire Shape Correlation</strong></u></p><p>We have no idea what the tire shape looks like, and that can have a HUGE impact of anything we do with tires. So here is a jank way to get close in absence of 3D scanning devices. Have different sidewall shapes schemed and send through CFD in WT boundary condition. Measure separation around the tires (like angle, size, etc.). Set up a rig so you can do math and get the exact angle. See which tire sidewall matches the best, that if probably the one you want to be using. Not perfect, but better than what we have (which I believe is freehanded by Frank). </p><p><u><strong>Domain Size</strong></u></p><p>I increased the domain size in the name of absolute correlation of loads, which is the no.1 evidence that I was the dumbest person alive. So decrease the domain size and save computational power.</p><p><u><strong>Coupled Solver</strong></u></p><p>Get that shit working ASAP. As long as it's not too switchy.</p><p><u><strong>Sim Comparison Tool</strong></u></p><p>It can be made a lot faster now that we know exactly what colormap we are using. So in theory, the colormaps can be calculated mathematically, rather than going through a lookup table with interpolation.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/279216545/279216547.png">image-2023-11-11_20-54-12.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-279216551"></a>
+                                    <font class="smallfont"><p>Peak Productivity Tool - Showers</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by nguye841 at Nov 11, 2023 17:20
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-279216645"></a>
+                                    <font class="smallfont"><p>Very nice, very nice.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by hparadis at Nov 11, 2023 23:40
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

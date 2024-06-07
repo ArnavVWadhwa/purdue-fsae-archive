@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Roll Over Risk Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Roll Over Risk Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on May 25, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This tool calculates tip over using simple statics. It has two uses:</p><ol><li>Tilt test calculation: set air speed to 0 and set lateral acceleration to 1.7g (1.7*9.81 to get it in m/s^2). The tilt test is designed to tip the car to an angle that matches 1.7g. I've used a 1.1 safety factor in the past on tilt test.</li><li>Wind gust tip over: aero can provide a coefficient to be used with wind speed to get the moment created. Put in an acceleration that is maximum without downforce (around 1.5) because at higher speeds aero package is actually creating a moment in the good direction (preventing tip). The case this is looking for is a slow corner (so minimal downforce helping) where the car is hit by a big gust. Goal seek to get the track to match what the car has, and you can find the maximum wind gust speed it is safe to run the car in.</li></ol><p>Note: the calculator assumes tip about the center of the contact patch (at the track width). This is somewhat conservative because if the car were to begin tipping, the tipping point would move to the outside of the wheel. I think leaving this conservatism is good because it's hard to know how much and when the tipping point will shift.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137593431/roll_over_calculator_v1.xlsx?version=1&amp;modificationDate=1621960499000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/137593431/roll_over_calculator_v1.xlsx?version=1&amp;modificationDate=1621960499000&amp;api=v2" data-linked-resource-id="182026879" data-linked-resource-type="attachment" data-linked-resource-container-id="137593431" data-linked-resource-default-alias="roll_over_calculator_v1.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="roll_over_calculator_v1.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/182026879/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137593431" data-linked-resource-id="182026879" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593431/182026879.xlsx">roll_over_calculator_v1.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

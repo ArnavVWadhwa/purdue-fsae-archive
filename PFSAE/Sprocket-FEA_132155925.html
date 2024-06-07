@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Sprocket FEA</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Sprocket_132155915.html">Sprocket</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Sprocket FEA
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified on Apr 28, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This page will mainly detail the setup process of the FEA for the sprocket. Alongside the FEA, a spline stress analysis should be done as well (page here: <a href="Spline-Stress-Calculator_160662996.html">Spline Stress Calculator</a>).</p><p>If you aren't well-introduced to FEA, check out the FEA basics page: <a href="ANSYS-Structural-FEA-Basics_130157343.html">ANSYS Structural FEA Basics</a></p><p>A guide through the sprocket FEA is also detailed in this video (check timestamps):</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/8bdh51lGmY8?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><h1 id="SprocketFEA-ForceModel/Loads">Force Model / Loads</h1><p>The loading on the sprocket is calculated based off the following Confluence page: <a href="Sprocket-Force-Model_132155923.html">Sprocket Force Model</a></p><p>The forces on the sprocket teeth are available in the Drivetrain_structures_2022.xlsx file (for PF22) located here: Z:\2021\6_Drivetrain\Design</p><h1 id="SprocketFEA-FEAModelSetup">FEA Model Setup</h1><p>After the preliminary sprocket has been designed, the spline should be removed prior to taking it into ANSYS. This greatly simplifies the meshing and eliminates anomalies in the analysis where you would see peak stresses that aren't actually happening. For this, an extrusion slightly bigger than the spline root diameter (plus an additional 0.001-0.002) is done within NX. The extra amount is to ensure the center of the sprocket is one continuous face rather than broken up based on where the spline teeth were located.</p><p>After doing this, the sprocket will look something like this:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/132155925/179274907.png" data-image-src="attachments/132155925/179274907.png" data-unresolved-comment-count="0" data-linked-resource-id="179274907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_12-25-26.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span></p><p><strong>Because the loading on the sprocket will not begin at the same tooth on every launch (it'll start at the top, but the specific tooth will be different), the cutouts will be in a different orientation and lead to different peak stresses that could become the limiting case. To prevent this, the analysis should be run with the cutouts placed is different orientations depending on the regularity of the pattern (so maybe 0 degree shift, 30 degree shift, 60 degree shift, etc).</strong></p><h1 id="SprocketFEA-SprocketMaterial">Sprocket Material</h1><p>The material of the sprocket is almost always a 7055 or 7050 aluminum alloy, as this is sponsored to our team by Arconic. Materials can be pulled from MMPDS-12</p><h1 id="SprocketFEA-BoundaryConditions">Boundary Conditions</h1><p>The boundary conditions include a fixed support at the center of the sprocket where the splines were cutout, and the first 15 sprocket tooth forces from the sprocket force model. The first 15 were taken because the forces past that point are insignificant and won't impact the analysis in any meaningful way, as the loads are far from the locations of peak stresses. The boundary conditions are shown below on the sprocket.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/132155925/179274923.png" data-image-src="attachments/132155925/179274923.png" data-unresolved-comment-count="0" data-linked-resource-id="179274923" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_13-33-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/132155925/179274922.png" data-image-src="attachments/132155925/179274922.png" data-unresolved-comment-count="0" data-linked-resource-id="179274922" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_13-32-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span></p><p>The sprocket teeth faces are split into several sections such that the force can be accurately applied. The forces are placed onto the two faces with blue circles on them. The face cut at the middle of the tooth was the only one that was added and can be done within NX by splitting the tooth with a plane.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/132155925/179276147.png" data-image-src="attachments/132155925/179276147.png" data-unresolved-comment-count="0" data-linked-resource-id="179276147" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-28_11-9-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span></p><h1 id="SprocketFEA-Meshing">Meshing</h1><p>Meshing for the sprocket is easiest with quadratic, tetrahedral elements. It is difficult to achieve quadrilateral elements at the sprocket teeth due to the tight geometry, so mesh generation typically fails when attempting a quad mesh. A good mesh could look like this:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/132155925/179274924.png" data-image-src="attachments/132155925/179274924.png" data-unresolved-comment-count="0" data-linked-resource-id="179274924" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_13-40-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span></p><p>Once running the analysis, the locations of peak stress could have a sphere of influence placed over them to do any further mesh refinements to ensure the results have converged.</p><h1 id="SprocketFEA-Results">Results</h1><p>Below are example von-mises stress results from the analysis.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/132155925/179274925.png" data-image-src="attachments/132155925/179274925.png" data-unresolved-comment-count="0" data-linked-resource-id="179274925" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_13-52-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/132155925/179274926.png" data-image-src="attachments/132155925/179274926.png" data-unresolved-comment-count="0" data-linked-resource-id="179274926" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-4-24_13-53-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="132155925" data-linked-resource-container-version="7" alt=""></span></p><p>Because the area around the maximum stress doesn't have entirely smooth contours, a sphere of influence should be added in this region to ensure the stress does not increase to any significant extent (&lt;5%)</p><h1 id="SprocketFEA-Otheranalysissuggestions">Other analysis suggestions</h1><p>It is worth looking into fatigue effects on the sprocket due to the cyclic loading on the sprocket.</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274907.png">image2021-4-24_12-25-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274922.png">image2021-4-24_13-32-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274923.png">image2021-4-24_13-33-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274924.png">image2021-4-24_13-40-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274925.png">image2021-4-24_13-52-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179274926.png">image2021-4-24_13-53-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/132155925/179276147.png">image2021-4-28_11-9-38.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Chassis Tab FEA Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820810.html">Pedal Box PF23 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-2023-Documentation-List_237084473.html">Pedal Box 2023 Documentation List</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Chassis Tab FEA Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Jan 11, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>To analyze the chassis tabs (The tabs connecting the pedal box rails to the chassis), we used a slightly elaborated version of the pedal box body and rails FEA. For more details on that, check out the &quot;Pedal box rails and pedal box body FEA documentation&quot; page.</p><p><br/></p><p>The changes we made to the original FEA were:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662706/247662709.png" data-image-src="attachments/247662706/247662709.png" data-unresolved-comment-count="0" data-linked-resource-id="247662709" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-18-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662706" data-linked-resource-container-version="3" alt=""></span></p><p>Including the tabs in question.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662706/247662710.png" data-image-src="attachments/247662706/247662710.png" data-unresolved-comment-count="0" data-linked-resource-id="247662710" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-19-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662706" data-linked-resource-container-version="3" alt=""></span></p><p>To accommodate the new tabs, we added revolute joints which connected the tabs to the rails. On the throttle side the rail is split in two, so two joints per tab are used. All joints have 0 torsional stiffness and damping, as we are assuming the joint does not prevent the rail from rotating relative to the tab it is connected to.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/247662706/247662711.png" data-image-src="attachments/247662706/247662711.png" data-unresolved-comment-count="0" data-linked-resource-id="247662711" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-24-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662706" data-linked-resource-container-version="3" alt=""></span></p><p>The parts of the tabs welded to the chassis were given fixed support, with the assumption that the chassis will not deform significantly when the driver activates the pedals.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662706/247662712.png" data-image-src="attachments/247662706/247662712.png" data-unresolved-comment-count="0" data-linked-resource-id="247662712" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-28-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662706" data-linked-resource-container-version="3" alt=""></span></p><p>The mesh was done very differently. The rails, pedal box body, and throttle rail support insert were given a 0.1&quot; mesh, and the tabs themselves had a .05&quot; mesh. This was because the focus of the simulation was on the tabs, and precision elsewhere was of less importance.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662706/247662709.png">image-2023-1-11_20-18-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662706/247662710.png">image-2023-1-11_20-19-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662706/247662711.png">image-2023-1-11_20-24-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662706/247662712.png">image-2023-1-11_20-28-44.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

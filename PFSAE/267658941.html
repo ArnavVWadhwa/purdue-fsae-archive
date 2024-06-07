@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Engine Management: Advanced Tuning | Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297205.html">Education | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832429.html">Books/Papers | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="267658105.html">Book Notes | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Engine Management: Advanced Tuning | Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Aug 03, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="EngineManagement:AdvancedTuning|Notes-Hunter&#39;sNotes:"><span style="color: rgb(51,51,153);"><strong>Hunter's Notes:</strong></span></h3><p><strong>Chapter 4: Taking Measure</strong></p><ul><li>Throttle Position Sensor (TPS)<ul><li>Tells the ECU where the throttle blade is so that it can be determined whether the driver is attempting to idle, cruise at steady state, accelerate, or decelerate</li><li>Rotary potentiometer</li><li>0-5V<ul><li>0.5-1.0V = Closed throttle</li><li>4.5V+ = Wide open throttle (WOT)</li></ul></li><li>Many systems consider WOT to be anything greater than 70% because the effective flow rate changes so little at higher percentages</li></ul></li><li>Coolant Temperature Sensor<ul><li>Engines have a narrow temperature band in which they operate most effectively<ul><li>Too cold and fuel has trouble atomizing before the combustion process</li><li>Too hot and preignition might occur</li></ul></li><li>A slightly cooler engine will allow for a few extra degrees of spark advance</li><li>Idle speed and enrichment increase at colder temperatures</li><li>Thermistor (typically NTC)<ul><li>5V Input</li><li>Increasing temperatures are read as higher return voltages (resistance drop)</li></ul></li></ul></li><li>Air-Inlet Temperature Sensor<ul><li>Air temperature has a direct effect on density and burn rate</li><li>Colder air temperatures allow for more spark advance whereas hotter temperatures require reduced timing to avoid knock</li></ul></li><li>Mass Air Flow Sensor</li><li>Manifold Pressure Sensor<ul><li><span>Calculates amount of air going to the engine through pressure (higher pressure = more air)</span></li><li><span>Pressure measured through a diaphragm that acts upon a normal strain gauge</span></li><li><span>Manifold pressure is directly proportional to engine load</span></li></ul></li><li>Crankshaft Position Sensor<ul><li><span>Used to adjust injection timing and ignition timing</span></li><li><span>Primary source of engine speed (RPM)</span></li><li><span>Missing tooth on triggerwheel gives offset angle</span></li><li><span>Used in conjunction with the camshaft position sensor to determine position in combustion cycle (necessary for engine start)</span></li></ul></li><li><span>Camshaft Position Sensor</span><ul><li><span>Operates the identically to crankshaft position sensor but with smaller trigger wheel</span></li><li><span>Adds layer of verification for information coming from crankshaft position sensor</span></li></ul></li><li>Fuel Pressure Sensor<ul><li><span>Injector flow rate increase as pressure along the injector increases</span></li><li><span>Must be modeled to correctly calculate the amount of fuel making it into the intake port</span></li><li><span>Used in non-return fuel systems for fuel pump control</span></li><li><span>Pressure measured through a diaphragm that acts upon a normal strain gauge</span></li></ul></li><li>Oxygen Sensor<ul><li><span>EFI systems can adjust themselves to correct for errors between desired and delivered air/fuel ratios through monitoring the oxygen content of exhaust gases</span><ul><li><span>More oxygen means running leaner assuming no leaks</span></li></ul></li><li><span>A leak will show the engine as running leaner as exhaust gases will flow out and oxygen will flow in due to non-constant output cycle</span></li><li><span>Basically, a battery that changes potential based on the level of oxygen present</span><ul><li><span>Layer of zirconium oxide changes the sensors output voltage based on the partial pressures of the oxygen molecules</span><ul><li><span>More oxygen means less output voltage</span></li></ul></li></ul></li><li><span>Closed loop means that actual injection is adjusted based on lambda reading while open loop is used just for data</span></li><li><span>Cold oxygen sensors have inaccurate readings so the ECU ignores them for a small period after start in a closed-loop system</span><ul><li><span>Heated Exhaust Gas Oxygen (HEGO) sensors are made for this purpose</span><ul><li><span>They have heaters so that they work on engine start as startup is critical for emissions as engines run slightly rich when they are cold</span></li></ul></li></ul></li><li><span>Increased CAM duration can cause issues as some unburned intake mixture can flow through the exhaust increasing the oxygen reading</span></li><li><span>Sensitive to exhaust backpressure (rich will read richer and lean will read leaner)</span><ul><li><span>Sensors should be installed after turbochargers for this reason</span></li><li><span>The closer the sensor is to the engine the greater the transient accuracy will be due to delay time</span></li></ul></li></ul></li><li><span>Knock Sensor</span><ul><li><span>Essentially a microphone with a filter to isolate the range of frequencies associated with knock</span></li><li><span>Attached to engine block or head to avoid the sound having to travel through the air</span></li><li><span>Most engine knock occurs in the 10-12 kHz range</span></li></ul></li></ul><p><br/></p><h3 id="EngineManagement:AdvancedTuning|Notes-Akash&#39;sNotes:"><span style="color: rgb(51,51,153);"><strong>Akash's Notes:</strong></span></h3><p><strong>Chapter 4: Taking Measure</strong></p><ul><li>Throttle Position<ul><li>Throttle position sensor (TPS), very important for EFI systems</li><li>Tells computer position of the throttle blade</li><li>Lets computer determine if car is in idle, cruising at a steady state, accelerating, or decelerating</li><li>Rate of change of throttle blade position and change of direction tells computer if driver is trying to change states</li><li>Most TPSs are rotary potentiometers<ul><li>Read output in a 0-5V scale<ul><li>5-1V closed throttle</li><li>5V&gt;= wide open throttle (WOT)</li></ul></li></ul></li></ul></li><li>Coolant Temperature<ul><li>Too cold -&gt; fuel unable to atomize before combustion</li><li>Too hot -&gt; preignition may warp sealing surfaces</li><li>Most OEM systems are controlled at ~200F</li><li>At 180F -&gt; few extra degrees of spark advance -&gt; more horsepower</li><li>Cold engines are normally only used in drag race situations where emissions and cylinder wash from excess raw fuel are not a concern</li><li>Amt of enrichment to be added depends on actual temp<ul><li>Temp reading comes from a sensor in the coolant path or mounted in the cylinder head</li><li>Most ECT sensors are of the negative temp coefficient type (NTC)<ul><li>NTC thermistors have lower resistance as temp ^</li><li>With a steady input voltage (5V), temp is rea as higher return V from the sensor</li><li>If sensor is in coolant path, make sure no air pockets</li></ul></li></ul></li></ul></li><li>Air-Inlet Temperature<ul><li>Air temp has direct effect on density and burn rate</li><li>Air temp rises -&gt; air volume rises -&gt; air density down</li><li>Air temp, vol, density reading needed for determining # of oxygen molecules available for combustion</li><li>Inlet temp directly proportional to allowable spark advance<ul><li>Assuming constant fuel delivery</li><li>Colder inlet temps -&gt; more timing advance can be used -&gt; more available horsepower</li><li>Hotter inlet temps -&gt; reduced timing (avoid knock that comes from increased burn speed)</li></ul></li></ul></li><li>Inlet temp sensor design similar to NTC coolant-temp sensors<ul><li>Sensor should be placed as close to the cylinder-head intake port as possible</li></ul></li><li>Manifold-Surface Temperature<ul><li>Some systems have a sensor to monitor manifold-surface temp</li><li>Lets computer model heat transfer from intake manifold to or from the intake charge immediately ahead of the cylinder</li><li>Identical design to NTC coolant-temp sensors</li></ul></li><li>Mass Air Flow<ul><li>Mass air systems use sensor to measure air mass flow into engine</li><li>More air molecules move past the sensor, more the signal changes</li></ul></li><li>Manifold Air Pressure<ul><li>Key element in speed-density systems</li><li>Charge density calculated by measuring exact pressure in the intake manifold and knowing the accurate temp</li><li>Air mass can be calculated by system efficiency * density * displacement</li><li>Manifold pressure measured by a diaphragm</li><li>Manifold pressure directly proportional to engine load</li></ul></li><li>Barometric Absolute Pressure<ul><li>Similar to MAP<ul><li>Not connected to intake manifold</li></ul></li><li>Helps mass-air-based systems detect changes in altitude</li></ul></li><li>Crank/Cam Position<ul><li>2-piece system</li><li>Part 1:<ul><li>Wheel installed on the crankshaft or camshaft</li><li>Wheel has teeth (1 or more will be offset)</li></ul></li><li>Part 2:<ul><li>Hall effect sensor</li><li>Provides output that fluctuates when each tooth passes on the signal wheel</li></ul></li><li>CKP gives:<ul><li>Instantaneous engine speed</li><li>Indicate actual rotational position</li></ul></li><li>Fuel rail delta pressure<ul><li>Used in returnless fuel systems to give the computer feedback for fuel pump control</li></ul></li></ul></li><li>System Voltage</li><li>Oxygen Sensors<ul><li>Lets EFI systems correct errors between desired and delivered air/fuel ratios</li><li>Like a battery -&gt; changes potential in the presence of oxygen<ul><li>The more oxygen -&gt; the lower the output voltage</li></ul></li><li>Computer uses oxygen reading to trim the command fuel delivery -&gt; closed loop operation</li><li>Computer ignores sensor readings till sensor is at an optimal temp</li><li>Installed as close to the cylinder head as possible</li><li>Most EFI systems switch to open loop operation at WOT</li><li>Wideband oxygen sensors<ul><li>Accurate range: 8.0-30.0:1 air:fuel ratio</li><li>Lets computer actively correct fuel delivery at ratios outside the normal range</li><li>Operate between 0.8-1.3 bar at reasonable accuracy</li><li>Installed after the turbocharger</li></ul></li></ul></li><li>Knock Sensors<ul><li>Detect detonations</li><li>Microphone that isolates a specific range of frequencies</li><li>Attached to the engine block</li><li>Range: 4-20kHz</li><li>Most engine knocks occur from 10-12kHz</li></ul></li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Towbar Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Drivetrain_132155909.html">Drivetrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Towbar_185503465.html">Towbar</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Towbar Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Panchal, Aarnav Nilesh</span> on May 24, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Given that we integrated the towbar design into the uprights, essentially creating another load case for the uprights, we noticed a couple of things:</p><ul><li>The Towbar was easy to create a pushbar/quickjack around</li><li>The Towbar CAD was not satisfactory and contained circular references</li><li>The Towbar cross bracing needs further analysis as we have noticed it broke when it was 1/16 and not when it was 1/8, maybe we can save weight on it with different geometries</li><li>The side braces held up quite well however we can also further optimize these by looking into lug geometry on the uprights</li><li>We also were able to mount the undertray's rear points and secondarily constrain the chain guard to the towbar, this proved to be useful as we passed rules and avoided cantilevering the guard (it broke beforehand though haha)</li></ul><p><br/></p><p>Design Process:</p><ul><li>Requirements<ul><li>Needs to follow rules while also supporting vehicle on quickjack</li></ul></li><li>CAD Process<ol><li>Process should begin with towbar location, this is to avoid the circular reference and simplify geometry modifications<ol><li>The towbar location is going to be constrained by the location of the differential, it is a point in space centered on the car axis</li><li>You should create a datum for the towbar part, this will serve as the governing datum for the modifiable geometry</li></ol></li><li>Next step would be to define the location of the Upright Lugs, create those and make sure you are able to move them in the upright parts<ol><li>Ensure that you have a generally okay location (ie don't put one on the middle of the bottom walls, you're putting that section into bending then)</li></ol></li><li>Once the locations of the lugs and the datum have been decided you can start to make the side braces<ol><li>This is the core of the design, make it so that the side braces connect to the origin of the datum point and the center of the lug holes, using this we can simplify the side brace arms as a truss for hand calcing the geometry</li><li>Once you've created the brace sketch you can add required features onto the face of the sketch (CGT163 skills basically) however I'd wait until the other parameters are defined.</li></ol></li><li>For the side braces you need certain details, sketch on face and create these features so that you can have a simple design<ol><li>How it attaches to the tube</li><li>How it attaches to the cross brace</li><li>How you can support the undertray</li></ol></li><li>Next is the cross brace, here we need to use the features on the side brace to create the cross brace, for this load it sideways and make a bracing structure, we want to avoid making this thing a four bar linkage</li><li>After all this add your edge blends and then chuck it into ANSYS to verify your hand calcs and to make sure it actually works.</li></ol></li><li>CAD Flow of Data:<ul><li>Lug Location and Datum Location →<ul><li>Towbar Tube location -&gt;<ul><li>Side Brace Geometry -&gt;<ul><li>Cross brace Geometry</li><li>UT and Chain Guard mounting geometry</li></ul></li></ul></li></ul></li></ul></li></ul><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

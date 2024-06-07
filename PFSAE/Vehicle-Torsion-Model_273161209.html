@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Vehicle Torsion Model</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Vehicle-Dynamics_246342245.html">Vehicle Dynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Simulation-Tools_246342277.html">Simulation Tools</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Vehicle Torsion Model
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="VehicleTorsionModel-ModelGoal/Usage:"><strong>Model Goal/Usage: </strong></h1><ul><li>Steady State Model used to determine the minimum chassis stiffness required to successfully tune Lateral Load Transfer Distribution (LLTD) or Front Roll Rate Distribution (FRRD). These are important to determining the load transfer and vehicle roll when cornering steady state and have direct impacts on the performance and handling of the vehicle. </li><li>Transient Model used to evaluate the time response of front to rear due to step steer. This will give insight into the vehicle transient behavior and response time to steering inputs which impacts drivability and feeling for the driver.</li><li>Note that standard Suspension design is conducted under the assumption of a rigid chassis which is not the case but can be valid if proved what a theoretically rigid chassis would be</li></ul><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/273161209/280564742.png" data-image-src="attachments/273161209/280564742.png" data-unresolved-comment-count="0" data-linked-resource-id="280564742" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_18-20-55-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273161209" data-linked-resource-container-version="5" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/273161209/280564741.png" data-image-src="attachments/273161209/280564741.png" data-unresolved-comment-count="0" data-linked-resource-id="280564741" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_18-20-47-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273161209" data-linked-resource-container-version="5" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/273161209/280564744.png" data-image-src="attachments/273161209/280564744.png" data-unresolved-comment-count="0" data-linked-resource-id="280564744" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_18-21-6-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273161209" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><h1 id="VehicleTorsionModel-Assumptions:"><strong>Assumptions:</strong></h1><ul><li>Steady State Model<ul><li>Relax rigid chassis and model flexible chassis</li><li>Steady State</li><li>Ignore effect of roll steer or additional kinematics/camber</li><li>Evaluates purely tire loads and how they change due to varying suspension stiffness</li><li>Main tuning parameters for the suspension stiffness will be spring rates and arbs</li></ul></li></ul><h1 id="VehicleTorsionModel-Limitations:"><strong>Limitations:</strong></h1><ul><li>The steady state model does not show the full picture and is inconclusive regarding how vehicle handling and response times would be affected by a non-rigid chassis. It is most important to understand the transient affects, however, a steady state model does show the ability to tune the roll stiffnesses to achieve a specific lateral load transfer distribution. This model is limited to determining a minimum stiffness required to have the tunability of LLTD without front roll distribution being biased in one direction.</li></ul><h1 id="VehicleTorsionModel-Results:"><strong>Results:</strong></h1><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273161209/280564739.png" data-image-src="attachments/273161209/280564739.png" data-unresolved-comment-count="0" data-linked-resource-id="280564739" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_18-20-24-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273161209" data-linked-resource-container-version="5" alt=""></span></strong></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/273161209/280564740.png" data-image-src="attachments/273161209/280564740.png" data-unresolved-comment-count="0" data-linked-resource-id="280564740" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_18-20-30-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="273161209" data-linked-resource-container-version="5" alt=""></span></strong></p><p>From the two plots above we can learn that from any chassis stiffness we will be able to alter spring rates or ARB rates enough to compensate and shift our LLTD back in the window desired 55%-45%. However, it is important to know how big of a change in stiffnesses are needed to achieve this as it will inform us how tunable the vehicle is. We want small changes to make a difference over larger ones as wheel frequencies will also change. We can see that the car becomes less tunable or more insensitive to suspension rate changes at a torsional stiffness less than 4 times the roll stiffness. Another parameter to look at is how roll rate distribution is affected and tells the percentage of roll that will happen at one axle compared to another. Ideally this is as close to the Weight Distribution to achieve a neutral balanced car so ensuring this value does not see a lot of unwanted variation is necessary. The second plot shows the Percent Error in FLLTD as a function of roll distribution to chassis stiffness. We can conclude from here that anything higher than 4-5 times the stiffness is required to have less of a difference in FLLTD when varying Roll Stiffness Distribution when in the window of desired values (close to 50%). I am not sure why there is variation at low RRD percentages so this needs to be re-evaluated and questioned.</p><p><br/></p><p><br/></p><h1 id="VehicleTorsionModel-ResearchPaper:"><strong>Research Paper:</strong></h1><ul><li><a class="external-link" href="https://openresearch.surrey.ac.uk/esploro/outputs/doctoral/Modelling-chassis-flexibility-in-vehicle-dynamics/99513211802346/filesAndLinks?index=0" rel="nofollow">https://openresearch.surrey.ac.uk/esploro/outputs/doctoral/Modelling-chassis-flexibility-in-vehicle-dynamics/99513211802346/filesAndLinks?index=0</a></li><li><a class="external-link" href="https://kktse.github.io/jekyll/update/2021/05/12/simplied-lateral-load-transfer-analysis.html" rel="nofollow">Simplified steady-state lateral load transfer analysis for spring rate and anti-roll bar selection | Kelvin Tse (kktse.github.io)</a></li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280563347.png">image-2023-11-30_9-3-19-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564739.png">image-2023-12-6_18-20-24-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564740.png">image-2023-12-6_18-20-30-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564741.png">image-2023-12-6_18-20-47-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564742.png">image-2023-12-6_18-20-55-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564743.png">image-2023-12-6_18-21-2-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/273161209/280564744.png">image-2023-12-6_18-21-6-1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

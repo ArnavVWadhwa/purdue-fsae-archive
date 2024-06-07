@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Running Models</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Team-Software_143755298.html">Team Software</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="GitHub_280562747.html">GitHub</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Running Models
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Dec 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Follow these instructions to properly setup your sandbox environment to run models.</p><p><br/></p><h1 id="RunningModels-SETUPSANDBOX:">SETUP SANDBOX: </h1><ol><li>Open Command Prompt</li><li>Change directory to formula drive</li><li>Change directory to sandbox folder under suspension</li><li>Add personal sandbox using your school username</li><li>cd into that folder and mkdir called whatever the name of your simulation is</li><li>cd into that folder</li></ol><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280563628/280563629.png" data-image-src="attachments/280563628/280563629.png" data-unresolved-comment-count="0" data-linked-resource-id="280563629" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-2_13-31-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563628" data-linked-resource-container-version="4" alt=""></span></p><p><strong>Now your sandbox is created and has the destination folder for where you will download and install models from GitHub.</strong></p><h1 id="RunningModels-INSTALLMODELS/SETUPSIMULATIONENVIRONMENT:">INSTALL MODELS/SETUP SIMULATION ENVIRONMENT:</h1><h4 id="RunningModels-METHOD1:ThroughGitHubOnline">METHOD 1: Through GitHub Online</h4><ol><li>Check what model you are cloning and determine what input files are needed i.e. tire files, vehicle parameter files, etc.</li><li>Example will be for <a class="external-link" href="https://github.com/Purdue-FSAE/Yaw-Moment-Model" rel="nofollow">Purdue-FSAE/Yaw-Moment-Model: Yaw Moment Diagram Model (github.com)</a></li><li>Goto Desired Repo<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280563628/280563632.png" data-image-src="attachments/280563628/280563632.png" data-unresolved-comment-count="0" data-linked-resource-id="280563632" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-2_14-5-7.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563628" data-linked-resource-container-version="4" alt=""></span><ol><li>Download ZIP and Move from downloads into sandbox folder</li></ol></li></ol></li><li>Extract All from ZIP<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280563628/280563633.png" data-image-src="attachments/280563628/280563633.png" data-unresolved-comment-count="0" data-linked-resource-id="280563633" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-2_14-6-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563628" data-linked-resource-container-version="4" alt=""></span><ol><li>Make sure to set folder path correctly extract to the Sandbox simulation level as shown above</li></ol></li></ol></li><li>Delete the ZIP folder</li><li>Repeat with other Repositories as necessary</li><li>For Yaw-Moment-Model, vehicle parameter files are needed along with tire model so those repos were also downloaded as explained Steps 1-5<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="180" src="attachments/280563628/280563634.png" data-image-src="attachments/280563628/280563634.png" data-unresolved-comment-count="0" data-linked-resource-id="280563634" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-2_14-9-34.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563628" data-linked-resource-container-version="4" alt=""></span><ol><li>Properly Cloned Simulation </li></ol></li></ol></li></ol><p><br/></p><h1 id="RunningModels-RUNNINGMATLABMODELSFROMSANDBOX">RUNNING <strong>MATLAB </strong>MODELS FROM SANDBOX</h1><ol><li>Launch MATLAB</li><li>Navigate to Your Sandbox Simulation Directory</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280563628/280563638.png" data-image-src="attachments/280563628/280563638.png" data-unresolved-comment-count="0" data-linked-resource-id="280563638" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-2_14-12-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563628" data-linked-resource-container-version="4" alt=""></span><ol><li>Add the Simulation Directory to Path</li></ol></li><li>Open Model Main File and Run once parameter files are configured</li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563628/280563629.png">image-2023-12-2_13-31-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563628/280563632.png">image-2023-12-2_14-5-7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563628/280563633.png">image-2023-12-2_14-6-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563628/280563634.png">image-2023-12-2_14-9-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563628/280563638.png">image-2023-12-2_14-12-20.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Lessons Learned PF24 | ELE</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297179.html">Lessons Learned | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Lessons Learned PF24 | ELE
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Nov 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="LessonsLearnedPF24|ELE-Straingauges:"><strong>Strain gauges:</strong></h2><p>Strain gauges are EXTREMELY sensitive to wire lengths! By wire, I mean the connection between the strain gauges themselves and the wheatstone bridge. Makes sense if you think about it</p><p>~15cm wire: 2V output</p><p>~45cm wire: 3.8V output</p><p>^^^ These are eyeballed measurements but show wire lengths are important!!! <strong>KEEP WIRE LENGTHS CONSISTENT FOR ALL STRAIN GAUGES!!!!!!!!</strong> Mount SGAs on secure mounting points to minimize wire play</p><h2 id="LessonsLearnedPF24|ELE-Hardwaredesign:"><strong>Hardware design:</strong></h2><h2 id="LessonsLearnedPF24|ELE-REDDITR/PRINTEDCIRCUITBOARDFEEDBACK.LOTSOFGOODSTUFFHERE!!!"><strong><a class="external-link" href="https://www.reddit.com/r/PrintedCircuitBoard/comments/1844gg9/4_layer_stm32f407_board_i_designed_its_for_high/?utm_source=share&amp;utm_medium=web2x&amp;context=3" rel="nofollow">REDDIT R/PRINTEDCIRCUITBOARD FEEDBACK. LOTS OF GOOD STUFF HERE!!!</a></strong></h2><p><br/></p><h2 id="LessonsLearnedPF24|ELE-Harness:"><strong>Harness:<br/></strong></h2><p><strong>Pinout: </strong></p><ul><li>Keep all components with datasheets in a central location</li></ul><p><br/></p><p><strong>CAD:</strong></p><ul><li>Ensure there is enough extra length off of each branch before a wire turns to account for the stiffness of the epoxy at that branch</li></ul><p><br/></p><p>Lessons:</p><ul><li>Don't underestimate the cost of electronic components in the BOM, prices can change from year to year</li><li>Time management is important, make sure to be using time effectively (staying up all night can be good but be careful)</li><li>PCB - Consider the size of components to make sure they scale with the size of the board so you don't have resistors larger than op amps</li><li>Strain gauges take a hell of a lot more time than they would seem</li><li>The ideal PCB stackup for low noise is signal gnd gnd signal</li><li>Be careful when wavelinking parts in cad - it is very easy to mess up coordinate systems which might require a new part or a lot of time to fix</li><li>The detail of electronics CAD is not the end of the end of the world<ul><li>A lot of time will be wasted with people making changes if it is continually made nice and up to date</li><li>All that matters with it is spaceclaim and wire lengths which might change during manufacturing anyways</li><li>Ie. connectors, routing, etc.</li></ul></li><li>The schedule is completely offset from everything else (about a week)</li><li>When learning M1 build make sure to take it slow and actually learn and not cheat through it</li><li>Make sure your daq can support your sampling with the inputs it has<ul><li>Real time sampling vs non real time operating system (myrio is real)<ul><li>Off computer clock vs itself</li></ul></li></ul></li><li>Confluence is very nice and <strong>f around and find out</strong></li><li>Excel columns can auto adjust if you double click them</li><li>Learn Motec software before you design the harness dumbass</li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

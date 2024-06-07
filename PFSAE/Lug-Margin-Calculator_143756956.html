@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Lug Margin Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009850.html">Analysis Tools | Structures</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Lug Margin Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Unknown User (agarw162)</span> on Sep 11, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="LugMarginCalculator-"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/143756956/143760024.png" data-image-src="attachments/143756956/143760024.png" data-unresolved-comment-count="0" data-linked-resource-id="143760024" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-20_3-28-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756956" data-linked-resource-container-version="29" alt=""></span></h3><p>(memes courtesy of <a class="confluence-userlink user-mention" data-username="ehoerl" href="https://wiki.itap.purdue.edu/display/~ehoerl" data-linked-resource-id="73405595" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (ehoerl)</a>)</p><p><br/></p><p><strong>Version History</strong></p><p>Lug calculator updated to v5 - 9/11/2022</p><ul><li>Added note about weld fillet edge length input</li></ul><p>Lug calculator updated to V4 -  9/10/2022</p><ul><li>Clarifications on weld parameters (weld length, weld fillet edge length)</li><li>Merged lug buckling using the original excel sheet for tab buckling</li></ul><p>Lug calculator updated to V3 -  8/29/2022</p><ul style="list-style-type: square;"><li>New methodology for weld analysis (described in lug margin calculator excel calculator)</li></ul><h3 id="LugMarginCalculator-LugCalculator:">Lug Calculator:</h3><ul class="inline-task-list" data-inline-tasks-content-id="143756956"><li class="checked" data-inline-task-id="17">integrate tools for considering weld failure with oblique loads</li><li class="checked" data-inline-task-id="18">Add pin calculations</li><li class="checked" data-inline-task-id="19">add bushing calculations</li><li data-inline-task-id="21">Add clarification on inner lug dimensions (usually rod end)</li><li class="checked" data-inline-task-id="23">Airframe stress analysis and sizing link and description</li><li data-inline-task-id="25">Check using NASA-STD-5020 calc for pin combined failure as opposed to <em>Airframe Stress Analysis and Sizing</em></li></ul><p><br/></p><p>This is the tool to use for all lugs welded to the chassis, as well as camber pieces, tierod connection on the uprights, etc. Currently calculates all axial and oblique failures from <em>Airframe Stress Analysis and Sizing</em>.</p><p>Welds are analyzed in reference to Steel Structures, Design and Behavior 5th Edition by Charles G. Salmon, John E. Johnson, Faris A. Malhas. The analysis focuses on weld strength and the yield and rupture of the base materials which are welded together.</p><p>For the calculations from <em>Airframe Stress Analysis and Sizing, </em> the user must manually read some charts. But values needed are calculated directly above chart to make process simple.</p><p>Values from prior sections may be used in subsequent sections, but not the reverse. Loads are entered at the very end and safety factors are calculated.</p><p><br/></p><p><em>Airframe Stress Analysis and Sizing </em>is available from Purdue Library online: <a class="external-link" href="https://app-knovel-com.ezproxy.lib.purdue.edu/web/toc.v/cid:kpASASE004/viewerType:toc//root_slug:viewerType%3Atoc/url_slug:root_slug%3Aairframe-stress-analysis?kpromoter=federation" rel="nofollow">Airframe Stress Analysis and Sizing (3rd Edition) - Knovel (purdue.edu)</a>. This calculator is 95% based off of section 9.8 of the book (lug analysis).</p><p><br/></p><p>Video instructions / example of using the calculator: </p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/saxol-LnkHw?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>Additional guidance on selection of curves on lookup charts:</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/OtCQPd5o8IA?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p><br/></p><p>Download (lug_calculator_v5.xlsx):</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/143756956/lug_calculator_v5.xlsx?version=1&amp;modificationDate=1662925880000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/143756956/lug_calculator_v5.xlsx?version=1&amp;modificationDate=1662925880000&amp;api=v2" data-linked-resource-id="233838945" data-linked-resource-type="attachment" data-linked-resource-container-id="143756956" data-linked-resource-default-alias="lug_calculator_v5.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="lug_calculator_v5.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/233838945/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="143756956" data-linked-resource-id="233838945" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/143758426.xlsx">lug_calculator_v1.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/143758471.xlsx">lug_calculator_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/143760024.png">image2020-4-20_3-28-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/233834839.xlsx">lug_calculator_v3.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/233834832.xlsx">lug_calculator_v3.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/233838811.xlsx">lug_calculator_v4.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756956/233838945.xlsx">lug_calculator_v5.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

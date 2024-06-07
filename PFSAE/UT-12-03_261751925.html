@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : UT-12-03</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750836.html">Undertray PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751540.html">UT Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : UT-12-03
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 27, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-005</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup><col style="width: 124.0px;"/><col style="width: 443.0px;"/><col style="width: 271.0px;"/></colgroup><thead><tr><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody><tr><td style="text-align: left;" class="confluenceTd">Sidepod inlet flow alignment</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/261751925/261751926.png" data-image-src="attachments/261751925/261751926.png" data-unresolved-comment-count="0" data-linked-resource-id="261751926" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-26_16-17-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751925" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Changed surfacing method from swept to through curve mesh to get a more consistent initial upwash geometry. Now, the entire top surface has the same, steepened upwash angle.</p><p>Outwash angle was reduced from 10 degrees to 5 to improve lateral flow attachment.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd">Outer side tunnel strake</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751925/261751937.png" data-image-src="attachments/261751925/261751937.png" data-unresolved-comment-count="0" data-linked-resource-id="261751937" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-27_16-25-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751925" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Strake will produce pressurization on the outboard face due to inwash induced by vortex in VC. The pressurization will act to reduce de-power VC vortex itself, allowing it to survive longer, which reduces loss in both VC and outer side tunnel.</p><p>The strake will also discretize vortex in the other side tunnel, reducing loss and increasing downforce.</p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup><col style="width: 432.156px;"/><col style="width: 208.094px;"/></colgroup><thead><tr><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/261751925/262832171.png" data-image-src="attachments/261751925/262832171.png" data-unresolved-comment-count="0" data-linked-resource-id="262832171" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-27_23-47-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751925" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">VC vortex breakdown is delayed as expected, but not by a lot.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="164" src="attachments/261751925/262832172.png" data-image-src="attachments/261751925/262832172.png" data-unresolved-comment-count="0" data-linked-resource-id="262832172" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-27_23-49-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751925" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">The wake is still feeding the outer side tunnel, causing loss of energy. This really needs to be figured out.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/261751925/262832174.png" data-image-src="attachments/261751925/262832174.png" data-unresolved-comment-count="0" data-linked-resource-id="262832174" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-27_23-53-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751925" data-linked-resource-container-version="3" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>The inner part of the outer side tunnel has two discrete vortices. The first one formed by inwash interacting with the strake. The second one formed due to additional inwash brought in by the outer vortex.</p><p>The second vortex did not appear out of nowhere, the strength of the inner side tunnel vortex was reduced to make that happen, since that outer vortex induced inwash is a strong source of power for the inner side tunnel vortex. </p></td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/261751926.png">image-2023-5-26_16-17-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/261751930.png">image-2023-5-27_16-14-26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/261751937.png">image-2023-5-27_16-25-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/262832171.png">image-2023-5-27_23-47-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/262832172.png">image-2023-5-27_23-49-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/262832173.png">image-2023-5-27_23-51-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751925/262832174.png">image-2023-5-27_23-53-3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

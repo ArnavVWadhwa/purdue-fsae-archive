@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : UT-12-06</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750836.html">Undertray PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751540.html">UT Design Notebook PF24 | Chenkai</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : UT-12-06
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 09, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Simulation:</strong></u> CZ-019</p><p><u><strong>Changes/Justifications</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 124.0px;"/><col class="" style="width: 443.0px;"/><col class="" style="width: 271.0px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>Description of the Change</p></th><th style="text-align: left;" class="confluenceTh"><p>Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Justification</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd">Reverted outwashing winglet change and sidepod inlet change</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262834921/262834922.png" data-image-src="attachments/262834921/262834922.png" data-unresolved-comment-count="0" data-linked-resource-id="262834922" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-8_19-11-22.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">It didn't work</td></tr><tr><td style="text-align: left;" class="confluenceTd">Vortex channel transition</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262834921/262834924.png" data-image-src="attachments/262834921/262834924.png" data-unresolved-comment-count="0" data-linked-resource-id="262834924" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-8_19-11-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Keeping the vortex alive for the entire length is hard, so not doing it. Instead, downwashing curved gurney is used to leverage the inwash and create a little bit more additional loading.</p><p>Yes, this does mean a little bit more adverse pressure gradient for the vortex, but the tradeoff here I think is worth it.</p></td></tr><tr><td style="text-align: left;" class="confluenceTd">Side wings everywhere</td><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/262834921/262834925.png" data-image-src="attachments/262834921/262834925.png" data-unresolved-comment-count="0" data-linked-resource-id="262834925" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-8_19-13-29.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd"><p>Vortex in the outer side tunnels also don't survive. So instead of getting them to survive, just use wings instead. There should be more than enough inwash in this region to feed all of the flaps.</p><p>The worry is the junction on the top flap where angle of attack transition. Depends on the precise amount of local inwash there, there may or may not be separation across it. The the vortex structure will change accordingly. If there is no separation, vortex should be downwashing for rear wing, so that's good. If it separates, there is no vortex structure.</p><p>The main concern with side wings, as it always has been, is the amount of upwash it creates might be too much for rear wing.</p><p>Also I don't know why the endplate is blue. </p></td></tr></tbody></table></div><p><u><strong>CFD Results Analysis</strong></u></p><div class="table-wrap"><table class="fixed-width wrapped confluenceTable"><colgroup class=""><col class="" style="width: 432.156px;"/><col class="" style="width: 208.094px;"/></colgroup><thead class=""><tr class=""><th style="text-align: left;" class="confluenceTh"><p>CFD Picture</p></th><th style="text-align: left;" class="confluenceTh"><p>Description</p></th></tr></thead><tbody class=""><tr class=""><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835134.png" data-image-src="attachments/262834921/262835134.png" data-unresolved-comment-count="0" data-linked-resource-id="262835134" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-14-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">????????????????</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="199" src="attachments/262834921/262835135.png" data-image-src="attachments/262834921/262835135.png" data-unresolved-comment-count="0" data-linked-resource-id="262835135" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-16-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835136.png" data-image-src="attachments/262834921/262835136.png" data-unresolved-comment-count="0" data-linked-resource-id="262835136" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-17-4.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">There is some load, but very little. Need to align the outer edge with flow better and get more curvature.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835140.png" data-image-src="attachments/262834921/262835140.png" data-unresolved-comment-count="0" data-linked-resource-id="262835140" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-18-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835141.png" data-image-src="attachments/262834921/262835141.png" data-unresolved-comment-count="0" data-linked-resource-id="262835141" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-19-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Inwash induced separation on the flaps. Higher load across all flaps can be achieved with endplate cutout</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835142.png" data-image-src="attachments/262834921/262835142.png" data-unresolved-comment-count="0" data-linked-resource-id="262835142" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-19-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">This airfoil has weird double suction peaks.</td></tr><tr><td style="text-align: left;" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/262834921/262835144.png" data-image-src="attachments/262834921/262835144.png" data-unresolved-comment-count="0" data-linked-resource-id="262835144" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-6-9_14-33-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262834921" data-linked-resource-container-version="5" alt=""></span></p></div></td><td style="text-align: left;" class="confluenceTd">Separation on the first outboard element</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262834922.png">image-2023-6-8_19-11-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262834924.png">image-2023-6-8_19-11-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262834925.png">image-2023-6-8_19-13-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835134.png">image-2023-6-9_14-14-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835135.png">image-2023-6-9_14-16-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835136.png">image-2023-6-9_14-17-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835140.png">image-2023-6-9_14-18-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835141.png">image-2023-6-9_14-19-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835142.png">image-2023-6-9_14-19-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262834921/262835144.png">image-2023-6-9_14-33-48.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

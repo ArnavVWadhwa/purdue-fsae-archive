@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Airfoil Flow and Airfoil Performance Characteristics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Airfoil Flow and Airfoil Performance Characteristics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Software</strong></u></p><p>When it comes to study airfoil performance characteristics, the best software for it is prehaps the simplestm XFLR5, the favorite in AAE 334. XFLR5 assumes inviscid outer flow and calculates boundary layer separately. Inviscid outer flow is calculated using panel method, laminar boundary layer is calculated using Thwaite's method, turbulent boundary layer is calculated using Head's method, and turbulent transition point is calculated e^N method. You probably have never heard any of these method, and that's okay. You can look them up if you are interested. </p><p>The reason that XFLR5 is good for airfoil analysis is that:</p><ol><li>It's quick</li><li>Unlike CFD, laminar to turbulent transition is taken into account (you can make CFD do this too, I have never personally messed around with it)</li><li>Though using a method with lower accuracy than CFD, it captures all the important aspects of airfoil performance characteristics.</li></ol><p>Note, XFLR5 is <u>not</u> recommended for FSAE purposes. Some new member, esepcially those who has already taken and is taking AAE 334, like to use XFLR5 for onboarding. Please don't waste your time doing this. We don't operate in freestream. Any results you obtain with that assumption is not going to be any good.</p><p><u><strong>Polars</strong></u></p><p>Polars are graphs of airfoil performance that people look at. The most common ones are lift polar and drag polar.</p><p><em>Lift polar</em> is a graph of lift coefficient vs. angle of attack. </p><p><em>Drag polar</em> is a graph of lift coefficient vs. drag coefficient. While the majority like to use drag polar, I always personally liked drag coefficient vs. alpha more.</p><p>Below is an example of lift polar and drag coefficient vs. alpha for a very standard NACA 2412 produced using XFLR5.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/261751359/262832265.png" data-image-src="attachments/261751359/262832265.png" data-unresolved-comment-count="0" data-linked-resource-id="262832265" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="cl vs alpha.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>Looking at the lift polar, you can see the near linear lift curve slope, which is interrupted due by bumps and curves due to viscous effects. This airfoil also has a pretty well defined critical anlge of attack ~15 deg. This is not always the case (below is an example with NACA 8509), especially with the high camber, high thickness airfoils we typically run.</p><p>Looking at the drag coefficient vs. alpha plot, you can see a drastic increase in drag at separation point, reason of which we have already talked about.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/261751359/262832270.png" data-image-src="attachments/261751359/262832270.png" data-unresolved-comment-count="0" data-linked-resource-id="262832270" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-3-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>Another cool thing to plot is L/D vs. alpha (example below), which you can use to define at what angle of attack is the airfoil the most efficient. Again, in the case of 2412 it's well defined, but that does not have to be case.</p><p><u><strong>Pressure Distribution</strong></u></p><p>Pressure coefficient distribution can also be obtained using XFLR5. Below is a graph of both inviscid and viscous pressure coefficient distribution around NACA 8509.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/261751359/262832271.png" data-image-src="attachments/261751359/262832271.png" data-unresolved-comment-count="0" data-linked-resource-id="262832271" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-12-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>As you can see in the invsicid curve, pressure at front stagation point and rear stagnation point are 1 (rear stagnation point is hard to capture with limited number of panels allowed in XFLR5). For viscous flow, trailing edge pressure is decidedly not 1 due to the existance of boundary layer, in which energy is bled and the flow does lost its capability to return to Cp of 1 immediately when it comes into contact with airfoil surface/</p><p>You can also see viscous curve shows both lower pressure and suction. This is also because boundary layer taking total pressure out of the flow. The bump on the suction side is due to laminar separation bubble, this can be confirmed by looking at wall shear stress graph shown below (separation and attachment in 2D is defined by 0 wall shear stress). Interestingly enough, at 1,000,000 Re, XFLR5 is predicting no transition until the separation. The bump on the pressure side is the transition point, it can also be confirmed with the wall shear stress plot, since wall shear stress increases rapidly when laminar flow transitions.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751359/262832272.png" data-image-src="attachments/261751359/262832272.png" data-unresolved-comment-count="0" data-linked-resource-id="262832272" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-24-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p><u><strong>Stagnation Point</strong></u></p><p>At design condition, stagnation point should be exactly on the leading edge. If you are design an airplane, you don't have the luxury of manually placing stagnation point since angle of attack can change in a range exceeding 20 degrees. But if you are designing a racecar, you get that luxury since we only really see a range of 3 degrees or maybe even less. Here is a technicality of how you define leading edge. When I say leading edge, I mean the point at the front of the airfoil that's perpendular to the camber line, not necessarily the very front of the airfoil. Below is an example with NACA 8509:</p><p>8509 at 0 angle of attack where stagnation point is not at the leading edge:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="800" src="attachments/261751359/262832273.png" data-image-src="attachments/261751359/262832273.png" data-unresolved-comment-count="0" data-linked-resource-id="262832273" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-36-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>8509 at 11 degrees angle of attack where incoming flow is parallel to the camber line (ignoring circulation induced by the airfoil itself):</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751359/262832274.png" data-image-src="attachments/261751359/262832274.png" data-unresolved-comment-count="0" data-linked-resource-id="262832274" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-38-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p> But why do you want to do this? If you place the stagnation point there, you get minimal boundary layer growth across both pressure and suction side, since there is no sharp corners for flow to negotiate.</p><p>Other than boundary layer growth, another reason you want to place stagnation point at the leading edge is so that you get pressure and suction exactly where you want them. Especially with higher camber airfoils, you can end up with high pressure on the suction side and low pressure on pressure side if you place the stagnation point too far up the suction side.</p><p><u><strong>Making Custom Airfoils for Racecar Applications</strong></u></p><p>Unlike airplanes where pitch changes drastically, racecars stay at a pretty constant pitch as far as airfoils are concerned. Since this is case, the way you design airfoils for racecar is quite different from what you would do normally.</p><p>To define angle of attack at which you mount your wing, instead of using critical angle of attack, you should use your leading edge geometry to achieve a good stagnation point. Then, you can change camber of the airfoil around to &quot;move&quot; critical angle of attack to a point near angle of attack you just defined. To further increase performance, I don't like to use a single camber value, I like to decouple top surface and bottom surface camber, just so you can achieve the critical point at both top and bottom surface.</p><p><u><strong>Pressure Recovery</strong></u></p><p>How do you achieve lower pressure at the suction peak? One good answer would be to increase <em>pressure recovery</em>. Since you have to get pressure back to ambient at the trailing edge, the more pressure you recover from the stagnation point to the trailing edge, the lower the pressure at the suction peak. This is how diffusers work, to recovery pressure so that you achieve more downforce upstream (yes, diffusers don't work if you don't have good upstream geometry). But when talking about an airfoil, what is the max pressure recovery you can get? Luckily for all of use, Robert Stratford has already figured it out for use by doing fancy math. And the pressure recovery profiles he came up with are called Stratford recovery. And Robert Liebeck (there is something about people named Robert working on high lift airfoils...) developed the Liebeck airfoils that achieve this type of recovery.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751359/262832276.png" data-image-src="attachments/261751359/262832276.png" data-unresolved-comment-count="0" data-linked-resource-id="262832276" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-51-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="166" src="attachments/261751359/262832275.png" data-image-src="attachments/261751359/262832275.png" data-unresolved-comment-count="0" data-linked-resource-id="262832275" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-28_23-51-27.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>Stratford pressure distribuation is characterized by flat suction peak all the way from leading edge to the start of pressure recovery. The pressure recovery itself is defined by exponential decay.</p><p>For Liebeck airfoils, it matches the pressure distribution described by Stratford as closely as possible. Through out the entire pressure recovery region, it ride the fine line of separation. It is designed so that any imperfection in the surface or the flow field will cause immediate separation from the start of pressure recovery to the trailing edge.</p><p>Another class of high lift airfoils has been developed by Michael Selig, called the Selig airfoils, uses an approximation of Stratford recovery and does not ride the fine line like Liebeck airfoils do. Therefore, they are much more practical. Ever since he developed it, Selig S1223 airfoil has been one of the most popular airfoils for high lift aerodynamcis. Since S1223 was developed using an approximation of Stratford recovery, it does not really work as intended in a multi-element environment, so they are kind of useless for FSAE, but really good for anything without flaps.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="167" src="attachments/261751359/262832279.png" data-image-src="attachments/261751359/262832279.png" data-unresolved-comment-count="0" data-linked-resource-id="262832279" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-29_0-0-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751359" data-linked-resource-container-version="2" alt=""></span></p><p>Fun fact about Selig. Selig is a professor UIUC, and the UIUC FSAE team worked with him a few years back to design their rear wing. Since then, they have not made a single change to their rear wing.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832265.png">cl vs alpha.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832267.png">image-2023-5-28_23-0-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832268.png">image-2023-5-28_23-2-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832269.png">image-2023-5-28_23-3-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832270.png">image-2023-5-28_23-3-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832271.png">image-2023-5-28_23-12-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832272.png">image-2023-5-28_23-24-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832273.png">image-2023-5-28_23-36-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832274.png">image-2023-5-28_23-38-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832275.png">image-2023-5-28_23-51-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832276.png">image-2023-5-28_23-51-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832277.png">image-2023-5-28_23-55-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832278.png">image-2023-5-29_0-0-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751359/262832279.png">image-2023-5-29_0-0-42.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

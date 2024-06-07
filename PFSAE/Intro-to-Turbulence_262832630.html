@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Intro to Turbulence</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="CFD-Governing-Equations_262832320.html">CFD Governing Equations</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Intro to Turbulence
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>What is Turbulence</strong></u></p><p>Turbulence is actually a mostly misunderstood term. People often often confuse turbulence with wake. For example, a common sentence people like to say is &quot;the car lost a lot of downforce due to turbulence from the car in front&quot;. This is flat out wrong. The sentence should be &quot;the car lost a lot of downforce due to <strong>wake</strong> from the car in front&quot;. While wake is usually turbulent, turbulent flow does not necessarily have to wake.</p><p>So what is turbulence? If you take a fluid particle moving through the air, you can decompose its velocity into a steady component (time invariant) plus an unsteady component (time variant). The steady component of velocity is just that, the velocity of the bulk flow. The unsteady component is what you would call turbulence. Over the years, to help with turbulence modeling in CFD, various other terms were introduce to represent turbulence, and this includes turbulent kinetic energy, Reynolds stress, and turbulent viscosity, all of which we will explain later.</p><p><u><strong>Turbulent Eddies</strong></u></p><p>Even though turbulence is by nature, turbulent and unpredictable, there is structure to the randomness. And these structures are called <em>eddies</em>. Eddies are swirling flow that comes in and out in turbulent flow. Many different eddies of different sizes come together to form turbulence. Though eddies and vortices sound similar and both contain vorticity, they are different things. You don't call wing tip vortex wing tip eddies, just like you don't call turbulent eddies turbulent vortices.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="185" src="attachments/262832630/262832631.png" data-image-src="attachments/262832630/262832631.png" data-unresolved-comment-count="0" data-linked-resource-id="262832631" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-30_18-50-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832630" data-linked-resource-container-version="1" alt=""></span></p><p>Eddies are generally categorized into two groups by their size, large eddies and small eddies. Large eddies breakup into small eddies through a process called <em>vortex stretching</em> (I know this goes against my rant on eddies vs. vortices lol). Large eddies are flow field dependent, so large eddies in pipe look and behave different than large eddies in flow over an airplane. Small eddies are flow field independent, meaning they behave the same across all applications from pipes to external aerodynamics to heat transfer etc. The size of smallest eddies you can have is defined by Kolmogorov scale, which is a function of rate of turbulent dissipation and viscosity.</p><p>So what's the cutoff between large and small eddies? That is a subjective question. Using the rule of thumb for large eddy simulation meshing, large eddies are the largest eddies that contain 80% of turbulent kinetic energy in the flow field. Turbulent kinetic energy is defined as kinetic energy due to eddies in the flow field. But again, just like so many things in engineering, this is just a rule of thumb not hard truth.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832630/262832631.png">image-2023-5-30_18-50-11.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

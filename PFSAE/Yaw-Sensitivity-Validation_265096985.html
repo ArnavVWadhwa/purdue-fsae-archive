@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Yaw Sensitivity Validation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750826.html">Design PF24 | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261750838.html">Testing &amp; Validation PF24 | AER</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Yaw Sensitivity Validation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jul 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Been thinking about yaw sensitivity a lot tonight because I got tired of designing for yaw 15...so throwing this idea on here for people to look at in testing season.</p><p><u><strong>Step 1: Geometry</strong></u></p><p>Prepare at least two sets but preferably more geometries. One set is the base geometry that runs on PF24, and others increasingly messes up yaw sensitivity (for example strakes on the top surface of front wing).</p><p>How it mess up yaw sensitivity is a decision you have to make. For example, if have one package that's good for 0-5 and slowly drop off for 5-10, another package that's good for 0-12, but jumps off a cliff for 12+, and another package that's increasing from 0-8 and decreasing 8-15, you will get great data but it's hard to work with since so many things are changing at a time. You will probably have to run more tests for it to be useful. But if you have a package that has its cl decrease by 2% per 5 deg of yaw, another decrease by 4% per 5 deg of yaw, you gain limited insights. But the data will be so much easier to work with. The takeaway here is you will have to strike and balance.</p><p>Know how these sets of geometry behave. So that means take these to wind tunnel and do detailed yaw sweeps. Obtain scaling from WT to CFD. Use the scaling to scale on track BC CFD.</p><p><u><strong>Step 2: Testing</strong></u></p><p>Pick a really windy but not gusty day. Get an anemometer or something to keep track of wind speed and direction precisely (obviously very important).</p><p>Set up the biggest understeer gradient possible at Grissom and drive as fast as possible in steady state around the circle.</p><p>Run without aero and time it. This can be approximated as friction coefficient of tires.</p><p>Run with each set of aero and record wind speed and direction in each run. If wind speed and direction changes drastically during the run, rerun until useful data is collected. Time the runs.</p><p><u><strong>Step 3: Validation</strong></u></p><p>Go into the yaw sensitivity sim that I made (or at hopefully made lol), make a the US gradient circle and match the condition and aero package performance. Non-aero needed to obtain the friction coefficient to put in the sim. Mess around with correlation coefficients until the times match up well.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/265096985/265096986.png">image-2023-7-5_22-25-21.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:26</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

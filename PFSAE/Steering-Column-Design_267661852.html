@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Steering Column Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832176.html">Design PF24 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836895.html">Steering PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="276628696.html">Column PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Steering Column Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Cole Henry Kniesly</span>, last modified on Oct 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="SteeringColumnDesign-USEROLLPINSwhentheyaretheprimaryalignmentmethod">USE ROLL PINS when they are the primary alignment method</h3><h3 id="SteeringColumnDesign-MainDriversofGeometry:">Main Drivers of Geometry:</h3><p>Steering Rack position and offset of column from rack. Offset is .6299in</p><p>Steering Wheel Position and Angle: Position has been determined by Ergo rig and past lessons</p><p>U Joint Operation limits: 30-35 degrees per single U Joint and between 60-70deg for double U joints (depends by supplier)</p><p>Possible locations for where we can add the bearing supports. The farther the bearing supports are from the chassis tubes, the higher risk of failure.</p><p><br/></p><p><br/></p><h3 id="SteeringColumnDesign-TopColumnDesign:">Top Column Design:</h3><h4 id="SteeringColumnDesign-MinGeoLengthforastraightcolumntowheel:">Min Geo Length for a straight column to wheel:</h4><p>Shortened Spline end to face of steering: 2.9in</p><p>Single U Joint center to shortened end: 1.1in</p><p>Welds: .25in per weld (2X)</p><p>Extra space per weld: .15in (2X)</p><p>Bearing Support: 1.65in (from PF23)</p><p>Wire Hole: .25in</p><p>Clearance from hole to stuff: .15in</p><p>Min Length: 6.85</p><p>2X Thickness of Lock Collars</p><p>In CAD: TBD</p><h3 id="SteeringColumnDesign-BottomColumnDesign">Bottom Column Design</h3><p><br/></p><p><br/></p><p><br/></p><h2 id="SteeringColumnDesign-UJointsandWedge"><strong>U Joints and Wedge</strong></h2><p>This year we are deciding to switch from two single U joints to a single U joint and a wedge between the steering wheel and the quick disconnect. This concept stems from designs implemented at Pitt, notably from UM. UM's Steering wheel: </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/267661852/270343567.png" data-image-src="attachments/267661852/270343567.png" data-unresolved-comment-count="0" data-linked-resource-id="270343567" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_21-0-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="267661852" data-linked-resource-container-version="26" alt=""></span></p><p>This change in design would reduce the number of U joints, Supports, and columns. Ideally, a small wedge would be used, but in our case we had to use a ~17deg angle. This combined with the non-ideal 32deg in the U joints does present some problems with the supports due to the columns beings longer. This may also cause the required driver forces to increase due to the misalignment between the axis of rotation of the column and the wheel. The increased angles will also create increased stress on the U joints and the steering rack due. After some in person testing, the Wedge was found to create some undesirable movement on the wheel when it is turned. <strong>The Wedge concept has been deemed untenable. </strong></p><p>Due to the usage of 1 U joint, there will a discontinuity between the input and output speeds of the U Joint due to the inherent geometry and motion of a U Joint. Using two correctly aligned U joints in series would theoretically cancel this out but since we are only using 1, we can't. To Analyze this, I created the following Calculator to show the discrepancy of the input and output speeds as well as to show the relationship between input angle and clevis motion.  Shown below are three graphs, one showing the relationship between input and output speed for various U Joint angles for a 180deg rotation of the shaft. The next graph shows the same relationship, but in our specific application (32deg). The Third graph shows the relationship between the Linear motion of the Steering rack and the angle of rotation for our application. In that graph it can be seen that the relationship is not linear but due to the curve being very close to linear we accept the risks. All calculations are available in the attached Excel sheet. Additional U Joint info can be found in this link: <a class="external-link" href="https://www.sdp-si.com/catalogs/D757-Couplings-Universal-Joints3.php" rel="nofollow">https://www.sdp-si.com/catalogs/D757-Couplings-Universal-Joints3.php</a>.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="246" src="attachments/267661852/270343571.png" data-image-src="attachments/267661852/270343571.png" data-unresolved-comment-count="0" data-linked-resource-id="270343571" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_21-16-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="267661852" data-linked-resource-container-version="26" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267661852/270343572.png" data-image-src="attachments/267661852/270343572.png" data-unresolved-comment-count="0" data-linked-resource-id="270343572" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_21-16-25-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="267661852" data-linked-resource-container-version="26" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/267661852/270343573.png" data-image-src="attachments/267661852/270343573.png" data-unresolved-comment-count="0" data-linked-resource-id="270343573" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-9-7_21-16-33-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="267661852" data-linked-resource-container-version="26" alt=""></span></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/267661852/PF24_Col_Speed_Analysis.xlsx?version=2&amp;modificationDate=1694136113000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/267661852/PF24_Col_Speed_Analysis.xlsx?version=2&amp;modificationDate=1694136113000&amp;api=v2" data-linked-resource-id="270343575" data-linked-resource-type="attachment" data-linked-resource-container-id="267661852" data-linked-resource-default-alias="PF24_Col_Speed_Analysis.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="2" data-can-edit="true" aria-label="PF24_Col_Speed_Analysis.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/270343575/2" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="267661852" data-linked-resource-id="270343575" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><h2 id="SteeringColumnDesign-BearingSupport"><strong>Bearing Support</strong></h2><p>To be able to keep the column supported and to withstand the forces of the driver, a robust Steering Column Support is required. The major parts are the bearings, the bearing housing, and the support tube(s). The objective of this support is to react against the driver forces, allow the column to spin with minimal resistance, and to keep the column rigid during the race. It is very important to keep the support stable because it allows the driver to brace against it and reduce the amount of lateral force on the U joint, and hence reduce play.</p><p>The first decision we made is bushings/ bearings. Other teams do use bushings, including PER and BAJA, but we decided not to go with bushings because of the risk of wear and to ensure smooth travel. An analysis of the wear is still in the works but in the meantime we will be going with bearings. The next variables we needed to determine, were bearing ID and length. The ID is driven by OD of the tubes and the length is determined by the below calculator. To solve, we assume the driver pulls down on the wheel at max force and create a moment balance to calculate the force on the bearings. </p><p>The next decision was to weigh between a steel or aluminum bearing housing. If we use a steel housing, we could weld it directly to the support tubes. If we used aluminum, we'd need to have bolts to attach the housing to the adapter between the bolts and supports. We decided on steel to reduce part count, points of failure, and to save weight. See pictures below for comparison between steel and aluminum housing concepts.</p><p>The steel support tubes have two options, either one square central tube or having two tubes forming a V. See the two concepts below.</p><p><br/></p><p><br/></p><p><br/></p><h2 id="SteeringColumnDesign-ShaftCollarsforSupport">Shaft Collars for Support</h2><p><a class="external-link" href="https://www.mcmaster.com/2380K19/" rel="nofollow">https://www.mcmaster.com/2380K19/</a></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343567.png">image-2023-9-7_21-0-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343571.png">image-2023-9-7_21-16-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343572.png">image-2023-9-7_21-16-25-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343573.png">image-2023-9-7_21-16-33-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343578.xlsx">PF24_Col_Speed_Analysis.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/267661852/270343575.xlsx">PF24_Col_Speed_Analysis.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Speeding Up Convergence</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Speeding Up Convergence
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Aug 15, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Relaxation</strong></u></p><p><em>Relaxation</em> is a factor that changes the size of step taken in between iterations. It can be formulated as relaxation factor x (next solution - previous solution) + previous solution. This means that for a relaxation factor of 1, the change in between iterations remains the same as what the solver calculates. Relaxation factors of greater than 1, called <em>over-relaxation</em>, increase the step taken. Relaxation factors of less than 1, called <em>under-relaxation</em>, decreases the step taken. Changing relaxation factors has impact on convergence rate and stability of the solver. For simple governing equations, like Euler's equation, over relaxation is commonly used. In fact, in one of my own Euler equation solver, I was able to increase the convergence time by 30 times by adding an over-relaxation of 1.9. </p><p>The SIMPLE algorithm is inherently under stable. Due to the fact that the SIMPLE algorithm only calculates the steady state, relaxation factor becomes the only thing you can tune to affect stability (due to the lack of temporal stepping). It is the rule of thumb that pressure relaxation and velocity relaxation add up to 1, for reasons I don't quite understand. The default STAR-CCM+ relaxation factors are 0.7 for pressure and 0.3 for velocity, which is quite conservative. To increase rate of convergence for a simulation where stability isn't an issue, increase pressure and decrease velocity. If it's really that stable, it is then permissible to increase the sum above 1. For simulations that are highly unstable, or if you are looking for ultra stable solutions, dropping the sum to a level between 1 is a good idea.</p><p><u><strong>Local Time Stepping</strong></u></p><p>If you are performing a quasi steady state simulation, in which you use unsteady solver to achieve steady state solution,<em> local time stepping</em> is almost always used. Since you are looking for the steady state solution, temporal accuracy does not matter at all, meaning that, you can use different time step for each cell depending on local flow velocity and cell size, optimizing CFL to the maximum CFL number that achieves stability. Note that I did not say CFL of 1 to ensure accuracy. When you don't care about temporal accuracy, CFL number goes out of window as well.</p><p><u><strong>Adaptive Time Stepping</strong></u></p><p><em>Adaptive time stepping</em> is like local time stepping but for temporally accurate solutions. Instead of using independent time steps in each cell, time step size is change each iteration to optimize overall CFL number. Therefore, it's not as efficient as local time stepping, but it's a sacrifice you have to make if transient solution is desired.</p><p><u><strong>Algebraic Multigrid (AMG)</strong></u></p><p><em>Algebraic Multigrid</em> or <em>AMG</em> solver is a subset of <em>multigrid </em>solvers. This is a loaded subject, so here it goes.</p><p>When you are solving for a solution on a grid, the lowest wavelength errors are reduced fastest due to the rate of information propagation - cells close to each other &quot;discovers&quot; changes to each other the quickest. As wavelength increases, the errors get harder to damp out. So if there is a way to convert high wavelength errors to low wavelength errors, convergence can be accelerated massively. This is the exact aim of multigrid.</p><p>The <em>v-grid</em> is a classic multigrid structure. First, smallest wavelength errors are solved on the original grid. Then solution is then averaged onto a coarser grid. The waves that once needed 4 cells to resolve now only needs 2, effectively reducing wavelength. The smallest wavelength errors are damped out on this level. This process continues until the coarsest level is achieved. From this point onward, it's the process of combining all the solutions from different grid onto the original grid, which at this point only has the shortest wavelength errors removed. Combining solution is achieve through interpolation. The solutions are interpolated all the way up to the original, finest grid, and converged solution is now achieved. This process is in the shape of a V. There are other types of multigrids like the W grid and the F grid (no, the grid doesn't look like an F, it's a fancier version of the W grid). The best grid structure depends on the exact problem, and I am nowhere near smart enough to know which one to use for which problem.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/262832344/267665395.png" data-image-src="attachments/262832344/267665395.png" data-unresolved-comment-count="0" data-linked-resource-id="267665395" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-8-15_15-44-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="262832344" data-linked-resource-container-version="4" alt=""></span></p><p>Having multiple grids can be very costly in terms of memory, which is already at a premium for larger simulations. So, instead of generating multigrids, original grid is used, but elements in the matrices are ignored when coarser grids are desired. This is the algebraic multigrid, since all the multigriding is achieved algebraically in the matrices.</p><p><u><strong>Case Study: fsaeSTAR V6.4</strong></u></p><p>I have written about this in multiple places, so here is a link: <span style="color: rgb(0,0,255);"><a href="fsaeSTAR-dossier_164135432.html">fsaeSTAR dossier</a></span>.</p><p>It's a good case study of how you can exploit relaxation factors and solver stability to improve convergence.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/262832344/267665395.png">image-2023-8-15_15-44-47.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Radiator Movement (fsaeSTAR V6.3+)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="How-to-Do-Things_233834237.html">How to Do Things</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Radiator Movement (fsaeSTAR V6.3+)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified by <span class='editor'> Matthew James Lamear</span> on Aug 27, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul><li>CAD your cooling setup<ul><li>Note do not unite parts with one another. So that when you import them into star, they will be in separate parts</li></ul></li><li>Export left and right hand side radiators independently so that they are in two separate composite parts when you import them</li><li>Import the parasolid into STAR. Uncheck simplify assembly structure. Don't worry about the names of the composite parts, they can be whatever you want</li><li>Rename the geometry parts under the new composite parts exactly to<ul><li><strong>Core</strong>: for radiator core</li><li><strong>Shroud</strong>: for fan shroud</li><li><strong>Fan:</strong> for fan</li><li><strong>Misc Parts</strong>: for miscellaneous parts that move with cooling setups, but don't really do anything. A good example are the edges of the radiator core</li><li>Note you don't need all four, it can be any combination of these as far as radiator movement script is concerned, but for CFD, you need can do one of the following:<ul><li>Core only</li><li>Core and fan</li><li>Core, fan, and shroud</li><li>Any of the above plus misc parts</li></ul></li></ul></li><li>Open up a 3D scene</li><li>For cores, shrouds, and fans, use split by patch to rename part surfaces inlet to <strong>Inlet</strong>, outlet to <strong>Outlet</strong>, and the rest to <strong>Wall</strong></li><li>Click on File → Macro → Play Macro, and choose RadiatorMove.java under src → random. The macro will take care of everything else for you.<ul><li>The macro checks for possible errors in your imported composite parts, leaf part names, as well as surface names</li><li>Clears/creates composite parts that the rest of fsaeSTAR cares about (CFD_COOLING_L and CFD_COOLING_R)</li><li>Converts new CAD parts into mesh parts but surface wrapping them independently and detaching them, and move them to the correct fsaeSTAR-recognized composite parts</li><li>Makes sure new surface wrapped parts have the correct names</li><li>Align radiator coordinate systems</li><li>Align fan coordinate systems and set the origin to center of the fans</li></ul></li><li>Double check to make sure the script did everything correctly</li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

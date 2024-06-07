@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : i. Torsion Test Simulation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF22-Frame-Design_192190053.html">PF22 Frame Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="198508862.html">2. LLTD / Torsion Test Design Decisions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : i. Torsion Test Simulation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Dec 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="i.TorsionTestSimulation-Preface">Preface</h1><p>This Confluence page provides rough instructions on simulating a torsion test as well as lateral load cases using ANSYS.</p><p>Table of Contents:</p><p><style type='text/css'>/*<![CDATA[*/
+div.rbtoc1709576892104 {padding: 0px;}
+div.rbtoc1709576892104 ul {list-style: square !important;margin-left: 0px;}
+div.rbtoc1709576892104 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1709576892104'>
+<ul class='toc-indentation'>
+<li><a href='#i.TorsionTestSimulation-Beforejumpingin...'>Before jumping in...</a></li>
+<li><a href='#i.TorsionTestSimulation-PreparingGeometryinNX'>Preparing Geometry in NX</a>
+<ul class='toc-indentation'>
+<li><a href='#i.TorsionTestSimulation-FramePart'>Frame Part</a></li>
+<li><a href='#i.TorsionTestSimulation-SuspensionPart'>Suspension Part</a></li>
+<li><a href='#i.TorsionTestSimulation-EnginePart'>Engine Part</a></li>
+</ul>
+</li>
+<li><a href='#i.TorsionTestSimulation-PreparingGeometryinDesignModeler'>Preparing Geometry in DesignModeler</a>
+<ul class='toc-indentation'>
+<li><a href='#i.TorsionTestSimulation-FrameModel'>Frame Model</a></li>
+<li><a href='#i.TorsionTestSimulation-SuspensionModel'>Suspension Model</a></li>
+<li><a href='#i.TorsionTestSimulation-EngineModel'>Engine Model</a></li>
+</ul>
+</li>
+<li><a href='#i.TorsionTestSimulation-IntegratingModelsinMechanical'>Integrating Models in Mechanical</a>
+<ul class='toc-indentation'>
+<li><a href='#i.TorsionTestSimulation-LateralLoadCasePreparation'>Lateral Load Case Preparation</a></li>
+</ul>
+</li>
+</ul>
+</div></p><hr/><h1 id="i.TorsionTestSimulation-Beforejumpingin...">Before jumping in...</h1><p>Watch this short video series about simulating a formula student chassis by ANSYS. It isn't the exact procedure I used, but it is worth the watch (especially videos 3 and 4) to get a better understanding of what we're doing here.</p><p style="text-align: center;"><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/d3YYntfnFpU?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/A8NLXj1Dphw?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p style="text-align: center;"><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/qWsc2YdcovE?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/1KQP44XYI2Q?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p style="text-align: left;">We can link different subsystems together in ANSYS Workbench. To develop this tool, we will link the frame, suspension, engine and/or torsion test rig together as shown to yield the Torsion Test and LLTD simulations as shown below.<br/><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/200378112.png" data-image-src="attachments/167478941/200378112.png" data-unresolved-comment-count="0" data-linked-resource-id="200378112" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="MicrosoftTeams-image (1).png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><hr/><h1 id="i.TorsionTestSimulation-PreparingGeometryinNX">Preparing Geometry in NX</h1><h2 id="i.TorsionTestSimulation-FramePart">Frame Part</h2><ul><li>Make a file specifically for the wireframe FEA. Link the wireframe <strong>line by line</strong> into this and add the following:<ul><li>Use <strong>trim curve</strong> to split any line bodies with intersecting lines so that ANSYS can properly merge nodes together later. E.g. split up the FRH and MRH as shown below.</li></ul></li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167478948.png" data-image-src="attachments/167478941/167478948.png" data-unresolved-comment-count="0" data-linked-resource-id="167478948" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_16-46-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><ul><li style="list-style-type: none;"><ul><li>Use trim curve to make nodes to act as <strong>mounts for the steering rack</strong></li><li>Use trim curve to make nodes to act as <strong>mounts for the engine</strong> </li><li>Points for things that are mounted to a node that does not already have a dedicated point (only place I ran into this in PF22 was the rear shocks mounting to the big tube back there)</li></ul></li></ul><h2 id="i.TorsionTestSimulation-SuspensionPart">Suspension Part</h2><ul><li>Make a file for suspension. Should include:<ul><li><strong>Control arms, tierods, pushrods</strong></li><li>A set of lines representing <strong>upright</strong>. Connect UCA, LCA, tierod point, and wheel center</li><li>A set of lines representing <strong>rockers</strong>. Connect pivot, shock point, and pushrod point. Include a line going from the rocker pivot to the rocker axis point &quot;see I knew there was a reason I always included this in sus points file&quot; - Ben. <strong>This line makes defining the axis of rotation go much better.</strong></li><li>A line representing the steering rack Could break it up at mounting points for additional fanciness. This would allow connecting rack to chassis at proper points</li></ul></li></ul><h2 id="i.TorsionTestSimulation-EnginePart">Engine Part</h2><ul><li>Make a file for the engine. Should simply be a wireframe representing the mounting points, including a vertex representing the center of mass for the engine.</li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167478979.png" data-image-src="attachments/167478941/167478979.png" data-unresolved-comment-count="0" data-linked-resource-id="167478979" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_22-33-39.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Note the use of planes for defining mounting points/tabs on the frame. The Trim Curve tool <strong>rules.</strong></p><hr/><h1 id="i.TorsionTestSimulation-PreparingGeometryinDesignModeler">Preparing Geometry in DesignModeler</h1><p>Note: Let each model's element order be <strong>Program Controlled</strong>.</p><h2 id="i.TorsionTestSimulation-FrameModel">Frame Model</h2><ul><li>Create a new static structural system for the frame. Under the Geometry's Basic Geometry Options, only select <strong>Line Bodies</strong>.</li><li>Import the wireframe .prt and open DM. (if having issues importing the NX part use the CAD Configuration Manager)</li><li>There may be some wonky duplicates of parts from the import. I recommend grouping everything related to the MRH/FRH/trim-curved-components into separate parts and going on a witch hunt for the duplicates via using 'hide all bodies' and slowly showing each body meanwhile suppressing duplicates. </li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/167478941/167479249.png" data-image-src="attachments/167478941/167479249.png" data-unresolved-comment-count="0" data-linked-resource-id="167479249" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-8_0-20-47.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">What my parts tree looked like after demolishing duplicates.</p><p> <span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167479248.png" data-image-src="attachments/167478941/167479248.png" data-unresolved-comment-count="0" data-linked-resource-id="167479248" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-8_0-11-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Bad geometry! If left unchecked, this would not be a good time.</p><ul><li style="text-align: left;"><span style="letter-spacing: 0.0px;text-align: left;">Now that all duplicates are suppressed, group them into a throwaway part. </span><strong style="letter-spacing: 0.0px;text-align: left;">Add the unique frame items into a part. </strong>This tells Mechanical to merge close-proximity / connected items together.</li><li>Rename each body in the frame part so assigning cross sections will be easier. Excel might be useful for keeping track of stuff here. Have fun.</li><li>Generate cross sections (Concept - Cross Section) for each standard size of tubing according to the current year's <strong><a class="external-link" href="https://www.fsaeonline.com/cdsweb/gen/DocumentResources.aspx" rel="nofollow">rulebook</a></strong>. (2021 - SizeA(0.095), SizeB(0.065), SizeC(0.049), Nonstandard(0.035), Bulkhead(0.065)</li><li>Assign the cross sections to each line body.</li><li>Add named selections for chassis to suspension, rocker, and spring nodes</li><li>Have a sanity check by applying basic boundary conditions (using static structural) to the frame (e.g. fixed supports at the rear suspension box nodes and a moment on the front lower aft suspension nodes).<ul><li>Make sure to suppress any alternative tubes (left click - right click - suppress body)</li></ul></li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/167478941/167478955.png" data-image-src="attachments/167478941/167478955.png" data-unresolved-comment-count="0" data-linked-resource-id="167478955" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_17-17-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Boundary Conditions</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/167478941/167478956.png" data-image-src="attachments/167478941/167478956.png" data-unresolved-comment-count="0" data-linked-resource-id="167478956" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_17-17-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Eureka!</p><h2 id="i.TorsionTestSimulation-SuspensionModel">Suspension Model</h2><ul><li>Create a Mechanical Model for the Suspension. Ensure only line bodies will be imported.</li><li>Open the Engineering Materials and create materials for carbon fiber (PROD/TROD) and rigid (rockers, uprights) components, as shown below respectively.</li></ul><p style="text-align: center;"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/167478941/167478965.png" data-image-src="attachments/167478941/167478965.png" data-unresolved-comment-count="0" data-linked-resource-id="167478965" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_22-8-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/167478941/167478966.png" data-image-src="attachments/167478941/167478966.png" data-unresolved-comment-count="0" data-linked-resource-id="167478966" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_22-8-51.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><ul><li>Import the suspension FEA .prt and open DM.</li><li>Group each control arm pair and rocker set, and uprights into parts. Same reason as grouping the frame into a single part. (ANSYS treats lines within a part that share a node as one part)</li><li>Apply the appropriate cross-sections for each body (refer to previous year/ example). <s>If the springs are treated as rigid, let the cross section be sufficiently large. It also helps to parameterize spring cross-sections so you can just duplicate the files and change them in the parameters for the floppy vs rigid suspensions. Once you change something like this though, be very patient and only update one system at a time. Otherwise ANSYS will make you sad. </s> If treating the springs as springs later on, then suppress them at this point.</li><li>Set any two-force members' <strong>Model Type</strong> to be links instead of floppy beams (i.e. control arms, tierods, pushrods). &amp; change their material type to what's appropriate (rockers/uprights = rigid, control aarms/trods/prods = CF tube) (in mechanical not design modeler) </li><li>Add named selections for the following groups (make sure to hide UCAs when selecting upper and lower nodes of uprights to make sure you don't accidently select the wrong node &amp; vice versa &amp; same process for every other node that overlaps)</li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="250" src="attachments/167478941/200376994.png" data-image-src="attachments/167478941/200376994.png" data-unresolved-comment-count="0" data-linked-resource-id="200376994" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-7_15-25-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><ul><li>Something fancy could be to use a spring connection instead of a super thin link.</li></ul><h2 id="i.TorsionTestSimulation-EngineModel">Engine Model</h2><p>It also helps to model the engine for lateral load, as it is a huge rigid chunk of metal sitting in the rear section of the chassis.</p><ul><li>After repeating the same steps for importing the frame and suspension, change the stiffness behavior for the beams to 'Stiff Beam'. Also let the material assignment be a similar aforementioned rigid material.</li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="300" src="attachments/167478941/167478972.png" data-image-src="attachments/167478941/167478972.png" data-unresolved-comment-count="0" data-linked-resource-id="167478972" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_22-29-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><hr/><h1 id="i.TorsionTestSimulation-IntegratingModelsinMechanical">Integrating Models in Mechanical</h1><p>This is where the fun begins.</p><ul><li>Create a new Static Structural block. Drag the Models from the frame and suspension to the new Model as shown. Initially there will be a recycling icon next to the new Model. Right-click on Model and click &quot;Update&quot;. General rule of thumb here is to add layers slowly so you can break into different simulations (e.g. you don't want the engine in the torsion test but you do want it for the lateral load cases).</li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="150" src="attachments/167478941/167479264.png" data-image-src="attachments/167478941/167479264.png" data-unresolved-comment-count="0" data-linked-resource-id="167479264" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-8_2-24-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><ul><li>Start by creating named selections for each group of nodes that you know you'll need a joint at. (i.e. two groups for each end of the pushrods, a group for the lower node of the uprights, a group for the mounting points for the springs on the frame, etc). You will need to hide parts in order to ensure you're grabbing the correct nodes.</li><li>Also add remote points for the spring inboard locations based on the chassis spring points (use NX to identify the exact location between spring location inboard and the linked chassis node/ refer to example) </li><li>For each type of joint, create the first joint manually, then use the <strong>Object Generator</strong> to make the rest of the joints for that group using the named selections. You'll need the following joints.<ul><li>Fixed joints between inner control arm points and chassis SUS BOX nodes.</li><li>Fixed joints between the control arm outer points and lower upright nodes.</li><li>Fixed joints between outer tierod points and lower upright nodes.</li><li>Fixed joints between outer pushrod points and lower upright nodes.</li><li>Fixed joints between rockers and inner pushrod points.</li><li>Fixed joints between rockers and outer spring points.</li><li>Fixed joints between chassis spring mounting points and inner spring points.</li><li>Revolute joints between the rockers (Reference) and the chassis. Manually use the rocker axis to define the ROTZ degree of freedom.</li><li>Fixed joints between steering rack points and inner tierod points.</li><li>Fixed joints between steering rack points and chassis steering 'tabs'.</li><li>etc.</li></ul></li><li>Fun joint fact: we can use fixed joints as spherical joints here because we're using links (two-force members) which do not care about external moments.</li><li>Apply desired boundary conditions, and solve.</li><li>Double fun joint fact: under the Solution Information section, clicking Geometry lets you see exactly how APDL (ANSYS Parametric Design Language) views and processes your joints. If something here doesn't look right, double-check your joints.</li></ul><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167479259.png" data-image-src="attachments/167478941/167479259.png" data-unresolved-comment-count="0" data-linked-resource-id="167479259" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-8_1-48-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Constraints for Torsion Test</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167479258.png" data-image-src="attachments/167478941/167479258.png" data-unresolved-comment-count="0" data-linked-resource-id="167479258" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-8_1-47-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">Proper Torsion Test Deformation Result</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/167478941/167479228.png" data-image-src="attachments/167478941/167479228.png" data-unresolved-comment-count="0" data-linked-resource-id="167479228" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-7_20-42-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p style="text-align: center;">If this happens you messed up real big. Running a Modal analysis can help identify messed up joints.</p><h2 id="i.TorsionTestSimulation-LateralLoadCasePreparation">Lateral Load Case Preparation</h2><p>Find the center of mass of the frame in DesignModeler via Tools&gt;Analysis Tools&gt;Mass Properties</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" width="500" src="attachments/167478941/167478942.png" data-image-src="attachments/167478941/167478942.png" data-unresolved-comment-count="0" data-linked-resource-id="167478942" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_16-32-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span></p><p>Find approximate mass of the frame in Mechanical by viewing details of Geometry. This doesn't take into account filler rod and fish mouthing tubes so it's a rough estimate.</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" width="350" src="attachments/167478941/167478944.png" data-image-src="attachments/167478941/167478944.png" data-unresolved-comment-count="0" data-linked-resource-id="167478944" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-6_16-34-54.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="167478941" data-linked-resource-container-version="39" alt=""></span> </p><p>Use driver model in NX to find rough center of mass for driver.</p><p>Account for the rest of the mass. For PF22 we created point masses for the engine, diff and driver. We then fixed these relative to their mounting chassis nodes. For the rest of the mass, it's safe to assume that it's distributed approximately equally around the frame, so we adjusted the density of the tubes until the total vehicle mass matched the estimated final vehicle mass.</p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478942.png">image2021-1-6_16-32-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478944.png">image2021-1-6_16-34-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478948.png">image2021-1-6_16-46-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478955.png">image2021-1-6_17-17-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478956.png">image2021-1-6_17-17-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478965.png">image2021-1-6_22-8-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478966.png">image2021-1-6_22-8-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478967.png">image2021-1-6_22-25-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478972.png">image2021-1-6_22-29-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167478979.png">image2021-1-6_22-33-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479228.png">image2021-1-7_20-42-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479248.png">image2021-1-8_0-11-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479249.png">image2021-1-8_0-20-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479253.png">image2021-1-8_1-30-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479254.png">image2021-1-8_1-31-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479256.png">image2021-1-8_1-33-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479257.png">image2021-1-8_1-46-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479258.png">image2021-1-8_1-47-56.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479259.png">image2021-1-8_1-48-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/167479264.png">image2021-1-8_2-24-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/200376994.png">image2021-12-7_15-25-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/167478941/200378112.png">MicrosoftTeams-image (1).png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

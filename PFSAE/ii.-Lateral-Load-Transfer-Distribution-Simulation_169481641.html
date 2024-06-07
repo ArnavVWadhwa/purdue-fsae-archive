@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : ii. Lateral Load Transfer Distribution Simulation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF22-Frame-Design_192190053.html">PF22 Frame Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="198508862.html">2. LLTD / Torsion Test Design Decisions</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : ii. Lateral Load Transfer Distribution Simulation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Dec 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Table of Contents</p><p><style type='text/css'>/*<![CDATA[*/
+div.rbtoc1709576892740 {padding: 0px;}
+div.rbtoc1709576892740 ul {margin-left: 0px;}
+div.rbtoc1709576892740 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1709576892740'>
+<ul class='toc-indentation'>
+<li><a href='#ii.LateralLoadTransferDistributionSimulation-PageDescription'>Page Description</a></li>
+<li><a href='#ii.LateralLoadTransferDistributionSimulation-ModelingSpringsinMechanical'>Modeling Springs in Mechanical</a></li>
+<li><a href='#ii.LateralLoadTransferDistributionSimulation-ModelingTiresinMechanical'>Modeling Tires in Mechanical</a></li>
+<li><a href='#ii.LateralLoadTransferDistributionSimulation-AddingRepresentativeMasses'>Adding Representative Masses</a></li>
+<li><a href='#ii.LateralLoadTransferDistributionSimulation-StaticStructuralInputs/Outputs'>Static Structural Inputs / Outputs</a></li>
+</ul>
+</div></p><h1 id="ii.LateralLoadTransferDistributionSimulation-PageDescription">Page Description</h1><p>This page discusses the only technical changes for the torsion test model to gain an LLTD tool</p><h1 id="ii.LateralLoadTransferDistributionSimulation-ModelingSpringsinMechanical">Modeling Springs in Mechanical</h1><p>Instead of using the rigid square beams that were valid for the torsion test model, we'll use spring connections. In order to do this, we need a remote point as shown below to reference relative to the frame body.</p><p>Create inboard spring remote points based on the coordinates within NX. Attach these points relative to the nearest vertex to the intended tab location.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/169481641/169481648.png" data-image-src="attachments/169481641/169481648.png" data-unresolved-comment-count="0" data-linked-resource-id="169481648" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-2-6_0-15-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span> </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481647.png" data-image-src="attachments/169481641/169481647.png" data-unresolved-comment-count="0" data-linked-resource-id="169481647" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="RemotePoints.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/169481641/169481649.png" data-image-src="attachments/169481641/169481649.png" data-unresolved-comment-count="0" data-linked-resource-id="169481649" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-2-6_0-19-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><h1 id="ii.LateralLoadTransferDistributionSimulation-ModelingTiresinMechanical">Modeling Tires in Mechanical</h1><p>Using spherical Body-Ground connections was found to yield the most realistic results for total lateral load transfer. There is likely a better way to solve this connection.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481660.png" data-image-src="attachments/169481641/169481660.png" data-unresolved-comment-count="0" data-linked-resource-id="169481660" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-2-6_0-42-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><p>Set the spherical connection type to Body-Ground.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="85" src="attachments/169481641/169481662.png" data-image-src="attachments/169481641/169481662.png" data-unresolved-comment-count="0" data-linked-resource-id="169481662" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-2-6_0-44-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><p>Change the Define By section from Geometric Selection to Global Coordinates. Set the Origin Z to ground level.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481663.png" data-image-src="attachments/169481641/169481663.png" data-unresolved-comment-count="0" data-linked-resource-id="169481663" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-2-6_0-44-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><h1 id="ii.LateralLoadTransferDistributionSimulation-AddingRepresentativeMasses">Adding Representative Masses</h1><p>Add point masses to represent the driver, engine, and differential. Additionally, it may be useful in the future to add masses at the wheel centers to represent the unsprung mass (e.g. tires, wheels, uprights). At this point, we've accounted for the mass of the driver, engine, differential, and suspension assembly. We need to account for the rest of the mass, which may be distributed evenly across the car. This is done by changing the density of the tubes so the total weight (including point masses) equals the weight of the car and driver.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481661.png" data-image-src="attachments/169481641/169481661.png" data-unresolved-comment-count="0" data-linked-resource-id="169481661" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Spherical Wheel Center Joints Figure.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><h1 id="ii.LateralLoadTransferDistributionSimulation-StaticStructuralInputs/Outputs">Static Structural Inputs / Outputs</h1><p>Apply the standard earth gravity, and apply a 1.65g acceleration in the Y direction to simulate a corner. For outputs, probe the spherical Body-Ground &quot;tire&quot; connections for the final Z load. Make this an output parameter in order to be able to export it to .csv later.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481658.png" data-image-src="attachments/169481641/169481658.png" data-unresolved-comment-count="0" data-linked-resource-id="169481658" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="LLT Total Deformation - No Upper SIS Analysis Settings.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/169481641/169481655.png" data-image-src="attachments/169481641/169481655.png" data-unresolved-comment-count="0" data-linked-resource-id="169481655" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="LLT Total Deformation - No Upper SIS.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="169481641" data-linked-resource-container-version="17" alt=""></span></p><p>LLT Simulation Without Nonstructural SIS Tubing</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481642.png">image2021-1-6_16-32-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481643.png">image2021-1-6_16-34-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481647.png">RemotePoints.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481648.png">image2021-2-6_0-15-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481649.png">image2021-2-6_0-19-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481655.png">LLT Total Deformation - No Upper SIS.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481658.png">LLT Total Deformation - No Upper SIS Analysis Settings.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481660.png">image2021-2-6_0-42-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481661.png">Spherical Wheel Center Joints Figure.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481662.png">image2021-2-6_0-44-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/169481641/169481663.png">image2021-2-6_0-44-56.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

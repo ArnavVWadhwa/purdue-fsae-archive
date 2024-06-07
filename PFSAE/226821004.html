@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 18&quot; to 16&quot; Tires</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297361.html">Manufacturing | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="222431600.html">2023 (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF23-Design-Notebooks_224199356.html">PF23 Design Notebooks</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228295255.html">PF23 General (Suspension)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 18&quot; to 16&quot; Tires
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span>, last modified by <span class='editor'> Kurisko, Keith Gregory</span> on Jun 23, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Goal: </strong>Reduce rotational mass, yaw inertia and overall vehicle mass alongside improving understanding of suspension kinematics from the ground up. Primary owner of architecture change will be Zach with Arpit helping out.  </p><h2 id="PF2318&quot;to16&quot;Tires-Sources:"><strong>Sources: </strong></h2><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/226821004/226821009.png" data-image-src="attachments/226821004/226821009.png" data-unresolved-comment-count="0" data-linked-resource-id="226821009" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2022-04-19 at 5.42.29 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821004" data-linked-resource-container-version="2" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/226821004/226821008.png" data-image-src="attachments/226821004/226821008.png" data-unresolved-comment-count="0" data-linked-resource-id="226821008" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2022-04-19 at 5.46.26 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821004" data-linked-resource-container-version="2" alt=""></span></p><p><br/></p><p>Called Hoosier on 4/21/22, they said they would have a batch of 100 16&quot; both in slicks and wets coming in May</p><p>R20B compound is just a replacement for R25B because Hoosier is having trouble acquiring the same material needed to make the R25B. It is similar in terms of performance. </p><h2 id="PF2318&quot;to16&quot;Tires-Teamson16&quot;Tires"><strong>Teams on 16&quot; Tires</strong></h2><ul><li>Stuttgart - Hoosier 16x7.5x10 LC0</li><li>UMich - Hoosier 16x7.5x10 LC0</li><li>UIUC - Hoosier 16x7.5x10 LC0</li><li>ETS - Hoosier 16x7.5x10 LC0</li><li>GFR - Hoosier 16x7.5x10 LC0</li></ul><p><br/></p><p>Easiest for us to switch to 16x6 because we could keep the same wheel shell and wheel center design. Curious to how much additional cornering stiffness teams gain from 7.5&quot; and if that additional gain is worth it. Need to map out what would be the  wheel shells **Note by Keith Kurisko: issue at comp with bead as the current kiaser shells have no drop; we use the shells we have because we know the TTC data uses them on the tires and they contribute to cornering stiffness and other characteristics</p><h2 id="PF2318&quot;to16&quot;Tires-Workflow:"><strong>Workflow: </strong></h2><ul><li>Kinematics: there's no reason not to switch PF23 onto the newish 16x6-10 tires from our current 18x6-10. <ul><li>The first design is making a suspension with the exact same output parameters on the tire size. The reason for this is because our kinematics still operate in the linear range hence all we are doing is updating the static offsets. This includes:<ul><li>F+R roll center heights</li><li>F+R camber gain</li><li>F toe vs steering curves: ackermann and total steering travel</li><li>F caster, kingpin inclination, offset: there will be slightly less mechanical trail with these held the same because of the smaller tire. Look at steering force change. We're probably happy with the lower steering force.</li><li>Bump steer: should be possible to reduce because lower control will be closer to flat (in past, bump steer and need for tierod to rack angle &lt; 5 degrees caused conflict)</li></ul></li></ul></li><li>Vehicle simulation: while kinematics are being developed, we'll need to get the tire models for the new smaller tires. It's a safe bet we'll continue on the LC0 tires. Here's what we'll need to do to run sims on a vehicle model using the smaller 16&quot; tire:</li></ul><p><br/></p><h2 id="PF2318&quot;to16&quot;Tires-PersonalWorkflow:"><strong>Personal Workflow: </strong></h2><ol><li>Compare SES Models of 18x6x10 LC0 and 16x6x10 LC0 at same normal load, inclination angle, and inflation pressure</li><li>Compare SES Models of 18x7.5x10 LC0 and 16x7.5x10 LC0 at same normal load, inclination angle, and inflation pressure</li><li>Compare LC0 and R25B compound on both 16&quot; OD and 18&quot; Tires</li><li>Create Curve Fitting Matlab Script to Model R20B Compound for Preliminary Numbers</li><li>Tire Temp heating Matlab Script</li><li>Create fake peak in LC0 compound</li></ol><p><br/></p><p><br/></p><h2 id="PF2318&quot;to16&quot;Tires-TTCData:"><strong>TTC Data</strong><strong>:</strong></h2><p>TTC stands for the tire testing consortium. It's tire testing that's organized by the Milliken Research Associate Group (Guys who wrote Racecar Vehicle Dynamics) and done through Calspan. We bought into back in 2005 for $500 and you can register through your Purdue email. They will just verify your Purdue email and you can create an account. </p><p><br/></p><p>The way it works is that TTC does rounds of testing on different types of tires consisting of hoosier, good year, etc on different sizes, compounds, etc. This is purely raw data from the calspan testing. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/226821004/226821006.png" data-image-src="attachments/226821004/226821006.png" data-unresolved-comment-count="0" data-linked-resource-id="226821006" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2022-04-29 at 10.36.37 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821004" data-linked-resource-container-version="2" alt=""></span></p><p><br/></p><p>To post-process this tire data the use of tire models must be incorporated. Highly suggest reading the book Tyre and Vehicle Dynamics by Hans Pacejka. We have a sponsorship with Stackpole Engineering Services (SES) who gives us access to their tire-analyzer software. On the TTC website, there is a section for tire models where you can find their post-processed data that you can just download and use as inputs into the SES tire-analyzer software. This is the simplest way to go about using the data from TTC because they've done all the curve fitting for you and gotten the coefficients for the tire models figured out. If however, SES hasn't gotten around to creating models, going about doing it yourself in MATLAB would be the next best bet. I highly suggest at least going through this process at least once to understand the intricacies of tire modelling. </p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/226821004/226821007.png" data-image-src="attachments/226821004/226821007.png" data-unresolved-comment-count="0" data-linked-resource-id="226821007" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2022-04-29 at 10.31.19 PM.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821004" data-linked-resource-container-version="2" alt=""></span></strong></p><p><br/></p><p><br/></p><h2 id="PF2318&quot;to16&quot;Tires-TireModelling:"><strong>Tire Modelling: </strong></h2><p>Tire modelling is a very complex process which is why I highly suggest reading Tyre and Vehicle Dynamics and attempting it yourself in Matlab to understand what goes into it. I made a script that takes .dat files from the TTC data and makes into colorful pictures. </p><h2 id="PF2318&quot;to16&quot;Tires-"><strong> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/226821004/226821005.png" data-image-src="attachments/226821004/226821005.png" data-unresolved-comment-count="0" data-linked-resource-id="226821005" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-4-29_22-51-8.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="226821004" data-linked-resource-container-version="2" alt=""></span></strong></h2><p>There is no single data template that is used by TTC for all the rounds, hence programs to process the raw data have to altered just about every round. </p><p><br/></p><p>The Matlab script is broken into parts</p><ul><li>Fetching the data and breaking up the data into the relevant columns</li><li>Elimination of unused data</li><li>Outputting scans of data for each slip, load, condition </li><li>Performing curve fitting based on coefficients used</li><li>Surface fit to get plots</li></ul><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821004/226821005.png">image2022-4-29_22-51-8.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821004/226821006.png">Screen Shot 2022-04-29 at 10.36.37 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821004/226821007.png">Screen Shot 2022-04-29 at 10.31.19 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821004/226821008.png">Screen Shot 2022-04-19 at 5.46.26 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/226821004/226821009.png">Screen Shot 2022-04-19 at 5.42.29 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

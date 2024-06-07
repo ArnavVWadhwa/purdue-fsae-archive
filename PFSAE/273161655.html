@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DAQ PF24 | Design Decisions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836584.html">DAQ PF24 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DAQ PF24 | Design Decisions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified by <span class='editor'> Min, Jihong</span> on Nov 30, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="DAQPF24|DesignDecisions-&quot;Anidiotadmirescomplexity,ageniusadmiressimplicity&quot;-TerryDavis"><span style="color: rgb(255,0,0);"><strong>&quot;An idiot admires complexity, a genius admires simplicity&quot; - Terry Davis</strong></span></h1><h1 id="DAQPF24|DesignDecisions-&quot;Luckiswhenpreparationmeetsopportunity&quot;-Seneca"><span style="color: rgb(255,0,0);"><strong>&quot;Luck is when preparation meets opportunity&quot; - Seneca</strong></span></h1><h1 id="DAQPF24|DesignDecisions-20/80rule:20%effortforthefirst80%,80%effortforthefinal20%"><span style="color: rgb(255,0,0);"><strong>20/80 rule: 20% effort for the first 80%, 80% effort for the final 20%</strong></span></h1><p><br/></p><h1 id="DAQPF24|DesignDecisions-DAQCRAM(CompactRapidAcquisitionMachine)"><strong>DAQ CRAM (Compact Rapid Acquisition Machine)</strong></h1><p>WHAT IT DOES:</p><ul><li>Takes 12V in and outputs +5V, -5V, and +1.5V to power WHAM (Strain Gauge Amp)</li><li>Also outputs 3.3v to power on-board microcontroller</li><li>On-board microcontroller to handle computation/comms over CAN</li></ul><p>REQUIREMENTS:</p><ul><li>12 Analog in with ADC sample rate 500SPS+</li><li>CAN bus</li><li>Compact size</li><li>Future-proof so that we can use it for many many years</li></ul><p>SPECS:</p><ul><li>STM32F407VET6 microcontroller<ul><li>16 ADC, shitton digital IO</li><li>2x CAN bus</li><li>Battery backed RTC</li><li>SD Card support</li><li>shitton peripherals (UART, I2C, SPI, you name it)</li><li>Giant maker/hobbyist community</li><li>Extremely popular in the industry so it's actually beneficial to our career</li><li>Extremely powerful (168MHz, shitton flash/ram)</li><li>Bare Metal/Arduino/RTOS/Micropython support so extremely flexible</li><li>$3 Cheaper than ATMEGA2560 which was the original plan</li><li>basically its limits are wayyyyy beyond our capabilities atm so we're chillin</li></ul></li><li>Credit card size<ul><li>3.375&quot; x 2.125&quot;</li><li>widely used standard, perfect size</li></ul></li><li>Other peripherals:<br/><ul><li>Micro SD card holder for data logging, if needed</li><li>SPI Flash / FRAM ICs for short-term high speed data logging</li></ul></li></ul><p>STUFF IN CONSIDERATION:</p><ul><li>on-board variable power supply with output range of 0.5V-10V?<ul><li>can power more peripherals</li></ul></li></ul>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Chassis Design for Virtual Comp</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728897.html">Design PF20 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2020-Chassis-Design-Documentation_132157411.html">2020 Chassis Design Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Chassis Design for Virtual Comp
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (ehoerl)</span>, last modified on Jun 07, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="ChassisDesignforVirtualComp-Script">Script</h1><p>Intro of the presentation:</p><p>Hi I'm Evan Hoerl and this is the Frame, Body, and Structures Presentation for the Purdue Formula 2020 vehicle.</p><p>The primary goal of the chassis is to generate as many competition points as possible while remaining rules compliant and ensuring driver safety by reducing vehicle weight, reducing effects of compliance on suspension performance, and improving ergonomics. In order to accomplish this goal, decisions were analysed through a combination of quantifiable and non-quantifiable vehicle metrics. The quantifiable metrics were assigned point sensitivities through an in house quasi-static lap-time simulation which was used to objectively make design decisions. The chassis has a direct influence on quantifiable metrics including weight, CG, and aspects of suspension performance. Non-quantifiable metrics which are also critical to design performance include ergonomics and driver confidence. </p><p>The first step in chassis design was material selection. The two initial design proposals for the 2020 competition year are shown here. A steel frame design previously used by the team was selected over a partial monocoque as the potential weight savings of 10 lbs and resulting point gain of 4 did not out weigh the estimated increase in manufacturing timeline of 4 weeks. </p><p>4130 in combination with ER70S-2 filler rod and a post welding stress relief were the selected materials and processes for the space frame for a number of reasons. </p><ul style="list-style-type: square;"><li>no change in stiffness between 4130 and 1018 materials</li><li>access to   calculations for lugs from airframe stress analysis and sizing<br/><br/></li><li>reduced chance of cracking due to lower carbon content of ER70s-2 filler rod</li><li>no need for preheating, interpass, or postheating processes when used with 4130 &lt; 0.125 in</li><li>this does sacrifice weld strength</li><li>stress relief to temper martensite and reduce residual stresses </li><li>Other options <ul style="list-style-type: square;"><li>would be a post heating process but as described above this is not possible within the teams resources or necessary</li><li>full heat treatment is not necessary as increased strength is not needed and this would required different filler material as well as a post heat process</li></ul></li></ul><p><span style="letter-spacing: 0.0px;"> Next </span>overall<span style="letter-spacing: 0.0px;"> vehicle design and chassis rules compliance were considered. </span></p><ul style="list-style-type: square;"><li><span style="letter-spacing: 0.0px;">CG 47% ideal, 49% selected for easier packaging and driver position</span></li><li><span style="letter-spacing: 0.0px;">Load paths for rules compliance and </span>minimum<span style="letter-spacing: 0.0px;"> tubes</span></li><li><span style="letter-spacing: 0.0px;">bulkhead study</span></li><li><span style="letter-spacing: 0.0px;">engine height study iIMAGE OF PACKAGING</span><span style="letter-spacing: 0.0px;"><br/></span></li><li>ergo</li></ul><p>In order to meet the primary goal of driver safety, all safety critical structures (any single point of failure which would result in total loss of vehicle control) were analyzed and held to a 1.4 safety factor on ultimate failure. This is the value used for manned space flight taken from nasastd5001. This was done through a number of structures analysis tools created by the team using NASA-STD-5020 for hardware, calculations from Air Frame Stress Analysis and Sizing for lugs, and FEA in ANSYS for more complex larger structures. </p><ul style="list-style-type: square;"><li>Two force member calculator<ul style="list-style-type: square;"><li>Tensile yield </li><li><p>Compressive yield</p></li><li><p>Insert bond failure (for carbon tubes</p></li><li><p>Buckling (Euler vs Johnson)</p></li><li><p>Thread shear</p></li><li><p>Rod end failure</p></li></ul></li><li>Bolt calculator<ul style="list-style-type: square;"><li><p>Bolt tension</p></li><li>Bolt shear</li><li><p>Flange shear out</p></li><li><p>Bearing yield</p></li></ul></li><li>Lug calculator<ul style="list-style-type: square;"><li><p>Shear bearing failure </p></li><li>Tension Failure</li><li><p>Bearing yield failure </p></li><li><p>Weld shear out (SES calculations with fitting factor of 2)</p></li><li><p>Weld tensile failure (SES calculations with fitting factor of 2)</p></li></ul></li><li>FEA<ul style="list-style-type: square;"><li>5 elements through thickness or radius </li><li>mesh quality (jacobian &gt; 0.66, aspect ratio, averaging check) </li><li>Quadratic elements </li><li>Criteria for when it’s converged (three things?)</li></ul></li></ul><p>In order to meet our chassis performance goals chassis effect on LLTD as well as the effect of chassis compliance on Camber was also examined. LLTD describes the transfer of load to the outer tires during a cornering event. This is largely driven by factors such as track width, CG height, and suspension characteristics. By adjusting the ratio of LLTD to the front and the rear of the car oversteer and understeer behaviors can be tuned through suspension adjustments to driver preference due to tire load sensitivity (see graph). Because the suspension is designed with the assumption that the chassis is fully rigid, a chassis which is to &quot;Loose&quot; can result in a reduction of tune-ability of the car and behavior which does not correlate with suspension simulations. </p><ul style="list-style-type: square;"><li>Change in front spring rate (350 to 400) resulted in<ul style="list-style-type: square;"><li>1.44% change real</li><li>1.36% change rigid</li><li>0.08% more than expected</li></ul></li></ul><p>In order to validate the model a torsion test was completed on the finished chassis as well as the ANSYS beam element model used to determine the chassis effect on LLTD. The applied load was set at a value which ensured no plastic deformation of the chassis would occur by holding a SF of 5. The graphs below comparing amount of deformation seen in the cockpit area of the chassis (where the majority of deformation was expected) show the model correlated within 15% of the real vehicle. </p><h1 id="ChassisDesignforVirtualComp-Tasks">Tasks</h1><ul class="inline-task-list" data-inline-tasks-content-id="141728925"><li data-inline-task-id="2">Front impact FEA</li><li data-inline-task-id="6">Side impact FEA </li><li data-inline-task-id="15">Rollover FEA?</li><li data-inline-task-id="7">Suspension Load FEA</li><li class="checked" data-inline-task-id="16">Front Camber Change (numbers so low ignore rear)</li><li data-inline-task-id="17">Rear toe in cornering</li><li data-inline-task-id="18">Lug calculations make presentable (maybe do this for 1018 also to prove using 4130)</li><li data-inline-task-id="19">Shock and rocker lug calcs (maybe clean up the calculator)</li></ul><h1 id="ChassisDesignforVirtualComp-AppendixMaterial"><span style="color: rgb(0,0,0);">Appendix Material</span></h1><p><span style="color: rgb(0,0,0);"><br/></span></p><h1 id="ChassisDesignforVirtualComp-Presentation">Presentation</h1><p><br/></p><h1 id="ChassisDesignforVirtualComp-ORDER">ORDER</h1><ol><li>READ THE CHAPTERS FROM RCVD</li><li>materials and reasons behind them </li><li>worst margins tensile, buckling, tab, etc. (chassis won't fail)</li><li>torsion test and model correlation to validate wheel loads simulation </li></ol><p><br/></p><h1 id="ChassisDesignforVirtualComp-Notesfromfirstdesignpracticeevent:">Notes from first design practice event:</h1><ul><li>Provide points anywhere weight is mentioned<ul><li>Spreadsheet with points sensitivities: Z:\2020\3_Suspension\01_Desigh\02_LapSim\Vehicle_Architecture_Tradeoffs_v8.xlsx</li><li>Use CHAS Trades tab to input changes and see points. Sensitivities themselves can be seen on the LOCAL SENSITIVITIES tab</li></ul></li><li>4130 vs 1018:<ul><li>Be explicit that there is no change in stiffness</li><li>If using weight argument, need to figure out how much and quantify in points</li><li>If using data availability argument be specific about data that we do and dont have:<ul><li>Good fill rod properites for 1018 possibly</li><li>Lack of empirical lug analysis charts for 1018 vs 4130 in <em>Airframe Stress Analysis and Sizing</em></li></ul></li></ul></li><li>Fill rod discussion was good: specific detail of carbon content reducing cracking risk provides credibility</li><li>Heat treat: show TTT diagram if possible to specifically discuss phase changes present in welding + heat treating processes</li><li>Failure calculations:<br/><ul><li>Define safety critical early on</li><li>Define structures load factors and source early on: 1.4 on ultimate from manned spaceflight using similar manufacturing processes (machining, welding, bolts, lugs, rivets, etc). Note linear analysis being performed then provides significant conservatism</li><li>Lug calculations: state source of calculations, then walk through basic flow of analysis (axial → transverse → oblique) as well as each type of margin calculated to show understanding. Discuss weld calcs as being same as those used in SES</li><li>Bolt calculations: state source of calculations, discuss types of margins calculated, discuss simplifying assumptions (CTE neglected)</li></ul></li><li>Add discussion of how shape of chassis happened: <ul><li>Theory for where tubes go, thicknesses</li><li>Bulkhead study (documentation should be in newest lap sim spreadsheet - v8)</li></ul></li><li>Chassis rigidity:<ul><li>Explain tuning function of LLTD starting with tire load sensitivity</li><li>Directly address not using torsional rigidity target because instead using wheel loads directly</li><li>Be clear that torsion test done for correlation only</li><li>LLTD analysis: Z:\2020\3_Suspension\01_Desigh\01_Kinematics\LLTD_ANALYSIS_V1.xlsx</li><li>Validation test results: Z:\2020\9_Technical\1_CAD\2_Chassis\6_Simulations\Spring 2020 Torsion Test\Torsion Test 2020 Data v6.xlsx</li></ul></li></ul><p><br/></p><p><br/></p><h1 id="ChassisDesignforVirtualComp-StructuresDiscussion">Structures Discussion</h1><ul><li>High Level:<ul><li>Team Safety Factor: 1.4 on ultimate loading (used for manned space flight)</li><li>Define safety critical as being any part included in crash structures or where failure would cause loss of control</li></ul></li><li>For safety critical bolts: Bolt Calculator:<ul><li>Sources:<ul><li>Shigley's</li><li>NASA-STD-5020</li></ul></li><li>Margins calculated:<br/><ul><li>Bolt:<ul><li>Tension</li><li>Shear</li><li>Bending</li><li>Combined Ultimate (from tension, shear, and bending)</li></ul></li><li>Flange:<ul><li>Bearing yield</li><li>Bearing ultimate</li><li>Shear out</li></ul></li><li>Joint:<ul><li>Separation</li></ul></li></ul></li><li>Effects considered:<ul><li>Preload including joint stiffness from Shigley's frustum calculation, torque uncertainty (10%), and gamma (35%) = NASA-STD-5020 for torque wrench and non-lubricated joint</li><li>Not temperature: (because relatively low, maximum temperature ~250F in loaded areas)</li></ul></li></ul></li><li>For safety critical lugs: Lug Calculator:<ul><li>Source: Airframe Stress Analysis and Sizing</li><li>Margins calculated:<ul><li>Axial and Transverse:<ul><li>bearing yield</li><li>bearing ultimate</li><li>shear out</li><li>net section failure</li></ul></li><li>Oblique: use interaction curves</li><li>Weld failure also considered using bending and axial stress: similar to calculations for SES lugs</li></ul></li></ul></li><li>For safety critical two-force membrers:<ul><li>Calculator including Euler, Johnson, rod end failure, weld tensile failure, bond failure, female thread shear</li></ul></li><li>Some FEA stuff???<ul><li>Using quadratic elements</li><li>Mesh quality criteria:<ul><li>Aspect ratio &lt; 5</li><li>Jacobian &gt; 0.66</li><li>Quality (ANSYS metric) &gt; .5</li></ul></li><li>Show convergance study</li><li>show example of unaveraged vs averaged stress</li></ul></li><li>If adequate analysis could not be performed, tested physically prior to driving,</li></ul><p><br/></p><p><br/></p><h1 id="ChassisDesignforVirtualComp-VehicleDynamicsDiscussion">Vehicle Dynamics Discussion</h1><ul><li>Torsional rigidity LLTD:<ul><li>Ratio of load transfer at front axle to total load transfer</li><li>Defines oversteer / understeer behavior of vehicle because of tire load sensitivity. This is what is being tuned via spring rates and ARB rates</li><li>We chose to directly analyze LLTD as opposed to considering a chassis twist rate, because LLTD adjustment is fundamental target.</li><li>Chassis initially designed to strength target. Effect on torsional rigidity found to be &lt;FIXME%, so no additional effort given.<ul><li>Beam / truss model including chassis and suspension. Inertial loadings from major masses applied, wheel loads measured</li></ul></li></ul></li><li>Torsional rigidity test correlation:<ul><li>Correlated to within FIXME% via torsion test. measurements take across cockpit of chassis, which is expected to be primary source of flex</li></ul></li></ul><p><br/><span><br/></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/141728925/143760087.png">image2020-4-20_9-58-20.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-146769784"></a>
+                                    <font class="smallfont"><p>Notes From 5/4/2020 Todd Meeting: </p><p>ADD:</p><p>Talk in order of priority (avoid judge drilling down into a less useful topic) maybe do an outline and add to the start of the presentation</p><p>add specific goals to the start </p><p>intro Tyler for the carbon part</p><p>GOOD: </p><p>trade off discussions were good</p><p><br/></p><p><br/></p><p><br/></p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by ehoerl at May 04, 2020 18:38
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

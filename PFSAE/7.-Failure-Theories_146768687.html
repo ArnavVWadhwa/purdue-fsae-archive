@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 7. Failure Theories</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Mechanics-of-Materials_143759776.html">Mechanics of Materials</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 7. Failure Theories
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (napolia)</span> on Apr 29, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Once you have found your critical cross-sections (with shear and bending moment diagrams), and your critical elements (keep in mind you can have more than one of both of these), you can then look at the principal stresses and maximum shearing stress. This information can then be used to check again material properties in different ways to hypothesize if failure will occur. I say hypothesize because there is no set calculation to see if something will fail. There are multiply failure theories with varying levels of conservativeness, that look at failure in different conditions. We use these criteria to determine a factor of safety to design our part to. This factor of safety is reflects the uncertainty we have in our calculations, material, use cases, etc. We will look at plane stress here. [3]</p><h2 id="id-7.FailureTheories-PrincipalStressandMaximumShearingStressforPlaneStress">Principal Stress and Maximum Shearing Stress for Plane Stress</h2><p>There will always be a maximum and minimum stress value, referred to as the principal stresses, occurring at some orientation.  There will also be a maximum shearing stress that occurs on two different planes.</p><p>The values of the principal stresses are given by:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="300" src="attachments/146768687/146768690.png" data-image-src="attachments/146768687/146768690.png" data-unresolved-comment-count="0" data-linked-resource-id="146768690" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-6-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p>The plus sign is used for the larger sigma 1 and the minus sign is for the smaller sigma 2. Sigma 1 is always larger than sigma 2 by convention.</p><p>The value of the maximum shearing stress is given by:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="250" src="attachments/146768687/146768695.png" data-image-src="attachments/146768687/146768695.png" data-unresolved-comment-count="0" data-linked-resource-id="146768695" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-13-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p>The orientation of the sigma 1 plane relative to the sigma x plane is given by:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="200" src="attachments/146768687/146768696.png" data-image-src="attachments/146768687/146768696.png" data-unresolved-comment-count="0" data-linked-resource-id="146768696" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-15-37.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p>Theta p is the counter-clockwise angle from the sigma x to the sigma 1 plane (direction).</p><p class="review4">The two principal planes at perpendicular to each other and the two maximum shearing stress planes are at 45° to either of the principal planes.</p><h2 class="review4" id="id-7.FailureTheories-FailureTheories">Failure Theories</h2><p>There are two main failure theories that we work with at this point (in mechanics of materials and for our applications). They are the distortion energy method and maximum shear stress theory. These theories are for ductile materials.[3]</p><p class="review4"><strong>Maximum Shear Stress Theory </strong>states that failure occurs when the maximum shear stress from a combination of principal stresses equals or exceeds the value obtained for the shear stress at yielding in a uniaxial tensile test.[17]</p><p class="review4">At yielding in a uniaxial tensile test, the principal stresses are</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="200" src="attachments/146768687/146768700.png" data-image-src="attachments/146768687/146768700.png" data-unresolved-comment-count="0" data-linked-resource-id="146768700" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-19-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p class="review4">Therefore, the shear strength at yielding is <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="50" src="attachments/146768687/146768701.png" data-image-src="attachments/146768687/146768701.png" data-unresolved-comment-count="0" data-linked-resource-id="146768701" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-19-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span> and you compare this value to determine failure. To do that, first compute the three principal stresses and the maximum shear stress.</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="150" src="attachments/146768687/146768702.png" data-image-src="attachments/146768687/146768702.png" data-unresolved-comment-count="0" data-linked-resource-id="146768702" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-21-28.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p class="review4">Then compare tau_max to our failure criterion Sy/2. You can also calculate the factor of safety by:</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="75" src="attachments/146768687/146768703.png" data-image-src="attachments/146768687/146768703.png" data-unresolved-comment-count="0" data-linked-resource-id="146768703" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-22-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p class="review4"><strong>Distortion Energy Method </strong>is also known as <strong>von Mises – Hencky Theory</strong> says that a given material has a definite limited capacity to absorb energy of distortion and that any attempt to subject the material to greater amounts of distortion energy result in yielding failure.[17]</p><p class="review4"><strong> </strong></p><p class="review4">Distortion does not include hydro-static volume changes; so, some volume dV of a material expands or contracts equally in all direction, this is not included in distortion.</p><p class="review4"> </p><p class="review4">Distortion energy theory states that failure by yielding under a combination of stresses occurs when the energy of distortion equals or exceeds the energy of distortion in the tensile test when the yield strength is reached.</p><p class="review4"> </p><p class="review4">You can find the derivation for the criterion here (<a class="external-link" href="https://www.engr.mun.ca/~katna/5931/Theories%20of%20Failure2.pdf" rel="nofollow">https://www.engr.mun.ca/~katna/5931/Theories%20of%20Failure2.pdf</a> ), starting on page 4.[17]</p><p class="review4">Tensile yielding strength is compared against the von Mises stress (also known as the equivalent stress.</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" width="400" src="attachments/146768687/146768704.png" data-image-src="attachments/146768687/146768704.png" data-unresolved-comment-count="0" data-linked-resource-id="146768704" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-25-22.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span>For 2D plane stress, the von Mises stress is:</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" width="400" src="attachments/146768687/146768705.png" data-image-src="attachments/146768687/146768705.png" data-unresolved-comment-count="0" data-linked-resource-id="146768705" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-26-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span></p><p class="review4">The Factor of Safety is:</p><p class="review4"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" width="100" src="attachments/146768687/146768706.png" data-image-src="attachments/146768687/146768706.png" data-unresolved-comment-count="0" data-linked-resource-id="146768706" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-27-12.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span>The Maximum Shear Stress Theory is more conservative than the Distortion Energy Theory. This can be seen in the figure below. It is up to engineering judgement to decide which would be best in a given situation. Typically, von Mises criterion (Distortion Energy) is used for monocoque work. Each theory is plotted on the graph below. The envelope of what is considered safe from failure is shown for each, and the discrepancy between the two can also be seen. Keep in mind, these are not the only two failure criteria and that they are both only for ductile materials.</p><p class="review4" style="text-align: center;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/146768687/146768707.png" data-image-src="attachments/146768687/146768707.png" data-unresolved-comment-count="0" data-linked-resource-id="146768707" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-29-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span>[18]</p><p class="review4"><br/></p><h2 id="id-7.FailureTheories-FactorofSafety">Factor of Safety</h2><p>We use these criteria to determine a factor of safety to design our part to. This factor of safety is reflects the uncertainty we have in our calculations, material, use cases, etc. For example, a airplane often has a factor of safety of 1.5 because it is well engineered and we know a lot about the conditions it will be in. A screwdriver, on the other hand, often has a factor of 18 because they are not always used as they are meant to be used, and we still don't want them to break.</p><p>Common Factors of Safety for ductile materials given various conditions can be seen below.</p><p style="text-align: center;"><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="400" src="attachments/146768687/146768709.png" data-image-src="attachments/146768687/146768709.png" data-unresolved-comment-count="0" data-linked-resource-id="146768709" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-29_17-31-36.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="146768687" data-linked-resource-container-version="1" alt=""></span>[18]</p><p style="text-align: center;"><br/></p><h2 style="text-align: left;" id="id-7.FailureTheories-References:">References:</h2><p>[1] <a class="external-link" href="https://web.mst.edu/~chiep/FE%20Review%20Files/MechanicsofMaterials.doc" rel="nofollow">https://web.mst.edu/~chiep/FE%20Review%20Files/MechanicsofMaterials.doc</a></p><p>[3] Napoli, Alessandra 2020</p><p>[17] <a class="external-link" href="https://www.engr.mun.ca/~katna/5931/Theories%20of%20Failure2.pdf" rel="nofollow">https://www.engr.mun.ca/~katna/5931/Theories%20of%20Failure2.pdf</a></p><p>[18] <a class="external-link" href="https://www.machinedesign.com/learning-resources/whats-the-difference-between/article/21834909/whats-the-difference-between-failure-theories" rel="nofollow">https://www.machinedesign.com/learning-resources/whats-the-difference-between/article/21834909/whats-the-difference-between-failure-theories</a></p><p> </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768690.png">image2020-4-29_17-6-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768695.png">image2020-4-29_17-13-38.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768696.png">image2020-4-29_17-15-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768700.png">image2020-4-29_17-19-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768701.png">image2020-4-29_17-19-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768702.png">image2020-4-29_17-21-28.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768703.png">image2020-4-29_17-22-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768704.png">image2020-4-29_17-25-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768705.png">image2020-4-29_17-26-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768706.png">image2020-4-29_17-27-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768707.png">image2020-4-29_17-29-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/146768687/146768709.png">image2020-4-29_17-31-36.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

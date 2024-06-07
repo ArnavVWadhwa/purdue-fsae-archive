@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : IDR Feedback PF24 | ELE</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : IDR Feedback PF24 | ELE
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified by <span class='editor'> Kumar, Akash Krishna</span> on Oct 14, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ul style="list-style-type: square;"><li>General feedback<ul style="list-style-type: square;"><li>If aiming at more final design type of presentation → polish up details, such as external references</li><li>Hand-draw sketches → on paper and then scan, looks better</li><li>If aiming for design judge audience → more about why decisions were made → if doing for some do for all decisions</li><li>Make sure showing enough in presentation that judge will understand but not too much that judge will be overwhelmed/bored</li><li>Take presentation slower, be more confident</li></ul></li><li>Future<ul style="list-style-type: square;"><li>If serious about electronic integration, will need to get more people with relevant knowledge</li><li>Will probably want a standardized communication bus/power supply system for integrated electronics</li></ul></li><li>Harness<ul style="list-style-type: square;"><li>Michael Tam asking question<ul><li>How to make sure everything in excel and rapid harness is matching 1-1<ul><li>Hunter answer → excel sheet good but thinking abt migrating fully to 1 software</li></ul></li><li>Maybe dump data from rapid harness into csv and match with excel sheet</li><li>Big thing about making process is air tight</li></ul></li><li>Wire sizing<ul style="list-style-type: square;"><li>Maybe not important enough for presentation in its entirety</li><li>Big points only</li><li>Table can be in appendix along with rapid harness diagrams</li><li>Make sure getting correct amount of current at higher temps</li><li>Look out for anything funky happening at higher temps<ul style="list-style-type: square;"><li>Is there any danger</li></ul></li><li>Temp could be a little concerning for wires but not sure</li></ul></li><li>Module locations<ul style="list-style-type: square;"><li>Make sure harness is waterproofed</li></ul></li><li>Power accounting<ul style="list-style-type: square;"><li>Stator output → dont say not sure, say that datasheet doesn't provide specifics</li></ul></li><li>Pneumatics<ul style="list-style-type: square;"><li>what is it for why is it there</li></ul></li><li>Have to map out timings on off duty cycle periods for valve<ul style="list-style-type: square;"><li>Component to smooth out signal</li></ul></li></ul></li><li>Dash<ul style="list-style-type: square;"><li>Backing good → reusable connectors, make sure components sealed and secured, easier to waterproof and secure than sealing each component individually</li><li>GPS position not bad</li><li>Clutch paddle <ul style="list-style-type: square;"><li>Feedback good</li></ul></li><li>If data is not available/hard to get (e.g. cylinder temp), find something else to measure that we can derive our wanted data from</li></ul></li><li>CAN Expander<ul style="list-style-type: square;"><li>Include in appendix as much as possible</li><li>Talk about how data connections happen</li><li>How fits into overall harness architecture</li><li>Spend decent amount of time on each component of the expander</li><li>Have software mapped out</li><li>documentation might be needed for firmware (clock, data rates, etc)</li><li>have important/sensitive data on the ECU<ul style="list-style-type: square;"><li>utilize ECU's priority settings</li><li>CAN buses have priority levels as well, maybe group signals/data into priority groups. (e.g. criticial control signals go to bus 0, experimental/test data go to bus 1)<ul style="list-style-type: square;"><li>this relieves bus of traffic and de-clutters system</li></ul></li></ul></li></ul></li><li>DAQ (basically all CAN Expander feedback applies here as well)<ul style="list-style-type: square;"><li>read up on DSP/Signal Processing before tackling DAQ head-on, this will be a complex project</li><li>DAQ system = senior level project → fuels my god complex (frfr)</li><li>Voltage swing<ul style="list-style-type: square;"><li>Suspension quesiton → is swing in mV enough for suspension system</li></ul></li><li>Antenna position is complicated<ul style="list-style-type: square;"><li>Ideally not surrounded by metal</li></ul></li><li>PCB signal integrity<ul style="list-style-type: square;"><li>Spacing of components/traces is big</li><li>Just follow good routing practices (keep lines short, space traces out, etc.)</li><li>component orientation, packaging</li></ul></li><li>Hardware vs Software filtering (ok this <ul style="list-style-type: square;"><li>Balance response time</li><li>If hardware → microcontroller doesn't have to do it, saving processing power (may not be a big save tho)</li><li>Software filter: slower data acquisition but flexible → better option because filtering after collecting data not real time</li></ul></li></ul></li><li>Dyno<ul style="list-style-type: square;"><li>Elaborate on NI USB-6210<ul style="list-style-type: square;"><li>What is it</li><li>Some context</li></ul></li></ul></li><li>Runsheet<ul style="list-style-type: square;"><li>Show some of the software in the presentation<br/><ul style="list-style-type: square;"><li>Software architecture</li></ul></li><li>Spelling error → &quot;humidity&quot;</li></ul></li></ul><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Poly V6-1 First Order Upwind Initialization</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-V6.4_253171156.html">fsaeSTAR V6.4</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Poly V6-1 First Order Upwind Initialization
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Apr 17, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Background</strong></u></p><ul><li>First order upwind is highly diffusive, which means it's very stable but doesn't produce accurate results</li><li>The stability of first order upwind can be exploited to &quot;initialize&quot; the flow field before second order upwind takes over to achieve a converged solution</li><li>The stability allows for high relaxation factor, which increases the rate of convergence drastically</li></ul><p><u><strong>Settings</strong></u></p><ul><li>First order upwind (for both segregated solver and SST model)<ul><li>Iterations: 200</li><li>Velocity relaxation: 0.9</li><li>Pressure relaxation: 0.3</li><li>SST relaxation: 0.85</li></ul></li><li>Second order upwind<ul><li>Velocity relaxation: 0.7</li><li>Pressure relaxation: 0.3</li><li>SST relaxation: 0.6</li></ul></li></ul><p><u><strong>Results</strong></u></p><p>First order upwind (final CL: -3.644)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/255694173/255694174.png" data-image-src="attachments/255694173/255694174.png" data-unresolved-comment-count="0" data-linked-resource-id="255694174" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-13_11-4-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255694173" data-linked-resource-container-version="5" alt=""></span></p><p>Final converged results (final CL: -3.692)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/255694173/255694463.png" data-image-src="attachments/255694173/255694463.png" data-unresolved-comment-count="0" data-linked-resource-id="255694463" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-4-14_9-37-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="255694173" data-linked-resource-container-version="5" alt=""></span></p><p>The difference between this final converged results and the regular V6 is caused by relaxation factor. Ran a sim with the old relaxation, it converged in more ~3013 iterations with an average CL of -3.747</p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 308.0px;"><thead><tr><th style="text-align: left;" class="confluenceTh">Parameter</th><th style="text-align: left;" class="confluenceTh">Value</th></tr></thead><colgroup><col style="width: 219.0px;"/><col style="width: 88.0px;"/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Avg CL</td><td style="text-align: left;" class="confluenceTd">-3.692</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg CD</td><td style="text-align: left;" class="confluenceTd">1.514</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg FW CL</td><td style="text-align: left;" class="confluenceTd">-1.486</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg RW CL</td><td style="text-align: left;" class="confluenceTd">-1.073</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg UT CL</td><td style="text-align: left;" class="confluenceTd">-1.222</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Continuity residual</td><td style="text-align: left;" class="confluenceTd">6.873e-6</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg X-momentum residual</td><td style="text-align: left;" class="confluenceTd">2.246e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Y-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.432e-5</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Z-momentum residual</td><td style="text-align: left;" class="confluenceTd">1.744e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg TKE residual</td><td style="text-align: left;" class="confluenceTd">1.701e-4</td></tr><tr><td style="text-align: left;" class="confluenceTd">Avg Sdr residual</td><td style="text-align: left;" class="confluenceTd">5.579e-3</td></tr><tr><td style="text-align: left;" class="confluenceTd">Iterations to convergence</td><td style="text-align: left;" class="confluenceTd">2127</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>CL Std Dev</p></td><td style="text-align: left;" class="confluenceTd">0.020</td></tr><tr><td style="text-align: left;" class="confluenceTd"><p>Mesh count (mil)</p></td><td style="text-align: left;" class="confluenceTd">56.320</td></tr><tr><td style="text-align: left;" colspan="2" class="confluenceTd">All statistics are last 500 iterations</td></tr></tbody></table></div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255694173/255694174.png">image-2023-4-13_11-4-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/255694173/255694463.png">image-2023-4-14_9-37-45.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

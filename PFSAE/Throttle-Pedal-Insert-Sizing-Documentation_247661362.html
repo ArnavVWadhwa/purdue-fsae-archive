@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Throttle Pedal Insert Sizing Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820810.html">Pedal Box PF23 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-2023-Documentation-List_237084473.html">Pedal Box 2023 Documentation List</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Throttle Pedal Insert Sizing Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Jan 05, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The throttle pedal insert is what the throttle pedal turns around. The insert is a steel cylinder passing through the two return springs and the throttle pedal.</p><p>Considerable stress is excerted on it when the pedal is pressed all the way, as the moments from the drivers foot and the pedal stop cancel out, and the insert must act to balance out the forces. This is shown in the diagram below.  The distance of the pedal stop from the insert is the critical dimension here. The further out it is, the less force the insert will have to resist. The tradeoff is that you have to make a larger throttle stop to make this happen.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661362/247661543.png" data-image-src="attachments/247661362/247661543.png" data-unresolved-comment-count="0" data-linked-resource-id="247661543" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-5_12-40-14.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661362" data-linked-resource-container-version="3" alt=""></span></p><p>The force, Rpedal tab is applied over the width of the pedal in the middle of the insert. This creates a bending moment in the insert itself. A diagram of this internal bending moment over the length of the insert is shown below. The graph can be derived using skills from ME323. Here, the critical dimensions is the length of the whole insert, as a longer insert will have a higher bending moment as you'll be integrating over a longer shear-rectangle. We are concerned with the max bending moment, which occurs in the middle of the insert lengthwise.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661362/247661544.png" data-image-src="attachments/247661362/247661544.png" data-unresolved-comment-count="0" data-linked-resource-id="247661544" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-5_12-43-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661362" data-linked-resource-container-version="3" alt=""></span></p><p>The last piece of the puzzle is the diameter of the insert. The larger it is, the less stress is generated from the same internal bending moment, because the second moment of area, I is larger. This diameter is however, restricted by the inner diameter of the springs we are using, as the insert also has to pass through the spring. Because we are dealing with bending stress, the highest stress is at the outer surface. Also, the material on the inside of the insert contributes less to the moment of inertia. Given these two facts, a hole can be drilled in the center of the insert to save some mass.</p><p>We used an excel to calculate the stress for various pedal stop distances and insert diameters, to find a size at which the stress level would be below yielding, but which would be as small as possible, both in terms of insert diameter, and pedal stop distance. The formula for this excel was calculated using the process described above, deriving a formula that solved for stress and was in terms of pedal stop distance and insert diameter. The table generated is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247661362/247661545.png" data-image-src="attachments/247661362/247661545.png" data-unresolved-comment-count="0" data-linked-resource-id="247661545" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-5_12-59-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247661362" data-linked-resource-container-version="3" alt=""></span></p><p><span style="color: rgb(23,43,77);">Formula drive → 2023 → Chassis→Throttle Pedal→Throttle Pedal Calcs (Excel File)</span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661362/247661542.png">image-2023-1-5_12-39-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661362/247661543.png">image-2023-1-5_12-40-14.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661362/247661544.png">image-2023-1-5_12-43-3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247661362/247661545.png">image-2023-1-5_12-59-30.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

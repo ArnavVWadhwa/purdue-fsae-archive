@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2022 Cooling Sim</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297381.html">Education | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Education_165350208.html">Powertrain Education</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3_Peripheral-Development_198512897.html">3_Peripheral Development</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Cooling-Design-Basics_225413405.html">Cooling Design Basics</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2022 Cooling Sim
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dnocon)</span>, last modified on Jun 20, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The team's cooling sim's in the past have always been a transient sim? If you think about it... why?? There is absolutely no point in working on a transient sim for cooling. Thermal modeling a heat and mass transfer system is only 20% accurate, even if you know every single variable of a very specific problem. This is because convection is extremely difficult to model. This is why a simulation of a fsae cooling system should be as simple as possible, and easy to validate.</p><p><br/></p><p>If you think about the cooling system, the only thing that really matters is that you can operate in a safe range for the engine lets just say below 100C. is Ideal. Next you need to determine your other boundary condition: ambient air temp. You should choose this based on the highest it will ever be at competition. Finally you will need the power the radiator will need to reject, and the required air massflow. </p><p><br/></p><p>This sim is an iterative sim. You need to test the radiator before the sim can give you accurate results. Preferably bench test, but I know the timeline might not allow this. You will need to benchtest the radiator with the engine because the overall heat transfer coefficient is based on the entire powertrain size. This single number accounts for how the cooling sim works from the water side of the heat exchanger. This includes how the waterflow rate interacts with the radiator. More flow rate will be more turbulent, creating a smaller thermal boundary layer and better convection from the water to the aluminum of the radiator tubes. Again, this singular number is found from using the radiators with the engine. This number is tuned based on other known variables until the radiator area number is the same as the radiator you are testing.</p><p><br/></p><p>The sim is also solving for the radiator area. This creates a kind of circular reference. However, this is mostly fine as you need a radiator to test before you can find the heat transfer coefficient number. Although not ideal, the whole solution is iterative, until you have enough data to make more assumptions about the overall heat transfer coefficient of the cooling setup. </p><p><br/></p><p>The current assumptions of this model include: </p><ol><li>Steady State</li><li>Negligible heatloss to surroundings</li><li>Negligible kinetic and potential energy changes</li><li>Constant properties</li><li>1/3 average engine power goes to cooling system (set equal to the required heat transfer rate) (use horsepower curve with average rpm from i2)</li><li>Heat transfer coefficient estimated from past testing sessions</li><li>Constant average air mass flow</li></ol><p><br/></p><p>Attached below is screenshots of the model, as well as the Matlab files. </p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="1000" src="attachments/225413407/225413443.png" data-image-src="attachments/225413407/225413443.png" data-unresolved-comment-count="0" data-linked-resource-id="225413443" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="coolingsim.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="225413407" data-linked-resource-container-version="3" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/225413407/225413446.png" data-image-src="attachments/225413407/225413446.png" data-unresolved-comment-count="0" data-linked-resource-id="225413446" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="coolingsimoutputs.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="225413407" data-linked-resource-container-version="3" alt=""></span></p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/225413407/CoolingSim2022_V1.zip?version=1&amp;modificationDate=1655780686000&amp;api=v2" data-nice-type="Zip Archive" data-file-src="/download/attachments/225413407/CoolingSim2022_V1.zip?version=1&amp;modificationDate=1655780686000&amp;api=v2" data-linked-resource-id="225413456" data-linked-resource-type="attachment" data-linked-resource-container-id="225413407" data-linked-resource-default-alias="CoolingSim2022_V1.zip" data-mime-type="application/zip" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="CoolingSim2022_V1.zip" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-zip.png" height="250" alt="" draggable="false"/><span class="title">CoolingSim2022_V1.zip</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="225413407" data-linked-resource-id="225413456" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/225413407/225413445.png">coolingsim.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/225413407/225413443.png">coolingsim.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/225413407/225413446.png">coolingsimoutputs.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/225413407/225413456.zip">CoolingSim2022_V1.zip</a> (application/zip)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

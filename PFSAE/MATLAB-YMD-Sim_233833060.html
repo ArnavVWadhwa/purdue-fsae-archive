@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : MATLAB YMD Sim</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : MATLAB YMD Sim
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Nov 19, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Uses 4 wheel model (developed off of bicycle model) to analyze vehicle lateral behavior and characteristics</p><ul><li>Added fidelity to standard bicycle model<ul class="inline-task-list" data-inline-tasks-content-id="233833060"><li class="checked" data-inline-task-id="15">Nonlinear Tire Model - Pacejka 2002</li><li class="checked" data-inline-task-id="16">Ackerman Steering</li><li class="checked" data-inline-task-id="17">Aero contributions Downforce</li><li class="checked" data-inline-task-id="18">Lateral Load Transfer Fz each tire</li><li class="checked" data-inline-task-id="19">4 Tire Fy Calculation</li><li class="checked" data-inline-task-id="20">4 Tire Mz Calculation</li><li class="checked" data-inline-task-id="21">Front Lateral Force Component based on Steered Angle Delta</li><li data-inline-task-id="22">Kinematics<ul class="inline-task-list" data-inline-tasks-content-id="233833060"><li data-inline-task-id="23">Camber Curves (changes IA)</li><li data-inline-task-id="24">Static IA</li><li class="checked" data-inline-task-id="25">Static Toe</li><li data-inline-task-id="26">Toe Changes</li></ul></li><li data-inline-task-id="31">Forward Acceleration<ul class="inline-task-list" data-inline-tasks-content-id="233833060"><li data-inline-task-id="32">Simulate Load transfer that occurs under longitudinal accelerations (assumptions made might not initially allow for the calculation of loss in grip)</li></ul></li><li data-inline-task-id="27">Compliance</li><li data-inline-task-id="34">Investigate Tire Models and correlate to TTC data for changes in Fy and Mz w.r.t inclination angle (Needed before adding kinematic effects)</li></ul></li></ul><p><br/></p><p><br/></p><p><strong>Sign Convention:</strong></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/233833060/242976116.png" data-image-src="attachments/233833060/242976116.png" data-unresolved-comment-count="0" data-linked-resource-id="242976116" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-10_11-4-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="233833060" data-linked-resource-container-version="12" alt=""></span></strong></p><p>RH Turn:</p><ul><li>N +</li><li>r +</li><li>beta can vary (swept)</li><li>vy +</li><li>vx + always</li><li>Ay +</li><li>delta +</li><li>alpha f -</li><li>alpha r -</li><li>Fz + always</li><li>Load transfers from right side to left side</li></ul><p><strong>List Assumptions:</strong></p><ul style="list-style-type: square;"><li>Simulation V1<ul style="list-style-type: square;"><li>*Steady State (Assumes longitudinal acceleration = 0 thus engine force = drag force + rolling resistance) <span><span style="color: rgb(0,128,19);"><br/></span></span><ul style="list-style-type: square;"><li>*given snap shot in time of vehicle as having yaw acceleration or a yaw moment indicates non steady state</li></ul></li></ul></li></ul><p><br/></p><p><strong>Inputs to Simulation:</strong></p><ul style="list-style-type: square;"><li>Simulation V1<ul style="list-style-type: square;"><li>Vehicle Parameters File<br/><ul style="list-style-type: square;"><li>Wheelbase</li><li>Front and Rear Track</li><li>Vehicle Mass and distribution</li><li>Aero cl and distribution</li><li>Cg height</li><li>etc... (Many vehicle parameters: Currently can only input LLTD, but a further iteration will allow for LLTD to be calculated based on suspension setup (springs, arb setting, rch, etc...)</li></ul></li><li>Vx in mph</li><li>Pacejka Tire Model</li><li>Sweeps of Beta (vehicle side slip angles) and Delta (steering angle)</li></ul></li></ul><p><br/></p><p><strong>Outputs of Simulation:</strong></p><ul style="list-style-type: square;"><li>Simulation V1<ul style="list-style-type: square;"><li>Yaw Moment Diagrams<br/><ul style="list-style-type: square;"><li>Labeled isolines for delta and beta</li><li>Color contour plots<ul style="list-style-type: square;"><li>Control (dN/dDelta) Nm/deg steering</li><li>Stability (dN/dBeta) Nm/deg body slip</li></ul></li></ul></li><li>Tire Model Investigation Is Commented out<ul style="list-style-type: square;"><li>good to use to validate the tire and sign conventions being used</li></ul></li><li>Could add other features and convert to GUI</li></ul></li></ul><p><strong>Example Results:</strong></p><p>Interpreting Results- Right hand plane is right hand turns (ay +); Top plane is clockwise rotations (N +)</p><p>*Will create powerpoint detailing interpretation and use of simulation</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/233833060/242978736.png" data-image-src="attachments/233833060/242978736.png" data-unresolved-comment-count="0" data-linked-resource-id="242978736" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-10_11-26-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="233833060" data-linked-resource-container-version="12" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/233833060/242978737.png" data-image-src="attachments/233833060/242978737.png" data-unresolved-comment-count="0" data-linked-resource-id="242978737" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-10_11-26-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="233833060" data-linked-resource-container-version="12" alt=""></span></p><p><br/></p><p><strong>Model Validation Test Plan:</strong></p><ul><li>Ideas:<ul><li>Correlate steering angle for a given radius turn with the lateral acceleration and yaw acceleration<ul><li>If skidpad and steady state yaw acceleration = 0, compare steering angle that achieved that lateral acceleration for the given vehicle speed</li><li>Alter vehicle parameters (LLTD, Toe, Camber) compare those sensitivities to that predicted by the model</li></ul></li><li>Get the same model to run an US gradient ramp steer maneuver and correlate to on track US gradient test</li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833060/242976116.png">image-2022-11-10_11-4-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833060/242978736.png">image-2022-11-10_11-26-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233833060/242978737.png">image-2022-11-10_11-26-42.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

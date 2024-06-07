@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Design Feedback 2022</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="All-Team-Design-Reviews_130162427.html">All Team Design Reviews</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Design-Season-Archive_265095408.html">Design Season Archive</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2022-Design_202281609.html">2022 Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Design Feedback 2022
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Rumsey, Helen Nicole</span> on Mar 10, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="DesignFeedback2022-Overview">Overview</h3><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/209720271/209720869.png" data-image-src="attachments/209720271/209720869.png" data-unresolved-comment-count="0" data-linked-resource-id="209720869" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-3-5_14-13-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="209720271" data-linked-resource-container-version="7" alt=""></span></p><h3 id="DesignFeedback2022-Suspension">Suspension</h3><p>Be able to justify the complexity of our lap sim - Why not Transient, Why WSS?</p><p>We want to include as much as we can, but</p><p><br/></p><p>1.2 dynamic factor: Wheel loads change through road variation</p><p>Why no anti-dive geometry - higher loads, UNDERSTAND TRADEOFFS</p><p><br/></p><p>Need to understand tradeoffs, softer springs, better for ride and grip, but harder springs aren't as detrimental with smoother track</p><p>Know aero sensitivities, understand why pitch behavior is important relative to roll, aero and susp need to understand each other more</p><p>Need photos of tests we perform, include in appendix, Photos are way more convincing</p><p>May want to include more on architecture desicions!!!!!!</p><p>More work on rebalancing car, optimize setup for a setup before taking taking it at face value</p><p>Set criteria to target constant slip angle (tire saturation)</p><p>Think about it again whether we should retest R25b vs LC0, corner load differences</p><p>Weight distribution:</p><p>Be able to answer what error is acceptable, what isn't? Is 5% ok? is 25% ok?</p><p><br/></p><h3 id="DesignFeedback2022-Frame/Body">Frame/Body</h3><p>did we have a mass target? (or is our goal to just not be heavier than previous years)</p><ul style="list-style-type: square;"><li>not significantly heavier than previous years (last year PF20 was 66.2) - goal to be within 3 lbs</li><li><span style="color: rgb(255,0,0);">CAD estimation was? </span></li></ul><p>have an appendix with more detail on the different geometry options used in LLTD? (look at what we compared and how we made tradeoffs with mass)</p><ul style="list-style-type: square;"><li>work on - add mass, 95 tube lltd for comparison</li></ul><p>why does LLTD matter? (I need to learn more about this and make sure I understand it)</p><p>78% number is the amount of tunability that our chassis achieved</p><ul><li>can we correlate this through testing data? can we tune to an undrivable point in both directions (will show that we have enough range to make appropriate tuning)</li><li>in order to feel a change in suspension tuning the chassis has to be rigid enough</li><li>how to show that LLTD works? (above bullet points?)</li></ul><p>how do we fit in with everyone else?</p><p>how do we fit into the lap sim? (mostly weight considerations right?)</p><p>non triangulated engine mount tubes? - how was this analyzed </p><ul style="list-style-type: square;"><li>doesn't make sense because it would add too much weight, thicker tubes were used to make sure launch case was passed </li></ul><p><strong>where would expect to see the chassis fail first?</strong></p><p>how do we use the engine factory mounting? (how to better describe the engine sleeve thing? like is there an actual name for it?)</p><ul style="list-style-type: square;"><li>sleeve = spacer w/ set screw</li></ul><p>how rigid is the engine? (we assume the engine is rigid in our LLTD, is this true?) use torsion test with engine to look at how adding the engine effects stiffness?</p><ul style="list-style-type: square;"><li>go through the test with the engine </li></ul><p>why didn't we carry the load path down in the rear? (PF20 was packaging with powertrain, is it true this year?)</p><ul style="list-style-type: square;"><li>made no difference in the LLTD but would make it harder to weld</li></ul><h3 id="DesignFeedback2022-Aero">Aero</h3><p><strong>Questions</strong></p><p><span>Are you only doing pressure loads? (Arun)</span></p><p><span>-yes</span></p><p><span>Are you using inertial loads? (Arun)</span></p><p><span>-no (need to add these before design submission)</span></p><p><span>Have you tested the wing hitting a cone? (Arun)</span></p><p><span>-not yet, likely at </span>Grissom and once we have a spare front wing in progress (we are at that point)</p><p><span>Are you using the material from the sponsors? (Arun)</span></p><p><span>-yes</span></p><p><span>Three-piece mold? (Jimmy)</span></p><p><span>-yes, to move seam to top surface or wing</span></p><p><span>Where is the difference in mass coming from? (Jimmy)</span></p><p><span>-foam, bonding epoxy, extra carbon epoxy</span></p><p><span>Is there data showing the difference in CFD measured and predicted? (Jimmy)</span></p><p><span>-yes, from PF19 and PF20</span></p><p><span>What adjustments are you making to your CFD in the future? (Jimmy)</span></p><p><span>Do you have an aero map for yaw angles? (Arun)</span></p><p><span>Do you have the flow separation quantified? (Jimmy)</span></p><p><span>-not by angle. think about adding this before design</span></p><p><span>Is the DRS diver actuated, something the driver has to hold down? (Jimmy)</span></p><p><span>-driver activated, with logic to prevent opening at low battery voltage or while on brakes</span></p><p><span>Is the logic to prevent the DRS from opening when the brake is being used on all the time? (Jimmy)</span></p><p><span>-yes</span></p><p><br/></p><p><strong>Feedback</strong></p><p><span>Developing a factor for the difference in mass. (Jimmy)</span></p><p><span>Make note of the difference in mass in the slides. (Arun)</span></p><p><span>Might be helpful for the judges to show that the new CFD method is better for the environment? (Jimmy)</span></p><p><span>Tires might be a source of error in CFD. (Arun)</span></p><p><span>Plot downforce versus degrees in terms of angle of attack and yaw. (Jimmy)</span></p><p><br/></p><h3 id="DesignFeedback2022-Powertrain">Powertrain</h3><p>VE changing on temperature. Cant change it. Look at designing the intake for hotter temperatures that we will see in Michigan rather than freezing at Purdue.</p><p>Throttle reponse - look at relationship of closed loop and fuel film (transient)</p><p>Decceleration - look at pressure drop after deccel (how many cycles) and fuel cut or fuel drop at low pressures. Also closed loop on decel</p><p>e85 increase compression ratio and increase overlap</p><p><br/></p><ul style="list-style-type: square;"><li>Test and verify that 0.87 lambda is the peak power ratio</li><li>sweeping temperature sensitivities of al fluid systems to see effect on power</li><li>cutting fuel completely instead of 1.2 laambda target??<ul style="list-style-type: square;"><li>look into manifold pressure  limit to convert to open loop for a period of time after deaccel to get out of the rich region, then turn closed loop back on</li></ul></li><li>closed loop drags down furl to misfire</li></ul><p><br/></p><ul style="list-style-type: square;"><li>VE correlation is even bad in indy car</li><li>look at plenum effects on engine braking, not just acceleration</li><li>look into how bell mouth is sized and effects on helmholtz, also consider ambient conditions</li></ul><p><br/></p><ul style="list-style-type: square;"><li>ask yamaha about temperature limitations for collant to ensure head reliability</li><li>why is our system set to 30psi?</li><li>what is the actual safe range and what should that be set to</li></ul><p><br/></p><ul style="list-style-type: square;"><li>look at dog speeds and compare engine to driveline speeds when looking at engine cuts for flat foot shifting</li></ul><ul style="list-style-type: square;"><li>look at less dwell in ignition for a faster ignition but be careful not to misfire<ul style="list-style-type: square;"><li>will use less overall power and use less energy but fire faster</li></ul></li></ul><p><br/></p><ul style="list-style-type: square;"><li>consider relative humidity effects</li></ul><p><br/></p><p><br/></p><p><br/></p><h3 id="DesignFeedback2022-Cockpit/Controls/Brakes">Cockpit/Controls/Brakes</h3><p>take credit for tire selection plot</p><p><br/></p><p>maybe talk about specifics with individual driver</p><p><br/></p><p>qualitative questionnaire for driver, we have</p><p><br/></p><p>some brake motion ratio stuff;</p><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 152.344px;"><colgroup><col style="width: 151.094px;"/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">MR for brake pedal how much controlability</td></tr></tbody></table></div><p><br/></p><p><br/></p><p>driver comments into numbers; </p><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 150.566px;"><colgroup><col style="width: 149.316px;"/></colgroup><tbody><tr><td style="text-align: left;" class="confluenceTd">Turn drivers response to changes in controls and feedback into numbers</td></tr></tbody></table></div><p><br/></p><p><br/></p><p>relate back to points;</p><p><br/></p><p><br/></p><p>look into shift time</p><p><br/></p><p><br/></p><h3 id="DesignFeedback2022-SystemsIntegration">Systems Integration</h3><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/209720271/209721781.jpg" data-image-src="attachments/209720271/209721781.jpg" data-unresolved-comment-count="0" data-linked-resource-id="209721781" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Troy design review notes.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="209720271" data-linked-resource-container-version="7" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209720271/209720869.png">image2022-3-5_14-13-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/209720271/209721781.jpg">Troy design review notes.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Throttle Pedal FEA Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820810.html">Pedal Box PF23 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Pedal-Box-2023-Documentation-List_237084473.html">Pedal Box 2023 Documentation List</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Throttle Pedal FEA Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Aaltonen, Emil Johan</span>, last modified on Jan 11, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>To analyze the throttle pedal, we imported the model from NX into Spaceclaim. In Spaceclaim we added a contact patch for the drivers foot, and the bolt attached to the pedal stop. The pedal is aluminium. </p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662690/247662700.png" data-image-src="attachments/247662690/247662700.png" data-unresolved-comment-count="0" data-linked-resource-id="247662700" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-7-34.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662690" data-linked-resource-container-version="2" alt=""></span></p><p>The load case we are considering has the pedal being pressed all the way. This means that the pedal stop can be modeled as a fixed support, as the pedal is being pressed into it. The pedal also pivots around the throttle pedal insert. This is modeled as a remote displacement in the hole that the insert goes through. Finally, the pedal is also constrained to only rotate about the insert by the springs, which is modeled as another remote displacement preventing the pedal moving side to side.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662690/247662701.png" data-image-src="attachments/247662690/247662701.png" data-unresolved-comment-count="0" data-linked-resource-id="247662701" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-9-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662690" data-linked-resource-container-version="2" alt=""></span></p><p>We applied a 150lbf load at the contact patch we made for the drivers foot, and a 20lbf load pulling the pedal back at the throttle cable holder.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/247662690/247662702.png" data-image-src="attachments/247662690/247662702.png" data-unresolved-comment-count="0" data-linked-resource-id="247662702" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-1-11_20-10-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="247662690" data-linked-resource-container-version="2" alt=""></span></p><p>The mesh was set to .05&quot; for the whole part.</p><p>The main goal was to find what mass could be removed. This is generally done by cutting out slots and making the whole pedal shorter. Note that the image shown is not the final design, we managed to cut quite a bit more mass. Especially making the pedal shorter is beneficial for the pedal itself, the throttle stop, and the throttle pedal insert.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662691.png">image-2023-1-11_19-58-37.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662695.png">image-2023-1-3_14-18-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662693.png">image-2023-1-3_14-5-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662694.png">image-2023-1-3_14-9-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662696.png">image-2023-1-3_14-18-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662697.png">image-2023-1-3_14-23-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662698.png">image-2023-1-3_14-24-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662699.png">image-2023-1-3_17-40-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662700.png">image-2023-1-11_20-7-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662701.png">image-2023-1-11_20-9-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/247662690/247662702.png">image-2023-1-11_20-10-52.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

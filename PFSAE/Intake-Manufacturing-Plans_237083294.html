@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Intake Manufacturing Plans</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297383.html">Design | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-PF23_224199443.html">Powertrain PF23</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF23-PT-Design-Notebook_224199446.html">PF23 PT Design Notebook</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF23-Intake_224199448.html">PF23 Intake</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Intake Manufacturing Plans
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (kinsellj)</span>, last modified on Oct 07, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>BACKGROUND</strong></p><p>Looking at bast intakes (PF18-PF20) and noting their damage due to fatigue and cracking (wish I had images but just look at them in the shop), the switch away from resin to nylon is a must. While resin has a very high tensile strength, it is very hard, which makes it brittle. This would not be an issue, however rules state that it must be contained to both the engine and the chassis. The engine will obviously vibrate, with vibration at idle coming near the resonance modes of of the intake, further increasing vibration. The chassis, in reference to this vibration will be fixed, leading to this movement causing internal stresses because of the constraint method. The intake will move at the engine due to vibration, but cannot move at the chassis attachment points. All of PF20s intake runners are cracked at the base due to this mismatch. The original PF22 intake also cracked at along a bolt hole due to this fatigue, and a stupid design lead overturning a bolt. This was repaired with carbon fiber, increasing the weight and making the intake. Eventually the intake was replaced with one manufactured with Nylon PA12 using Selective Laser Sintering (SLS). This intake has had no issues up until this point. Although Nylon has a slightly lower tensile strength (48 - 50 Mpa), the PF23 intake has been tweaked and validated up to a 0 psi vacuum load to have a safety factor of over 2 using nylon as a material in FEA.</p><p>The longer a resin intake sits, the more UV light it absorbs causing it to grow more brittle. PF18 and PF19 all have significant damage because of longterm exposure in the plenum and runner sections. This had to be repaired with RTB or DP-460. Nylon is much more durable than resin. For example, grab the PF22 spare diffuser from G006 and try hitting it on the table in the shop. I guarantee nothing will happen because I've tried this myself. Compare this to 2 years ago where a dropped a resin-printed intake runner base (used for testing different runner lengths) on the tape from about a 12 inches. It broke into two pieces. The resin used for PF?? - PF20 has a higher density than Nylon. This differences means that a resin printed PF23 intake will weight around half a pound more than a Nylon PA 12 one. If we did go with Resin for PF23 it would have to be wrapped in carbon fiber using the wet layup technique, further increasing weight. You can also compare the weight of the spare nylon plenum in Klondike with the weight one the resin one wrapped in carbon fiber. Because of these reasons and examples, the switch away from SLA resin should be obvious. </p><hr/><p><strong>COST AND MANUFACTURING BREAKDOWN</strong></p><p>The intake will be manufactured in the two pieces show below. The plenum will be outsourced to a larger company where the overall cost will be less. The small diffuser section will be made with Xometry, as they are very inexpensive at that size. For comparison, Realize quotes ~800 dollars for the PF20 diffuser, where Xometry quotes ~200 dollars. The size of the plenum section can be made smaller with moving the flange down, decreasing the cost of the plenum, but this will increase vibration of the throttle body, leading to fatigue as the highest intake tab are the ones on the flange. FEA validates that the intertial and pressure stress the intake sees is above the stress value at 1,000,000 cycles using the s-n graph below. However the data spread is large, so we want to avoid this at all costs. PF20 was a much taller intake, and the expensive of the rear wing, so a tab could be put to that chassis right on the throttle body. We do not have that option since the thottle body sits just above of the headrest. Thus, we want the tabs and the diving flange as high as possible for structural reasons.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083327.png" data-image-src="attachments/237083294/237083327.png" data-unresolved-comment-count="0" data-linked-resource-id="237083327" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-10-20.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" draggable="false" height="400" src="https://www.emerald.com/insight/proxy/img?link=resource/id/urn:emeraldgroup.com:asset:id:article:10_1108_RPJ-06-2021-0142/urn:emeraldgroup.com:asset:id:binary:RPJ-06-2021-014216.tif" data-image-src="https://www.emerald.com/insight/proxy/img?link=resource/id/urn:emeraldgroup.com:asset:id:article:10_1108_RPJ-06-2021-0142/urn:emeraldgroup.com:asset:id:binary:RPJ-06-2021-014216.tif"></span></p><hr/><p><strong>REALIZE QUOTE:</strong></p><p>Unfortunately Realize only provides a 2500 dollar discount if we print using resin. If we use sintering and nylon 12 we will only get a 25 percent discount from the total price. The two quotes are shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083324.png" data-image-src="attachments/237083294/237083324.png" data-unresolved-comment-count="0" data-linked-resource-id="237083324" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-3-34.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083325.png" data-image-src="attachments/237083294/237083325.png" data-unresolved-comment-count="0" data-linked-resource-id="237083325" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-4-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span></p><p><em>Use first image as cost reference, second is just SLA option for comparison</em></p><hr/><p><strong>XOMETRY QUOTE:</strong></p><p>If we print using Xometry, we would have to decrease the size of the plenum to have it fit in the powder bed printers that they use. Moving the flange down 1 inch, gives the following quote for the plenum section. Note that this would increase the moment arm on the intake as the throttle body weighs around 1 pound and sits on a skinny diffuser. This quote is also higher than the other options, making it not very good. Changing material to glass filled (what is selected on craft cloud secton) makes the quote over 4000 dollars.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083338.png" data-image-src="attachments/237083294/237083338.png" data-unresolved-comment-count="0" data-linked-resource-id="237083338" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-39-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span></p><hr/><p><strong>CRAFTCLOUD QUOTE:</strong></p><p>Finally we have CraftCloud, which is the least expensive, but the most suspect options. They do a general quote, and then contract that out to printing companies in China. Lead times say roughly a week, although last order we did through them took around 3 weeks. They have an option to do vapor smoothed glass-filled nylon which is even stronger than standard nylon PA12. A spare PF22 intake was made with them with very good results. See images below. Quote is shown below too.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083331.png" data-image-src="attachments/237083294/237083331.png" data-unresolved-comment-count="0" data-linked-resource-id="237083331" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-34-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083332.png" data-image-src="attachments/237083294/237083332.png" data-unresolved-comment-count="0" data-linked-resource-id="237083332" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-34-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083333.png" data-image-src="attachments/237083294/237083333.png" data-unresolved-comment-count="0" data-linked-resource-id="237083333" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-35-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/237083294/237083329.png" data-image-src="attachments/237083294/237083329.png" data-unresolved-comment-count="0" data-linked-resource-id="237083329" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-10-7_19-33-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="237083294" data-linked-resource-container-version="2" alt=""></span></p><hr/><p><br/></p><p><br/></p><p><br/></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083324.png">image2022-10-7_19-3-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083325.png">image2022-10-7_19-4-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083326.png">image2022-10-7_19-9-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083327.png">image2022-10-7_19-10-20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083329.png">image2022-10-7_19-33-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083331.png">image2022-10-7_19-34-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083332.png">image2022-10-7_19-34-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083333.png">image2022-10-7_19-35-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/237083294/237083338.png">image2022-10-7_19-39-31.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

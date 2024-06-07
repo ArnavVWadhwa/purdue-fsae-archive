@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Adams Car Batch Running Script Tutorial</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Lap-Time-Simulation-Home_129009845.html">Lap Time Simulation Home</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Adams Car Batch Running Script Tutorial
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Dec 01, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="AdamsCarBatchRunningScriptTutorial-Overview:">Overview:</h1><p>This script is used to generate the GG diagram that gets passed into the quasi-steady-state lap time simulation that lives in Matlab. It was originally designed to create entire GG diagram outright that has pure longitudinal, pure lateral, and combined lateral longitudinal accelerations at each speed. However, in the current simulation workflow, it is only used to provide pure lateral and longitudinal accelerations at each speed. Then an ellipse shape is assumed to determine the combined acceleration envelope. This is one of the major assumptions / weaknesses of the lap time sim in its current form.</p><h1 id="AdamsCarBatchRunningScriptTutorial-AdamsCarQuasi-SteadyStateSimulations:">Adams Car Quasi-Steady State Simulations:</h1><p>A quasi-steady sate simulation is looking for a steady state that the car can exist with certain parameters and targets. For example, a simulation may attempt to achieve a lateral acceleration of 1.7g at a speed of 45 mph. The speed will be set at 45 mph, and the lateral acceleration will be increased from 0 to 1.7, assuming that 1.7 is possible for the vehicle. If it is not, the simulation will terminate after a set number of iterations at a lower acceleration. This may be used to find the theoretical maximum acceleration of the vehicle, and is generally how I have used these simulations. There are two types of simulations required for the lap time simulation: lateral acceleration at a constant velocity and longitudinal acceleration a constant velocity. The longitudinal acceleration will include both an acceleration and a braking simulation.</p><p><br/></p><h1 id="AdamsCarBatchRunningScriptTutorial-RunningAdamsCarNon-interactively:">Running Adams Car Non-interactively:</h1><p>This script sends commands to the windows command prompt to run Adams Car separately from the normal GUI. So it is necessary to understand the Adams Car Simulation file structure and naming as well as how those commands work.</p><p>For every Adams Car simulation, there are two files required: a .acf and a .adm. The .adm has all the vehicle parameters. It points to a bunch of files that contain the information for all the various components of the vehicle such as a torque curve file, tire model files, shock and damper curve files, a chassis file with weight and cg, etc. The .acf file contains the commands in the Adams language to run the simulation. It points to the .adm file, the working directory, and the license file and then has the commands required to run the desired simulation.</p><p>So, for simulations of the same vehicle, the .adm file can be the same. Only the file name will change.</p><p>The .acf file, however, will need to be changed for each simulation to call out the desired speed, target acceleration, etc.</p><p><br/></p><h1 id="AdamsCarBatchRunningScriptTutorial-TheCodeItself">The Code Itself</h1><p>This script is in Python 3.X. I recommend using spyder. Not only is this a pretty decent ide, it also comes with all of the modules needed to run this script (which is nothing too fancy, just matplotlib, numpy, pandas, etc.)</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

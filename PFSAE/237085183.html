@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Build Revision | PF23</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297208.html">Design Archive | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297210.html">Design PF23 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="237085185.html">Firmware PF23 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Build Revision | PF23
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Skrzyszowski, Mateusz</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Jul 16, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This is a list of all the useless (to us) stuff in the base GPRP Build project that needs to be removed.</p><p><br/></p><p><br/></p><div class="table-wrap"><table class="fixed-table wrapped confluenceTable"><colgroup><col style="width: 126.0px;"/><col style="width: 169.0px;"/><col style="width: 391.0px;"/><col style="width: 116.0px;"/><col style="width: 377.0px;"/></colgroup><tbody><tr><th class="confluenceTh">Group</th><th class="confluenceTh">Item</th><th class="confluenceTh"><p>Notes</p></th><th colspan="1" class="confluenceTh">Progress</th><th colspan="1" class="confluenceTh">What needed to be edited for removal</th></tr><tr><td colspan="1" class="confluenceTd">ADR</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">We don't use an ADR</td><td class="highlight-#abf5d1 confluenceTd" title="Background color : Light green 100%" colspan="1" data-highlight-colour="#abf5d1">Removed</td><td colspan="1" class="confluenceTd">ECU.Transmit.Transmit ADR</td></tr><tr><td colspan="1" class="confluenceTd">Airbox</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>We don't have an Airbox.</p></div></td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad">A/C remaining</td><td colspan="1" class="confluenceTd">Ambient.Update, ECU.Transmit.Transmit 100Hz, ECU.Transmit.Transmit 10Hz, Engine.Load.Update, Fuel.Injector.Update, Inlet.Air.Temperature.SensorValue, Inlet.Manifold.Pressure.Estimate.Main.Read Value, Inlet.Manifold.Pressure.Estimate.Update, Intercooler.Spray.Enable.Ambient Temperature.Update, Intercooler.Temperature.Update, <strong>Engine.Efficiency.Mode</strong></td></tr><tr><td colspan="1" class="confluenceTd">Air Conditioner</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">Obviously no AC on the car</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd">Coolant.Fan 1.Air Conditioner Clutch State, Coolant.Fan 2.Air Conditioner Clutch State, Idle.Aim.Update, Idle.Mass Flow.Feed Forward.Update</td></tr><tr><td colspan="1" class="confluenceTd">Alternator</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>We don't need any of this</p></div></td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Bosch ABS M4</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">We don't use a Bosch ABS M4</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Brake</td><td colspan="1" class="confluenceTd">Vacuum</td><td colspan="1" class="confluenceTd">I think we can remove Vacuum stuff, but not sure</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Differential</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">No diff sensors/pump</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Exhaust</td><td colspan="1" class="confluenceTd">Pressure, Camshaft</td><td colspan="1" class="confluenceTd">Don't need / measure these</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Fuel</td><td colspan="1" class="confluenceTd">Remove all cylinders and injectors that aren't used</td><td colspan="1" class="confluenceTd">These make the fuel group pretty cluttered</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Inlet</td><td colspan="1" class="confluenceTd">Camshaft</td><td colspan="1" class="confluenceTd">Values are not used</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Knock</td><td colspan="1" class="confluenceTd">Unused Cylinders</td><td colspan="1" class="confluenceTd">Removes clutter</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Nitrous</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">No Nitrous system on the car</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Race Time</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">Not sure what it does, but we are keeping it for now</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">RS232</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd"><p>Don't use this system</p></td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">SLM</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">All of our shift light control is done through the dash</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Steering</td><td colspan="1" class="confluenceTd">Pressure</td><td colspan="1" class="confluenceTd">Don't measure this</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Tachometer</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">Don't have one on the car</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Transmission</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">No transmission sensors</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">VCS</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">Not used currently, we can add it back pretty easily later</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td colspan="1" class="confluenceTd">Warning</td><td colspan="1" class="confluenceTd">All</td><td colspan="1" class="confluenceTd">Can get rid of a lot of the diagnostic stuff that won't be used</td><td class="highlight-#ffbdad confluenceTd" title="Background color : Light red 100%" colspan="1" data-highlight-colour="#ffbdad"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr></tbody></table></div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

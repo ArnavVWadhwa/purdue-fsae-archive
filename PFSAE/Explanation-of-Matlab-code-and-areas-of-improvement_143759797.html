@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Explanation of Matlab code and areas of improvement</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="The-Archives_130163697.html">The Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Senior-Design_143756742.html">Senior Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="143759772.html">Monocoque/Structural Carbon  - 2020</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Explanation of Matlab code and areas of improvement
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (mkotur)</span>, last modified on Apr 19, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>MATLAB codes have been written that do these calculations for you, but it is important to understand these equations, where they come from, and why we use them so that you can correctly change the code to calculate values for new layup schedules.</p><p> </p><p>Here are the most important parts of the MATLAB code that you should change depending on your layup schedule and the different carbon you use.</p><p>To begin with you need to select how many different types of carbon you have material properties for and that you are using for your layup, Figure 1 shows where to input the number of different carbon materials:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="65" src="attachments/143759797/143759839.png" data-image-src="attachments/143759797/143759839.png" data-unresolved-comment-count="0" data-linked-resource-id="143759839" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-18_16-37-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759797" data-linked-resource-container-version="4" alt=""></span></p><p align="center">Figure 1. Setting the number of different carbons used</p><p>The next step is to setup the material properties for each of the carbons you are using as follows. Make sure that all the units correspond to what is commented out on the top of Figure 2. Furthermore, do not forget to increment the number given to the ply_properties by 1 for each additional carbon used. You want to do the same thing with the core material you are using, even though the code only uses the thickness given to the core for now (future members may be able to improve the code to add all the properties of the core).</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="250" src="attachments/143759797/143759840.png" data-image-src="attachments/143759797/143759840.png" data-unresolved-comment-count="0" data-linked-resource-id="143759840" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-18_16-38-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759797" data-linked-resource-container-version="4" alt=""></span></p><p align="center">Figure 2. Adding carbon and core material properties</p><p>Finally, you need to set your layup schedule up by adding the number of plies in each schedule, the orientation of each ply, and the carbon used for each ply as follows:</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" draggable="false" height="72" src="attachments/143759797/143759842.png" data-image-src="attachments/143759797/143759842.png" data-unresolved-comment-count="0" data-linked-resource-id="143759842" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-18_16-40-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759797" data-linked-resource-container-version="4" alt=""></span></p><p align="center">Figure 3. Layup Schedule</p><p>In Figure 3, the theta vector represents the orientation of each ply and the ply_order vector represents the number of plies (in this case there are 4) and the carbon you want to use (from Figure 2, the “2” represents the unidirectional carbon). Once you have finished setting up your layup schedule you can run the script and it will output the important material properties discussed above. (NOTE: we were unable to find a reliable method to find the ply failure force and we ended up not using MATLAB to find the failure force. However, future members may try to find a way to integrate the failure force in the code).</p><p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail image-center" draggable="false" height="74" src="attachments/143759797/143759843.png" data-image-src="attachments/143759797/143759843.png" data-unresolved-comment-count="0" data-linked-resource-id="143759843" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-18_16-41-41.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143759797" data-linked-resource-container-version="4" alt=""></span></p><p align="center">Figure 4. Output of MATLAB code</p><p>Figure 4 shows the outputted results of the MATLAB code for the unidirectional layup used as an example above ([0UD 45UD 90UD -45UD]) for a panel with a half inch core.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759797/143759839.png">image2020-4-18_16-37-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759797/143759840.png">image2020-4-18_16-38-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759797/143759842.png">image2020-4-18_16-40-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143759797/143759843.png">image2020-4-18_16-41-41.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:34</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Steering Forces Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009848.html">Kinematics and Vehicle Dynamics (Tools)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Steering Forces Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified on Jan 22, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This spreadsheet uses adams car results to calculate steering wheel hand forces. It also does the geometry required to determine a minimum turn radius target, and to generate per hand steering force targets from a torque input (currently an NHTSA study that provides data on human steering effort but in terms of torque.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137593436/steering_force_cases_2020_v2.xlsx?version=1&amp;modificationDate=1579654247000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/137593436/steering_force_cases_2020_v2.xlsx?version=1&amp;modificationDate=1579654247000&amp;api=v2" data-linked-resource-id="139460760" data-linked-resource-type="attachment" data-linked-resource-container-id="137593436" data-linked-resource-default-alias="steering_force_cases_2020_v2.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="steering_force_cases_2020_v2.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/139460760/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137593436" data-linked-resource-id="139460760" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h1 id="SteeringForcesCalculator-TurnRadiusTargets">Turn Radius Targets</h1><p><br/></p><p>Geometry used to calculate turn radius targets is shown in spreadsheet. A description of the autocross layout regulations from the 2019 rules is also provided. It should be checked that this does no change with each new rule set.</p><p>The diametric space is calculated. This means that for a hairpin, if you start all the way over to the side at the start, the diametric space is the amount of room that would be left between the car and the edge of the corner on exit (assuming minimum turn radius is achieved). See the below diagram and spreadsheet calculations for how this is determined.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/137593436/139460982.png" data-image-src="attachments/137593436/139460982.png" data-unresolved-comment-count="0" data-linked-resource-id="139460982" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-22_23-21-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593436" data-linked-resource-container-version="4" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/137593436/139460797.png" data-image-src="attachments/137593436/139460797.png" data-unresolved-comment-count="0" data-linked-resource-id="139460797" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-21_23-31-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593436" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p><h1 id="SteeringForcesCalculator-SteeringHandForceTargets">Steering Hand Force Targets</h1><p>A peak torque and sustained torque target is pulled from <em>An Assessment of Human Driver Steering Capability. </em>The steering wheel diameter of the vehicle used in that study is known, so it is used to convert to hand force targets. </p><p>The peak torque is the one time maneuver capability. The sustained torque is what a driver can be expected to maintain over multiple laps. Obviously, driver feedback may be used to adjust these targets.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593436/139460983.png" data-image-src="attachments/137593436/139460983.png" data-unresolved-comment-count="0" data-linked-resource-id="139460983" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-22_23-22-17.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593436" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p><h1 id="SteeringForcesCalculator-SteeringHandForceOutputs">Steering Hand Force Outputs</h1><p>Lateral steady state simulations can be run. Then pull results from testrig→sse_steering_force. Plot TX and TZ. Take the root sum of squares of the value TX and TZ (torque in x and z axis, torque in y axis should be zero). Then add document lateral acceleration and torque. Spreadsheet will calculate hand force and indicate what percentage of targets it is. It will also indicate what percentage of maximum lateral acceleration maximum steering force occurs at. This is useful to determine whether the driver will receive a useful warning before sliding.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593436/139460984.png" data-image-src="attachments/137593436/139460984.png" data-unresolved-comment-count="0" data-linked-resource-id="139460984" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-22_23-22-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593436" data-linked-resource-container-version="4" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593436/139460981.png" data-image-src="attachments/137593436/139460981.png" data-unresolved-comment-count="0" data-linked-resource-id="139460981" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-22_23-21-18.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="137593436" data-linked-resource-container-version="4" alt=""></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460760.xlsx">steering_force_cases_2020_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460797.png">image2020-1-21_23-31-58.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460981.png">image2020-1-22_23-21-18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460982.png">image2020-1-22_23-21-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460983.png">image2020-1-22_23-22-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593436/139460984.png">image2020-1-22_23-22-55.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

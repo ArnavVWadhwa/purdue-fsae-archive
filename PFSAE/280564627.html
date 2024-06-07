@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : How to Make a Connector | RapidHarness</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="246343627.html">Harness | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262834284.html">Harness: RapidHarness</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : How to Make a Connector | RapidHarness
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Paradise, Hunter</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="HowtoMakeaConnector|RapidHarness-Background:">Background:</h3><p>Most connectors have already been created in RapidHarness however, it is possible that more will need to be created as new components are used and harness design evolves. This is not difficult to do, but there is a procedure to do so to ensure consistency and that the appropriate information is included. This tutorial also applies to many other components such as heatshrink, ring terminals, etc.</p><p><br/></p><h3 id="HowtoMakeaConnector|RapidHarness-Basics:">Basics:</h3><p><strong>Step 1: </strong>Locate Connector</p><p>For this example we will be using a 4-pin DTM plug found here: <a class="external-link" href="https://www.milspecwiring.com/DTM-4SK_p_64.html" rel="nofollow">https://www.milspecwiring.com/DTM-4SK_p_64.html</a>.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/280564627/280564636.png" data-image-src="attachments/280564627/280564636.png" data-unresolved-comment-count="0" data-linked-resource-id="280564636" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-1-19.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><strong>Step 2: </strong>Fill In Part Number, Manufacturer, and Description in RapidHarness</p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="107" src="attachments/280564627/280564638.png" data-image-src="attachments/280564627/280564638.png" data-unresolved-comment-count="0" data-linked-resource-id="280564638" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-2-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></strong></p><p><br/></p><p><strong>Step 3: </strong>Add Component Link</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="63" src="attachments/280564627/280564640.png" data-image-src="attachments/280564627/280564640.png" data-unresolved-comment-count="0" data-linked-resource-id="280564640" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-3-13.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564627/280564641.png" data-image-src="attachments/280564627/280564641.png" data-unresolved-comment-count="0" data-linked-resource-id="280564641" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-3-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><strong>Step 4: </strong>Declare Connector Cavities</p><p>For most connectors this is as simple as indicating how many pins there are 1-X. For more complex connectors it may be necessary to utilize more complex identifiers.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Typing 1-X in the cavities box will automatically create cavities 1, 2, 3... X for you.</p></div></div><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="136" src="attachments/280564627/280564646.png" data-image-src="attachments/280564627/280564646.png" data-unresolved-comment-count="0" data-linked-resource-id="280564646" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-9-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><br/></p><p><strong>Step 5: </strong>Locate Suitable Connector Image</p><p>This image should represent the connector variation being used. For example, do not put an image of a non lipped connector if the part name and link both lead to a lipped connector. If this does not create confusion for you, it will confuse someone later down the line.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/280564627/280564643.png" data-image-src="attachments/280564627/280564643.png" data-unresolved-comment-count="0" data-linked-resource-id="280564643" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-7-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><strong>Step 6: </strong>Remove Image Background</p><p>This will allow the connector image to be overlaid with the actual connection in RapidHarness which makes for easier identification of connectors and connections.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564627/280564647.png" data-image-src="attachments/280564627/280564647.png" data-unresolved-comment-count="0" data-linked-resource-id="280564647" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-11-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><strong>Step 7: </strong>Add Image to RapidHarness</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564627/280564652.png" data-image-src="attachments/280564627/280564652.png" data-unresolved-comment-count="0" data-linked-resource-id="280564652" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-12-40.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><br/></p><p><strong>Step 8: </strong>Create Version</p><p>Versioning allows the connector to be used by other people</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="172" src="attachments/280564627/280564654.png" data-image-src="attachments/280564627/280564654.png" data-unresolved-comment-count="0" data-linked-resource-id="280564654" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-13-13.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280564627/280564657.png" data-image-src="attachments/280564627/280564657.png" data-unresolved-comment-count="0" data-linked-resource-id="280564657" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-12-6_15-13-31.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280564627" data-linked-resource-container-version="5" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564636.png">image-2023-12-6_15-1-19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564638.png">image-2023-12-6_15-2-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564640.png">image-2023-12-6_15-3-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564641.png">image-2023-12-6_15-3-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564643.png">image-2023-12-6_15-7-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564646.png">image-2023-12-6_15-9-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564647.png">image-2023-12-6_15-11-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564652.png">image-2023-12-6_15-12-40.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564654.png">image-2023-12-6_15-13-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280564627/280564657.png">image-2023-12-6_15-13-31.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

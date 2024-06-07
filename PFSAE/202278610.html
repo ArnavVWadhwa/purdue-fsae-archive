@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : MAP/MAT | Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297203.html">Design Resources | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297642.html">Parts Documentation | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297470.html">Sensors | Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : MAP/MAT | Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (jpeerbol)</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Aug 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/202278610/RG_SPEC-0013%20Air%20Pressure%20Temp%20Sensor.pdf?version=2&amp;modificationDate=1691433672000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/202278610/RG_SPEC-0013%20Air%20Pressure%20Temp%20Sensor.pdf?version=2&amp;modificationDate=1691433672000&amp;api=v2" data-linked-resource-id="202278974" data-linked-resource-type="attachment" data-linked-resource-container-id="202278610" data-linked-resource-default-alias="RG_SPEC-0013 Air Pressure Temp Sensor.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="2" data-can-edit="true" aria-label="RG_SPEC-0013 Air Pressure Temp Sensor.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202278974/2" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="202278610" data-linked-resource-id="202278974" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><strong>Notes:</strong></p><ul><li>The spec sheet that Milspecwiring.com (<a class="external-link" href="mailto:sales@milspecwiring.com" rel="nofollow">sales@milspecwiring.com</a>) provided upon request is for a Race Grade sensor (<span>RG_SPEC-0013). (see document attached) This is the same document that was in our files but was confusing because there is no Bosch part number on the document and the last sensor we received did not have RaceGrade </span>packaging, which caused us to not trust the spec sheet.</li><li>The mechanical engineers on the team had difficulty understanding how you get a temperature from the ohms on the spec sheet because Motec reads a voltage. (it's not V = I x R) The temperature sensor requires a pull-up resistor (which is built into the Motec analog temperature sensor input pins).</li><li>Here's a helpful spreadsheet from some random forum, the original spreadsheet link can be found at the bottom of the page. <a class="external-link" href="https://www.syvecs.com/forum/viewtopic.php?t=495" rel="nofollow" style="letter-spacing: 0.0px;">https://www.syvecs.com/forum/viewtopic.php?t=495</a></li><li>Attached is the spreadsheet with values from the race grade spec sheet (<span style="letter-spacing: 0.0px;">RG_SPEC-0013).</span></li></ul><p>          <span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/202278610/SensorCAL%20racegrade%20map%20spec.xlsx?version=1&amp;modificationDate=1641877972000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/202278610/SensorCAL%20racegrade%20map%20spec.xlsx?version=1&amp;modificationDate=1641877972000&amp;api=v2" data-linked-resource-id="202278975" data-linked-resource-type="attachment" data-linked-resource-container-id="202278610" data-linked-resource-default-alias="SensorCAL racegrade map spec.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="SensorCAL racegrade map spec.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202278975/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="202278610" data-linked-resource-id="202278975" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><ul><li>The Bosch 0 261 230 217 and Bosch 0 261 230 099.0.1 sensors are interchangeable and have the same calibration. The Bosch 0 261 230 099.0.1 sensor is an already calibrated sensor with values found in Motec.</li><li><u><em>We have decided to run the temperature and pressure calibrations for the Bosch 0 261 230 099.0.1 sensor. The temperature sensor calibrations between the race grade spec sheet and Bosch 0 261 230 099.0.1 Motec calibration, however, the Bosch 0 261 230 099.0.1 Motec calibration has more points and the difference in voltage is very small. We are going with the Motec calibration because we trust that more than a manually calculated sensor (even though the calculations should be correct), there are more data points, and you cannot accidentally change a table value if you run a selected Motec calibration.</em></u></li></ul><p>          <u><em><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" width="409" src="attachments/202278610/202278618.png" data-image-src="attachments/202278610/202278618.png" data-unresolved-comment-count="0" data-linked-resource-id="202278618" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="motec manifold sensors.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="202278610" data-linked-resource-container-version="17" alt=""></span></em></u></p><ul><li><u><em>The pressure calibrations are exactly the same between the given race grade spec sheet and Bosch 0 261 230 099.0.1, we are selecting the Bosch 0 261 230 099.0.1 calibration for continuity. Make sure to set your reference voltage for the correct 5V sensor pin.</em></u></li></ul><p>          <span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/202278610/compare%20temp%20cals.xlsx?version=1&amp;modificationDate=1641878649000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/202278610/compare%20temp%20cals.xlsx?version=1&amp;modificationDate=1641878649000&amp;api=v2" data-linked-resource-id="202278978" data-linked-resource-type="attachment" data-linked-resource-container-id="202278610" data-linked-resource-default-alias="compare temp cals.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="compare temp cals.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202278978/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="202278610" data-linked-resource-id="202278978" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><p><strong>Website:</strong></p><p><span><a class="external-link" href="https://www.milspecwiring.com/1-BAR-MAPMAT-SENSOR_p_2636.html" rel="nofollow">https://www.milspecwiring.com/1-BAR-MAPMAT-SENSOR_p_2636.html</a></span></p><p><br/></p><p><strong>STP File Download:</strong></p><p><strong><a href="attachments/202278610/202278617.stp" data-linked-resource-id="202278617" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="0261230333_CUSTOMER.stp" data-linked-resource-content-type="application/octet-stream" data-linked-resource-container-id="202278610" data-linked-resource-container-version="17">0261230333_CUSTOMER.stp</a></strong></p><p><br/></p><p><strong>Similar Alternatives:</strong></p><p><a class="external-link" href="https://www.bosch-motorsport.com/content/downloads/Raceparts/en-GB/54264971144257547.html" rel="nofollow">https://www.bosch-motorsport.com/content/downloads/Raceparts/en-GB/54264971144257547.html</a></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/202278610/PST_3.pdf?version=1&amp;modificationDate=1641833306000&amp;api=v2" data-nice-type="PDF Document" data-file-src="/download/attachments/202278610/PST_3.pdf?version=1&amp;modificationDate=1641833306000&amp;api=v2" data-linked-resource-id="202278616" data-linked-resource-type="attachment" data-linked-resource-container-id="202278610" data-linked-resource-default-alias="PST_3.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PST_3.pdf" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/202278616/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="202278610" data-linked-resource-id="202278616" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278616.pdf">PST_3.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278617.stp">0261230333_CUSTOMER.stp</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278618.png">motec manifold sensors.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/267662020.pdf">RG_SPEC-0013 Air Pressure Temp Sensor.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278975.xlsx">SensorCAL racegrade map spec.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278978.xlsx">compare temp cals.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/202278610/202278974.pdf">RG_SPEC-0013 Air Pressure Temp Sensor.pdf</a> (application/pdf)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

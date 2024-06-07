@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : ANSYS Scholar Tmux Submit Script</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="141728421.html">Analysis Resources | Structures</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ANSYS-Scholar-Cluster-Usage_176128515.html">ANSYS Scholar Cluster Usage</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : ANSYS Scholar Tmux Submit Script
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (dewey2)</span>, last modified on Dec 07, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This script has a few more features than the one on the main page, but has a little more of a learning curve to its usability. This one let's you monitor job progress more easily so you don't need to constantly check the .out files manually to determine whether something is going to solve or not.</p><p><strong>This page is long because I'm trying to explain it really well but in reality this script is not that much more complicated at all. Its just understanding how to use Tmux if you've never used it before</strong><strong>. I think this script is the only one worth using because the auto-viewing of the solution output is super useful.</strong></p><p>When submitting a job, this script will:</p><ul style="list-style-type: square;"><li>Automatically create a console window that will display<ul style="list-style-type: square;"><li>2 windows for solution output to monitor 2 jobs</li><li>An squeue window</li><li>A free console window to submit jobs (at least that's what I really just use it for)</li></ul></li></ul><p>This is an example of what the console will look like after submitting a job (to JOBPANE=0):</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/244778545/244778921.png" data-image-src="attachments/244778545/244778921.png" data-unresolved-comment-count="0" data-linked-resource-id="244778921" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-2_9-11-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244778545" data-linked-resource-container-version="9" alt=""></span></p><p>The submission process in the script it set up a bit differently for more granularity in reserving scholar resources and uses Tmux to provide the above functionality</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/244778545/ANSYS_SUBMIT.sh?version=1&amp;modificationDate=1669832476000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/244778545/ANSYS_SUBMIT.sh?version=1&amp;modificationDate=1669832476000&amp;api=v2" data-linked-resource-id="244778549" data-linked-resource-type="attachment" data-linked-resource-container-id="244778545" data-linked-resource-default-alias="ANSYS_SUBMIT.sh" data-mime-type="application/x-sh" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="ANSYS_SUBMIT.sh" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-small-file.png" height="150" alt="" draggable="false"/><span class="title">ANSYS_SUBMIT.sh</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="244778545" data-linked-resource-id="244778549" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>The only relevant portions in the script are those shown in the screenshot below:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/244778545/244778550.png" data-image-src="attachments/244778545/244778550.png" data-unresolved-comment-count="0" data-linked-resource-id="244778550" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-11-30_13-22-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244778545" data-linked-resource-container-version="9" alt=""></span></p><p><br/></p><p>Breakdown of each line:</p><p><strong>TMUX_OUTPUT</strong></p><ul style="list-style-type: square;"><li>Determines whether or not the automated console window is created or not</li><li>1 = on, 0 = off (which effectively serves as the basic script)</li></ul><p><strong>JOBPANE</strong></p><ul style="list-style-type: square;"><li>Determines which console window will show the .out file for the submitted job. 0 = left, 1 = right</li><li>If you submit a second job to the same window, the previous .out that was being watched will be replaced</li></ul><p><strong>Cluster Configuration Block</strong></p><ul style="list-style-type: square;"><li>Reserving resources is different from the old script to give a bit more flexibility</li><li>There may be issues when trying to reserve long with this method so that may need re-done</li><li>For typical scholar reservations on subcluster A all you need to change is <strong>NODES</strong><ul style="list-style-type: square;"><li>This script does not reserve based on cores, only nodes</li></ul></li></ul><p><br/></p><h1 id="ANSYSScholarTmuxSubmitScript-UsingTmux">Using Tmux</h1><p>Tmux relies heavily on hotkeys to really do anything with it, here's some relevant commands that are used often</p><p><strong>Switching between panes</strong></p><ul><li>Each of the 4 console windows are called <strong>panes</strong></li><li>To switch between panes: ctrl + b then press o</li><li>The active pane will have a <strong>green border</strong> around it</li></ul><p><strong>How to check if a Tmux session is active</strong></p><ul style="list-style-type: square;"><li>The 4 pane window is a Tmux session called ANSYS</li><li>If you close out of the Tmux console window, the session is still active unless you relog into scholar and it puts you on a different frontend node</li><li>If there is no active session, then a session will be created automatically when you run the ANSYS_SUBMIT script (assuming TMUX_OUTPUT = 1)</li><li>To check for an active session: tmux ls</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="171" src="attachments/244778545/244778922.png" data-image-src="attachments/244778545/244778922.png" data-unresolved-comment-count="0" data-linked-resource-id="244778922" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-2_9-15-42.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244778545" data-linked-resource-container-version="9" alt=""></span></li></ul><p><strong>How to open up the ANSYS Tmux session</strong></p><ul style="list-style-type: square;"><li>If you've closed out of the Tmux session and want to re-open it: &quot;tmux attach -t ANSYS&quot;</li><li>Alternatively, &quot;tmux attach&quot; will automatically grab the last used session so if this is the only thing using Tmux then you can do that<ul style="list-style-type: square;"><li>This is the one I use</li></ul></li><li>This will only work if the ANSYS Tmux session exists (checking via tmux ls)</li></ul><p><strong>How to get out of a solution output view</strong></p><ul><li>Not a Tmux thing but rather a console hotkey</li><li>Press ctrl + c</li><li>Then you can use that as a normal console window, or do another tail -f command to change what file you're looking at</li></ul><p><br/></p><p><strong>A semi-comprehensive list of Tmux hotkeys is available here</strong>: <a class="external-link" href="https://tmuxcheatsheet.com/" rel="nofollow">https://tmuxcheatsheet.com/</a></p><p><strong>Google is your friend, that's how I figured out 90% of the Tmux additions to the script</strong></p><h1 id="ANSYSScholarTmuxSubmitScript-BriefExplanationoftheAddedTmuxCode">Brief Explanation of the Added Tmux Code</h1><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/244778545/246342787.png" data-image-src="attachments/244778545/246342787.png" data-unresolved-comment-count="0" data-linked-resource-id="246342787" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-7_10-0-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="244778545" data-linked-resource-container-version="9" alt=""></span></p><ul style="list-style-type: square;"><li>Line 60<ul style="list-style-type: square;"><li>Checks for active Tmux session called ANSYS, returns zero if it already exists</li></ul></li><li>Line 62<ul style="list-style-type: square;"><li>Takes output from line 60 to determine if a new session needs to be made</li></ul></li><li>Lines 64-69<ul style="list-style-type: square;"><li>Makes new session named ANSYS</li><li>Sets up the 2x2 console window using Tmux commands</li><li>Sends the watch argument for squeue for panel 2 (bottom left)</li></ul></li><li>Lines 73-75<ul style="list-style-type: square;"><li>In order to watch an output file, it must exist first</li><li>The if statement checks for it an output file already exists</li><li>If it does not exist, one is created in the solution/solving folder where the input file is located</li></ul></li><li>Lines 78-79<ul style="list-style-type: square;"><li>78 - In the pane where solution monitoring is going to occur, send a Ctrl+C to get out of any previous tail command</li><li>79 - Tail the output file to be watched in the requested pane (jobpane)</li></ul></li><li>Line 80<ul style="list-style-type: square;"><li>Set active pane to bottom right for user to send commands</li></ul></li><li>Line 83<ul style="list-style-type: square;"><li>Finally attach ANSYS session to console window for user to view the Tmux session</li></ul></li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/244778549.sh">ANSYS_SUBMIT.sh</a> (application/x-sh)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/244778550.png">image-2022-11-30_13-22-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/244778921.png">image-2022-12-2_9-11-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/244778922.png">image-2022-12-2_9-15-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/246342785.png">image-2022-12-7_9-59-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/246342786.png">image-2022-12-7_9-59-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/244778545/246342787.png">image-2022-12-7_10-0-15.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

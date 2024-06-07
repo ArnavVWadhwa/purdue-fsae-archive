@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Solvers and Turbulence Thoughts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Solvers and Turbulence Thoughts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on May 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>Solvers and turbulence </span><span>are another area where we really should have a better understanding, but we just don’t. </span><span> </span></p><p><span> </span></p><p><span>On the solver front, there’s very little you need to be changing. There is a lot of black magic math that goes on, so unless you know what you are doing, I recommend leaving it alone. One parameter we do change quite often, though, is relaxation factors. They are mathematically simple and you kind of know (not really) what you are getting into. In the current iteration of fsaeSTAR (V6.4), I've managed to use relaxation factors along with upwind scheme options to accelerate convergence and improve solution accuracy.</span></p><p><br/></p><p><span>Coupled solver is quite nice in my experience from a speed perspective. Due to its implicit pseudo time stepping nature, per iteration cost is higher, but it converges faster overall. However, with polyhedral mesh, memory becomes an issue. Implicit solvers are incredibly expansive due to the need for root finding. We simply do not have enough memory (even on scholar) to be able to use coupled solver consistently. Couple solver also tends to be less stable than segregated solver, so converging could be an issue if you decide to look into it.</span></p><p><span> </span></p><p><span>There is a LOT </span><span>of interesting things you can play around with when it comes to turbulence models, and things tend to boil back down to Wall-Y+ treatments again. </span><span>Right now we’re not at a point where we can change parameters within individual turbulence model, but we’re at least at a point where we can qualitatively pick between turbulence models. The three we’ve looked at are realizable k-e, k-w </span><span>sst</span><span>, and </span><span>spalart-allmaras</span><span>.</span><span> </span></p><p><span> </span></p><p><strong><span>Realizable k-e</span></strong><span> is fantastic if you’re looking for a very reliable, and rock-solid turbulence model that doesn’t need any </span><span>fancy wall treatments to be effective. You can throw a bad mesh at it, and as long as your Wall Y+ is above 30, you’ll get very good convergence, and very reliable results (from a numerical standpoint, not from an accuracy standpoint). There is a </span><span>near-wall treatment available as well in STAR, but from </span><span>what I’ve heard it’s not really a strength of the model, and if you’re resolving to near-wall anyway you might as well </span><span>play around with SST or S-A. </span><span>K-e will generally give you much better (higher downforce) results than K-W or S-A, which is another reason why I don’t like using it, since conservatism isn’t a bad thing (we overpredict downforce and drag).</span></p><p><span> </span></p><p><strong><span>K-W SST</span></strong><span> can</span><span> overpredicts stall quite drastically (something we’ve verified with on-track testing), but the issue can easily be solved with a higher a1 value, which is good for high adverse pressure gradients. Sure, skin friction drag might not be correctly predicted for areas with low adverse pressure gradient, but shear stress plays such a small part in terms of overall drag, I don't really care. With a higher a1 values, SST shows much better separation characteristic correlation with wind tunnel. </span><span>From a stability standpoint, I’ve it suffers </span><span>y if you have significant amounts of separated flows, but that’s true for S-A as well. </span><span> </span></p><p><span> </span></p><p><strong><span>Spallart-Almaras</span></strong><span> used to be the go to go-to for Formula. Like K-W, it does seem like you need to have a low Wall Y+, otherwise stability can get dicey.</span><span> The other nice part is it is the </span><span>defacto</span><span> turbulence model to use for DES simulations, so jumping from an S-A steady state simulation into a transient DES simulation wouldn’t require any major changes to your turbulence modeling approach. However, the killer is it's inferiority in separation characteristics correlation.</span></p><p><span> </span></p><p><span>All turbulence models have their strengths and weaknesses, and even though SST seems like a good choice right now, </span><span>validating the CFD environment with more robust experimental data would go a long way towards picking the correct turbulence model. </span><span> </span></p><p><span> </span></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

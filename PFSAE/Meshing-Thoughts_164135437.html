@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Meshing Thoughts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Meshing Thoughts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on May 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span>Meshing is difficult, and there’s a lot to dive into as far as the art of it is concerned. Here I want to talk about some high-level things we’ve come across over the years. </span><span> </span></p><p><span> </span></p><p><span>There are three major geometries you can use to build a mesh (for the most part). There’s the tetrahedral mesh, the </span><span>polyhedral mesh, and the trimmed cell mesh. We went from poly mesh to trimmed cell and now back to poly mesh.</span></p><p><span> </span></p><p><span>I’ve never heard of anyone advocate in favor of tetrahedral meshes. They are slightly more memory efficient </span><span>than polyhedral since they have fewer faces, but you end up needed many more tetrahedral cells to build a mesh as compared to a comparable polyhedral mesh.</span></p><p><span> </span></p><p><span>Polyhedral cells are not a bad idea</span><span>, but can be very expensive. In my experience, a large polyhedral mesh can be very memory intensive, which made it more or less impossible for us to generate 50+ </span><span>mn</span><span> cell polyhedral meshes until we had scholar access. </span><span>We initially moved away from polyhedral cells before STAR incorporated parallel </span><span>meshing for its polyhedral </span><span>mesher</span><span>, so a few things may have also changed between then and now. There was also an element of other people telling me (Raunaq) to switch to trimmed cell that contributed to our move away from polyhedral meshes. Now we are back with polys due to reduced diffusion error and better correlation with wind tunnel in general. Even with scholar, I (Chenkai) don't want to go above 58 mn cells by too much since that's where the sim execution time just goes out of control very quicker (growth of execution time is nonlinear with number of cells), where as trimmed cell can go 70+ mn easy.</span></p><p><span> </span></p><p><span>In theory, trimmed cell meshes are very good when </span><span>most of your flow is in the direction of the mesh (like for a truck…), but not too great when this isn’t the case (like for a racecar) due to high diffusion errors. Trimmed cell is by far the most efficient because it only has 6 faces to flux into and out of.</span></p><p><span> </span></p><p><span>Another thing to consider is the “base size” parameter does not translate from one mesh to another in that meaningful of a way. The same base size will give you </span><span>quite different mesh sizing between the three mesh geometries, simply because the cell geometry is drastically different. </span><span> </span></p><p><span> </span></p><p><span>The bigger concern and limitation with our mesh practices is with our surface meshing strategies, rather than our volume meshing strategies. </span><span> </span></p><p><span> </span></p><p><span>(Now would be a very good time to read up a little bit about Wall-Y+</span><span>). </span><span> </span></p><p><span>(What they don't tell you about wall y+ is that, to on the safe side, you need 3 cells with ideally volume growth rate of 1 in wall y+ of 5, in addition to the first cell less than 1 requirement. Why? Well this is a case of rather be safe than be sorry. I (Chenkai) know that Ansys fluent truncates the Taylor series early in the prism layers so that it is essentially making the assumption that the first cells have growth rate of 1 (essentially not changing). I am not sure if this is the case for STAR or not, I can't find any information on it.)</span></p><p><br/></p><p><span>Surface meshing is pretty hard, largely because I don’t think there’s anyone on the team right now that understands </span><em><span>how</span></em><span> to make a good surface mesh, or how everything ties in with Wall-Y+, or how wall functions work, or what the best way to resolve a boundary layer is. </span><span>I’ll rather talk about useful knobs you can use to tweak your surface mesh parameters, and let you figure out the best way to build a mesh, since I clearly don’t have the faintest idea how to build a good surface mesh. </span><span> </span></p><p><span> </span></p><p><strong><span>Number of prism layers</span></strong><span> is </span><span>an obvious one. This is a good way to control Wall-Y+ without messing too much with the distribution of prism layer cells. Generally you want to avoid having any Wall Y+ values between 5 and 30, but from personal experience this doesn’t seem to matter a whole lot for non-aero components. My strategy has been to keep prism layer count pretty low for non-aero components, and care more about </span><span>overall mesh count rather than Wall-Y+ on non-aero surfaces. Using the prism layer count, in conjunction with total prism layer thickness has been my go-to for this. It avoids complexity. That said, you definitely want to have a lot of prism layers for aero components. </span><span>There’s no </span><em><span>sensible</span></em><span> way to both have a low Wall-Y+ value, and a low prism layer count. </span><span> </span></p><p><span> </span></p><p><strong><span>Prism layer stretching</span></strong><span> </span><span>is very powerful. This is essentially the ratio of the thickness of one prism layer cell to the thickness of the previous cell. We’re at 1.6 right now, but this isn’t because 1.6 is a good engineering decision. 1.6 gives us very conservative results and lets us run fewer prism layer cells than would otherwise need. This slightly reduces mesh count and gives us worse Cl numbers than if we ran a more sensible stretch ratio. Really high stretch ratios give you artificially low Wall-Y+ values, since your first prism layer ends up being very thin, but your last prism layer gets pretty thick. It’s important to not just have a low wall-Y+ value, but also distribute </span><span>your prism layers so you have cells in all major strata of your boundary layer. </span><span> </span></p><p><span> </span></p><p><strong><span>Prism layer total thickness</span></strong><strong><em><span> </span></em></strong><span>closes the loop, and with this and the previous two properties you now have full control over your prism layer. Your prism layer thickness is driven by your expected boundary layer thickness (remember, we’re using turbulence models so we don’t have laminar boundary layers </span><em><span>anywhere</span></em><span>). </span><span>You want your prism layer to completely capture your entire boundary layer. </span><span>Of course if you knew your boundary layer thickness….you wouldn’t have to run CFD in the first place. One way to approximate BL thickness is to apply a flat plate approximation and get a value through that, and then slap a safety factor on top of that. The other way is to use your CFD simulation to visualize your boundary layer, and see if you need to tweak your prism layer settings to accommodate. There are a few ways to do this, but visualizing shear stress seems like the most obvious way to do this. Right </span><span>now,</span><span> the simulation environment does not make significant effort for this. The environment is heavily tuned </span><span>towards conservatism, not pure accuracy. I would rather underestimate aerodynamic loads for performance reasons, </span><span>than chase perfect CFD settings until we have experimental data we can use to calibrate our CFD environment. </span><span>From my experience, tweaking the combination of prism layer thickness, prism layer stretching, and total prism layers results in very large changes in your results. This is 100% the knob you’re going to have to turn once it’s time to calibrate these results against experimental data. </span><span> </span></p><p><span> </span></p><p><strong><span>Distribution</span></strong> allows to change where the cells are distributed in the prism layer. It can either be exponential (which uses the classic growth rate) or hyperbolic tangent. Hyperbolic tangent distribution is more even, as in it allows for more cells in the prism layer without lowering wall y+ too much. It also means you can have a smaller near core layer with the same wall y+.</p><p><br/></p><p><strong>Near core aspect</strong> <strong>ratio </strong>is quite cool. It set the target near core layer and first core layer volume ratio. A near core aspect ratio of 1 means no volume change from prism layer to the core mesh, and it is what we use. Near core aspect ratio only reduces prism layer total thickness to achieve the target, but doesn't increase it even if the target is not met.</p><p><span> </span></p><p><span>A final comment </span><span>(</span><span>on my incompetence</span><span>); </span><span>for Raunaq it’s been very easy to end up with failed meshes, or crashing meshes when playing around with these parameters with the trimmed mesh (less so for poly). I have no idea why certain combinations of parameters leads to a situation where STAR refuses to mesh, but it happens. Usually changing on parameter by a little bit fixes it. I don’t know why. I want to know why. </span><span> </span></p><p><span> </span></p><p><span> </span></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

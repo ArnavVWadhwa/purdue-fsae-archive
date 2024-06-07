@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Step 2: Wiring Harness Design</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics-Onboarding_230668154.html">Electronics Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Step 2: Wiring Harness Design
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Skrzyszowski, Mateusz</span>, last modified by <span class='editor'> Paradise, Hunter</span> on Sep 10, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>In this step, you will design and analyze the wiring harness that will be used to connect the LED to the ECU and power the system.</p><p><br/></p><blockquote><p><code><span style="color: rgb(0,0,0);"><strong>Reading</strong></span></code></p><ul><li><span style="color: rgb(51,51,51);">M1 ECU Documentation: <a href="attachments/233839566/265096216.pdf" data-linked-resource-id="265096216" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="M1 ECU Hardware.pdf" data-nice-type="PDF Document" data-linked-resource-content-type="application/pdf" data-linked-resource-container-id="233839566" data-linked-resource-container-version="35">M1 ECU Hardware.pdf</a></span><ul><li><span style="color: rgb(122,134,154);">This document contains the information necessary to wire an M1 series ECU. While some of the I/O may not be relevant for this project, it is still a good idea to learn about eveything MoTeC ECUs have to offer.</span></li></ul></li><li><span style="color: rgb(51,51,51);">PDM Documentation: <a href="attachments/233839566/265096217.pdf" data-linked-resource-id="265096217" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="PDM User Manual.pdf" data-nice-type="PDF Document" data-linked-resource-content-type="application/pdf" data-linked-resource-container-id="233839566" data-linked-resource-container-version="35">PDM User Manual.pdf</a></span><ul><li><span style="color: rgb(122,134,154);">This document contains the information necessary to wire a MoTeC PDM. Keep in mind that the purpose of the PDM is to replace the fuses and relays in a normal car and as such nearly all power will flow through it.</span></li></ul></li><li><span style="color: rgb(51,51,51);">RapidHarness Tutorial: Designing Harnesses</span></li></ul><p>           <iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/x5daIL7qtmM?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p></blockquote><p><br/></p><blockquote><p><strong><span style="color: rgb(0,0,0);"><code>Required Software</code></span></strong></p><ul><li><span style="color: rgb(51,51,51);">MATLAB: <a class="external-link" href="https://www.mathworks.com/academia/tah-portal/purdue-university-31484706.html" rel="nofollow">https://www.mathworks.com/academia/tah-portal/purdue-university-31484706.html</a></span><ul><li>MATLAB is used to size the wires for the harness in addition to many things for the team. If you do not have it already just use the link and sign up with your Purdue email and password.</li></ul></li><li><span style="color: rgb(51,51,51);">RapidHarness:</span> <a class="external-link" href="https://rapidharness.com/download" rel="nofollow">https://rapidharness.com/download</a><ul><li><span style="color: rgb(122,134,154);">Rapidharness is the team's harness CAD sofware. The layout of the harness is created in the software and updated based on lengths taken from NX routing.</span></li></ul></li></ul></blockquote><p><br/></p><hr/><h2 id="Step2:WiringHarnessDesign-PinoutCreation"><em><span style="color: rgb(0,0,128);">Pinout Creation</span></em></h2><ol><li><h5 id="Step2:WiringHarnessDesign-Thefirststepindesigningyourownharnessisfiguringoutwhatwireswillconnecttowhat.Thebestwaytodothisistolookatpreviouscars&#39;harnesses,alongwiththeMoTeCdocumentation,todeterminethefunctionofdifferentECU/PDMinputsandoutputs."><span style="color: rgb(51,51,51);">The first step in designing your own harness is figuring out what wires will connect to what. The best way to do this is to look at previous cars' harnesses, along with the MoTeC documentation, to determine the function of different ECU/PDM inputs and outputs.</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-YoucanexpecttousethePDM15,M130,anda12Vmotorcyclebattery.Makesureyoursystemisrulescompliant(hint:masterswitch)."><span style="color: rgb(51,51,51);">You can expect to use the PDM15, M130, and a 12V motorcycle battery. Make sure your system is rules compliant (hint: master switch).</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-OnceyouhaveageneralideaofhowyouwanttooperateandpoweryourLEDyoucanmovetoRapidHarnessandbegintryingtoimplementit."><span style="color: rgb(51,51,51);">Once you have a general idea of how you want to operate and power your LED you can move to RapidHarness and begin trying to implement it.</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-TogetaccesstotheRapidHarnessaccountafterdownloadingtheprogram,messageyourleadwithyourPurdueemailaddressandtheywilladdyoutothelist.Onceaddedyoushouldreceiveanemailwithinstructionsonhowtogetstarted."><span style="color: rgb(51,51,51);">To get access to the RapidHarness account after downloading the program, message your lead with your Purdue email address and they will add you to the list. Once added you should receive an email with instructions on how to get started.</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-Beforeyoucandoanywireplanningfirstcreateanewharnessnamedusername_onboarding_PF24underthePF24onboardingfolder."><span style="color: rgb(0,0,0);">Before you can do any wire planning first create a new harness named <em>username_onboarding_PF24</em> under the PF24 onboarding folder.</span></h5></li></ol><p>           <span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/233839566/Harness_Pinout_PF24.xlsx?version=1&amp;modificationDate=1688167211000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/233839566/Harness_Pinout_PF24.xlsx?version=1&amp;modificationDate=1688167211000&amp;api=v2" data-linked-resource-id="265096263" data-linked-resource-type="attachment" data-linked-resource-container-id="233839566" data-linked-resource-default-alias="Harness_Pinout_PF24.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Harness_Pinout_PF24.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/265096263/1" height="150" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="233839566" data-linked-resource-id="265096263" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/233839566/PF23%20Harness%20Pinout.xlsx?version=1&amp;modificationDate=1688167212000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/233839566/PF23%20Harness%20Pinout.xlsx?version=1&amp;modificationDate=1688167212000&amp;api=v2" data-linked-resource-id="265096264" data-linked-resource-type="attachment" data-linked-resource-container-id="233839566" data-linked-resource-default-alias="PF23 Harness Pinout.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="PF23 Harness Pinout.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/265096264/1" height="150" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="233839566" data-linked-resource-id="265096264" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><hr/><h2 id="Step2:WiringHarnessDesign-WireSizingAnalysis"><em><span style="color: rgb(0,0,128);">Wire Sizing Analysis</span></em></h2><ol><li><h5 id="Step2:WiringHarnessDesign-Nowitistimetofindtheappropriategaugeofwiretobeusedforthewiringharness.YoumayassumetherouteddistancefromtheECUtothebrakelightis3ftandthatthebrakelightdrawsamaximumof0.6A."><span style="color: rgb(51,51,51);">Now it is time to find the appropriate gauge of wire to be used for the wiring harness. You may assume the routed distance from the ECU to the brake light is 3ft and that the brake light draws a maximum of 0.6A.</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-Agoodwaytodecidewiregaugeistofindthevoltagedropacrossthewire.Thisisimportantforassessingsensoraccuracy/error.Agoodbaselinevaluetostayunderis5%,andrememberthattherearetwowiresconnectedtotheLED."><span style="color: rgb(51,51,51);">A good way to decide wire gauge is to find the voltage drop across the wire. This is important for assessing sensor accuracy/error. A good baseline value to stay under is 5%, and remember that there are two wires connected to the LED.</span></h5></li><li><h5 id="Step2:WiringHarnessDesign-Thevoltagedropcalculatorisattached.Readthroughituntilyouunderstandthecalculation(simplewire→resistorsimplification),thensizethewiresforyourharnessandupdatethosevaluesinRapidHarness."><span style="color: rgb(51,51,51);">The voltage drop calculator is attached. Read through it until you understand the calculation (simple wire → resistor simplification), then size the wires for your harness and update those values in RapidHarness.</span></h5></li></ol><p>          <span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/233839566/VoltageDropCalculator.m?version=1&amp;modificationDate=1688167074000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/233839566/VoltageDropCalculator.m?version=1&amp;modificationDate=1688167074000&amp;api=v2" data-linked-resource-id="265096261" data-linked-resource-type="attachment" data-linked-resource-container-id="233839566" data-linked-resource-default-alias="VoltageDropCalculator.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="VoltageDropCalculator.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-small-file.png" height="150" alt="" draggable="false"/><span class="title">VoltageDropCalculator.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="233839566" data-linked-resource-id="265096261" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096215.pdf">M1 Development Manual.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096216.pdf">M1 ECU Hardware.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096217.pdf">PDM User Manual.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096261.m">VoltageDropCalculator.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096263.xlsx">Harness_Pinout_PF24.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/233839566/265096264.xlsx">PF23 Harness Pinout.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

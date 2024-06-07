@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : (Optional) STAR-CCM+ Macros</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Onboarding_156598509.html">Onboarding</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Subteam-Onboardings_259297316.html">Subteam Onboardings</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics-Onboarding_233838112.html">Aerodynamics Onboarding</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : (Optional) STAR-CCM+ Macros
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Purpose:</strong></u></p><ul><li>To teach you the basics of Java</li><li>To teach you the basics of STAR-CCM+ API</li><li>Get you familiar with the workflow you need to go through to learn STAR-CCM+ API </li></ul><p><u><strong>Who is this for:</strong></u></p><ul><li>People who want to be involved in the maintenance and development of fsaeSTAR</li></ul><p><u><strong>Prerequisite:</strong></u></p><ul><li>Have finished the 2D airfoil project</li><li>Basic knowledge of Java<ul><li>Go through YouTube tutorials if you need to learn Java</li><li>Bug Chenkai if you have questions</li></ul></li></ul><p><u><strong>Downloads:</strong></u></p><ul><li>Java IDE (Intellij is recommended, but other work too)</li><li>STAR-CCM+</li></ul><p><u><strong>Learning Resources:</strong></u></p><ul><li>Google</li><li>Trial and error</li></ul><p><u><strong>Required Reading</strong></u></p><ul><li><span style="color: rgb(0,0,255);"><u><a class="createlink" href="/pages/createpage.action?spaceKey=PFSAE&amp;title=Computational+Fluid+Dynamics+%28CFD%29+and+Automation+Macros+%28fsaeSTAR%29&amp;linkCreation=true&amp;fromPageId=242979667">Old confluence</a><a class="createlink" href="/pages/createpage.action?spaceKey=PFSAE&amp;title=Computational+Fluid+Dynamics+%28CFD%29+and+Automation+Macros+%28fsaeSTAR%29&amp;linkCreation=true&amp;fromPageId=242979667"> page</a><a class="createlink" href="/pages/createpage.action?spaceKey=PFSAE&amp;title=Computational+Fluid+Dynamics+%28CFD%29+and+Automation+Macros+%28fsaeSTAR%29&amp;linkCreation=true&amp;fromPageId=242979667">s</a></u> <span style="color: rgb(0,0,0);">(</span><span style="color: rgb(0,0,0);">this is a link</span><u><span style="color: rgb(0,0,0);">)</span></u></span><ul><li>Some of these are outdated, but most are still relevant</li></ul></li></ul><p><u><strong>Project Description</strong></u></p><ul><li>You will create a automation script to automate parameters sweeps in your 2D airfoil simulation<ul><li>Parameters to sweep:<ul><li>Freestream velocity</li><li>Angle of attack</li><li>Mesh base size</li></ul></li></ul></li><li>These number will be provided in a config file<ul><li>An example of which is can be downloaded here: <a href="attachments/242979667/242979673.txt" data-linked-resource-id="242979673" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="config.txt" data-nice-type="Text File" data-linked-resource-content-type="text/plain" data-linked-resource-container-id="242979667" data-linked-resource-container-version="2">config.txt</a></li><li>This config file means run a sweep of angle of attack of 0 to 10 degrees with 2 degrees of increment, and a sweep of base size of 50 mm to 100 mm with 10 mm increment, at all freestream of 20 m/s<ul><li>If this config file is ran, 6*6=36 simulations should be ran</li><li>This file is only an example, I won't make you run 36 simulations</li></ul></li><li>All three parameters can be either a constant, or a series in the forms shown</li></ul></li><li>You will need to find a way to determine convergence, either through a custom convergence checker, or a STAR-CCM+ stopping criteria</li><li>Output: a csv file containing swept parameter(s), cl, and cd, and CpT plots of swept parameters<ul><li>Note: remember to update references</li></ul></li><li>This is also an exercise of trial and error and googling relevant information, no questions regarding specifics of STAR-CCM+ API will be answered<ul><li>STAR-CCM+ API documentation pretty much does not exist</li><li>The only way to learn is to record macros in STAR and modify the auto generated code</li><li>You have to go through this process all the time (I still do this pretty much every time I write code in fsaeSTAR), that's why no questions of &quot;how to do this&quot; will be answered. It is a skill you need to develop to be successful at developing STAR-CCM+ macros</li><li>However, feel free to ask any other questions, including Java questions</li></ul></li></ul><p><u><strong>Requirements</strong></u></p><ul><li>To get you guys familiar with working with classes, two classes are required:<ul><li>Main class which runs the STAR-CCM+ pipeline</li><li>A custom config reading class<ul><li>This class <u>cannot</u> be a static class</li><li>To reference the config file values, an object of this class must be used</li><li>This class has to contain a constructor</li></ul></li></ul></li><li>The only thing you are doing manually is importing geometry and renaming it to something your code can recognize, and running your code. In other words, there should be zero user interaction from the moment you clicked on run script to the moment when all the results are exported</li><li> After you are done, a config file will be provided by Chenkai to test your script</li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/242979667/242979669.png">image-2022-11-14_23-33-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/242979667/242979674.txt">config.txt</a> (text/plain)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/242979667/242979673.txt">config.txt</a> (text/plain)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:24</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

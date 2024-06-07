@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : DAQ PF24 | WHAM dev log</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Electronics_202276996.html">Electronics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297177.html">Design | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262832351.html">Design PF24 | ELE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="262836584.html">DAQ PF24 | Design</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="276627589.html">DAQ PF24 | Project Journal</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="280562375.html">DAQ PF24 | Hardware dev log</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : DAQ PF24 | WHAM dev log
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Min, Jihong</span>, last modified on Jan 16, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="DAQPF24|WHAMdevlog-&quot;Anidiotadmirescomplexity,ageniusadmiressimplicity&quot;-TerryDavis"><strong>&quot;An idiot admires complexity, a genius admires simplicity&quot; - Terry Davis</strong></h1><h1 id="DAQPF24|WHAMdevlog-Greathardwaremakesgreatsoftware!!!!!!!"><strong>Great hardware makes great software!!!!!!!</strong></h1><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/280563374/280564019.png" data-image-src="attachments/280563374/280564019.png" data-unresolved-comment-count="0" data-linked-resource-id="280564019" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="wham!.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563374" data-linked-resource-container-version="12" alt=""></span></strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="800" src="attachments/280563374/280563381.png" data-image-src="attachments/280563374/280563381.png" data-unresolved-comment-count="0" data-linked-resource-id="280563381" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2023-11-30 112305.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563374" data-linked-resource-container-version="12" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/280563374/280563380.png" data-image-src="attachments/280563374/280563380.png" data-unresolved-comment-count="0" data-linked-resource-id="280563380" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2023-11-30 113019.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563374" data-linked-resource-container-version="12" alt=""></span></p><h2 id="DAQPF24|WHAMdevlog-^^^BottomsilkscreenwillchangetosayWHAMinsteadofSGA"><strong>^^^ Bottom silkscreen will change to say WHAM instead of SGA</strong></h2><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="600" src="attachments/280563374/280563392.png" data-image-src="attachments/280563374/280563392.png" data-unresolved-comment-count="0" data-linked-resource-id="280563392" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Untitled.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="280563374" data-linked-resource-container-version="12" alt=""></span></p><h1 id="DAQPF24|WHAMdevlog-WHAM:WHeatstonebridgeAMplifier"><strong>WHAM: WHeatstone bridge AMplifier</strong></h1><h1 id="DAQPF24|WHAMdevlog-Designatedtask:measurestrainviastraingaugesandamplifyittoareadablelevelforCRAM">Designated task: measure strain via strain gauges and amplify it to a readable level for CRAM</h1><h2 id="DAQPF24|WHAMdevlog-Mainconsiderations:"><strong>Main considerations:</strong></h2><ul><li>extreme low-profile design for easy mounting on sus rods without getting in the way<ul><li>21mm wide by 29mm long: not much wider than sus rod itself </li><li>Only 10mm at its narrowest section</li><li>can either by mounted via 3D-printed plates with M3 screws, or simply zip-tied tightly to sus rods</li><li>Here's the confusing part: the bottom side of WHAM (which is the top side in the photo above, the side with the one connector) will be pointing downwards along the sus rod where the strain gauge is. Refer to pic above.<ul><li>The strain gauge will have wires directly soldered to it, then tightly bound to the sus rod via heat shrink or electrical tape. Other side of the wire with JST female connector will poke out from the wrapping.</li><li>WHAM will be mounted &quot;upstream&quot; of the strain gauge. Aforementioned JST connector will plug in. <strong>This side, where the strain gauges connect to WHAM, is the &quot;low side&quot;</strong></li><li>Other side of WHAM will be connected to CRAM for power input and signal out. <strong>This is the &quot;high side&quot; or &quot;upper side&quot;</strong></li></ul></li></ul></li><li>low-cost by using stolen components from ECE shop<ul><li>Uses DIP-8 package INA121 amps. Larger footprint but cheaper(free) and can be replaced in case of damage/malfunction</li></ul></li><li>Modularity:<ul><li>Via clever use of connectors, WHAM modules can easily be disconnected from sus rods for replacement</li><li>low-profile JST connectors enhance reuseability</li></ul></li><li>Manufacturability and repairability:<ul><li>Thru-hole components can be soldered easily even by a beginner</li><li>all SMD components are 0805 footprint, relatively beginner-friendly for SMD soldering<ul><li>These also allow quick replacement of important components like the gain resistor for easy adjusting/calibration</li></ul></li></ul></li><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">KEEP IN MIND: WIRE LENGTHS ARE CRITICAL!!!!!!</span></strong><ul><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">The length of wire that connects Strain Gauge in port (the top one in the picture) to the actual strain gauge itself needs to be as short as possible!!!</span></strong><ul><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">15cm wire outputs ~2.0V, 30cm wire outputs ~3.8V.</span></strong></li><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">Wire lengths should all be CAREFULLY MEASURED AND STANDARDIZED TO THE SHORTEST LENGTH POSSIBLE WITHOUT COMPROMISING ON SLACK.</span></strong><ul><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">Wire must be long enough to bend and wiggle on stress, but not too long to compromise on signal level!</span></strong></li><li style="color: rgb(255,0,0);font-weight: bold;"><strong><span style="color: rgb(255,0,0);">This shouldn't be hard at all actually</span></strong></li></ul></li></ul></li></ul></li></ul><h1 id="DAQPF24|WHAMdevlog-^^^TheabovequalitiesofWHAMmakeitsupertesting-friendly!!!Thismeanssavingmonies!!!!!!!!!!"><strong>^^^ The above qualities of WHAM make it super testing-friendly!!! <span style="color: rgb(255,0,0);">This means saving monies!!!!!!!!!!</span></strong></h1><p>Final cost of manufacturing:</p><p>$25 for 20 PCBs. 2-layer, red soldermask, lead plating, poverty spec</p><p>$1.25 per PCB</p><p>if each component is $0.5, and we have 11 parts, not counting the amp (CUZ IT'S FREEEEE!!!!!)</p><p>0.5 * 11 = $6.5 of parts per board</p><p>$6.5 +$1.25 = $7.75 per board</p><h1 id="DAQPF24|WHAMdevlog-$7.75*12=$93totalfor12WHAMs!"><strong>$7.75 * 12 = $93 total for 12 WHAMs!</strong></h1><p><br/></p><h1 id="DAQPF24|WHAMdevlog-MDR(ManningDesignReview)"><strong>MDR (Manning Design Review)</strong></h1><ul><li>Two layers is good enough for WHAM, no need for four</li></ul><p><br/></p><h1 id="DAQPF24|WHAMdevlog-12/5/2023Update:itseeemsmybosseswantafull-bridgeconfig."><strong>12/5/2023 Update: it seeems my bosses want a full-bridge config.</strong></h1><p>WHAM will be redesigned to accomodate 4 JST-SH connectors on the low side. This will make it slightly bigger but I don't think by much.</p><p>PCBs will be pushed sometime near the end of winter break/start of sprint semester</p><p><br/></p><h1 id="DAQPF24|WHAMdevlog-1/16/2023:RedesignedWHAMabitforbetteramplification."><strong>1/16/2023: Redesigned WHAM a bit for better amplification.</strong></h1><p>Redesigned WHAM to have excitation voltage of 5V.</p><p>1.5V line is no longer used in WHAM. Might need it later tho</p><p>+/- 500mV voltage swing with strain from my arm. So 1V wide swing. From approx. 2.2V to 3.2V.</p><p>Better, but still iffy as I only tested with quarter bridge config. Need to see how it performs with load cells/full bridge strain gauges</p><p>I can actually modify CRAM to have 3.3V excitation voltage instead of 1.5V, will test that out tomorrow.</p><p>Made wheatstone bridge amp calculator!</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/280563374/WHAM%20calc.xlsx?version=1&amp;modificationDate=1705460514000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/280563374/WHAM%20calc.xlsx?version=1&amp;modificationDate=1705460514000&amp;api=v2" data-linked-resource-id="284030463" data-linked-resource-type="attachment" data-linked-resource-container-id="280563374" data-linked-resource-default-alias="WHAM calc.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="WHAM calc.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/284030463/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="280563374" data-linked-resource-id="284030463" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/280563381.png">Screenshot 2023-11-30 112305.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/280563382.png">Screenshot 2023-11-30 113019.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/280563380.png">Screenshot 2023-11-30 113019.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/280563392.png">Untitled.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/280564019.png">wham!.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/280563374/284030463.xlsx">WHAM calc.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:32</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

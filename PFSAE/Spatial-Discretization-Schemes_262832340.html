@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Spatial Discretization Schemes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="261751356.html">Fundamentals | CFD</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Spatial Discretization Schemes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 20, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Intro to Spatial Discretization Schemes</strong></u></p><p>Discretization schemes are mathematical scheme used to discretize a continuous differential equation. In CFD, continuous governing equations must be discretized to achieve numerical solutions. There are many different way to do it, each with own advantages and disadvantages. In this pages, we will go over three commonly used discretization schemes that are available in STAR-CCM+ and one scheme that serves as basis to another scheme.</p><p>A lot schemes you will see are what's called upwind differencing. Upwind differencing is another, CFD-specific word to backward differencing. Why are upwind differencing so popular? That's because upwind differencing is physically correct for pure convection problems. Since convection acts from upstream to downstream only, backward differencing makes sense. Since convection and diffusion (velocity propagation and pressure waves) are treated separately at least in incompressible Navier-Stokes algorithm, upwind differencing usually the favored type of scheme used for convection.</p><p><u><strong>First Order Upwind Differencing</strong></u></p><p><em>First order upwind differencing</em> is the easiest type of differencing. It's simply the slope between this point and the previous point physically. Mathematically, it's Taylor series with 2nd order and higher terms truncated. First order upwind is incredibly robust for reasons that will be explained later in the page on CFD errors. So robust that it can be impossible to break when paired with certain other schemes and algorithm. But at the same time, first order upwind is very diffusive, meaning its results cannot really be trusted. </p><p>First order upwind is often used for the start of simulation to prevent instabilities early on when large changes in flow field is happening. One the flow field stabilizes, second order upwind should be used. </p><p>For fsaeSTAR, first order upwind is used in conjunction with high relaxation factor to speed up initial convergence.</p><p><u><strong>Second Order Upwind Differencing</strong></u></p><p><em>Second order upwind differencing</em> is physically the weighted slope between this point and the previous <u>2</u> points. Mathematically, it's Taylor series with 3rd order and higher terms truncated. Compared to first order differencing, second order differencing is much more stable and much more correct. Second order upwind is perhaps the most popular scheme for external aerodynamic in the real world of engineering. </p><p><u><strong>Second Order Central Differencing</strong></u></p><p>Another second order scheme is <em>second order central differencing</em> scheme. Second order central differencing is perhaps what you think about when someone mentions the phrase numerical differentiation. Physically, it's the slope between the next and the previous point, this point is not involved. Mathematically, it's Taylor series with 3rd order and higher terms truncated (a different Taylor series than the one for second order upwind). Second order central really isn't used due to its unphysical-ness and its instability. However, it serves as a basis for a 3rd order scheme, the 3rd order MUSCL differencing.</p><p><strong><u>Third Order MUSCL Differencing</u></strong></p><p><em>Third order MUSCL differencing</em> take second order central differencing to the next level by introducing flux limiter and parabolic interpolation function.</p><p><em>Flux limiter</em> controls flux into and out of a mesh cell. By controlling flux, you can control the slope of the interpolation between faces, which controls cell center value - the value you care about. Flux limiters are used to enhance stability of second order central scheme.</p><p>Flux limiter does not take 2nd order central to 3rd order, but parabolic interpolation function does. Instead of using a linear interpolation function, which is simply a straight line between cell faces, parabolic interpolation function draws a parabola (wow! who would have thought). The parabolic interpolation function itself is derived using 2nd order upwind differencing. This ensures the correctness of the scheme and takes it third order, since four grid points are used now. </p><p>Third order MUSCL differencing is the highest order discretization scheme available in STAR-CCM+, it's also the least dispersive (explained in CFD errors). </p><p>While higher order schemes exist in the form of forth order upwind, compact differencing, and various other high resolution scheme, they are not really compactible with unstructured grid and the benefits they provide is not worth the extra cost in the engineering environment.</p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

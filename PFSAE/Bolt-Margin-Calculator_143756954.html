@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Bolt Margin Calculator</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Structures_143759622.html">Structures</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="129009850.html">Analysis Tools | Structures</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Bolt Margin Calculator
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Crooks, Troy A</span> on Sep 14, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="BoltMarginCalculator-ToDo:">To Do:</h3><ul class="inline-task-list" data-inline-tasks-content-id="143756954"><li class="checked" data-inline-task-id="4">add lookup tables for grabbing dimensions based on hardware selections</li><li class="checked" data-inline-task-id="5">add ability to handle multiple load case per bolt</li><li data-inline-task-id="6">add calculations for threads in shear plane</li><li data-inline-task-id="15">add capability for three flanges (this would be a pain...)</li><li class="checked" data-inline-task-id="16">add better guidance for use</li><li class="checked" data-inline-task-id="7">Add bearing ultimate margins (will be covered by bearing yield for most metals, but is quite easy to add to be sure)</li><li data-inline-task-id="8">Check joint stiffness calculations (didn't line up with my hand calcs when doing a machine design homework. Not sure which to trust but worth double checking)</li><li data-inline-task-id="11">Add AN bolts</li><li data-inline-task-id="13">Fix lookups for ASME B18.3 and NAS620</li></ul><p>Currently calculates bolt tension, bolt shear, nut tension, flange shear through, flange shear out, bearing yield, and separation failures. Tension failures are taken from worst case from maximum preload without joint separation and joint separation (so all load goes through bolt) failures. Be sure to consider whether you should be dividing load for any double shear connections. Joint stiffness calculations for preload come from Shigley's Frustrum Approach. Shearout comes from <em>Airframe Stress Analysis and Sizing </em>area calculations come from NASA Handbook for Bolted Joint Design. Safety factor calculations come from NASA-STD-5020. Look up tables are used to get the right geometry based on the selection of a hardware.</p><p><br/></p><p>Discussion of all the types of bolt failures being considered can be found here:</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/hZabG07El14?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>Instructions for using the bolt calculator can be found here:</p><p> <iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/X7s9FxHzUCo?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>Note to watch out for bearing bypass stress (which is not analyzed by this calculator). It's primarily a concern for bolts in composites.</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/mVj066Gn04s?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p><br/></p><p>Click below to download the calculator:</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/143756954/Bolt_margin_calculator_v5.xlsx?version=1&amp;modificationDate=1622829918000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/143756954/Bolt_margin_calculator_v5.xlsx?version=1&amp;modificationDate=1622829918000&amp;api=v2" data-linked-resource-id="182028569" data-linked-resource-type="attachment" data-linked-resource-container-id="143756954" data-linked-resource-default-alias="Bolt_margin_calculator_v5.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Bolt_margin_calculator_v5.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/182028569/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="143756954" data-linked-resource-id="182028569" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p><br/></p><h3 id="BoltMarginCalculator-RecommendedtorquesforNAS66XXandNAS62XXboltswithMS21042nuts:">Recommended torques for NAS 66XX and NAS 62XX bolts with MS21042 nuts:</h3><ul><li>use 160KSI DRY Column MAX value</li><li>for a 3/8 bolt for example, this would be 405 in-lbf.</li><li>Using max because we aren't taking running torque into account. Running torque is the torque that isn't coming from preloading the bolt. This is due to the locking feature and any friction between the bolt shank and the hole if torqueing the bolt not the nut. (This is why it's always recommended to turn the nut if possible).</li></ul><p>Note: #10 size not listed. Use 50 in-lbf.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/143756954/143758430.png" data-image-src="attachments/143756954/143758430.png" data-unresolved-comment-count="0" data-linked-resource-id="143758430" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-4-12_0-39-57.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="143756954" data-linked-resource-container-version="27" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/143758295.xlsx">Bolt_margin_calculator_v1.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/143758430.png">image2020-4-12_0-39-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/143758473.xlsx">Bolt_margin_calculator_v2.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/154799164.xlsx">Bolt_margin_calculator_v3.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/161907296.xlsx">Bolt_margin_calculator_v4.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/143756954/182028569.xlsx">Bolt_margin_calculator_v5.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

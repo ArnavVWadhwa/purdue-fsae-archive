@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Boundary Conditions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Boundary Conditions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (agarw162)</span>, last modified by <span class='editor'> Zhang, Chenkai</span> on May 07, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Fans</strong></u></p><p><span>Fans are modeled using a separate fluid region with fan momentum source. Fan momentum source adds axial and tangential momentum as flow travels through the region. Axial momentum is defined by a fan curve table of mass flow vs. pressure raise. Axial momentum is defined by RPM. Large fans like the one we have for PF23 can cause instability in the simulation. The inlet of the fan is mapped to either fan duct exit or freestream using an in-place internal interface, and outlet is mapped to freestream using the same technique.</span></p><p><u><strong>Radiators</strong></u></p><p><span>Radiators are also </span><span>pretty straight</span><span> forward. The way we’re doing them is defining a porous region for the radiators, and setting in-place internal interfaces between the radiator inlet/outlet, and the corresponding surfaces in freestream and/or fan duct. The only interesting aspect of this is how you define the inertial and viscous resistances when defining the resistance tensor for the porous region. To do this, you need </span><span>wind tunnel measurements for the radiator (which you can get from the radiator supplier). There’s some simple math on top of that that can get you to your viscous and </span><span>inertial resistances. </span></p><p><u><strong>Yaw</strong></u></p><p><span>Note: When we’re talking about yaw, we’re generally talking about a crosswind. This is a little odd, since this definition of yaw is invalid in both aeronautical and vehicular contexts…</span><span> </span></p><p><span>In the past, the way we handled yaw was by rotating the car and changing none of the boundary conditions. </span><span>But this isn’t what a crosswind is. The way to do a crosswind simulation without </span><span>needing to rotate the car (</span><span>thus requiring a new mesh), or having to do something odd with your ground velocity boundary condition to make sure you’re only considering crosswind and not a ground slip, is to set up both left and right side of the flow domain as inlets with the correct flow angle. That way, freestream is enforced on all boundaries. We used to use periodic in-place interface to map flow one side to another. However, this is unphysical since the wake can be transferred from one side to another. </span></p><p><u><strong>Tires</strong></u></p><p>Tire rotation is set by enforcing a tangential velocity on the boundary. However, since a tangential velocity is what's physically being enforced, parts normal to the rotation (therefore should not have tangential velocity along the wall) are being fed an unphysical boundary condition. We don't know how much error is caused by this boundary condition. The proper way to do this would be using a non-inertial reference frame. </p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

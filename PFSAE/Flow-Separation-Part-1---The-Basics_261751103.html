@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Flow Separation Part 1 - The Basics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Viscous-Flow_259298502.html">Viscous Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Flow Separation Part 1 - The Basics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Jun 25, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Since I started working on this highly condensed fluid mechanics education pages, I struggled with the problem of where to put the page about flow separation. I wanted to put it at the very start because it is such an important topic, but I also wanted to cover enough topics first so you can have a proper understanding, at the cost of fewer people reading it. That said, I want you to pay special attention to this page and try to understand everything.</p><p><u><strong>What is flow separation and criteria for flow separation</strong></u></p><p><em>Flow separation</em> is the phenomenon where streamlines &quot;separate&quot; from the surface of an object, creating recirculating regions. The picture below shows what I am talking about.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751103/261751111.png" data-image-src="attachments/261751103/261751111.png" data-unresolved-comment-count="0" data-linked-resource-id="261751111" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-23_8-56-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751103" data-linked-resource-container-version="5" alt=""></span></p><p>Flow separation is usually detrimental to performance and you do everything you can to avoid large areas of separated flow (keyword in this sentence is usually). Note how I say large areas of separated flow, since trailing edge separation is unavoidable and desirable in many high lift use cases, including racecars. Indeed, for most airfoils, the max Cl occurs when there is minor trailing edge separation.</p><p>As flow separates, it no longer follows the contour of the surface, meaning that streamline curvature is massively reduced, resulting in loss of downforce, massive increase in pressure drag, a decrease in skin friction drag, and a decrease in induced drag. Since the magnitude of pressure drag is a lot higher than that of skin friction drag, it can be neglected. Induced drag is the interesting thing, however. If we are talking about a flapped, short span wing like the ones seen in racecars, reduction in induced drag can outweigh the increase in pressure drag, resulting in net loss of drag. However, for an airplane with high aspect ratio and lower pressure and suction peaks, increase in pressure drag usually outweighs decrease in induced drag.</p><p>But why and how does flow separation occur? As angle of attack of an airfoil increases, higher and higher suctions are experienced by the airfoil, resulting in strong adverse pressure gradient. The adverse pressure gradient exerts a force on fluid particle in the opposite direction of fluid flow alongside wall shear stress, slow it down. Eventually, it slowed down so much that it reverses, which marks the onset of flow separation as shown by the last two velocity profiles below.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" alt="Flow separation - Wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Boundary_layer_separation.svg/300px-Boundary_layer_separation.svg.png" data-image-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Boundary_layer_separation.svg/300px-Boundary_layer_separation.svg.png"></span></p><p>If you like airplanes, you probably have heard of stall speed or Vs0 and Vs1. Stall speed is, unfortunately, responsible for many aerodynamic misconceptions. Judging by what I have explained above, you can probably already gather that flow separation happens at a specific angle of attack, not at a specific speed. While speed has a role in it in the form of laminar and turbulent boundary layers, it is not the primary effect. Airplanes use stall speeds because not all planes have angle of attack sensors, and using speed makes it easy for pilots to understand.</p><p>By understanding the mechanism behind flow separation, we can now make the conclusion that there are three criteria for flow separation:</p><ol><li>Viscosity</li><li>Existence of a wall</li><li>Adverse pressure gradient</li></ol><p>Viscosity is necessary for flow separation to satisfy the second law of thermodynamics (entropy must always be increasing). A wall is needed by definition. And an adverse pressure gradient is needed since flow cannot be reversed only with wall shear stress (or friction).</p><p><u><strong>Role of Shear Stress in Flow Separation</strong></u></p><p>As we have already established, shear stress is necessary for flow separation to occur, but the mechanism behind it is much more nuanced and not taught even in grad level aerodynamics courses here at Purdue. But by understanding it, you will gain new insights into flow separation. Let's again use flow over an airfoil suction side as an example, except this time, it is stalled.</p><p>Before the onset of adverse pressure gradient (which is in front of the onset of flow separation), the effects of wall shear stress is pretty much what you would expect. It slows down the flow, making it much easier for adverse pressure gradient to cancel out and eventually reverse the velocity after its onset.</p><p>But after the onset of adverse pressure gradient, things get more complicated. Since the bottom of boundary layer is at the wall and flow velocity is zero, a small amount of flow closest to the wall is first to reverse as shown in the diagrams below, since the velocity is already near zero. Therefore, you would expect flow to immediately separate upon the onset of adverse pressure gradient. But that is not the case. What's going on?</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="233" src="attachments/261751103/261751234.png" data-image-src="attachments/261751103/261751234.png" data-unresolved-comment-count="0" data-linked-resource-id="261751234" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-23_23-39-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751103" data-linked-resource-container-version="5" alt=""></span></p><p>We have already established that flow closest to the wall is the most susceptible to adverse pressure gradient due to its low meaning velocity. Meaning, there has to be an inflection point in the velocity profile, where the velocity profile concaves forward near the surface and concaves backward near outer flow. For the sake of simplicity, let's call concave forward position, i.e. the second derivative of velocity with respect to y distance is positive.</p><p>From the physical perspective, in the regions where flow is concaving forward, higher-up flow with higher velocity is applying shear stress to the lower-down flow with lower velocity, resisting separation.</p><p>From a more rigorous mathematical perspective By the definition of shear stress, the gradient of shear stress has to be positive as well. Now take a fluid particle, if the fluid particle is infinitely small, the net shear force on the fluid particle can be approximated as gradient of shear stress. If you have trouble understanding this as I had, think about fluid particle as an infinitely small control volume. In pure shear deformation as is the case with viscous forces, the difference in shear force experienced by the two shearing forces can be collapsed down into the gradient. Since net shear force is positive, shear force into a region of adverse pressure gradient acts to resist the adverse pressure gradient. In a sense, adverse pressure gradient created its own enemy by creating &quot;favorable viscous forces&quot;.</p><p>Generally, the concaved forward region in laminar flow extends much higher up due its low velocity gradient, meaning the concavity thereby gradient of shear stress is low, meaning it can not resist separation as well (shown in (a) above). In turbulent boundary layers, however, the concaved forward region first appear in the viscous sublayer (shown in (b) above), where velocity gradient and shear stress gradient are much higher, making turbulent boundary layers resist separation better. </p><p>The concept of turbulent boundary layers are better at resisting flow separation is usually explained as turbulent eddies are better able to bring high energy flow closer to the wall, even in AAE graduate level classes. This explanation is true but incomplete. The complete answer would involve concavity change and the existence of the viscous sublayer.</p><p><u><strong>Laminar Separation Bubbles</strong></u></p><p><em>Laminar separation bubbles</em> are cool and they do not get enough attention. Laminar separation bubbles form when flow first separately off the surface when the boundary layer is still laminar, but deploys into turbulent downstream, and reattaches due to the increased resistance to flow separation.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://www.mdpi.com/applsci/applsci-10-06095/article_deploy/html/images/applsci-10-06095-g001-550.jpg" data-image-src="https://www.mdpi.com/applsci/applsci-10-06095/article_deploy/html/images/applsci-10-06095-g001-550.jpg"></span></p><p>Laminar separation bubbles can easily form and they are a source of instability, since they can be a transient where it sometimes it exists and sometimes don't. This can lead to hysteresis in lift and drag. However, for the formula application, you generally don't have to worry about them, since most of the flow is turbulent. Though you will see them again in a later page on cylinder flow.</p><p><u><strong>Flow Separation Criterion</strong></u></p><p>Determining when flow has separated seems easy, but it is actually very difficult, at least in 3D. In 2D, it's a simple case when wall shear stress drop to 0, since that is the point where the slope of velocity profile changes from positive to negative. But in 3D, a simple positive and negative does not exist. What's more flow separation might occur when wall shear stress is not 0 due to crossflow component of velocity.</p><p>In 3D, flow separation can be determined using <em>region of origin method</em>. I will admit, I don't fully understand the region of origin method, so I will point you to Understanding Aerodynamics by Doug McLean. But I know the results of this method, and that is that converging skin friction lines define separation and diverging skin friction lines define attachment. Below is a picture of line integral convolution of wall shear stress vector with magnitude of wall shear stress as the background color. You can see that on the upper flap, there is minor trailing edge separation, but on the lower flap, almost the entirety of the center section is separated.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751103/261751309.png" data-image-src="attachments/261751103/261751309.png" data-unresolved-comment-count="0" data-linked-resource-id="261751309" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-24_9-47-19-1.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751103" data-linked-resource-container-version="5" alt=""></span></p><p>The definition of 3D flow separation using wall shear stress is particularly useful in experimental testing, since wall shear stress is the mechanism behind flow viz paint. Droplets of flow viz gets sheared by flow close the wall, resulting in lines be &quot;drawn&quot;. Below is flow viz of the same configuration of rear wing in wind tunnel. Clearly, CFD is overpredicting separation on the lower flap and underpredicting on the upper flap.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/261751103/261751311.png" data-image-src="attachments/261751103/261751311.png" data-unresolved-comment-count="0" data-linked-resource-id="261751311" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-24_9-50-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="261751103" data-linked-resource-container-version="5" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751103/261751110.png">image-2023-5-23_8-56-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751103/261751111.png">image-2023-5-23_8-56-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751103/261751234.png">image-2023-5-23_23-39-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751103/261751309.png">image-2023-5-24_9-47-19-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/261751103/261751311.png">image-2023-5-24_9-50-55.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

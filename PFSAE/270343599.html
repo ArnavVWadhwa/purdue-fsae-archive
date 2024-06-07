@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Efficiency Implementation | LAPSIM</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="130158329.html">Design | Global</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="270343594.html">Lapsim Home | LAPSIM</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="270343596.html">Development Notebooks | LAPSIM</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Efficiency Implementation | LAPSIM
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span>, last modified on Oct 13, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>POC: <a class="confluence-userlink user-mention" data-username="zmacnab" href="https://wiki.itap.purdue.edu/display/~zmacnab" data-linked-resource-id="185500260" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">MacNab, Zachary Robert</a> </p><p>PF23's efficiency score was a <strong>fat </strong>0, but we got 2nd in endurance. If we traded just a little performance and dropped down in endurance, but actually got an efficiency score, we would have gotten 2nd at least. Time to consider it much more in the design process and evaluate where we went wrong with our previous trade studies.</p><h2 id="EfficiencyImplementation|LAPSIM-BurndownList:">Burndown List:</h2><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li class="checked" data-inline-task-id="175"><span class="placeholder-inline-tasks">Research - What have other people done?</span><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li class="checked" data-inline-task-id="176"><span class="placeholder-inline-tasks">External research</span></li><li class="checked" data-inline-task-id="177"><span class="placeholder-inline-tasks">Lapsim Architecture studying</span></li></ul></li><li class="checked" data-inline-task-id="178"><span class="placeholder-inline-tasks">Architecture - What am I doing?</span><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li data-inline-task-id="179"><span class="placeholder-inline-tasks">Presentation on what exactly I am doing</span><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li data-inline-task-id="180"><span class="placeholder-inline-tasks">Presenting on the route that I am taking </span></li><li class="checked" data-inline-task-id="181"><span class="placeholder-inline-tasks"><s>Pseudocode</s> Block Diagrams </span></li><li class="checked" data-inline-task-id="182"><span class="placeholder-inline-tasks">Documenting any coding efficiency changes I am making (like to literally make the code run faster)</span></li></ul></li></ul></li><li data-inline-task-id="183"><span class="placeholder-inline-tasks">Coding - Actually doing it.</span><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li data-inline-task-id="184"><span class="placeholder-inline-tasks">Prioritize any programming efficiency changes</span></li><li data-inline-task-id="185"><span class="placeholder-inline-tasks">From pseudocode, estimate blocks and set lines/week target</span></li><li data-inline-task-id="186"><span class="placeholder-inline-tasks">See if coding it externally from the lapsim is possible - will be useful for runtime and validation</span></li><li data-inline-task-id="187"><span class="placeholder-inline-tasks">Integration and merge into full lapsim</span></li></ul></li><li data-inline-task-id="188"><span class="placeholder-inline-tasks">Validation - Is what I did good?</span><ul class="inline-task-list" data-inline-tasks-content-id="270343599"><li data-inline-task-id="189"><span class="placeholder-inline-tasks">Exact procedure used Dependent on method used in architecture</span></li><li data-inline-task-id="190"><span class="placeholder-inline-tasks">Possible use dyno? Probably past events for actual points validation?</span></li></ul></li></ul><p><br/></p><p><span class="placeholder-inline-tasks">Values and Architecture: </span></p><p><span class="placeholder-inline-tasks">Efficiency Factor</span></p><p><span class="placeholder-inline-tasks"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="90" src="attachments/270343599/273159489.png" data-image-src="attachments/270343599/273159489.png" data-unresolved-comment-count="0" data-linked-resource-id="273159489" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-12_17-50-56.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270343599" data-linked-resource-container-version="2" alt=""></span></span></p><ul><li>Tmin</li><li>LapTotal Tmin</li><li>Tyours</li><li>LapYours</li><li>CO2 min</li><li>CO2 your</li><li>LapTotal CO2min</li></ul><p>Efficiency Score </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="93" src="attachments/270343599/273159488.png" data-image-src="attachments/270343599/273159488.png" data-unresolved-comment-count="0" data-linked-resource-id="273159488" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-10-12_17-49-32.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="270343599" data-linked-resource-container-version="2" alt=""></span></p><ul><li>Efficiency Factor your</li><li>Efficiency Factor min</li><li>Efficiency Factor max</li></ul><p><br/></p><h2 id="EfficiencyImplementation|LAPSIM-Plan">Plan</h2><ol><li>Brake specific fuel consumption is the rate of fuel per power. We have power curves, so rate of fuel consumption can be solved for.</li><li>Integrate rate of fuel consumption function</li><li>Use formula outlined in rules to calculate efficiency </li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343599/273159488.png">image-2023-10-12_17-49-32.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/270343599/273159489.png">image-2023-10-12_17-50-56.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

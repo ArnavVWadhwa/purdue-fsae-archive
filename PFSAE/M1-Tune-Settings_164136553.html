@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : M1 Tune Settings</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain_130155471.html">Powertrain</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297393.html">Lessons Learned | POW</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Powertrain-Archives_198512866.html">Powertrain Archives</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2020-2021-Dyno_132156885.html">2020-2021 Dyno</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Stepper-Motor-Load-Control_164136544.html">Stepper Motor Load Control</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : M1 Tune Settings
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (osborn42)</span>, last modified on Dec 06, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/164136553/165347715.png" data-image-src="attachments/164136553/165347715.png" data-unresolved-comment-count="0" data-linked-resource-id="165347715" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-12-6_14-34-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="164136553" data-linked-resource-container-version="2" alt=""></span></p><p>For the M1 Tune settings you are going to want to look under the Water Valve Stepper PI</p><p>Phase A and Phase B refer to the stepper motor phases and for our current dyno setup you are going to want <strong>Phase A = Bridge Output 3</strong> and <strong>Phase B = Bridge Output 2</strong></p><p><strong>Automated Control</strong>:</p><ol><li>Enable: Means that while the engine is running the stepper motor will attempt  control the valve to track the &quot;<strong>RPM Target</strong>&quot;</li><li>Not in Use: Means that no matter what the stepper motor will move based on the &quot;<strong>Percent Load</strong>&quot;</li></ol><p><strong>Maximum Step:</strong></p><p>This is an integer value greater than 0 that indicated the range of the stepper motor. There are 200 steps/rev and it is currently set to 80 meaning the stepper can rotate up to 40% of a rotation.</p><p><strong>Percent Load:</strong></p><p>The calculation for the stepper motor position in &quot;Not in Use&quot; mode and in while the engine is not running in &quot;Enable&quot; mode is based on this value</p><p>Aim = Maximum Step * Percent Load</p><p><strong>RPM Target:</strong></p><p>This is the RPM that you want the load control to target while running. While it might say that the ecu needs to be reset after changing this value it is NOT true. DO NOT reset the ECU while the engine is running.</p><p><strong>Reference Voltage:</strong></p><p>No need to change but essentially this value is meant to be the reference voltage for the stepper motor which is 12V</p><p><strong>Hold Voltage:</strong></p><p>This is the voltage that the stepper motor will apply when it has reached its aim to hold its position. This is there to ensure the valve doesn't move once the aim is achieved.</p><p><strong>Kp: </strong></p><p>This is the proportional coeff. for the PID loop</p><p><strong>Ki:</strong></p><p>This is the integral coeff. for the PID loop. </p><p><strong>Kd:</strong></p><p>This is the derivative coeff for the PID loop</p><p><strong>Frequency:</strong></p><p>This is the frequency of the phase PWM best to keep it above 15,000Hz to be out of the audible frequency range</p><p><strong>Divider:</strong></p><p>This is if you want the Stepper Motor Position to update slower than 200Hz more details listed in M1 Tune.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164136553/164136554.png">image2020-12-1_19-17-25.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/164136553/165347715.png">image2020-12-6_14-34-46.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:29</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

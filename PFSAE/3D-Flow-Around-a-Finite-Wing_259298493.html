@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 3D Flow Around a Finite Wing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Potential-Flow_259297759.html">Potential Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 3D Flow Around a Finite Wing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span> on May 11, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Induced Drag</strong></u></p><p>People like to say as lift increases drag must increase. While this is not strictly true, there is some truth to it in the form of <em>induced drag</em>.</p><p>The issue with a finite wing is that it is finite, streamwise wingtip vortices form at the the tip of the finite wing. This vortex introduces additional downwash, altering velocity direction that the wing &quot;sees&quot;. Since lift is defined as perpendicular to freestream and drag parallel to freestream, the additional downwash &quot;tilts&quot; the lift component backward, reducing actual lift and increasing actual drag. </p><p>As I have said before, this is a inviscid phenomenon, it does not require viscosity to function. That's why drag exists with potential flow only in 3-D, but not 2-D.  </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="400" src="attachments/259298493/259298494.png" data-image-src="attachments/259298493/259298494.png" data-unresolved-comment-count="0" data-linked-resource-id="259298494" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_18-12-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span></p><p><u><strong>Horseshoe Vortex Model</strong></u></p><p>By now, you understand horseshoe vortex model without knowing its horseshoe vortex model, you just need to something to tie it together.</p><p><em>Horseshoe vortex models</em> says that the wing can be approximated by a vortex placed at quarter chord of the wing, and the vortex has same strength everywhere along the span. At the end of the wing, you have two semi-infinite <em>trailing vortices</em> that, theoretically, stretches all the way out to the place where the aircraft first started moving. Since that's so far away, and vortex diffuse away quickly, we don't care about the <em>starting vortex</em>. The two trailing vortices are the vortices that induce downwash on the wing. You might have seen these trailing vortices in real life on airplanes or F1 cars in high humidity conditions.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5AlWdtnrIeNmoAvuusoZD87Ycm89NwEHdg&amp;usqp=CAU" data-image-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5AlWdtnrIeNmoAvuusoZD87Ycm89NwEHdg&amp;usqp=CAU"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/259298493/259298495.png" data-image-src="attachments/259298493/259298495.png" data-unresolved-comment-count="0" data-linked-resource-id="259298495" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-22-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span></p><p>The issue with horseshoe vortex model is that it requires constant circulation along the span, which is not the case in real life. Sections closer to the trailing vortices experience additional downwash, resulting in lower lift. We need a way to fix it.</p><p><u><strong>Lifting Line Theory</strong></u></p><p><em>Lifting line theory</em> is the fix to the constant circulation constraint in the horseshoe vortex model. Lifting line theory uses a continuous spanwise circulation distribution, each infinitely small slice of circulation produce their own infinitely small horseshoe vortices. The result is a <em>vortex sheet. </em>If you go through the derivation you get the rather nasty equation known as the fundamental equation of lifting line theory (again, you don't really have to understand this equation). The last term in this equation represent induced angle of attack.</p><p><em><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/259298493/259298496.png" data-image-src="attachments/259298493/259298496.png" data-unresolved-comment-count="0" data-linked-resource-id="259298496" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-34-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span></em></p><p>You might think moving from line vortices in the horseshoe vortex model to a vortex sheet is a step back in terms of correlating to what actually happens in real life. After all, you can see the trailing vortices, but can't see the vortex sheets. When reality is a little more complicated than that. Wingtip vortices don't just form as a line vortex. Sheet vortex form along the span of the wing at the trailing edge due to inwash on the suction side and outwash on the pressure side. The sheet vortex then gets outwashed as it rolls up into a single vortex core - the wing tip vortex you see.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259298493/259298497.png" data-image-src="attachments/259298493/259298497.png" data-unresolved-comment-count="0" data-linked-resource-id="259298497" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-28-10.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span></p><p>But why is there inwash and outwash in the first place? Since airfoil sections near the root produces the high the lift thanks to their distance away from the tip, they must also produce the the highest amount of suction and pressure. On the suction side, this causes pressure gradient to point inward towards the root; and on the pressure side, this causes pressure gradient to point outward towards the tip.</p><p>The interesting thing about the lifting line theory is that you can optimize the fundament equation and find the circulation distribution that minimizes induced drag. When people did that, they arrived at the conclusion is that an <em>elliptical lift distribution</em> is the most efficient in terms of minimizing induced drag. A regular rectangular wing loads the tips too much to be efficient, and that's why you see a lot of racecars and airplanes run centerloaded wings to get the get the lift distribution to be more elliptical. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/259298493/259298498.png" data-image-src="attachments/259298493/259298498.png" data-unresolved-comment-count="0" data-linked-resource-id="259298498" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-40-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="206" src="attachments/259298493/259298499.png" data-image-src="attachments/259298493/259298499.png" data-unresolved-comment-count="0" data-linked-resource-id="259298499" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_23-41-38.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298493" data-linked-resource-container-version="1" alt=""></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298494.png">image-2023-5-8_18-12-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298495.png">image-2023-5-8_23-22-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298496.png">image-2023-5-8_23-34-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298497.png">image-2023-5-8_23-28-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298498.png">image-2023-5-8_23-40-33.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298493/259298499.png">image-2023-5-8_23-41-38.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

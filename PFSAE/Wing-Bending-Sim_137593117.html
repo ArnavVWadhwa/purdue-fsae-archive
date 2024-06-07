@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Wing Bending Sim</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297347.html">Manufacturing | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297348.html">Manufacturing Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Composites_130158108.html">Composites</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Wing Bending Sim
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (green338)</span>, last modified on Feb 14, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137593117/fixed_aerosim_entry.m?version=1&amp;modificationDate=1577771468000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/137593117/fixed_aerosim_entry.m?version=1&amp;modificationDate=1577771468000&amp;api=v2" data-linked-resource-id="137593118" data-linked-resource-type="attachment" data-linked-resource-container-id="137593117" data-linked-resource-default-alias="fixed_aerosim_entry.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="fixed_aerosim_entry.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">fixed_aerosim_entry.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137593117" data-linked-resource-id="137593118" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/137593117/fixed_aerosim_inputs.m?version=1&amp;modificationDate=1577771471000&amp;api=v2" data-nice-type="null" data-file-src="/download/attachments/137593117/fixed_aerosim_inputs.m?version=1&amp;modificationDate=1577771471000&amp;api=v2" data-linked-resource-id="137593119" data-linked-resource-type="attachment" data-linked-resource-container-id="137593117" data-linked-resource-default-alias="fixed_aerosim_inputs.m" data-mime-type="application/octet-stream" data-has-thumbnail="false" data-linked-resource-version="1" data-can-edit="true" aria-label="fixed_aerosim_inputs.m" draggable="false"><img src="download/resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources/images/placeholder-medium-file.png" height="250" alt="" draggable="false"/><span class="title">fixed_aerosim_inputs.m</span></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="137593117" data-linked-resource-id="137593119" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><p>Files above are on confluence for now since I'm too lazy to log into the VPN over break and put them on the drive.</p><p><br/></p><p>The two files are our wing bending input file and calculation script. </p><p>The names are a little misleading, fixed_aerosim_entry is the input file, fixed_aerosim_inputs is the calculation script.</p><p><br/></p><p><strong>Inputs:</strong></p><p>The inputs taken are as follows:</p><p><u>wing_props</u>: This is an Nx7 array for N wings. Each row should have the following values.</p><ul style="list-style-type: square;"><li>Force in N applied to the wing element</li><li>Chord in inches</li><li>Number of spars</li><li>Moment in in^4. Taken from CAD. The thickness of the wing section in CAD needs to match the layup schedule entered in order for the moment to be accurate.</li><li>Total_span in inches. This should be the entire length of the wing. So for FW main element, this would be from outer endplate to outer endplate (~50&quot;)</li><li>Max_span in inches. This is the largest section of the wing that bears load. For things like FW/RW main elements, this is typically the section of the wing between the mount and outer endplate.</li><li>Support_type. 1 means cantilever, 2 means fixed-fixed. All of our wings are currently fixed-fixed.</li></ul><p><u>spar_heights</u>: This is an NxM array for N wings and M (max number of spars on all wings) spars. An example of how this should be entered is below.</p><ul style="list-style-type: square;"><li>Max number of spars on any one wing is M. Therefore every entry should have M values for matlab to be able to make an array out of these values.</li><li>For wings with M spars, populate all values with the spar heights. </li><li>For wings with more than 0 spars but less than M spars, enter the spar heights and then populate the rest of the values with 0.</li><li>For wings with 0 spars, don't make any entries. The program will automatically fill them in with 0.</li></ul><p><u>wing_layup</u>: This is an NxM array for N wings and M (max number of plies on all wings) plies. Use the same example as above for how to enter these, with the exception of entering 9 instead of 0 for extra values on the end of the entry. This is to give the n/a ply property an integer value.</p><p><u>spar_layup</u>: This is an NxM array for N wings and M (max number of plies on all spars0 plies. Same rules as before.</p><p>Make sure that all indices for the wings match across the array. For example if FW main element is the 3rd row in wing_props, it should be the 3rd row in all input matrices.</p><p><u>ply_props</u>: This is an Nx4 array for N plies. Each row should have the following values</p><ul><li>Elastic modulus in psi in the bending direction. In our case, this is almost always the E1 value of the fiber or for twill 1/2*E1. If we decide to start varying our ply orientation, this section will need to use CLT to get the stiffness in the given direction</li><li>Thickness of the entire laminate in inches</li><li>Overall Areal Weight in gsm. This is the weight of all plies added together</li><li>Strength in psi in the bending direction. Same as with modulus, this is usually the Fc1 value or 1/2*Fc1. Make sure to use compressive strength rather than tensile as typically carbon is weaker in compression</li></ul><p><u>resin_modulus</u>: Elastic modulus of the resin in psi</p><p><u>resin_strength</u>: Strength of the resin in psi</p><p><u>resin_content</u>: The resin content by mass of the laminate. For us this usually falls between 0.4 and 0.5.</p><p><u>resin_density</u>: Resin density in g/cm^3</p><p><u>fiber_density</u>: fiber density in g/cm^3</p><p><br/></p><p>Add as many ply prop rows as there are fabrics. Resin properties and fiber density should really be in matrices, but I've been too lazy to update. If we ever start using multiple different resins for wings or use IM/HM fiber with higher densities, this will have to be changed.</p><p><br/></p><p><strong>Outputs:</strong></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/137593117/137593120.jpg" data-image-src="attachments/137593117/137593120.jpg" data-unresolved-comment-count="0" data-linked-resource-id="137593120" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Annotation 2019-12-27 132941.jpg" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="137593117" data-linked-resource-container-version="3" alt=""></span><br/></strong></p><p>The script will loop through all wings and calculate max spanwise and chordwise deflection, safety factor, and weight. Spanwise deflection is the loading typically seen by aero loads, while chordwise is looking at trailing edge deflection. Keep in mind that weight is per individual element, so for things like FW flaps the weight will need to be doubled to get the total assembly weight. FOS is maybe fake news, since it calculates based on aero loads. I'll add a cone_fos which finds max load based on a single force rather than a distributed.</p><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593117/137593118.m">fixed_aerosim_entry.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593117/137593119.m">fixed_aerosim_inputs.m</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/137593117/137593120.jpg">Annotation 2019-12-27 132941.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

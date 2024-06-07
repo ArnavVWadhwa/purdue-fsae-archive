@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : ANSYS Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297353.html">Education | SUS</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : ANSYS Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Crooks, Troy A</span>, last modified on Sep 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="ANSYSNotes-Connections">Connections </h1><h2 style="margin-left: 40.0px;" id="ANSYSNotes-Contacts">Contacts</h2><p><br/></p><p>Contact Settings ANSYS page <u><strong>:<a class="external-link" href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v222/en/wb_sim/ds_Contact_Scope.html" rel="nofollow">https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v222/en/wb_sim/ds_Contact_Scope.html</a> </strong></u></p><p><strong>Contact </strong></p><p><span style="color: rgb(10,10,10);">A contact pair can have a flexible-rigid scoping, <strong>but the flexible side of the pair must always be the </strong></span><strong><span class="guilabel" style="color: rgb(10,10,10);">Contact</span></strong><span style="color: rgb(10,10,10);"><strong> side</strong>. If the Contact side of the contact pair is scoped to multiple bodies,<span> </span></span><span class="bold" style="color: rgb(10,10,10);"><strong>all</strong></span><span style="color: rgb(10,10,10);"><span> </span>of the bodies must have the same<span> </span></span><a class="external-link" href="https://ansyshelp.ansys.com/Views/Secured/corp/v222/en/wb_sim/ds_rigid_bodies.html" rel="nofollow" style="text-decoration: none;" title="Rigid Bodies">Stiffness Behavior</a><span style="color: rgb(10,10,10);">, either<span> </span></span><span class="guilabel" style="color: rgb(10,10,10);"><strong>Rigid</strong></span><span style="color: rgb(10,10,10);"><span> </span>or<span> </span></span><span class="guilabel" style="color: rgb(10,10,10);"><strong>Flexible</strong></span><span style="color: rgb(10,10,10);">.</span></p><p><strong><span style="color: rgb(10,10,10);">Target</span></strong></p><p><span style="color: rgb(10,10,10);">Multiple<span> </span><span class="italic" style="color: rgb(10,10,10);"><em>rigid</em></span><span> </span>bodies cannot be selected for the<span> </span><span class="guilabel" style="color: rgb(10,10,10);"><strong>Target</strong></span><span> </span>side scoping of the contact pair. The selection of multiple rigid bodies for the<span> </span><span class="guilabel" style="color: rgb(10,10,10);"><strong>Target</strong></span><span> </span>invalidates the Contact Region object and an error message is generated following the solution process.</span></p><p><br/></p><p><br/></p><h5 class="bridgehead" style="text-decoration: underline;" id="ANSYSNotes-Type">Type</h5><p>Choosing the appropriate contact type depends on the type of problem you are trying to solve. If modeling the ability of bodies to separate or open slightly is important and/or obtaining the stresses very near a contact interface is important, consider using one of the nonlinear contact types (<span class="guimenuitem"><strong>Frictionless</strong></span>,<span> </span><span class="guimenuitem"><strong>Rough</strong></span>,<span> </span><span class="guimenuitem"><strong>Frictional</strong></span>), which can model gaps and more accurately model the true area of contact. However, using these contact types usually results in longer solution times and can have possible convergence problems due to the contact nonlinearity. If convergence problems arise or if determining the exact area of contact is critical, consider using a finer mesh (using the<span> </span><a class="external-link" href="https://ansyshelp.ansys.com/Views/Secured/corp/v222/en/wb_msh/ds_Meshing_Sizing.html" rel="nofollow" style="text-decoration: none;" title="Sizing">Sizing</a><span> </span>control) on the contact faces or edges.</p><p>The available contact types are listed below. Most of the types apply to Contact Regions made up of faces only.<br/><span class="imagedata"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://ansyshelp.ansys.com/Views/Secured/corp/v222/en/wb_sim/graphics/gds_bonded_options.png" data-image-src="https://ansyshelp.ansys.com/Views/Secured/corp/v222/en/wb_sim/graphics/gds_bonded_options.png"></span></span></p><ul class="itemizedlist"><li class="listitem"><p><span class="guilabel"><strong>Bonded</strong></span>: This is the default configuration and applies to all contact regions (surfaces, solids, lines, faces, edges). If contact regions are bonded, then no sliding or separation between faces or edges is allowed. Think of the region as<span> </span><em class="firstterm">glued</em>. This type of contact allows for a linear solution since the contact length/area will not change during the application of the load. If contact is determined on the mathematical model, any gaps will be closed and any initial penetration will be ignored. [Not supported for Rigid Dynamics. Fixed joint can be used instead.]</p></li><li class="listitem"><p><span class="guilabel"><strong>No Separation</strong></span>: This contact setting is similar to the<span> </span><span class="guilabel"><strong>Bonded</strong></span><span> </span>case. It only applies to regions of faces (for 3D solids) or edges (for 2D plates). Separation of the geometries in contact is not allowed.</p></li><li class="listitem"><p><span class="guilabel"><strong>Frictionless</strong></span>: This setting models standard unilateral contact; that is, normal pressure equals zero if separation occurs. Thus gaps can form in the model between bodies depending on the loading. This solution is nonlinear because the area of contact may change as the load is applied. A zero coefficient of friction is assumed, thus allowing free sliding. The model should be well constrained when using this contact setting. Weak springs are added to the assembly to help stabilize the model in order to achieve a reasonable solution.</p></li><li class="listitem"><p><span class="guilabel"><strong>Rough</strong></span>: Similar to the frictionless setting, this setting models perfectly rough frictional contact where there is no sliding. It only applies to regions of faces (for 3D solids) or edges (for 2D plates). By default, no automatic closing of gaps is performed. This case corresponds to an infinite friction coefficient between the contacting bodies. [Not supported for Explicit Dynamics analyses.]</p></li><li class="listitem"><p><span class="guilabel"><strong>Frictional</strong></span>: In this setting, the two contacting geometries can carry shear stresses up to a certain magnitude across their interface before they start sliding relative to each other. This state is known as<span> </span><span class="quote">&quot;sticking.&quot;</span><span> </span>The model defines an equivalent shear stress at which sliding on the geometry begins as a fraction of the contact pressure. Once the shear stress is exceeded, the two geometries will slide relative to each other. The coefficient of friction can be any non-negative value. [Not supported for Rigid Dynamics.<span> </span><span class="guimenuitem"><strong>Forced Frictional Sliding</strong></span><span> </span>should be used instead.]</p></li><li class="listitem"><p><span class="bold"><strong>Forced Frictional Sliding</strong></span>: In this setting, a tangent resisting force is applied at each contact point. The tangent force is proportional to the normal contact force. This setting is similar to<span> </span><span class="guimenuitem"><strong>Frictional</strong></span><span> </span>except that there is no &quot;sticking&quot; state. [Supported only for Rigid Dynamics]</p><p>By default the friction is not applied during collision. Collisions are treated as if the contact is frictionless regardless the friction coefficient. The following commands override this behavior and include friction in shock resolution (see<span> </span><a class="external-link" href="https://ansyshelp.ansys.com/Views/Secured/corp/v222/en/wb_sim/ds_rdb_cmd_objs.html" rel="nofollow" style="text-decoration: none;" title="Rigid Dynamics Command Objects Library in the Mechanical User's Guide">Rigid Dynamics Command Objects Library in the<span> </span><span class="olinkdocname">Mechanical User's Guide</span></a><span> </span>for more information).</p></li></ul></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="ANSYSNotes-ANSYSPDF">ANSYS PDF </h1><p>file was too large to upload to confluence</p><p><a class="external-link" href="file://nas01.itap.purdue.edu/puhome/My%20Documents/Downloads/Ansys_Mechanical_Users_Guide.pdf" rel="nofollow">file://nas01.itap.purdue.edu/puhome/My%20Documents/Downloads/Ansys_Mechanical_Users_Guide.pdf</a> </p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

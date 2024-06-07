@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Front Uprights</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297360.html">Design Archive | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297939.html">Design PF22 | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2021-22-Suspension-Design-Notebooks_160663669.html">2021-22 Suspension Design Notebooks</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Front Uprights
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (xia107)</span>, last modified by <span class='editor'> Unknown User (roger305)</span> on Nov 29, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Design Criteria/Constraints:</strong></u></p><ul><li>Must work alongside other designs</li><li>Lighter than PF20</li><li>all necessary mounts</li><li>handles load</li><li>reasonable packaging</li></ul><p><strong><u>Requirements</u></strong><strong><u>:</u></strong></p><ul><li>Packaging<br/><ul><li>Adjustable camber +1.0 to -1.5 degrees</li><li>no interferences at full toe out and toe in</li><li>hardware must be accessible with /some/ ease for maintenance and installations</li><li>Connects to control arms and tierod and sustains loads</li><li>brake caliper mounts</li><li>hall sensor mount</li></ul></li><li>Loads<ul><li>Withstands temperature 250 F</li><li>hits appropriate safety factors<ul><li>1.4 - ultimate strength, 1.2 - dynamic uncertainty factor, etc.</li></ul></li><li>meets load cases</li></ul></li></ul><p><strong><u>Components</u></strong><u><strong>:</strong></u></p><ul><li>Camber Piece</li><li>Front/Rear Upright</li><li>Shims</li></ul><p><u><strong>Modeling Process:</strong></u></p><ul><li>4 main components<ul><li>bearing hole</li><li>upper control arm mount</li><li>lower control arm mount</li><li>tierod mount</li></ul></li><li>models utilize layout part file with suspension points from chassis folder</li><li>Points of high stress: FEA forever<ul><li>Tierod lug mounts <ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/160663676/161909816.png" data-image-src="attachments/160663676/161909816.png" data-unresolved-comment-count="0" data-linked-resource-id="161909816" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-20_2-3-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="160663676" data-linked-resource-container-version="10" alt=""></span></li></ul></li><li>Control Arm Mounts</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/160663676/161909817.png" data-image-src="attachments/160663676/161909817.png" data-unresolved-comment-count="0" data-linked-resource-id="161909817" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-20_2-6-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="160663676" data-linked-resource-container-version="10" alt=""></span></li></ul></li><li>Giant lipped hole<ul><li>lip for reduction of lateral motion of hub </li></ul></li><li>hall mount and caliper mount points from sus point layout - predetermined<ul><li>Z:\2021\10_CAD-22\2_Chassis\PF22_CHA_0001_SusPoints.prt</li></ul></li></ul><p>------ START EDITING HERE--------</p><p><u><strong>PF20 Analysis:</strong></u></p><p>Past design choices and what to be aware of for PF22</p><ul style="list-style-type: square;"><li>Upright clearances for Control arms<ul style="list-style-type: square;"><li>toe clearance margins needed to be larger</li><li>pulled from Lessons learned: <a href="2020-Lessons-Learned_141725457.html">2020 Lessons Learned</a></li><li>solutions: via Ben's slides</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/160663676/161909814.png" data-image-src="attachments/160663676/161909814.png" data-unresolved-comment-count="0" data-linked-resource-id="161909814" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-20_1-39-46.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="160663676" data-linked-resource-container-version="10" alt=""></span></li></ul></li><li>Tool access seemed for the most part good, can be checked by putting in hand tools and testing fit. A good thing to include in the design reviews are pictures like this to show plan for maintenance and assembly.<ul style="list-style-type: square;"><li>Specific attention to LCA access to nut and bolt, plenty of clearance for wrench (stole picture from Ben's slides again)</li><li> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/160663676/161909818.png" data-image-src="attachments/160663676/161909818.png" data-unresolved-comment-count="0" data-linked-resource-id="161909818" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-11-20_2-21-43.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="160663676" data-linked-resource-container-version="10" alt=""></span></li></ul></li></ul><p><u><strong>Manufacturing:</strong></u></p><ul style="list-style-type: square;"><li><a href="https://wiki.itap.purdue.edu/display/PFSAE/Camber+Pieces" rel="nofollow">Camber Pieces - Purdue Formula SAE - Confluence</a></li><li>create new page for this</li></ul><p><strong><u>Safety/Temperature/Hard Numbers:</u></strong></p><ul style="list-style-type: square;"><li><a href="129009860.html">9/14/2019 Grissom - Aluminum Component Temperature Measurement</a><ul style="list-style-type: square;"><li>temperature numbers, others found in global design</li></ul></li></ul><p>Other Sources</p><ul><li><span style="color: rgb(0,51,102);">Load cases:  </span><a href="https://wiki.itap.purdue.edu/display/PFSAE/Vehicle+Loads+and+Environments+Master+List" rel="nofollow">https://wiki.itap.purdue.edu/display/PFSAE/Vehicle+Loads+and+Environments+Master+List</a></li><li>Temperature:  <a href="https://wiki.itap.purdue.edu/pages/viewpage.action?pageId=129009860" rel="nofollow">https://wiki.itap.purdue.edu/pages/viewpage.action?pageId=129009860</a></li></ul><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/160663676/161909814.png">image2020-11-20_1-39-46.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/160663676/161909815.png">image2020-11-20_2-3-10.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/160663676/161909816.png">image2020-11-20_2-3-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/160663676/161909817.png">image2020-11-20_2-6-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/160663676/161909818.png">image2020-11-20_2-21-43.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

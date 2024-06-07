@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : fsaeSTAR V6.2</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Change-Logs_259297446.html">fsaeSTAR Change Logs</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : fsaeSTAR V6.2
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on May 09, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><em>Released: 08/26/2022</em></p><p><u><strong>Geometry</strong></u></p><p><u><strong>Physics</strong></u></p><p><u><strong>Meshing Strategy</strong></u></p><p><u><strong>Solver</strong></u></p><p><u><strong>Post Processing</strong></u></p><ul><li>Being revamped to be faster, more accurate, and more comparability.</li><li>3D scenes<ul><li>3D scenes will no longer be exported as PNGs<ul><li>You can't rotate PNG, which make you lose out on information not shown in standard views</li><li>Contour scenes are pretty useless in static PNGs</li><li>You can't dynamically change color bar in a PNG</li></ul></li><li>STAR Viewer<ul><li>Light weight license free tool</li><li>You can run this on a potato computer</li><li>Need scn files, which are very fast to export<ul><li>So in the future, we can just throw 3D scenes in there</li></ul></li></ul></li><li>New 3D scene: vortex breakdown<ul><li>Consists of vortex breakdown contour and surface pressure mapping </li><li>New field function: <strong>${WallDistance} &lt; 0.003 || ${Qcriterion} &gt; 100000 ? 10 : ${TotalPressureCoefficient}</strong><ul><li>Filtered CpT </li><li>If wall distance is less than 0.003, set total pressure coefficient to a very large number (10), essentially filtering out low total pressure region in boundary layer</li><li>If Q-criterion is greater than 100,000, filter out total pressure coefficient<ul><li>Meaning if the magnitude of vorticity is 100,000 greater than strain rate, we want to filter it out</li><li>If we don't do this, high vorticity area will so show up as &quot;vortex breakdown&quot; which is counterproductive</li></ul></li></ul></li><li>Contour is set to -0.25</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/230656355/230656359.png" data-image-src="attachments/230656355/230656359.png" data-unresolved-comment-count="0" data-linked-resource-id="230656359" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-7-22_12-17-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230656355" data-linked-resource-container-version="7" alt=""></span></li></ul></li></ul></li><li>2D Scenes<ul><li>New scenes:<ul><li>Velocity X: velocity in x direction. Good for showing this like vortex breakdown</li><li>Velocity Z: velocity in z direction. Important for identifying local angle of attack</li><li>Inwash: shows inwash/outwash magnitude. Extremely important for undertray design</li><li>New field function: <strong>-$${NormalizedVel}[1] * ($${Position}[1]/abs($${Position}[1]))</strong></li></ul></li><li>Moved velocity glyph to additional design scenes<ul><li>You can't do image delta with velocity glyph, so it's much less useful in the ages of SimComparisonTool</li><li>And velocity glpyhs are horrendously slow to export and unpack</li></ul></li></ul></li><li>Other changes<br/><ul><li>Restructured scenes organization in STAR<ul><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/230656355/230656360.png" data-image-src="attachments/230656355/230656360.png" data-unresolved-comment-count="0" data-linked-resource-id="230656360" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-7-22_12-25-15.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230656355" data-linked-resource-container-version="7" alt=""></span></li><li>Eliminated the need to hardcode displayer names into fsaeSTAR</li></ul></li></ul></li></ul><ul><li>Added length wise local load plot<ul><li>This shows where downforce is coming from better than simple, per-part based system</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/230656355/230656875.png" data-image-src="attachments/230656355/230656875.png" data-unresolved-comment-count="0" data-linked-resource-id="230656875" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2022-7-22_12-38-35.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230656355" data-linked-resource-container-version="7" alt=""></span></li></ul></li></ul><p><u><strong>Automation Logic</strong></u></p><ul><li>Renamed V/Vinf field function from UserFieldFunction_1 to NormalizedVel</li></ul><p><br/></p><p><u><strong>(Failing to) Update to a newer version of STAR</strong></u></p><ul><li>Goal is to implement GPU acceleration</li><li> 2022.1.1<ul><li>This version introduces GPU acceleration for RANS models</li><li>Doesn't work because sims would fail after macros are finished and the next job would fail while spitting out unreadable garbage </li></ul></li><li>2206<ul><li>I don't know what Siemens did, but sims take like 3 hours to partition with 5 scholar nodes. So yeah, nah</li></ul></li><li>Turns out GPU acceleration wouldn't work anyways because CUDA is extremely outdated on scholar </li></ul>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230656355/230656359.png">image2022-7-22_12-17-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230656355/230656360.png">image2022-7-22_12-25-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230656355/230656875.png">image2022-7-22_12-38-35.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

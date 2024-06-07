@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Lap Time Simulation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Vehicle-Dynamics_246342245.html">Vehicle Dynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Simulation-Tools_246342277.html">Simulation Tools</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Lap Time Simulation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Kurisko, Keith Gregory</span>, last modified on Dec 06, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="LapTimeSimulation-ConceptOverview:">Concept Overview:</h1><p>A Lap Time Simulation tool allows for the study of various vehicle concepts and designs. This is possible by running multiple vehicle configurations through the same tracks or laps and analyzing the differences between lap time and velocity traces. In Formula SAE, there are clearly defined rules and equations that turn lap times from each dynamic event into the points equivalent which will allow use to quantify how many competition points we could theoretically gain by making a specific architecture decision. The Lap Sim can be used to correlate track data to vehicle models especially with the Grand Prix track as this is where we can compare tests to the same study in a simulated environment. This is a good way to validate designs along with our models.</p><p>A well explained and documented page on Lap Simulation can be found: <strong><a class="external-link" href="https://www.jovogel.com/lap-time-simulation" rel="nofollow">Lap Time Simulation | Jonathan Vogel (jovogel.com)</a></strong></p><h1 id="LapTimeSimulation-ModelLimitations:">Model Limitations:</h1><p>As with all simulations and models, no model is accurate but some models are useful. It is important to understand the limitations of your model and assumptions being made in order to gain useful information. </p><p>The Lap Sim is a 1:1 comparison of a certain vehicle configuration to another. As long as the theory used behind the vehicle model is the same then results can be used to make informed decisions on vehicle architecture and designs that are faster and will gain more points. It is important to recognize that the model we use cannot look at kinematic changes as our tire model is limited by extrapolation specifically with camber data. This will lead to inaccurate results that also wont make sense. Sensitivity studies should be conducted to evaluate the best vehicle architecture. </p><h1 id="LapTimeSimulation-Inputs:">Inputs:</h1><ul><li>Tracks</li><li>Vehicle Parameters to feed into GGV</li><li>GGV model to run simulation</li></ul><h1 id="LapTimeSimulation-Outputs:">Outputs:</h1><ul><li>Lap Times</li><li>Comp Points</li><li>Telemetry traces<ul><li>Speed</li><li>Accelerations</li><li>Downforce</li><li>RPM</li><li>Torque/Power</li><li>Gear Position</li><li>Fuel Usage</li><li>Etc.</li></ul></li><li>Cycle Count for Fatigue</li></ul><h1 id="LapTimeSimulation-ModelingProcess:(Courteousyof)">Modeling Process: (Courteousy of <a class="confluence-userlink user-mention" data-username="zmacnab" href="https://wiki.itap.purdue.edu/display/~zmacnab" data-linked-resource-id="185500260" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">MacNab, Zachary Robert</a> )</h1><p><br/></p><h1 id="LapTimeSimulation-Instructions:">Instructions:</h1><ol><li>Configure Vehicle Parameters File</li><li>Run GGV<ol><li>Check if it makes sense</li></ol></li><li>Input GGV and Track (if needs to be changed) and run Lap Sim</li><li>Take Print Out Points Results or Study Plots that can be made referencing telemetry variables</li></ol>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

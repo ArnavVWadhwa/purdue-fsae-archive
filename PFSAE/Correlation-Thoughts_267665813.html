@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Correlation Thoughts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297341.html">Design | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297342.html">Design Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228301297.html">Computational Fluid Dynamics (CFD)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="fsaeSTAR-Manual_259297491.html">fsaeSTAR Manual</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Correlation Thoughts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified on Aug 20, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Correlation vs. Accuracy</strong></u></p><p>This is an often missed understood concept and I want you to understand it before we go on.</p><p>Accuracy means CFD says the car gains 7 pts in Cl with a change, and the car gains 7 pts in Cl on track with the change. A perfect accurate CFD, which is impossible to achieve, matches real life exactly.</p><p>Correlation is not accuracy. Here is an example: if you center loaded front wing with an increase in center section camber, and that CFD predicts a 7 pts gain in Cl, but the car losses 3 pts on track. Then you center loaded front wing with an increase in center section angle of attack instead without changing camber, and that predicts a 5 pts gain in Cl, but the car losses 2 pts on track. In this example, CFD is well correlated. Because two very similar changes in terms of the flow field yielded very similar trends between CFD and on track. CFD doesn't have to be accurate to real life, it just has to be consistent so that you, the engineer, can reliably uses its output. In this case, you know next time when you load up the center section, maybe by cranking the main element flap, you know that you will lose performance even though CFD says its going to net you 8 pts in Cl.</p><p><u><strong>Turbulence Modeling</strong></u></p><p>Turbulence models have already been extensively discussed, so I am not going to say more here. The one say I do want to say is that don't try to mess around coefficients unless that coefficient is a1 or you are using GEKO. The turbulence models are designed so they are generally physically correct, and changing numbers you don't understand will (not may) lead to disaster.</p><p><u><strong>Boundary Conditions</strong></u></p><p>One of the easiest thing to do for correlation is through boundary conditions. Undertray performance can change massively depends on ground roughness, yet as of fsaeSTAR V6.4 we are still doing using a smooth wall for the ground. Is that something that should be changed? Maybe. You can't say for sure unless you have data. The whole roughness thing go for tires too; they are rough and we don't model them as such. What you should be careful about tire, though, is to not count graining and marble pick up as part of the roughness. They are way too big physically to be only offsetting the viscous sublayer.</p><p>Going back to the accuracy vs. correlation thing earlier, the thing that's cool about it is that since we are aiming for correlation, boundary conditions don't necessarily have to be physical. For example, if the rough ground for the entirety of the domain doesn't correlation well, doing it for a part of the ground is totally acceptable, as long as you have evidence pointing towards increased accuracy. Of course, boundary conditions still have to be somewhat correct. If you switch the FW to slip wall and claim it's better, you will have some serious fixing to do because your CFD is beyond wrong. So this is where engineering judgement come in.</p><p><u><strong>Transition</strong></u></p><p>Transition modeling is tough, and generally does not concern us. But front wing is affected by the presence of laminar flow, which can lead to laminar separation bubbles which can results in instabilities of front downforce hence balance. So maybe running transition model has its merits.</p><p>Transition model also becomes important when dealing with wind tunnel. Without moving ground, the boundary layer going into the car on the ground is laminar, which contains different amount of total energy as a turbulent boundary layer. </p><p>I haven't tried running transition models, I have heard that it's great for complex flow like that of a FSAE car. It's effects is definitely worth studying though. You can start out by figuring out where on the front wing transition happens. If it is close enough to the LE, then maybe it's not worth it. Flow viz can be useful in this, but you need F1-like flow viz that is painted over a large area. Transition line should appear similar to the separation line in this case, except there is continued flow motion after the transition line. </p><p><strong><u>Data Measurement</u></strong></p><p>Correlation is impossible without data, yet we operate in extremely limited budget that does not cover any reasonable aerodynamics testing. While we can measure CL with relative confidence, a change in CL doesn't really tell you where the change is coming from. Correlation is about getting flow features right. It is extremely dangerous when you have errors that cancel out, since that gives you false confidence on the CFD environment. This happened for the PF22 vehicle, where CFD errors and on track errors canceled out so that CFD error was only 3%. </p><p>We have in the past used flow viz to great success. Its data was the main driving force behind the switch to SST and a1 tuning. The simplest flow viz involves putting a series of large droplets of flow viz on a flap and just run the wind tunnel at 60 mph for a couple of minutes. This method shows the separation line well, but I have yet to see any transition line (although that could be because there is no transition where I placed the flow viz). Flow viz is really only useful in wind tunnel from what we have found so far, since there is too much inertial forces when the car is driving so that the droplets go all over the place. Plus there is no place where you can drive the car at 60 mph for a couple of minutes without turning. Although the solution to that problem might be as simple as finding a better flow viz recipe. </p><p>We, and by that I mean I, have over-valued smoke wand. While smoke wand is nice for big changes in flow field, like what we did for PF23 FW upper flap, it is not useful for things that are more subtle than the removal of an entire flap. The issue is that you don't know the flow velocity or vorticity of the oil droplets, and you don't exactly know where the droplets are. It might be useful to look into a homemade PIV (particle image velocimetry) system. You will need a fairly powerful laser, glass to convert point laser to a sheet, and a decent camera. You can take pictures of the flow of the oil drops in quick succession to calculate flow velocity. With a bit of math, you can get some very high fidelity data.</p><p>Another thing you can do is pressure taps. Due to the low dynamic pressure nature of aerodynamic flows, you need very sensitive sensors to detect the changes. And since one pressure tap only taps a small point, you need a whole array of them to be useful. I am talking about hundreds at least. So that will get extremely expansive extremely fast. </p><p><u><strong>No Money Can't Measure Data</strong></u></p><p>I know that the talks of PIV and hundreds (by that I mean even one) pressure taps are mostly me daydreaming. What we do have at our disposal, however, is computational power. We don't have a lot of it, but we do have enough spare time to make it work.</p><p>In the absence of real world data, the next best thing to do compare two models. If the two models perform similarly, then you can be reasonably confident about your model. You can also look at where models differ, and learn to be more careful when developing that area. </p><p>Running Spalart Allaramas turbulence model is the obvious first choice. Cost wise is similar if not less than SST. You don't need a new mesh either, since SST and S-A have extremely similar meshing requirements. So this is something cheap that you should do from time to time during the design season. If there is a night where nothing is running, you don't really have an excuse to not run S-A for correlation.</p><p>Another, more involved but more valuable model to use is DES. As a combination between RANS and LES it is extremely expansive for the equipment we have. Running it to full accuracy can be orders of magnitude times more expansive than RANS. That's why we don't tend to run it. However, this is engineering, not research, accuracy is not what we are aiming for. You can run DES with large time steps and a (relatively) coarse mesh to get a rough result. The result you get won't be more accuracy than RANS, but it will get you an alternative to RANS, which is why even reduced accuracy DES is valuable. By doing this, you invalidate the transient result, but time-averaged results should be reasonable. DES will require a new mesh. I will be honest I have no idea to how to do a DES mesh. It's most likely going to be a combination of RANS mesh and LES mesh, so most likely the wakes need to be refined even further. Due to the potential cost of DES, it is probably wise to only run it once per design season. </p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

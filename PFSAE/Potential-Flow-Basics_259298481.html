@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Potential Flow Basics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297338.html">Education | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297700.html">Fundamentals | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Potential-Flow_259297759.html">Potential Flow</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Potential Flow Basics
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Zhang, Chenkai</span>, last modified by <span class='editor'> Lau, Iancarlo Antonio</span> on Jun 22, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>What is potential flow</strong></u></p><p>As you have already seen, fluid mechanics is governed by a set of very complex partial differential equation. These differential equations are so complex that no analytical solution exists. So how did early fluid dynamists study fluid mechanics before computers existed? The answer lies in simplification of the governing equation. We can make four assumptions that simplifies the Navier Stokes equation greatly so that analytical solutions could be easily obtained:</p><ol><li><em>Steady: </em>flow field does not change with time</li><li><em>Incompressible: </em>flow density does not change</li><li><em>Inviscid: </em>neglect viscosity</li><li><em>Irrotational: </em>vorticity of the flow is zero. Vorticity is defined by the curl of the velocity vector field.</li></ol><p>Putting the four assumptions together, you get <em>potential flow</em>. Potential flow is governed by the Laplace Equation, which was a very well-studied partial differential equation even in the early days of fluid mechanics.</p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="200" src="attachments/259298481/259298482.png" data-image-src="attachments/259298481/259298482.png" data-unresolved-comment-count="0" data-linked-resource-id="259298482" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_15-41-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298481" data-linked-resource-container-version="2" alt=""></span></strong></p><p><u><strong>What can potential flow can and can't do</strong></u></p><p>To get to potential flow, we made a lot of assumptions. It's important to understand how these assumptions affect the solution.</p><p>Let's start with what potential flow can do (in other words why do we care about potential flow):</p><ul><li>It can be easily solved</li><li>It can estimate airfoil lift. Note this only apply to a simple airfoil with minimal adverse pressure gradient. As adverse pressure gradient increases, boundary layer gets thicker, the potential flow get less accurate. For the same reason, it can't be used to calculate lift of something like a racecar.</li><li>It can explain concepts like induced drag and ground effect. Induced drag can be explained because it's the only type of drag that does not require the existence of viscosity. The only thing it requires is 3-D. Ground effect can be explained by mirroring your geometry across the ground, which enforces zero velocity across the ground plane.</li></ul><p>Now what potential flow can't do:</p><ul><li>It can not produce flow separation. Flow separation as defined by back flow cannot exist without viscosity in subsonic environments because no entropy is generated (flow separation can exist in supersonic environment because shocks are the source of entropy generation). While in inviscid but rotational flow can &quot;separate&quot; in the sense that streamline do not flow surface contour, recirculating flow can not exist.<ul><li>Time to go on a CFD tangent here, because I got myself confused here thinking Euler's equation can have separation. If you run Euler's equation (inviscid but rotational) flow in CFD, you will find the flow does separate. However, this is CFD error. The discretized Euler's equation has artificial viscosity (numerical viscosity, artificial damping, numerical damping, and numerical diffusion all mean the same thing here) to ensure stability. Note that I say the discretized Euler's equation is the source of error, not the discretized domain, since artificial viscosity exists even with infinitely fine grid.</li></ul></li><li>It can not accurate calculate lift since boundary layers and wakes do not form.</li><li>It can not calculate drag. But that I mean if you try to calculate drag in 2-D, you will always get 0. Why? One way to look at drag is the net total pressure loss. In potential flow, no total pressure is lost, therefore, there is no drag. The fact that drag is 0 in potential flow has a name: <em>D'Alember's paradox</em>. </li></ul><p><u><strong>Build Block of Potential Flow</strong></u></p><p>The cool thing about potential flow is that superposition works. In other words, you can combine different building block flows to construct a much more complex flow.</p><p>Building blocks of potential flow consists of :</p><ul><li><em>Uniform Flow</em></li><li><em>Source/sink</em></li><li><em>Forced vortex</em></li><li><em>Doublet</em></li></ul><p><em><a class="CID663db17a-793c-452c-8c64-4b98d00eddeb" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/259298481/259298483.png" data-image-src="attachments/259298481/259298483.png" data-unresolved-comment-count="0" data-linked-resource-id="259298483" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_16-3-48.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298481" data-linked-resource-container-version="2" alt=""></span><a class="CIDb33b3b77-15bd-4f24-90f4-179092a8b099" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="150" src="attachments/259298481/259298484.png" data-image-src="attachments/259298481/259298484.png" data-unresolved-comment-count="0" data-linked-resource-id="259298484" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_16-3-53.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298481" data-linked-resource-container-version="2" alt=""></span><a class="CIDf2a91278-d807-42d3-8741-f4323b8bbb13" rel="nofollow"> </a><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/259298481/259298485.png" data-image-src="attachments/259298481/259298485.png" data-unresolved-comment-count="0" data-linked-resource-id="259298485" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2023-5-8_16-3-58.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="259298481" data-linked-resource-container-version="2" alt=""></span></em></p><p>Out of all of these, lifting flow over a cylinder (aka rotating cylinder) is of particular importance, because it is analogues to an airfoil. <em>Kutta Joukowski theorem</em> says that lift equals density times velocity times vortex strength Γ. Therefore, an airfoil can be said to produce a certain amount of circulation. The question now turns from how do I find lift of the airfoil to how do I find the circulation of the airfoil.</p><p>Let's think a look at the flow over a rotating cylinder carefully first before diving into airfoil where thing can get a little difficult. As you can see, the surface of the cylinder itself is a streamline, moving at the speed of cylinder rotation rate. You can also see there is one streamline going into the cylinder surface, and one going out. Those streamlines reach 0 velocity upon contact with cylinder surface, making <em>stagnation points. </em>In inviscid flow, an airfoil, just like the cylinder in this case, has 2 stagnation points, one at the front and one at the back (although an rotating cylinder can have anywhere between 0 and 2 stagnation points). You can also obverse, due to cylinder rotation, flow above the cylinder is accelerated, reducing pressure (according to Bernoulli, which applies fully here in the context of irrotational flow); and flow below the cylinder is decelerated, increasing pressure. That is where lift comes from.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298481/259298482.png">image-2023-5-8_15-41-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298481/259298483.png">image-2023-5-8_16-3-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298481/259298484.png">image-2023-5-8_16-3-53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/259298481/259298485.png">image-2023-5-8_16-3-58.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-262832585"></a>
+                                    <font class="smallfont"><ol><li>Can you explain how inviscid but rotational flow can separate? Like what would be the picture of a streamline that does not flow surface contour so recirculating airflow cannot exist? This part got me a bit confused.</li><li><span style="letter-spacing: 0.0px;">With potential flow we can estimate airfoil lift with simple airfoils, my question is, when do you know an airfoil is too complex (too much of an adverse pressure gradient) to be solved?</span></li></ol></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by ilau at May 30, 2023 15:04
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-262832620"></a>
+                                    <font class="smallfont"><ol><li>Consider a backward facing step. The solution to the Euler's equation would have streamline parallel to the step at all time. As opposed to solution to Laplace's equation, the flow from inlet could come down and &quot;fill&quot; the step.</li><li>It entirely depends on the context. This is something for you as the engineer to decide. Doing a first order approximation? Potential flow is good enough. Doing detailed analysis? Probably not. Making a RC plane? Maybe. Designing a racecar? Maybe not.</li></ol></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhan3907 at May 30, 2023 17:09
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:25</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

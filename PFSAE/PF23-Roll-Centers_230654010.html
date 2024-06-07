@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : PF23 Roll Centers</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297361.html">Manufacturing | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="222431600.html">2023 (Suspension)</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF23-Design-Notebooks_224199356.html">PF23 Design Notebooks</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="228295249.html">PF23 Actuation / Kinematics</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : PF23 Roll Centers
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> MacNab, Zachary Robert</span> on Jul 21, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Information originally made by Ben Reynolds, edited by Zach MacNab</p><h2 id="PF23RollCenters-RollCenters">Roll Centers</h2><p>Roll centers should be selected to make the car have neutral oversteer/understeer characteristics in transient events <em>with the dampers in the middle of their usable range</em>. This assures that the dampers can be used to tune from transient understeer to transient oversteer. These figures show how that looks:</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/230654010/230654011.png" data-image-src="attachments/230654010/230654011.png" data-unresolved-comment-count="0" data-linked-resource-id="230654011" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-25_22-52-3.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="230654010" data-linked-resource-container-version="1" alt=""></span></p><p><br/></p><p>Transient understeer is when there is no real yaw overshoot, the car just immediately pushes. Transient oversteer is when there is significant yaw overshoot. The car over rotates, four wheel drifts, and then settles out. Being able to adjust between these behaviors is desirable, as some behavior in between is certainly ideal, hence why we initially tune with dampers in the middle of their Force vs. Velocity range (for low speed compression and (kinda) rebound, see PF23 Dampers page if you don't know why).</p><p>The case I used to look for these behaviors is created as follows: I ran a 27ft radius corner with the quasi steady state solver. I then ran a step steer case that was 5 mph above vehicle capability in that corner and had the step steer go to the steering amount that corresponded to that corner. I had the step steer take .5 seconds based on the speed of steering input that I have seen in testing data. This makes for the case where the driver comes into a corner somewhat too fast.</p><p>The challenge of this, then, becomes defining the usable range of the dampers, as that will be necessary to show the ranges behavior achievable by damper adjustment. This KAZ resource (<a class="external-link" href="https://www.kaztechnologies.com/wp-content/uploads/2014/03/A-Guide-To-Your-Dampers-Chapter-from-FSAE-Book-by-Jim-Kasprzak.pdf" rel="nofollow">https://www.kaztechnologies.com/wp-content/uploads/2014/03/A-Guide-To-Your-Dampers-Chapter-from-FSAE-Book-by-Jim-Kasprzak.pdf</a>) has recommendations for ranges of damping ratio for both sprung and unsprung mass. Using those and the expected spring rates, damping rate bounds can be selected. This is discussed in the dampers section with calculations.</p><p>So the goal would be to show that using the range of reasonable damping values, transient balance can be tuned. When I've gone through these calculations, I've found that the range of reasonable damping adjustment has minimal effect. I have found that, if going beyond that range into what I thought, at the time at least, was unreasonable, the roll center positions did effect the corresponding range of handling outputs. I have also found that, with a given damping setup, adjusting the roll centers makes a very small difference. </p><p>All the above only really provides a method for setting the relative heights, but not the heights together. So far, I have set the heights somewhere that seemed reasonable based on the fact that if placed too high, it will be difficult to adjust the cars steady state balance via springs. If the roll centers were set such that the neutral axis passed through the CG, adjustment via springs would be impossible because no load during roll would go through the springs. This is why I chose to keep the roll centers relatively low. However, I have done no additional work to determine quantitatively how high is too high. I suspect that the correct way to do this would be to look at the range of frequencies that can be accepted for pitch, roll, and the unsprung mass as well as ride height change. This would give a range of acceptable wheel rates in bump conditions. That would dictate ranges of acceptable spring rates. Roll centers would then need to be set low enough that the given range of spring rates can provide a targeted amount of adjustment to the total lateral load transfer distribution (LLTD). While, I am confident that the current settings do this, proving it quantatively would yield higher design scores and possibly indicate that roll centers could be moved higher. This would be beneficial as it would allow softer springs without increasing roll. This could give a more responsive car with same amount of mechanical grip. A few good teams have gone this route, the University of Wisconsin being the best of them that comes to mind.</p><p>Another thing to consider when designing Roll Centers is the migration of them. Under roll the roll center will shift in the y-plane, and this effect needs to be studied. At performance engineer at Rahal told me that one time, a race team took a great front suspension package from one car and a great rear suspension package from another, put them together, and it handled horribly. This is because the roll centers migrated in different directions, and made the car roll along a diagonal axis. We definitely need to avoid this, and this could've been the reason why PF22 would lift the rear inside wheel under cornering. </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/230654010/230654011.png">image2019-12-25_22-52-3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:31</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

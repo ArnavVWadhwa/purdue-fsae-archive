@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Deflection Target Justification - 2022</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Aerodynamics_129007673.html">Aerodynamics</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297347.html">Manufacturing | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297348.html">Manufacturing Resources | AER</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Composites_130158108.html">Composites</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Deflection Target Justification - 2022
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (green338)</span> on Dec 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Assumptions:</p><ol><li>Localized aero deformation behaves similar to translation in the deformation direction (i.e. downwards deformation of the undertray is the same as the undertray moving down without deforming). I know this is a big assumption, but we don't have much of a better way to measure the aero effects of this deformation without putting deformed models from ansys back into CFD. <a class="confluence-userlink user-mention" data-username="green338" href="https://wiki.itap.purdue.edu/display/~green338" data-linked-resource-id="73405967" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://wiki.itap.purdue.edu">Unknown User (green338)</a> Run 1 model with this and compare if this assumption is even close to being valid.<span style="letter-spacing: 0.0px;"> </span></li><li><span style="letter-spacing: 0.0px;">1.5% failure strain in all of our composites</span></li></ol><p><br/></p><p>Target: 0.17in max deflection, 0.75% max strain</p><p>Justification:</p><p>Based on this heat map, the worst case front and rear axle drop at 0 pitch is approximately 0.2in. This graph can be found in <a href="Ride-Height-Studies_190908942.html">Ride Height Studies</a>. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/200377811/200377814.png" data-image-src="attachments/200377811/200377814.png" data-unresolved-comment-count="0" data-linked-resource-id="200377814" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-10_1-3-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="200377811" data-linked-resource-container-version="1" alt=""></span></p><p>This condition will almost never occur when the car is in a state that it needs lots of downforce (cornering or braking), but it will be used as the worst case scenario for target setting purposes. This is in part to account for the fact that assumption 1 is very broad.</p><p>At 0.2in of ride height drop, the Cl increases from 3.50 to approximately 3.58. Downforce increases as ride height decreases until ~0.4-0.45in of ride height drop, at which point the Cl starts to decrease. This plot can be found in <a href="Results_192188599.html">Results</a>.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/200377811/200377817.png" data-image-src="attachments/200377811/200377817.png" data-unresolved-comment-count="0" data-linked-resource-id="200377817" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-10_1-5-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="200377811" data-linked-resource-container-version="1" alt=""></span></p><p>Both of these plots are measuring shock pot travel, and do not include the tire deflection at 80mph of ~0.35in. In reality, maximum car ride height drop will be -0.55in at the bound of the operation window, as taken from the heat map. The calculations will be performed with shock pot travel values to avoid throwing around several different values for ride height drop that don't correspond to the plots.</p><p>Based on the ride height heat map worst case and Cl vs ride height plot, the allowable deflection of components downwards is approximately 0.2-0.25in, which will be taken as 0.2in for the worst case bound. Our FEA and hand calc tools for deflection estimates of the carbon have error of approximately 15% when correlated to physical tests, as seen in this plot.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/200377811/200377819.png" data-image-src="attachments/200377811/200377819.png" data-unresolved-comment-count="0" data-linked-resource-id="200377819" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-12-10_1-20-52.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="200377811" data-linked-resource-container-version="1" alt=""></span></p><p>After applying a reduction of 15% to the allowable deflection to account for uncertainty, the max allowable deflection is 0.17in.</p><p>Strain targets are set based on a safety factor of 2, taken from NASA-STD-5001. This accounts for analysis error and manufacturing defects, giving a max allowable strain of 0.75%.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/200377811/200377814.png">image2021-12-10_1-3-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/200377811/200377817.png">image2021-12-10_1-5-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/200377811/200377818.png">image2021-12-10_1-15-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/200377811/200377819.png">image2021-12-10_1-20-52.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

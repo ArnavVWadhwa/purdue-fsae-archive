@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2023 Michigan Final Design Event Notes</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Competitions-Planning_179280096.html">Competitions Planning</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Archive_202281813.html">Archive</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2023-Competition_244777171.html">2023 Competition</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2023-Michigan-Design-Event_261751435.html">2023 Michigan Design Event</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2023 Michigan Final Design Event Notes
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Dien Quang Nguyen</span>, last modified on May 25, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="id-2023MichiganFinalDesignEventNotes-General">General</h2><p><br/></p><h2 id="id-2023MichiganFinalDesignEventNotes-Suspension">Suspension</h2><p><br/></p><h2 id="id-2023MichiganFinalDesignEventNotes-Chassis">Chassis</h2><p>Some of the questions weren't too bad, but some where nasty and really took the 15 minutes allowed to work through.</p><p><strong>Judge 1:</strong></p><ul><li>How do you set a target for torsional rigidity?</li><li>What is your setup for validating that value of torsional rigidity?<ul><li>How do you evaluate the results?</li></ul></li></ul><p>→ To which Christian explained that we didn't have a &quot;numerical&quot; target for torsional rigidity and that our aim was a rules-minimum chassis becasue based on PF20 destructive testing, it was concluded that a rules-minimum chassis allowed for sufficient tunability of suspension (i.e., suspension wasn't too heavily affected by a rules-minimum-stiff chassis)</p><ul><li>How do you tune the combination of chassis + sus springs without a target? (Honestly don't really understand what he is getting at here)</li><li>If you were asked to design the chassis again from the start, how would you design it? (I think he was implying designing the chassis without access to past documentation or testing data?)</li><li>What is the impact of moving sus points to (eliminate bend in front hoop and) remove tubes?</li><li>How did you constrain the chassis for torsion test?<ul><li>How did you decide the numbers for loading increments used in torsion test? (basically the applied load info <a href="PF23-Torsion-Test-0000_250317515.html">here</a>)</li></ul></li></ul><p><strong>`Judge 2:</strong></p><ul><li>Let's say the tires on your car are infinitely grippy and the car can corner infinitely fast. As the cornering velocity of the car increases, which tube(s) will fail first? At approximately what G? <ul><li>If we bump that up to 1G further then which tubes will fail next? Approx how many will fail?</li></ul></li></ul><p>→ Christian: Well, as you can see with our FEA results here, the lower engine mount will fail first.</p><ul><li>Why is that? </li><li>What is the failure mode? <ul><li>If it is a tab, what is the safety factor on that? </li><li>What is margin of safety? Why do you use that?</li><li>What is the 1.2 factor of safety for? </li></ul></li></ul><p><strong>Judge 3 (Bill Riley):</strong></p><ul><li>When you size your tabs, what was the force assumed from the CA?</li><li>If we pull on that front aft upper control arm, what fails first in tension?<ul><li>What are all the possible failure modes for a load on the Front Aft UCA?</li></ul></li><li>If we push on that control arm, what fails first?</li><li>If we pull on that control arm, what fails first?</li></ul><p><strong>Judge 4 (Chris Warren):</strong></p><ul><li>How many degrees of freedom does a chassis have?</li><li>How many degrees of freedom do you want to constrain?<ul><li>Do you want to constrain more DOFs? Why or why not?</li></ul></li><li>Use 6 translational constraints in 4 uprights to ensure all 6 DOFs are constrained (don't worry abt actual torsion test constraints for now) → draw this out on a piece of paper</li></ul><p><strong>Judge 5:</strong></p><ul><li>Why 4130 steel? Why ER-70s filler rod? Why aluminum AIP? Why standard honeycomb IA?</li><li>Why spaceframe over monocoque?<ul><li>How much lighter is a monocoque?</li><li>How much more stiff is a monocoque?</li><li>What factors have you guys considered before opting for a spaceframe vs monocoque chassis?</li></ul></li></ul><h2 id="id-2023MichiganFinalDesignEventNotes-Cockpit|Controls|Brakes|Safety">Cockpit | Controls | Brakes | Safety</h2><h3 id="id-2023MichiganFinalDesignEventNotes-Brakes">Brakes</h3><ul><li>How did you size your master cylinders? What were the considerations?</li><li>How hard can you push the brake pedal?</li><li>How hard do you have to push the brake pedal for sufficient response?<ul><li>Why did you choose these thresholds?</li></ul></li><li>How would you validate driver braking forces?</li></ul><p><br/></p><ul><li>You showed data from a study for 4130 steel strength knockdowns at different temperature ranges, what was/were their test setup?</li><li>What's your average brake temperature?</li><li>What's your max brake temperature?</li></ul><h2 id="id-2023MichiganFinalDesignEventNotes-Powertrain">Powertrain</h2><p><br/></p><h2 id="id-2023MichiganFinalDesignEventNotes-Aero">Aero</h2><p><br/></p><h2 id="id-2023MichiganFinalDesignEventNotes-SIQ">SIQ</h2><p><br/></p>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:33</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

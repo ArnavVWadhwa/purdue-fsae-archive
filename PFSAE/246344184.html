@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2. Pneumatics Hand Calculations &amp; Component Selection</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297373.html">Design PF23 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="226820490.html">Pneumatics Shifter &amp; Clutch PF23 | Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2. Pneumatics Hand Calculations &amp; Component Selection
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Dec 13, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The purpose of this page is to detail the hand calculations and assumptions made in the component selection for the pneumatic shifting system.</p><p><style type='text/css'>/*<![CDATA[*/
+div.rbtoc1709576874428 {padding: 0px;}
+div.rbtoc1709576874428 ul {margin-left: 0px;}
+div.rbtoc1709576874428 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1709576874428'>
+<ul class='toc-indentation'>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-DesignRequirements'>Design Requirements</a>
+<ul class='toc-indentation'>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-ForceRequirements'>Force Requirements</a></li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-StrokeRequirements'>Stroke Requirements</a></li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-MarginsofSafety'>Margins of Safety</a></li>
+</ul>
+</li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-ComponentSelection'>Component Selection</a>
+<ul class='toc-indentation'>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-PistonSelection'>Piston Selection</a></li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-TankSelection'>Tank Selection</a></li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-SolenoidSelection'>Solenoid Selection</a></li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-FittingSelection'>Fitting Selection</a></li>
+</ul>
+</li>
+<li><a href='#id-2.PneumaticsHandCalculations&amp;ComponentSelection-AdditionalDocumentation'>Additional Documentation</a></li>
+</ul>
+</div></p><h1 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-DesignRequirements">Design Requirements</h1><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-ForceRequirements">Force Requirements</h2><p>Force requirements for this were decided by physical testing with a crane scale. The crane scale was pulled on until the point at which the clutch was disengaged, or the next gear was selected.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/246344184/246344228.png" data-image-src="attachments/246344184/246344228.png" data-unresolved-comment-count="0" data-linked-resource-id="246344228" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_14-57-9.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-StrokeRequirements">Stroke Requirements</h2><p>Stroke requirements were determined by recording video of the shifter and clutch actuation, and calling out the point at which the clutch was disengaged - or the next gear was selected. The moment arm was measured using calipers and the angular displacement was estimated from the video.</p><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-MarginsofSafety">Margins of Safety</h2><p>Force and stroke margins of safety were originally set to 100% based on sections 3.1.1.3 and 3.1.1.4 of NASA's <span>Space</span><span> </span><span>Flight System</span><span> </span><span>Design and Environmental </span><span>Test</span> Standard, respectively (can be found here: <u><strong><a class="external-link" href="https://www.nasa.gov/sites/default/files/atoms/files/std8070.1.pdf" rel="nofollow">https://www.nasa.gov/sites/default/files/atoms/files/std8070.1.pdf</a></strong></u>). This was the case until a visit from an engineer who works with pneumatic systems noted that this NASA standard explicitly includes &quot;electromechanical motors and solenoids, phase-change and state-change actuators, and spring-energized devices, or mechanisms driven by these devices&quot;, not necessarily pneumatic systems. Because of this, a 40% force margin of safety was applied to the clutch lever, which has not caused any problems with engagement on the engine dyno.</p><h1 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-ComponentSelection">Component Selection</h1><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-PistonSelection">Piston Selection</h2><p>Piston selection was done using the spreadsheet at the end of this section. One important thing to note is the use of surface areas instead of bore diameters. Depending on how a cylinder needs to be packaged, and what it's being used for, the cylinder may use one of three modes. The first, known as <strong>single acting</strong>, is shown in the left image below. This is the cylinder extending. The second, known as <strong>reverse single acting</strong>, is shown in the right image below - this is pulling / retraction. The third is <strong>double acting</strong>, where the cylinder is set up to extend and retract.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-external-resource" draggable="false" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwiki.dtonline.org%2Fimages%2Ff%2Ffd%2FPneumaticsDoubleActingCylinder.jpg&amp;f=1&amp;nofb=1&amp;ipt=174ef25dd5e0672976f9cc834bec2aaaee2d008d19eedac9c559ec117fdde6fc&amp;ipo=images" data-image-src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwiki.dtonline.org%2Fimages%2Ff%2Ffd%2FPneumaticsDoubleActingCylinder.jpg&amp;f=1&amp;nofb=1&amp;ipt=174ef25dd5e0672976f9cc834bec2aaaee2d008d19eedac9c559ec117fdde6fc&amp;ipo=images"></span></p><p>Someone designing a pneumatic system needs to keep in mind the usable surface area when their cylinder actuates. Bimba provides a wide selection of round line actuators, and generates detailed CAD here (<a class="external-link" href="https://www.bimba.com/en/detail/original_line_cylinder" rel="nofollow">https://www.bimba.com/en/detail/original_line_cylinder</a>). This is useful for finding the usable surface area as shown below, as well as for general modeling.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/246344184/246344220.png" data-image-src="attachments/246344184/246344220.png" data-unresolved-comment-count="0" data-linked-resource-id="246344220" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_14-53-55.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><p>To use the spreadsheet, simply input your force requirements, measured moment arm, actuation angle, and margins of safety. The output cells are the minimum areas for a given set of requirements.</p><p>A larger cylinder at a given supply pressure will actuate faster than a smaller cylinder, assuming that the reactive force at the end of the piston is the same. Therefore, this spreadsheet uses the equation below to predict the stroke time for any actuation. This can be fed back into the lap simulation to get an idea of the potential points increase.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="70" src="attachments/246344184/246344234.png" data-image-src="attachments/246344184/246344234.png" data-unresolved-comment-count="0" data-linked-resource-id="246344234" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_15-4-45.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/246344184/Piston%20Selection%2020221012.xlsx?version=1&amp;modificationDate=1670870650000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/246344184/Piston%20Selection%2020221012.xlsx?version=1&amp;modificationDate=1670870650000&amp;api=v2" data-linked-resource-id="246344188" data-linked-resource-type="attachment" data-linked-resource-container-id="246344184" data-linked-resource-default-alias="Piston Selection 20221012.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Piston Selection 20221012.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/246344188/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="246344184" data-linked-resource-id="246344188" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-TankSelection">Tank Selection</h2><p>The tank was selected using the spreadsheet at the end of this section, with the requirement in mind of conducting an entire testing day without recharging. The math below was used to develop the spreadsheet. This assumes an isothermal expansion, and that the ideal gas law applies. The isothermal expansion assumption is reasonable enough, since large changes in temperature happen when the pressure drops drastically in a short period of time.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/246344184/246344236.png" data-image-src="attachments/246344184/246344236.png" data-unresolved-comment-count="0" data-linked-resource-id="246344236" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_15-22-16.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><p>The volume of the clutch includes both the displaced air in the cylinder and the air in the lines from the cylinder to the solenoid.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/246344184/Tank%20Sizing%2020221212.xlsx?version=1&amp;modificationDate=1670878998000&amp;api=v2" data-nice-type="Excel Spreadsheet" data-file-src="/download/attachments/246344184/Tank%20Sizing%2020221212.xlsx?version=1&amp;modificationDate=1670878998000&amp;api=v2" data-linked-resource-id="246344249" data-linked-resource-type="attachment" data-linked-resource-container-id="246344184" data-linked-resource-default-alias="Tank Sizing 20221212.xlsx" data-mime-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Tank Sizing 20221212.xlsx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/246344249/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="246344184" data-linked-resource-id="246344249" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-SolenoidSelection">Solenoid Selection</h2><p>Solenoids were initially selected as carryover from Alex Krueger's ventures into pneumatics during the 2021-2022 season. His book of knowledge was a good starting point for me, and can be found here: <u><strong><a href="217484989.html">Pneumatics (and Cost)</a></strong></u>. The only change was the addition of an Airtac 3V1-06 Solenoid to replace one of the two 4V110-06's on the clutch side. It was discovered in preliminary dyno testing that the 4V110-06 needed pressure to be applied in order to actuate. For the solenoid controlling the exhaust from the clutch cylinder (e.g. slow vs fast clutch), there is no buildup of pressure, so the 4V110-06 is not suitable. Instead, a 3V1-06 was selected for further testing.</p><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/246344184/246344266.png" data-image-src="attachments/246344184/246344266.png" data-unresolved-comment-count="0" data-linked-resource-id="246344266" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_16-25-2.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/246344184/246344267.png" data-image-src="attachments/246344184/246344267.png" data-unresolved-comment-count="0" data-linked-resource-id="246344267" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_16-25-49.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/246344184/246344268.png" data-image-src="attachments/246344184/246344268.png" data-unresolved-comment-count="0" data-linked-resource-id="246344268" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-2022-12-12_16-26-23.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="246344184" data-linked-resource-container-version="13" alt=""></span></p><h2 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-FittingSelection">Fitting Selection</h2><p>SMC's push-to-connect fittings were originally used for Alex Krueger's test bench, but guidance from a contact who works with pneumatic systems in harsh vibration environments led to the change to compression tube fittings (<u><strong><a class="external-link" href="https://www.hylokusa.com/hy-lok-tube-fittings/" rel="nofollow">https://www.hylokusa.com/hy-lok-tube-fittings/</a></strong></u>). These should perform better under the harsh track and engine vibration conditions, and can be visually checked by hysol staking the joint after leak checking, prior to any testing session.</p><h1 id="id-2.PneumaticsHandCalculations&amp;ComponentSelection-AdditionalDocumentation">Additional Documentation</h1><p>I've listed below my DCR/PDR/CDR from the 2022-23 design cycle. Confluence previews of PowerPoint files are horrendous, so download them to view them.</p><p><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/246344184/Pneumatic%20Shifter%20DCR.pptx?version=1&amp;modificationDate=1670879924000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/246344184/Pneumatic%20Shifter%20DCR.pptx?version=1&amp;modificationDate=1670879924000&amp;api=v2" data-linked-resource-id="246344258" data-linked-resource-type="attachment" data-linked-resource-container-id="246344184" data-linked-resource-default-alias="Pneumatic Shifter DCR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Pneumatic Shifter DCR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/246344258/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="246344184" data-linked-resource-id="246344258" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/246344184/Pneumatic%20Shifter%20PDR.pptx?version=1&amp;modificationDate=1670879929000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/246344184/Pneumatic%20Shifter%20PDR.pptx?version=1&amp;modificationDate=1670879929000&amp;api=v2" data-linked-resource-id="246344260" data-linked-resource-type="attachment" data-linked-resource-container-id="246344184" data-linked-resource-default-alias="Pneumatic Shifter PDR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Pneumatic Shifter PDR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/246344260/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="246344184" data-linked-resource-id="246344260" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span><span class="confluence-embedded-file-wrapper"><a class="confluence-embedded-file" href="/download/attachments/246344184/Pneumatic%20Shifter%20CDR.pptx?version=1&amp;modificationDate=1670879918000&amp;api=v2" data-nice-type="PowerPoint Presentation" data-file-src="/download/attachments/246344184/Pneumatic%20Shifter%20CDR.pptx?version=1&amp;modificationDate=1670879918000&amp;api=v2" data-linked-resource-id="246344257" data-linked-resource-type="attachment" data-linked-resource-container-id="246344184" data-linked-resource-default-alias="Pneumatic Shifter CDR.pptx" data-mime-type="application/vnd.openxmlformats-officedocument.presentationml.presentation" data-has-thumbnail="true" data-linked-resource-version="1" data-can-edit="true" aria-label="Pneumatic Shifter CDR.pptx" draggable="false"><img src="rest/documentConversion/latest/conversion/thumbnail/246344257/1" height="250" alt="" draggable="false"/></a><span class="companion-edit-button-placeholder edit-button-overlay" data-linked-resource-container-id="246344184" data-linked-resource-id="246344257" data-template-name="companionEditIcon" data-source-location="embedded-attachment"></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344188.xlsx">Piston Selection 20221012.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344220.png">image-2022-12-12_14-53-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344228.png">image-2022-12-12_14-57-9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344234.png">image-2022-12-12_15-4-45.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344236.png">image-2022-12-12_15-22-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344249.xlsx">Tank Sizing 20221212.xlsx</a> (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344257.pptx">Pneumatic Shifter CDR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344258.pptx">Pneumatic Shifter DCR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344260.pptx">Pneumatic Shifter PDR.pptx</a> (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344266.png">image-2022-12-12_16-25-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344267.png">image-2022-12-12_16-25-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/246344184/246344268.png">image-2022-12-12_16-26-23.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:27</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

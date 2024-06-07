@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : Matlab Lap Time Simulation Tutorial</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Suspension_129009826.html">Suspension</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297355.html">Design | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297356.html">Design Resources | SUS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Lap-Time-Simulation-Home_129009845.html">Lap Time Simulation Home</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : Matlab Lap Time Simulation Tutorial
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (reyno105)</span>, last modified by <span class='editor'> Unknown User (agarw162)</span> on Apr 29, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="MatlabLapTimeSimulationTutorial-RunBaseSimulations">Run Base Simulations</h1><p>Three base simulations are required to create the files that will be used by the python script to generate all other simulations.</p><p>To run these base simulations:</p><ol><li>Open vehicle assembly file<ol><li>File → open → assembly</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/135103771/137593020.png" data-image-src="attachments/135103771/137593020.png" data-unresolved-comment-count="0" data-linked-resource-id="137593020" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-22-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>right click in white box and select browse</li></ol></li><li>Set working directory to location of scripts (where you want to generate all the simulation files)<ol><li>File → select directory</li></ol></li><li>Make sure that units are set to MMKS (metric with milometers)<ol><li>Settings → units → MMKS</li></ol></li><li>Run cornering simulation:<ol><li>Simulate → Full Vehicle Analysis → Static and Quasi-Static Maneuvers → Constant Velocity cornering</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593021.png" data-image-src="attachments/135103771/137593021.png" data-unresolved-comment-count="0" data-linked-resource-id="137593021" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-26-50.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Output prefix: should be the name of the vehicle assembly model with &quot;_14p5&quot; appended if the desired velocity of the sim is 14.5 miles per hour</li><li>Number of Steps: 1000 is usually good</li><li>Desired velocity:<ol><li>14.5 in the white box if 14.5 mph is desired</li><li>Set the selected box to mile/hr</li></ol></li><li>Gear position:<ol><li>can be anything if the torque curve has been set up properly. I usually leave as 2 or 3 (the torque curve should be made to be a massive value from 0 rpm to some very high rpm so that the car is always grip limited</li></ol></li><li>Final Lateral acceleration:<ol><li>Set to something higher than the car can do. At these speed 1.4 should be ok</li></ol></li><li>Press OK to run the sim</li><li>You should get an error saying that the simulation failed. If it does not fail, it means it reached that target acceleration so no maximum has been found</li><li>If concerned, scroll up in results window that stays open after sim runs and find the last converged step. That value will be the acceleration that was achieved<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593024.png" data-image-src="attachments/135103771/137593024.png" data-unresolved-comment-count="0" data-linked-resource-id="137593024" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-37-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Circled in red is that final value the sim achieved</li></ol></li></ol></li><li>Run forward acceleration simulation<ol><li>Simulate → Full Vehicle Analysis → Static and Quasi-Static Maneuvers → Straight-line_acceleration</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593025.png" data-image-src="attachments/135103771/137593025.png" data-unresolved-comment-count="0" data-linked-resource-id="137593025" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-38-22.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Output prefix: should be the name of the vehicle assembly model with &quot;_14p5_accel&quot; appended if the desired velocity of the sim is 14.5 miles per hour</li><li>Number of Steps: 1000 is usually good</li><li>Desired velocity:<ol><li>14.5 in the white box if 14.5 mph is desired</li><li>Set the selected box to mile/hr</li></ol></li><li>Longitudinal acceleration (G's):<ol><li>Set to value larger than car will likely hit. 1.2 is usually good for forward accel</li></ol></li><li>Gear position:<ol><li>can be anything if the torque curve has been set up properly. I usually leave as 2 or 3 (the torque curve should be made to be a massive value from 0 rpm to some very high rpm so that the car is always grip limited</li></ol></li><li>Press OK to run the sim</li><li>You should get an error saying that the simulation failed. If it does not fail, it means it reached that target acceleration so no maximum has been found</li><li>If concerned, scroll up in results window that stays open after sim runs and find the last converged step. That value will be the acceleration that was achieved<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593024.png" data-image-src="attachments/135103771/137593024.png" data-unresolved-comment-count="0" data-linked-resource-id="137593024" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-37-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Circled in red is that final value the sim achieved</li></ol></li></ol></li><li>Run braking simulation<ol><li>Simulate → Full Vehicle Analysis → Static and Quasi-Static Maneuvers → Straight-line_acceleration</li><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593026.png" data-image-src="attachments/135103771/137593026.png" data-unresolved-comment-count="0" data-linked-resource-id="137593026" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-42-11.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Output prefix: should be the name of the vehicle assembly model with &quot;_14p5_brake&quot; appended if the desired velocity of the sim is 14.5 miles per hour</li><li>Number of Steps: 1000 is usually good</li><li>Desired velocity:<ol><li>14.5 in the white box if 14.5 mph is desired</li><li>Set the selected box to mile/hr</li></ol></li><li>Longitudinal acceleration (G's):<ol><li>Set to value larger than car will likely hit. -1.6 is usually good for braking.</li></ol></li><li>Deceleration method:<ol><li>When a negative value is entered for Longitudinal acceleration this becomes available.</li><li>Select braking</li></ol></li><li>Gear position:<ol><li>can be anything if the torque curve has been set up properly. I usually leave as 2 or 3 (the torque curve should be made to be a massive value from 0 rpm to some very high rpm so that the car is always grip limited</li><li>NOTE: if sim errors out at high speeds, check that the throttle request did not exceed 100%. May need to adjust gear or torque curve if this occurs.</li></ol></li><li>Press OK to run the sim</li><li>You should get an error saying that the simulation failed. If it does not fail, it means it reached that target acceleration so no maximum has been found</li><li>If concerned, scroll up in results window that stays open after sim runs and find the last converged step. That value will be the acceleration that was achieved<ol><li><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/135103771/137593024.png" data-image-src="attachments/135103771/137593024.png" data-unresolved-comment-count="0" data-linked-resource-id="137593024" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-12-28_12-37-24.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="135103771" data-linked-resource-container-version="5" alt=""></span></li><li>Circled in red is that final value the sim achieved</li></ol></li></ol></li></ol>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593020.png">image2019-12-28_12-22-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593021.png">image2019-12-28_12-26-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593022.png">image2019-12-28_12-26-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593024.png">image2019-12-28_12-37-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593025.png">image2019-12-28_12-38-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/135103771/137593026.png">image2019-12-28_12-42-11.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:30</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

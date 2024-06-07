@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purdue Formula SAE : 2. LLTD / Torsion Test Design Decisions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Purdue Formula SAE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Purdue-Formula-SAE-Home_127569448.html">Purdue Formula SAE Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Chassis_130162749.html">Chassis</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297369.html">Design | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="259297374.html">Design Archive | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="192190046.html">Design PF22 | CHA</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="PF22-Frame-Design_192190053.html">PF22 Frame Design</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Purdue Formula SAE : 2. LLTD / Torsion Test Design Decisions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class='author'> Unknown User (hammerly)</span>, last modified on Nov 24, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><style type='text/css'>/*<![CDATA[*/
+div.rbtoc1709576891432 {padding: 0px;}
+div.rbtoc1709576891432 ul {list-style: square !important;margin-left: 0px;}
+div.rbtoc1709576891432 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1709576891432'>
+<ul class='toc-indentation'>
+<li><a href='#id-2.LLTD/TorsionTestDesignDecisions-RequiredReading'>Required Reading</a></li>
+<li><a href='#id-2.LLTD/TorsionTestDesignDecisions-WheelLoadsandLLTD'>Wheel Loads and LLTD</a></li>
+<li><a href='#id-2.LLTD/TorsionTestDesignDecisions-UndersteerandOversteer'>Understeer and Oversteer</a></li>
+<li><a href='#id-2.LLTD/TorsionTestDesignDecisions-Correctingundersteer/oversteerwithLLTD'>Correcting understeer/oversteer with LLTD</a></li>
+<li><a href='#id-2.LLTD/TorsionTestDesignDecisions-WhereChassisFitsIntoThis'>Where Chassis Fits Into This</a></li>
+</ul>
+</div></p><h2 id="id-2.LLTD/TorsionTestDesignDecisions-RequiredReading">Required Reading</h2><p>Read sections 18.3 and 18.4 of Race Car Vehicle Dynamics (Milliken &amp; Milliken) to learn the basics of chassis stiffness and Lateral Load Transfer Distribution (LLTD). There is a PDF copy available in the drive: Z:\Knowledge_Base\3 - Books</p><h2 id="id-2.LLTD/TorsionTestDesignDecisions-WheelLoadsandLLTD">Wheel Loads and LLTD</h2><p>Let's start by discussing wheel loads in a cornering event. From page 679 of Milliken &amp; Milliken:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/198508862/198509525.png" data-image-src="attachments/198508862/198509525.png" data-unresolved-comment-count="0" data-linked-resource-id="198509525" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-11-24_15-0-30.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><p><br/></p><p>Multiplying this with the total weight of the vehicle yields the total weight shift to the outside tires, what we refer to as LLT. In the image below the total LLT is 120 lbs.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="250" src="attachments/198508862/198509225.png" data-image-src="attachments/198508862/198509225.png" data-unresolved-comment-count="0" data-linked-resource-id="198509225" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-11-23_15-18-6.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><p><br/></p><p>The distribution of the lateral load transfer between the front and rear tires is related to the understeer/oversteer of the vehicle.</p><h2 id="id-2.LLTD/TorsionTestDesignDecisions-UndersteerandOversteer">Understeer and Oversteer</h2><p>Watch these videos to gain some intuition on how drivers experience understeer and how car set-up affects understeer.</p><p><iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/Jz0v9A1UP7Q?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+<iframe class="youtube-player" type="text/html" style="width: 400px; height: 300px"
+	src="//www.youtube.com/embed/o5HMdEC4fs8?wmode=opaque" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+    
+</p><p>In the Mercedes video at 7:30, note how Andrew Shovlin speaks about the use of the front wing in Formula 1 to make the &quot;front axle stronger to get the car towards oversteer or weaker to make it understeer.&quot;</p><h2 id="id-2.LLTD/TorsionTestDesignDecisions-Correctingundersteer/oversteerwithLLTD">Correcting understeer/oversteer with LLTD</h2><p>Many factors can be tweaked to correct for understeer and oversteer. Changing relative spring rates of the suspension via tire pressures, tire compounds, shock absorbers and Anti-Roll Bars (ARBs) is one method. Another is to change the toe of the front or rear tires. In the Mercedes video above, Andrew Shovlin discusses some of the factors they tweak. A skilled driver can sometimes account for this via adjusting their racing line or by varying the application of the throttle/brake.</p><p>The main tool in our arsenal to correct for understeer and oversteer is adjusting the ARBs. By adjusting the ARBs, we can finely control the spring rates of the front and rear suspension systems. For example, if we are to stiffen the front ARBs, we can adjust the effective front spring rate all the way from 350 lb/in to 400 lb/in. This results in an increase in the Front Load Transfer.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="200" src="attachments/198508862/198509527.png" data-image-src="attachments/198508862/198509527.png" data-unresolved-comment-count="0" data-linked-resource-id="198509527" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-11-24_15-1-33.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><p>When the bias of the load transfer distribution shifts forward (LLTD &gt; 50%), the front outside wheel is loaded more. As shown by Figure (5) in Tune to Win, if the front outside tire is loaded more, it will produce a larger lateral force. This increase in lateral force aids in cornering, therefore correcting understeer. The same principle works in reverse for correcting oversteer.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" height="250" src="attachments/198508862/198509289.png" data-image-src="attachments/198508862/198509289.png" data-unresolved-comment-count="0" data-linked-resource-id="198509289" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-11-23_17-15-44.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><h2 id="id-2.LLTD/TorsionTestDesignDecisions-WhereChassisFitsIntoThis">Where Chassis Fits Into This</h2><p>Our suspension calculations and models assume the frame is rigid. This is conceptualized by the front wheels connected to the front suspension, then the front suspension connected to rear suspension and subsequent wheels. In between the front and rear suspension is the car mass. A simplified visual is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/198508862/198509204.png" data-image-src="attachments/198508862/198509204.png" data-unresolved-comment-count="0" data-linked-resource-id="198509204" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="rigidphoto.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><p>In reality, the frame itself acts as a torsional spring between the front and rear suspension systems.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" height="150" src="attachments/198508862/198509205.png" data-image-src="attachments/198508862/198509205.png" data-unresolved-comment-count="0" data-linked-resource-id="198509205" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="springyphoto.png" data-base-url="https://wiki.itap.purdue.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="198508862" data-linked-resource-container-version="41" alt=""></span></p><p>This prompts the question: how much does the frame's stiffness affect our ability to correct understeer/oversteer with ARB changes?</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509204.png">rigidphoto.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509205.png">springyphoto.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509222.png">image2021-11-23_15-16-59.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509225.png">image2021-11-23_15-18-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509289.png">image2021-11-23_17-15-44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509525.png">image2021-11-24_15-0-30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/198508862/198509527.png">image2021-11-24_15-1-33.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Mar 04, 2024 13:28</p>
+                    <div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
