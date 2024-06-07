@@ -1,0 +1,303 @@
+(% class='small' %)Created by  Giachini on Oct 10, 2023
+
+The new member onboarding project is to CAD a bike pedal mechanism where the goals are:
+
+A. CAD BIKE PEDAL
+
+1. Learn how to CAD in NX following the FSAE format (robust designs that do not explode)
+11. Set up a blank top-level assembly
+11. Have a reference geometry file with datum planes, coordinate system
+11. Use WAVE geometry linker to connect parts to the reference geometry file
+1. Learn how to CAD with NX. The different topics to be covered are:
+11. WAVE Geometry Linker
+11. Sketches: Geometric constraints, Mirror curves
+11. Features: Holes, Extrusions, Revolve, Mirror Geometry, Trim
+11. Assembly: Assembly constraint for separate parts
+1. Download and use parts from McMaster-Carr
+
+B. Make 2D drawings of all machinable parts
+
+C. Create a Bill of Materials for all parts 
+
+D. Learn how to create a DXF file for waterjetting tabs
+
+~*~*For any questions or to check your final work, contact Emil Aaltonen eaaltone[[@purdue.edu&gt;&gt;mailto:ggiachin@purdue.edu]]
+
+Submit files in a zipped folder named yourname_FSAEonboarding
+
+The folder should have 
+
+*. all NX parts
+*. Excel sheet of your BOM
+*. pdfs of your part drawings
+
+~*~* Project due October 11th or before [[image:images&#x2F;icons&#x2F;emoticons&#x2F;smile.svg||alt=&quot;(smile)&quot;]]
+
+= __**CAD BIKE PEDAL**__ =
+
+Bike Pedal CAD                                             Pedal Mechanism
+
+[[image:image2021-8-18_13-19-24.png]]      [[image:image2021-8-18_13-19-37.png]]
+
+\\
+
+**__Steps guide:__**
+
+1. Intro + Top-Level Assembly (&#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)
+1. Parts to Create within Assembly (+Create New)
+11. Reference Geometry (&#x2F;&#x2F;PF_1000_ReferenceGeo&#x2F;&#x2F;)
+11. Part of bike frame (&#x2F;&#x2F;PF_2000_Frame&#x2F;&#x2F;)
+11. Bottom Axle (&#x2F;&#x2F;PF_3000_Axle&#x2F;&#x2F;)
+11. Crank Arm (&#x2F;&#x2F;PF_4000_CrankArm&#x2F;&#x2F;)
+1. Parts to Create as separate part (+Add to &#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)
+11. Pedals (&#x2F;&#x2F;PF_5000_Pedal&#x2F;&#x2F;)
+1. Parts to Download from Mc Master - Carr (+Add to &#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)
+11. Bearings (&#x2F;&#x2F;PF_6000_Bearing&#x2F;&#x2F;)
+11. Chain Wheel (&#x2F;&#x2F;PF_7000_ChainWheel&#x2F;&#x2F;)
+1. Test &#x2F;&#x2F;robustness &#x2F;&#x2F;of your model
+
+\\
+
+== __**Intro + Top-Level Assembly (&#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)**__ ==
+
+Introduction to onboarding project, goals and what you will &#x2F;&#x2F;hopefully &#x2F;&#x2F;learn. Then, start of the project by opening software (NX 12) and creating top level assembly.
+
+{{video attachment=&quot;Intro+Assembly.mp4&quot;&#x2F;}}
+
+\\
+
+== **__Parts to Create within Assembly (+Create New)__** ==
+
+=== a. Reference Geometry (&#x2F;&#x2F;PF_1000_ReferenceGeo&#x2F;&#x2F;) ===
+
+You will create datum planes and sketches to use as reference for other parts. __Follow instructions:__
+
+First, create three datum planes: &#x2F;&#x2F;fixed&#x2F;&#x2F; on the XZ plane (1), &#x2F;&#x2F;at distance&#x2F;&#x2F; of 1.3 inches to the left XZ plane (2), &#x2F;&#x2F;at distance&#x2F;&#x2F; of 1.3 inches to the right XZ (3)
+
+[[image:image2021-8-19_11-46-0.png]]
+
+Second, make the following sketch with the given dimensions. Make sure that the sketch is **fully constrained** by using &#x2F;&#x2F;Rapid Dimension&#x2F;&#x2F; and Geometric Constraints.
+
+[[image:image2021-8-19_11-46-17.png]][[image:image2021-8-19_11-46-22.png]]
+
+\\
+
+~*~*Tutorial Video for PF_1000_ReferenceGeo~*~*
+
+{{video attachment=&quot;Reference_Geometry.mp4&quot;&#x2F;}}
+
+\\
+
+~*~*If the new part does not show up when you are in the assembly window, do the following:
+
+[[image:image2021-8-20_0-56-44.png]]
+
+\\
+
+=== b. Part of bike frame (&#x2F;&#x2F;PF_2000_Frame)&#x2F;&#x2F; ===
+
+Now you will CAD a section of the bike frame (see red square below). It will have a center tube, an &#x2F;&#x2F;almost &#x2F;&#x2F;vertical tube, a angled double tube and a angled single tube (sorry for the naming). All the tubes will follow FSAE chassis tubes dimensions with OD: 1&quot; and ID: 1&quot;–0.095*2&quot;. 
+
+&#x2F;&#x2F;[[image:image2021-8-19_12-16-29.png]][[image:image2021-8-19_12-31-20.png]]&#x2F;&#x2F;
+
+First step is to use WAVE geometry linker for the concentric circles in the sketch and the two &#x2F;&#x2F;at distance &#x2F;&#x2F;datum planes. 
+
+~*~*Frame part 1 video~*~*
+
+{{video attachment=&quot;Frame_Part_1.mp4&quot;&#x2F;}}
+
+\\
+
+-__For center tube:__
+
+Extrude the two concentric circles until selected (using the two datum planes) as shown in picture or watch video:
+
+{{video attachment=&quot;Frame_Part_2.mp4&quot;&#x2F;}}
+
+\\
+
+-__For &#x2F;&#x2F;almost&#x2F;&#x2F; vertical tube:__
+
+Create datum CSYS with the following parameters, then sketch concentric circles with chassis tubes dimensions and extrude until the center tube created above.
+
+[[image:image2021-8-20_1-27-11.png]][[image:image2021-8-20_1-27-16.png]] → [[image:image2021-8-20_1-27-24.png]]
+
+\\
+
+Or watch the video tutorial: ~*~*Frame part 3 video~*~*
+
+{{video attachment=&quot;Frame_Part_3.mp4&quot;&#x2F;}}
+
+\\
+
+-__For angled double tube:__
+
+Create datum CSYS with the following parameters, then sketch concentric circles with chassis tubes dimensions and extrude until the center tube created above (using &#x2F;&#x2F;Formulas)&#x2F;&#x2F;. Trim extra tube and mirror the geometry created. 
+
+[[image:image2021-8-20_13-25-18.png]][[image:image2021-8-20_13-25-28.png]][[image:image2021-8-20_13-27-22.png]]
+
+\\
+
+Or watch video tutorial ~*~*Frame part 4 video~*~*:
+
+{{video attachment=&quot;Frame_Part_4.mp4&quot;&#x2F;}}
+
+\\
+
+-__For angled single tube:__
+
+Create datum CSYS with the following parameters, then sketch concentric circles with chassis tubes dimensions and extrude until the center tube created above (using &#x2F;&#x2F;Formulas)&#x2F;&#x2F;. Finally, trim extra tube. 
+
+[[image:image2021-8-20_13-34-3.png]][[image:image2021-8-20_13-33-40.png]]
+
+\\
+
+Or watch video tutorial ~*~*Frame part 5 video~*~*:
+
+{{video attachment=&quot;Frame_Part_5.mp4&quot;&#x2F;}}
+
+\\
+
+=== c. Bottom Axle (&#x2F;&#x2F;PF_3000_Axle)&#x2F;&#x2F; ===
+
+The bottom axle or bottom bracket goes inside the center tube of the bike frame. The crank arms of the pedals fit in them, allowing you to pedal. 
+
+[[image:image2021-8-20_13-47-25.png]]
+
+There are many types of bottom axles, but we will do a simple version of it to learn how to revolve. 
+
+\\
+
+First step is to use WAVE geometry linker on the reference geometry part (add the two concentric circles and one of the offset datum planes). 
+
+Second step is to create an offset datum plane at 1&#x2F;16 from the linked one. 
+
+Third step is to create the following sketch (check video for correct dimensions) and mirror it. And finally, revolve the whole thing: 
+
+[[image:image2021-8-21_2-7-33.png]][[image:image2021-8-20_13-52-25.png]]
+
+\\
+
+Or watch the video tutorial 
+
+~*~*Axle part 1 video~*~*
+
+{{video attachment=&quot;Axle_Part_2_(+Sketch_Dimensions).mp4&quot;&#x2F;}}
+
+=== d. Crank Arm (&#x2F;&#x2F;PF_4000_CrankArm&#x2F;&#x2F;) ===
+
+Now we will work on the two crank arms that hold the pedal:
+
+[[image:image2021-8-21_16-57-9.png]][[image:image2021-8-21_16-59-29.png]]
+
+First, use WAVE geometry linker to add the sketch and both &#x2F;&#x2F;at distance &#x2F;&#x2F;datum planes. Extrude the sketch at the right distance (you can do this by creating new datum planes and extrude from one to the other). **For the first crank arm**: create a new datum plane at 1&#x2F;16in from the linked one and then create a second datum plane at 0.4in from it. Extrude from the first to the second datum plane created to have a crank arm of 0.4in. Use Edge Blend to make the corners of the extrusion look nicer. To finish one crank arm, extrude a cylinder with diameter of 0.375 inches at the center of the concentric circles of the sketch.
+
+[[image:image2021-8-22_8-55-7.png]][[image:image2021-8-22_8-56-22.png]][[image:image2021-8-22_8-59-25.png]][[image:image2021-8-22_9-0-26.png]]
+
+\\
+
+\\
+
+**For the second crank arm**, rotate 180deg the original sketch by making a new one. Then, create a new datum plane at 1&#x2F;16 + 0.168 in from the linked one and then create a second datum plane at 0.4in from it. Extrude from the first to the second datum plane created to have a crank arm of 0.4in. Repeat the same last steps as with the first crank arm.
+
+[[image:image2021-8-22_9-5-16.png]][[image:image2021-8-22_9-5-52.png]][[image:image2021-8-22_9-6-51.png]][[image:image2021-8-22_9-7-12.png]]
+
+\\
+
+Or watch the video tutorial ~*~*Crank Arm video~*~*:
+
+{{video attachment=&quot;CrankArm.mp4&quot;&#x2F;}}
+
+\\
+
+\\
+
+== **__Parts to Create as separate part (+Add to &#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)__** ==
+
+=== a. Pedals (&#x2F;&#x2F;PF_5000_Pedal&#x2F;&#x2F;) ===
+
+[[image:https:&#x2F;&#x2F;dks.scene7.com&#x2F;is&#x2F;image&#x2F;GolfGalaxy&#x2F;19KQYULLYPLTFRM91MSC?wid=600%5D%5D%5B%5Bimage%3Aimage2021-8-24_18-22-42.png%5D%5D
+
+Now we will make a part outside the assembly and then add and constrain it to the other existing parts in the assembly. So first thing to do is to create a new part (the same way as you creating a new assembly, but click model instead of assembly). Name it and add it to the same file path as the assembly. 
+
+First create two datum planes at distance from zy plane of 0.7874in and 3.9370in. The sketch a rectangle using the datum planes the set the width and a height of 3.9370in. Extrude the sketch 0.25 to each side. Make a new sketch with the following parameters and constraints, and revolve it. 
+
+[[image:image2021-8-24_18-3-29.png]][[image:image2021-8-24_18-5-43.png]][[image:image2021-8-24_18-8-4.png]][[image:image2021-8-24_18-9-41.png]]
+
+\\
+
+Or watch the video tutorial ~*~*Pedals video~*~*:
+
+{{video attachment=&quot;Pedal.mp4&quot;&#x2F;}}
+
+\\
+
+== **__Parts to Download from Mc Master - Carr (+Add to &#x2F;&#x2F;PF_OnboardingProject&#x2F;&#x2F;)__** ==
+
+**__[[image:image2021-8-24_22-52-56.png]][[image:image2021-8-24_22-53-46.png]]__**
+
+Download part numbers from Mc Master Carr: https:&#x2F;&#x2F;www.mcmaster.com&#x2F;
+
+\\
+
+First, download **STEP file**, then open file in NX 12 and **save it as a part file**. Finally, add to assembly and constrain it to existing parts. (No video → contact me if you have any questions)
+
+=== a. Chain Wheel (&#x2F;&#x2F;PF_7000_ChainWheel&#x2F;&#x2F;) ===
+
+__Part number:__ 2299K318
+
+__Amount__: 1
+
+\\
+
+Constrain it to the between frame and 180 rotated crank arm (there&#x27;s space for it). Use assembly constrains → touch align
+
+[[image:image2021-8-24_23-24-47.png]]
+
+\\
+
+=== b. Bearings (&#x2F;&#x2F;PF_6000_Bearing&#x2F;&#x2F;) ===
+
+__Part number:__ 6383K16
+
+__Amount__: 4
+
+\\
+
+Constrain them to the highlighted areas using assembly constrains → touch align. 
+
+[[image:image2021-8-24_23-28-42.png]][[image:image2021-8-24_23-31-1.png]]
+
+\\
+
+== **__Test__** ==
+
+To test how robuts your drawing is, change a few dimensions and see how the overall assembly changes. If nothing breaks, GOOD JOB! If something explodes and you start getting issues: check again your work and try to have everything connected (using the reference geometry part file). 
+
+Make sure you do this before submitting your work!
+
+\\
+
+\\
+
+= __**BILL OF MATERIALS (BOM)**__ =
+
+Create a bill of materials for all parts showing part names and quantity, as well as differentiating between assembly, manufactured and purchased parts. 
+
+Your BOM does not have to be this exhaustive, but model it after the image below (PF23 Chassis metal stock BOM)
+
+[[image:image-2023-9-9_17-11-30.png]]
+
+= __**2D DRAWINGS**__ =
+
+Make 2D drawings in NX drafting of all machinable parts. Make sure to add all important views and dimensions. A dimension is important if it is necessary for the manufacturer!
+
+Remember to remove datums, axis ... basically anything that would prevent someone to clearly see the part and eventually manufacture it. 
+
+\\
+
+Drafting is found in NX in the Applications tab → Drafting
+
+\\
+
+\\

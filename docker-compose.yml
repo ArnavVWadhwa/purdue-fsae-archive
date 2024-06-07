@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  web:
+    image: xwiki:stable-postgres-tomcat
+    environment:
+      - XWIKI_VERSION=${XWIKI_VERSION}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_HOST=xwiki-postgres-db
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - xwiki-data:/usr/local/xwiki
+      - ./xwiki/server.xml:/usr/local/tomcat/conf/server.xml
+      - ./xwiki/keystore.jks:/usr/local/tomcat/conf/keystore.jks
+    networks:
+      - xwiki-network
+
+  xwiki-postgres-db:
+    image: postgres:16
+    environment:
+      - POSTGRES_ROOT_PASSWORD=${POSTGRES_ROOT_PASSWORD}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_INITDB_ARGS="--encoding=UTF8"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - xwiki-network
+
+  nginx:
+    image: arnavwadhwa/custom-nginx-fsae:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    networks:
+      - xwiki-network
+
+networks:
+  xwiki-network:
+    driver: bridge
+
+volumes:
+  postgres-data: {}
+  xwiki-data: {}
+

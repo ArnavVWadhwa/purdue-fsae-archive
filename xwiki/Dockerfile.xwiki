@@ -1,0 +1,6 @@
+FROM xwiki:stable-postgres-tomcat
+
+# Copy server.xml and keystore.jks
+COPY server.xml /usr/local/tomcat/conf/server.xml
+COPY keystore.jks /usr/local/tomcat/conf/keystore.jks
+

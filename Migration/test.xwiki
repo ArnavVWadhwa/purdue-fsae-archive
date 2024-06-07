@@ -1,0 +1,39 @@
+(% class='small' %)Created by  Unknown User (hammerly) on Dec 11, 2021
+
+Read the minimum viable product description __[[here&gt;&gt;Chassis_130162749.html]]__.
+
+We did a good job of meeting the General and Mounting requirements with PF22, but it was more challenging &#x2F; less of a priority with the engine change to determine ergonomics targets. Designing the frame fully remotely, it was difficult to conceptualize how large&#x2F;small everything is.
+
+One project that would be foundational to chassis development would be to make an ergonomics test stand out of 80&#x2F;20 framing extrusion and steel tubing (similar to the dyno, it’s a good entry-level welding project.  also dedicate time in the spring to training welders). This could be used to evaluate different steering wheel positions. This could be a more robust&#x2F;detailed version of the cockpit mock up made __[[here.&gt;&gt;2020-Chassis-Design_132157352.html]]__
+
+This cockpit mock up would be useful in determining the following:
+
+*. Head restraint position e.g. how far behind the head restraint is from the MRH\\
+*. Steering wheel angle
+*. Steering wheel position
+*. Seat belt tabs position e.g. distance from MRH so we don&#x27;t guess the position the night we decide to weld them
+*. Shoulder harness bar height
+*. Driver back angle
+*. Pedalbox Adjustment
+*. Steering wheel force input
+*. Maximum Main Hoop Width ??? not as relevant
+*. 
+
+The results from the cockpit mock up should drive the skeleton reference geometry that the wireframe is built off of.
+
+A rough timeline for next year:
+
+*. Ergo test stand design &amp; fabrication - 4 weeks in Feb&#x2F;Mar
+*. Ergo data collection &amp; analysis - 2 weeks in Mar&#x2F;Apr
+*. Start working on idea generation with other team leads for PF23 architecture based on PF22 testing &amp; validation
+**. Should we stick with the WR450F?
+**. Should we raise the BH?
+**. Change suspoints to get rid of tubes?
+*. Create wireframe - 1 week in late May
+*. LLTD &#x2F; Suspoints compliance studies - 3 weeks in June
+*. Finalize general tube layout, create tube cross sections and trim bodies according to manufacturing order - 1 week in June&#x2F;July
+*. Suspension tabs CAD &amp; lug analysis (can likely assign this to someone)
+*. Structures analyses for any points of concern (e.g. engine mounts, steering wheel column)
+*. Tube Jig MFG layout
+*. Tab Jig MFG layout
+*. Break in between internship &amp; school
